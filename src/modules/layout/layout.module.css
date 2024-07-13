@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  grid-template-columns: 50px auto;
+  grid-template-rows: 50px 50px auto;
+  grid-template-areas:
+    'header header'
+    'sidebar context'
+    'sidebar main';
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background-color: lightblue;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: rgb(223, 223, 223);
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  grid-area: main;
+}
+
+.context {
+  grid-area: context;
+  display: flex;
+  align-items: center;
+  background-color: rgb(223, 223, 223);
+}

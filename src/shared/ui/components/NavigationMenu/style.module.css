@@ -1,0 +1,16 @@
+.navigationMenu {
+  padding-inline-start: 0px;
+  list-style-type: none;
+  margin: 0;
+}
+.navigationMenu[data-orientation='horizontal'] {
+  display: flex;
+}
+
+.trigger[aria-pressed='true'] {
+  background-color: aqua;
+}
+
+.trigger > svg {
+  pointer-events: none;
+}
