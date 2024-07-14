@@ -1,63 +1,41 @@
-import { createApi, createEvent, createStore, sample } from 'effector';
-import { tools } from '../mapContainer/application';
+import { makeAutoObservable } from 'mobx';
+import { Tools } from '../mapContainer/Tools';
 
-import { brushes } from '../brushes';
-import { $currentTool } from '../toolbar/presenter';
 
-export const setCurrentBrush = createEvent<string>();
-export const setBrushDirection = createEvent<string>();
+class Brush {
+  private static instance: Brush | null = null;
+  public currentBrush = '1.up';
+  public currentBrushDirection = 'up';
 
-export const $currentBrush = createStore('1.up');
-export const $currentBrushDirection = createStore('up');
-export const $hasDirection = createStore(true);
-export const $allowBrushes = createStore(false);
+  constructor(private readonly tools: Tools) {
+    makeAutoObservable(this)
+  }
 
-sample({
-  clock: $currentTool,
-  fn: (toolId) => {
-    return toolId === 'brush';
-  },
-  target: $allowBrushes,
-});
+  setCurrentBrush = (brush) => {
+    this.currentBrush = brush
+  }
 
-sample({
-  clock: setCurrentBrush,
-  fn: (tool) => {
-    tools.setCurrentTool(tool);
+  setBrushDirection = (direction) => {
+    this.currentBrushDirection = direction
+    const brushId = `${this.currentBrush.split('.')[0]}.${direction}`;
+    this.currentBrush = brushId
+  }
 
-    return tool;
-  },
-  target: $currentBrush,
-});
+  get hasDirection() {
+    return Boolean(this.currentBrushDirection)
+  }
 
-sample({
-  clock: setCurrentBrush,
-  // source: $userName /* 2 */,
-  fn: (brushId) => {
-    return Boolean(brushId.split('.')[1]);
-  },
-  target: $hasDirection,
-});
+  get allowBrushes() {
+    return this.tools.currentTool === 'brush'
+  }
 
-sample({
-  clock: setBrushDirection,
-  source: $currentBrush /* 2 */,
-  fn: (currentBrush, direction) => {
-    const brushId = `${currentBrush.split('.')[0]}.${direction}`;
-    tools.setCurrentTool(brushId);
+  public static getInstance(tools: Tools) {
+    if (!Brush.instance) {
+      Brush.instance = new Brush(tools);
+    }
 
-    return direction;
-  },
-  target: $currentBrushDirection,
-});
+    return Brush.instance;
+  }
+}
 
-sample({
-  clock: $currentBrushDirection,
-  source: $currentBrush /* 2 */,
-  fn: (currentBrush, direction) => {
-    const brushId = `${currentBrush.split('.')[0]}.${direction}`;
-
-    return brushId;
-  },
-  target: $currentBrush,
-});
+export const createBrush = (tools: Tools) => Brush.getInstance(tools);

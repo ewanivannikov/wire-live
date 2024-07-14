@@ -1,1 +1,1 @@
-export { init } from './application';
+export { createWorld } from './World';

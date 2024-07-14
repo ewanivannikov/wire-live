@@ -1,4 +1,6 @@
 import * as THREE from 'three';
+import { tools } from "../toolbar/presenter";
+import { createBrush } from "../contextBar/presenter";
 
 // Example tilemap data (replace with your actual data)
 const tileData = [
@@ -45,7 +47,10 @@ class TileMap {
   }
 
   addTile = (tile) => {
-    const tileTexture = this.tileTextures[this.tools.currentTool]; // Assuming you have a way to get the texture
+    const brush = createBrush(tools)
+    const tileTexture = this.tileTextures[
+      tools.currentTool === 'eraser' ? 'eraser' : brush.currentBrush
+    ]; // Assuming you have a way to get the texture
     const [x, y] = tile.key.split(',').map(Number);
 
     if (this.tileMap.has(tile.key)) {
@@ -54,6 +59,7 @@ class TileMap {
       this.addSprite(tileTexture, x, y);
     }
     this.tileMap.set(tile.key, 1);
+    
   };
 
   removeTile = (tile) => {
@@ -91,5 +97,5 @@ class TileMap {
   };
 }
 
-export const createTileMap = (tileTextures, tileSize, tools) =>
+export const createTileMap = (tileTextures, tileSize) =>
   new TileMap(tileTextures, tileSize, tools, tileData);

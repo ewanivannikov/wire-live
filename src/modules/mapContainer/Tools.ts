@@ -1,4 +1,4 @@
-class Tools {
+export class Tools {
   private _currentTool = 'Eraser';
 
   get currentTool() {

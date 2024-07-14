@@ -5,10 +5,9 @@ class Grid {
   gridRowSize = 4;
   tileGroup;
 
-  constructor(tileSize, gridRowSize, tools) {
+  constructor(tileSize, gridRowSize) {
     this.gridRowSize = gridRowSize;
     this.tileSize = tileSize;
-    this.tools = tools;
     this.init();
   }
 
@@ -58,5 +57,5 @@ class Grid {
   }
 }
 
-export const createGrid = (tileSize, gridSize, tools) =>
-  new Grid(tileSize, gridSize, tools);
+export const createGrid = (tileSize, gridSize) =>
+  new Grid(tileSize, gridSize);

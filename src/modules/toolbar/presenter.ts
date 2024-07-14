@@ -1,15 +1,18 @@
-import { createEvent, createStore, sample } from 'effector';
-import { tools } from '../mapContainer/application';
+import { makeAutoObservable } from 'mobx';
 
-export const setCurrentTool = createEvent<string>();
-export const $currentTool = createStore(tools.currentTool);
+class Tools {
+  _currentTool = 'eraser';
+  constructor() {
+    makeAutoObservable(this)
+  }
 
-sample({
-  clock: setCurrentTool,
-  // source: $userName /* 2 */,
-  fn: (tool) => {
-    tools.setCurrentTool(tool);
-    return tool;
-  },
-  target: $currentTool,
-});
+  public setCurrentTool = (tool) => {
+    this._currentTool = tool
+  }
+
+  get currentTool() {
+    return this._currentTool
+  }
+}
+
+export const tools = new Tools()

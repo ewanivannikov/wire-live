@@ -5,16 +5,10 @@ import {
   navigationMenu,
   trigger,
 } from '../../shared';
-import { useUnit } from 'effector-solid';
 import { For, Show, Switch, Match } from 'solid-js';
-import { brushIcons, brushes, groupsBrushes } from '../brushes';
+import { brushIcons, groupsBrushes } from '../brushes';
 import {
-  $allowBrushes,
-  $currentBrush,
-  $currentBrushDirection,
-  $hasDirection,
-  setBrushDirection,
-  setCurrentBrush,
+  createBrush,
 } from './presenter';
 import { ArrowUp, ArrowDown, ArrowRight, ArrowLeft } from 'lucide-solid';
 import {
@@ -24,40 +18,32 @@ import {
   IconArrowUp,
   IconSourceBlock,
 } from '../brushes/IconArrow';
+import { tools } from '../toolbar/presenter';
 
 export const ContextBar = () => {
-  const [currentBrush, currentBrushDirection, hasDirection, allowBrushes] =
-    useUnit([
-      $currentBrush,
-      $currentBrushDirection,
-      $hasDirection,
-      $allowBrushes,
-    ]);
-  const on = useUnit({ setCurrentBrush, setBrushDirection });
+  const state = createBrush(tools);
   const handleClick = (e) => {
-    on.setCurrentBrush(e.target.name);
+    state.setCurrentBrush(e.target.name);
   };
-  const handleChange = (value) => {
-    on.setBrushDirection(value);
-  };
+
   return (
-    <Show when={allowBrushes()}>
+    <Show when={state.allowBrushes}>
       <Popover>
         <Popover.Trigger class="popover__trigger">
           <Switch>
-            <Match when={currentBrush() === '1.up'}>
+            <Match when={state.currentBrush === '1.up'}>
               <IconArrowUp />
             </Match>
-            <Match when={currentBrush() === '1.left'}>
+            <Match when={state.currentBrush === '1.left'}>
               <IconArrowLeft />
             </Match>
-            <Match when={currentBrush() === '1.down'}>
+            <Match when={state.currentBrush === '1.down'}>
               <IconArrowDown />
             </Match>
-            <Match when={currentBrush() === '1.right'}>
+            <Match when={state.currentBrush === '1.right'}>
               <IconArrowRight />
             </Match>
-            <Match when={currentBrush() === '2'}>
+            <Match when={state.currentBrush === '2'}>
               <IconSourceBlock />
             </Match>
           </Switch>
@@ -87,37 +73,40 @@ export const ContextBar = () => {
         </Popover.Portal>
       </Popover>
       {' | '}
-      <Show when={hasDirection()}>
+      <Show when={state.hasDirection}>
         <ToggleGroup
           class="toggle-group"
-          value={currentBrushDirection()}
-          onChange={handleChange}
+          value={state.currentBrushDirection}
         >
           <ToggleGroup.Item
             class="toggle-group__item"
-            value="up"
+            name="up"
             aria-label="Bold"
+            onClick={(e) => state.setBrushDirection(e.target.name)}
           >
             <ArrowUp />
           </ToggleGroup.Item>
           <ToggleGroup.Item
             class="toggle-group__item"
-            value="down"
+            name="down"
             aria-label="Italic"
+            onClick={(e) => state.setBrushDirection(e.target.name)}
           >
             <ArrowDown />
           </ToggleGroup.Item>
           <ToggleGroup.Item
             class="toggle-group__item"
-            value="left"
+            name="left"
             aria-label="Underline"
+            onClick={(e) => state.setBrushDirection(e.target.name)}
           >
             <ArrowLeft />
           </ToggleGroup.Item>
           <ToggleGroup.Item
             class="toggle-group__item"
-            value="right"
+            name="right"
             aria-label="Underline"
+            onClick={(e) => state.setBrushDirection(e.target.name)}
           >
             <ArrowRight />
           </ToggleGroup.Item>

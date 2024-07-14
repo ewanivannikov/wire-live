@@ -1,29 +1,46 @@
 import { render } from 'solid-js/web';
-import { createMemo } from 'solid-js';
+import { createMemo , enableExternalSource } from 'solid-js';
 import { Layout } from './modules/layout';
-import { fork } from 'effector';
-import { Provider } from 'effector-solid';
+
 import { createIsMounted } from '@solid-primitives/lifecycle';
 import './main.css';
-import { init } from './modules/mapContainer';
+import { createWorld } from './modules/mapContainer';
+import { Reaction } from "mobx";
 
-const scope = fork();
+
+const enableMobXWithSolidJS = () => {
+  let id = 0;
+  enableExternalSource((fn, trigger) => {
+    const reaction = new Reaction(`externalSource@${++id}`, trigger);
+    return {
+      track: (x) => {
+        let next;
+        reaction.track(() => (next = fn(x)));
+        return next;
+      },
+      dispose: () => {
+        reaction.dispose();
+      },
+    };
+  });
+};
+
+enableMobXWithSolidJS();
 
 function App() {
   let ref: HTMLDivElement;
   const isMounted = createIsMounted();
   createMemo(() => {
     if (isMounted()) {
-      init(ref);
+      const world = createWorld(ref);
+      world.render();
     }
   });
 
   return (
-    <Provider value={scope}>
-      <Layout>
-        <div id="canvas" ref={ref} />
-      </Layout>
-    </Provider>
+    <Layout>
+      <div id="canvas" ref={ref} />
+    </Layout>
   );
 }
 render(() => <App />, document.getElementById('app'));

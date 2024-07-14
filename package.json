@@ -18,9 +18,8 @@
     "@solid-primitives/lifecycle": "^0.0.102",
     "babel-preset-solid": "^1.8.18",
     "dat.gui": "^0.7.9",
-    "effector": "^23.2.2",
-    "effector-solid": "^0.23.0",
     "lucide-solid": "^0.407.0",
+    "mobx": "^6.13.0",
     "solid-js": "^1.8.18",
     "three": "^0.166.1"
   },
