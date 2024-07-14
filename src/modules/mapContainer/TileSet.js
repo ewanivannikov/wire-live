@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 import { brushes } from '../brushes';
+import {Tile, DirectionType } from '../toolbar'
+
 
 class TileSet {
   _tileTextures = Object.keys(brushes).reduce((acc, current) => {
@@ -24,12 +26,12 @@ class TileSet {
       Object.keys(brushes).forEach((tileId) => {
         const { u, v, u2, v2, image } = this.getUV(tileId, texture);
 
-        const rotationAngle = tileId.split('.')[1] || 'up';
+        const rotationAngle = new Tile(tileId).vector[2] || DirectionType.Up;
         const numberRotation = {
-          up: 0,
-          left: 1,
-          down: 2,
-          right: 3,
+          [DirectionType.Up]: 0,
+          [DirectionType.Left]: 1,
+          [DirectionType.Down]: 2,
+          [DirectionType.Right]: 3,
         };
         const positionRotation = [
           [0, 0],
@@ -61,7 +63,8 @@ class TileSet {
     const tilesetWidth = tilesetTexture.image.width;
     const tilesetHeight = tilesetTexture.image.height;
     // Calculate tile position in the tileset image (assuming grid layout)
-    const indexInAtlas = Number(tileId.split('.')[0]) - 1;
+    
+    const indexInAtlas = new Tile(tileId).vector[1] - 1;
     const tileXShiftPx = (indexInAtlas % 8) * this.tileSize; // 4 tiles per row in the example
     const tileYShiftPx = Math.floor(indexInAtlas / 8) * this.tileSize;
 
@@ -79,8 +82,8 @@ class TileSet {
     return this._tileTextures;
   }
 
-  getTileTextures = (index) => {
-    return this._tileTextures[index];
+  getTileTextures = (key) => {
+    return this._tileTextures[key];
   };
 }
 

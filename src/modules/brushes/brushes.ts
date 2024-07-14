@@ -1,17 +1,17 @@
 export const brushes = {
-  '1.up': 'Arrow.Up',
-  '1.down': 'Arrow.Down',
-  '1.right': 'Arrow.Right',
-  '1.left': 'Arrow.Left',
-  '2': 'SourceBlock',
-  '3.up': 'Blocker.Up',
-  '3.down': 'Blocker.Down',
-  '3.right': 'Blocker.Right',
-  '3.left': 'Blocker.Left',
-  '4.up': 'DelayArrow.Up',
-  '4.down': 'DelayArrow.Down',
-  '4.right': 'DelayArrow.Right',
-  '4.left': 'DelayArrow.Left',
+  'Brush.1.Up': 'Arrow.Up',
+  'Brush.1.Down': 'Arrow.Down',
+  'Brush.1.Right': 'Arrow.Right',
+  'Brush.1.Left': 'Arrow.Left',
+  'Brush.2': 'SourceBlock',
+  'Brush.3.Up': 'Blocker.Up',
+  'Brush.3.Down': 'Blocker.Down',
+  'Brush.3.Right': 'Blocker.Right',
+  'Brush.3.Left': 'Blocker.Left',
+  'Brush.4.Up': 'DelayArrow.Up',
+  'Brush.4.Down': 'DelayArrow.Down',
+  'Brush.4.Right': 'DelayArrow.Right',
+  'Brush.4.Left': 'DelayArrow.Left',
   // 'Signal detector': 5,
   // 'Splitter forwards and backwards': 6,
   // 'Splitter forward and to the right': 7,
@@ -34,13 +34,13 @@ export const brushes = {
 };
 
 export const groupsBrushes = {
-  '1.up': {
+  'Brush.1.Up': {
     value: 'Arrow',
     label: 'Arrow',
     description:
       'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
-  '2': {
+  'Brush.2': {
     value: 'SourceBlock',
     label: 'Source block',
     description:

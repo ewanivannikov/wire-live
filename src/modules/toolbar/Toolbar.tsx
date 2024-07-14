@@ -3,10 +3,6 @@ import { Highlighter, Eraser } from 'lucide-solid';
 import { tools } from './presenter';
 
 export const Toolbar = () => {
-  // const [currentTool, onSetCurrentTool] = useUnit([
-  //   $currentTool,
-  //   setCurrentTool,
-  // ]);
 
   const handleClick = (e) => {
     tools.setCurrentTool(e.target.name);
@@ -15,16 +11,16 @@ export const Toolbar = () => {
     <NavigationMenu class={navigationMenu} orientation="vertical">
       <NavigationMenu.Menu>
         <NavigationMenu.Trigger
-          name="brush"
-          aria-pressed={tools.currentTool === 'brush'}
+          name="Brush"
+          aria-pressed={tools.currentTool === 'Brush'}
           class={trigger}
           onClick={handleClick}
         >
           <Highlighter />
         </NavigationMenu.Trigger>
         <NavigationMenu.Trigger
-          name="eraser"
-          aria-pressed={tools.currentTool === 'eraser'}
+          name="Eraser"
+          aria-pressed={tools.currentTool === 'Eraser'}
           class={trigger}
           onClick={handleClick}
         >

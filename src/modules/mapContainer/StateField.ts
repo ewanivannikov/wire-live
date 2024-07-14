@@ -71,8 +71,6 @@ class StateField {
       sprite.material.needsUpdate = true;
     };
 
-    console.log('sprite', sprite);
-
     this.group.add(sprite);
   };
 

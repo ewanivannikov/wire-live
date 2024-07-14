@@ -12,6 +12,8 @@ import { createTileSet } from './TileSet';
 import { createTileMap } from './TileMap';
 import { createRaycaster } from './systems/Raycaster';
 
+import { Fields, createFields } from '../Logic/Base';
+
 let camera: OrthographicCamera;
 let renderer: WebGLRenderer;
 let scene: Scene;
@@ -29,6 +31,7 @@ class World {
     container.append(renderer.domElement);
     loop = new Loop(camera, scene, renderer);
 
+    const logicField = createFields();
 
     const grid = createGrid(tileSize, gridRowSize);
     scene.add(grid.group);
@@ -37,7 +40,7 @@ class World {
     scene.add(stateField.tileGroup);
 
     const texture = createTileSet(tile, tileSize);
-    const tileMap = createTileMap(texture.tileTextures, tileSize);
+    const tileMap = createTileMap(texture.tileTextures, tileSize, logicField);
     scene.add(tileMap.tileGroup);
 
     const size = gridRowSize * tileSize;

@@ -1,7 +1,8 @@
 import { makeAutoObservable } from 'mobx';
+import { ToolType } from './enums';
 
 class Tools {
-  _currentTool = 'eraser';
+  _currentTool = ToolType.Brush;
   constructor() {
     makeAutoObservable(this)
   }

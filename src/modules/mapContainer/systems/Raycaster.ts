@@ -1,6 +1,7 @@
 import { Object3D, Object3DEventMap, Raycaster, Vector2 } from "three";
 import { tools } from "../../toolbar/presenter";
 import { createBrush } from "../../contextBar/presenter";
+import { ToolType } from "../../toolbar";
 
 export const createRaycaster = (container, camera, renderer, tileMap, texture, grid) => {
   const raycaster = new Raycaster();
@@ -36,7 +37,8 @@ export const createRaycaster = (container, camera, renderer, tileMap, texture, g
         selectedObject = res.object;
         selectedObject.material.color.set('#f00');
         const brush = createBrush(tools)
-        const tool = tools.currentTool === 'eraser' ? 'eraser' : brush.currentBrush;
+
+        const tool = tools.currentTool === ToolType.Eraser ? ToolType.Eraser : brush.currentBrush;
 
         selectedObject.material.map = texture.getTileTextures(tool);
         selectedObject.material.opacity = 0.4;
@@ -65,11 +67,13 @@ export const createRaycaster = (container, camera, renderer, tileMap, texture, g
         .at(-1);
 
       if (res && res.object) {
-        if (tools.currentTool === 'eraser') {
+        if (tools.currentTool === ToolType.Eraser) {
           tileMap.removeTile(res.object);
 
+        } else {
+          tileMap.addTile(res.object);
         }
-        tileMap.addTile(res.object);
+
       }
     }
   };

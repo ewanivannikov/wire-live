@@ -1,49 +1,49 @@
-type Position = [number, number];
-type Direction = 'Up' | 'Left' | 'Down' | 'Right';
+import { Position } from './Position';
+export type Direction = 'Up' | 'Left' | 'Down' | 'Right';
 
-class Fields {
+export class Fields {
   public signalField = new Map();
   public stateField = new Map();
   public arrowField = new Map();
 
   getSignal(key: Position) {
-    if (!this.signalField.has(key)) {
+    if (!this.signalField.has(key.vector)) {
       return 0;
     }
-    return this.signalField.get(key);
+    return this.signalField.get(key.vector);
   }
 
   getState(key: Position) {
-    if (!this.stateField.has(key)) {
+    if (!this.stateField.has(key.vector)) {
       return;
     }
-    return this.stateField.get(key);
+    return this.stateField.get(key.vector);
   }
 
   getArrow(key: Position) {
-    if (!this.arrowField.has(key)) {
+    if (!this.arrowField.has(key.vector)) {
       return;
     }
-    return this.arrowField.get(key);
+    return this.arrowField.get(key.vector);
   }
 
   addSignal(key: Position, signal: number) {
-    const singalIn = this.signalField.get(key);
-    this.signalField.set(key, signal + singalIn);
+    const singalIn = this.signalField.get(key.vector);
+    this.signalField.set(key.vector, signal + singalIn);
   }
 
-  addState(key: Position, arrow: Arrow) {
-    this.stateField.set(key, arrow.state);
+  addState(key: Position, arrow: ArrowBase) {
+    this.stateField.set(key.vector, arrow.state);
   }
 
-  addArrow(key: Position, arrow: Arrow) {
-    this.arrowField.set(key, arrow);
+  addArrow(key: Position, arrow: ArrowBase) {
+    this.arrowField.set(key.vector, arrow);
   }
 }
 
 export const createFields = () => new Fields();
 
-class Arrow {
+export class ArrowBase {
   public state = 'None';
   public signal = 0;
 
@@ -51,15 +51,19 @@ class Arrow {
     private readonly position: Position,
     private direction: Direction,
     private readonly name: string,
-  ) {}
+  ) { }
 
-  conditionStates(fields: Fields) {}
+  updateState(fields: Fields) {
+    fields.addState(this.position, this);
+  }
 
-  activeStates(fields: Fields) {}
+  conditionStates(fields: Fields) { }
+
+  activeStates(fields: Fields) { }
 }
 
-export const createArrow = (
+export const createArrowBase = (
   position: Position,
   direction: Direction,
   name: string,
-) => new Arrow(position, direction, name);
+) => new ArrowBase(position, direction, name);

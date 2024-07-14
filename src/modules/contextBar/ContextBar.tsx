@@ -31,19 +31,19 @@ export const ContextBar = () => {
       <Popover>
         <Popover.Trigger class="popover__trigger">
           <Switch>
-            <Match when={state.currentBrush === '1.up'}>
+            <Match when={state.currentBrush === 'Brush.1.Up'}>
               <IconArrowUp />
             </Match>
-            <Match when={state.currentBrush === '1.left'}>
+            <Match when={state.currentBrush === 'Brush.1.Left'}>
               <IconArrowLeft />
             </Match>
-            <Match when={state.currentBrush === '1.down'}>
+            <Match when={state.currentBrush === 'Brush.1.Down'}>
               <IconArrowDown />
             </Match>
-            <Match when={state.currentBrush === '1.right'}>
+            <Match when={state.currentBrush === 'Brush.1.Right'}>
               <IconArrowRight />
             </Match>
-            <Match when={state.currentBrush === '2'}>
+            <Match when={state.currentBrush === 'Brush.2'}>
               <IconSourceBlock />
             </Match>
           </Switch>
@@ -61,7 +61,14 @@ export const ContextBar = () => {
                         class={trigger}
                         onClick={handleClick}
                       >
-                        {brushIcons[key]}
+                        <Switch>
+                          <Match when={key === 'Brush.1.Up'}>
+                            <IconArrowUp />
+                          </Match>
+                          <Match when={key === 'Brush.2'}>
+                            <IconSourceBlock />
+                          </Match>
+                        </Switch>
                         {val.label}
                       </NavigationMenu.Trigger>
                     )}
@@ -80,7 +87,7 @@ export const ContextBar = () => {
         >
           <ToggleGroup.Item
             class="toggle-group__item"
-            name="up"
+            name="Up"
             aria-label="Bold"
             onClick={(e) => state.setBrushDirection(e.target.name)}
           >
@@ -88,7 +95,7 @@ export const ContextBar = () => {
           </ToggleGroup.Item>
           <ToggleGroup.Item
             class="toggle-group__item"
-            name="down"
+            name="Down"
             aria-label="Italic"
             onClick={(e) => state.setBrushDirection(e.target.name)}
           >
@@ -96,7 +103,7 @@ export const ContextBar = () => {
           </ToggleGroup.Item>
           <ToggleGroup.Item
             class="toggle-group__item"
-            name="left"
+            name="Left"
             aria-label="Underline"
             onClick={(e) => state.setBrushDirection(e.target.name)}
           >
@@ -104,7 +111,7 @@ export const ContextBar = () => {
           </ToggleGroup.Item>
           <ToggleGroup.Item
             class="toggle-group__item"
-            name="right"
+            name="Right"
             aria-label="Underline"
             onClick={(e) => state.setBrushDirection(e.target.name)}
           >
