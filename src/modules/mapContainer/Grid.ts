@@ -57,5 +57,4 @@ class Grid {
   }
 }
 
-export const createGrid = (tileSize, gridSize) =>
-  new Grid(tileSize, gridSize);
+export const createGrid = (tileSize, gridSize) => new Grid(tileSize, gridSize);

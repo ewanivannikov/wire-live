@@ -2,35 +2,34 @@ import { makeAutoObservable } from 'mobx';
 import { Tools } from '../mapContainer/Tools';
 import { DirectionType, Tile, ToolType } from '../toolbar';
 
-
 class Brush {
   private static instance: Brush | null = null;
-  public currentBrush = 'Brush.1.Up';
+  public currentBrush = 'Brush.0.Up';
   public currentBrushDirection = DirectionType.Up;
 
   constructor(private readonly tools: Tools) {
-    makeAutoObservable(this)
+    makeAutoObservable(this);
   }
 
   setCurrentBrush = (brush) => {
-    this.currentBrush = brush
-    const direction = new Tile(brush).vector[2]
-    this.currentBrushDirection = direction
-  }
+    this.currentBrush = brush;
+    const direction = new Tile(brush).vector[2];
+    this.currentBrushDirection = direction;
+  };
 
   setBrushDirection = (direction) => {
-    this.currentBrushDirection = direction
-    const currentBrush = new Tile(this.currentBrush).vector
+    this.currentBrushDirection = direction;
+    const currentBrush = new Tile(this.currentBrush).vector;
     const brushId = `${currentBrush[0]}.${currentBrush[1]}.${direction}`;
-    this.currentBrush = brushId
-  }
+    this.currentBrush = brushId;
+  };
 
   get hasDirection() {
-    return Boolean(this.currentBrushDirection)
+    return Boolean(this.currentBrushDirection);
   }
 
   get allowBrushes() {
-    return this.tools.currentTool === ToolType.Brush
+    return this.tools.currentTool === ToolType.Brush;
   }
 
   public static getInstance(tools: Tools) {

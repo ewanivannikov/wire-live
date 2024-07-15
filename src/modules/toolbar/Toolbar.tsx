@@ -3,7 +3,6 @@ import { Highlighter, Eraser } from 'lucide-solid';
 import { tools } from './presenter';
 
 export const Toolbar = () => {
-
   const handleClick = (e) => {
     tools.setCurrentTool(e.target.name);
   };

@@ -1,6 +1,5 @@
 export class Position {
-  constructor(private coordinates: string) {
-  }
+  constructor(public coordinates: string) { }
 
   get vector() {
     const vector = this.coordinates.split(',').map(Number);
@@ -10,9 +9,10 @@ export class Position {
   add(x: number, y: number) {
     const xOld = this.vector[0];
     const yOld = this.vector[1];
-    this.coordinates = `${xOld + x},${yOld + y}`;
-    return this.coordinates
+    const newCoordinates = `${xOld + x},${yOld + y}`;
+    return new Position(newCoordinates);
   }
 }
 
-export const createPosition = (coordinates: string) => new Position(coordinates);
+export const createPosition = (coordinates: string) =>
+  new Position(coordinates);

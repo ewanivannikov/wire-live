@@ -31,8 +31,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url('../../assets/atlas.png')
-    0 0 repeat;
+  background: url('../../assets/atlas.png') 0 0 repeat;
   transform-origin: top left;
   transform: scale(0.095);
 }
@@ -45,8 +44,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url('../../assets/atlas.png')
-    0 0 repeat;
+  background: url('../../assets/atlas.png') 0 0 repeat;
   transform-origin: top left;
   transform: scale(0.095) rotate(271deg) translateX(-256px);
 }
@@ -59,8 +57,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url('../../assets/atlas.png')
-    0 0 repeat;
+  background: url('../../assets/atlas.png') 0 0 repeat;
   transform-origin: top left;
   transform: scale(0.095) rotate(180deg) translate(-256px, -256px);
 }
@@ -73,8 +70,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url('../../assets/atlas.png')
-    0 0 repeat;
+  background: url('../../assets/atlas.png') 0 0 repeat;
   transform-origin: top left;
   transform: scale(0.095) rotate(90deg) translate(0px, -256px);
 }
@@ -87,8 +83,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url('../../assets/atlas.png') -256px
-    0 repeat;
+  background: url('../../assets/atlas.png') -256px 0 repeat;
   transform-origin: top left;
   transform: scale(0.095) rotate(0deg);
 }

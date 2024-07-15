@@ -1,4 +1,10 @@
-import { GridHelper, MOUSE, OrthographicCamera, Scene, WebGLRenderer } from 'three';
+import {
+  GridHelper,
+  MOUSE,
+  OrthographicCamera,
+  Scene,
+  WebGLRenderer,
+} from 'three';
 import { createCamera } from './components/Camera';
 import { createScene } from './components/Scene';
 import tile from '../../assets/atlas.png';
@@ -23,7 +29,6 @@ const tileSize: number = 256;
 const gridRowSize: number = 64;
 
 class World {
-
   constructor(container) {
     camera = createCamera(container);
     scene = createScene();
@@ -40,7 +45,12 @@ class World {
     scene.add(stateField.tileGroup);
 
     const texture = createTileSet(tile, tileSize);
-    const tileMap = createTileMap(texture.tileTextures, tileSize, logicField);
+    const tileMap = createTileMap(
+      texture.tileTextures,
+      tileSize,
+      stateField,
+      logicField,
+    );
     scene.add(tileMap.tileGroup);
 
     const size = gridRowSize * tileSize;
@@ -50,7 +60,7 @@ class World {
     gridHelper.rotation.x = Math.PI / 2;
     scene.add(gridHelper);
 
-    createRaycaster(container, camera, renderer, tileMap, texture, grid)
+    createRaycaster(container, camera, renderer, tileMap, texture, grid);
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.minZoom = 0.2;
@@ -71,4 +81,4 @@ class World {
 
 export const createWorld = (container) => {
   return new World(container);
-}
+};

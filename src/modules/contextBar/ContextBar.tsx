@@ -7,9 +7,7 @@ import {
 } from '../../shared';
 import { For, Show, Switch, Match } from 'solid-js';
 import { brushIcons, groupsBrushes } from '../brushes';
-import {
-  createBrush,
-} from './presenter';
+import { createBrush } from './presenter';
 import { ArrowUp, ArrowDown, ArrowRight, ArrowLeft } from 'lucide-solid';
 import {
   IconArrowDown,
@@ -31,19 +29,19 @@ export const ContextBar = () => {
       <Popover>
         <Popover.Trigger class="popover__trigger">
           <Switch>
-            <Match when={state.currentBrush === 'Brush.1.Up'}>
+            <Match when={state.currentBrush === 'Brush.0.Up'}>
               <IconArrowUp />
             </Match>
-            <Match when={state.currentBrush === 'Brush.1.Left'}>
+            <Match when={state.currentBrush === 'Brush.0.Left'}>
               <IconArrowLeft />
             </Match>
-            <Match when={state.currentBrush === 'Brush.1.Down'}>
+            <Match when={state.currentBrush === 'Brush.0.Down'}>
               <IconArrowDown />
             </Match>
-            <Match when={state.currentBrush === 'Brush.1.Right'}>
+            <Match when={state.currentBrush === 'Brush.0.Right'}>
               <IconArrowRight />
             </Match>
-            <Match when={state.currentBrush === 'Brush.2'}>
+            <Match when={state.currentBrush === 'Brush.1'}>
               <IconSourceBlock />
             </Match>
           </Switch>
@@ -62,10 +60,10 @@ export const ContextBar = () => {
                         onClick={handleClick}
                       >
                         <Switch>
-                          <Match when={key === 'Brush.1.Up'}>
+                          <Match when={key === 'Brush.0.Up'}>
                             <IconArrowUp />
                           </Match>
-                          <Match when={key === 'Brush.2'}>
+                          <Match when={key === 'Brush.1'}>
                             <IconSourceBlock />
                           </Match>
                         </Switch>
@@ -81,10 +79,7 @@ export const ContextBar = () => {
       </Popover>
       {' | '}
       <Show when={state.hasDirection}>
-        <ToggleGroup
-          class="toggle-group"
-          value={state.currentBrushDirection}
-        >
+        <ToggleGroup class="toggle-group" value={state.currentBrushDirection}>
           <ToggleGroup.Item
             class="toggle-group__item"
             name="Up"

@@ -18,6 +18,8 @@ const hex = {
 class StateField {
   private tileMap = new Map<string, string>();
   private group = new THREE.Group();
+  // Sparse array to store tile data (tilePosition: Brush.Type.DirectionType)
+  cashe = {};
 
   constructor(
     private readonly tileSize: number,
@@ -36,6 +38,18 @@ class StateField {
 
       this.addSprite(x, y, color);
     });
+  };
+
+  initCashe = (tileData) => {
+    this.cashe = new Map(
+      Object.entries(
+        tileData.reduce((acc, cur) => {
+          const { tileId, x, y } = cur;
+          return { ...acc, [`${x},${y}`]: tileId };
+        }, {}),
+      ),
+    );
+    return this.cashe;
   };
 
   private addSprite = (x, y, color) => {

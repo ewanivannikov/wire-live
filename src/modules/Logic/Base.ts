@@ -1,69 +1,74 @@
-import { Position } from './Position';
-export type Direction = 'Up' | 'Left' | 'Down' | 'Right';
+import { Position, createPosition } from './Position';
+import { fabricArrow } from './FabricArrow';
+import { Tile } from '../toolbar';
+import { indexTileToArrow } from './constants';
+import { Direction } from './types';
+import { ArrowBase } from './ArrowBase';
+
+
 
 export class Fields {
-  public signalField = new Map();
-  public stateField = new Map();
-  public arrowField = new Map();
+  // key - Position
+  public signalCache = new Map(); // integer
+  public stateCache = new Map(); // string(state)
+  public arrowCache = new Map(); // arrow
 
-  getSignal(key: Position) {
-    if (!this.signalField.has(key.vector)) {
+  getSignal(key: string) {
+    const pos = createPosition(key);
+    if (!this.signalCache.has(pos.vector)) {
       return 0;
     }
-    return this.signalField.get(key.vector);
+    return this.signalCache.get(pos.vector);
   }
 
-  getState(key: Position) {
-    if (!this.stateField.has(key.vector)) {
+  getState(key: string) {
+    const pos = createPosition(key);
+    if (!this.stateCache.has(pos.vector)) {
       return;
     }
-    return this.stateField.get(key.vector);
+    return this.stateCache.get(pos.vector);
   }
 
-  getArrow(key: Position) {
-    if (!this.arrowField.has(key.vector)) {
+  getArrow(key: string) {
+    const pos = createPosition(key);
+    if (!this.arrowCache.has(pos.vector)) {
       return;
     }
-    return this.arrowField.get(key.vector);
+    return this.arrowCache.get(pos.vector);
   }
 
-  addSignal(key: Position, signal: number) {
-    const singalIn = this.signalField.get(key.vector);
-    this.signalField.set(key.vector, signal + singalIn);
+  addSignal(key: string, signal: number) {
+    const pos = createPosition(key);
+    const singalIn = this.signalCache.get(pos.vector);
+    this.signalCache.set(pos.vector, signal + singalIn);
   }
 
-  addState(key: Position, arrow: ArrowBase) {
-    this.stateField.set(key.vector, arrow.state);
+  addState(key: string, arrow: ArrowBase) {
+    const pos = createPosition(key);
+    this.stateCache.set(pos.vector, arrow.state);
   }
 
-  addArrow(key: Position, arrow: ArrowBase) {
-    this.arrowField.set(key.vector, arrow);
+  addArrow(key: string, arrow: ArrowBase) {
+    const pos = createPosition(key);
+    this.arrowCache.set(pos.coordinates, arrow);
+  }
+
+  clearSignals() {
+    this.signalCache.clear();
+  }
+
+  initCashe(tileData) {
+    tileData.forEach((tile) => {
+      const { tileId, x, y } = tile;
+      const value = new Tile(tileId).vector;
+      this.addArrow(
+        `${x},${y}`,
+        fabricArrow(indexTileToArrow[value[1]], `${x},${y}`, value[2]),
+      );
+    });
+
+    return this.arrowCache;
   }
 }
 
 export const createFields = () => new Fields();
-
-export class ArrowBase {
-  public state = 'None';
-  public signal = 0;
-
-  constructor(
-    private readonly position: Position,
-    private direction: Direction,
-    private readonly name: string,
-  ) { }
-
-  updateState(fields: Fields) {
-    fields.addState(this.position, this);
-  }
-
-  conditionStates(fields: Fields) { }
-
-  activeStates(fields: Fields) { }
-}
-
-export const createArrowBase = (
-  position: Position,
-  direction: Direction,
-  name: string,
-) => new ArrowBase(position, direction, name);

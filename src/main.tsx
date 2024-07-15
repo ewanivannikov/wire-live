@@ -1,12 +1,11 @@
 import { render } from 'solid-js/web';
-import { createMemo , enableExternalSource } from 'solid-js';
+import { createMemo, enableExternalSource } from 'solid-js';
 import { Layout } from './modules/layout';
 
 import { createIsMounted } from '@solid-primitives/lifecycle';
 import './main.css';
 import { createWorld } from './modules/mapContainer';
-import { Reaction } from "mobx";
-
+import { Reaction } from 'mobx';
 
 const enableMobXWithSolidJS = () => {
   let id = 0;

@@ -13,6 +13,6 @@ const createCamera = (container) => {
   camera.updateProjectionMatrix();
 
   return camera;
-}
+};
 
 export { createCamera };
