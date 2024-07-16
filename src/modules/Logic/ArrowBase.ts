@@ -2,16 +2,15 @@ import { Fields } from './Base';
 import { createPosition, Position } from './Position';
 import { Direction } from './types';
 
-export abstract class ArrowBase {
+export class ArrowBase {
   public state = 'None';
-  public signal = 0;
   public position: Position;
 
   constructor(
     public readonly name: string,
     public readonly key: string,
     public direction?: Direction,
-    public flip?: boolean
+    public flip?: boolean,
   ) {
     this.position = createPosition(key);
   }

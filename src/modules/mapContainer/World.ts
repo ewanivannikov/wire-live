@@ -38,27 +38,25 @@ class World {
 
     const logicField = createFields();
 
-    const grid = createGrid(tileSize, gridRowSize);
-    scene.add(grid.group);
-
-    const stateField = createStateField(tileSize, loop);
-    scene.add(stateField.tileGroup);
-
-    const texture = createTileSet(tile, tileSize);
-    const tileMap = createTileMap(
-      texture.tileTextures,
-      tileSize,
-      stateField,
-      logicField,
-    );
-    scene.add(tileMap.tileGroup);
-
     const size = gridRowSize * tileSize;
     const divisions = tileSize / 4;
 
     const gridHelper = new GridHelper(size, divisions, 0x0000ff, 0x808080);
     gridHelper.rotation.x = Math.PI / 2;
     scene.add(gridHelper);
+
+    const grid = createGrid(tileSize, gridRowSize);
+    scene.add(grid.group);
+
+    const texture = createTileSet(tile, tileSize);
+    const tileMap = createTileMap(
+      texture.tileTextures,
+      tileSize,
+      loop,
+      logicField,
+    );
+    scene.add(tileMap.stateGroup);
+    scene.add(tileMap.tileGroup);
 
     createRaycaster(container, camera, renderer, tileMap, texture, grid);
 
@@ -67,7 +65,7 @@ class World {
     controls.maxZoom = 1;
     controls.update(); // NOTE This will place the camera at the default distance
     controls.mouseButtons = {
-      LEFT: MOUSE.PAN,
+      LEFT: -1,
       MIDDLE: MOUSE.DOLLY,
       RIGHT: MOUSE.PAN,
     };

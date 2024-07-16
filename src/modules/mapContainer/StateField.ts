@@ -1,22 +1,17 @@
 import * as THREE from 'three';
 import { Loop } from './systems';
+import { Fields } from '../Logic/Base';
 
-const tileData = {
-  '2,3': 'red',
-  '0,0': 'blue',
-  '1,6': 'yellow',
-  '2,4': 'orange',
-};
 
 const hex = {
-  red: 0xff4f00,
-  blue: 0x619eff,
-  yellow: 0xffff11,
-  orange: 0xfaa501,
+  Red: 0xff4f00,
+  Blue: 0x619eff,
+  Yellow: 0xffff11,
+  Orange: 0xfaa501,
 };
 
 class StateField {
-  private tileMap = new Map<string, string>();
+
   private group = new THREE.Group();
   // Sparse array to store tile data (tilePosition: Brush.Type.DirectionType)
   cashe = {};
@@ -24,33 +19,56 @@ class StateField {
   constructor(
     private readonly tileSize: number,
     private readonly loop: Loop,
-    tileData,
+    private readonly logicField: Fields,
   ) {
-    this.tileMap = new Map(Object.entries(tileData));
+    // this.tileMap = new Map(Object.entries(tileData));
 
     this.init();
   }
 
   init = () => {
-    this.tileMap.forEach((value: string, key: string) => {
-      const [x, y] = key.split(',').map(Number);
-      const color = value;
+    this.group.tick = (delta, elapsed) => {
+
+      this.group.children.forEach((sprite) => {
+        const color = this.logicField.getState(sprite.key);
+
+
+        if (color === 'None') {
+          sprite.material.opacity = 0;
+          sprite.material.needsUpdate = true;
+          return
+        }
+        sprite.material.color = new THREE.Color(hex[color]);
+        sprite.material.opacity = 1;
+        sprite.material.needsUpdate = true;
+      })
+      this.logicField.processingLogic();
+    };
+    console.log('this.logicField.arrowCache', this.logicField.arrowCache);
+    this.logicField.arrowCache.forEach((arrow) => {
+      const [x, y] = arrow.position.vector;
+      const color = arrow.state;
 
       this.addSprite(x, y, color);
     });
+
+    this.loop.addTick(this.group);
+
+
+
   };
 
-  initCashe = (tileData) => {
-    this.cashe = new Map(
-      Object.entries(
-        tileData.reduce((acc, cur) => {
-          const { tileId, x, y } = cur;
-          return { ...acc, [`${x},${y}`]: tileId };
-        }, {}),
-      ),
-    );
-    return this.cashe;
-  };
+  // initCashe = (tileData) => {
+  //   this.cashe = new Map(
+  //     Object.entries(
+  //       tileData.reduce((acc, cur) => {
+  //         const { tileId, x, y } = cur;
+  //         return { ...acc, [`${x},${y}`]: tileId };
+  //       }, {}),
+  //     ),
+  //   );
+  //   return this.cashe;
+  // };
 
   private addSprite = (x, y, color) => {
     const colorVector = new THREE.Color(hex[color]);
@@ -69,22 +87,6 @@ class StateField {
     sprite.scale.set(this.tileSize, this.tileSize, 0);
     sprite.key = `${x},${y}`;
 
-    this.loop.addTick(sprite);
-
-    sprite.tick = (delta, elapsed) => {
-      const start = performance.now();
-      const duration = 2000;
-      let timeFraction = (elapsed - start) / duration;
-      if (timeFraction > 1) timeFraction = 1; // clamp the timeFraction to 0-1 range
-
-      // use Math.abs to make the pulse go from 0 to 1 and back to 0
-      const progress = Math.tan(timeFraction * Math.PI);
-
-      sprite.material.opacity = progress;
-
-      sprite.material.needsUpdate = true;
-    };
-
     this.group.add(sprite);
   };
 
@@ -93,5 +95,5 @@ class StateField {
   }
 }
 
-export const createStateField = (tileSize: number, loop) =>
-  new StateField(tileSize, loop, tileData);
+export const createStateField = (tileSize: number, loop, logicField) =>
+  new StateField(tileSize, loop, logicField);

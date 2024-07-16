@@ -2,9 +2,9 @@ import { Fields } from './Base';
 import { ArrowBase } from './ArrowBase';
 import { Direction } from './types';
 
-class Arrow extends ArrowBase {
+class Blocker extends ArrowBase {
   constructor(position: string, direction: Direction) {
-    super('Arrow', position, direction);
+    super('Blocker', position, direction);
   }
 
   conditionStates(fields: Fields) {
@@ -17,6 +17,7 @@ class Arrow extends ArrowBase {
 
   activeStates(fields: Fields) {
     if (this.state === 'Red') {
+      const signal = fields.getSignal(this.position.coordinates) + 1;
       let newPosition = this.position;
       if (this.direction === 'Up') {
         newPosition = newPosition.add(0, -1);
@@ -28,10 +29,10 @@ class Arrow extends ArrowBase {
         newPosition = newPosition.add(1, 0);
       }
 
-      fields.addSignal(newPosition.coordinates, 1);
+      fields.addSignal(newPosition.coordinates, -signal);
     }
   }
 }
 
-export const createArrow = (position: string, direction: Direction) =>
-  new Arrow(position, direction);
+export const createBlocker = (position: string, direction: Direction) =>
+  new Blocker(position, direction);

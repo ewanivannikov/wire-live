@@ -7,18 +7,18 @@ class SourceBlock extends ArrowBase {
   }
 
   conditionStates(fields: Fields) {
-    if (fields.getSignal(this.position.coordinates) > -1) {
-      super.state = 'Red';
+    if (fields.getSignal(this.position.coordinates) >= 0) {
+      this.state = 'Red';
     } else {
-      super.state = 'None';
+      this.state = 'None';
     }
   }
 
   activeStates(fields: Fields) {
-    if (super.state === 'Red') {
+    if (this.state === 'Red') {
       const newPosition = this.position;
-      const upPosition = newPosition.add(0, 1);
-      const downPosition = newPosition.add(0, -1);
+      const upPosition = newPosition.add(0, -1);
+      const downPosition = newPosition.add(0, 1);
       const leftPosition = newPosition.add(-1, 0);
       const rightPosition = newPosition.add(1, 0);
 
@@ -26,6 +26,7 @@ class SourceBlock extends ArrowBase {
       fields.addSignal(downPosition.coordinates, 1);
       fields.addSignal(leftPosition.coordinates, 1);
       fields.addSignal(rightPosition.coordinates, 1);
+
     }
   }
 }

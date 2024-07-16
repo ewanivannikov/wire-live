@@ -1,60 +1,74 @@
-import { Position, createPosition } from './Position';
 import { fabricArrow } from './FabricArrow';
 import { Tile } from '../toolbar';
 import { indexTileToArrow } from './constants';
-import { Direction } from './types';
+import { Direction, Flip } from './types';
 import { ArrowBase } from './ArrowBase';
-
-
 
 export class Fields {
   // key - Position
   public signalCache = new Map(); // integer
+  public newSignalCache = new Map();
   public stateCache = new Map(); // string(state)
   public arrowCache = new Map(); // arrow
 
   getSignal(key: string) {
-    const pos = createPosition(key);
-    if (!this.signalCache.has(pos.vector)) {
+    if (!this.signalCache.has(key)) {
       return 0;
     }
-    return this.signalCache.get(pos.vector);
+    return this.signalCache.get(key);
   }
 
   getState(key: string) {
-    const pos = createPosition(key);
-    if (!this.stateCache.has(pos.vector)) {
-      return;
+    if (!this.stateCache.has(key)) {
+      return 'None';
     }
-    return this.stateCache.get(pos.vector);
+    return this.stateCache.get(key);
   }
 
   getArrow(key: string) {
-    const pos = createPosition(key);
-    if (!this.arrowCache.has(pos.vector)) {
+    if (!this.arrowCache.has(key)) {
       return;
     }
-    return this.arrowCache.get(pos.vector);
+    return this.arrowCache.get(key);
   }
 
   addSignal(key: string, signal: number) {
-    const pos = createPosition(key);
-    const singalIn = this.signalCache.get(pos.vector);
-    this.signalCache.set(pos.vector, signal + singalIn);
+    if (!this.newSignalCache.has(key)) {
+      this.newSignalCache.set(key, signal);
+    } else {
+      const singalIn = this.newSignalCache.get(key);
+      this.newSignalCache.set(key, signal + singalIn);
+    }
+
   }
 
   addState(key: string, arrow: ArrowBase) {
-    const pos = createPosition(key);
-    this.stateCache.set(pos.vector, arrow.state);
+    this.stateCache.set(key, arrow.state);
   }
 
   addArrow(key: string, arrow: ArrowBase) {
-    const pos = createPosition(key);
-    this.arrowCache.set(pos.coordinates, arrow);
+    this.arrowCache.set(key, arrow);
   }
 
-  clearSignals() {
-    this.signalCache.clear();
+  addArrowCache(
+    key: string,
+    index: number,
+    direction?: Direction,
+    flip?: Flip,
+  ) {
+    const name = indexTileToArrow[index];
+    const flipBoolean = flip === '<';
+
+    this.addArrow(key, fabricArrow(name, key, direction, flipBoolean));
+  }
+
+  clearStates() {
+    this.stateCache.clear();
+  }
+
+  updateSignals() {
+    this.signalCache = new Map(this.newSignalCache);
+    this.newSignalCache.clear();
   }
 
   initCashe(tileData) {
@@ -68,6 +82,24 @@ export class Fields {
     });
 
     return this.arrowCache;
+  }
+
+  processingLogic() {
+    this.clearStates();
+
+    this.arrowCache.forEach((arrow) => {
+      arrow.activeStates(this);
+      arrow.updateState(this)
+    })
+
+    this.updateSignals();
+
+    this.arrowCache.forEach((arrow) => {
+      arrow.conditionStates(this);
+    })
+
+    // console.log('tick', this);
+
   }
 }
 

@@ -2,19 +2,32 @@ import { Clock } from 'three';
 
 const clock = new Clock();
 
+
 class Loop {
   public updatables = [];
 
-  constructor(camera, scene, renderer) {
+  constructor(private readonly camera, scene, renderer) {
     this.camera = camera;
     this.scene = scene;
     this.renderer = renderer;
   }
 
+
+
   start() {
+    let clockTrack = 0
     this.renderer.setAnimationLoop(() => {
-      // tell every animated object to tick forward one frame
-      this.tick();
+      const start = performance.now();
+      const duration = 1000;
+      const elapsed = clock.getElapsedTime();
+      const timeFraction = (elapsed - start) / duration;
+      const progress = 0.5 * (1 - Math.cos(timeFraction * Math.PI)) + 0.5;
+
+      if (clockTrack !== Math.floor(progress)) {
+        clockTrack = Math.floor(progress);
+        this.tick()
+      }
+
       // render a frame
       this.renderer.render(this.scene, this.camera);
     });
