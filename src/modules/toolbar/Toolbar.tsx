@@ -1,12 +1,17 @@
-import { NavigationMenu, navigationMenu, trigger } from '../../shared';
-import { Highlighter, Eraser } from 'lucide-solid';
+import { NavigationMenu, navigationMenu, trigger, Button } from '../../shared';
+import { Highlighter, Eraser, Play, Pause } from 'lucide-solid';
 import { tools } from './presenter';
+import { Match, Switch } from 'solid-js';
 
 export const Toolbar = () => {
   const handleClick = (e) => {
     tools.setCurrentTool(e.target.name);
   };
+  const handleClickTick = (e) => {
+    tools.setTick();
+  }
   return (
+    <>
     <NavigationMenu class={navigationMenu} orientation="vertical">
       <NavigationMenu.Menu>
         <NavigationMenu.Trigger
@@ -27,5 +32,21 @@ export const Toolbar = () => {
         </NavigationMenu.Trigger>
       </NavigationMenu.Menu>
     </NavigationMenu>
+    <hr/>
+    <Button name="Play"
+          aria-pressed={tools.tick === 0}
+          class={trigger}
+          onClick={handleClickTick} >
+            <Switch>
+              <Match when={tools.tick === 0}>
+                <Play />
+              </Match>
+              <Match when={tools.tick > 0}>
+                <Pause />
+              </Match>
+            </Switch>
+      
+    </Button>
+    </>
   );
 };

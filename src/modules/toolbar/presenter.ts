@@ -1,19 +1,33 @@
 import { makeAutoObservable } from 'mobx';
 import { ToolType } from './enums';
+import { Loop } from '../mapContainer/systems';
 
 class Tools {
-  _currentTool = ToolType.Brush;
+  currentTool = ToolType.Brush;
+  tick = 500
+  private _loop: Loop;
   constructor() {
     makeAutoObservable(this);
   }
 
-  public setCurrentTool = (tool) => {
-    this._currentTool = tool;
+  public init = (loop) => {
+    this._loop = loop
   };
 
-  get currentTool() {
-    return this._currentTool;
+  public setCurrentTool = (tool) => {
+    this.currentTool = tool;
+  };
+
+  public setTick = () => {
+    if (this.tick > 0) {
+      this.tick = 0
+      this._loop.setDuration(0)
+    } else {
+      this.tick = 500
+      this._loop.setDuration(500)
+    }
   }
+
 }
 
 export const tools = new Tools();

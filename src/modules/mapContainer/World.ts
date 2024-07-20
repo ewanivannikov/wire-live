@@ -18,6 +18,7 @@ import { createTileMap } from './TileMap';
 import { createRaycaster } from './systems/Raycaster';
 
 import { createFields } from '../Logic/Base';
+import { tools } from '../toolbar';
 
 let camera: OrthographicCamera;
 let renderer: WebGLRenderer;
@@ -28,12 +29,14 @@ const tileSize: number = 256;
 const gridRowSize: number = 64;
 
 class World {
-  constructor(container) {
+  constructor(container: HTMLElement) {
     camera = createCamera(container);
     scene = createScene();
     renderer = createRenderer(container);
     container.append(renderer.domElement);
     loop = new Loop(camera, scene, renderer);
+
+    tools.init(loop);
 
     const logicField = createFields();
 
@@ -76,6 +79,6 @@ class World {
   }
 }
 
-export const createWorld = (container) => {
+export const createWorld = (container: HTMLElement) => {
   return new World(container);
 };

@@ -7,10 +7,11 @@
   width: auto;
   outline: none;
   border-radius: 6px;
-  padding: 0 16px;
+  padding: 0 8px;
   background-color: #0284c5;
   color: #fff;
   font-size: 16px;
   line-height: 0;
   transition: 0.25s background-color;
+  border: 0;
 }

@@ -42,9 +42,7 @@ class TileMap {
   }
 
   init = (cashe) => {
-    this.grid.group.tick = (delta, elapsed) => {
-
-
+    this.grid.group.tick = () => {
       this.logicField.stateCache.forEach((value, key) => {
         const sprite = this.grid.group.getObjectByName(key);
 
@@ -90,6 +88,7 @@ class TileMap {
   public onPointerChange = (tile) => {
     if (this.tools.currentTool === ToolType.Eraser) {
       this.removeTile(tile);
+      this.logicField.stateCache.delete(tile.name);
     }
     if (this.tools.currentTool === ToolType.Brush) {
       this.updateTile(tile);

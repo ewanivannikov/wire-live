@@ -5,6 +5,7 @@ const clock = new Clock();
 
 class Loop {
   public updatables = [];
+  private duration = 500;
 
   constructor(private readonly camera, scene, renderer) {
     this.camera = camera;
@@ -16,11 +17,11 @@ class Loop {
 
   start() {
     let clockTrack = 0
+
     this.renderer.setAnimationLoop(() => {
       const start = performance.now();
-      const duration = 1000;
       const elapsed = clock.getElapsedTime();
-      const timeFraction = (elapsed - start) / duration;
+      const timeFraction = (elapsed - start) / this.duration;
       const progress = 0.5 * (1 - Math.cos(timeFraction * Math.PI)) + 0.5;
 
       if (clockTrack !== Math.floor(progress)) {
@@ -50,6 +51,10 @@ class Loop {
   addTick = (object) => {
     return this.updatables.push(object);
   };
+
+  public setDuration(duration: number) {
+    this.duration = duration;
+  }
 }
 
 export { Loop };
