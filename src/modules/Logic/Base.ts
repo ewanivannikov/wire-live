@@ -10,6 +10,8 @@ export class Fields {
   public newSignalCache = new Map();
   public stateCache = new Map(); // string(state)
   public arrowCache = new Map(); // arrow
+  public paused = false;
+
 
   getSignal(key: string) {
     if (!this.signalCache.has(key)) {
@@ -84,22 +86,25 @@ export class Fields {
     return this.arrowCache;
   }
 
+  updatePause() {
+    this.paused = !this.paused;
+  }
+
   processingLogic() {
-    this.clearStates();
+    if (!this.paused) {
+      this.clearStates();
 
-    this.arrowCache.forEach((arrow) => {
-      arrow.activeStates(this);
-      arrow.updateState(this)
-    })
+      this.arrowCache.forEach((arrow) => {
+        arrow.activeStates(this);
+        arrow.updateState(this)
+      })
 
-    this.updateSignals();
+      this.updateSignals();
 
-    this.arrowCache.forEach((arrow) => {
-      arrow.conditionStates(this);
-    })
-
-    // console.log('tick', this.stateCache);
-
+      this.arrowCache.forEach((arrow) => {
+        arrow.conditionStates(this);
+      })
+    }
   }
 }
 

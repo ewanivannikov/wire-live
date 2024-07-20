@@ -36,9 +36,9 @@ class World {
     container.append(renderer.domElement);
     loop = new Loop(camera, scene, renderer);
 
-    tools.init(loop);
-
     const logicField = createFields();
+
+    tools.init(loop, logicField);
 
     const size = gridRowSize * tileSize;
     const divisions = tileSize / 4;

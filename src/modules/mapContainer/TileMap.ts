@@ -56,7 +56,7 @@ class TileMap {
         sprite.material.needsUpdate = true;
       })
 
-      this.logicField.processingLogic();
+      this.logicField.processingLogic(false);
     };
 
     this.loop.addTick(this.grid.group);
