@@ -46,11 +46,11 @@ export const groupsBrushes = {
     description:
       'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
-  // 'Blocker': {
-  //   id: 3,
-  //   label: 'Blocker',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
+  'Brush.2.Up': {
+    value: 'Blocker',
+    label: 'Blocker',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
   // 'DelayArrow': {
   //   id: 4,
   //   label: 'Arrow',

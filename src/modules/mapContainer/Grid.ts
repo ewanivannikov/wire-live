@@ -35,7 +35,7 @@ class Grid {
     const { x, y } = this.getPositionFromIndex(index);
     sprite.position.set(x, y, 0);
     sprite.scale.set(this.tileSize, this.tileSize, 0);
-    sprite.key = this.getKeyFromIndex(index);
+    sprite.name = this.getKeyFromIndex(index);
     return sprite;
   };
 

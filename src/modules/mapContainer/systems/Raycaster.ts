@@ -41,66 +41,66 @@ export const createRaycaster = (
       -((event.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1;
 
     raycaster.setFromCamera(pointer, camera);
-    intersects = raycaster.intersectObject(grid.group, true);
+    intersects = raycaster.intersectObjects(
+      [grid.group, tileMap.tileGroup],
+      true,
+    );
     if (intersects.length > 0) {
-      const res = intersects.filter(function (res) {
+      const tileIntersect = intersects.filter((res) => {
         return res && res.object;
-      })[0];
+      }).at(-1);
 
-      if (res?.object) {
-        console.log('event.', event.button);
+      const gridIntersect = intersects.filter((res) => {
+        return res && res.object;
+      }).at(0);
 
+      if (gridIntersect?.object) {
         if (event.pressure === 0) {
-          selectedObject = res.object;
+          selectedObject = gridIntersect.object;
           selectedObject.material.color.set('#f00');
 
           selectedObject.material.map = texture.getTileTextures(tool);
           selectedObject.material.opacity = 0.4;
           selectedObject.material.needsUpdate = true;
-        } else {
-          console.log('event', event);
-          if (tools.currentTool === ToolType.Eraser) {
-            tileMap.removeTile(res.object);
-          } else {
-            tileMap.updateTile(res.object);
-          }
         }
-
       }
+
+      if (tileIntersect?.object && event.pressure > 0 && event.buttons === 1) {
+        tileMap.onPointerChange(tileIntersect.object);
+      }
+
     }
   }
 
-  // const onPointerDown = (event) => {
-  //   const rect = renderer.domElement.getBoundingClientRect();
-  //   pointer.x =
-  //     ((event.clientX - rect.left) / (rect.right - rect.left)) * 2 - 1;
-  //   pointer.y =
-  //     -((event.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1;
+  const onPointerDown = (event) => {
+    const rect = renderer.domElement.getBoundingClientRect();
+    pointer.x =
+      ((event.clientX - rect.left) / (rect.right - rect.left)) * 2 - 1;
+    pointer.y =
+      -((event.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1;
 
-  //   raycaster.setFromCamera(pointer, camera);
-  //   intersects = raycaster.intersectObjects(
-  //     [grid.group, tileMap.tileGroup],
-  //     true,
-  //   );
-  //   if (intersects.length > 0) {
-  //     const res = intersects
-  //       .filter((res) => {
-  //         return res && res.object;
-  //       })
-  //       .at(-1);
+    raycaster.setFromCamera(pointer, camera);
+    intersects = raycaster.intersectObjects(
+      [grid.group, tileMap.tileGroup],
+      true,
+    );
+    if (intersects.length > 0) {
+      const topIntersect = intersects
+        .filter((res) => {
+          return res?.object;
+        })
+        .at(-1);
 
-  //     if (res && res.object) {
-  //       if (tools.currentTool === ToolType.Eraser) {
-  //         tileMap.removeTile(res.object);
-  //       } else {
-  //         tileMap.updateTile(res.object);
-  //       }
-  //     }
-  //   }
-  // };
+      if (topIntersect?.object && event.buttons === 1) {
+        console.log('topIntersect.object', topIntersect.object);
+
+        tileMap.onPointerChange(topIntersect.object);
+      }
+    }
+  };
 
   container.addEventListener('pointermove', onPointerMove);
-  // container.addEventListener('pointerdown', onPointerDown);
+  container.addEventListener('pointerdown', onPointerDown);
 
   return raycaster;
 };

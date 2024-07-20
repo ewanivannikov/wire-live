@@ -8,17 +8,16 @@ import {
 import { createCamera } from './components/Camera';
 import { createScene } from './components/Scene';
 import tile from '../../assets/atlas.png';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls';
 
 import { createRenderer } from './systems/Renderer';
 import { Loop } from './systems';
 import { createGrid } from './Grid';
-import { createStateField } from './StateField';
 import { createTileSet } from './TileSet';
 import { createTileMap } from './TileMap';
 import { createRaycaster } from './systems/Raycaster';
 
-import { Fields, createFields } from '../Logic/Base';
+import { createFields } from '../Logic/Base';
 
 let camera: OrthographicCamera;
 let renderer: WebGLRenderer;
@@ -54,8 +53,8 @@ class World {
       tileSize,
       loop,
       logicField,
+      grid
     );
-    scene.add(tileMap.stateGroup);
     scene.add(tileMap.tileGroup);
 
     createRaycaster(container, camera, renderer, tileMap, texture, grid);

@@ -98,7 +98,7 @@ export class Fields {
       arrow.conditionStates(this);
     })
 
-    // console.log('tick', this);
+    // console.log('tick', this.stateCache);
 
   }
 }

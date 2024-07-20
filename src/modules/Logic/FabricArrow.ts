@@ -2,6 +2,7 @@ import { Direction } from './types';
 import { createArrow } from './Arrow';
 import { createSourceBlock } from './SourceBlock';
 import { createBlocker } from './Blocker';
+import { createDelayArrow } from './DelayArrow';
 
 export const fabricArrow = (
   nameType: string,
@@ -21,6 +22,11 @@ export const fabricArrow = (
 
   if (nameType === 'Blocker') {
     const result = createBlocker(position, direction);
+    return result;
+  }
+
+  if (nameType === 'DelayArrow') {
+    const result = createDelayArrow(position, direction);
     return result;
   }
 };
