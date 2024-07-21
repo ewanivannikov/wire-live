@@ -12,7 +12,10 @@ export const brushes = {
   'Brush.3.Down': 'DelayArrow.Down',
   'Brush.3.Right': 'DelayArrow.Right',
   'Brush.3.Left': 'DelayArrow.Left',
-  // 'Signal detector': 4,
+  'Brush.4.Up': 'SignalDetector.Up',
+  'Brush.4.Down': 'SignalDetector.Down',
+  'Brush.4.Right': 'SignalDetector.Right',
+  'Brush.4.Left': 'SignalDetector.Left',
   // 'Splitter forwards and backwards': 5,
   // 'Splitter forward and to the right': 6,
   // 'Splitter forward, right, and left': 7,
@@ -51,16 +54,16 @@ export const groupsBrushes = {
     label: 'Blocker',
     description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
   },
-  // 'DelayArrow': {
-  //   id: 4,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Signal detector': {
-  //   id: 5,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
+  'Brush.3.Up': {
+    value: 'DelayArrow',
+    label: 'Delay arrow',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.4.Up': {
+    value: 'SignalDetector',
+    label: 'Signal detector',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
   // 'Splitter forwards and backwards': {
   //   id: 6,
   //   label: 'Arrow',

@@ -18,6 +18,10 @@ import {
   IconBlockerLeft,
   IconBlockerRight,
   IconBlockerUp,
+  IconDelayArrowDown,
+  IconDelayArrowLeft,
+  IconDelayArrowRight,
+  IconDelayArrowUp,
   IconSourceBlock,
 } from '../brushes/IconArrow';
 import { tools } from '../toolbar/presenter';
@@ -60,6 +64,18 @@ export const ContextBar = () => {
             <Match when={state.currentBrush === 'Brush.2.Right'}>
               <IconBlockerRight />
             </Match>
+            <Match when={state.currentBrush === 'Brush.3.Up'}>
+              <IconDelayArrowUp />
+            </Match>
+            <Match when={state.currentBrush === 'Brush.3.Left'}>
+              <IconDelayArrowLeft />
+            </Match>
+            <Match when={state.currentBrush === 'Brush.3.Down'}>
+              <IconDelayArrowDown />
+            </Match>
+            <Match when={state.currentBrush === 'Brush.3.Right'}>
+              <IconDelayArrowRight />
+            </Match>
           </Switch>
         </Popover.Trigger>
         <Popover.Portal>
@@ -84,6 +100,9 @@ export const ContextBar = () => {
                           </Match>
                           <Match when={key === 'Brush.2.Up'}>
                             <IconBlockerUp />
+                          </Match>
+                          <Match when={key === 'Brush.3.Up'}>
+                            <IconDelayArrowUp />
                           </Match>
                         </Switch>
                         {val.label}

@@ -3,6 +3,7 @@ import { createArrow } from './Arrow';
 import { createSourceBlock } from './SourceBlock';
 import { createBlocker } from './Blocker';
 import { createDelayArrow } from './DelayArrow';
+import { createSignalDetector } from './SignalDetector';
 
 export const fabricArrow = (
   nameType: string,
@@ -27,6 +28,11 @@ export const fabricArrow = (
 
   if (nameType === 'DelayArrow') {
     const result = createDelayArrow(position, direction);
+    return result;
+  }
+
+  if (nameType === 'SignalDetector') {
+    const result = createSignalDetector(position, direction);
     return result;
   }
 };
