@@ -13,4 +13,29 @@ module.exports = merge(common, {
     open: true, // Open the server in a browser window automatically
     hot: true, // Enable hot module replacement
   },
+  module: {
+    rules: [
+      {
+        test: /\.module.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              esModule: true, // Говорим о том, что хотим использовать ES Modules
+              modules: {
+                exportLocalsConvention: 'camel-case-only',
+                namedExport: true, // Указываем, что предпочитаем именованый экспорт дефолтному
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        exclude: /\.module\.css$/,
+      },
+    ],
+  },
 });
