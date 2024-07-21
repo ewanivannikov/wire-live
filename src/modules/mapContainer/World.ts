@@ -3,6 +3,7 @@ import {
   MOUSE,
   OrthographicCamera,
   Scene,
+  TOUCH,
   WebGLRenderer,
 } from 'three';
 import { createCamera } from './components/Camera';
@@ -71,6 +72,10 @@ class World {
       MIDDLE: MOUSE.DOLLY,
       RIGHT: MOUSE.PAN,
     };
+    controls.touches = {
+      ONE: -1,
+      TWO: TOUCH.DOLLY_PAN
+    }
   }
 
   render() {
