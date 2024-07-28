@@ -14,6 +14,7 @@ import {
   iconDelayArrowLeft,
   iconDelayArrowDown,
 } from './style.module.css';
+
 export const IconArrowUp = () => {
   return <div class={`${icon} ${iconArrowUp}`} />;
 };
@@ -53,3 +54,19 @@ export const IconDelayArrowRight = () => {
 export const IconDelayArrowLeft = () => {
   return <div class={`${icon} ${iconDelayArrowLeft}`} />;
 };
+
+export const iconsMapping = {
+  'Brush.0.Up': IconArrowUp,
+  'Brush.0.Down': IconArrowDown,
+  'Brush.0.Right': IconArrowRight,
+  'Brush.0.Left': IconArrowLeft,
+  'Brush.1': IconSourceBlock,
+  'Brush.2.Up': IconBlockerUp,
+  'Brush.2.Down': IconBlockerDown,
+  'Brush.2.Right': IconBlockerRight,
+  'Brush.2.Left': IconBlockerLeft,
+  'Brush.3.Up': IconDelayArrowUp,
+  'Brush.3.Down': IconDelayArrowDown,
+  'Brush.3.Right': IconDelayArrowRight,
+  'Brush.3.Left': IconDelayArrowLeft,
+} as const;

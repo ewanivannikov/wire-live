@@ -22,9 +22,11 @@ import {
   IconDelayArrowLeft,
   IconDelayArrowRight,
   IconDelayArrowUp,
+  iconsMapping,
   IconSourceBlock,
 } from '../brushes/IconArrow';
 import { tools } from '../toolbar/presenter';
+import { Dynamic } from 'solid-js/web';
 
 export const ContextBar = () => {
   const state = createBrush(tools);
@@ -36,47 +38,7 @@ export const ContextBar = () => {
     <Show when={state.allowBrushes}>
       <Popover>
         <Popover.Trigger class="popover__trigger">
-          <Switch>
-            <Match when={state.currentBrush === 'Brush.0.Up'}>
-              <IconArrowUp />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.0.Left'}>
-              <IconArrowLeft />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.0.Down'}>
-              <IconArrowDown />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.0.Right'}>
-              <IconArrowRight />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.1'}>
-              <IconSourceBlock />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.2.Up'}>
-              <IconBlockerUp />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.2.Left'}>
-              <IconBlockerLeft />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.2.Down'}>
-              <IconBlockerDown />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.2.Right'}>
-              <IconBlockerRight />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.3.Up'}>
-              <IconDelayArrowUp />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.3.Left'}>
-              <IconDelayArrowLeft />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.3.Down'}>
-              <IconDelayArrowDown />
-            </Match>
-            <Match when={state.currentBrush === 'Brush.3.Right'}>
-              <IconDelayArrowRight />
-            </Match>
-          </Switch>
+          <Dynamic component={iconsMapping[state.currentBrush]} />
         </Popover.Trigger>
         <Popover.Portal>
           <Popover.Content class="popover__content">
@@ -91,20 +53,7 @@ export const ContextBar = () => {
                         class={trigger}
                         onClick={handleClick}
                       >
-                        <Switch>
-                          <Match when={key === 'Brush.0.Up'}>
-                            <IconArrowUp />
-                          </Match>
-                          <Match when={key === 'Brush.1'}>
-                            <IconSourceBlock />
-                          </Match>
-                          <Match when={key === 'Brush.2.Up'}>
-                            <IconBlockerUp />
-                          </Match>
-                          <Match when={key === 'Brush.3.Up'}>
-                            <IconDelayArrowUp />
-                          </Match>
-                        </Switch>
+                        <Dynamic component={iconsMapping[key]} />
                         {val.label}
                       </NavigationMenu.Trigger>
                     )}
