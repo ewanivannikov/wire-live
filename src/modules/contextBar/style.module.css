@@ -1,0 +1,5 @@
+.contextbar {
+  display: grid;
+  grid-gap: 8px;
+  grid-auto-flow: column;
+}

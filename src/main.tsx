@@ -7,7 +7,9 @@ import './main.css';
 import { createWorld } from './modules/mapContainer';
 import { Reaction } from 'mobx';
 const rippleUrl = new URL('./shared/ui/ripple', import.meta.url)
-CSS.paintWorklet.addModule(rippleUrl)
+if ('paintWorklet' in CSS) {
+    CSS.paintWorklet.addModule(rippleUrl)
+}
 
 const enableMobXWithSolidJS = () => {
   let id = 0;
