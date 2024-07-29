@@ -70,6 +70,46 @@
   pointer-events: none;
 }
 
+.NS97j0bZ7EnSwdEncl9b {
+  display: flex;
+
+  &[aria-orientation="vertical"] {
+    flex-direction: column;
+  }
+
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+.tqYo5oGIgPj3GqvfpP8Q {
+  border: 0;
+  background-color: #ddd;
+
+  border-radius: 4px;
+
+  &[aria-pressed='true'] {
+    background-color: rgba(0, 238, 255, 0.744);
+  }
+
+  &:hover {
+    background-color: #c6c6c6;
+  }
+
+  --ripple-x: 0;
+  --ripple-y: 0;
+  --ripple-color: rgba(0, 182, 195, 0.744);
+  --animation-tick: 0;
+}
+
+.V3tJhduHGJyMchHUcoZ7 {
+    background-image: paint(ripple);
+  }
+
+.Yppj3rhN1jUnxns09JtF {
+  display: grid;
+  grid-gap: 8px;
+}
+
 .UwtYivGqu_UMrzE886jA {
   width: 24px;
   height: 24px;
