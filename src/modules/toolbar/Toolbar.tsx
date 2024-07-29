@@ -1,38 +1,40 @@
-import { NavigationMenu, navigationMenu, trigger, Button } from '../../shared';
+import { trigger, Button, SegmentedControl } from '../../shared';
+import { toolbar } from './style.module.css';
 import { Highlighter, Eraser, Play, Pause } from 'lucide-solid';
 import { tools } from './presenter';
 import { Match, Switch } from 'solid-js';
 
 export const Toolbar = () => {
-  const handleClick = (e) => {
-    tools.setCurrentTool(e.target.name);
+  const handleClick = (e) => {    
+    tools.setCurrentTool(e.target.value);
   };
   const handleClickTick = (e) => {
     tools.setTick();
   }
   return (
-    <>
-    <NavigationMenu class={navigationMenu} orientation="vertical">
-      <NavigationMenu.Menu>
-        <NavigationMenu.Trigger
-          name="Brush"
-          aria-pressed={tools.currentTool === 'Brush'}
-          class={trigger}
-          onClick={handleClick}
-        >
-          <Highlighter />
-        </NavigationMenu.Trigger>
-        <NavigationMenu.Trigger
-          name="Eraser"
-          aria-pressed={tools.currentTool === 'Eraser'}
-          class={trigger}
-          onClick={handleClick}
-        >
-          <Eraser />
-        </NavigationMenu.Trigger>
-      </NavigationMenu.Menu>
-    </NavigationMenu>
-    <hr/>
+    <div 
+      role="toolbar"
+      aria-label="Управление игрой"
+      aria-controls="canvas"
+      class={toolbar}
+    >
+    <SegmentedControl>
+      <SegmentedControl.Button 
+        value="Brush"
+        aria-pressed={tools.currentTool === 'Brush'}
+        onClick={handleClick}
+      >
+        <Highlighter />
+      </SegmentedControl.Button>
+      <SegmentedControl.Button 
+        value="Eraser"
+        aria-pressed={tools.currentTool === 'Eraser'}
+        onClick={handleClick}
+      >
+        <Eraser />
+      </SegmentedControl.Button>
+    </SegmentedControl>
+
     <Button name="Play"
           aria-pressed={tools.tick === 0}
           class={trigger}
@@ -47,6 +49,6 @@ export const Toolbar = () => {
             </Switch>
       
     </Button>
-    </>
+    </div>
   );
 };

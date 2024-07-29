@@ -1,30 +1,15 @@
 import {
   NavigationMenu,
   Popover,
-  ToggleGroup,
+  SegmentedControl,
   navigationMenu,
   trigger,
 } from '../../shared';
-import { For, Show, Switch, Match } from 'solid-js';
-import { brushIcons, groupsBrushes } from '../brushes';
+import { For, Show } from 'solid-js';
+import { groupsBrushes } from '../brushes';
 import { createBrush } from './presenter';
 import { ArrowUp, ArrowDown, ArrowRight, ArrowLeft } from 'lucide-solid';
-import {
-  IconArrowDown,
-  IconArrowLeft,
-  IconArrowRight,
-  IconArrowUp,
-  IconBlockerDown,
-  IconBlockerLeft,
-  IconBlockerRight,
-  IconBlockerUp,
-  IconDelayArrowDown,
-  IconDelayArrowLeft,
-  IconDelayArrowRight,
-  IconDelayArrowUp,
-  iconsMapping,
-  IconSourceBlock,
-} from '../brushes/IconArrow';
+import { iconsMapping } from '../brushes/IconArrow';
 import { tools } from '../toolbar/presenter';
 import { Dynamic } from 'solid-js/web';
 
@@ -64,42 +49,37 @@ export const ContextBar = () => {
           </Popover.Content>
         </Popover.Portal>
       </Popover>
-      {' | '}
       <Show when={state.hasDirection}>
-        <ToggleGroup class="toggle-group" value={state.currentBrushDirection}>
-          <ToggleGroup.Item
-            class="toggle-group__item"
-            name="Up"
-            aria-label="Bold"
-            onClick={(e) => state.setBrushDirection(e.target.name)}
+        <SegmentedControl aria-orientation="horizontal">
+          <SegmentedControl.Button
+            value="Up"
+            aria-label="Вверх"
+            onClick={(e) => state.setBrushDirection(e.target.value)}
           >
             <ArrowUp />
-          </ToggleGroup.Item>
-          <ToggleGroup.Item
-            class="toggle-group__item"
-            name="Down"
-            aria-label="Italic"
-            onClick={(e) => state.setBrushDirection(e.target.name)}
+          </SegmentedControl.Button>
+          <SegmentedControl.Button
+            value="Down"
+            aria-label="Вниз"
+            onClick={(e) => state.setBrushDirection(e.target.value)}
           >
             <ArrowDown />
-          </ToggleGroup.Item>
-          <ToggleGroup.Item
-            class="toggle-group__item"
-            name="Left"
-            aria-label="Underline"
-            onClick={(e) => state.setBrushDirection(e.target.name)}
+          </SegmentedControl.Button>
+          <SegmentedControl.Button
+            value="Left"
+            aria-label="Влево"
+            onClick={(e) => state.setBrushDirection(e.target.value)}
           >
             <ArrowLeft />
-          </ToggleGroup.Item>
-          <ToggleGroup.Item
-            class="toggle-group__item"
-            name="Right"
-            aria-label="Underline"
-            onClick={(e) => state.setBrushDirection(e.target.name)}
+          </SegmentedControl.Button>
+          <SegmentedControl.Button
+            value="Right"
+            aria-label="Вправо"
+            onClick={(e) => state.setBrushDirection(e.target.value)}
           >
             <ArrowRight />
-          </ToggleGroup.Item>
-        </ToggleGroup>
+          </SegmentedControl.Button>
+        </SegmentedControl>
       </Show>
     </Show>
   );

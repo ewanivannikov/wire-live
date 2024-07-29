@@ -6,8 +6,8 @@ import { createIsMounted } from '@solid-primitives/lifecycle';
 import './main.css';
 import { createWorld } from './modules/mapContainer';
 import { Reaction } from 'mobx';
-// const paintUrl = new URL('./shared/gline.js', import.meta.url)
-// CSS.paintWorklet.addModule(paintUrl)
+const rippleUrl = new URL('./shared/ui/ripple', import.meta.url)
+CSS.paintWorklet.addModule(rippleUrl)
 
 const enableMobXWithSolidJS = () => {
   let id = 0;
