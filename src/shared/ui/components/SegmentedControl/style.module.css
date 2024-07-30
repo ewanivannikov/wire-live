@@ -12,11 +12,14 @@
 .button {
   border: 0;
   background-color: #ddd;
-
-  border-radius: 4px;
+  padding: 4px;
+  border-radius: 2px;
+  aspect-ratio: 1 / 1;
+  height: 32px;
 
   &[aria-pressed='true'] {
-    background-color: rgba(0, 238, 255, 0.744);
+    background-color: rgba(102, 102, 102, 0.744);
+    border: 1px solid #707070;
   }
 
   &:hover {

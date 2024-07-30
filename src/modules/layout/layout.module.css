@@ -4,7 +4,7 @@
   grid-template-rows: 50px 50px auto;
   grid-template-areas:
     'header header'
-    'sidebar context'
+    'context context'
     'sidebar main';
   height: 100vh;
 }
@@ -33,4 +33,6 @@
   display: flex;
   align-items: center;
   background-color: rgb(212 212 212);
+  border-bottom: 1px solid #bababa;
+  padding-left: 4px;
 }

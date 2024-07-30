@@ -1,4 +1,6 @@
 .toolbar {
   display: grid;
   grid-gap: 8px;
+  justify-items: center;
+  margin-top: 8px;
 }

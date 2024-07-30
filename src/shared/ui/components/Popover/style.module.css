@@ -4,12 +4,15 @@
   top: anchor(bottom);
   left: anchor(left);
   margin: 0;
-  padding: 0;
-  background: transparent;
-  border: none;
+  padding: 4px;
+  background: #fff;
+  border-color: #c9c9c9;
 }
 
 .target {
   anchor-name: --toggle-btn;
   display: flex;
+  height: 32px;
+  border: 0;
+  background: transparent;
 }
