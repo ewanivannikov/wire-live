@@ -7,8 +7,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Production',
+      title: 'Wire live',
       template: './public/index.html',
+      filename: 'index.html',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Wire live',
+      template: './public/404.html',
+      filename: '404.html',
     }),
   ],
   output: {
