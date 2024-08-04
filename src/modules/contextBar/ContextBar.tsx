@@ -6,8 +6,7 @@ import {
 import { For, Show } from 'solid-js';
 import { groupsBrushes } from '../brushes';
 import { createBrush } from './presenter';
-import { ArrowUp, ArrowDown, ArrowRight, ArrowLeft } from 'lucide-solid';
-import { iconsMapping } from '../brushes/IconArrow';
+import { iconDirectionMapping, iconsMapping } from '../brushes/IconArrow';
 import { tools } from '../toolbar/presenter';
 import { Dynamic } from 'solid-js/web';
 import { contextbar } from './style.module.css';
@@ -43,38 +42,18 @@ export const ContextBar = () => {
       </Popover>
       <Show when={state.hasDirection}>
         <SegmentedControl aria-orientation="horizontal">
-          <SegmentedControl.Button
-            value="Up"
-            aria-label="Вверх"
-            aria-pressed={state.currentBrushDirection === 'Up'}
-            onClick={(e) => state.setBrushDirection(e.target.value)}
-          >
-            <ArrowUp />
-          </SegmentedControl.Button>
-          <SegmentedControl.Button
-            value="Down"
-            aria-label="Вниз"
-            aria-pressed={state.currentBrushDirection === 'Down'}
-            onClick={(e) => state.setBrushDirection(e.target.value)}
-          >
-            <ArrowDown />
-          </SegmentedControl.Button>
-          <SegmentedControl.Button
-            value="Left"
-            aria-label="Влево"
-            aria-pressed={state.currentBrushDirection === 'Left'}
-            onClick={(e) => state.setBrushDirection(e.target.value)}
-          >
-            <ArrowLeft />
-          </SegmentedControl.Button>
-          <SegmentedControl.Button
-            value="Right"
-            aria-label="Вправо"
-            aria-pressed={state.currentBrushDirection === 'Right'}
-            onClick={(e) => state.setBrushDirection(e.target.value)}
-          >
-            <ArrowRight />
-          </SegmentedControl.Button>
+          <For each={state.currentBrushDirectionList}>
+            {(direction) => (
+              <SegmentedControl.Button
+              value={direction}
+              aria-label="Вверх"
+              aria-pressed={state.currentBrushDirection === direction}
+              onClick={(e) => state.setBrushDirection(e.target.value)}
+            >
+              <Dynamic component={iconDirectionMapping[direction]} />
+            </SegmentedControl.Button>
+            )}
+          </For>
         </SegmentedControl>
       </Show>
       </div>

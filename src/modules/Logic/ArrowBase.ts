@@ -1,6 +1,6 @@
 import { Fields } from './Base';
 import { createPosition, Position } from './Position';
-import { Direction } from './types';
+import { Direction, Flip } from './types';
 
 export class ArrowBase {
   public state = 'None';
@@ -10,7 +10,7 @@ export class ArrowBase {
     public readonly name: string,
     public readonly key: string,
     public direction?: Direction,
-    public flip?: boolean,
+    public flip?: Flip,
   ) {
     this.position = createPosition(key);
   }

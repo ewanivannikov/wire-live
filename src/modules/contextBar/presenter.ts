@@ -6,6 +6,7 @@ class Brush {
   private static instance: Brush | null = null;
   public currentBrush = 'Brush.0.Up';
   public currentBrushDirection = DirectionType.Up;
+  public currentBrushDirectionList = [DirectionType.Up, DirectionType.Down, DirectionType.Left, DirectionType.Right];
 
   constructor(private readonly tools: Tools) {
     makeAutoObservable(this);
@@ -15,6 +16,7 @@ class Brush {
     this.currentBrush = brush;
     const direction = new Tile(brush).vector[2];
     this.currentBrushDirection = direction;
+    // this.currentBrushDirectionList = 
   };
 
   setBrushDirection = (direction) => {
