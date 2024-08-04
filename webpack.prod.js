@@ -6,7 +6,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const config = merge(common, {
   mode: 'production',
   output: {
-    publicPath: '/wire-live/',
+    publicPath: '/wire-live',
   },
   module: {
     rules: [

@@ -2,6 +2,9 @@ import { createBrowserHistory, createRouter, Router } from "@remix-run/router";
 import { observable } from "mobx";
 
 export const router = createRouter({
+  basename: window?.__ENV__?.RELEASE_STAGE === 'production'
+    ? '/wire-live'
+    : '/',
   routes: [{
     path: '/',
     children: [
