@@ -1,11 +1,14 @@
 import { render } from 'solid-js/web';
-import { createMemo, enableExternalSource } from 'solid-js';
+import { createMemo, enableExternalSource, Match, Switch } from 'solid-js';
 import { Layout } from './modules/layout';
 
 import { createIsMounted } from '@solid-primitives/lifecycle';
 import './main.css';
 import { createWorld } from './modules/mapContainer';
 import { Reaction } from 'mobx';
+import { routerService } from './shared/services/RouterService/RouterService';
+import { Home } from './pages';
+
 const rippleUrl = new URL('./shared/ui/ripple', import.meta.url)
 if ('paintWorklet' in CSS) {
     CSS.paintWorklet.addModule(rippleUrl)
@@ -42,7 +45,15 @@ function App() {
 
   return (
     <Layout>
-      <div id="canvas" ref={ref} />
+      <Switch fallback={<div>Not Found</div>}>
+        <Match when={routerService.location.pathname === "/"}>
+          <div id="canvas" ref={ref} />
+        </Match>
+        <Match when={routerService.location.pathname === "/home"}>
+          <Home />
+        </Match>
+      </Switch>
+      
     </Layout>
   );
 }
