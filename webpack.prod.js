@@ -5,6 +5,9 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const config = merge(common, {
   mode: 'production',
+  output: {
+    publicPath: '/wire-live/',
+  },
   module: {
     rules: [
       {
@@ -47,7 +50,5 @@ const config = merge(common, {
     })
   ],
 });
-
-console.log('production', config.module.rules);
 
 module.exports = config
