@@ -42,14 +42,17 @@ function App() {
       world.render();
     }
   });
+console.log('routerService.location.pathname', routerService.location.pathname, routerService.basename);
 
   return (
     <Layout>
       <Switch fallback={<div>Not Found</div>}>
-        <Match when={routerService.location.pathname === "/"}>
+        <Match when={routerService.location.pathname === routerService.basename}>
           <div id="canvas" ref={ref} />
         </Match>
-        <Match when={routerService.location.pathname === "/home"}>
+        <Match 
+          when={routerService.location.pathname === `${routerService.basename}home`}
+        >
           <Home />
         </Match>
       </Switch>

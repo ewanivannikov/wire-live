@@ -25,10 +25,12 @@ class RouterService {
   public location
   public params
   public matches
+  public basename
   constructor(private readonly router: Router) {
     this.location = observable(router.state.location);
     this.params = observable(router.state.matches[0].params);
     this.matches = observable(router.state.matches);
+    this.basename = router.basename;
   }
 }
 
