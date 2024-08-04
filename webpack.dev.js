@@ -12,6 +12,7 @@ module.exports = merge(common, {
     port: 9000, // The port to bind to
     open: true, // Open the server in a browser window automatically
     hot: true, // Enable hot module replacement
+    historyApiFallback: true,
   },
   module: {
     rules: [
