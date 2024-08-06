@@ -8,7 +8,13 @@ export const indexTileToArrow = [
   'OrthogonalArrow',
   'TrioArrow',
   'PulseGenerator',
-  'ThroughArrow'];
+  'ThroughArrow',
+  'DiagonalArrow',
+  'DoubleArrow',
+  'ThroughNear',
+  'ForwardDiagonalArrow',
+  'NotGate',
+  'AndGate',];
 export const arrowToIndexTile = {
   Arrow: 0,
   SourceBlock: 1,
@@ -19,5 +25,11 @@ export const arrowToIndexTile = {
   OrthogonalArrow: 6,
   TrioArrow: 7,
   PulseGenerator: 8,
-  ThroughArrow: 9
+  ThroughArrow: 9,
+  DiagonalArrow: 10,
+  DoubleArrow: 11,
+  ThroughNear: 12,
+  ForwardDiagonalArrow: 13,
+  NotGate: 14,
+  AndGate: 15
 };

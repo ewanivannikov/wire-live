@@ -9,6 +9,12 @@ import { createOrthogonalArrow } from './OrthogonalArrow';
 import { createTrioArrow } from './TrioArrow'
 import { createPulseGenerator } from './PulseGenerator'
 import { createThroughArrow } from './ThroughArrow'
+import { createDiagonalArrow } from './DiagonalArrow'
+import { createDoubleArrow } from './DoubleArrow'
+import { createThroughNear } from './ThroughNear';
+import { createForwardDiagArrow } from './ForwardDiagArrow';
+import { createNotGate } from './NotGate';
+import { createAndGate } from './AndGate';
 
 export const fabricArrow = (
   nameType: string,
@@ -63,6 +69,36 @@ export const fabricArrow = (
 
   if (nameType === 'ThroughArrow') {
     const result = createThroughArrow(position, direction);
+    return result;
+  }
+
+  if (nameType === 'DiagonalArrow') {
+    const result = createDiagonalArrow(position, direction, flip);
+    return result;
+  }
+
+  if (nameType === 'DoubleArrow') {
+    const result = createDoubleArrow(position, direction);
+    return result;
+  }
+
+  if (nameType === 'ThroughNear') {
+    const result = createThroughNear(position, direction, flip);
+    return result;
+  }
+
+  if (nameType === 'ForwardDiagArrow') { 
+    const result = createForwardDiagArrow(position, direction, flip);
+    return result;
+  }
+
+  if (nameType === 'NotGate') {
+    const result = createNotGate(position, direction);
+    return result;
+  }
+
+  if (nameType === 'AndGate') {
+    const result = createAndGate(position, direction);
     return result;
   }
 };

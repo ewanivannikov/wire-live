@@ -18,6 +18,8 @@ export const brushes = {
   'Brush.4.Left': 'SignalDetector.Left',
   'Brush.5.Up': 'OppositeArrow.Up',
   'Brush.5.Left': 'OppositeArrow.Left',
+  'Brush.5.Right': 'OppositeArrow.Right',
+  'Brush.5.Down': 'OppositeArrow.Down',
   'Brush.6.Up.>': 'OrthogonalArrow.Up.>',
   'Brush.6.Down.>': 'OrthogonalArrow.Down.>',
   'Brush.6.Right.>': 'OrthogonalArrow.Right.>',

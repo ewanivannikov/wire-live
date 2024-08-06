@@ -19,7 +19,9 @@ import {
   iconSignalDetectorLeft,
   iconSignalDetectorDown,
   iconOppositeArrowUp,
+  iconOppositeArrowRight,
   iconOppositeArrowLeft,
+  iconOppositeArrowDown,
 } from './style.module.css';
 
 export const IconArrowUp = () => {
@@ -75,6 +77,12 @@ export const IconSignalDetectorLeft = () => {
 };
 export const IconOppositeArrowUp = () => {
   return <div class={`${icon} ${iconOppositeArrowUp}`} />;
+};
+export const IconOppositeArrowDown = () => {
+  return <div class={`${icon} ${iconOppositeArrowDown}`} />;
+};
+export const IconOppositeArrowRight = () => {
+  return <div class={`${icon} ${iconOppositeArrowRight}`} />;
 };
 export const IconOppositeArrowLeft = () => {
   return <div class={`${icon} ${iconOppositeArrowLeft}`} />;
@@ -151,6 +159,8 @@ export const iconsMapping = {
   'Brush.4.Left': IconSignalDetectorLeft,
   'Brush.5.Up': IconOppositeArrowUp,
   'Brush.5.Left': IconOppositeArrowLeft,
+  'Brush.5.Right': IconOppositeArrowRight,
+  'Brush.5.Down': IconOppositeArrowDown,
   'Brush.6.Up.>': IconOrthogonalArrowUpNotFlip,
   'Brush.6.Down.>': IconOrthogonalArrowDownNotFlip,
   'Brush.6.Right.>': IconOrthogonalArrowRightNotFlip,
