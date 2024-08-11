@@ -22,6 +22,23 @@ import {
   iconOppositeArrowRight,
   iconOppositeArrowLeft,
   iconOppositeArrowDown,
+  iconOrthogonalArrowUpNotFlip,
+  iconOrthogonalArrowRightNotFlip,
+  iconOrthogonalArrowLeftNotFlip,
+  iconOrthogonalArrowDownNotFlip,
+  iconOrthogonalArrowUpFlip,
+  iconOrthogonalArrowRightFlip,
+  iconOrthogonalArrowLeftFlip,
+  iconOrthogonalArrowDownFlip,
+  iconTrioArrowUp,
+  iconTrioArrowRight,
+  iconTrioArrowLeft,
+  iconTrioArrowDown,
+  iconPulseGenerator,
+  iconThroughArrowUp,
+  iconThroughArrowRight,
+  iconThroughArrowLeft,
+  iconThroughArrowDown
 } from './style.module.css';
 
 export const IconArrowUp = () => {

@@ -1,0 +1,7 @@
+.display {
+  font-family: var(--typography-display-lg-font-family);
+  font-size: var(--typography-display-lg-font-size);
+  font-weight: var(--typography-display-lg-font-weight);
+  font-style: normal;
+  white-space: pre-wrap;
+}

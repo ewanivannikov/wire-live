@@ -294,3 +294,224 @@
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
+
+.icon-orthogonal-arrow-up-not-flip::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1536px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12);
+} 
+
+.icon-orthogonal-arrow-up-flip::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1536px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(180deg);
+}
+
+.icon-orthogonal-arrow-down-not-flip::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1536px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
+}
+
+.icon-orthogonal-arrow-down-flip::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1536px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12);
+}
+
+.icon-orthogonal-arrow-left-not-flip::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1536px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(271deg) translateX(-256px);
+}
+
+.icon-orthogonal-arrow-left-flip::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1536px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(90deg);
+}
+
+.icon-orthogonal-arrow-right-not-flip::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1536px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(90deg) translate(0px, -256px);
+}
+
+.icon-orthogonal-arrow-right-flip::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0; 
+  left: 0;  
+  z-index: 0; 
+  background: url('../../assets/atlas.png') -1536px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(180deg);
+}
+
+.icon-trio-arrow-right::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1792px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(90deg) translate(0px, -256px);
+}
+
+.icon-trio-arrow-left::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1792px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(271deg) translateX(-256px);
+}
+
+.icon-trio-arrow-up::before { 
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1792px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12);
+}
+
+.icon-trio-arrow-down::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;  
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1792px 0 repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
+}
+
+.icon-pulse-generator::before {
+  content: '';
+  position: absolute; 
+  width: 256px; 
+  height: 256px;  
+  top: 0;
+  left: 0;    
+  z-index: 0;
+  background: url('../../assets/atlas.png') 0px -256px repeat;
+  transform-origin: top left;
+  transform: scale(0.12);
+}
+
+.icon-through-arrow-up::before {
+  content: '';
+  position: absolute;
+  width: 256px; 
+  height: 256px;
+  top: 0;
+  left: 0;  
+  z-index: 0;
+  background: url('../../assets/atlas.png') -256px -256px repeat;
+  transform-origin: top left;
+  transform: scale(0.12);
+}
+
+.icon-through-arrow-down::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -256px -256px repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
+}
+
+.icon-through-arrow-left::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -256px -256px repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(271deg) translateX(-256px);
+}
+
+.icon-through-arrow-right::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -256px -256px repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(90deg) translate(0px, -256px);
+}

@@ -3,6 +3,7 @@ import { container, header, sidebar, context, main } from './layout.module.css';
 import { Toolbar } from '../toolbar';
 import { ContextBar } from '../contextBar';
 import logo from '../../assets/logo.svg';
+import './tokens.css';
 
 export function Layout(props) {
   return (

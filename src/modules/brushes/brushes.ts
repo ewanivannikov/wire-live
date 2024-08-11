@@ -17,9 +17,7 @@ export const brushes = {
   'Brush.4.Right': 'SignalDetector.Right',
   'Brush.4.Left': 'SignalDetector.Left',
   'Brush.5.Up': 'OppositeArrow.Up',
-  'Brush.5.Left': 'OppositeArrow.Left',
-  'Brush.5.Right': 'OppositeArrow.Right',
-  'Brush.5.Down': 'OppositeArrow.Down',
+  'Brush.5.Right': 'OppositeArrow.Left',
   'Brush.6.Up.>': 'OrthogonalArrow.Up.>',
   'Brush.6.Down.>': 'OrthogonalArrow.Down.>',
   'Brush.6.Right.>': 'OrthogonalArrow.Right.>',
@@ -85,26 +83,26 @@ export const groupsBrushes = {
     label: 'Opposite arrow',
     description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
   },
-  // 'Splitter forwards and backwards': {
-  //   id: 6,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Splitter forward and to the right': {
-  //   id: 7,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Splitter forward, right, and left': {
-  //   id: 8,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Pulse generator': {
-  //   id: 9,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
+  'Brush.6.Up.>': {
+    value: 'OrthogonalArrow',
+    label: 'Orthogonal arrow',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.7.Up': {
+    value: 'TrioArrow',
+    label: 'Trio arrow',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.8': {
+    value: 'PulseGenerator',
+    label: 'Pulse generator',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.9.Up': {
+    value: 'ThroughArrow',
+    label: 'Through arrow',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
   // 'Blue arrow': {
   //   id: 10,
   //   label: 'Arrow',
