@@ -23,7 +23,7 @@ class TileSet {
 
     const onload = (texture) => {
       Object.keys(brushes).forEach((tileId) => {
-        const { u, v, u2, v2, image } = this.getUV(tileId, texture);
+        const { u, v, u2, v2, image } = this.cropViewport(tileId, texture);
 
         const rotationAngle = new Tile(tileId).vector[2] || DirectionType.Up;
         const numberRotation = {
@@ -58,19 +58,19 @@ class TileSet {
     textureLoader.load(this.tilesetImg, onload);
   };
 
-  getUV = (tileId, tilesetTexture) => {
+  cropViewport = (tileId, tilesetTexture) => {
     const tilesetWidth = tilesetTexture.image.width;
     const tilesetHeight = tilesetTexture.image.height;
     // Calculate tile position in the tileset image (assuming grid layout)
 
     const indexInAtlas = new Tile(tileId).vector[1];
     const tileXShiftPx = (indexInAtlas % 8) * this.tileSize; // 4 tiles per row in the example
-    const tileYShiftPx = Math.floor(indexInAtlas / 8) * this.tileSize;
+    const tileYShiftPx = -Math.floor(indexInAtlas / 8) * this.tileSize;
 
-    // Calculate UVs for the tile
+    // левая верхняя точка вьюпорта обрезки в процентах
     const u = tileXShiftPx / tilesetWidth;
     const v = tileYShiftPx / tilesetHeight;
-
+    // правая нижняя точка вьюпорта обрезки в процентах
     const u2 = (tileXShiftPx + this.tileSize) / tilesetWidth;
     const v2 = (tileYShiftPx + this.tileSize) / tilesetHeight;
 
