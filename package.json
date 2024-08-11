@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier:fix": "prettier --write .",
     "lint": "eslint ./src --fix",
-    "createEnv": "sh createEnv.prod.sh"
+    "createEnv": "sh createEnv.prod.sh",
+    "generateTokens": "npx co build"
   },
   "keywords": [],
   "author": "",

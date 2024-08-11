@@ -1,6 +1,6 @@
 import { render } from 'solid-js/web';
 import { createMemo, enableExternalSource, Match, Switch } from 'solid-js';
-import { Layout } from './modules/layout';
+import { Layout , LayoutLanding } from './modules/layout';
 
 import { createIsMounted } from '@solid-primitives/lifecycle';
 import './main.css';
@@ -8,6 +8,7 @@ import { createWorld } from './modules/mapContainer';
 import { Reaction } from 'mobx';
 import { routerService } from './shared/services/RouterService/RouterService';
 import { Home } from './pages';
+
 
 const rippleUrl = new URL('./shared/ui/ripple', import.meta.url)
 if ('paintWorklet' in CSS) {
@@ -42,22 +43,25 @@ function App() {
       world.render();
     }
   });
-console.log('routerService.location.pathname', routerService.location.pathname, routerService.basename);
 
   return (
-    <Layout>
+    
       <Switch fallback={<div>Not Found</div>}>
         <Match when={routerService.location.pathname === routerService.basename}>
-          <div id="canvas" ref={ref} />
+          <Layout>
+            <div id="canvas" ref={ref} />
+          </Layout>
         </Match>
         <Match 
           when={routerService.location.pathname === `${routerService.basename}home`}
         >
-          <Home />
+          <LayoutLanding>
+            <Home />
+          </LayoutLanding>
         </Match>
       </Switch>
       
-    </Layout>
+    
   );
 }
 render(() => <App />, document.getElementById('app'));
