@@ -71,7 +71,10 @@ export const brushes = {
   'Brush.15.Down': 'AndGate.Down',
   'Brush.15.Right': 'AndGate.Right',
   'Brush.15.Left': 'AndGate.Left',
-  // 'XOR gate': 16,
+  'Brush.16.Up': 'XorGate.Up',
+  'Brush.16.Down': 'XorGate.Down',
+  'Brush.16.Right': 'XorGate.Right',
+  'Brush.16.Left': 'XorGate.Left',
   // 'Latch': 17,
   // 'T flip-flop': 18,
   // 'Randomizer': 19,
@@ -163,11 +166,11 @@ export const groupsBrushes = {
     label: 'And gate',
     description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
   },
-  // 'And gate': {
-  //   id: 16,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
+  'Brush.16.Up': {
+    value: 'XorGate',
+    label: 'XOR gate',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
   // 'XOR gate': {
   //   id: 17,
   //   label: 'Arrow',

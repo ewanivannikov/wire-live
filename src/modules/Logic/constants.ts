@@ -14,7 +14,8 @@ export const indexTileToArrow = [
   'ThroughNear',
   'ForwardDiagArrow',
   'NotGate',
-  'AndGate',];
+  'AndGate',
+  'XorGate',];
 export const arrowToIndexTile = {
   Arrow: 0,
   SourceBlock: 1,
@@ -31,5 +32,6 @@ export const arrowToIndexTile = {
   ThroughNear: 12,
   ForwardDiagArrow: 13,
   NotGate: 14,
-  AndGate: 15
+  AndGate: 15,
+  XorGate: 16,
 };

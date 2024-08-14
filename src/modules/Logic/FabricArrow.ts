@@ -15,6 +15,7 @@ import { createThroughNear } from './ThroughNear';
 import { createForwardDiagArrow } from './ForwardDiagArrow';
 import { createNotGate } from './NotGate';
 import { createAndGate } from './AndGate';
+import { createXorGate } from './XorGate';
 
 export const fabricArrow = (
   nameType: string,
@@ -99,6 +100,11 @@ export const fabricArrow = (
 
   if (nameType === 'AndGate') {
     const result = createAndGate(position, direction);
+    return result;
+  }
+
+  if (nameType === 'XorGate') {
+    const result = createXorGate(position, direction);
     return result;
   }
 };

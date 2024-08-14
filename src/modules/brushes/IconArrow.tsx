@@ -263,6 +263,18 @@ export const IconAndGateRight = () => {
 export const IconAndGateLeft = () => {
   return <div class={`${icon} ${iconAndGateLeft}`} />;
 };
+export const IconXorGateLeft = () => {
+  return <div class={`${icon} ${iconXorGateLeft}`} />;
+};
+export const IconXorGateRight = () => {
+  return <div class={`${icon} ${iconXorGateRight}`} />;
+};
+export const IconXorGateUp = () => {
+  return <div class={`${icon} ${iconXorGateUp}`} />;
+};
+export const IconXorGateDown = () => {
+  return <div class={`${icon} ${iconXorGateDown}`} />;
+};
 
 export const iconsMapping = {
   'Brush.0.Up': IconArrowUp,
@@ -339,6 +351,10 @@ export const iconsMapping = {
   'Brush.15.Down': IconAndGateDown,
   'Brush.15.Right': IconAndGateRight,
   'Brush.15.Left': IconAndGateLeft,
+  'Brush.16.Up': IconXorGateUp,
+  'Brush.16.Down': IconXorGateDown,
+  'Brush.16.Right': IconXorGateRight,
+  'Brush.16.Left': IconXorGateLeft,
 } as const;
 
 export const iconDirectionMapping = {
