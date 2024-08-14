@@ -59,9 +59,10 @@ export class Fields {
     flip?: Flip,
   ) {
     const name = indexTileToArrow[index];
-    const flipBoolean = flip === '<';
+    console.log('name', name);
+    
 
-    this.addArrow(key, fabricArrow(name, key, direction, flipBoolean));
+    this.addArrow(key, fabricArrow(name, key, direction, flip));
   }
 
   clearStates() {

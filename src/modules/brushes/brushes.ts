@@ -35,12 +35,42 @@ export const brushes = {
   'Brush.9.Down': 'ThroughArrow.Down',
   'Brush.9.Right': 'ThroughArrow.Right',
   'Brush.9.Left': 'ThroughArrow.Left',
-  // 'Diagonal arrow': 10,
-  // 'Blue splitter': 11,
-  // 'Blue splitter forward and to the right': 12,
-  // 'Blue splitter forwards and diagonally': 13,
-  // 'Not gate': 14,
-  // 'And gate': 15,
+  'Brush.10.Up.>': 'DiagonalArrow.Up.>',
+  'Brush.10.Down.>': 'DiagonalArrow.Down.>',
+  'Brush.10.Right.>': 'DiagonalArrow.Right.>',
+  'Brush.10.Left.>': 'DiagonalArrow.Left.>',
+  'Brush.10.Up.<': 'DiagonalArrow.Up.<',
+  'Brush.10.Down.<': 'DiagonalArrow.Down.<',
+  'Brush.10.Right.<': 'DiagonalArrow.Right.<',
+  'Brush.10.Left.<': 'DiagonalArrow.Left.<',
+  'Brush.11.Up': 'DoubleArrow.Up',
+  'Brush.11.Down': 'DoubleArrow.Down',
+  'Brush.11.Right': 'DoubleArrow.Right',
+  'Brush.11.Left': 'DoubleArrow.Left',
+  'Brush.12.Up.>': 'ThroughNear.Up.>',
+  'Brush.12.Down.>': 'ThroughNear.Down.>',
+  'Brush.12.Right.>': 'ThroughNear.Right.>',
+  'Brush.12.Left.>': 'ThroughNear.Left.>',
+  'Brush.12.Up.<': 'ThroughNear.Up.<',
+  'Brush.12.Down.<': 'ThroughNear.Down.<',
+  'Brush.12.Right.<': 'ThroughNear.Right.<',
+  'Brush.12.Left.<': 'ThroughNear.Left.<',
+  'Brush.13.Up.>': 'ForwardDiagArrow.Up.>',
+  'Brush.13.Down.>': 'ForwardDiagArrow.Down.>',
+  'Brush.13.Right.>': 'ForwardDiagArrow.Right.>',
+  'Brush.13.Left.>': 'ForwardDiagArrow.Left.>',
+  'Brush.13.Up.<': 'ForwardDiagArrow.Up.<',
+  'Brush.13.Down.<': 'ForwardDiagArrow.Down.<',
+  'Brush.13.Right.<': 'ForwardDiagArrow.Right.<',
+  'Brush.13.Left.<': 'ForwardDiagArrow.Left.<',
+  'Brush.14.Up': 'NotGate.Up',
+  'Brush.14.Down': 'NotGate.Down',
+  'Brush.14.Right': 'NotGate.Right',
+  'Brush.14.Left': 'NotGate.Left',
+  'Brush.15.Up': 'AndGate.Up',
+  'Brush.15.Down': 'AndGate.Down',
+  'Brush.15.Right': 'AndGate.Right',
+  'Brush.15.Left': 'AndGate.Left',
   // 'XOR gate': 16,
   // 'Latch': 17,
   // 'T flip-flop': 18,
@@ -103,36 +133,36 @@ export const groupsBrushes = {
     label: 'Through arrow',
     description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
   },
-  // 'Blue arrow': {
-  //   id: 10,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Diagonal arrow': {
-  //   id: 11,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Blue splitter': {
-  //   id: 12,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Blue splitter forward and to the right': {
-  //   id: 13,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Blue splitter forwards and diagonally': {
-  //   id: 14,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Not gate': {
-  //   id: 15,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
+  'Brush.10.Up.>': {
+    value: 'DiagonalArrow',
+    label: 'Diagonal arrow',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.11.Up': {
+    value: 'DoubleArrow',
+    label: 'Double arrow',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.12.Up.>': {
+    value: 'ThroughNear',
+    label: 'Through near',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.13.Up.>': {
+    value: 'ForwardDiagArrow',
+    label: 'Forward diagonal arrow',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.14.Up': {
+    value: 'NotGate',
+    label: 'Not gate',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.15.Up': {
+    value: 'AndGate',
+    label: 'And gate',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
   // 'And gate': {
   //   id: 16,
   //   label: 'Arrow',

@@ -12,7 +12,7 @@ export const indexTileToArrow = [
   'DiagonalArrow',
   'DoubleArrow',
   'ThroughNear',
-  'ForwardDiagonalArrow',
+  'ForwardDiagArrow',
   'NotGate',
   'AndGate',];
 export const arrowToIndexTile = {
@@ -29,7 +29,7 @@ export const arrowToIndexTile = {
   DiagonalArrow: 10,
   DoubleArrow: 11,
   ThroughNear: 12,
-  ForwardDiagonalArrow: 13,
+  ForwardDiagArrow: 13,
   NotGate: 14,
   AndGate: 15
 };

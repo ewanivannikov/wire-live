@@ -19,20 +19,18 @@ class DoubleArrow extends ArrowBase {
     if (this.state === 'Red') {
       let newPosition = this.position;
       if (this.direction === 'Up') {
-        newPosition = newPosition.add(0, -1);
-        newPosition = newPosition.add(0, -2);
+        fields.addSignal(newPosition.add(0, -1).coordinates, 1);
+        fields.addSignal(newPosition.add(0, -2).coordinates, 1);
       } else if (this.direction === 'Down') {
-        newPosition = newPosition.add(0, 1);
-        newPosition = newPosition.add(0, 2);
+        fields.addSignal(newPosition.add(0, 1).coordinates, 1);
+        fields.addSignal(newPosition.add(0, 2).coordinates, 1);
       } else if (this.direction === 'Left') {
-        newPosition = newPosition.add(-1, 0);
-        newPosition = newPosition.add(-2, 0);
+        fields.addSignal(newPosition.add(-1, 0).coordinates, 1);
+        fields.addSignal(newPosition.add(-2, 0).coordinates, 1);
       } else if (this.direction === 'Right') {
-        newPosition = newPosition.add(1, 0);
-        newPosition = newPosition.add(2, 0);
+        fields.addSignal(newPosition.add(1, 0).coordinates, 1);
+        fields.addSignal(newPosition.add(2, 0).coordinates, 1)
       }
-
-      fields.addSignal(newPosition.coordinates, 1);
     }
   }
 }

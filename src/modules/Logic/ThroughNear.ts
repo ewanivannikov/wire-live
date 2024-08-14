@@ -19,25 +19,19 @@ class ThroughNear extends ArrowBase {
     if (this.state === 'Red') {
       let newPosition = this.position;
       let newDirection = this.direction
+      let n = 1;
+      if (this.flip === '<'){ n = -1 }
       if (newDirection === 'Up') {
         fields.addSignal(newPosition.add(0, -2).coordinates, 1);
-        let n = 1;
-        if (this.flip === '<'){ n = -1 }
         fields.addSignal(newPosition.add(n, 0).coordinates, 1);
       } else if (newDirection === 'Down') {
         fields.addSignal(newPosition.add(0, 2).coordinates, 1);
-        let n = 1;
-        if (this.flip === '<'){ n = -1 }
         fields.addSignal(newPosition.add(-n, 0).coordinates, 1);
       } else if (newDirection === 'Left') {
         fields.addSignal(newPosition.add(-2, 0).coordinates, 1);
-        let n = 1;
-        if (this.flip === '<'){ n = -1 }
         fields.addSignal(newPosition.add(0, -n).coordinates, 1);
       } else if (newDirection === 'Right') {
         fields.addSignal(newPosition.add(2, 0).coordinates, 1);
-        let n = 1;
-        if (this.flip === '<'){ n = -1 }
         fields.addSignal(newPosition.add(0, n).coordinates, 1);
       }
 

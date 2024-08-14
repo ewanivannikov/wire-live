@@ -17,8 +17,8 @@ class ForwardDiagArrow extends ArrowBase {
 
   activeStates(fields: Fields) {
     if (this.state === 'Red') {
-      let newPosition = this.position;
-      let newDirection = this.direction;
+      const newPosition = this.position;
+      const newDirection = this.direction;
       let n = 1;
       if (this.flip === '<'){ n = -1 }
       if (newDirection === 'Up') {

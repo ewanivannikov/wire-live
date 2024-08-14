@@ -9,7 +9,7 @@ class PulseGenerator extends ArrowBase {
   conditionStates(fields: Fields) {
     if (fields.getSignal(this.position.coordinates) >= 0 && this.state === 'None') {
       this.state = 'Red';
-    } else if (fields.getSignal(this.position.coordinates) >= 0 && this.state === 'Red') {
+    } else if (fields.getSignal(this.position.coordinates) >= 0 && (this.state === 'Red' || this.state === 'Blue')) {
       this.state = 'Blue';
     } else {
       this.state = 'None'

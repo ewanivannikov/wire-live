@@ -87,7 +87,7 @@ export const fabricArrow = (
     return result;
   }
 
-  if (nameType === 'ForwardDiagArrow') { 
+  if (nameType === 'ForwardDiagArrow') {
     const result = createForwardDiagArrow(position, direction, flip);
     return result;
   }

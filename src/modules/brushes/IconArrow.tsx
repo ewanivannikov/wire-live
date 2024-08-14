@@ -155,6 +155,114 @@ export const IconThroughArrowRight = () => {
 export const IconThroughArrowLeft = () => {
   return <div class={`${icon} ${iconThroughArrowLeft}`} />;
 };
+export const IconDiagonalArrowUpNotFlip = () => {
+  return <div class={`${icon} ${iconDiagonalArrowUpNotFlip}`} />;
+};
+export const IconDiagonalArrowDownNotFlip = () => {
+  return <div class={`${icon} ${iconDiagonalArrowDownNotFlip}`} />;
+};
+export const IconDiagonalArrowRightNotFlip = () => {
+  return <div class={`${icon} ${iconDiagonalArrowRightNotFlip}`} />;
+};
+export const IconDiagonalArrowLeftNotFlip = () => {
+  return <div class={`${icon} ${iconDiagonalArrowLeftNotFlip}`} />;
+};
+export const IconDiagonalArrowUpFlip = () => {
+  return <div class={`${icon} ${iconDiagonalArrowUpFlip}`} />;
+};
+export const IconDiagonalArrowDownFlip = () => {
+  return <div class={`${icon} ${iconDiagonalArrowDownFlip}`} />;
+};
+export const IconDiagonalArrowRightFlip = () => {
+  return <div class={`${icon} ${iconDiagonalArrowRightFlip}`} />;
+};
+export const IconDiagonalArrowLeftFlip = () => {
+  return <div class={`${icon} ${iconDiagonalArrowLeftFlip}`} />;
+};
+export const IconDoubleArrowUp = () => {
+  return <div class={`${icon} ${iconDoubleArrowUp}`} />;
+};
+export const IconDoubleArrowDown = () => {
+  return <div class={`${icon} ${iconDoubleArrowDown}`} />;
+};
+export const IconDoubleArrowRight = () => {
+  return <div class={`${icon} ${iconDoubleArrowRight}`} />;
+};
+export const IconDoubleArrowLeft = () => {
+  return <div class={`${icon} ${iconDoubleArrowLeft}`} />;
+};
+export const IconThroughNearUpNotFlip = () => {
+  return <div class={`${icon} ${iconThroughNearUpNotFlip}`} />;
+};
+export const IconThroughNearDownNotFlip = () => {
+  return <div class={`${icon} ${iconThroughNearDownNotFlip}`} />;
+};
+export const IconThroughNearRightNotFlip = () => {
+  return <div class={`${icon} ${iconThroughNearRightNotFlip}`} />;
+};
+export const IconThroughNearLeftNotFlip = () => {
+  return <div class={`${icon} ${iconThroughNearLeftNotFlip}`} />;
+};
+export const IconThroughNearUpFlip = () => {
+  return <div class={`${icon} ${iconThroughNearUpFlip}`} />;
+};
+export const IconThroughNearDownFlip = () => {
+  return <div class={`${icon} ${iconThroughNearDownFlip}`} />;
+};
+export const IconThroughNearRightFlip = () => {
+  return <div class={`${icon} ${iconThroughNearRightFlip}`} />;
+};
+export const IconThroughNearLeftFlip = () => {
+  return <div class={`${icon} ${iconThroughNearLeftFlip}`} />;
+};
+export const IconForwardDiagArrowUpNotFlip = () => {
+  return <div class={`${icon} ${iconForwardDiagArrowUpNotFlip}`} />;
+};
+export const IconForwardDiagArrowDownNotFlip = () => {
+  return <div class={`${icon} ${iconForwardDiagArrowDownNotFlip}`} />;
+};
+export const IconForwardDiagArrowRightNotFlip = () => {
+  return <div class={`${icon} ${iconForwardDiagArrowRightNotFlip}`} />;
+};
+export const IconForwardDiagArrowLeftNotFlip = () => {
+  return <div class={`${icon} ${iconForwardDiagArrowLeftNotFlip}`} />;
+};
+export const IconForwardDiagArrowUpFlip = () => {
+  return <div class={`${icon} ${iconForwardDiagArrowUpFlip}`} />;
+};
+export const IconForwardDiagArrowDownFlip = () => {
+  return <div class={`${icon} ${iconForwardDiagArrowDownFlip}`} />;
+};
+export const IconForwardDiagArrowRightFlip = () => {
+  return <div class={`${icon} ${iconForwardDiagArrowRightFlip}`} />;
+};
+export const IconForwardDiagArrowLeftFlip = () => {
+  return <div class={`${icon} ${iconForwardDiagArrowLeftFlip}`} />;
+};
+export const IconNotGateUp = () => {
+  return <div class={`${icon} ${iconNotGateUp}`} />;
+};
+export const IconNotGateDown = () => {
+  return <div class={`${icon} ${iconNotGateDown}`} />;
+};
+export const IconNotGateRight = () => {
+  return <div class={`${icon} ${iconNotGateRight}`} />;
+};
+export const IconNotGateLeft = () => {
+  return <div class={`${icon} ${iconNotGateLeft}`} />;
+};
+export const IconAndGateUp = () => {
+  return <div class={`${icon} ${iconAndGateUp}`} />;
+};
+export const IconAndGateDown = () => {
+  return <div class={`${icon} ${iconAndGateDown}`} />;
+};
+export const IconAndGateRight = () => {
+  return <div class={`${icon} ${iconAndGateRight}`} />;
+};
+export const IconAndGateLeft = () => {
+  return <div class={`${icon} ${iconAndGateLeft}`} />;
+};
 
 export const iconsMapping = {
   'Brush.0.Up': IconArrowUp,
@@ -195,6 +303,42 @@ export const iconsMapping = {
   'Brush.9.Down': IconThroughArrowDown,
   'Brush.9.Right': IconThroughArrowRight,
   'Brush.9.Left': IconThroughArrowLeft,
+  'Brush.10.Up.>': IconDiagonalArrowUpNotFlip,
+  'Brush.10.Down.>': IconDiagonalArrowDownNotFlip,
+  'Brush.10.Right.>': IconDiagonalArrowRightNotFlip,
+  'Brush.10.Left.>': IconDiagonalArrowLeftNotFlip,
+  'Brush.10.Up.<': IconDiagonalArrowUpFlip,
+  'Brush.10.Down.<': IconDiagonalArrowDownFlip,
+  'Brush.10.Right.<': IconDiagonalArrowRightFlip,
+  'Brush.10.Left.<': IconDiagonalArrowLeftFlip,
+  'Brush.11.Up': IconDoubleArrowUp,
+  'Brush.11.Down': IconDoubleArrowDown,
+  'Brush.11.Right': IconDoubleArrowRight,
+  'Brush.11.Left': IconDoubleArrowLeft,
+  'Brush.12.Up.>': IconThroughNearUpNotFlip,
+  'Brush.12.Down.>': IconThroughNearDownNotFlip,
+  'Brush.12.Right.>': IconThroughNearRightNotFlip,
+  'Brush.12.Left.>': IconThroughNearLeftNotFlip,
+  'Brush.12.Up.<': IconThroughNearUpFlip,
+  'Brush.12.Down.<': IconThroughNearDownFlip,
+  'Brush.12.Right.<': IconThroughNearRightFlip,
+  'Brush.12.Left.<': IconThroughNearLeftFlip,
+  'Brush.13.Up.>': IconForwardDiagArrowUpNotFlip,
+  'Brush.13.Down.>': IconForwardDiagArrowDownNotFlip,
+  'Brush.13.Right.>': IconForwardDiagArrowRightNotFlip,
+  'Brush.13.Left.>': IconForwardDiagArrowLeftNotFlip,
+  'Brush.13.Up.<': IconForwardDiagArrowUpFlip,
+  'Brush.13.Down.<': IconForwardDiagArrowDownFlip,
+  'Brush.13.Right.<': IconForwardDiagArrowRightFlip,
+  'Brush.13.Left.<': IconForwardDiagArrowLeftFlip,
+  'Brush.14.Up': IconNotGateUp,
+  'Brush.14.Down': IconNotGateDown,
+  'Brush.14.Right': IconNotGateRight,
+  'Brush.14.Left': IconNotGateLeft,
+  'Brush.15.Up': IconAndGateUp,
+  'Brush.15.Down': IconAndGateDown,
+  'Brush.15.Right': IconAndGateRight,
+  'Brush.15.Left': IconAndGateLeft,
 } as const;
 
 export const iconDirectionMapping = {
