@@ -75,9 +75,27 @@ export const brushes = {
   'Brush.16.Down': 'XorGate.Down',
   'Brush.16.Right': 'XorGate.Right',
   'Brush.16.Left': 'XorGate.Left',
-  // 'Latch': 17,
-  // 'T flip-flop': 18,
-  // 'Randomizer': 19,
+  'Brush.17.Up': 'Latch.Up',
+  'Brush.17.Down': 'Latch.Down',
+  'Brush.17.Right': 'Latch.Right',
+  'Brush.17.Left': 'Latch.Left',
+  'Brush.18.Up': 'FlipFlop.Up',
+  'Brush.18.Down': 'FlipFlop.Down',
+  'Brush.18.Right': 'FlipFlop.Right',
+  'Brush.18.Left': 'FlipFlop.Left',
+  'Brush.19.Up': 'RandomArrow.Up',
+  'Brush.19.Down': 'RandomArrow.Down',
+  'Brush.19.Right': 'RandomArrow.Right',
+  'Brush.19.Left': 'RandomArrow.Left',
+  'Brush.21.Up': 'InputArrow.Up',
+  'Brush.21.Down': 'InputArrow.Down',
+  'Brush.21.Right': 'InputArrow.Right',
+  'Brush.21.Left': 'InputArrow.Left',
+  'Brush.24': 'Bulb',
+  'Brush.25.Up': 'BulbDetector.Up',
+  'Brush.25.Down': 'BulbDetector.Down',
+  'Brush.25.Right': 'BulbDetector.Right',
+  'Brush.25.Left': 'BulbDetector.Left',
   // 'Button': 20,
   // 'Directional button': 21,
   // 'Eraser': 22
@@ -168,7 +186,37 @@ export const groupsBrushes = {
   },
   'Brush.16.Up': {
     value: 'XorGate',
-    label: 'XOR gate',
+    label: 'Xor gate',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.17.Up': {
+    value: 'Latch',
+    label: 'Latch',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.18.Up': {
+    value: 'FlipFlop',
+    label: 'Flip-flop',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.19.Up': {
+    value: 'RandomArrow',
+    label: 'Random arrow',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.21.Up': {
+    value: 'InputArrow',
+    label: 'Input arrow',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.24': {
+    value: 'Bulb',
+    label: 'Bulb',
+    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+  },
+  'Brush.25.Up': {
+    value: 'BulbDetector',
+    label: 'Bulb detector',
     description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
   },
   // 'XOR gate': {

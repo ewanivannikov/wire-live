@@ -15,7 +15,16 @@ export const indexTileToArrow = [
   'ForwardDiagArrow',
   'NotGate',
   'AndGate',
-  'XorGate',];
+  'XorGate',
+  'Latch',
+  'FlipFlop',
+  'RandomArrow',
+  '',
+  'InputArrow',
+  '',
+  '',
+  'Bulb',
+  'BulbDetector',];
 export const arrowToIndexTile = {
   Arrow: 0,
   SourceBlock: 1,
@@ -34,4 +43,10 @@ export const arrowToIndexTile = {
   NotGate: 14,
   AndGate: 15,
   XorGate: 16,
+  Latch: 17,
+  FlipFlop: 18,
+  RandomArrow: 19,
+  InputArrow: 21,
+  Bulb: 24,
+  BulbDetector: 25,
 };

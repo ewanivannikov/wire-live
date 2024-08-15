@@ -16,6 +16,12 @@ import { createForwardDiagArrow } from './ForwardDiagArrow';
 import { createNotGate } from './NotGate';
 import { createAndGate } from './AndGate';
 import { createXorGate } from './XorGate';
+import { createLatch } from './Latch';
+import { createFlipFlop } from './FlipFlop';
+import { createRandomArrow } from './RandomArrow';
+import { createInputArrow } from './InputArrow';
+import { createBulb } from './Bulb';
+import { createBulbDetector } from './BulbDetector';
 
 export const fabricArrow = (
   nameType: string,
@@ -105,6 +111,36 @@ export const fabricArrow = (
 
   if (nameType === 'XorGate') {
     const result = createXorGate(position, direction);
+    return result;
+  }
+
+  if (nameType === 'Latch') {
+    const result = createLatch(position, direction);
+    return result;
+  }
+
+  if (nameType === 'FlipFlop') {
+    const result = createFlipFlop(position, direction);
+    return result;
+  }
+
+  if (nameType === 'RandomArrow') {
+    const result = createRandomArrow(position, direction);
+    return result;
+  }
+
+  if (nameType === 'InputArrow') {
+    const result = createInputArrow(position, direction, [2, 2, 2, 1], true);
+    return result;
+  }
+
+  if (nameType === 'Bulb') {
+    const result = createBulb(position, direction);
+    return result;
+  }
+  
+  if (nameType === 'BulbDetector') {
+    const result = createBulbDetector(position, direction);
     return result;
   }
 };
