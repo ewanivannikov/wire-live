@@ -1,7 +1,7 @@
 .root {
   display: flex;
 
-  &[aria-orientation="vertical"] {
+  &[aria-orientation='vertical'] {
     flex-direction: column;
   }
 
@@ -33,5 +33,5 @@
 }
 
 .ripple {
-    background-image: paint(ripple);
-  }
+  background-image: paint(ripple);
+}

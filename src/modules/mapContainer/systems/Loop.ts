@@ -2,21 +2,22 @@ import { Clock } from 'three';
 
 const clock = new Clock();
 
-
 class Loop {
   public updatables = [];
   private duration = 500;
 
-  constructor(private readonly camera, scene, renderer) {
+  constructor(
+    private readonly camera,
+    scene,
+    renderer,
+  ) {
     this.camera = camera;
     this.scene = scene;
     this.renderer = renderer;
   }
 
-
-
   start() {
-    let clockTrack = 0
+    let clockTrack = 0;
 
     this.renderer.setAnimationLoop(() => {
       const start = performance.now();
@@ -26,7 +27,7 @@ class Loop {
 
       if (clockTrack !== Math.floor(progress)) {
         clockTrack = Math.floor(progress);
-        this.tick()
+        this.tick();
       }
 
       // render a frame

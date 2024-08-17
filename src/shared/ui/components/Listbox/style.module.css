@@ -16,13 +16,13 @@
   align-items: center;
 }
 
-.option[aria-selected="true"] {
+.option[aria-selected='true'] {
   position: relative;
   background-color: #c9fffe;
 }
 
 .option.focused::before {
-  content: "✅";
+  content: '✅';
   position: absolute;
   right: 4px;
 }

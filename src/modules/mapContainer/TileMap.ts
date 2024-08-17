@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import { tools } from '../toolbar/presenter';
 import { createBrush } from '../contextBar/presenter';
-import { createArrow, Field } from '../Logic/Arrow';
 import { Position } from '../Logic/Position';
 import { arrowToIndexTile } from '../Logic/constants';
 import { Tile, ToolType } from '../toolbar';
@@ -13,7 +12,7 @@ const tileData = [
   { tileId: 'Brush.3.Up', x: 0, y: -2 },
   { tileId: 'Brush.0.Up', x: 0, y: -3 },
   { tileId: 'Brush.0.Up', x: 0, y: -4 },
-  { tileId: 'Brush.0.Up', x: 0, y: -5 }
+  { tileId: 'Brush.0.Up', x: 0, y: -5 },
 ];
 
 const hex = {
@@ -37,7 +36,6 @@ class TileMap {
   ) {
     const cashe = logicField.initCashe(this.tileData);
 
-
     this.init(cashe);
   }
 
@@ -49,12 +47,12 @@ class TileMap {
         if (value === 'None') {
           sprite.material.opacity = 0;
           sprite.material.needsUpdate = true;
-          return
+          return;
         }
         sprite.material.color = new THREE.Color(hex[value]);
         sprite.material.opacity = 1;
         sprite.material.needsUpdate = true;
-      })
+      });
 
       this.logicField.processingLogic(false);
     };
@@ -73,11 +71,10 @@ class TileMap {
       ];
 
       const tileId = tileIdVector.join('.');
-      const tileTexture = this.tileTextures[tileId]; // Assuming you have a way to get the texture
+      const tileTexture = this.tileTextures[tileId];
 
       this.addStateSprite(x, y, arrow.state);
       this.addSprite(tileTexture, x, y, tileId);
-
     }
   };
 
@@ -99,7 +96,7 @@ class TileMap {
     const brush = createBrush(this.tools);
     const tileTexture =
       this.tileTextures[
-      this.tools.currentTool === 'Eraser' ? 'Eraser' : brush.currentBrush
+        this.tools.currentTool === 'Eraser' ? 'Eraser' : brush.currentBrush
       ]; // Assuming you have a way to get the texture
 
     const [x, y] = new Position(tile.name).vector;
@@ -107,20 +104,23 @@ class TileMap {
     if (this.logicField.arrowCache.has(tile.name)) {
       this.updateSprite(tileTexture, x, y, brush.currentBrush, tile);
     } else {
-      const hasSprite = this.hasSprite(tile, brush.currentBrush)
+      const hasSprite = this.hasSprite(tile, brush.currentBrush);
       console.log('hasSprite', hasSprite);
 
       if (!hasSprite) {
         this.addStateSprite(x, y, 'None');
         this.addSprite(tileTexture, x, y, brush.currentBrush);
       }
-
     }
-
 
     const tileName = new Tile(brush.currentBrush).vector;
 
-    this.logicField.addArrowCache(tile.name, tileName[1], tileName[2], tileName[3]);
+    this.logicField.addArrowCache(
+      tile.name,
+      tileName[1],
+      tileName[2],
+      tileName[3],
+    );
   };
 
   removeTile = (tile) => {
@@ -139,6 +139,7 @@ class TileMap {
     const material = new THREE.SpriteMaterial({
       map: tileTexture,
       transparent: true,
+      // side: THREE.DoubleSide,
     });
     const sprite = new THREE.Sprite(material);
 
@@ -148,7 +149,8 @@ class TileMap {
       -y * this.tileSize - tileHalfShift,
       0,
     );
-    sprite.scale.set(this.tileSize, this.tileSize, 0);
+    sprite.scale.x = this.tileSize;
+    sprite.scale.y = this.tileSize;
     sprite.name = `${x},${y}`;
     sprite.userData = { type: tileId };
 
@@ -159,13 +161,13 @@ class TileMap {
     let opacity = 1;
     // console.log('sprite5555', color);
     if (color === 'None') {
-      opacity = 0
+      opacity = 0;
     }
     const sprite = this.grid.group.getObjectByName(`${x},${y}`);
     sprite.material.opacity = opacity;
     sprite.material.color = new THREE.Color(hex[color]);
     sprite.material.needsUpdate = true;
-  }
+  };
 
   updateSprite = (tileTexture, x, y, tileId, tile) => {
     this._tileGroup.remove(tile);

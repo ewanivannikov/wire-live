@@ -8,9 +8,15 @@ class DelayArrow extends ArrowBase {
   }
 
   conditionStates(fields: Fields) {
-    if (fields.getSignal(this.position.coordinates) >= 1 && this.state === 'None') {
+    if (
+      fields.getSignal(this.position.coordinates) >= 1 &&
+      this.state === 'None'
+    ) {
       this.state = 'Blue';
-    } else if (this.state === 'Blue' || fields.getSignal(this.position.coordinates)) {
+    } else if (
+      this.state === 'Blue' ||
+      fields.getSignal(this.position.coordinates)
+    ) {
       this.state = 'Red';
     } else {
       this.state = 'None';

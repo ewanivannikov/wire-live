@@ -24,7 +24,8 @@ export const indexTileToArrow = [
   '',
   '',
   'Bulb',
-  'BulbDetector',];
+  'BulbDetector',
+];
 export const arrowToIndexTile = {
   Arrow: 0,
   SourceBlock: 1,

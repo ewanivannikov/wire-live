@@ -8,9 +8,15 @@ class FlipFlop extends ArrowBase {
   }
 
   conditionStates(fields: Fields) {
-    if ((this.state === 'None') && (fields.getSignal(this.position.coordinates) >= 1)) {
+    if (
+      this.state === 'None' &&
+      fields.getSignal(this.position.coordinates) >= 1
+    ) {
       this.state = 'Red';
-    } else if ((this.state === 'Red') && (fields.getSignal(this.position.coordinates) === 1)) {
+    } else if (
+      this.state === 'Red' &&
+      fields.getSignal(this.position.coordinates) === 1
+    ) {
       this.state = 'None';
     }
   }

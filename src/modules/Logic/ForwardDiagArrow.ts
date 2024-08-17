@@ -20,7 +20,9 @@ class ForwardDiagArrow extends ArrowBase {
       const newPosition = this.position;
       const newDirection = this.direction;
       let n = 1;
-      if (this.flip === '<'){ n = -1 }
+      if (this.flip === '<') {
+        n = -1;
+      }
       if (newDirection === 'Up') {
         fields.addSignal(newPosition.add(0, -1).coordinates, 1);
         fields.addSignal(newPosition.add(n, -1).coordinates, 1);
@@ -34,10 +36,12 @@ class ForwardDiagArrow extends ArrowBase {
         fields.addSignal(newPosition.add(1, 0).coordinates, 1);
         fields.addSignal(newPosition.add(1, n).coordinates, 1);
       }
-
     }
   }
 }
 
-export const createForwardDiagArrow = (position: string, direction: Direction, flip: Flip) =>
-  new ForwardDiagArrow(position, direction, flip);
+export const createForwardDiagArrow = (
+  position: string,
+  direction: Direction,
+  flip: Flip,
+) => new ForwardDiagArrow(position, direction, flip);

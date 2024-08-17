@@ -1,9 +1,9 @@
-import { Section } from "../shared";
+import { Section } from '../shared';
 
 export const Home = () => {
   return (
     <>
-    <Section />
+      <Section />
     </>
   );
-}
+};

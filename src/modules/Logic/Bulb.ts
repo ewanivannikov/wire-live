@@ -15,7 +15,7 @@ class Bulb extends ArrowBase {
     }
   }
 
-  activeStates(fields: Fields) { }
+  activeStates(fields: Fields) {}
 }
 
 export const createBulb = (position: string, direction: Direction) =>

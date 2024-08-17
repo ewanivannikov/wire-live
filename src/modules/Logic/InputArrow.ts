@@ -3,9 +3,15 @@ import { ArrowBase } from './ArrowBase';
 import { Direction } from './types';
 
 class InputArrow extends ArrowBase {
-  private index = -1
-  private loop = 0
-  constructor(position: string, direction: Direction, public pattern: number[], public cycling: boolean=false, public active: number=1) {
+  private index = -1;
+  private loop = 0;
+  constructor(
+    position: string,
+    direction: Direction,
+    public pattern: number[],
+    public cycling: boolean = false,
+    public active: number = 1,
+  ) {
     super('InputArrow', position, direction);
     this.active = -this.active;
   }
@@ -19,7 +25,7 @@ class InputArrow extends ArrowBase {
         if (this.cycling) {
           this.index = 0;
           this.loop = this.pattern[this.index];
-          this.active = (this.active / Math.pow(-1, this.pattern.length));
+          this.active = this.active / Math.pow(-1, this.pattern.length);
         } else {
           this.index = this.pattern.length - 1;
           this.loop = -1;
@@ -55,5 +61,10 @@ class InputArrow extends ArrowBase {
   }
 }
 
-export const createInputArrow = (position: string, direction: Direction, pattern: number[], cycling?: boolean, active?: number) =>
-  new InputArrow(position, direction, pattern, cycling, active);
+export const createInputArrow = (
+  position: string,
+  direction: Direction,
+  pattern: number[],
+  cycling?: boolean,
+  active?: number,
+) => new InputArrow(position, direction, pattern, cycling, active);

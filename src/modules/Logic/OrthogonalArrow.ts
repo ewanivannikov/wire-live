@@ -18,9 +18,11 @@ class OrthogonalArrow extends ArrowBase {
   activeStates(fields: Fields) {
     if (this.state === 'Red') {
       const newPosition = this.position;
-      const newDirection = this.direction
+      const newDirection = this.direction;
       let n = 1;
-      if (this.flip === '<') { n = -1 }
+      if (this.flip === '<') {
+        n = -1;
+      }
       if (newDirection === 'Up') {
         fields.addSignal(newPosition.add(0, -1).coordinates, 1);
         fields.addSignal(newPosition.add(n, 0).coordinates, 1);
@@ -34,10 +36,12 @@ class OrthogonalArrow extends ArrowBase {
         fields.addSignal(newPosition.add(1, 0).coordinates, 1);
         fields.addSignal(newPosition.add(0, n).coordinates, 1);
       }
-
     }
   }
 }
 
-export const createOrthogonalArrow = (position: string, direction: Direction, flip: Flip) =>
-  new OrthogonalArrow(position, direction, flip);
+export const createOrthogonalArrow = (
+  position: string,
+  direction: Direction,
+  flip: Flip,
+) => new OrthogonalArrow(position, direction, flip);

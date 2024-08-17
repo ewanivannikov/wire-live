@@ -10,7 +10,8 @@ const { container, header, sidebar, context, main } = styles;
 export function Layout(props) {
   return (
     <div class={container}>
-      <header class={header}><img src={logo} alt="" width="50px" srcset="" />
+      <header class={header}>
+        <img src={logo} alt="" width="50px" srcset="" />
         Wire live
       </header>
       <aside class={sidebar}>

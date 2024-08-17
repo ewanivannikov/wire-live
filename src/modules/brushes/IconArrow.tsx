@@ -149,8 +149,8 @@ export const IconOppositeArrowLeft = () => {
 export const IconOrthogonalArrowUpNotFlip = () => {
   return <div class={`${icon} ${iconOrthogonalArrowUpNotFlip}`} />;
 };
-export const IconOrthogonalArrowDownNotFlip = () => { 
-  return <div class={`${icon} ${iconOrthogonalArrowDownNotFlip}`} />; 
+export const IconOrthogonalArrowDownNotFlip = () => {
+  return <div class={`${icon} ${iconOrthogonalArrowDownNotFlip}`} />;
 };
 export const IconOrthogonalArrowRightNotFlip = () => {
   return <div class={`${icon} ${iconOrthogonalArrowRightNotFlip}`} />;
@@ -174,7 +174,7 @@ export const IconTrioArrowUp = () => {
   return <div class={`${icon} ${iconTrioArrowUp}`} />;
 };
 export const IconTrioArrowDown = () => {
-  return <div class={`${icon} ${iconTrioArrowDown}`} />; 
+  return <div class={`${icon} ${iconTrioArrowDown}`} />;
 };
 export const IconTrioArrowRight = () => {
   return <div class={`${icon} ${iconTrioArrowRight}`} />;
@@ -404,4 +404,4 @@ export const iconDirectionMapping = {
   Down: ArrowDown,
   Right: ArrowRight,
   Left: ArrowLeft,
-}
+};

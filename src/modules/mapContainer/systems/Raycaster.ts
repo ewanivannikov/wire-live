@@ -46,13 +46,17 @@ export const createRaycaster = (
       true,
     );
     if (intersects.length > 0) {
-      const tileIntersect = intersects.filter((res) => {
-        return res && res.object;
-      }).at(-1);
+      const tileIntersect = intersects
+        .filter((res) => {
+          return res && res.object;
+        })
+        .at(-1);
 
-      const gridIntersect = intersects.filter((res) => {
-        return res && res.object;
-      }).at(0);
+      const gridIntersect = intersects
+        .filter((res) => {
+          return res && res.object;
+        })
+        .at(0);
 
       if (gridIntersect?.object) {
         if (event.pressure === 0) {
@@ -68,7 +72,6 @@ export const createRaycaster = (
       if (tileIntersect?.object && event.pressure > 0 && event.buttons === 1) {
         tileMap.onPointerChange(tileIntersect.object);
       }
-
     }
   }
 

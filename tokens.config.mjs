@@ -4,14 +4,16 @@ import pluginCSS from '@cobalt-ui/plugin-css';
 export default {
   tokens: './src/tokens.json',
   outDir: './src/modules/layout/',
-  plugins: [pluginCSS({
-    transform(token, mode) {
+  plugins: [
+    pluginCSS({
+      transform(token, mode) {
         switch (token.$type) {
-          case "elevation": {
+          case 'elevation': {
             return String(token.$value);
             break;
           }
         }
       },
-  })],
+    }),
+  ],
 };

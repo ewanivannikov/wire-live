@@ -8,7 +8,10 @@ class XorGate extends ArrowBase {
   }
 
   conditionStates(fields: Fields) {
-    if ((fields.getSignal(this.position.coordinates) >= 1) && (fields.getSignal(this.position.coordinates) % 2 === 1)) {
+    if (
+      fields.getSignal(this.position.coordinates) >= 1 &&
+      fields.getSignal(this.position.coordinates) % 2 === 1
+    ) {
       this.state = 'Red';
     } else {
       this.state = 'None';

@@ -7,7 +7,12 @@ class Brush {
   private static instance: Brush | null = null;
   public currentBrush = 'Brush.0.Up';
   public currentBrushDirection = DirectionType.Up;
-  public currentBrushDirectionList = [DirectionType.Up, DirectionType.Down, DirectionType.Left, DirectionType.Right];
+  public currentBrushDirectionList = [
+    DirectionType.Up,
+    DirectionType.Down,
+    DirectionType.Left,
+    DirectionType.Right,
+  ];
   public currentBrushFlip: '>' | '<' | '' = '';
 
   constructor(private readonly tools: Tools) {
@@ -30,8 +35,8 @@ class Brush {
     this.currentBrush = brush;
     const direction = new Tile(brush).vector[2];
     this.currentBrushDirection = direction;
-    const number = new Tile(brush).vector[1]
-    this.currentBrushDirectionList = this.getDirectionsByNumber(number)
+    const number = new Tile(brush).vector[1];
+    this.currentBrushDirectionList = this.getDirectionsByNumber(number);
     const flip = new Tile(brush).vector[3];
     this.currentBrushFlip = flip;
   };

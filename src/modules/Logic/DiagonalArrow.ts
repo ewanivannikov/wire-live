@@ -18,9 +18,11 @@ class DiagonalArrow extends ArrowBase {
   activeStates(fields: Fields) {
     if (this.state === 'Red') {
       const newPosition = this.position;
-      const newDirection = this.direction
+      const newDirection = this.direction;
       let n = 1;
-      if (this.flip === '<') { n = -1 }
+      if (this.flip === '<') {
+        n = -1;
+      }
       if (newDirection === 'Up') {
         fields.addSignal(newPosition.add(n, -1).coordinates, 1);
       } else if (newDirection === 'Down') {
@@ -30,10 +32,12 @@ class DiagonalArrow extends ArrowBase {
       } else if (newDirection === 'Right') {
         fields.addSignal(newPosition.add(1, n).coordinates, 1);
       }
-
     }
   }
 }
 
-export const createDiagonalArrow = (position: string, direction: Direction, flip: Flip) =>
-  new DiagonalArrow(position, direction, flip);
+export const createDiagonalArrow = (
+  position: string,
+  direction: Direction,
+  flip: Flip,
+) => new DiagonalArrow(position, direction, flip);

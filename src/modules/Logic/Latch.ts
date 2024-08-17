@@ -8,9 +8,15 @@ class Latch extends ArrowBase {
   }
 
   conditionStates(fields: Fields) {
-    if ((this.state === 'None') && (fields.getSignal(this.position.coordinates) >= 2)) {
+    if (
+      this.state === 'None' &&
+      fields.getSignal(this.position.coordinates) >= 2
+    ) {
       this.state = 'Red';
-    } else if ((this.state === 'Red') && (fields.getSignal(this.position.coordinates) === 1)) {
+    } else if (
+      this.state === 'Red' &&
+      fields.getSignal(this.position.coordinates) === 1
+    ) {
       this.state = 'None';
     }
   }

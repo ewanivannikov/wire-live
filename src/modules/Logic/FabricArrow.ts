@@ -6,11 +6,11 @@ import { createDelayArrow } from './DelayArrow';
 import { createSignalDetector } from './SignalDetector';
 import { createOppositeArrow } from './OppositeArrow';
 import { createOrthogonalArrow } from './OrthogonalArrow';
-import { createTrioArrow } from './TrioArrow'
-import { createPulseGenerator } from './PulseGenerator'
-import { createThroughArrow } from './ThroughArrow'
-import { createDiagonalArrow } from './DiagonalArrow'
-import { createDoubleArrow } from './DoubleArrow'
+import { createTrioArrow } from './TrioArrow';
+import { createPulseGenerator } from './PulseGenerator';
+import { createThroughArrow } from './ThroughArrow';
+import { createDiagonalArrow } from './DiagonalArrow';
+import { createDoubleArrow } from './DoubleArrow';
 import { createThroughNear } from './ThroughNear';
 import { createForwardDiagArrow } from './ForwardDiagArrow';
 import { createNotGate } from './NotGate';
@@ -58,7 +58,7 @@ export const fabricArrow = (
     const result = createOppositeArrow(position, direction);
     return result;
   }
-  
+
   if (nameType === 'OrthogonalArrow') {
     const result = createOrthogonalArrow(position, direction, flip);
     return result;
@@ -138,7 +138,7 @@ export const fabricArrow = (
     const result = createBulb(position, direction);
     return result;
   }
-  
+
   if (nameType === 'BulbDetector') {
     const result = createBulbDetector(position, direction);
     return result;

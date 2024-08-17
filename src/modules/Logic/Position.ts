@@ -1,5 +1,5 @@
 export class Position {
-  constructor(public coordinates: string) { }
+  constructor(public coordinates: string) {}
 
   get vector() {
     const vector = this.coordinates.split(',').map(Number);

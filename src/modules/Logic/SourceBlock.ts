@@ -26,7 +26,6 @@ class SourceBlock extends ArrowBase {
       fields.addSignal(downPosition.coordinates, 1);
       fields.addSignal(leftPosition.coordinates, 1);
       fields.addSignal(rightPosition.coordinates, 1);
-
     }
   }
 }

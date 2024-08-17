@@ -117,107 +117,128 @@ export const groupsBrushes = {
   'Brush.2.Up': {
     value: 'Blocker',
     label: 'Blocker',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.3.Up': {
     value: 'DelayArrow',
     label: 'Delay arrow',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.4.Up': {
     value: 'SignalDetector',
     label: 'Signal detector',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.5.Up': {
     value: 'OppositeArrow',
     label: 'Opposite arrow',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.6.Up.>': {
     value: 'OrthogonalArrow',
     label: 'Orthogonal arrow',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.7.Up': {
     value: 'TrioArrow',
     label: 'Trio arrow',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.8': {
     value: 'PulseGenerator',
     label: 'Pulse generator',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.9.Up': {
     value: 'ThroughArrow',
     label: 'Through arrow',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.10.Up.>': {
     value: 'DiagonalArrow',
     label: 'Diagonal arrow',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.11.Up': {
     value: 'DoubleArrow',
     label: 'Double arrow',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.12.Up.>': {
     value: 'ThroughNear',
     label: 'Through near',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.13.Up.>': {
     value: 'ForwardDiagArrow',
     label: 'Forward diagonal arrow',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.14.Up': {
     value: 'NotGate',
     label: 'Not gate',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.15.Up': {
     value: 'AndGate',
     label: 'And gate',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.16.Up': {
     value: 'XorGate',
     label: 'Xor gate',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.17.Up': {
     value: 'Latch',
     label: 'Latch',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.18.Up': {
     value: 'FlipFlop',
     label: 'Flip-flop',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.19.Up': {
     value: 'RandomArrow',
     label: 'Random arrow',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.21.Up': {
     value: 'InputArrow',
     label: 'Input arrow',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.24': {
     value: 'Bulb',
     label: 'Bulb',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   'Brush.25.Up': {
     value: 'BulbDetector',
     label: 'Bulb detector',
-    description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
   // 'XOR gate': {
   //   id: 17,

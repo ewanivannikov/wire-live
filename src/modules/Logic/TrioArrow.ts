@@ -17,20 +17,20 @@ class TrioArrow extends ArrowBase {
 
   activeStates(fields: Fields) {
     if (this.state === 'Red') {
-      let newPosition = this.position;
+      const newPosition = this.position;
       if (this.direction === 'Up' || this.direction === 'Down') {
-        if (this.direction === 'Up'){
-            fields.addSignal(newPosition.add(0, -1).coordinates, 1);
+        if (this.direction === 'Up') {
+          fields.addSignal(newPosition.add(0, -1).coordinates, 1);
         } else {
-            fields.addSignal(newPosition.add(0, 1).coordinates, 1);
+          fields.addSignal(newPosition.add(0, 1).coordinates, 1);
         }
         fields.addSignal(newPosition.add(-1, 0).coordinates, 1);
         fields.addSignal(newPosition.add(1, 0).coordinates, 1);
       } else if (this.direction === 'Left' || this.direction === 'Right') {
-        if (this.direction === 'Left'){
-            fields.addSignal(newPosition.add(-1, 0).coordinates, 1);
+        if (this.direction === 'Left') {
+          fields.addSignal(newPosition.add(-1, 0).coordinates, 1);
         } else {
-            fields.addSignal(newPosition.add(1, 0).coordinates, 1);
+          fields.addSignal(newPosition.add(1, 0).coordinates, 1);
         }
         fields.addSignal(newPosition.add(0, -1).coordinates, 1);
         fields.addSignal(newPosition.add(0, 1).coordinates, 1);

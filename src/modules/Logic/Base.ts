@@ -12,7 +12,6 @@ export class Fields {
   public arrowCache = new Map(); // arrow
   public paused = false;
 
-
   getSignal(key: string) {
     if (!this.signalCache.has(key)) {
       return 0;
@@ -41,7 +40,6 @@ export class Fields {
       const singalIn = this.newSignalCache.get(key);
       this.newSignalCache.set(key, signal + singalIn);
     }
-
   }
 
   addState(key: string, arrow: ArrowBase) {
@@ -94,17 +92,15 @@ export class Fields {
       this.clearStates();
 
       this.arrowCache.forEach((arrow) => {
-        console.log('arrow', arrow);
-
         arrow.activeStates(this);
-        arrow.updateState(this)
-      })
+        arrow.updateState(this);
+      });
 
       this.updateSignals();
 
       this.arrowCache.forEach((arrow) => {
         arrow.conditionStates(this);
-      })
+      });
     }
   }
 }

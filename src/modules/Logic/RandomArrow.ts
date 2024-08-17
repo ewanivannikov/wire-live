@@ -8,8 +8,10 @@ class RandomArrow extends ArrowBase {
   }
 
   conditionStates(fields: Fields) {
-    if ((fields.getSignal(this.position.coordinates) >= 1) &&
-        (Math.random() < 0.5)) {
+    if (
+      fields.getSignal(this.position.coordinates) >= 1 &&
+      Math.random() < 0.5
+    ) {
       this.state = 'Red';
     } else {
       this.state = 'None';

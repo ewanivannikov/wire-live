@@ -1,6 +1,6 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const config = merge(common, {
@@ -18,7 +18,7 @@ const config = merge(common, {
             options: {
               defaultExport: true,
             },
-          }, 
+          },
           {
             loader: 'css-loader',
             options: {
@@ -28,11 +28,12 @@ const config = merge(common, {
                 namedExport: false, // Указываем, что предпочитаем именованый экспорт дефолтному
               },
             },
-          },],
+          },
+        ],
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
         exclude: /\.module\.css$/,
       },
     ],
@@ -47,8 +48,8 @@ const config = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       ignoreOrder: true,
-    })
+    }),
   ],
 });
 
-module.exports = config
+module.exports = config;

@@ -17,7 +17,7 @@ class DoubleArrow extends ArrowBase {
 
   activeStates(fields: Fields) {
     if (this.state === 'Red') {
-      let newPosition = this.position;
+      const newPosition = this.position;
       if (this.direction === 'Up') {
         fields.addSignal(newPosition.add(0, -1).coordinates, 1);
         fields.addSignal(newPosition.add(0, -2).coordinates, 1);
@@ -29,7 +29,7 @@ class DoubleArrow extends ArrowBase {
         fields.addSignal(newPosition.add(-2, 0).coordinates, 1);
       } else if (this.direction === 'Right') {
         fields.addSignal(newPosition.add(1, 0).coordinates, 1);
-        fields.addSignal(newPosition.add(2, 0).coordinates, 1)
+        fields.addSignal(newPosition.add(2, 0).coordinates, 1);
       }
     }
   }

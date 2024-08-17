@@ -8,18 +8,20 @@ export const Button = (props) => {
   const handleClick = (e) => {
     onClick(e);
     props.onClick(e);
-  }
-  return <button 
-    type="button"
-    tabindex={props['aria-pressed'] ? 0 : -1}
-    aria-pressed="false"
-    style={{
-      '--ripple-x': position().x,
-      '--ripple-y': position().y,
-      '--animation-tick': tick()
-    }}
-    {...props}
-    onClick={handleClick}
-    classList={{[button]: true, ...props.classList}}
-  />;
-}
+  };
+  return (
+    <button
+      type="button"
+      tabindex={props['aria-pressed'] ? 0 : -1}
+      aria-pressed="false"
+      style={{
+        '--ripple-x': position().x,
+        '--ripple-y': position().y,
+        '--animation-tick': tick(),
+      }}
+      {...props}
+      onClick={handleClick}
+      classList={{ [button]: true, ...props.classList }}
+    />
+  );
+};

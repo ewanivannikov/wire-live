@@ -1,1 +1,1 @@
-window.__ENV__={RELEASE_STAGE: 'development'};
+window.__ENV__ = { RELEASE_STAGE: 'development' };

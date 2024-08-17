@@ -19,14 +19,17 @@ class BulbDetector extends ArrowBase {
       newPosition = newPosition.add(-1, 0);
     }
 
-    if (!(fields.getState(newPosition.coordinates) === 'None') && fields.getSignal(this.position.coordinates) >= 0) {
+    if (
+      !(fields.getState(newPosition.coordinates) === 'None') &&
+      fields.getSignal(this.position.coordinates) >= 0
+    ) {
       this.state = 'Red';
     } else {
       this.state = 'None';
     }
   }
 
-  activeStates(fields: Fields) { }
+  activeStates(fields: Fields) {}
 }
 
 export const createBulbDetector = (position: string, direction: Direction) =>

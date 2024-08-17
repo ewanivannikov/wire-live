@@ -14,15 +14,15 @@ class ListboxLogic {
   constructor(
     private readonly listboxNode: HTMLDListElement,
     private readonly styles,
-    onFocusChange = function () { },
-    onItemChange = function () { }
+    onFocusChange = function () {},
+    onItemChange = function () {},
   ) {
     this.listboxNode = listboxNode;
     this.activeDescendant = this.listboxNode.getAttribute(
-      'aria-activedescendant'
+      'aria-activedescendant',
     );
     this.multiselectable = this.listboxNode.hasAttribute(
-      'aria-multiselectable'
+      'aria-multiselectable',
     );
     this.moveUpDownEnabled = false;
     this.siblingList = null;
@@ -44,7 +44,7 @@ class ListboxLogic {
     if (this.multiselectable) {
       this.listboxNode.addEventListener(
         'mousedown',
-        this.checkMouseDown.bind(this)
+        this.checkMouseDown.bind(this),
       );
     }
   }
@@ -161,12 +161,12 @@ class ListboxLogic {
 
       case 'Backspace':
       case 'Delete':
-      case 'Enter':
+      case 'Enter': {
         if (!this.moveButton) {
           return;
         }
 
-        var keyshortcuts = this.moveButton.getAttribute('aria-keyshortcuts');
+        const keyshortcuts = this.moveButton.getAttribute('aria-keyshortcuts');
         if (evt.key === 'Enter' && keyshortcuts.indexOf('Enter') === -1) {
           return;
         }
@@ -179,7 +179,7 @@ class ListboxLogic {
 
         evt.preventDefault();
 
-        var nextUnselected = nextItem.nextElementSibling;
+        let nextUnselected = nextItem.nextElementSibling;
         while (nextUnselected) {
           if (nextUnselected.getAttribute('aria-selected') != 'true') {
             break;
@@ -202,7 +202,7 @@ class ListboxLogic {
           this.focusItem(nextUnselected);
         }
         break;
-
+      }
       case 'A':
       case 'a':
         // handle control + A
@@ -247,7 +247,7 @@ class ListboxLogic {
     let nextMatch = this.findMatchInRange(
       itemList,
       searchIndex + 1,
-      itemList.length
+      itemList.length,
     );
 
     if (!nextMatch) {
@@ -267,7 +267,7 @@ class ListboxLogic {
   /* Return the next listbox option, if it exists; otherwise, returns null */
   findNextOption(currentOption) {
     const allOptions = Array.prototype.slice.call(
-      this.listboxNode.querySelectorAll('[role="option"]')
+      this.listboxNode.querySelectorAll('[role="option"]'),
     ); // get options array
     const currentOptionIndex = allOptions.indexOf(currentOption);
     let nextOption = null;
@@ -282,7 +282,7 @@ class ListboxLogic {
   /* Return the previous listbox option, if it exists; otherwise, returns null */
   findPreviousOption(currentOption) {
     const allOptions = Array.prototype.slice.call(
-      this.listboxNode.querySelectorAll('[role="option"]')
+      this.listboxNode.querySelectorAll('[role="option"]'),
     ); // get options array
     const currentOptionIndex = allOptions.indexOf(currentOption);
     let previousOption = null;
@@ -304,7 +304,7 @@ class ListboxLogic {
         this.keysSoFar = '';
         this.keyClear = null;
       }.bind(this),
-      500
+      500,
     );
   }
 
@@ -359,7 +359,7 @@ class ListboxLogic {
     if (this.multiselectable) {
       element.setAttribute(
         'aria-selected',
-        element.getAttribute('aria-selected') === 'true' ? 'false' : 'true'
+        element.getAttribute('aria-selected') === 'true' ? 'false' : 'true',
       );
 
       this.updateMoveButton();
@@ -529,7 +529,7 @@ class ListboxLogic {
         this.defocusItem(item);
         this.toggleSelectItem(item);
         this.listboxNode.append(item);
-      }.bind(this)
+      }.bind(this),
     );
 
     if (!this.activeDescendant) {
@@ -552,7 +552,7 @@ class ListboxLogic {
 
     if (this.multiselectable) {
       itemsToDelete = this.listboxNode.querySelectorAll(
-        '[aria-selected="true"]'
+        '[aria-selected="true"]',
       );
     } else if (this.activeDescendant) {
       itemsToDelete = [document.getElementById(this.activeDescendant)];
@@ -569,7 +569,7 @@ class ListboxLogic {
         if (item.id === this.activeDescendant) {
           this.clearActiveDescendant();
         }
-      }.bind(this)
+      }.bind(this),
     );
 
     this.handleItemChange('removed', itemsToDelete);
@@ -680,6 +680,11 @@ class ListboxLogic {
   }
 }
 
-export const createListboxLogic = (element: HTMLElement, styles, onFocusChange, onItemChange) => {
+export const createListboxLogic = (
+  element: HTMLElement,
+  styles,
+  onFocusChange,
+  onItemChange,
+) => {
   return new ListboxLogic(element, styles, onFocusChange, onItemChange);
 };

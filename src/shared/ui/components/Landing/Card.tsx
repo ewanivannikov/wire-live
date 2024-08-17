@@ -1,10 +1,8 @@
 import styles from './style.module.css';
-const {elevationSunken} = styles;
+const { elevationSunken } = styles;
 export const Card = (props) => {
-  const {children, classList} = props
+  const { children, classList } = props;
   return (
-    <div classList={{[elevationSunken]: true, ...classList}}>
-      {children}
-    </div>
+    <div classList={{ [elevationSunken]: true, ...classList }}>{children}</div>
   );
-}
+};

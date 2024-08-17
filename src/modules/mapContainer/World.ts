@@ -57,7 +57,7 @@ class World {
       tileSize,
       loop,
       logicField,
-      grid
+      grid,
     );
     scene.add(tileMap.tileGroup);
 
@@ -74,8 +74,8 @@ class World {
     };
     controls.touches = {
       ONE: -1,
-      TWO: TOUCH.DOLLY_PAN
-    }
+      TWO: TOUCH.DOLLY_PAN,
+    };
   }
 
   render() {

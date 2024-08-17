@@ -244,7 +244,7 @@
 }
 
 .icon-opposite-arrow-up::before {
-  content: '';  
+  content: '';
   position: absolute;
   width: 256px;
   height: 256px;
@@ -306,7 +306,7 @@
   background: url('../../assets/atlas.png') -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12);
-} 
+}
 
 .icon-orthogonal-arrow-up-flip::before {
   content: '';
@@ -344,7 +344,7 @@
   z-index: 0;
   background: url('../../assets/atlas.png') -1536px 0 repeat;
   transform-origin: top left;
-  transform: scale(-0.12, 0.12)  rotate(180deg) translate(0, -256px);
+  transform: scale(-0.12, 0.12) rotate(180deg) translate(0, -256px);
 }
 
 .icon-orthogonal-arrow-left-not-flip::before {
@@ -391,9 +391,9 @@
   position: absolute;
   width: 256px;
   height: 256px;
-  top: 0; 
-  left: 0;  
-  z-index: 0; 
+  top: 0;
+  left: 0;
+  z-index: 0;
   background: url('../../assets/atlas.png') -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(271deg) translate(-256px, -256px);
@@ -425,7 +425,7 @@
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
 
-.icon-trio-arrow-up::before { 
+.icon-trio-arrow-up::before {
   content: '';
   position: absolute;
   width: 256px;
@@ -442,7 +442,7 @@
   content: '';
   position: absolute;
   width: 256px;
-  height: 256px;  
+  height: 256px;
   top: 0;
   left: 0;
   z-index: 0;
@@ -453,11 +453,11 @@
 
 .icon-pulse-generator::before {
   content: '';
-  position: absolute; 
-  width: 256px; 
-  height: 256px;  
+  position: absolute;
+  width: 256px;
+  height: 256px;
   top: 0;
-  left: 0;    
+  left: 0;
   z-index: 0;
   background: url('../../assets/atlas.png') 0px -256px repeat;
   transform-origin: top left;
@@ -467,10 +467,10 @@
 .icon-through-arrow-up::before {
   content: '';
   position: absolute;
-  width: 256px; 
+  width: 256px;
   height: 256px;
   top: 0;
-  left: 0;  
+  left: 0;
   z-index: 0;
   background: url('../../assets/atlas.png') -256px -256px repeat;
   transform-origin: top left;
@@ -799,7 +799,7 @@
   z-index: 0;
   background: url('../../assets/atlas.png') -1280px -256px repeat;
   transform-origin: top left;
-  transform: scale(-0.12, 0.12)  translate(-256px, 0px);
+  transform: scale(-0.12, 0.12) translate(-256px, 0px);
 }
 
 .icon-forward-diag-arrow-down-not-flip::before {
@@ -871,7 +871,7 @@
   content: '';
   position: absolute;
   width: 256px;
-  height: 256px;  
+  height: 256px;
   top: 0;
   left: 0;
   z-index: 0;
@@ -1076,7 +1076,7 @@
 }
 
 .icon-diagonal-arrow-right-not-flip::before {
-  content: '';  
+  content: '';
   position: absolute;
   width: 256px;
   height: 256px;
@@ -1084,8 +1084,6 @@
   left: 0;
   z-index: 0;
   background: url('../../assets/atlas.png') -256px -256px repeat;
-  transform-origin: top left; 
+  transform-origin: top left;
   transform: scale(0.12) translate(0px, -256px);
 }
-
-

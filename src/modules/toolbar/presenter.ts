@@ -4,7 +4,7 @@ import { Loop } from '../mapContainer/systems';
 
 class Tools {
   currentTool = ToolType.Brush;
-  tick = 500
+  tick = 500;
   private _loop: Loop;
   private _logicField;
   constructor() {
@@ -12,8 +12,8 @@ class Tools {
   }
 
   public init = (loop, logicField) => {
-    this._loop = loop
-    this._logicField = logicField
+    this._loop = loop;
+    this._logicField = logicField;
   };
 
   public setCurrentTool = (tool) => {
@@ -22,15 +22,14 @@ class Tools {
 
   public setTick = () => {
     if (this.tick > 0) {
-      this.tick = 0
-      this._logicField.updatePause()
+      this.tick = 0;
+      this._logicField.updatePause();
     } else {
-      this.tick = 500
-      this._loop.setDuration(500)
-      this._logicField.updatePause()
+      this.tick = 500;
+      this._loop.setDuration(500);
+      this._logicField.updatePause();
     }
-  }
-
+  };
 }
 
 export const tools = new Tools();

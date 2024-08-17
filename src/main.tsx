@@ -1,6 +1,6 @@
 import { render } from 'solid-js/web';
 import { createMemo, enableExternalSource, Match, Switch } from 'solid-js';
-import { Layout , LayoutLanding } from './modules/layout';
+import { Layout, LayoutLanding } from './modules/layout';
 
 import { createIsMounted } from '@solid-primitives/lifecycle';
 import './main.css';
@@ -9,10 +9,9 @@ import { Reaction } from 'mobx';
 import { routerService } from './shared/services/RouterService/RouterService';
 import { Home } from './pages';
 
-
-const rippleUrl = new URL('./shared/ui/ripple', import.meta.url)
+const rippleUrl = new URL('./shared/ui/ripple', import.meta.url);
 if ('paintWorklet' in CSS) {
-    CSS.paintWorklet.addModule(rippleUrl)
+  CSS.paintWorklet.addModule(rippleUrl);
 }
 
 const enableMobXWithSolidJS = () => {
@@ -45,23 +44,22 @@ function App() {
   });
 
   return (
-    
-      <Switch fallback={<div>Not Found</div>}>
-        <Match when={routerService.location.pathname === routerService.basename}>
-          <Layout>
-            <div id="canvas" ref={ref} />
-          </Layout>
-        </Match>
-        <Match 
-          when={routerService.location.pathname === `${routerService.basename}home`}
-        >
-          <LayoutLanding>
-            <Home />
-          </LayoutLanding>
-        </Match>
-      </Switch>
-      
-    
+    <Switch fallback={<div>Not Found</div>}>
+      <Match when={routerService.location.pathname === routerService.basename}>
+        <Layout>
+          <div id="canvas" ref={ref} />
+        </Layout>
+      </Match>
+      <Match
+        when={
+          routerService.location.pathname === `${routerService.basename}home`
+        }
+      >
+        <LayoutLanding>
+          <Home />
+        </LayoutLanding>
+      </Match>
+    </Switch>
   );
 }
 render(() => <App />, document.getElementById('app'));

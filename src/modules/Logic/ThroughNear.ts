@@ -17,10 +17,12 @@ class ThroughNear extends ArrowBase {
 
   activeStates(fields: Fields) {
     if (this.state === 'Red') {
-      let newPosition = this.position;
-      let newDirection = this.direction
+      const newPosition = this.position;
+      const newDirection = this.direction;
       let n = 1;
-      if (this.flip === '<'){ n = -1 }
+      if (this.flip === '<') {
+        n = -1;
+      }
       if (newDirection === 'Up') {
         fields.addSignal(newPosition.add(0, -2).coordinates, 1);
         fields.addSignal(newPosition.add(n, 0).coordinates, 1);
@@ -34,10 +36,12 @@ class ThroughNear extends ArrowBase {
         fields.addSignal(newPosition.add(2, 0).coordinates, 1);
         fields.addSignal(newPosition.add(0, n).coordinates, 1);
       }
-
     }
   }
 }
 
-export const createThroughNear = (position: string, direction: Direction, flip: Flip) =>
-  new ThroughNear(position, direction, flip);
+export const createThroughNear = (
+  position: string,
+  direction: Direction,
+  flip: Flip,
+) => new ThroughNear(position, direction, flip);

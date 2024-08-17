@@ -8,7 +8,8 @@ const { container, header, landingMain } = styles;
 export function LayoutLanding(props) {
   return (
     <div class={container}>
-      <header class={header}><img src={logo} alt="" width="50px" srcset="" />
+      <header class={header}>
+        <img src={logo} alt="" width="50px" srcset="" />
         Wire live
       </header>
       <main class={landingMain}>{props.children}</main>

@@ -1,4 +1,4 @@
-import { createSignal } from "solid-js";
+import { createSignal } from 'solid-js';
 import styles from './style.module.css';
 const { ripple } = styles;
 
@@ -8,7 +8,7 @@ export const useRipple = () => {
   const onClick = (e) => {
     e.target.classList.add(ripple);
 
-    setPosition({ x: e.offsetX, y: e.offsetY })
+    setPosition({ x: e.offsetX, y: e.offsetY });
     const start = performance.now();
     requestAnimationFrame(function raf(now) {
       const count = Math.floor(now - start);
@@ -19,13 +19,12 @@ export const useRipple = () => {
         return;
       }
       requestAnimationFrame(raf);
-    })
-  }
-
+    });
+  };
 
   return {
     onClick,
     position,
-    tick
-  }
-}
+    tick,
+  };
+};
