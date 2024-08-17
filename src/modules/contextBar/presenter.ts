@@ -8,6 +8,7 @@ class Brush {
   public currentBrush = 'Brush.0.Up';
   public currentBrushDirection = DirectionType.Up;
   public currentBrushDirectionList = [DirectionType.Up, DirectionType.Down, DirectionType.Left, DirectionType.Right];
+  public currentBrushFlip: '>' | '<' | '' = '';
 
   constructor(private readonly tools: Tools) {
     makeAutoObservable(this);
@@ -30,21 +31,32 @@ class Brush {
     const direction = new Tile(brush).vector[2];
     this.currentBrushDirection = direction;
     const number = new Tile(brush).vector[1]
-    console.log('this.getDirectionsByNumber(number)', this.getDirectionsByNumber(number));
-
     this.currentBrushDirectionList = this.getDirectionsByNumber(number)
+    const flip = new Tile(brush).vector[3];
+    this.currentBrushFlip = flip;
   };
 
   setBrushDirection = (direction) => {
     this.currentBrushDirection = direction;
     const currentBrush = new Tile(this.currentBrush).vector;
-    console.log('currentBrush', currentBrush);
     const brushId = `${currentBrush[0]}.${currentBrush[1]}.${direction}${currentBrush[3] ? `.${currentBrush[3]}` : ''}`;
+    this.currentBrush = brushId;
+  };
+
+  setFlip = (isFlip: boolean) => {
+    this.currentBrushFlip = isFlip ? '<' : '>';
+    const currentBrush = new Tile(this.currentBrush).vector;
+    const hasFlip = currentBrush[3];
+    const brushId = `${currentBrush[0]}.${currentBrush[1]}.${currentBrush[2]}${hasFlip ? `.${this.currentBrushFlip}` : ''}`;
     this.currentBrush = brushId;
   };
 
   get hasDirection() {
     return Boolean(this.currentBrushDirection);
+  }
+
+  get hasFlip() {
+    return Boolean(this.currentBrushFlip);
   }
 
   get allowBrushes() {

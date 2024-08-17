@@ -3,6 +3,8 @@
   padding: 0;
   margin-block-start: 0;
   margin-block-end: 0;
+  max-height: 18em;
+  overflow-y: auto;
 }
 
 .option {
@@ -11,4 +13,13 @@
   grid-gap: 8px;
   justify-content: start;
   cursor: pointer;
+  align-items: center;
+}
+
+.option[aria-selected="true"] {
+  background-color: #c9fffe;
+}
+
+.option.focused {
+  background-color: #e8f8ff;
 }
