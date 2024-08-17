@@ -86,7 +86,7 @@
 .NS97j0bZ7EnSwdEncl9b {
   display: flex;
 
-  &[aria-orientation="vertical"] {
+  &[aria-orientation='vertical'] {
     flex-direction: column;
   }
 
@@ -118,8 +118,8 @@
 }
 
 .V3tJhduHGJyMchHUcoZ7 {
-    background-image: paint(ripple);
-  }
+  background-image: paint(ripple);
+}
 
 .o3h2R7zSZDL44Shv6uEC {
   list-style-type: none;
@@ -139,13 +139,13 @@
   align-items: center;
 }
 
-.bTjleoO9T5t0KDen5bJ9[aria-selected="true"] {
+.bTjleoO9T5t0KDen5bJ9[aria-selected='true'] {
   position: relative;
   background-color: #c9fffe;
 }
 
 .bTjleoO9T5t0KDen5bJ9.xJPwo_3SkY8CI1trTt49::before {
-  content: "✅";
+  content: '✅';
   position: absolute;
   right: 4px;
 }
@@ -175,7 +175,6 @@
   box-shadow: 0 0 0 1px var(--elevation-shadow-sunken);
   margin: 8px;
 }
-
 
 .qSzv86ST7BKjHEfKoKRa {
   font-family: var(--typography-display-lg-font-family);
@@ -438,7 +437,7 @@
 }
 
 .PqWoirWpkEiVkJWXZjts::before {
-  content: '';  
+  content: '';
   position: absolute;
   width: 256px;
   height: 256px;
@@ -500,7 +499,7 @@
   background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12);
-} 
+}
 
 ._erosWSUDfdUVnGM7_Mw::before {
   content: '';
@@ -538,7 +537,7 @@
   z-index: 0;
   background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
   transform-origin: top left;
-  transform: scale(-0.12, 0.12)  rotate(180deg) translate(0, -256px);
+  transform: scale(-0.12, 0.12) rotate(180deg) translate(0, -256px);
 }
 
 .h4Wrvowoxds55eh5b0KV::before {
@@ -585,9 +584,9 @@
   position: absolute;
   width: 256px;
   height: 256px;
-  top: 0; 
-  left: 0;  
-  z-index: 0; 
+  top: 0;
+  left: 0;
+  z-index: 0;
   background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(271deg) translate(-256px, -256px);
@@ -619,7 +618,7 @@
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
 
-.VZ6iXqf1zwBvSXqVX2Rp::before { 
+.VZ6iXqf1zwBvSXqVX2Rp::before {
   content: '';
   position: absolute;
   width: 256px;
@@ -636,7 +635,7 @@
   content: '';
   position: absolute;
   width: 256px;
-  height: 256px;  
+  height: 256px;
   top: 0;
   left: 0;
   z-index: 0;
@@ -647,11 +646,11 @@
 
 .DBBZJUkOnJhXvjGwaPL0::before {
   content: '';
-  position: absolute; 
-  width: 256px; 
-  height: 256px;  
+  position: absolute;
+  width: 256px;
+  height: 256px;
   top: 0;
-  left: 0;    
+  left: 0;
   z-index: 0;
   background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) 0px -256px repeat;
   transform-origin: top left;
@@ -661,10 +660,10 @@
 .sSV1mbFo43aAFNr4wdDm::before {
   content: '';
   position: absolute;
-  width: 256px; 
+  width: 256px;
   height: 256px;
   top: 0;
-  left: 0;  
+  left: 0;
   z-index: 0;
   background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -256px repeat;
   transform-origin: top left;
@@ -993,7 +992,7 @@
   z-index: 0;
   background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
   transform-origin: top left;
-  transform: scale(-0.12, 0.12)  translate(-256px, 0px);
+  transform: scale(-0.12, 0.12) translate(-256px, 0px);
 }
 
 .n4O_yEEp4bHNTAxGHVr9::before {
@@ -1065,7 +1064,7 @@
   content: '';
   position: absolute;
   width: 256px;
-  height: 256px;  
+  height: 256px;
   top: 0;
   left: 0;
   z-index: 0;
@@ -1270,7 +1269,7 @@
 }
 
 .uOPWjNQ5WzsCW8w8oYW2::before {
-  content: '';  
+  content: '';
   position: absolute;
   width: 256px;
   height: 256px;
@@ -1278,11 +1277,9 @@
   left: 0;
   z-index: 0;
   background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -256px repeat;
-  transform-origin: top left; 
+  transform-origin: top left;
   transform: scale(0.12) translate(0px, -256px);
 }
-
-
 
 .snlXzClAQQLmrqq2MfLm {
   display: grid;
@@ -1309,7 +1306,7 @@
   --elevation-surface-overlay: #ff9c8f;
   --elevation-surface-raised: #ff7462;
   --elevation-surface-sunken: #f14a38;
-  --typography-display-lg-font-family: "Archivo Black", sans-serif;
+  --typography-display-lg-font-family: 'Archivo Black', sans-serif;
   --typography-display-lg-font-size: 4rem;
   --typography-display-lg-font-weight: 700;
 }
@@ -1319,18 +1316,35 @@
     --color-background: color(display-p3 1 1 1);
     --color-onBaseline: color(display-p3 1 1 1);
     --color-primary: color(display-p3 0 0.47843137254901963 1);
-    --color-secondary: color(display-p3 0.4235294117647059 0.4235294117647059 0.4235294117647059);
-    --elevation-shadow-baseline: color(display-p3 1 0.34901960784313724 0.2627450980392157);
-    --elevation-shadow-overlay: color(display-p3 1 0.611764705882353 0.5607843137254902);
-    --elevation-shadow-raised: color(display-p3 1 0.4549019607843137 0.3843137254901961);
-    --elevation-shadow-sunken: color(display-p3 0.9450980392156862 0.2901960784313726 0.2196078431372549);
-    --elevation-surface-baseline: color(display-p3 1 0.34901960784313724 0.2627450980392157);
-    --elevation-surface-overlay: color(display-p3 1 0.611764705882353 0.5607843137254902);
-    --elevation-surface-raised: color(display-p3 1 0.4549019607843137 0.3843137254901961);
-    --elevation-surface-sunken: color(display-p3 0.9450980392156862 0.2901960784313726 0.2196078431372549);
+    --color-secondary: color(
+      display-p3 0.4235294117647059 0.4235294117647059 0.4235294117647059
+    );
+    --elevation-shadow-baseline: color(
+      display-p3 1 0.34901960784313724 0.2627450980392157
+    );
+    --elevation-shadow-overlay: color(
+      display-p3 1 0.611764705882353 0.5607843137254902
+    );
+    --elevation-shadow-raised: color(
+      display-p3 1 0.4549019607843137 0.3843137254901961
+    );
+    --elevation-shadow-sunken: color(
+      display-p3 0.9450980392156862 0.2901960784313726 0.2196078431372549
+    );
+    --elevation-surface-baseline: color(
+      display-p3 1 0.34901960784313724 0.2627450980392157
+    );
+    --elevation-surface-overlay: color(
+      display-p3 1 0.611764705882353 0.5607843137254902
+    );
+    --elevation-surface-raised: color(
+      display-p3 1 0.4549019607843137 0.3843137254901961
+    );
+    --elevation-surface-sunken: color(
+      display-p3 0.9450980392156862 0.2901960784313726 0.2196078431372549
+    );
   }
 }
-
 
 body,
 html {
