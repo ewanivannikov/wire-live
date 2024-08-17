@@ -1,5 +1,6 @@
 import { Button as KButton } from '@kobalte/core/button';
-import { button } from './button.module.css';
+import styles from './button.module.css';
+const { button } = styles;
 
 export const Button = (props) => {
   return <KButton {...props} class={button} />;

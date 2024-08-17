@@ -59,8 +59,6 @@ export class Fields {
     flip?: Flip,
   ) {
     const name = indexTileToArrow[index];
-    console.log('name', name);
-    
 
     this.addArrow(key, fabricArrow(name, key, direction, flip));
   }
@@ -96,6 +94,8 @@ export class Fields {
       this.clearStates();
 
       this.arrowCache.forEach((arrow) => {
+        console.log('arrow', arrow);
+
         arrow.activeStates(this);
         arrow.updateState(this)
       })

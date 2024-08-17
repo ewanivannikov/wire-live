@@ -1,4 +1,5 @@
-import { target } from './style.module.css';
+import styles from './style.module.css';
+const {target} = styles;
 export const Target = (props) => {
   return <button {...props} class={target} popovertarget="my-popover" type='button'>
     {props.children}

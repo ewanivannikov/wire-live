@@ -1,5 +1,4 @@
 class ListboxLogic {
-  private listboxNode: HTMLDListElement;
   private activeDescendant: string;
   private multiselectable: boolean;
   private moveUpDownEnabled: boolean;
@@ -12,7 +11,12 @@ class ListboxLogic {
   private handleFocusChange: () => void;
   private handleItemChange: () => void;
 
-  constructor(listboxNode: HTMLDListElement, onFocusChange = function () { }, onItemChange = function () { }) {
+  constructor(
+    private readonly listboxNode: HTMLDListElement,
+    private readonly styles,
+    onFocusChange = function () { },
+    onItemChange = function () { }
+  ) {
     this.listboxNode = listboxNode;
     this.activeDescendant = this.listboxNode.getAttribute(
       'aria-activedescendant'
@@ -375,7 +379,7 @@ class ListboxLogic {
     if (!this.multiselectable) {
       element.removeAttribute('aria-selected');
     }
-    element.classList.remove('focused');
+    element.classList.remove(this.styles.focused);
   }
 
   /**
@@ -389,7 +393,7 @@ class ListboxLogic {
     if (!this.multiselectable) {
       element.setAttribute('aria-selected', 'true');
     }
-    element.classList.add('focused');
+    element.classList.add(this.styles.focused);
     this.listboxNode.setAttribute('aria-activedescendant', element.id);
     this.activeDescendant = element.id;
 
@@ -676,6 +680,6 @@ class ListboxLogic {
   }
 }
 
-export const createListboxLogic = (element: HTMLElement, onFocusChange, onItemChange) => {
-  return new ListboxLogic(element, onFocusChange, onItemChange);
+export const createListboxLogic = (element: HTMLElement, styles, onFocusChange, onItemChange) => {
+  return new ListboxLogic(element, styles, onFocusChange, onItemChange);
 };

@@ -1,4 +1,5 @@
-import { display } from './style.module.css';
+import styles from './style.module.css';
+const {display} = styles;
 export const Typography = (props) => {
   const {children} = props
   return (

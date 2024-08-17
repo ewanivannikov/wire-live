@@ -1,5 +1,6 @@
 import { createSignal } from "solid-js";
-import { ripple } from './style.module.css';
+import styles from './style.module.css';
+const { ripple } = styles;
 
 export const useRipple = () => {
   const [position, setPosition] = createSignal({ x: 0, y: 0 });

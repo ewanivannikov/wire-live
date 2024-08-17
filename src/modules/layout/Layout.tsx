@@ -1,9 +1,11 @@
-import { container, header, sidebar, context, main } from './layout.module.css';
+import styles from './layout.module.css';
 
 import { Toolbar } from '../toolbar';
 import { ContextBar } from '../contextBar';
 import logo from '../../assets/logo.svg';
 import './tokens.css';
+
+const { container, header, sidebar, context, main } = styles;
 
 export function Layout(props) {
   return (

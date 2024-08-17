@@ -1,6 +1,6 @@
-import { createEffect, createSignal } from 'solid-js';
+import { createEffect } from 'solid-js';
 import { createListboxLogic } from './ListboxLogic';
-import { root } from './style.module.css';
+import styles from './style.module.css';
 /**
  * @link https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-scrollable/
  */
@@ -9,14 +9,14 @@ export const Listbox = (props) => {
   let element!: HTMLElement;
 
   createEffect(() => {
-    createListboxLogic(element, onFocusChange, onItemChange);
+    createListboxLogic(element, styles, onFocusChange, onItemChange);
     return element
   }, null);
   
   return <ul
     aria-activedescendant="required"
     {...props}
-    class={root}
+    class={styles.root}
     classList={props.classList}
     role="listbox"
     tabindex="0"

@@ -17,9 +17,12 @@
 }
 
 .option[aria-selected="true"] {
+  position: relative;
   background-color: #c9fffe;
 }
 
-.option.focused {
-  background-color: #e8f8ff;
+.option.focused::before {
+  content: "✅";
+  position: absolute;
+  right: 4px;
 }

@@ -1,4 +1,6 @@
-import { root } from './style.module.css';
+import styles from './style.module.css';
+
+const {root} = styles;
 
 export const SegmentedControl = (props) => { 
   return <div

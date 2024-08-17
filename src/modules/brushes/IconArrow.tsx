@@ -1,5 +1,7 @@
 import { ArrowUp, ArrowDown, ArrowRight, ArrowLeft } from 'lucide-solid';
-import {
+import styles from './style.module.css';
+
+const {
   icon,
   iconSourceBlock,
   iconArrowUp,
@@ -79,7 +81,7 @@ import {
   iconForwardDiagArrowRightFlip,
   iconForwardDiagArrowLeftFlip,
   iconForwardDiagArrowDownFlip,
-} from './style.module.css';
+} = styles;
 
 export const IconArrowUp = () => {
   return <div class={`${icon} ${iconArrowUp}`} />;
@@ -345,7 +347,7 @@ export const iconsMapping = {
   'Brush.6.Up.<': IconOrthogonalArrowUpFlip,
   'Brush.6.Down.<': IconOrthogonalArrowDownFlip,
   'Brush.6.Right.<': IconOrthogonalArrowRightFlip,
-  'Brush.6.Left.<': IconOrthogonalArrowRightFlip,
+  'Brush.6.Left.<': IconOrthogonalArrowLeftFlip,
   'Brush.7.Up': IconTrioArrowUp,
   'Brush.7.Down': IconTrioArrowDown,
   'Brush.7.Right': IconTrioArrowRight,

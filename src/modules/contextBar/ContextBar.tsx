@@ -3,13 +3,15 @@ import {
   Popover,
   SegmentedControl,
 } from '../../shared';
-import { For, Show } from 'solid-js';
+import { createEffect, For, Show } from 'solid-js';
 import { groupsBrushes } from '../brushes';
 import { createBrush } from './presenter';
 import { iconDirectionMapping, iconsMapping } from '../brushes/IconArrow';
 import { tools } from '../toolbar/presenter';
 import { Dynamic } from 'solid-js/web';
-import { contextbar } from './style.module.css';
+import styles from './style.module.css';
+
+const { contextbar } = styles;
 
 export const ContextBar = () => {
   const state = createBrush(tools);

@@ -17,25 +17,18 @@ class DiagonalArrow extends ArrowBase {
 
   activeStates(fields: Fields) {
     if (this.state === 'Red') {
-      let newPosition = this.position;
-      let newDirection = this.direction
-      if (this.flip === '<'){
-        const flipped = {
-          Up: 'Right',
-          Right: 'Down',
-          Down: 'Left',
-          Left: 'Up'
-        } as const
-        newDirection = flipped[newDirection]
-      }
+      const newPosition = this.position;
+      const newDirection = this.direction
+      let n = 1;
+      if (this.flip === '<') { n = -1 }
       if (newDirection === 'Up') {
-        fields.addSignal(newPosition.add(1, -1).coordinates, 1);
+        fields.addSignal(newPosition.add(n, -1).coordinates, 1);
       } else if (newDirection === 'Down') {
-        fields.addSignal(newPosition.add(-1, 1).coordinates, 1);
+        fields.addSignal(newPosition.add(-n, 1).coordinates, 1);
       } else if (newDirection === 'Left') {
-        fields.addSignal(newPosition.add(-1, -1).coordinates, 1);
+        fields.addSignal(newPosition.add(-1, -n).coordinates, 1);
       } else if (newDirection === 'Right') {
-        fields.addSignal(newPosition.add(1, 1).coordinates, 1);
+        fields.addSignal(newPosition.add(1, n).coordinates, 1);
       }
 
     }

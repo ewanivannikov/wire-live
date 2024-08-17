@@ -1,5 +1,7 @@
-import { button } from './style.module.css';
+import styles from './style.module.css';
 import { useRipple } from './useRipple';
+
+const { button } = styles;
 
 export const Button = (props) => {
   const { onClick, position, tick } = useRipple();

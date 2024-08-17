@@ -119,7 +119,8 @@ class TileMap {
 
 
     const tileName = new Tile(brush.currentBrush).vector;
-    this.logicField.addArrowCache(tile.name, tileName[1], tileName[2]);
+
+    this.logicField.addArrowCache(tile.name, tileName[1], tileName[2], tileName[3]);
   };
 
   removeTile = (tile) => {

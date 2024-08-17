@@ -25,7 +25,7 @@ const config = merge(common, {
               esModule: true, // Говорим о том, что хотим использовать ES Modules
               modules: {
                 exportLocalsConvention: 'camel-case-only',
-                namedExport: true, // Указываем, что предпочитаем именованый экспорт дефолтному
+                namedExport: false, // Указываем, что предпочитаем именованый экспорт дефолтному
               },
             },
           },],

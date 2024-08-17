@@ -1,8 +1,10 @@
-import { trigger, Button, SegmentedControl } from '../../shared';
-import { toolbar } from './style.module.css';
+import { Button, SegmentedControl } from '../../shared';
+import styles from './style.module.css';
 import { Highlighter, Eraser, Play, Pause } from 'lucide-solid';
 import { tools } from './presenter';
 import { Match, Switch } from 'solid-js';
+
+const { toolbar } = styles;
 
 export const Toolbar = () => {
   const handleClick = (e) => {    
@@ -37,7 +39,6 @@ export const Toolbar = () => {
 
     <Button name="Play"
           aria-pressed={tools.tick === 0}
-          class={trigger}
           onClick={handleClickTick} >
             <Switch>
               <Match when={tools.tick === 0}>

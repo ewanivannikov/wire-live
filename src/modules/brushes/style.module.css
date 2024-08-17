@@ -344,7 +344,7 @@
   z-index: 0;
   background: url('../../assets/atlas.png') -1536px 0 repeat;
   transform-origin: top left;
-  transform: scale(0.12);
+  transform: scale(-0.12, 0.12)  rotate(180deg) translate(0, -256px);
 }
 
 .icon-orthogonal-arrow-left-not-flip::before {
@@ -370,7 +370,7 @@
   z-index: 0;
   background: url('../../assets/atlas.png') -1536px 0 repeat;
   transform-origin: top left;
-  transform: scale(0.12) rotate(90deg);
+  transform: scale(-0.12, 0.12) rotate(90deg);
 }
 
 .icon-orthogonal-arrow-right-not-flip::before {
@@ -396,7 +396,7 @@
   z-index: 0; 
   background: url('../../assets/atlas.png') -1536px 0 repeat;
   transform-origin: top left;
-  transform: scale(0.12) rotate(180deg);
+  transform: scale(-0.12, 0.12) rotate(271deg) translate(-256px, -256px);
 }
 
 .icon-trio-arrow-right::before {

@@ -1,7 +1,9 @@
-import { container, header, landingMain } from './layout.module.css';
+import styles from './layout.module.css';
 
 import logo from '../../assets/logo.svg';
 import './tokens.css';
+
+const { container, header, landingMain } = styles;
 
 export function LayoutLanding(props) {
   return (
