@@ -81,6 +81,27 @@ const {
   iconForwardDiagArrowRightFlip,
   iconForwardDiagArrowLeftFlip,
   iconForwardDiagArrowDownFlip,
+  iconLatchDown,
+  iconLatchUp,
+  iconLatchLeft,
+  iconLatchRight,
+  iconFlipFlopUp,
+  iconFlipFlopDown,
+  iconFlipFlopLeft,
+  iconFlipFlopRight,
+  iconRandomArrowUp,
+  iconRandomArrowDown,
+  iconRandomArrowLeft,
+  iconRandomArrowRight,
+  iconInputArrowUp,
+  iconInputArrowDown,
+  iconInputArrowLeft,
+  iconInputArrowRight,
+  iconBulb,
+  iconBulbDetectorUp,
+  iconBulbDetectorDown,
+  iconBulbDetectorLeft,
+  iconBulbDetectorRight,
 } = styles;
 
 export const IconArrowUp = () => {
@@ -318,6 +339,90 @@ export const IconXorGateDown = () => {
   return <div class={`${icon} ${iconXorGateDown}`} />;
 };
 
+export const IconLatchUp = () => {
+  return <div class={`${icon} ${iconLatchUp}`} />;
+};
+
+export const IconLatchDown = () => {
+  return <div class={`${icon} ${iconLatchDown}`} />;
+};
+
+export const IconLatchRight = () => {
+  return <div class={`${icon} ${iconLatchRight}`} />;
+};
+
+export const IconLatchLeft = () => {
+  return <div class={`${icon} ${iconLatchLeft}`} />;
+};
+
+export const IconFlipFlopUp = () => {
+  return <div class={`${icon} ${iconFlipFlopUp}`} />;
+};
+
+export const IconFlipFlopDown = () => {
+  return <div class={`${icon} ${iconFlipFlopDown}`} />;
+};
+
+export const IconFlipFlopRight = () => {
+  return <div class={`${icon} ${iconFlipFlopRight}`} />;
+};
+
+export const IconFlipFlopLeft = () => {
+  return <div class={`${icon} ${iconFlipFlopLeft}`} />;
+};
+
+export const IconRandomArrowUp = () => {
+  return <div class={`${icon} ${iconRandomArrowUp}`} />;
+};
+
+export const IconRandomArrowDown = () => {
+  return <div class={`${icon} ${iconRandomArrowDown}`} />;
+};
+
+export const IconRandomArrowRight = () => {
+  return <div class={`${icon} ${iconRandomArrowRight}`} />;
+};
+
+export const IconRandomArrowLeft = () => {
+  return <div class={`${icon} ${iconRandomArrowLeft}`} />;
+};
+
+export const IconInputArrowUp = () => {
+  return <div class={`${icon} ${iconInputArrowUp}`} />;
+};
+
+export const IconInputArrowDown = () => {
+  return <div class={`${icon} ${iconInputArrowDown}`} />;
+};
+
+export const IconInputArrowRight = () => {
+  return <div class={`${icon} ${iconInputArrowRight}`} />;
+};
+
+export const IconInputArrowLeft = () => {
+  return <div class={`${icon} ${iconInputArrowLeft}`} />;
+};
+
+export const IconBulb = () => {
+  return <div class={`${icon} ${iconBulb}`} />;
+};
+
+export const IconBulbDetectorUp = () => {
+  return <div class={`${icon} ${iconBulbDetectorUp}`} />;
+};
+
+export const IconBulbDetectorDown = () => {
+  return <div class={`${icon} ${iconBulbDetectorDown}`} />;
+};
+
+export const IconBulbDetectorRight = () => {
+  return <div class={`${icon} ${iconBulbDetectorRight}`} />;
+};
+
+export const IconBulbDetectorLeft = () => {
+  return <div class={`${icon} ${iconBulbDetectorLeft}`} />;
+};
+
 export const iconsMapping = {
   'Brush.0.Up': IconArrowUp,
   'Brush.0.Down': IconArrowDown,
@@ -397,6 +502,27 @@ export const iconsMapping = {
   'Brush.16.Down': IconXorGateDown,
   'Brush.16.Right': IconXorGateRight,
   'Brush.16.Left': IconXorGateLeft,
+  'Brush.17.Up': IconLatchUp,
+  'Brush.17.Down': IconLatchDown,
+  'Brush.17.Right': IconLatchRight,
+  'Brush.17.Left': IconLatchLeft,
+  'Brush.18.Up': IconFlipFlopUp,
+  'Brush.18.Down': IconFlipFlopDown,
+  'Brush.18.Right': IconFlipFlopRight,
+  'Brush.18.Left': IconFlipFlopLeft,
+  'Brush.19.Up': IconRandomArrowUp,
+  'Brush.19.Down': IconRandomArrowDown,
+  'Brush.19.Right': IconRandomArrowRight,
+  'Brush.19.Left': IconRandomArrowLeft,
+  'Brush.21.Up': IconInputArrowUp,
+  'Brush.21.Down': IconInputArrowDown,
+  'Brush.21.Right': IconInputArrowRight,
+  'Brush.21.Left': IconInputArrowLeft,
+  'Brush.24': IconBulb,
+  'Brush.25.Up': IconBulbDetectorUp,
+  'Brush.25.Down': IconBulbDetectorDown,
+  'Brush.25.Right': IconBulbDetectorRight,
+  'Brush.25.Left': IconBulbDetectorLeft,
 } as const;
 
 export const iconDirectionMapping = {

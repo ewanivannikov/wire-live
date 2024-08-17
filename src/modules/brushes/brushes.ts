@@ -240,34 +240,4 @@ export const groupsBrushes = {
     description:
       'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },
-  // 'XOR gate': {
-  //   id: 17,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Latch': {
-  //   id: 18,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'T flip-flop': {
-  //   id: 19,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Randomizer': {
-  //   id: 20,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Button': {
-  //   id: 21,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
-  // 'Directional button': {
-  //   id: 22,
-  //   label: 'Arrow',
-  //   description: 'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.'
-  // },
 };
