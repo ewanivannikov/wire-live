@@ -10,20 +10,23 @@
 }
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 0;
-  background-color: #ddd;
-  padding: 4px;
+  background-color: oklch(from var(--color-baseline) calc(l - 0.05) c h);
+  padding: 0;
   border-radius: 2px;
   aspect-ratio: 1 / 1;
   height: 32px;
 
   &[aria-pressed='true'] {
-    background-color: rgba(102, 102, 102, 0.744);
-    border: 1px solid #707070;
+    background-color: oklch(from var(--color-baseline) calc(l - 0.09) c h);
+    border: 2px solid oklch(from var(--color-baseline) calc(l - 0.25) c h);
   }
 
   &:hover {
-    background-color: #c6c6c6;
+    background-color: oklch(from var(--color-baseline) calc(l - 0.25) c h);
   }
 
   --ripple-x: 0;

@@ -7,7 +7,7 @@ export const Popover = (props) => {
       {...props}
       classList={props.classList}
       popover
-      id="my-popover"
+      style={{'position-anchor': `--${props.id}`}}
     />
   );
 };

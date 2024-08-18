@@ -44,7 +44,7 @@ class World {
     const size = gridRowSize * tileSize;
     const divisions = tileSize / 4;
 
-    const gridHelper = new GridHelper(size, divisions, 0x0000ff, 0x808080);
+    const gridHelper = new GridHelper(size, divisions, 0xa2a2bd, 0xcfcccc);
     gridHelper.rotation.x = Math.PI / 2;
     scene.add(gridHelper);
 

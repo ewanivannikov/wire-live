@@ -1,13 +1,11 @@
 import * as THREE from 'three';
 
 class Grid {
-  tileSize = 256;
   gridRowSize = 4;
   tileGroup;
 
-  constructor(tileSize, gridRowSize) {
+  constructor(private readonly tileSize = 256, gridRowSize) {
     this.gridRowSize = gridRowSize;
-    this.tileSize = tileSize;
     this.init();
   }
 

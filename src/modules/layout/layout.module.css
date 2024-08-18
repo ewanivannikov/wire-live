@@ -13,7 +13,7 @@
 .header {
   grid-area: header;
   background-color: oklch(from var(--color-baseline) l c h);
-  border-bottom: 1px solid oklch(from var(--color-baseline) calc(l - 0.09) c h);
+  border-bottom: 1px solid oklch(from var(--color-baseline) calc(l - 0.05) c h);
   display: flex;
   align-items: center;
 }

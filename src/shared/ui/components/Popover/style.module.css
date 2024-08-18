@@ -1,6 +1,5 @@
 .root[popover] {
   position: absolute;
-  position-anchor: --toggle-btn;
   top: anchor(bottom);
   left: anchor(left);
   margin: 0;
@@ -10,8 +9,8 @@
 }
 
 .target {
-  anchor-name: --toggle-btn;
   display: flex;
+  align-items: center;
   height: 32px;
   border: 0;
   background: transparent;
