@@ -47,7 +47,7 @@ function App() {
     if(routerService.location.pathname === `${routerService.basename}home`){
       const theme = document.querySelector('#theme');
       if (theme) {
-        theme.href = './warm.css';
+        theme.href = './warm.variables.css';
       }
     }
   }, null);

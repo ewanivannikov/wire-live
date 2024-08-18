@@ -48,6 +48,8 @@ const config = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       ignoreOrder: true,
+      filename: '[name].[contenthash].css',
+      chunkFilename: "[id].css",
     }),
   ],
 });
