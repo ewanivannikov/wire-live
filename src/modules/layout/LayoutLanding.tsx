@@ -1,7 +1,6 @@
 import styles from './layout.module.css';
 
 import logo from '../../assets/logo.svg';
-import './tokens.css';
 
 const { container, header, landingMain } = styles;
 

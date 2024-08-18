@@ -7,8 +7,8 @@
     "secondary": {
       "$value": "#6c6c6c"
     },
-    "background": {
-      "$value": "#ffffff"
+    "baseline": {
+      "$value": "#522258"
     },
     "onBaseline": {
       "$value": "#ffffff"
@@ -30,16 +30,16 @@
     "$type": "elevation",
     "surface": {
       "sunken": {
-        "$value": "#f14a38"
+        "$value": "85%"
       },
       "baseline": {
-        "$value": "#ff5943"
+        "$value": "89.95%"
       },
       "raised": {
-        "$value": "#ff7462"
+        "$value": "95%"
       },
       "overlay": {
-        "$value": "#ff9c8f"
+        "$value": "100%"
       }
     },
     "shadow": {

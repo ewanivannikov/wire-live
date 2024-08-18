@@ -3,7 +3,6 @@ import styles from './layout.module.css';
 import { Toolbar } from '../toolbar';
 import { ContextBar } from '../contextBar';
 import logo from '../../assets/logo.svg';
-import './tokens.css';
 
 const { container, header, sidebar, context, main } = styles;
 

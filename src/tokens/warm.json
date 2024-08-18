@@ -1,0 +1,60 @@
+{
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": "#007aff"
+    },
+    "secondary": {
+      "$value": "#6c6c6c"
+    },
+    "baseline": {
+      "$value": "#C63C51"
+    },
+    "onBaseline": {
+      "$value": "#ffffff"
+    }
+  },
+  "typography": {
+    "$type": "typography",
+    "display": {
+      "lg": {
+        "$value": {
+          "fontSize": "4rem",
+          "fontWeight": 700,
+          "fontFamily": ["Archivo Black", "sans-serif"]
+        }
+      }
+    }
+  },
+  "elevation": {
+    "$type": "elevation",
+    "surface": {
+      "sunken": {
+        "$value": "85%"
+      },
+      "baseline": {
+        "$value": "89.95%"
+      },
+      "raised": {
+        "$value": "95%"
+      },
+      "overlay": {
+        "$value": "100%"
+      }
+    },
+    "shadow": {
+      "sunken": {
+        "$value": "#f14a38"
+      },
+      "baseline": {
+        "$value": "#ff5943"
+      },
+      "raised": {
+        "$value": "#ff7462"
+      },
+      "overlay": {
+        "$value": "#ff9c8f"
+      }
+    }
+  }
+}

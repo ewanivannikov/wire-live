@@ -1,5 +1,5 @@
 .section {
-  background-color: var(--elevation-surface-baseline);
+  background-color: oklch(from var(--color-baseline) l c h);
 }
 
 .masonry {
@@ -19,7 +19,7 @@
 }
 
 .elevation-sunken {
-  background-color: var(--elevation-surface-sunken);
-  box-shadow: 0 0 0 1px var(--elevation-shadow-sunken);
+  background-color: oklch(from var(--color-baseline) calc(l - 0.09) c h);
+  box-shadow: 0 0 0 1px oklch(from var(--color-baseline) calc(l - 0.09) c h);
   margin: 8px;
 }

@@ -1,5 +1,5 @@
 import { render } from 'solid-js/web';
-import { createMemo, enableExternalSource, Match, Switch } from 'solid-js';
+import { createEffect, createMemo, enableExternalSource, Match, Switch } from 'solid-js';
 import { Layout, LayoutLanding } from './modules/layout';
 
 import { createIsMounted } from '@solid-primitives/lifecycle';
@@ -42,6 +42,15 @@ function App() {
       world.render();
     }
   });
+
+  createEffect(() => {
+    if(routerService.location.pathname === `${routerService.basename}home`){
+      const theme = document.querySelector('#theme');
+      if (theme) {
+        theme.href = './warm.css';
+      }
+    }
+  }, null);
 
   return (
     <Switch fallback={<div>Not Found</div>}>

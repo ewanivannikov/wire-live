@@ -7,18 +7,20 @@
     'context context'
     'sidebar main';
   height: 100vh;
+  background-color: oklch(from var(--color-baseline) l c h);
 }
 
 .header {
   grid-area: header;
-  background-color: #eaeaea;
+  background-color: oklch(from var(--color-baseline) l c h);
+  border-bottom: 1px solid oklch(from var(--color-baseline) calc(l - 0.09) c h);
   display: flex;
   align-items: center;
 }
 
 .sidebar {
   grid-area: sidebar;
-  background-color: rgb(235, 235, 235);
+  background-color: oklch(from var(--color-baseline) l c h);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +35,7 @@
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  background-color: var(--elevation-surface-baseline);
+  background-color: oklch(from var(--color-baseline) l c h);
   color: var(--color-onBaseline);
 }
 
@@ -41,7 +43,7 @@
   grid-area: context;
   display: flex;
   align-items: center;
-  background-color: rgb(212 212 212);
-  border-bottom: 1px solid #bababa;
+  background-color: oklch(from var(--color-baseline) l c h);
+  border-bottom: 1px solid oklch(from var(--color-baseline) calc(l - 0.09) c h);;
   padding-left: 4px;
 }
