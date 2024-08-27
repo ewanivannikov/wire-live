@@ -19,7 +19,6 @@ import { createXorGate } from './XorGate';
 import { createLatch } from './Latch';
 import { createFlipFlop } from './FlipFlop';
 import { createRandomArrow } from './RandomArrow';
-import { createInputArrow } from './InputArrow';
 import { createBulb } from './Bulb';
 import { createBulbDetector } from './BulbDetector';
 
@@ -126,11 +125,6 @@ export const fabricArrow = (
 
   if (nameType === 'RandomArrow') {
     const result = createRandomArrow(position, direction);
-    return result;
-  }
-
-  if (nameType === 'InputArrow') {
-    const result = createInputArrow(position, direction, [2, 2, 2, 1], true);
     return result;
   }
 
