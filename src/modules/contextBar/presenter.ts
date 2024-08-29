@@ -13,6 +13,7 @@ class Brush {
     DirectionType.Left,
     DirectionType.Right,
   ];
+
   public currentBrushFlip: '>' | '<' | '' = '';
 
   constructor(private readonly tools: Tools) {

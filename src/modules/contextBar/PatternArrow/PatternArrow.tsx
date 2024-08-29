@@ -1,5 +1,5 @@
 import { For, Show } from "solid-js"
-import { Popover, SegmentedControl, Tag } from "../../../shared"
+import { DismissibleTag, Popover, SegmentedControl, Tags } from "../../../shared"
 import { createBrush } from "../presenter";
 import { tools } from "../../toolbar";
 import { patternArrow } from "./viewModel";
@@ -39,11 +39,16 @@ export const PatternArrow = () => {
       {patternArrow.pattern.join('')}
     </Popover.Target>
     <Popover id="signal-pattern">
-      <For each={patternArrow.pattern}>
-        {(element) => (
-          <Tag>{element}</Tag>
-        )}
-      </For>
+      <Tags>
+        <For each={patternArrow.pattern}>
+          {(element, index) => (
+            <DismissibleTag 
+              onClose={() => {patternArrow.removePatternElement(index())}}>
+              {element}
+            </DismissibleTag>
+          )}
+        </For>
+      </Tags>
     </Popover>
   </Show>
   )

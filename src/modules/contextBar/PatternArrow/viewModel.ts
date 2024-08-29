@@ -17,6 +17,10 @@ class PatternArrow {
     this.hasCycle = hasCycle
   }
 
+  public removePatternElement = (index: number) => {
+    this.pattern.splice(index, 1)
+  }
+
   public updatePattern = (pattern) => {
     this.pattern = pattern
   }
