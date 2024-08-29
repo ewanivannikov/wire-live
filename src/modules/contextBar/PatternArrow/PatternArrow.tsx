@@ -1,5 +1,5 @@
 import { For, Show } from "solid-js"
-import { DismissibleTag, Popover, SegmentedControl, Tags } from "../../../shared"
+import { DismissibleTag, Popover, SegmentedControl, Tags, TextInputTag } from "../../../shared"
 import { createBrush } from "../presenter";
 import { tools } from "../../toolbar";
 import { patternArrow } from "./viewModel";
@@ -48,6 +48,14 @@ export const PatternArrow = () => {
             </DismissibleTag>
           )}
         </For>
+        <TextInputTag 
+          onChange={(value) => {
+            if(!value) return
+            patternArrow.addPatternElement(value)
+          }}
+          size={1}
+          placeholder="New"
+        />
       </Tags>
     </Popover>
   </Show>

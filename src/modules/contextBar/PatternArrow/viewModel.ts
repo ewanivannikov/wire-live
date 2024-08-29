@@ -21,6 +21,10 @@ class PatternArrow {
     this.pattern.splice(index, 1)
   }
 
+  public addPatternElement = (element: number) => {
+    this.pattern.push(element)
+  }
+
   public updatePattern = (pattern) => {
     this.pattern = pattern
   }
