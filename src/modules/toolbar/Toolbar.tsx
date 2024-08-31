@@ -1,6 +1,6 @@
 import { Button, SegmentedControl } from '../../shared';
 import styles from './style.module.css';
-import { Highlighter, Eraser, Play, Pause } from 'lucide-solid';
+import { Highlighter, Eraser, Play, Pause, Hand } from 'lucide-solid';
 import { tools } from './presenter';
 import { Match, Switch } from 'solid-js';
 
@@ -34,6 +34,13 @@ export const Toolbar = () => {
           onClick={handleClick}
         >
           <Eraser />
+        </SegmentedControl.Button>
+        <SegmentedControl.Button
+          value="Pan"
+          aria-pressed={tools.currentTool === 'Pan'}
+          onClick={handleClick}
+        >
+          <Hand />
         </SegmentedControl.Button>
       </SegmentedControl>
 

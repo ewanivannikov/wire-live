@@ -3,3 +3,12 @@
   border: 0;
   cursor: pointer;
 }
+
+.ripple {
+  background-image: paint(ripple);
+
+  --ripple-x: 0;
+  --ripple-y: 0;
+  --ripple-color: rgba(0, 182, 195, 0.744);
+  --animation-tick: 0;
+}

@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import styles from './style.module.css';
+import styles from './buttonBase.module.css';
 const { ripple } = styles;
 
 export const useRipple = () => {

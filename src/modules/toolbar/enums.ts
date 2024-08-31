@@ -1,6 +1,7 @@
 export enum ToolType {
   Brush = 'Brush',
   Eraser = 'Eraser',
+  Pan = 'Pan',
 }
 
 export enum DirectionType {
