@@ -6,7 +6,7 @@ class TextInputTagLogic {
     private readonly buttonNode: HTMLButtonElement,
     private readonly styles,
     private readonly placeholder = 'New Tag',
-    onChange = function () { },
+    onChange = function () {},
   ) {
     this.inputNode.placeholder = placeholder;
     this.handleChange = onChange;
@@ -27,12 +27,12 @@ class TextInputTagLogic {
 
   private checkInputFocus() {
     this.rootNode.classList.add(this.styles?.focus);
-    this.inputNode.placeholder = ''
+    this.inputNode.placeholder = '';
   }
 
   private checkInputBlur() {
     this.rootNode.classList.remove(this.styles?.focus);
-    this.inputNode.placeholder = this.placeholder
+    this.inputNode.placeholder = this.placeholder;
   }
 }
 
@@ -43,4 +43,5 @@ export const createTextInputTagLogic = (
   styles,
   placeholder,
   onChange: (value: string) => void,
-) => new TextInputTagLogic(rootNode, input, button, styles, placeholder, onChange);
+) =>
+  new TextInputTagLogic(rootNode, input, button, styles, placeholder, onChange);

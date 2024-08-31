@@ -60,8 +60,18 @@ export class Fields {
   ) {
     const name = indexTileToArrow[index];
 
-    if ((index >= 21) && (index <= 22)) {
-      this.addArrow(key, fabricPatternArrow(name, key, options.pattern, direction, options.hasCycle, options.initialValue));
+    if (index >= 21 && index <= 22) {
+      this.addArrow(
+        key,
+        fabricPatternArrow(
+          name,
+          key,
+          options.pattern,
+          direction,
+          options.hasCycle,
+          options.initialValue,
+        ),
+      );
     } else {
       this.addArrow(key, fabricArrow(name, key, direction, flip));
     }

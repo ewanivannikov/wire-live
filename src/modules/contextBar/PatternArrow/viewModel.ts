@@ -1,9 +1,9 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable } from 'mobx';
 
 export class PatternArrowModel {
-  public initialValue = 1
-  public hasCycle = false
-  public pattern = [1, 1, 2]
+  public initialValue = 1;
+  public hasCycle = false;
+  public pattern = [1, 1, 2];
   constructor() {
     makeAutoObservable(this);
   }
@@ -12,25 +12,25 @@ export class PatternArrowModel {
     return {
       initialValue: this.initialValue,
       hasCycle: this.hasCycle,
-      pattern: this.pattern
-    }
+      pattern: this.pattern,
+    };
   }
 
   public setInitialValue = (value: number) => {
-    this.initialValue = value
-  }
+    this.initialValue = value;
+  };
 
   public setHasCycle = (value: boolean) => {
-    this.hasCycle = value
-  }
+    this.hasCycle = value;
+  };
 
   public removePatternElement = (index: number) => {
-    this.pattern.splice(index, 1)
-  }
+    this.pattern.splice(index, 1);
+  };
 
   public addPatternElement = (element: number) => {
-    this.pattern.push(element)
-  }
+    this.pattern.push(element);
+  };
 }
 
-export const patternArrowModel = new PatternArrowModel()
+export const patternArrowModel = new PatternArrowModel();

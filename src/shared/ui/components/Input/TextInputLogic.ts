@@ -1,7 +1,7 @@
 class TextInputLogic {
   constructor(
     private readonly inputNode: HTMLInputElement,
-    private readonly restrictCharacters: string
+    private readonly restrictCharacters: string,
   ) {
     this.registerEvents();
   }
@@ -12,7 +12,7 @@ class TextInputLogic {
 
   private checkInput() {
     if (this.restrictCharacters) {
-      const regex = new RegExp(this.restrictCharacters, "g");
+      const regex = new RegExp(this.restrictCharacters, 'g');
       const matches = this.inputNode.value.match(regex)?.join('');
       this.inputNode.value = matches || '';
     }
@@ -21,5 +21,5 @@ class TextInputLogic {
 
 export const createTextInputLogic = (
   input: HTMLInputElement,
-  restrictCharacters
+  restrictCharacters,
 ) => new TextInputLogic(input, restrictCharacters);

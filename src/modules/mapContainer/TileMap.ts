@@ -99,30 +99,43 @@ class TileMap {
 
     const tileTexture =
       this.tileTextures[
-      this.tools.currentTool === 'Eraser' ? 'Eraser' : brush.currentBrush
+        this.tools.currentTool === 'Eraser' ? 'Eraser' : brush.currentBrush
       ]; // Assuming you have a way to get the texture
 
     const [x, y] = new Position(tile.name).vector;
 
     if (this.logicField.arrowCache.has(tile.name)) {
-      this.updateSprite(tileTexture, x, y, brush.currentBrush, tile, brush.currentBrushOptions);
+      this.updateSprite(
+        tileTexture,
+        x,
+        y,
+        brush.currentBrush,
+        tile,
+        brush.currentBrushOptions,
+      );
     } else {
       const hasSprite = this.hasSprite(tile, brush.currentBrush);
 
       if (!hasSprite) {
         this.addStateSprite(x, y, 'None');
-        this.addSprite(tileTexture, x, y, brush.currentBrush, brush.currentBrushOptions);
+        this.addSprite(
+          tileTexture,
+          x,
+          y,
+          brush.currentBrush,
+          brush.currentBrushOptions,
+        );
       }
     }
 
     const tileName = new Tile(brush.currentBrush).vector;
-    console.log('brush.currentBrushOptions', brush.currentBrushOptions?.hasCycle);
+
     this.logicField.addArrowCache(
       tile.name,
       tileName[1],
       tileName[2],
       tileName[3],
-      brush.currentBrushOptions
+      brush.currentBrushOptions,
     );
   };
 

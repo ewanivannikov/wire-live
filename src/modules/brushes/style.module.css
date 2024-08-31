@@ -1062,11 +1062,11 @@
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
 
-.icon-latch-left::before { 
+.icon-latch-left::before {
   content: '';
   position: absolute;
   width: 256px;
-  height: 256px;  
+  height: 256px;
   top: 0;
   left: 0;
   z-index: 0;
@@ -1077,7 +1077,7 @@
 
 .icon-latch-right::before {
   content: '';
-  position: absolute; 
+  position: absolute;
   width: 256px;
   height: 256px;
   top: 0;
@@ -1110,7 +1110,7 @@
   left: 0;
   z-index: 0;
   background: url('../../assets/atlas.png') -512px -512px repeat;
-  transform-origin: top left; 
+  transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
 
@@ -1173,7 +1173,7 @@
   height: 256px;
   top: 0;
   left: 0;
-  z-index: 0; 
+  z-index: 0;
   background: url('../../assets/atlas.png') -768px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
@@ -1197,9 +1197,9 @@
   position: absolute;
   width: 256px;
   height: 256px;
-  top: 0; 
+  top: 0;
   left: 0;
-  z-index: 0; 
+  z-index: 0;
   background: url('../../assets/atlas.png') -1280px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12);
@@ -1221,10 +1221,10 @@
 .icon-input-arrow-left::before {
   content: '';
   position: absolute;
-  width: 256px; 
+  width: 256px;
   height: 256px;
   top: 0;
-  left: 0;  
+  left: 0;
   z-index: 0;
   background: url('../../assets/atlas.png') -1280px -512px repeat;
   transform-origin: top left;
@@ -1285,7 +1285,7 @@
 
 .icon-bulb-detector-left::before {
   content: '';
-  position: absolute; 
+  position: absolute;
   width: 256px;
   height: 256px;
   top: 0;

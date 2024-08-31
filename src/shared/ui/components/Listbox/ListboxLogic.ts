@@ -1,3 +1,5 @@
+import { ListboxStyleProps } from './style.type';
+
 class ListboxLogic {
   private activeDescendant: string;
   private multiselectable: boolean;
@@ -8,12 +10,12 @@ class ListboxLogic {
   private downButton: HTMLButtonElement | null;
   private moveButton: HTMLButtonElement | null;
   private keysSoFar: string;
-  private handleFocusChange: () => void;
-  private handleItemChange: () => void;
+  private handleFocusChange: (element: HTMLElement) => void;
+  private handleItemChange: (action: string, element: HTMLElement[]) => void;
 
   constructor(
     private readonly listboxNode: HTMLDListElement,
-    private readonly styles,
+    private readonly styles: ListboxStyleProps,
     onFocusChange = function () {},
     onItemChange = function () {},
   ) {
@@ -21,6 +23,7 @@ class ListboxLogic {
     this.activeDescendant = this.listboxNode.getAttribute(
       'aria-activedescendant',
     );
+
     this.multiselectable = this.listboxNode.hasAttribute(
       'aria-multiselectable',
     );
@@ -34,6 +37,23 @@ class ListboxLogic {
     this.handleFocusChange = onFocusChange;
     this.handleItemChange = onItemChange;
     this.registerEvents();
+
+    if (this.activeDescendant) {
+      const element = document.getElementById(this.activeDescendant);
+      if (element) {
+        element.setAttribute('aria-selected', 'true');
+      }
+    }
+
+    const intersectionObserver = new IntersectionObserver((entries) => {
+      // If intersectionRatio is 0, the target is out of view
+      // and we do not need to do anything.
+      if (entries[0].intersectionRatio <= 0) return;
+
+      this.listboxNode.focus();
+    });
+    // start observing
+    intersectionObserver.observe(this.listboxNode);
   }
 
   registerEvents() {
@@ -72,7 +92,7 @@ class ListboxLogic {
     }
   }
 
-  checkKeyPress(evt) {
+  checkKeyPress(evt: KeyboardEvent) {
     const lastActiveId = this.activeDescendant;
     const allOptions = this.listboxNode.querySelectorAll('[role="option"]');
     const currentItem =
@@ -122,7 +142,7 @@ class ListboxLogic {
           nextItem = this.findNextOption(currentItem);
         }
 
-        if (nextItem && this.multiselectable && event.shiftKey) {
+        if (nextItem && this.multiselectable && evt.shiftKey) {
           this.selectRange(this.startRangeIndex, nextItem);
         }
 
@@ -181,7 +201,7 @@ class ListboxLogic {
 
         let nextUnselected = nextItem.nextElementSibling;
         while (nextUnselected) {
-          if (nextUnselected.getAttribute('aria-selected') != 'true') {
+          if (nextUnselected.getAttribute('aria-selected') !== 'true') {
             break;
           }
           nextUnselected = nextUnselected.nextElementSibling;
@@ -189,7 +209,7 @@ class ListboxLogic {
         if (!nextUnselected) {
           nextUnselected = nextItem.previousElementSibling;
           while (nextUnselected) {
-            if (nextUnselected.getAttribute('aria-selected') != 'true') {
+            if (nextUnselected.getAttribute('aria-selected') !== 'true') {
               break;
             }
             nextUnselected = nextUnselected.previousElementSibling;
@@ -257,7 +277,7 @@ class ListboxLogic {
   }
 
   /* Return the index of the passed element within the passed array, or null if not found */
-  getElementIndex(option, options) {
+  getElementIndex(option: number, options) {
     const allOptions = Array.prototype.slice.call(options); // convert to array
     const optionIndex = allOptions.indexOf(option);
 
@@ -265,7 +285,7 @@ class ListboxLogic {
   }
 
   /* Return the next listbox option, if it exists; otherwise, returns null */
-  findNextOption(currentOption) {
+  findNextOption(currentOption: number) {
     const allOptions = Array.prototype.slice.call(
       this.listboxNode.querySelectorAll('[role="option"]'),
     ); // get options array
@@ -280,7 +300,7 @@ class ListboxLogic {
   }
 
   /* Return the previous listbox option, if it exists; otherwise, returns null */
-  findPreviousOption(currentOption) {
+  findPreviousOption(currentOption: number) {
     const allOptions = Array.prototype.slice.call(
       this.listboxNode.querySelectorAll('[role="option"]'),
     ); // get options array
@@ -320,7 +340,7 @@ class ListboxLogic {
     return null;
   }
 
-  checkClickItem(evt) {
+  checkClickItem(evt: PointerEvent) {
     if (evt.target.getAttribute('role') !== 'option') {
       return;
     }
@@ -339,7 +359,7 @@ class ListboxLogic {
    *
    * @param evt
    */
-  checkMouseDown(evt) {
+  checkMouseDown(evt: PointerEvent) {
     if (
       this.multiselectable &&
       evt.shiftKey &&
@@ -355,7 +375,7 @@ class ListboxLogic {
    * @param element
    *  The element to select
    */
-  toggleSelectItem(element) {
+  toggleSelectItem(element: HTMLElement) {
     if (this.multiselectable) {
       element.setAttribute(
         'aria-selected',
@@ -372,7 +392,7 @@ class ListboxLogic {
    * @param element
    *  The element to defocus
    */
-  defocusItem(element) {
+  defocusItem(element: HTMLElement) {
     if (!element) {
       return;
     }
@@ -388,7 +408,7 @@ class ListboxLogic {
    * @param element
    *  The element to focus
    */
-  focusItem(element) {
+  focusItem(element: HTMLElement) {
     this.defocusItem(document.getElementById(this.activeDescendant));
     if (!this.multiselectable) {
       element.setAttribute('aria-selected', 'true');
@@ -464,6 +484,7 @@ class ListboxLogic {
    */
   updateScroll() {
     const selectedOption = document.getElementById(this.activeDescendant);
+
     if (selectedOption) {
       const scrollBottom =
         this.listboxNode.clientHeight + this.listboxNode.scrollTop;
@@ -681,8 +702,8 @@ class ListboxLogic {
 }
 
 export const createListboxLogic = (
-  element: HTMLElement,
-  styles,
+  element: HTMLDListElement,
+  styles: ListboxStyleProps,
   onFocusChange,
   onItemChange,
 ) => {

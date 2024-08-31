@@ -6,7 +6,7 @@ import styles from './style.module.css';
  */
 export const Listbox = (props) => {
   const { onFocusChange, onItemChange } = props;
-  let element!: HTMLElement;
+  let element!: HTMLDListElement;
 
   createEffect(() => {
     createListboxLogic(element, styles, onFocusChange, onItemChange);

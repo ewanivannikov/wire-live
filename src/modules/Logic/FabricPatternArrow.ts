@@ -10,7 +10,13 @@ export const fabricPatternArrow = (
   active?: number,
 ) => {
   if (nameType === 'InputArrow') {
-    const result = createInputArrow(position, direction, pattern, cycling, active);
+    const result = createInputArrow(
+      position,
+      direction,
+      pattern,
+      cycling,
+      active,
+    );
     return result;
   }
 };

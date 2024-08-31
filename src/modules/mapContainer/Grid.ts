@@ -4,7 +4,10 @@ class Grid {
   gridRowSize = 4;
   tileGroup;
 
-  constructor(private readonly tileSize = 256, gridRowSize) {
+  constructor(
+    private readonly tileSize = 256,
+    gridRowSize,
+  ) {
     this.gridRowSize = gridRowSize;
     this.init();
   }

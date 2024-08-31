@@ -30,7 +30,7 @@ module.exports = merge(common, {
               modules: {
                 exportLocalsConvention: 'camel-case-only',
                 namedExport: false, // Указываем, что предпочитаем именованый экспорт дефолтному
-                localIdentName: "[name]__[local]--[hash:base64:5]",
+                localIdentName: '[name]__[local]--[hash:base64:5]',
               },
             },
           },

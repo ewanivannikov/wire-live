@@ -2,7 +2,12 @@ import styles from './style.module.css';
 const { target } = styles;
 export const Target = (props) => {
   return (
-    <button {...props} class={target} type="button" style={{'anchor-name': `--${props.popovertarget}`}}>
+    <button
+      {...props}
+      class={target}
+      type="button"
+      style={{ 'anchor-name': `--${props.popovertarget}` }}
+    >
       {props.children}
       <svg
         aria-hidden="true"

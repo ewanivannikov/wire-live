@@ -7,6 +7,10 @@
   overflow-y: auto;
 }
 
+.root:focus {
+  outline: 2px #b6b6b6 solid;
+}
+
 .option {
   display: grid;
   grid-auto-flow: column;

@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { Tools } from '../mapContainer/Tools';
 import { DirectionType, Tile, ToolType } from '../toolbar';
-import { brushes } from '../brushes';
+import { brushes, Direction, TileId } from '../brushes';
 import { patternArrowModel, PatternArrowModel } from './PatternArrow/viewModel';
 
 class Brush {
@@ -17,10 +17,9 @@ class Brush {
 
   public currentBrushFlip: '>' | '<' | '' = '';
 
-
   constructor(
     private readonly tools: Tools,
-    private readonly patternArrow: PatternArrowModel
+    private readonly patternArrow: PatternArrowModel,
   ) {
     makeAutoObservable(this);
   }
@@ -40,12 +39,12 @@ class Brush {
   public get currentBrushOptions() {
     const number = new Tile(this.currentBrush).vector[1];
     if (number === 21) {
-      return this.patternArrow.fields
+      return this.patternArrow.fields;
     }
-    return null
+    return null;
   }
 
-  setCurrentBrush = (brush) => {
+  setCurrentBrush = (brush: TileId) => {
     this.currentBrush = brush;
     const direction = new Tile(brush).vector[2];
     this.currentBrushDirection = direction;
@@ -55,7 +54,7 @@ class Brush {
     this.currentBrushFlip = flip;
   };
 
-  setBrushDirection = (direction) => {
+  setBrushDirection = (direction: Direction) => {
     this.currentBrushDirection = direction;
     const currentBrush = new Tile(this.currentBrush).vector;
     const brushId = `${currentBrush[0]}.${currentBrush[1]}.${direction}${currentBrush[3] ? `.${currentBrush[3]}` : ''}`;
@@ -82,7 +81,10 @@ class Brush {
     return this.tools.currentTool === ToolType.Brush;
   }
 
-  public static getInstance(tools: Tools, patternArrowModel: PatternArrowModel) {
+  public static getInstance(
+    tools: Tools,
+    patternArrowModel: PatternArrowModel,
+  ) {
     if (!Brush.instance) {
       Brush.instance = new Brush(tools, patternArrowModel);
     }
@@ -91,4 +93,5 @@ class Brush {
   }
 }
 
-export const createBrush = (tools: Tools) => Brush.getInstance(tools, patternArrowModel);
+export const createBrush = (tools: Tools) =>
+  Brush.getInstance(tools, patternArrowModel);

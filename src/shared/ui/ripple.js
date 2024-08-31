@@ -10,7 +10,7 @@ registerPaint(
         '--ripple-y',
       ];
     }
-    
+
     paint(ctx, geom, properties) {
       const bgColor = properties.get('background-color').toString();
       const rippleColor = properties.get('--ripple-color').toString();
