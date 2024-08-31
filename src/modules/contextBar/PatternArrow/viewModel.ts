@@ -1,20 +1,27 @@
 import { makeAutoObservable } from "mobx";
 
-class PatternArrow {
-  public initialValue = 0
+export class PatternArrowModel {
+  public initialValue = 1
   public hasCycle = false
-  public pattern = [0, 1, 0, 1, 1, 0, 1, 0]
+  public pattern = [1, 1, 2]
   constructor() {
     makeAutoObservable(this);
   }
 
-
-  public updateInitialValue = (initialValue) => {
-    this.initialValue = initialValue
+  public get fields() {
+    return {
+      initialValue: this.initialValue,
+      hasCycle: this.hasCycle,
+      pattern: this.pattern
+    }
   }
 
-  public updateHasCycle = (hasCycle) => {
-    this.hasCycle = hasCycle
+  public setInitialValue = (value: number) => {
+    this.initialValue = value
+  }
+
+  public setHasCycle = (value: boolean) => {
+    this.hasCycle = value
   }
 
   public removePatternElement = (index: number) => {
@@ -24,10 +31,6 @@ class PatternArrow {
   public addPatternElement = (element: number) => {
     this.pattern.push(element)
   }
-
-  public updatePattern = (pattern) => {
-    this.pattern = pattern
-  }
 }
 
-export const patternArrow = new PatternArrow()
+export const patternArrowModel = new PatternArrowModel()

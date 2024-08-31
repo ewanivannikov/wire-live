@@ -1,4 +1,5 @@
 import { fabricArrow } from './FabricArrow';
+import { fabricPatternArrow } from './FabricPatternArrow';
 import { Tile } from '../toolbar';
 import { indexTileToArrow } from './constants';
 import { Direction, Flip } from './types';
@@ -55,10 +56,15 @@ export class Fields {
     index: number,
     direction?: Direction,
     flip?: Flip,
+    options?: any,
   ) {
     const name = indexTileToArrow[index];
 
-    this.addArrow(key, fabricArrow(name, key, direction, flip));
+    if ((index >= 21) && (index <= 22)) {
+      this.addArrow(key, fabricPatternArrow(name, key, options.pattern, direction, options.hasCycle, options.initialValue));
+    } else {
+      this.addArrow(key, fabricArrow(name, key, direction, flip));
+    }
   }
 
   clearStates() {

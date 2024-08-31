@@ -4,6 +4,8 @@ import { createBrush } from '../contextBar/presenter';
 import { Position } from '../Logic/Position';
 import { arrowToIndexTile } from '../Logic/constants';
 import { Tile, ToolType } from '../toolbar';
+import { Texture } from 'three';
+import { TileId } from '../brushes';
 
 // Example tilemap data (replace with your actual data)
 const tileData = [
@@ -94,32 +96,33 @@ class TileMap {
 
   public updateTile = (tile) => {
     const brush = createBrush(this.tools);
+
     const tileTexture =
       this.tileTextures[
-        this.tools.currentTool === 'Eraser' ? 'Eraser' : brush.currentBrush
+      this.tools.currentTool === 'Eraser' ? 'Eraser' : brush.currentBrush
       ]; // Assuming you have a way to get the texture
 
     const [x, y] = new Position(tile.name).vector;
 
     if (this.logicField.arrowCache.has(tile.name)) {
-      this.updateSprite(tileTexture, x, y, brush.currentBrush, tile);
+      this.updateSprite(tileTexture, x, y, brush.currentBrush, tile, brush.currentBrushOptions);
     } else {
       const hasSprite = this.hasSprite(tile, brush.currentBrush);
-      console.log('hasSprite', hasSprite);
 
       if (!hasSprite) {
         this.addStateSprite(x, y, 'None');
-        this.addSprite(tileTexture, x, y, brush.currentBrush);
+        this.addSprite(tileTexture, x, y, brush.currentBrush, brush.currentBrushOptions);
       }
     }
 
     const tileName = new Tile(brush.currentBrush).vector;
-
+    console.log('brush.currentBrushOptions', brush.currentBrushOptions?.hasCycle);
     this.logicField.addArrowCache(
       tile.name,
       tileName[1],
       tileName[2],
       tileName[3],
+      brush.currentBrushOptions
     );
   };
 
@@ -135,11 +138,10 @@ class TileMap {
     return tile.userData.type === tileId;
   };
 
-  addSprite = (tileTexture, x, y, tileId) => {
+  addSprite = (tileTexture: Texture, x, y, tileId: TileId, brushOptions) => {
     const material = new THREE.SpriteMaterial({
       map: tileTexture,
       transparent: true,
-      // side: THREE.DoubleSide,
     });
     const sprite = new THREE.Sprite(material);
 
@@ -152,7 +154,7 @@ class TileMap {
     sprite.scale.x = this.tileSize;
     sprite.scale.y = this.tileSize;
     sprite.name = `${x},${y}`;
-    sprite.userData = { type: tileId };
+    sprite.userData = { type: tileId, ...brushOptions };
 
     this._tileGroup.add(sprite);
   };
@@ -169,9 +171,9 @@ class TileMap {
     sprite.material.needsUpdate = true;
   };
 
-  updateSprite = (tileTexture, x, y, tileId, tile) => {
+  updateSprite = (tileTexture: Texture, x, y, tileId, tile, brushOptions) => {
     this._tileGroup.remove(tile);
-    this.addSprite(tileTexture, x, y, tileId);
+    this.addSprite(tileTexture, x, y, tileId, brushOptions);
   };
 
   removeSprite = (tile) => {

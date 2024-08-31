@@ -17,8 +17,6 @@ class InputArrow extends ArrowBase {
   }
 
   conditionStates(fields: Fields) {
-    console.log('test', this.active, this.loop);
-
     if (this.loop === 0) {
       this.index = this.index + 1;
       if (this.index === this.pattern.length) {

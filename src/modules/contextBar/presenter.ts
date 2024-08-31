@@ -2,6 +2,7 @@ import { makeAutoObservable } from 'mobx';
 import { Tools } from '../mapContainer/Tools';
 import { DirectionType, Tile, ToolType } from '../toolbar';
 import { brushes } from '../brushes';
+import { patternArrowModel, PatternArrowModel } from './PatternArrow/viewModel';
 
 class Brush {
   private static instance: Brush | null = null;
@@ -16,7 +17,11 @@ class Brush {
 
   public currentBrushFlip: '>' | '<' | '' = '';
 
-  constructor(private readonly tools: Tools) {
+
+  constructor(
+    private readonly tools: Tools,
+    private readonly patternArrow: PatternArrowModel
+  ) {
     makeAutoObservable(this);
   }
 
@@ -30,6 +35,14 @@ class Brush {
     }, []);
 
     return [...new Set(directions)];
+  }
+
+  public get currentBrushOptions() {
+    const number = new Tile(this.currentBrush).vector[1];
+    if (number === 21) {
+      return this.patternArrow.fields
+    }
+    return null
   }
 
   setCurrentBrush = (brush) => {
@@ -69,13 +82,13 @@ class Brush {
     return this.tools.currentTool === ToolType.Brush;
   }
 
-  public static getInstance(tools: Tools) {
+  public static getInstance(tools: Tools, patternArrowModel: PatternArrowModel) {
     if (!Brush.instance) {
-      Brush.instance = new Brush(tools);
+      Brush.instance = new Brush(tools, patternArrowModel);
     }
 
     return Brush.instance;
   }
 }
 
-export const createBrush = (tools: Tools) => Brush.getInstance(tools);
+export const createBrush = (tools: Tools) => Brush.getInstance(tools, patternArrowModel);

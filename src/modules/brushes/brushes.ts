@@ -1,3 +1,6 @@
+export type flip = '>' | '<'
+export type direction = 'Up' | 'Down' | 'Right' | 'Left'
+export type TileId = `Brush.${number}.${direction}.${flip}`
 export const brushes = {
   'Brush.0.Up': 'Arrow',
   'Brush.0.Down': 'Arrow',

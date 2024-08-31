@@ -10,10 +10,11 @@ export type TextInputTagProps = {
   onChange: (value: string) => void,
   placeholder?: string,
   size?: number
+  restrictCharacters?: string
 }
 
 export const TextInputTag = (props: TextInputTagProps) => {
-  const { onChange, placeholder = 'New Tag', size = 5 } = props;
+  const { onChange, placeholder = 'New Tag', size = 5, restrictCharacters } = props;
   let rootNode!: HTMLSpanElement;
   let input!: HTMLInputElement;
   let button!: HTMLButtonElement;
@@ -28,6 +29,7 @@ export const TextInputTag = (props: TextInputTagProps) => {
       <Input
         size={size}
         ref={input}
+        restrictCharacters={restrictCharacters}
       />
     </span>
   );
