@@ -44,7 +44,7 @@
   display: flex;
   align-items: center;
   background-color: oklch(from var(--color-baseline) l c h);
-  border-bottom: 1px solid oklch(from var(--color-baseline) calc(l - 0.09) c h);;
+  border-bottom: 1px solid oklch(from var(--color-baseline) calc(l - 0.09) c h);
   padding-left: 4px;
 }
 
@@ -140,6 +140,10 @@
   overflow-y: auto;
 }
 
+.o3h2R7zSZDL44Shv6uEC:focus {
+  outline: 2px #b6b6b6 solid;
+}
+
 .bTjleoO9T5t0KDen5bJ9 {
   display: grid;
   grid-auto-flow: column;
@@ -210,7 +214,7 @@
   color: #a3a3a3;
 }
 
-.UgDtvClxRdwEUd5wibOe{
+.UgDtvClxRdwEUd5wibOe {
   border: 1px dashed #d9d9d9;
   border-radius: 4px;
   height: 22px;
@@ -1306,11 +1310,11 @@
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
 
-.Ci3oB3xSuADDXSsz691Z::before { 
+.Ci3oB3xSuADDXSsz691Z::before {
   content: '';
   position: absolute;
   width: 256px;
-  height: 256px;  
+  height: 256px;
   top: 0;
   left: 0;
   z-index: 0;
@@ -1321,7 +1325,7 @@
 
 .DojtCmFc5Bdmmz9sYQRV::before {
   content: '';
-  position: absolute; 
+  position: absolute;
   width: 256px;
   height: 256px;
   top: 0;
@@ -1354,7 +1358,7 @@
   left: 0;
   z-index: 0;
   background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -512px repeat;
-  transform-origin: top left; 
+  transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
 
@@ -1417,7 +1421,7 @@
   height: 256px;
   top: 0;
   left: 0;
-  z-index: 0; 
+  z-index: 0;
   background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
@@ -1441,9 +1445,9 @@
   position: absolute;
   width: 256px;
   height: 256px;
-  top: 0; 
+  top: 0;
   left: 0;
-  z-index: 0; 
+  z-index: 0;
   background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12);
@@ -1465,10 +1469,10 @@
 .a_qmjf8dgJx31WSoWDCi::before {
   content: '';
   position: absolute;
-  width: 256px; 
+  width: 256px;
   height: 256px;
   top: 0;
-  left: 0;  
+  left: 0;
   z-index: 0;
   background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -512px repeat;
   transform-origin: top left;
@@ -1529,7 +1533,7 @@
 
 .tWlQxyHuc6_qFnnqMQHj::before {
   content: '';
-  position: absolute; 
+  position: absolute;
   width: 256px;
   height: 256px;
   top: 0;
