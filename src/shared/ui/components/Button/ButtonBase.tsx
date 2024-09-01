@@ -10,7 +10,7 @@ export const ButtonBase = (props) => {
   };
   return <button 
     {...props}
-    classList={{root, ...props.classList}}
+    classList={{[root]: true, ...props.classList}}
     style={{
           '--ripple-x': position().x,
           '--ripple-y': position().y,

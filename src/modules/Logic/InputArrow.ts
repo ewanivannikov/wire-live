@@ -13,6 +13,7 @@ class InputArrow extends ArrowBase {
     public active: number = 1,
   ) {
     super('InputArrow', position, direction);
+    this.active = 2 * this.active - 1;
     this.active = -this.active;
   }
 
