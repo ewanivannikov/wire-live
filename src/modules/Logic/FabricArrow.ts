@@ -1,4 +1,5 @@
 import { Direction, Flip } from './types';
+import { ArrowBase } from './ArrowBase';
 import { createArrow } from './Arrow';
 import { createSourceBlock } from './SourceBlock';
 import { createBlocker } from './Blocker';
@@ -126,6 +127,10 @@ export const fabricArrow = (
   if (nameType === 'RandomArrow') {
     const result = createRandomArrow(position, direction);
     return result;
+  }
+
+  if (nameType === 'Button') {
+
   }
 
   if (nameType === 'Bulb') {

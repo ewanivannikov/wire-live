@@ -90,6 +90,7 @@ export const brushes = {
   'Brush.19.Down': 'RandomArrow.Down',
   'Brush.19.Right': 'RandomArrow.Right',
   'Brush.19.Left': 'RandomArrow.Left',
+  'Brush.20': 'Button',
   'Brush.21.Up': 'InputArrow.Up',
   'Brush.21.Down': 'InputArrow.Down',
   'Brush.21.Right': 'InputArrow.Right',
@@ -222,6 +223,12 @@ export const groupsBrushes = {
   'Brush.19.Up': {
     value: 'RandomArrow',
     label: 'Random arrow',
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+  },
+  'Brush.20': {
+    value: 'Button',
+    label: 'Button',
     description:
       'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },

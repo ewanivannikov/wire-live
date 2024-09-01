@@ -387,6 +387,10 @@ export const IconRandomArrowLeft = () => {
   return <div class={`${icon} ${iconRandomArrowLeft}`} />;
 };
 
+export const IconButton = () => {
+  return <div class={`${icon} ${iconButton}`} />;
+};
+
 export const IconInputArrowUp = () => {
   return <div class={`${icon} ${iconInputArrowUp}`} />;
 };
@@ -514,6 +518,7 @@ export const iconsMapping = {
   'Brush.19.Down': IconRandomArrowDown,
   'Brush.19.Right': IconRandomArrowRight,
   'Brush.19.Left': IconRandomArrowLeft,
+  'Brush.20': IconButton,
   'Brush.21.Up': IconInputArrowUp,
   'Brush.21.Down': IconInputArrowDown,
   'Brush.21.Right': IconInputArrowRight,
