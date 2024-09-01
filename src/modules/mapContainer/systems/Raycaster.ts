@@ -1,12 +1,12 @@
-import { Object3D, Object3DEventMap, Raycaster, Vector2 } from 'three';
+import { Object3D, Object3DEventMap, OrthographicCamera, Raycaster, Vector2, WebGLRenderer } from 'three';
 import { tools } from '../../toolbar/presenter';
 import { createBrush } from '../../contextBar/presenter';
 import { ToolType } from '../../toolbar';
 
 export const createRaycaster = (
-  container,
-  camera,
-  renderer,
+  container: HTMLElement,
+  camera: OrthographicCamera,
+  renderer: WebGLRenderer,
   tileMap,
   texture,
   grid,
@@ -16,7 +16,7 @@ export const createRaycaster = (
   let selectedObject: Object3D<Object3DEventMap> = null;
   const pointer = new Vector2();
 
-  function onPointerMove(event) {
+  const onPointerMove = (event: PointerEvent) => {
     if (selectedObject) {
       selectedObject.material.color.set('#69f');
       selectedObject.material.map = null;
@@ -28,9 +28,9 @@ export const createRaycaster = (
     const brush = createBrush(tools);
 
     const tool =
-      tools.currentTool === ToolType.Eraser
-        ? ToolType.Eraser
-        : brush.currentBrush;
+      tools.currentTool === ToolType.Brush
+        ? brush.currentBrush
+        : ToolType.Eraser;
 
     // calculate pointer position in normalized device coordinates
     // (-1 to +1) for both components
@@ -95,8 +95,6 @@ export const createRaycaster = (
         .at(-1);
 
       if (topIntersect?.object && event.buttons === 1) {
-        console.log('topIntersect.object', topIntersect.object);
-
         tileMap.onPointerChange(topIntersect.object);
       }
     }

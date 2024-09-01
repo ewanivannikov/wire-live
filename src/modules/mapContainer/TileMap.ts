@@ -85,13 +85,7 @@ class TileMap {
   }
 
   public onPointerChange = (tile) => {
-    if (this.tools.currentTool === ToolType.Eraser) {
-      this.removeTile(tile);
-      this.logicField.stateCache.delete(tile.name);
-    }
-    if (this.tools.currentTool === ToolType.Brush) {
-      this.updateTile(tile);
-    }
+    return tile
   };
 
   public updateTile = (tile) => {
@@ -99,7 +93,7 @@ class TileMap {
 
     const tileTexture =
       this.tileTextures[
-        this.tools.currentTool === 'Eraser' ? 'Eraser' : brush.currentBrush
+      this.tools.currentTool === 'Eraser' ? 'Eraser' : brush.currentBrush
       ]; // Assuming you have a way to get the texture
 
     const [x, y] = new Position(tile.name).vector;
@@ -140,7 +134,6 @@ class TileMap {
   };
 
   removeTile = (tile) => {
-    console.log('this.logicField', this.logicField);
     if (this.logicField.arrowCache.has(tile.name)) {
       this.logicField.arrowCache.delete(tile.name);
       this.removeSprite(tile);

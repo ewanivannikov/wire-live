@@ -130,7 +130,8 @@ export const fabricArrow = (
   }
 
   if (nameType === 'Button') {
-
+    const result = createBulb(position, direction);
+    return result;
   }
 
   if (nameType === 'Bulb') {

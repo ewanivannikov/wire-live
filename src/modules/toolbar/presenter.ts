@@ -1,19 +1,36 @@
 import { makeAutoObservable } from 'mobx';
 import { ToolType } from './enums';
 import { Loop } from '../mapContainer/systems';
+import { Fields } from '../Logic/Base';
 
 class Tools {
   currentTool = ToolType.Brush;
   tick = 500;
   private _loop: Loop;
-  private _logicField;
+  private _logicField: Fields;
+  private _tileMap;
   constructor() {
     makeAutoObservable(this);
   }
 
-  public init = (loop, logicField) => {
+  public init = (loop: Loop, logicField: Fields, tileMap) => {
     this._loop = loop;
     this._logicField = logicField;
+    this._tileMap = tileMap;
+    tileMap.onPointerChange = (tile) => {
+      if (this.currentTool === ToolType.Eraser) {
+        this._tileMap.removeTile(tile);
+        this._logicField.stateCache.delete(tile.name);
+      }
+      if (this.currentTool === ToolType.Brush) {
+        this._tileMap.updateTile(tile);
+      }
+      if (this.currentTool === ToolType.Pan) {
+        if (tile.userData.type?.includes('20')) {
+          console.log('gfgfgf');
+        }
+      }
+    }
   };
 
   public setCurrentTool = (tool) => {

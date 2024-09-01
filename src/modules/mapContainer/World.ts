@@ -39,8 +39,6 @@ class World {
 
     const logicField = createFields();
 
-    tools.init(loop, logicField);
-
     const size = gridRowSize * tileSize;
     const divisions = tileSize / 4;
 
@@ -76,6 +74,8 @@ class World {
       ONE: -1,
       TWO: TOUCH.DOLLY_PAN,
     };
+
+    tools.init(loop, logicField, tileMap);
   }
 
   render() {

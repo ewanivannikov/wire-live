@@ -102,6 +102,7 @@ const {
   iconBulbDetectorDown,
   iconBulbDetectorLeft,
   iconBulbDetectorRight,
+  iconButton,
 } = styles;
 
 export const IconArrowUp = () => {
