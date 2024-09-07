@@ -12,6 +12,7 @@ export function Layout(props) {
       <header class={header}>
         <img src={logo} alt="" width="50px" srcset="" />
         Wire live
+        <a href="/about">О проекте</a>
       </header>
       <aside class={sidebar}>
         <Toolbar />

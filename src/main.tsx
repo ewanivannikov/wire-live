@@ -13,7 +13,7 @@ import './main.css';
 import { createWorld } from './modules/mapContainer';
 import { Reaction } from 'mobx';
 import { routerService } from './shared/services/RouterService/RouterService';
-import { Home } from './pages';
+import { About, Home } from './pages';
 
 const rippleUrl = new URL('./shared/ui/ripple', import.meta.url);
 if ('paintWorklet' in CSS) {
@@ -50,7 +50,10 @@ function App() {
   });
 
   createEffect(() => {
-    if (routerService.location.pathname === `${routerService.basename}home`) {
+    if (
+      routerService.location.pathname === `${routerService.basename}home` ||
+      routerService.location.pathname === `${routerService.basename}about`
+    ) {
       const theme = document.querySelector('#theme');
       if (theme) {
         theme.href = './warm.variables.css';
@@ -72,6 +75,15 @@ function App() {
       >
         <LayoutLanding>
           <Home />
+        </LayoutLanding>
+      </Match>
+      <Match
+        when={
+          routerService.location.pathname === `${routerService.basename}about`
+        }
+      >
+        <LayoutLanding>
+          <About />
         </LayoutLanding>
       </Match>
     </Switch>

@@ -12,6 +12,9 @@ export const router = createRouter({
           path: 'home',
         },
         {
+          path: 'about',
+        },
+        {
           path: 'maps/',
           children: [{ path: ':mapId' }],
         },

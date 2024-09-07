@@ -16,6 +16,7 @@
   border-bottom: 1px solid oklch(from var(--color-baseline) calc(l - 0.05) c h);
   display: flex;
   align-items: center;
+  gap: 16px;
 }
 
 .sidebar {
@@ -37,6 +38,7 @@
   width: 100%;
   background-color: oklch(from var(--color-baseline) l c h);
   color: var(--color-onBaseline);
+  font-size: 1.5rem;
 }
 
 .context {
