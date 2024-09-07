@@ -27,7 +27,7 @@ class Tools {
       }
       if (this.currentTool === ToolType.Pan) {
         if (tile.userData.type?.includes('20')) {
-          console.log('gfgfgf');
+          this._logicField.addSignal(tile.name, 1);
         }
       }
     }

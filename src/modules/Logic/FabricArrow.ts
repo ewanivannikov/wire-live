@@ -20,6 +20,7 @@ import { createXorGate } from './XorGate';
 import { createLatch } from './Latch';
 import { createFlipFlop } from './FlipFlop';
 import { createRandomArrow } from './RandomArrow';
+import { createButton } from './Button';
 import { createBulb } from './Bulb';
 import { createBulbDetector } from './BulbDetector';
 
@@ -130,7 +131,7 @@ export const fabricArrow = (
   }
 
   if (nameType === 'Button') {
-    const result = createBulb(position, direction);
+    const result = createButton(position);
     return result;
   }
 
