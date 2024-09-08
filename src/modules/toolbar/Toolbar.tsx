@@ -1,6 +1,6 @@
 import { Button, SegmentedButtons } from '../../shared';
 import styles from './style.module.css';
-import { Highlighter, Eraser, Play, Pause, Hand } from 'lucide-solid';
+import { Highlighter, Eraser, Play, Pause, Hand, Save } from 'lucide-solid';
 import { tools } from './presenter';
 import { Match, Switch } from 'solid-js';
 
@@ -12,6 +12,10 @@ export const Toolbar = () => {
   };
   const handleClickTick = () => {
     tools.setTick();
+  };
+
+  const handleClickSave = () => {
+    tools.saveMap();
   };
   return (
     <div
@@ -57,6 +61,9 @@ export const Toolbar = () => {
             <Pause />
           </Match>
         </Switch>
+      </Button>
+      <Button name="Save" onClick={handleClickSave}>
+        <Save/>
       </Button>
     </div>
   );

@@ -3,19 +3,21 @@ import { tools } from '../toolbar/presenter';
 import { createBrush } from '../contextBar/presenter';
 import { Position } from '../Logic/Position';
 import { arrowToIndexTile } from '../Logic/constants';
-import { Tile, ToolType } from '../toolbar';
+import { Tile } from '../toolbar';
 import { Texture } from 'three';
 import { TileId } from '../brushes';
+import { MapsRepository, mapsRepository } from '../../data';
+import { Fields } from '../Logic/Base';
 
 // Example tilemap data (replace with your actual data)
-const tileData = [
-  { tileId: 'Brush.1', x: 0, y: 0 },
-  { tileId: 'Brush.0.Up', x: 0, y: -1 },
-  { tileId: 'Brush.3.Up', x: 0, y: -2 },
-  { tileId: 'Brush.0.Up', x: 0, y: -3 },
-  { tileId: 'Brush.0.Up', x: 0, y: -4 },
-  { tileId: 'Brush.0.Up', x: 0, y: -5 },
-];
+// const tileData = [
+//   { tileId: 'Brush.1', x: 0, y: 0 },
+//   { tileId: 'Brush.0.Up', x: 0, y: -1 },
+//   { tileId: 'Brush.3.Up', x: 0, y: -2 },
+//   { tileId: 'Brush.0.Up', x: 0, y: -3 },
+//   { tileId: 'Brush.0.Up', x: 0, y: -4 },
+//   { tileId: 'Brush.0.Up', x: 0, y: -5 },
+// ];
 
 const hex = {
   Red: 0xff4f00,
@@ -31,12 +33,12 @@ class TileMap {
     private readonly tileTextures,
     private readonly tileSize,
     private readonly loop,
-    private readonly logicField,
+    private readonly logicField: Fields,
     private readonly tools,
-    private readonly tileData,
+    private readonly mapsRepo: MapsRepository,
     private readonly grid,
   ) {
-    const cashe = logicField.initCashe(this.tileData);
+    const cashe = logicField.initCashe(this.mapsRepo.getMapById());
 
     this.init(cashe);
   }
@@ -187,5 +189,5 @@ class TileMap {
   };
 }
 
-export const createTileMap = (tileTextures, tileSize, loop, logicField, grid) =>
-  new TileMap(tileTextures, tileSize, loop, logicField, tools, tileData, grid);
+export const createTileMap = (tileTextures, tileSize, loop, logicField: Fields, grid) =>
+  new TileMap(tileTextures, tileSize, loop, logicField, tools, mapsRepository, grid);

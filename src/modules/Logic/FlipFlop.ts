@@ -4,7 +4,7 @@ import { Direction } from './types';
 
 class FlipFlop extends ArrowBase {
   constructor(position: string, direction: Direction) {
-    super('Flip-Flop', position, direction);
+    super('FlipFlop', position, direction);
   }
 
   conditionStates(fields: Fields) {
