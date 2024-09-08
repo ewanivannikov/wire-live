@@ -1,6 +1,7 @@
 import { Card } from './Card';
 import { Typography } from '../Typography';
 import styles from './style.module.css';
+import { Button } from '../Button';
 const { masonry, section, tall, big } = styles;
 
 export const Section = () => {
@@ -8,9 +9,10 @@ export const Section = () => {
     <section class={masonry}>
       <div class={section} style={{ height: '300px' }}>
         <Typography>{'Wire\nlive'}</Typography>
+        <p>Изучение основ цифровой электроники в игровой форме</p>
       </div>
       <div classList={{ [big]: true }}>
-        <image src="https://fakeimg.pl/600x400" />
+        <Button>Войти</Button>
       </div>
       <Card classList={{ [tall]: true }} style={{ margin: '8px' }}>
         <p>Уровни</p>

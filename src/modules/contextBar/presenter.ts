@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx';
 import { Tools } from '../mapContainer/Tools';
 import { DirectionType, Tile, ToolType } from '../toolbar';
 import { brushes, Direction, TileId } from '../brushes';
-import { patternArrowModel, PatternArrowModel } from './PatternArrow/viewModel';
+import { inputArrowModel, InputArrowModel } from './InputArrow/viewModel';
 
 class Brush {
   private static instance: Brush | null = null;
@@ -19,7 +19,7 @@ class Brush {
 
   constructor(
     private readonly tools: Tools,
-    private readonly patternArrow: PatternArrowModel,
+    private readonly inputArrowModel: InputArrowModel,
   ) {
     makeAutoObservable(this);
   }
@@ -39,7 +39,7 @@ class Brush {
   public get currentBrushOptions() {
     const number = new Tile(this.currentBrush).vector[1];
     if (number === 21) {
-      return this.patternArrow.fields;
+      return this.inputArrowModel.fields;
     }
     return null;
   }
@@ -83,10 +83,10 @@ class Brush {
 
   public static getInstance(
     tools: Tools,
-    patternArrowModel: PatternArrowModel,
+    inputArrowModel: InputArrowModel,
   ) {
     if (!Brush.instance) {
-      Brush.instance = new Brush(tools, patternArrowModel);
+      Brush.instance = new Brush(tools, inputArrowModel);
     }
 
     return Brush.instance;
@@ -94,4 +94,4 @@ class Brush {
 }
 
 export const createBrush = (tools: Tools) =>
-  Brush.getInstance(tools, patternArrowModel);
+  Brush.getInstance(tools, inputArrowModel);

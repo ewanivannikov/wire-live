@@ -8,9 +8,9 @@ import {
 } from '../../../shared';
 import { createBrush } from '../presenter';
 import { tools } from '../../toolbar';
-import { patternArrowModel } from './viewModel';
+import { inputArrowModel } from './viewModel';
 
-export const PatternArrow = () => {
+export const InputArrow = () => {
   const state = createBrush(tools);
 
   return (
@@ -19,9 +19,9 @@ export const PatternArrow = () => {
         <SegmentedControl.Button
           value={1}
           aria-label="1"
-          aria-pressed={patternArrowModel.initialValue === 1}
+          aria-pressed={inputArrowModel.initialValue === 1}
           onClick={() => {
-            patternArrowModel.setInitialValue(1);
+            inputArrowModel.setInitialValue(1);
           }}
         >
           1
@@ -29,9 +29,9 @@ export const PatternArrow = () => {
         <SegmentedControl.Button
           value={0}
           aria-label="0"
-          aria-pressed={patternArrowModel.initialValue === 0}
+          aria-pressed={inputArrowModel.initialValue === 0}
           onClick={() => {
-            patternArrowModel.setInitialValue(0);
+            inputArrowModel.setInitialValue(0);
           }}
         >
           0
@@ -42,21 +42,21 @@ export const PatternArrow = () => {
         <input
           type="checkbox"
           onInput={(e) => {
-            patternArrowModel.setHasCycle(e.target.checked);
+            inputArrowModel.setHasCycle(e.target.checked);
           }}
         />
         <span>Cycle</span>
       </label>
       <Popover.Target popovertarget="signal-pattern">
-        {patternArrowModel.pattern.join('')}
+        {inputArrowModel.pattern.join('')}
       </Popover.Target>
       <Popover id="signal-pattern">
         <Tags>
-          <For each={patternArrowModel.pattern}>
+          <For each={inputArrowModel.pattern}>
             {(element, index) => (
               <DismissibleTag
                 onClose={() => {
-                  patternArrowModel.removePatternElement(index());
+                  inputArrowModel.removePatternElement(index());
                 }}
               >
                 {element}
@@ -66,7 +66,7 @@ export const PatternArrow = () => {
           <TextInputTag
             onChange={(value) => {
               if (!value) return;
-              patternArrowModel.addPatternElement(value);
+              inputArrowModel.addPatternElement(value);
             }}
             size={1}
             placeholder="New"

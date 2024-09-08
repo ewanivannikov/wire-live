@@ -1,12 +1,14 @@
 import { Listbox, Popover, SegmentedControl } from '../../shared';
 import { For, Show } from 'solid-js';
-import { groupsBrushes } from '../brushes';
+import { clastersBrushes, groupsBrushes } from '../brushes';
 import { createBrush } from './presenter';
 import { iconDirectionMapping, iconsMapping } from '../brushes/IconArrow';
 import { tools } from '../toolbar/presenter';
 import { Dynamic } from 'solid-js/web';
 import styles from './style.module.css';
-import { PatternArrow } from './PatternArrow';
+import { InputArrow } from './InputArrow';
+import { OutputArrow } from './OutputArrow';
+import { Info } from 'lucide-solid';
 
 const { contextbar } = styles;
 
@@ -17,8 +19,29 @@ export const ContextBar = () => {
   };
 
   return (
+    <>
     <Show when={state.allowBrushes}>
+      <Popover.Target popovertarget="brushes-info">
+        <Info />
+      </Popover.Target>
+      <Popover id="brushes-info">
+        <p>
+          Позволяет рисовать стрелочки на поле
+        </p>
+        <p>
+          Стрелочки делятся на несколько групп:
+        </p>
+        <ul>
+          <li>Передающие сигнал</li>
+          <li>Источники сигнала</li>
+          <li>Логические</li>
+          <li>Контролы</li>
+          <li>Индикаторы</li>
+        </ul>
+      </Popover>
       <div class={contextbar}>
+        <label style={{ display: 'flex', 'align-items': 'center' }}>
+          Тип стрелочки:
         <Popover.Target popovertarget="brushes">
           <Dynamic component={iconsMapping[state.currentBrush]} />
         </Popover.Target>
@@ -27,16 +50,24 @@ export const ContextBar = () => {
             aria-activedescendant={state.currentBrush}
             onFocusChange={handleClick}
           >
-            <For each={Object.entries(groupsBrushes)}>
-              {([key, val]) => (
-                <Listbox.Option id={key}>
-                  <Dynamic component={iconsMapping[key]} />
-                  {val.label}
-                </Listbox.Option>
+            <For each={Object.entries(clastersBrushes)}>
+              {([_, val]) => (
+                <Listbox.Optgroup label={val.label}>
+                  <For each={val.values}>
+                    {(brush) => (
+                      <Listbox.Option id={brush}>
+                        <Dynamic component={iconsMapping[brush]} />
+                        {groupsBrushes[brush].label}
+                        <span title={groupsBrushes[brush].description}>🛈</span>
+                      </Listbox.Option>
+                    )}
+                  </For>
+                </Listbox.Optgroup>
               )}
             </For>
           </Listbox>
         </Popover>
+        </label>
         <Show when={state.hasDirection}>
           <SegmentedControl aria-orientation="horizontal">
             <For each={state.currentBrushDirectionList}>
@@ -62,8 +93,26 @@ export const ContextBar = () => {
             <span>Flip</span>
           </label>
         </Show>
-        <PatternArrow />
+        <InputArrow />
+        <OutputArrow />
       </div>
     </Show>
+    <Show when={tools.currentTool === 'Eraser'}>
+      <Popover.Target popovertarget="eraser-info">
+        <Info />
+      </Popover.Target>
+      <Popover id="eraser-info">
+        Cтирает любую стрелочку с поля
+      </Popover>
+    </Show>
+    <Show when={tools.currentTool === 'Pan'}>
+      <Popover.Target popovertarget="pan-info">
+        <Info />
+      </Popover.Target>
+      <Popover id="pan-info">
+        Даёт возможность нажимать на стрелочки-кнопки
+      </Popover>
+    </Show>
+    </>
   );
 };

@@ -112,156 +112,207 @@ export const groupsBrushes = {
     value: 'Arrow',
     label: 'Arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: при любом входящем сигнале.\nПри активации: Посылает сигнал вперед.',
   },
   'Brush.1': {
     value: 'SourceBlock',
     label: 'Source block',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.2.Up': {
     value: 'Blocker',
     label: 'Blocker',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.3.Up': {
     value: 'DelayArrow',
     label: 'Delay arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.4.Up': {
     value: 'SignalDetector',
     label: 'Signal detector',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.5.Up': {
     value: 'OppositeArrow',
     label: 'Opposite arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.6.Up.>': {
     value: 'OrthogonalArrow',
     label: 'Orthogonal arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.7.Up': {
     value: 'TrioArrow',
     label: 'Trio arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.8': {
     value: 'PulseGenerator',
     label: 'Pulse generator',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.9.Up': {
     value: 'ThroughArrow',
     label: 'Through arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.10.Up.>': {
     value: 'DiagonalArrow',
     label: 'Diagonal arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.11.Up': {
     value: 'DoubleArrow',
     label: 'Double arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.12.Up.>': {
     value: 'ThroughNear',
     label: 'Through near',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.13.Up.>': {
     value: 'ForwardDiagArrow',
     label: 'Forward diagonal arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.14.Up': {
     value: 'NotGate',
     label: 'Not gate',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.15.Up': {
     value: 'AndGate',
     label: 'And gate',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.16.Up': {
     value: 'XorGate',
     label: 'Xor gate',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.17.Up': {
     value: 'Latch',
     label: 'Latch',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.18.Up': {
     value: 'FlipFlop',
     label: 'Flip-flop',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.19.Up': {
     value: 'RandomArrow',
     label: 'Random arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.20': {
     value: 'Button',
     label: 'Button',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.21.Up': {
     value: 'InputArrow',
     label: 'Input arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.22': {
     value: 'OutputArrow',
     label: 'Output arrow',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.23.Up': {
     value: 'DirectionalButton',
     label: 'Directional button',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.24': {
     value: 'Bulb',
     label: 'Bulb',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Brush.25.Up': {
     value: 'BulbDetector',
     label: 'Bulb detector',
     description:
-      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
 };
+
+export const clastersBrushes = {
+  'Transmitting': {
+    values: [
+      'Brush.0.Up',
+      'Brush.2.Up',
+      'Brush.3.Up',
+      'Brush.4.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.7.Up',
+      'Brush.8',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.11.Up',
+      'Brush.12.Up.>',
+      'Brush.13.Up.>',
+      'Brush.17.Up',
+      'Brush.18.Up',
+      'Brush.19.Up',
+    ],
+    label: 'Передающие сигнал',
+    description:
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+  },
+  'Sources': {
+    values: ['Brush.1'],
+    label: 'Источники сигнала',
+    description:
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+  },
+  'Logical': {
+    values: ['Brush.14.Up', 'Brush.15.Up', 'Brush.16.Up'],
+    label: 'Логические',
+    description:
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+  },
+  'Controls': {
+    values: ['Brush.20', 'Brush.21.Up', 'Brush.22', 'Brush.23.Up'],
+    label: 'Контролы',
+    description:
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+  },
+  'Indicators': {
+    values: ['Brush.24', 'Brush.25.Up'],
+    label: 'Индикаторы',
+    description:
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+  },
+}
+
