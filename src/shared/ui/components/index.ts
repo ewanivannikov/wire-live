@@ -1,6 +1,6 @@
 export { Button } from './Button';
 export { Popover } from './Popover';
-export { SegmentedControl } from './SegmentedControl';
+export { SegmentedButtons } from './SegmentedButtons';
 export { Listbox } from './Listbox';
 export * from './Landing';
 export { Typography } from './Typography';

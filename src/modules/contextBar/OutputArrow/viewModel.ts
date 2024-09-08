@@ -11,7 +11,7 @@ export class OutputArrowModel {
 
   public get fields() {
     return {
-      waitingValue: this.waitingValue,
+      waiting: `${this.waitingOperator}${this.waitingValue}`,
       hasCycle: this.hasCycle,
       pattern: this.pattern,
     };
@@ -19,6 +19,10 @@ export class OutputArrowModel {
 
   public setWaitingValue = (value: number) => {
     this.waitingValue = value;
+  };
+
+  public setWaitingOperator = (value: string) => {
+    this.waitingOperator = value;
   };
 
   public setHasCycle = (value: boolean) => {

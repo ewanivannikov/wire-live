@@ -1,4 +1,4 @@
-import { Button, SegmentedControl } from '../../shared';
+import { Button, SegmentedButtons } from '../../shared';
 import styles from './style.module.css';
 import { Highlighter, Eraser, Play, Pause, Hand } from 'lucide-solid';
 import { tools } from './presenter';
@@ -20,29 +20,29 @@ export const Toolbar = () => {
       aria-controls="canvas"
       class={toolbar}
     >
-      <SegmentedControl>
-        <SegmentedControl.Button
+      <SegmentedButtons>
+        <SegmentedButtons.Button
           value="Brush"
           aria-pressed={tools.currentTool === 'Brush'}
           onClick={handleClick}
         >
           <Highlighter />
-        </SegmentedControl.Button>
-        <SegmentedControl.Button
+        </SegmentedButtons.Button>
+        <SegmentedButtons.Button
           value="Eraser"
           aria-pressed={tools.currentTool === 'Eraser'}
           onClick={handleClick}
         >
           <Eraser />
-        </SegmentedControl.Button>
-        <SegmentedControl.Button
+        </SegmentedButtons.Button>
+        <SegmentedButtons.Button
           value="Pan"
           aria-pressed={tools.currentTool === 'Pan'}
           onClick={handleClick}
         >
           <Hand />
-        </SegmentedControl.Button>
-      </SegmentedControl>
+        </SegmentedButtons.Button>
+      </SegmentedButtons>
 
       <Button
         name="Play"

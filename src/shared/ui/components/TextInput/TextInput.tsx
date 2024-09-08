@@ -18,7 +18,7 @@ export const TextInput = (props: TextInputProps) => {
 
   return (
     <span ref={rootNode}>
-      <Input size={size} ref={input} restrictCharacters={restrictCharacters} />
+      <Input size={size} ref={input} restrictCharacters={restrictCharacters} {...props} />
     </span>
   );
 };

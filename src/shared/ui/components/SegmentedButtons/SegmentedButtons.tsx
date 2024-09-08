@@ -2,7 +2,7 @@ import styles from './style.module.css';
 
 const { root } = styles;
 
-export const SegmentedControl = (props) => {
+export const SegmentedButtons = (props) => {
   return (
     <div
       aria-orientation="vertical"

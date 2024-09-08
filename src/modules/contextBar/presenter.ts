@@ -3,6 +3,7 @@ import { Tools } from '../mapContainer/Tools';
 import { DirectionType, Tile, ToolType } from '../toolbar';
 import { brushes, Direction, TileId } from '../brushes';
 import { inputArrowModel, InputArrowModel } from './InputArrow/viewModel';
+import { outputArrowModel, OutputArrowModel } from './OutputArrow';
 
 class Brush {
   private static instance: Brush | null = null;
@@ -20,6 +21,7 @@ class Brush {
   constructor(
     private readonly tools: Tools,
     private readonly inputArrowModel: InputArrowModel,
+    private readonly outputArrowModel: OutputArrowModel
   ) {
     makeAutoObservable(this);
   }
@@ -40,6 +42,9 @@ class Brush {
     const number = new Tile(this.currentBrush).vector[1];
     if (number === 21) {
       return this.inputArrowModel.fields;
+    }
+    if (number === 22) {
+      return this.outputArrowModel.fields;
     }
     return null;
   }
@@ -94,4 +99,4 @@ class Brush {
 }
 
 export const createBrush = (tools: Tools) =>
-  Brush.getInstance(tools, inputArrowModel);
+  Brush.getInstance(tools, inputArrowModel, outputArrowModel);

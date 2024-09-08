@@ -1,4 +1,4 @@
-import { Listbox, Popover, SegmentedControl } from '../../shared';
+import { Listbox, Popover, SegmentedButtons } from '../../shared';
 import { For, Show } from 'solid-js';
 import { clastersBrushes, groupsBrushes } from '../brushes';
 import { createBrush } from './presenter';
@@ -57,8 +57,8 @@ export const ContextBar = () => {
                     {(brush) => (
                       <Listbox.Option id={brush}>
                         <Dynamic component={iconsMapping[brush]} />
-                        {groupsBrushes[brush].label}
                         <span title={groupsBrushes[brush].description}>🛈</span>
+                        {groupsBrushes[brush].label}
                       </Listbox.Option>
                     )}
                   </For>
@@ -69,20 +69,20 @@ export const ContextBar = () => {
         </Popover>
         </label>
         <Show when={state.hasDirection}>
-          <SegmentedControl aria-orientation="horizontal">
+          <SegmentedButtons aria-orientation="horizontal">
             <For each={state.currentBrushDirectionList}>
               {(direction) => (
-                <SegmentedControl.Button
+                <SegmentedButtons.Button
                   value={direction}
                   aria-label="Вверх"
                   aria-pressed={state.currentBrushDirection === direction}
                   onClick={(e) => state.setBrushDirection(e.target.value)}
                 >
                   <Dynamic component={iconDirectionMapping[direction]} />
-                </SegmentedControl.Button>
+                </SegmentedButtons.Button>
               )}
             </For>
-          </SegmentedControl>
+          </SegmentedButtons>
         </Show>
         <Show when={state.hasFlip}>
           <label style={{ display: 'flex' }}>

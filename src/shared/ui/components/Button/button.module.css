@@ -3,13 +3,9 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  width: auto;
-  outline: none;
-  border-radius: 6px;
-  padding: 0 8px;
-  background-color: #0284c5;
-  color: #fff;
+  height: 32px;
+  border-radius: 2px;
+  background-color: oklch(from var(--color-baseline) calc(l - 0.05) c h);
   font-size: 16px;
   line-height: 0;
   transition: 0.25s background-color;

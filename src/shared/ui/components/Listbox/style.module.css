@@ -18,6 +18,7 @@
   justify-content: start;
   cursor: pointer;
   align-items: center;
+  min-width: 2.5rem;
 }
 
 .option[aria-selected='true'] {

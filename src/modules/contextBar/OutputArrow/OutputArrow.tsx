@@ -13,7 +13,7 @@ import { outputArrowModel } from './viewModel';
 export const OutputArrow = () => {
   const state = createBrush(tools);
   const handleClick = (el) => {
-    
+    outputArrowModel.setWaitingOperator(el.id)
   }
 
   return (
@@ -25,7 +25,7 @@ export const OutputArrow = () => {
             outputArrowModel.setHasCycle(e.target.checked);
           }}
         />
-        <span>Cycle</span>
+        <span>Цикл</span>
       </label>
       <Popover.Target popovertarget="output-signal-pattern">
         {outputArrowModel.pattern.join('')}
@@ -54,7 +54,7 @@ export const OutputArrow = () => {
           />
         </Tags>
       </Popover>
-      <label style={{ display: 'flex' }}>Waiting</label>
+      <label style={{ display: 'flex' }}>Ожидание</label>
       <Popover.Target popovertarget="output-signal-wait">
         {outputArrowModel.waitingOperator}
       </Popover.Target>
@@ -63,7 +63,7 @@ export const OutputArrow = () => {
             aria-activedescendant={outputArrowModel.waitingOperator}
             onFocusChange={handleClick}
           >
-            <For each={['=', '<', '>']}>
+            <For each={['=', '<=', '>=']}>
               {(val) => (
                 <Listbox.Option id={val}>
                   {val}
@@ -72,7 +72,11 @@ export const OutputArrow = () => {
             </For>
           </Listbox>
       </Popover>
-      <TextInput onChange={(outputArrowModel.setWaitingValue)} size={2} />
+      <TextInput 
+        onChange={(outputArrowModel.setWaitingValue)} 
+        size={2} 
+        defaultValue={outputArrowModel.waitingValue}
+      />
     </Show>
   );
 };

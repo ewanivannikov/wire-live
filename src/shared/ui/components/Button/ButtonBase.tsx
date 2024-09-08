@@ -20,6 +20,7 @@ export const ButtonBase = (props: ButtonBaseProps) => {
           '--ripple-x': position().x,
           '--ripple-y': position().y,
           '--animation-tick': tick(),
+          ...props.style
         }}
     type="button"
     onClick={handleClick}

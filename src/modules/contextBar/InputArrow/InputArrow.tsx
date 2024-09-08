@@ -2,7 +2,7 @@ import { For, Show } from 'solid-js';
 import {
   DismissibleTag,
   Popover,
-  SegmentedControl,
+  SegmentedButtons,
   Tags,
   TextInputTag,
 } from '../../../shared';
@@ -15,8 +15,8 @@ export const InputArrow = () => {
 
   return (
     <Show when={state.currentBrush.includes('Brush.21')}>
-      <SegmentedControl aria-orientation="horizontal">
-        <SegmentedControl.Button
+      <SegmentedButtons aria-orientation="horizontal">
+        <SegmentedButtons.Button
           value={1}
           aria-label="1"
           aria-pressed={inputArrowModel.initialValue === 1}
@@ -25,8 +25,8 @@ export const InputArrow = () => {
           }}
         >
           1
-        </SegmentedControl.Button>
-        <SegmentedControl.Button
+        </SegmentedButtons.Button>
+        <SegmentedButtons.Button
           value={0}
           aria-label="0"
           aria-pressed={inputArrowModel.initialValue === 0}
@@ -35,8 +35,8 @@ export const InputArrow = () => {
           }}
         >
           0
-        </SegmentedControl.Button>
-      </SegmentedControl>
+        </SegmentedButtons.Button>
+      </SegmentedButtons>
       Initial value
       <label style={{ display: 'flex' }}>
         <input
