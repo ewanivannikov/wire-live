@@ -1507,6 +1507,32 @@
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
 
+.xwoL_Be2wOFfB0FFbHQj::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px -512px repeat;
+  transform-origin: top left;
+  transform: scale(0.12);
+}
+
+.TR9MSeHWScryJ7gUyeKx::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px -512px repeat;
+  transform-origin: top left;
+  transform: scale(0.12);
+}
+
 .nlwym_RhIsqW23KbcQp7::before {
   content: '';
   position: absolute;
