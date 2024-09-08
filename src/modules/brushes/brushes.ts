@@ -95,14 +95,16 @@ export const brushes = {
   'Brush.21.Down': 'InputArrow.Down',
   'Brush.21.Right': 'InputArrow.Right',
   'Brush.21.Left': 'InputArrow.Left',
+  'Brush.22': 'OutputArrow.Up',
+  'Brush.23.Up': 'DirectionalButton.Up',
+  'Brush.23.Down': 'DirectionalButton.Down',
+  'Brush.23.Right': 'DirectionalButton.Right',
+  'Brush.23.Left': 'DirectionalButton.Left',
   'Brush.24': 'Bulb',
   'Brush.25.Up': 'BulbDetector.Up',
   'Brush.25.Down': 'BulbDetector.Down',
   'Brush.25.Right': 'BulbDetector.Right',
   'Brush.25.Left': 'BulbDetector.Left',
-  // 'Button': 20,
-  // 'Directional button': 21,
-  // 'Eraser': 22
 };
 
 export const groupsBrushes = {
@@ -235,6 +237,18 @@ export const groupsBrushes = {
   'Brush.21.Up': {
     value: 'InputArrow',
     label: 'Input arrow',
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+  },
+  'Brush.22': {
+    value: 'OutputArrow',
+    label: 'Output arrow',
+    description:
+      'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
+  },
+  'Brush.23.Up': {
+    value: 'DirectionalButton',
+    label: 'Directional button',
     description:
       'Activates: On any incoming signal.\nOn activation: Sends a signal forwards.',
   },

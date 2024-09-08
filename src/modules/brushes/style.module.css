@@ -1257,6 +1257,32 @@
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
 
+.icon-output-arrow::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1536px -512px repeat;
+  transform-origin: top left;
+  transform: scale(0.12);
+}
+
+.icon-directional-button-up::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -1792px -512px repeat;
+  transform-origin: top left;
+  transform: scale(0.12);
+}
+
 .icon-bulb::before {
   content: '';
   position: absolute;

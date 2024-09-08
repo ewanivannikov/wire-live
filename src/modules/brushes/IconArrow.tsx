@@ -103,6 +103,8 @@ const {
   iconBulbDetectorLeft,
   iconBulbDetectorRight,
   iconButton,
+  iconOutputArrow,
+  iconDirectionalButtonUp,
 } = styles;
 
 export const IconArrowUp = () => {
@@ -408,6 +410,14 @@ export const IconInputArrowLeft = () => {
   return <div class={`${icon} ${iconInputArrowLeft}`} />;
 };
 
+export const IconOutputArrow = () => {
+  return <div class={`${icon} ${iconOutputArrow}`} />;
+};
+
+export const IconDirectionalButtonUp = () => {
+  return <div class={`${icon} ${iconDirectionalButtonUp}`} />;
+}
+
 export const IconBulb = () => {
   return <div class={`${icon} ${iconBulb}`} />;
 };
@@ -524,6 +534,8 @@ export const iconsMapping = {
   'Brush.21.Down': IconInputArrowDown,
   'Brush.21.Right': IconInputArrowRight,
   'Brush.21.Left': IconInputArrowLeft,
+  'Brush.22': IconOutputArrow,
+  'Brush.23.Up': IconDirectionalButtonUp,
   'Brush.24': IconBulb,
   'Brush.25.Up': IconBulbDetectorUp,
   'Brush.25.Down': IconBulbDetectorDown,
