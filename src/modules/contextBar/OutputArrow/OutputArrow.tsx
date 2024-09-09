@@ -3,6 +3,7 @@ import {
   DismissibleTag,
   Listbox,
   Popover,
+  SegmentedControls,
   Tags,
   TextInput,
   TextInputTag,
@@ -55,28 +56,30 @@ export const OutputArrow = () => {
         </Tags>
       </Popover>
       <label style={{ display: 'flex' }}>Ожидание</label>
-      <Popover.Target popovertarget="output-signal-wait">
-        {outputArrowModel.waitingOperator}
-      </Popover.Target>
-      <Popover id="output-signal-wait">
-        <Listbox
-            aria-activedescendant={outputArrowModel.waitingOperator}
-            onFocusChange={handleClick}
-          >
-            <For each={['=', '<=', '>=']}>
-              {(val) => (
-                <Listbox.Option id={val}>
-                  {val}
-                </Listbox.Option>
-              )}
-            </For>
-          </Listbox>
-      </Popover>
-      <TextInput 
-        onChange={(outputArrowModel.setWaitingValue)} 
-        size={2} 
-        defaultValue={outputArrowModel.waitingValue}
-      />
+      <SegmentedControls>
+        <Popover.Target popovertarget="output-signal-wait">
+          {outputArrowModel.waitingOperator}
+        </Popover.Target>
+        <Popover id="output-signal-wait">
+          <Listbox
+              aria-activedescendant={outputArrowModel.waitingOperator}
+              onFocusChange={handleClick}
+            >
+              <For each={['=', '<=', '>=']}>
+                {(val) => (
+                  <Listbox.Option id={val}>
+                    {val}
+                  </Listbox.Option>
+                )}
+              </For>
+            </Listbox>
+        </Popover>
+        <TextInput 
+          onChange={(outputArrowModel.setWaitingValue)} 
+          size={2} 
+          value={outputArrowModel.waitingValue}
+        />
+      </SegmentedControls>
     </Show>
   );
 };
