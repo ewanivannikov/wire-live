@@ -32,11 +32,11 @@ export const ContextBar = () => {
           Стрелочки делятся на несколько групп:
         </p>
         <ul>
-          <li>Передающие сигнал</li>
-          <li>Источники сигнала</li>
-          <li>Логические</li>
-          <li>Контролы</li>
-          <li>Индикаторы</li>
+          <For each={Object.entries(clastersBrushes)}>
+                    {([_, val]) => (
+                      <li>{val.label}</li>
+                    )}
+          </For>
         </ul>
       </Popover>
       <div class={contextbar}>

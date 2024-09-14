@@ -21,6 +21,7 @@ import { createLatch } from './Latch';
 import { createFlipFlop } from './FlipFlop';
 import { createRandomArrow } from './RandomArrow';
 import { createButton } from './Button';
+import { createDirectionalButton } from './DirectionalButton';
 import { createBulb } from './Bulb';
 import { createBulbDetector } from './BulbDetector';
 
@@ -132,6 +133,11 @@ export const fabricArrow = (
 
   if (nameType === 'Button') {
     const result = createButton(position);
+    return result;
+  }
+
+  if (nameType === 'DirectionalButton') {
+    const result = createDirectionalButton(position, direction);
     return result;
   }
 

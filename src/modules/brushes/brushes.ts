@@ -112,103 +112,103 @@ export const groupsBrushes = {
     value: 'Arrow',
     label: 'Arrow',
     description:
-      'Активируется: при любом входящем сигнале.\nПри активации: Посылает сигнал вперед.',
+      'Активация: если в стрелку поступило не менее одного сигнала\nДействие:отправить один сигнал по направлению',
   },
   'Brush.1': {
     value: 'SourceBlock',
     label: 'Source block',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: всегда активна \nДействие: отправить сигнал во все стороны',
   },
   'Brush.2.Up': {
     value: 'Blocker',
     label: 'Blocker',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелочку поступило не менее одного сигнала \nДействие: отключить стрелку по направлению',
   },
   'Brush.3.Up': {
     value: 'DelayArrow',
     label: 'Delay arrow',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: синим, если в стрелку поступило не менее одного сигнала. Красным, если в прошлый был синим \nДействие: если стрелка красная, отправить сигнал во направлению',
   },
   'Brush.4.Up': {
     value: 'SignalDetector',
     label: 'Signal detector',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если стрелка сзади активна \nДействие: отправить сигнал во направлению',
   },
   'Brush.5.Up': {
     value: 'OppositeArrow',
     label: 'Opposite arrow',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку поступило не менее одного сигнала \nДействие: отправить сигнал по направлению и в противоположную сторону',
   },
   'Brush.6.Up.>': {
     value: 'OrthogonalArrow',
     label: 'Orthogonal arrow',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку поступило не менее одного сигнала \nДействие: отправить сигнал по направлению и в перпендикулярную сторону',
   },
   'Brush.7.Up': {
     value: 'TrioArrow',
     label: 'Trio arrow',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку поступило не менее одного сигнала \nДействие: отправить сигнал по направлению и в боковые стороны',
   },
   'Brush.8': {
     value: 'PulseGenerator',
     label: 'Pulse generator',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: один раз красным, затем оставшееся время синим \nДействие: если красный, отправить сигнал во все стороны',
   },
   'Brush.9.Up': {
     value: 'ThroughArrow',
     label: 'Through arrow',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку поступило не менее одного сигнала \nДействие: отправить сигнал через одну клетку по направлению',
   },
   'Brush.10.Up.>': {
     value: 'DiagonalArrow',
     label: 'Diagonal arrow',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку поступило не менее одного сигнала \nДействие: отправить сигнал в диагональном направлении',
   },
   'Brush.11.Up': {
     value: 'DoubleArrow',
     label: 'Double arrow',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку поступило не менее одного сигнала \nДействие: отправить сигнал по направлению и через одну клетку',
   },
   'Brush.12.Up.>': {
     value: 'ThroughNear',
     label: 'Through near',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку поступило не менее одного сигнала \nДействие: отправить сигнал через одну клетку по направлению и в бок',
   },
   'Brush.13.Up.>': {
     value: 'ForwardDiagArrow',
     label: 'Forward diagonal arrow',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку поступило не менее одного сигнала \nДействие: отправить сигнал по направлению и по диагонали',
   },
   'Brush.14.Up': {
     value: 'NotGate',
     label: 'Not gate',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку не поступают сигналы \nДействие: отправить сигнал по направлению',
   },
   'Brush.15.Up': {
     value: 'AndGate',
     label: 'And gate',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку поступило не менее двух сигналов \nДействие: отправить сигнал по направлению',
   },
   'Brush.16.Up': {
     value: 'XorGate',
     label: 'Xor gate',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку поступило нечётное количество сигналов \nДействие: отправить по направлению',
   },
   'Brush.17.Up': {
     value: 'Latch',
@@ -226,7 +226,7 @@ export const groupsBrushes = {
     value: 'RandomArrow',
     label: 'Random arrow',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: с вероятностью 50/50, если в стрелку поступило не менее одного сигнала \nДействие: отправить сигнал по направлению',
   },
   'Brush.20': {
     value: 'Button',
@@ -256,13 +256,13 @@ export const groupsBrushes = {
     value: 'Bulb',
     label: 'Bulb',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если в стрелку поступило не менее одного сигнала \nДействие: загореться',
   },
   'Brush.25.Up': {
     value: 'BulbDetector',
     label: 'Bulb detector',
     description:
-      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+      'Активация: если стрелка сзади активна \nДействие: загореться',
   },
 };
 
@@ -276,41 +276,58 @@ export const clastersBrushes = {
       'Brush.5.Up',
       'Brush.6.Up.>',
       'Brush.7.Up',
-      'Brush.8',
       'Brush.9.Up',
       'Brush.10.Up.>',
       'Brush.11.Up',
       'Brush.12.Up.>',
       'Brush.13.Up.>',
-      'Brush.17.Up',
-      'Brush.18.Up',
-      'Brush.19.Up',
     ],
     label: 'Передающие сигнал',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Sources': {
-    values: ['Brush.1'],
+    values: [
+      'Brush.1',
+      'Brush.8'],
     label: 'Источники сигнала',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Logical': {
-    values: ['Brush.14.Up', 'Brush.15.Up', 'Brush.16.Up'],
+    values: [
+      'Brush.14.Up',
+      'Brush.15.Up', 
+      'Brush.16.Up',
+      'Brush.17.Up',
+      'Brush.18.Up',],
     label: 'Логические',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Controls': {
-    values: ['Brush.20', 'Brush.21.Up', 'Brush.22', 'Brush.23.Up'],
+    values: [
+      'Brush.20', 
+      'Brush.23.Up'],
     label: 'Контролы',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   'Indicators': {
-    values: ['Brush.24', 'Brush.25.Up'],
+    values: [
+      'Brush.24',
+      'Brush.25.Up'],
     label: 'Индикаторы',
+    description:
+      'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
+  },
+  'Special': {
+    values: [
+      'Brush.19.Up',
+      'Brush.21.Up', 
+      'Brush.22', 
+    ],
+    label: 'Особые стрелки',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },

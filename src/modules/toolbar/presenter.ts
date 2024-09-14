@@ -27,7 +27,7 @@ class Tools {
         this._tileMap.updateTile(tile);
       }
       if (this.currentTool === ToolType.Pan) {
-        if (tile.userData.type?.includes('20')) {
+        if (tile.userData.type?.includes('20') || tile.userData.type?.includes('23')) {
           this._logicField.addSignal(tile.name, 1);
         }
       }

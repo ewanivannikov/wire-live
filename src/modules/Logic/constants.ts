@@ -22,7 +22,7 @@ export const indexTileToArrow = [
   'Button',
   'InputArrow',
   '',
-  '',
+  'DirectionalButton',
   'Bulb',
   'BulbDetector',
 ];
@@ -49,6 +49,7 @@ export const arrowToIndexTile = {
   RandomArrow: 19,
   Button: 20,
   InputArrow: 21,
+  DirectionalButton: 23,
   Bulb: 24,
   BulbDetector: 25,
 };
