@@ -16,10 +16,10 @@ class ListboxLogic {
   constructor(
     private readonly listboxNode: HTMLDListElement,
     private readonly styles: ListboxStyleProps,
-    onFocusChange = function () {},
-    onItemChange = function () {},
+    onFocusChange = function () { },
+    onItemChange = function () { },
   ) {
-    this.listboxNode = listboxNode;
+    // this.listboxNode = listboxNode;
     this.activeDescendant = this.listboxNode.getAttribute(
       'aria-activedescendant',
     );
@@ -50,7 +50,7 @@ class ListboxLogic {
       // and we do not need to do anything.
       if (entries[0].intersectionRatio <= 0) return;
 
-      this.listboxNode.focus();
+      this.listboxNode?.focus();
     });
     // start observing
     intersectionObserver.observe(this.listboxNode);

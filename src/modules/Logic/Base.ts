@@ -89,11 +89,14 @@ export class Fields {
 
   initCashe(tileData) {
     tileData.forEach((tile) => {
-      const { tileId, x, y } = tile;
+      console.log('tile', tile);
+      const { tileId, x, y, ...options } = tile;
       const value = new Tile(tileId).vector;
-      this.addArrow(
-        `${x},${y}`,
-        fabricArrow(indexTileToArrow[value[1]], `${x},${y}`, value[2]),
+      this.addArrowCache(`${x},${y}`,
+        value[1],
+        value[2],
+        value[3],
+        options
       );
     });
 

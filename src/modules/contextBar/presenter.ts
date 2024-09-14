@@ -89,9 +89,10 @@ class Brush {
   public static getInstance(
     tools: Tools,
     inputArrowModel: InputArrowModel,
+    outputArrowModel: OutputArrowModel
   ) {
     if (!Brush.instance) {
-      Brush.instance = new Brush(tools, inputArrowModel);
+      Brush.instance = new Brush(tools, inputArrowModel, outputArrowModel);
     }
 
     return Brush.instance;
