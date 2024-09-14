@@ -282,5 +282,12 @@ export const sources: {[key: string]: any} = {
             "x": -1,
             "y": -5
         }
+    ],
+    'TestLevel': [
+        {
+            "tileId": "Brush.21.Up",
+            "x": -7,
+            "y": -5
+        }
     ]
 }

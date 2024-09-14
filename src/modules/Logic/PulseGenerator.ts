@@ -11,19 +11,19 @@ class PulseGenerator extends ArrowBase {
       fields.getSignal(this.position.coordinates) >= 0 &&
       this.state === 'None'
     ) {
-      this.state = 'Red';
+      this.state = 'Earth';
     } else if (
       fields.getSignal(this.position.coordinates) >= 0 &&
-      (this.state === 'Red' || this.state === 'Blue')
+      (this.state === 'Earth' || this.state === 'Saturn')
     ) {
-      this.state = 'Blue';
+      this.state = 'Saturn';
     } else {
       this.state = 'None';
     }
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Red') {
+    if (this.state === 'Earth') {
       const newPosition = this.position;
       const upPosition = newPosition.add(0, -1);
       const downPosition = newPosition.add(0, 1);

@@ -8,14 +8,14 @@ class SourceBlock extends ArrowBase {
 
   conditionStates(fields: Fields) {
     if (fields.getSignal(this.position.coordinates) >= 0) {
-      this.state = 'Red';
+      this.state = 'Earth';
     } else {
       this.state = 'None';
     }
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Red') {
+    if (this.state === 'Earth') {
       const newPosition = this.position;
       const upPosition = newPosition.add(0, -1);
       const downPosition = newPosition.add(0, 1);

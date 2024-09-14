@@ -65,7 +65,7 @@ export const OutputArrow = () => {
               aria-activedescendant={outputArrowModel.waitingOperator}
               onFocusChange={handleClick}
             >
-              <For each={['=', '<=', '>=']}>
+              <For each={['=', '<=', '>=', '!=']}>
                 {(val) => (
                   <Listbox.Option id={val}>
                     {val}

@@ -9,14 +9,14 @@ class AndGate extends ArrowBase {
 
   conditionStates(fields: Fields) {
     if (fields.getSignal(this.position.coordinates) >= 2) {
-      this.state = 'Red';
+      this.state = 'Earth';
     } else {
       this.state = 'None';
     }
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Red') {
+    if (this.state === 'Earth') {
       let newPosition = this.position;
       if (this.direction === 'Up') {
         newPosition = newPosition.add(0, -1);

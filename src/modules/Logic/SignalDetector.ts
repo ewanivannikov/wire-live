@@ -23,14 +23,14 @@ class SignalDetector extends ArrowBase {
       !(fields.getState(newPosition.coordinates) === 'None') &&
       fields.getSignal(this.position.coordinates) >= 0
     ) {
-      this.state = 'Red';
+      this.state = 'Earth';
     } else {
       this.state = 'None';
     }
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Red') {
+    if (this.state === 'Earth') {
       let newPosition = this.position;
       if (this.direction === 'Up') {
         newPosition = newPosition.add(0, -1);

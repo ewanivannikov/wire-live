@@ -9,14 +9,14 @@ class DoubleArrow extends ArrowBase {
 
   conditionStates(fields: Fields) {
     if (fields.getSignal(this.position.coordinates) >= 1) {
-      this.state = 'Red';
+      this.state = 'Earth';
     } else {
       this.state = 'None';
     }
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Red') {
+    if (this.state === 'Earth') {
       const newPosition = this.position;
       if (this.direction === 'Up') {
         fields.addSignal(newPosition.add(0, -1).coordinates, 1);

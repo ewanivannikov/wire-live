@@ -1,5 +1,6 @@
 import { Direction } from './types';
 import { createInputArrow } from './InputArrow';
+import { createOutputArrow } from './OutputArrow';
 
 export const fabricPatternArrow = (
   nameType: string,
@@ -8,6 +9,7 @@ export const fabricPatternArrow = (
   direction?: Direction,
   cycling?: boolean,
   active?: number,
+  waiting?: number,
 ) => {
   if (nameType === 'InputArrow') {
     const result = createInputArrow(
@@ -16,6 +18,16 @@ export const fabricPatternArrow = (
       pattern,
       cycling,
       active,
+    );
+    return result;
+  }
+  if (nameType === 'OutputArrow') {
+    const result = createOutputArrow(
+      position,
+      pattern,
+      cycling,
+      active,
+      waiting,
     );
     return result;
   }

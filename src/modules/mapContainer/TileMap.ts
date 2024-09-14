@@ -20,10 +20,10 @@ import { Fields } from '../Logic/Base';
 // ];
 
 const hex = {
-  Red: 0xff4f00,
-  Blue: 0x619eff,
-  Yellow: 0xffff11,
-  Orange: 0xfaa501,
+  Earth: 0xff4f00,
+  Saturn: 0x619eff,
+  Sun: 0xffff11,
+  Mars: 0xfaa501,
 };
 
 class TileMap {

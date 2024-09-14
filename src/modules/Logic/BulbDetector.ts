@@ -23,7 +23,7 @@ class BulbDetector extends ArrowBase {
       !(fields.getState(newPosition.coordinates) === 'None') &&
       fields.getSignal(this.position.coordinates) >= 0
     ) {
-      this.state = 'Red';
+      this.state = 'Earth';
     } else {
       this.state = 'None';
     }

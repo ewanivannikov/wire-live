@@ -36,14 +36,14 @@ class InputArrow extends ArrowBase {
     }
     this.loop = Math.max(this.loop - 1, -1);
     if (this.active === 1) {
-      this.state = 'Red';
+      this.state = 'Earth';
     } else {
       this.state = 'None';
     }
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Red') {
+    if (this.state === 'Earth') {
       let newPosition = this.position;
       if (this.direction === 'Up') {
         newPosition = newPosition.add(0, -1);
