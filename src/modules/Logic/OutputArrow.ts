@@ -18,38 +18,39 @@ class OutputArrow extends ArrowBase {
   }
 
   conditionStates(fields: Fields) {
-    if ((this.waiting < 0) && (fields.getSignal(this.position.coordinates) === 0)) {
-        this.waiting = -1;
-    } else {
+    if ((this.waiting === -1) && (fields.getSignal(this.position.coordinates) >= 1)) {
         this.waiting = 0;
     }
     if (this.waiting != 0) {
-        this.waiting = this.waiting - 1;
-    } else if (this.loop === 0) {
-        this.index = this.index + 1;
-        if (this.index === this.pattern.length) {
-          if (this.cycling) {
-            this.index = 0;
-            this.loop = this.pattern[this.index];
-            this.active = this.active / Math.pow(-1, this.pattern.length);
-          } else {
-            this.index = this.pattern.length - 1;
-            this.loop = -1;
-          }
-        } else {
-          this.loop = this.pattern[this.index];
-        }
-        this.active = -this.active;
-    }
-    this.loop = Math.max(this.loop - 1, -1);
-    if (this.waiting == 0) {
       this.state = 'None';
-    } else if (this.active * (Math.abs(fields.getSignal(this.position.coordinates)) + fields.getSignal(this.position.coordinates)) > 0) {
+    } else if (((this.active === 1) && (fields.getSignal(this.position.coordinates) >= 1)) ||
+        ((this.active === -1) && (fields.getSignal(this.position.coordinates) === 0))) {
       this.state = 'Sun';
     } else {
       this.state = 'Mars';
     }
-    
+    if (this.waiting === 0){
+        if ((this.loop === 0)) {
+            this.index = this.index + 1;
+            if (this.index === this.pattern.length) {
+            if (this.cycling) {
+                this.index = 0;
+                this.loop = this.pattern[this.index];
+                this.active = this.active / Math.pow(-1, this.pattern.length);
+            } else {
+                this.index = this.pattern.length - 1;
+                this.loop = -1;
+            }
+            } else {
+            this.loop = this.pattern[this.index];
+            }
+            this.active = -this.active;
+        }     
+        this.loop = Math.max(this.loop - 1, -1);
+    }
+    if (this.waiting > 0) {
+        this.waiting = this.waiting - 1;
+    }
   }
 
   activeStates(fields: Fields) {
