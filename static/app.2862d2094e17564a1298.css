@@ -303,7 +303,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) 0 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) 0 0 repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -316,7 +316,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) 0 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) 0 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
@@ -329,7 +329,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) 0 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) 0 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -342,7 +342,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) 0 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) 0 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -355,7 +355,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(0deg);
 }
@@ -368,7 +368,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -381,7 +381,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
@@ -394,7 +394,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -407,7 +407,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -419,7 +419,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -432,7 +432,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
@@ -445,7 +445,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -458,7 +458,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -471,7 +471,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -484,7 +484,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
@@ -497,7 +497,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -510,7 +510,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -523,7 +523,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -536,7 +536,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
@@ -549,7 +549,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -562,7 +562,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -575,7 +575,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -588,7 +588,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) translate(-256px, 0);
 }
@@ -601,7 +601,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -614,7 +614,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(180deg) translate(0, -256px);
 }
@@ -627,7 +627,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
@@ -640,7 +640,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(90deg);
 }
@@ -653,7 +653,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -666,7 +666,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px 0 repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(271deg) translate(-256px, -256px);
 }
@@ -679,7 +679,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -692,7 +692,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
@@ -705,7 +705,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -718,7 +718,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px 0 repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px 0 repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -731,7 +731,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) 0px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) 0px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -744,7 +744,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -757,7 +757,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -770,7 +770,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
@@ -783,7 +783,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -796,7 +796,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -809,7 +809,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) translate(-256px, 0);
 }
@@ -822,7 +822,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -835,7 +835,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(180deg) translate(0px, -256px);
 }
@@ -848,7 +848,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
 }
@@ -861,7 +861,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(90deg);
 }
@@ -874,7 +874,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -887,7 +887,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(271deg) translate(-256px, -256px);
 }
@@ -900,7 +900,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -913,7 +913,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -926,7 +926,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
@@ -939,7 +939,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -952,7 +952,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -965,7 +965,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) translate(-256px, 0px);
 }
@@ -978,7 +978,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -991,7 +991,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(180deg) translate(0px, -256px);
 }
@@ -1004,7 +1004,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
 }
@@ -1017,7 +1017,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(90deg);
 }
@@ -1030,7 +1030,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -1043,7 +1043,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(271deg) translate(-256px, -256px);
 }
@@ -1056,7 +1056,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1069,7 +1069,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) translate(-256px, 0px);
 }
@@ -1082,7 +1082,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -1095,7 +1095,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(180deg) translate(0, -256px);
 }
@@ -1108,7 +1108,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translateX(-256px);
 }
@@ -1121,7 +1121,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(90deg);
 }
@@ -1134,7 +1134,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -1147,7 +1147,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -256px repeat;
   transform-origin: top left;
   transform: scale(-0.12, 0.12) rotate(271deg) translate(-256px, -256px);
 }
@@ -1160,7 +1160,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1173,7 +1173,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -1186,7 +1186,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
 }
@@ -1199,7 +1199,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -1212,7 +1212,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1225,7 +1225,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -1238,7 +1238,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
 }
@@ -1251,7 +1251,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px -256px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px -256px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -1264,7 +1264,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) 0px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) 0px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1277,7 +1277,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) 0px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) 0px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -1290,7 +1290,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) 0px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) 0px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
 }
@@ -1303,7 +1303,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) 0px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) 0px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -1316,7 +1316,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1329,7 +1329,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -1342,7 +1342,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
 }
@@ -1355,7 +1355,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -1368,7 +1368,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1381,7 +1381,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -1394,7 +1394,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
 }
@@ -1407,7 +1407,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -512px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -512px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -1420,7 +1420,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1433,7 +1433,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -1446,7 +1446,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
 }
@@ -1459,7 +1459,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -768px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -768px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -1472,7 +1472,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1024px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1024px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1485,7 +1485,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1498,7 +1498,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -1511,7 +1511,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
 }
@@ -1524,7 +1524,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1280px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1280px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -1537,7 +1537,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1536px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1536px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1550,7 +1550,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1563,7 +1563,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -1576,7 +1576,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
 }
@@ -1589,7 +1589,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -1792px -512px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -1792px -512px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
@@ -1602,7 +1602,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) 0px -768px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) 0px -768px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1615,7 +1615,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -768px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -768px repeat;
   transform-origin: top left;
   transform: scale(0.12);
 }
@@ -1628,7 +1628,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -768px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -768px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
 }
@@ -1641,7 +1641,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -768px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -768px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
 }
@@ -1654,7 +1654,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: url(/wire-live/src/assets/575b65ef6bb0df5dfb8a.png) -256px -768px repeat;
+  background: url(/wire-live/static/assets/575b65ef6bb0df5dfb8a.png) -256px -768px repeat;
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
