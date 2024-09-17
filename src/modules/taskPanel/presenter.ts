@@ -1,4 +1,5 @@
 import { levelRepository } from "../../data";
+import { marked } from 'marked';
 
 class TaskPanel {
   constructor(private readonly levelRepo: LevelRepository) { }
@@ -8,7 +9,7 @@ class TaskPanel {
   }
 
   public get description() {
-    return this.levelRepo.getMapById().description
+    return marked.parse(this.levelRepo.getMapById().description)
   }
 }
 
