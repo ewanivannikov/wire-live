@@ -1,9 +1,9 @@
 import { arrowToIndexTile } from "../../../modules/Logic/constants";
-import { sources } from "./sources";
+import { levels } from "./levels";
 
-export class MapsRepository {
-  public getMapById(id='DeMorgan') {
-    return sources[id]
+export class LevelRepository {
+  public getMapById(id = 'DeMorgan') {
+    return levels[id]
   }
 
   public createMap(tileData) {
@@ -16,4 +16,4 @@ export class MapsRepository {
   }
 }
 
-export const mapsRepository = new MapsRepository()
+export const levelRepository = new LevelRepository()

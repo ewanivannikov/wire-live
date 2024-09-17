@@ -1,0 +1,9 @@
+.taskPanel {
+  position: absolute;
+  top: 120px;
+  left: 70px;
+  background: white;
+  padding: 16px;
+  box-shadow: 0px 0px 8px 1px rgb(178 178 225 / 20%);
+}
+

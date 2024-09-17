@@ -3,6 +3,7 @@ import styles from './layout.module.css';
 import { Toolbar } from '../toolbar';
 import { ContextBar } from '../contextBar';
 import logo from '../../assets/logo.svg';
+import { TaskPanel } from '../taskPanel';
 
 const { container, header, sidebar, context, main } = styles;
 
@@ -20,6 +21,7 @@ export function Layout(props) {
       <div class={context}>
         <ContextBar />
       </div>
+      <TaskPanel />
       <main class={main}>{props.children}</main>
     </div>
   );

@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx';
 import { ToolType } from './enums';
 import { Loop } from '../mapContainer/systems';
 import { Fields } from '../Logic/Base';
-import { MapsRepository, mapsRepository } from '../../data';
+import { LevelRepository, levelRepository } from '../../data';
 
 class Tools {
   currentTool = ToolType.Brush;
@@ -10,7 +10,7 @@ class Tools {
   private _loop: Loop;
   private _logicField: Fields;
   private _tileMap;
-  constructor(private readonly mapsRepo: MapsRepository) {
+  constructor(private readonly levelRepo: LevelRepository) {
     makeAutoObservable(this);
   }
 
@@ -51,8 +51,8 @@ class Tools {
 
   public saveMap = () => {
     const map = this._logicField.arrowCache
-    this.mapsRepo.createMap(map)
+    this.levelRepo.createMap(map)
   }
 }
 
-export const tools = new Tools(mapsRepository);
+export const tools = new Tools(levelRepository);

@@ -6,7 +6,7 @@ import { arrowToIndexTile } from '../Logic/constants';
 import { Tile } from '../toolbar';
 import { Texture } from 'three';
 import { TileId } from '../brushes';
-import { MapsRepository, mapsRepository } from '../../data';
+import { LevelRepository, levelRepository } from '../../data';
 import { Fields } from '../Logic/Base';
 
 // Example tilemap data (replace with your actual data)
@@ -36,10 +36,10 @@ class TileMap {
     private readonly loop,
     private readonly logicField: Fields,
     private readonly tools,
-    private readonly mapsRepo: MapsRepository,
+    private readonly levelRepo: LevelRepository,
     private readonly grid,
   ) {
-    const cashe = logicField.initCashe(this.mapsRepo.getMapById());
+    const cashe = logicField.initCashe(this.levelRepo.getMapById().map);
 
     this.init(cashe);
   }
@@ -191,4 +191,4 @@ class TileMap {
 }
 
 export const createTileMap = (tileTextures, tileSize, loop, logicField: Fields, grid) =>
-  new TileMap(tileTextures, tileSize, loop, logicField, tools, mapsRepository, grid);
+  new TileMap(tileTextures, tileSize, loop, logicField, tools, levelRepository, grid);
