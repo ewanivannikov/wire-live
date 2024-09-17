@@ -7,11 +7,15 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   output: {
     publicPath: '/',
+    filename: 'static/[name].bundle.js',
   },
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
+    static: [
+      {
+        directory: path.join(__dirname, 'public/static/'),
+        publicPath: '/static/',
+      },
+    ],
     port: 9000, // The port to bind to
     open: true, // Open the server in a browser window automatically
     hot: true, // Enable hot module replacement

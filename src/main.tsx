@@ -15,7 +15,7 @@ import { Reaction } from 'mobx';
 import { routerService } from './shared/services/RouterService/RouterService';
 import { About, Home } from './pages';
 
-const rippleUrl = new URL('./shared/ui/ripple', import.meta.url);
+const rippleUrl = new URL('./shared/ui/ripple.worklet', import.meta.url);
 if ('paintWorklet' in CSS) {
   CSS.paintWorklet.addModule(rippleUrl);
 }
@@ -56,7 +56,7 @@ function App() {
     ) {
       const theme = document.querySelector('#theme');
       if (theme) {
-        theme.href = './warm.variables.css';
+        theme.href = './static/warm.variables.css';
       }
     }
   }, null);

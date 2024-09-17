@@ -10,15 +10,17 @@ module.exports = {
       title: 'Wire live',
       template: './public/index.html',
       filename: 'index.html',
+      path: path.resolve(__dirname, 'dist'),
     }),
     new HtmlWebpackPlugin({
       title: 'Wire live',
       template: './public/404.html',
       filename: '404.html',
+      path: path.resolve(__dirname, 'dist'),
     }),
   ],
   output: {
-    filename: '[name].bundle.js',
+    filename: 'static/[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -28,7 +30,14 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'src/assets/[hash][ext][query]',
+          filename: 'static/assets/[hash][ext][query]',
+        },
+      },
+      {
+        test: /\.(worklet.js)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/[hash][ext][query]',
         },
       },
       {
