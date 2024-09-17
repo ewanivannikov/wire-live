@@ -29,7 +29,6 @@ class Blocker extends ArrowBase {
       }
       let signal = fields.getSignal(newPosition.coordinates);
       signal = (signal + Math.abs(signal)) / 2 + 1;
-      console.log('signal', signal);
 
       fields.addSignal(newPosition.coordinates, -signal);
     }

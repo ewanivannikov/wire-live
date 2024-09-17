@@ -20,10 +20,11 @@ import { Fields } from '../Logic/Base';
 // ];
 
 const hex = {
-  Earth: 0xff4f00,
-  Saturn: 0x619eff,
-  Sun: 0xffff11,
-  Mars: 0xfaa501,
+  Earth: 0x17d3e8,
+  Saturn: 0x00a7bb,
+  Venus: 0x3dc13c,
+  Mars: 0xf13637,
+  Sun: 0xffc732,
 };
 
 class TileMap {

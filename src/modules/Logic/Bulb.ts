@@ -9,7 +9,7 @@ class Bulb extends ArrowBase {
 
   conditionStates(fields: Fields) {
     if (fields.getSignal(this.position.coordinates) >= 1) {
-      this.state = 'Earth';
+      this.state = 'Sun';
     } else {
       this.state = 'None';
     }

@@ -25,7 +25,7 @@ class OutputArrow extends ArrowBase {
       this.state = 'None';
     } else if (((this.active === 1) && (fields.getSignal(this.position.coordinates) >= 1)) ||
         ((this.active === -1) && (fields.getSignal(this.position.coordinates) === 0))) {
-      this.state = 'Sun';
+      this.state = 'Venus';
     } else {
       this.state = 'Mars';
     }
@@ -54,7 +54,7 @@ class OutputArrow extends ArrowBase {
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Sun') {
+    if (this.state === 'Venus') {
       this.hasSolved = this.hasSolved && true;
     }
     if (this.state === 'Mars') {

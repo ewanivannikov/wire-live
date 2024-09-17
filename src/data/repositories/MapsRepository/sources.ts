@@ -326,5 +326,5 @@ export const sources: { [key: string]: any } = {
       hasCycle: false,
       initialValue: 1
     }
-]
+  ],
 }
