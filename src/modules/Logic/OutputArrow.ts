@@ -25,9 +25,9 @@ class OutputArrow extends ArrowBase {
       this.state = 'None';
     } else if (((this.active === 1) && (fields.getSignal(this.position.coordinates) >= 1)) ||
         ((this.active === -1) && (fields.getSignal(this.position.coordinates) === 0))) {
-      this.state = 'Venus';
+      this.hasSolved = this.hasSolved && true;
     } else {
-      this.state = 'Mars';
+      this.hasSolved = this.hasSolved && false;
     }
     if (this.waiting === 0){
         if ((this.loop === 0)) {
@@ -51,15 +51,18 @@ class OutputArrow extends ArrowBase {
     if (this.waiting > 0) {
         this.waiting = this.waiting - 1;
     }
+    
+    if (this.waiting != 0) {
+      this.state = 'None';
+    } else if (this.hasSolved) {
+      this.state = 'Venus';
+    } else {
+      this.state = 'Mars';
+    }
+    
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Venus') {
-      this.hasSolved = this.hasSolved && true;
-    }
-    if (this.state === 'Mars') {
-      this.hasSolved = this.hasSolved && false;
-    }
   }
 }
 

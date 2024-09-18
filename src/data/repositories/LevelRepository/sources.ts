@@ -208,51 +208,6 @@ export const sources: { [key: string]: any } = {
   ],
   'DeMorgan': [
     {
-      "tileId": "Brush.0.Up",
-      "x": -2,
-      "y": 0
-    },
-    {
-      "tileId": "Brush.0.Up",
-      "x": 0,
-      "y": 0
-    },
-    {
-      "tileId": "Brush.0.Up",
-      "x": -2,
-      "y": 1
-    },
-    {
-      "tileId": "Brush.0.Up",
-      "x": 0,
-      "y": 1
-    },
-    {
-      "tileId": "Brush.0.Up",
-      "x": -1,
-      "y": -3
-    },
-    {
-      "tileId": "Brush.0.Up",
-      "x": -1,
-      "y": -4
-    },
-    {
-      "tileId": "Brush.0.Up",
-      "x": -1,
-      "y": -2
-    },
-    {
-      "tileId": "Brush.0.Up",
-      "x": -2,
-      "y": 2
-    },
-    {
-      "tileId": "Brush.0.Up",
-      "x": 0,
-      "y": 2
-    },
-    {
       "tileId": "Brush.21.Up",
       "x": -2,
       "y": 3,
@@ -267,21 +222,6 @@ export const sources: { [key: string]: any } = {
       pattern: [2,2],
       hasCycle: false,
       initialValue: 0,
-    },
-    {
-      "tileId": "Brush.14.Right",
-      "x": -2,
-      "y": -1
-    },
-    {
-      "tileId": "Brush.14.Left",
-      "x": 0,
-      "y": -1
-    },
-    {
-      "tileId": "Brush.14.Up",
-      "x": -1,
-      "y": -1
     },
     {
       tileId: 'Brush.22.',
