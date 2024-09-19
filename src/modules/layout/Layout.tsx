@@ -1,27 +1,36 @@
 import styles from './layout.module.css';
 
-import { Toolbar } from '../toolbar';
-import { ContextBar } from '../contextBar';
 import logo from '../../assets/logo.svg';
-import { TaskPanel } from '../taskPanel';
+import { Show } from 'solid-js';
+import { routerService } from '../../shared/services';
 
-const { container, header, sidebar, context, main } = styles;
+const { container, header, sidebar, context, main, nav } = styles;
 
 export function Layout(props) {
+  const { asideSlot, contextBarSlot } = props;
   return (
     <div class={container}>
       <header class={header}>
-        <img src={logo} alt="" width="50px" srcset="" />
-        Wire live
-        <a href="/wire-live/about">О проекте</a>
+        <nav class={nav}>
+          <a href={`${routerService.basename}`}>
+            <img src={logo} alt="" width="50px" srcset="" />
+          </a>
+          <a href={`${routerService.basename}`}>
+            Wire live
+          </a>
+          <a href={`${routerService.basename}#/about`}>О проекте</a>
+        </nav>
       </header>
-      <aside class={sidebar}>
-        <Toolbar />
-      </aside>
-      <div class={context}>
-        <ContextBar />
-      </div>
-      <TaskPanel />
+      <Show when={Boolean(asideSlot)}>
+        <aside class={sidebar}>
+          {asideSlot}
+        </aside>
+      </Show>
+      <Show when={Boolean(asideSlot)}>
+        <div class={context}>
+          {contextBarSlot}
+        </div>
+      </Show>
       <main class={main}>{props.children}</main>
     </div>
   );

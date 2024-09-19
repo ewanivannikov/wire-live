@@ -1,19 +1,20 @@
 import { render } from 'solid-js/web';
 import {
   createEffect,
-  createMemo,
+  createSignal,
   enableExternalSource,
   Match,
   Switch,
 } from 'solid-js';
 import { Layout, LayoutLanding } from './modules/layout';
 
-import { createIsMounted } from '@solid-primitives/lifecycle';
 import './main.css';
-import { createWorld } from './modules/mapContainer';
 import { Reaction } from 'mobx';
 import { routerService } from './shared/services/RouterService/RouterService';
-import { About, Home } from './pages';
+import { About, Canvas, Home, LevelList } from './pages';
+import { Toolbar } from './modules/toolbar';
+import { ContextBar } from './modules/contextBar';
+import { TaskPanel } from './modules/taskPanel';
 
 const rippleUrl = new URL('./shared/ui/ripple.worklet', import.meta.url);
 if ('paintWorklet' in CSS) {
@@ -38,55 +39,63 @@ const enableMobXWithSolidJS = () => {
 };
 
 enableMobXWithSolidJS();
+routerService.init();
 
-function App() {
-  let ref: HTMLDivElement;
-  const isMounted = createIsMounted();
-  createMemo(() => {
-    if (isMounted()) {
-      const world = createWorld(ref);
-      world.render();
-    }
+const App = () => {
+  const [hash, setHash] = createSignal(routerService.location.hash)
+  const [pathname, setPathname] = createSignal(routerService.location.pathname)
+
+  routerService.onNavigate((e) => {
+    setHash(e.target.location.hash)
+    setPathname(e.target.location.pathname)
   });
 
   createEffect(() => {
     if (
-      routerService.location.pathname === `${routerService.basename}home` ||
-      routerService.location.pathname === `${routerService.basename}about`
+      hash() === `#/home` ||
+      hash() === `#/about`
     ) {
       const theme = document.querySelector('#theme');
       if (theme) {
         theme.href = './static/warm.variables.css';
       }
     }
+    if (hash().includes('levels')) {
+      const theme = document.querySelector('#theme');
+      if (theme) {
+        theme.href = './static/light.variables.css';
+      }
+    }
   }, null);
 
   return (
     <Switch fallback={<div>Not Found</div>}>
-      <Match when={routerService.location.pathname === routerService.basename}>
-        <Layout>
-          <div id="canvas" ref={ref} />
+      <Match when={hash().includes('levels')}>
+        <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
+          <TaskPanel />
+          <Canvas />
         </Layout>
       </Match>
       <Match
-        when={
-          routerService.location.pathname === `${routerService.basename}home`
-        }
+        when={hash() === `#/home`}
       >
         <LayoutLanding>
           <Home />
         </LayoutLanding>
       </Match>
       <Match
-        when={
-          routerService.location.pathname === `${routerService.basename}about`
-        }
+        when={hash() === `#/about`}
       >
         <LayoutLanding>
           <About />
         </LayoutLanding>
       </Match>
+      <Match when={pathname() === routerService.basename}>
+        <Layout>
+          <LevelList />
+        </Layout>
+      </Match>
     </Switch>
   );
-}
+};
 render(() => <App />, document.getElementById('app'));

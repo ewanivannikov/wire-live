@@ -6,6 +6,10 @@ export class LevelRepository {
     return levels[id]
   }
 
+  public getLevelList = () => {
+    return Object.values(levels);
+  }
+
   public createMap(tileData) {
     const array = Array.from(tileData, ([name, value]) => {
       const [x, y] = name.split(',').map(Number);
