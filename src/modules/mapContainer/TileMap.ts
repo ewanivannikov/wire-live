@@ -138,6 +138,8 @@ class TileMap {
 
   removeTile = (tile) => {
     if (this.logicField.arrowCache.has(tile.name)) {
+      const [x, y] = new Position(tile.name).vector;
+      this.addStateSprite(x, y, 'None');
       this.logicField.arrowCache.delete(tile.name);
       this.removeSprite(tile);
     }
@@ -170,7 +172,6 @@ class TileMap {
 
   addStateSprite = (x, y, color) => {
     let opacity = 1;
-    // console.log('sprite5555', color);
     if (color === 'None') {
       opacity = 0;
     }
