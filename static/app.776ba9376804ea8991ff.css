@@ -50,6 +50,32 @@
   padding-left: 4px;
 }
 
+.PC7PQFSsgCbiO0N0U6O9 {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  height: 100%;
+}
+
+#canvas {
+  height: 100%;
+  width: 100%;
+}
+
+.lucide-icon {
+  pointer-events: none;
+}
+
 .HF5WhNGA4huTVfgjws56 {
   background: transparent;
   border: 0;
@@ -1676,24 +1702,4 @@
   max-width: 500px;
 }
 
-
-body,
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#app {
-  height: 100%;
-}
-
-#canvas {
-  height: 100%;
-  width: 100%;
-}
-
-.lucide-icon {
-  pointer-events: none;
-}
 
