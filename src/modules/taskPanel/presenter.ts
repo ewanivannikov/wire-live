@@ -1,15 +1,21 @@
 import { levelRepository } from "../../data";
 import { marked } from 'marked';
+import { routerService } from "../../shared/services";
 
 class TaskPanel {
   constructor(private readonly levelRepo: LevelRepository) { }
 
+  private get level() {
+    const mapId = routerService.location.hash.replace('#/levels/', '')
+    return this.levelRepo.getMapById(mapId)
+  }
+
   public get title() {
-    return this.levelRepo.getMapById().name
+    return this.level.name
   }
 
   public get description() {
-    return marked.parse(this.levelRepo.getMapById().description)
+    return marked.parse(this.level.description)
   }
 }
 
