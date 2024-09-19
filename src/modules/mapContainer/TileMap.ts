@@ -38,8 +38,11 @@ class TileMap {
     private readonly tools,
     private readonly levelRepo: LevelRepository,
     private readonly grid,
+    private readonly mapId,
   ) {
-    const cashe = logicField.initCashe(this.levelRepo.getMapById().map);
+    console.log(this.mapId);
+    
+    const cashe = logicField.initCashe(this.levelRepo.getMapById(this.mapId).map);
 
     this.init(cashe);
   }
@@ -191,5 +194,5 @@ class TileMap {
   };
 }
 
-export const createTileMap = (tileTextures, tileSize, loop, logicField: Fields, grid) =>
-  new TileMap(tileTextures, tileSize, loop, logicField, tools, levelRepository, grid);
+export const createTileMap = (tileTextures, tileSize, loop, logicField: Fields, grid, mapId) =>
+  new TileMap(tileTextures, tileSize, loop, logicField, tools, levelRepository, grid, mapId);

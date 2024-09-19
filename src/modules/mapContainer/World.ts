@@ -30,7 +30,7 @@ const tileSize: number = 256;
 const gridRowSize: number = 64;
 
 class World {
-  constructor(container: HTMLElement) {
+  constructor(container: HTMLElement, private readonly mapId: string) {
     camera = createCamera(container);
     scene = createScene();
     renderer = createRenderer(container);
@@ -56,6 +56,7 @@ class World {
       loop,
       logicField,
       grid,
+      this.mapId,
     );
     scene.add(tileMap.tileGroup);
 
@@ -84,6 +85,6 @@ class World {
   }
 }
 
-export const createWorld = (container: HTMLElement) => {
-  return new World(container);
+export const createWorld = (container: HTMLElement, mapId) => {
+  return new World(container, mapId);
 };
