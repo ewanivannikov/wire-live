@@ -1,8 +1,8 @@
 import { Listbox, Popover, SegmentedButtons } from '../../shared';
 import { For, Show } from 'solid-js';
-import { clastersBrushes, groupsBrushes } from '../brushes';
+import { brushRepository } from '../../data/repositories';
 import { createBrush } from './presenter';
-import { iconDirectionMapping, iconsMapping } from '../brushes/IconArrow';
+import { iconDirectionMapping, iconsMapping } from '../brushes';
 import { tools } from '../toolbar/presenter';
 import { Dynamic } from 'solid-js/web';
 import styles from './style.module.css';
@@ -32,7 +32,7 @@ export const ContextBar = () => {
           Стрелочки делятся на несколько групп:
         </p>
         <ul>
-          <For each={Object.entries(clastersBrushes)}>
+          <For each={Object.entries(brushRepository.clastersBrushes)}>
                     {([_, val]) => (
                       <li>{val.label}</li>
                     )}
@@ -50,15 +50,15 @@ export const ContextBar = () => {
             aria-activedescendant={state.currentBrush}
             onFocusChange={handleClick}
           >
-            <For each={Object.entries(clastersBrushes)}>
+            <For each={Object.entries(brushRepository.clastersBrushes)}>
               {([_, val]) => (
                 <Listbox.Optgroup label={val.label}>
                   <For each={val.values}>
                     {(brush) => (
                       <Listbox.Option id={brush}>
                         <Dynamic component={iconsMapping[brush]} />
-                        <span title={groupsBrushes[brush].description}>🛈</span>
-                        {groupsBrushes[brush].label}
+                        <span title={brushRepository.groupsBrushes[brush].description}>🛈</span>
+                        {brushRepository.groupsBrushes[brush].label}
                       </Listbox.Option>
                     )}
                   </For>
