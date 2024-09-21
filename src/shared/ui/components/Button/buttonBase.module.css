@@ -4,6 +4,10 @@
   cursor: pointer;
 }
 
+.root[href] {
+  text-decoration: none;
+}
+
 .ripple {
   background-image: paint(ripple);
 

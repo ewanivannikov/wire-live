@@ -12,7 +12,7 @@ export const Section = () => {
         <p>Изучение основ цифровой электроники в игровой форме</p>
       </div>
       <div classList={{ [big]: true }}>
-        <Button>Войти</Button>
+        <Button component="a" href="/auth/google">Войти</Button>
       </div>
       <Card classList={{ [tall]: true }} style={{ margin: '8px' }}>
         <p>Уровни</p>
