@@ -1,7 +1,8 @@
 import { makeAutoObservable } from 'mobx';
 import { Tools } from '../mapContainer/Tools';
 import { DirectionType, Tile, ToolType } from '../toolbar';
-import { brushes, Direction, TileId } from '../brushes';
+import type { Direction, TileId } from '../../data';
+import { brushRepository } from '../../data';
 import { inputArrowModel, InputArrowModel } from './InputArrow/viewModel';
 import { outputArrowModel, OutputArrowModel } from './OutputArrow';
 
@@ -27,7 +28,7 @@ class Brush {
   }
 
   private getDirectionsByNumber(number: number) {
-    const directions = Object.keys(brushes).reduce((acc, cur) => {
+    const directions = Object.keys(brushRepository.brushList).reduce((acc, cur) => {
       const currentBrushNumber = new Tile(cur).vector[1];
       if (number === currentBrushNumber) {
         acc.push(new Tile(cur).vector[2]);

@@ -5,7 +5,7 @@ import { Position } from '../Logic/Position';
 import { arrowToIndexTile } from '../Logic/constants';
 import { Tile } from '../toolbar';
 import { Texture } from 'three';
-import { TileId } from '../brushes';
+import type { TileId } from '../../data';
 import { LevelRepository, levelRepository } from '../../data';
 import { Fields } from '../Logic/Base';
 

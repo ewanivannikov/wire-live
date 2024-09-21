@@ -1,10 +1,10 @@
 import * as THREE from 'three';
 import { Texture } from 'three';
-import { brushes } from '../brushes';
+import { brushRepository } from '../../data';
 import { Tile, DirectionType } from '../toolbar';
 
 class TileSet {
-  private _tileTextures: Record<string, Texture> = Object.keys(brushes).reduce(
+  private _tileTextures: Record<string, Texture> = Object.keys(brushRepository.brushList).reduce(
     (acc, current) => {
       acc[current] = new Texture();
       return acc;
@@ -23,7 +23,7 @@ class TileSet {
     const textureLoader = new THREE.TextureLoader();
 
     const onload = (texture: Texture) => {
-      Object.keys(brushes).forEach((tileId) => {
+      Object.keys(brushRepository.brushList).forEach((tileId) => {
         const { u, v, u2, v2, image } = this.cropViewport(tileId, texture);
 
         const flip = new Tile(tileId).vector[3];

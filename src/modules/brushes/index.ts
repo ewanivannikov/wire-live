@@ -1,1 +1,1 @@
-export * from './brushes';
+export * from './IconArrow'
