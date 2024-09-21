@@ -89,7 +89,6 @@ export class Fields {
 
   initCashe(tileData) {
     tileData.forEach((tile) => {
-      console.log('tile', tile);
       const { tileId, x, y, ...options } = tile;
       const value = new Tile(tileId).vector;
       this.addArrowCache(`${x},${y}`,

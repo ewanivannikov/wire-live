@@ -2,7 +2,7 @@ import { arrowToIndexTile } from "../../../modules/Logic/constants";
 import { levels } from "./levels";
 
 export class LevelRepository {
-  public getMapById(id = 'DeMorgan') {
+  public getLevelById(id = 'DeMorgan') {
     return levels[id]
   }
 

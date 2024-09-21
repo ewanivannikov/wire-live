@@ -40,9 +40,8 @@ class TileMap {
     private readonly grid,
     private readonly mapId,
   ) {
-    console.log(this.mapId);
     
-    const cashe = logicField.initCashe(this.levelRepo.getMapById(this.mapId).map);
+    const cashe = logicField.initCashe(this.levelRepo.getLevelById(this.mapId).map);
 
     this.init(cashe);
   }

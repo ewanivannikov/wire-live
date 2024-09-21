@@ -5,6 +5,7 @@ import type { Direction, TileId } from '../../data';
 import { brushRepository } from '../../data';
 import { inputArrowModel, InputArrowModel } from './InputArrow/viewModel';
 import { outputArrowModel, OutputArrowModel } from './OutputArrow';
+import { createWorldState, WorldState } from '../worldState';
 
 class Brush {
   private static instance: Brush | null = null;
@@ -22,7 +23,8 @@ class Brush {
   constructor(
     private readonly tools: Tools,
     private readonly inputArrowModel: InputArrowModel,
-    private readonly outputArrowModel: OutputArrowModel
+    private readonly outputArrowModel: OutputArrowModel,
+    private readonly worldState: WorldState
   ) {
     makeAutoObservable(this);
   }
@@ -90,15 +92,20 @@ class Brush {
   public static getInstance(
     tools: Tools,
     inputArrowModel: InputArrowModel,
-    outputArrowModel: OutputArrowModel
+    outputArrowModel: OutputArrowModel,
+    worldState: WorldState
   ) {
     if (!Brush.instance) {
-      Brush.instance = new Brush(tools, inputArrowModel, outputArrowModel);
+      Brush.instance = new Brush(tools, inputArrowModel, outputArrowModel, worldState);
     }
 
     return Brush.instance;
   }
+
+  public get clastersBrushList() {
+    return Object.entries(brushRepository.getClastersBrushesByLevelId(this.worldState.levelId));
+  }
 }
 
-export const createBrush = (tools: Tools) =>
-  Brush.getInstance(tools, inputArrowModel, outputArrowModel);
+export const createBrush = (tools: Tools, worldState: WorldState) =>
+  Brush.getInstance(tools, inputArrowModel, outputArrowModel, worldState);

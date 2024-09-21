@@ -9,11 +9,12 @@ import styles from './style.module.css';
 import { InputArrow } from './InputArrow';
 import { OutputArrow } from './OutputArrow';
 import { Info } from 'lucide-solid';
+import { createWorldState } from '../worldState';
 
 const { contextbar } = styles;
 
 export const ContextBar = () => {
-  const state = createBrush(tools);
+  const state = createBrush(tools, createWorldState());
   const handleClick = (el) => {
     state.setCurrentBrush(el.id);
   };
@@ -50,7 +51,7 @@ export const ContextBar = () => {
             aria-activedescendant={state.currentBrush}
             onFocusChange={handleClick}
           >
-            <For each={Object.entries(brushRepository.clastersBrushes)}>
+            <For each={state.clastersBrushList}>
               {([_, val]) => (
                 <Listbox.Optgroup label={val.label}>
                   <For each={val.values}>

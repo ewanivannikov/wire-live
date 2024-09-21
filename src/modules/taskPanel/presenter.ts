@@ -7,7 +7,7 @@ class TaskPanel {
 
   private get level() {
     const mapId = routerService.location.hash.replace('#/levels/', '')
-    return this.levelRepo.getMapById(mapId)
+    return this.levelRepo.getLevelById(mapId)
   }
 
   public get title() {

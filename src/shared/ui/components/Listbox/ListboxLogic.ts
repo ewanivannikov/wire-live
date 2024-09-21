@@ -72,7 +72,9 @@ class ListboxLogic {
   setupFocus() {
     if (this.activeDescendant) {
       const listitem = document.getElementById(this.activeDescendant);
-      listitem.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      if (listitem) {
+        listitem.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      }
     }
   }
 
