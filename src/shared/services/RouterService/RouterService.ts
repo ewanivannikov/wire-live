@@ -1,5 +1,5 @@
-import { createHashHistory, createRouter, matchRoutes, Router } from '@remix-run/router';
-import { makeAutoObservable, observable, runInAction } from 'mobx';
+import { createHashHistory, createRouter, Router } from '@remix-run/router';
+import { makeAutoObservable, runInAction } from 'mobx';
 
 export const router = createRouter({
   basename:
@@ -28,6 +28,7 @@ export class RouterService {
   public params;
   public matches;
   public basename;
+  public searchParams;
   constructor(private readonly router: Router) {
     makeAutoObservable(this);
     this.location = router.state.location;

@@ -49,6 +49,8 @@ const App = () => {
   });
 
   createEffect(() => {
+    console.log('routerService.basename', routerService.basename);
+    
     if (
       pathname().includes('home') ||
       pathname().includes('about')
@@ -88,7 +90,7 @@ const App = () => {
           <About />
         </LayoutLanding>
       </Match>
-      <Match when={pathname() === routerService.basename}>
+      <Match when={pathname() === '/'}>
         <Layout>
           <LevelList />
         </Layout>
