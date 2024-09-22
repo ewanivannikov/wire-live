@@ -88,7 +88,7 @@ const App = () => {
           <About />
         </LayoutLanding>
       </Match>
-      <Match when={pathname() === routerService.basename}>
+      <Match when={pathname() === '/'}>
         <Layout>
           <LevelList />
         </Layout>
