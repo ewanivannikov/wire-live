@@ -1,4 +1,4 @@
-import { createHashHistory, createRouter, Router } from '@remix-run/router';
+import { createHashHistory, createRouter, matchRoutes, Router } from '@remix-run/router';
 import { makeAutoObservable, runInAction } from 'mobx';
 import { logger } from '../LoggerService';
 import { log } from 'console';
@@ -43,11 +43,12 @@ export class RouterService {
   private log = () => {
     logger.info(`RouterService: params: ${JSON.stringify(this.params)}`);
     logger.info(`RouterService: location: ${JSON.stringify(this.location)}`);
-    logger.info(`RouterService: matches: ${JSON.stringify(this.router.state.matches)}`);
+    logger.info(`RouterService: matches: ${JSON.stringify(matchRoutes(this.router.routes, this.router.state.location))}`);
   }
 
   private getParams() {
-    return this.router.state.matches?.[0].params;
+    const matches = matchRoutes(this.router.routes, this.router.state.location);
+    return matches[0].params;
   }
 
   public init = () => {
