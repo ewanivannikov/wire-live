@@ -5,7 +5,7 @@ import type { Direction, TileId } from '../../data';
 import { brushRepository } from '../../data';
 import { inputArrowModel, InputArrowModel } from './InputArrow/viewModel';
 import { outputArrowModel, OutputArrowModel } from './OutputArrow';
-import { createWorldState, WorldState } from '../worldState';
+import { WorldState } from '../worldState';
 
 class Brush {
   private static instance: Brush | null = null;

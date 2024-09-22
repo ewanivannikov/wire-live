@@ -9,12 +9,12 @@ import styles from './style.module.css';
 import { InputArrow } from './InputArrow';
 import { OutputArrow } from './OutputArrow';
 import { Info } from 'lucide-solid';
-import { createWorldState } from '../worldState';
+import { worldState } from '../worldState';
 
 const { contextbar } = styles;
 
 export const ContextBar = () => {
-  const state = createBrush(tools, createWorldState());
+  const state = createBrush(tools, worldState);
   const handleClick = (el) => {
     state.setCurrentBrush(el.id);
   };

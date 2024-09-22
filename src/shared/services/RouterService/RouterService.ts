@@ -1,4 +1,4 @@
-import { createBrowserHistory, createRouter, matchRoutes, Router } from '@remix-run/router';
+import { createHashHistory, createRouter, matchRoutes, Router } from '@remix-run/router';
 import { makeAutoObservable, observable, runInAction } from 'mobx';
 
 export const router = createRouter({
@@ -21,9 +21,9 @@ export const router = createRouter({
       ],
     },
   ],
-  history: createBrowserHistory({ window, v5Compat: true }),
+  history: createHashHistory(),
 }).initialize();
-class RouterService {
+export class RouterService {
   public location;
   public params;
   public matches;
@@ -32,14 +32,13 @@ class RouterService {
     makeAutoObservable(this);
     this.location = router.state.location;
     this.params = router.state.matches[0].params;
+
     this.matches = router.state.matches;
     this.basename = router.basename;
   }
 
   private getParams() {
-    const matches = matchRoutes(this.router.routes, window.location);
-
-    return matches?.[0].params;
+    return router.state.matches?.[0].params;
   }
 
   public init = () => {

@@ -6,8 +6,8 @@ class TaskPanel {
   constructor(private readonly levelRepo: LevelRepository) { }
 
   private get level() {
-    const mapId = routerService.location.hash.replace('#/levels/', '')
-    return this.levelRepo.getLevelById(mapId)
+    const levelId = routerService.params.levelId
+    return this.levelRepo.getLevelById(levelId)
   }
 
   public get title() {

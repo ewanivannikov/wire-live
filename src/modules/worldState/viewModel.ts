@@ -1,22 +1,15 @@
+import { type RouterService, routerService } from "../../shared/services";
+
 export class WorldState {
-    private static instance: WorldState | null = null;
-    constructor(
-        public readonly levelId: string
-    ) { }
+    constructor(private readonly routerServ: RouterService) { }
 
     public get status() {
         return 'level.play.solving';
     }
 
-    public static getInstance(
-        levelId?: string
-      ) {
-        if (!WorldState.instance) {
-            WorldState.instance = new WorldState(levelId);
-        }
-    
-        return WorldState.instance;
-      }
+    public get levelId() {
+        return this.routerServ.params.levelId;
+    }
 }
 
-export const createWorldState = (levelId?: string) => WorldState.getInstance(levelId)
+export const worldState = new WorldState(routerService);

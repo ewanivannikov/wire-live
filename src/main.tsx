@@ -42,25 +42,23 @@ enableMobXWithSolidJS();
 routerService.init();
 
 const App = () => {
-  const [hash, setHash] = createSignal(routerService.location.hash)
   const [pathname, setPathname] = createSignal(routerService.location.pathname)
 
   routerService.onNavigate((e) => {
-    setHash(e.target.location.hash)
-    setPathname(e.target.location.pathname)
+    setPathname(`/${e.target.location.hash}`)
   });
 
   createEffect(() => {
     if (
-      hash() === `#/home` ||
-      hash() === `#/about`
+      pathname().includes('home') ||
+      pathname().includes('about')
     ) {
       const theme = document.querySelector('#theme');
       if (theme) {
         theme.href = './static/warm.variables.css';
       }
     }
-    if (hash().includes('levels')) {
+    if (pathname().includes('levels')) {
       const theme = document.querySelector('#theme');
       if (theme) {
         theme.href = './static/light.variables.css';
@@ -70,21 +68,21 @@ const App = () => {
 
   return (
     <Switch fallback={<div>Not Found</div>}>
-      <Match when={hash().includes('levels')}>
+      <Match when={pathname().includes('levels')}>
         <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
           <TaskPanel />
           <Canvas />
         </Layout>
       </Match>
       <Match
-        when={hash() === `#/home`}
+        when={pathname().includes('home')}
       >
         <LayoutLanding>
           <Home />
         </LayoutLanding>
       </Match>
       <Match
-        when={hash() === `#/about`}
+        when={pathname().includes('about')}
       >
         <LayoutLanding>
           <About />
