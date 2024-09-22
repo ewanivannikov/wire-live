@@ -45,12 +45,10 @@ const App = () => {
   const [pathname, setPathname] = createSignal(routerService.location.pathname)
 
   routerService.onNavigate((e) => {
-    setPathname(`/${e.target.location.hash}`)
+    setPathname(routerService.location.pathname)
   });
 
   createEffect(() => {
-    console.log('routerService.basename', routerService.basename);
-    
     if (
       pathname().includes('home') ||
       pathname().includes('about')
@@ -90,7 +88,7 @@ const App = () => {
           <About />
         </LayoutLanding>
       </Match>
-      <Match when={pathname() === '/'}>
+      <Match when={pathname() === routerService.basename}>
         <Layout>
           <LevelList />
         </Layout>

@@ -6,7 +6,7 @@ export class BrushRepository {
     constructor(
         private readonly levelRepo: LevelRepository = levelRepository
     ) {
-        
+
     }
 
     public get clastersBrushes() {
@@ -36,8 +36,7 @@ export class BrushRepository {
                 whiteList = { ...whiteList, [key]: { ...value, values: keyWhiteList } }
             }
         })
-        console.log(whiteList);
-        
+
         return whiteList
     }
 }

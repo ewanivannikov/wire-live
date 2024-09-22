@@ -1,5 +1,6 @@
 import { createHashHistory, createRouter, Router } from '@remix-run/router';
 import { makeAutoObservable, runInAction } from 'mobx';
+import { logger } from '../LoggerService';
 
 export const router = createRouter({
   basename:
@@ -38,6 +39,11 @@ export class RouterService {
     this.basename = router.basename;
   }
 
+  private log = () => {
+    logger.info(`RouterService: params: ${JSON.stringify(this.params)}`);
+    logger.info(`RouterService: location: ${JSON.stringify(this.location)}`);
+  }
+
   private getParams() {
     return router.state.matches?.[0].params;
   }
@@ -72,9 +78,11 @@ export class RouterService {
       runInAction(() => {
         this.params = this.getParams();
         this.searchParams = new URLSearchParams(window.location.search);
-        this.location = window.location;
+        this.location = this.router.state.location;
       });
+      this.log();
     });
+    this.log();
   };
 
   public onNavigate = (handler: (e: Event) => void) => {
