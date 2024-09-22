@@ -3,6 +3,7 @@ import styles from './style.module.css';
 import { Highlighter, Eraser, Play, Pause, Hand, Save } from 'lucide-solid';
 import { tools } from './presenter';
 import { Match, Switch } from 'solid-js';
+import { worldState } from '../worldState';
 
 const { toolbar } = styles;
 
@@ -50,14 +51,14 @@ export const Toolbar = () => {
 
       <Button
         name="Play"
-        aria-pressed={tools.tick === 0}
+        aria-pressed={worldState.tick === 0}
         onClick={handleClickTick}
       >
         <Switch>
-          <Match when={tools.tick === 0}>
+          <Match when={worldState.tick === 0}>
             <Play />
           </Match>
-          <Match when={tools.tick > 0}>
+          <Match when={worldState.tick > 0}>
             <Pause />
           </Match>
         </Switch>

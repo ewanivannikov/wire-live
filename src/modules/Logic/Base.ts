@@ -124,4 +124,4 @@ export class Fields {
   }
 }
 
-export const createFields = () => new Fields();
+export const fields = new Fields();

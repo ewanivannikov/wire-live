@@ -18,7 +18,7 @@ import { createTileSet } from './TileSet';
 import { createTileMap } from './TileMap';
 import { createRaycaster } from './systems/Raycaster';
 
-import { createFields } from '../Logic/Base';
+import { fields } from '../Logic/Base';
 import { tools } from '../toolbar';
 
 let camera: OrthographicCamera;
@@ -37,7 +37,7 @@ class World {
     container.append(renderer.domElement);
     loop = new Loop(camera, scene, renderer);
 
-    const logicField = createFields();
+    const logicField = fields;
 
     const size = gridRowSize * tileSize;
     const divisions = tileSize / 4;

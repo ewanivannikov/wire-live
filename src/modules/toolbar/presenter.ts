@@ -3,25 +3,34 @@ import { ToolType } from './enums';
 import { Loop } from '../mapContainer/systems';
 import { Fields } from '../Logic/Base';
 import { LevelRepository, levelRepository } from '../../data';
+import { WorldState, worldState } from '../worldState';
 
 class Tools {
   currentTool = ToolType.Brush;
-  tick = 500;
   private _loop: Loop;
   private _logicField: Fields;
   private _tileMap;
-  constructor(private readonly levelRepo: LevelRepository) {
+  constructor(private readonly levelRepo: LevelRepository, private readonly worldState: WorldState) {
     makeAutoObservable(this);
   }
+
+  private erase = (tile) => {
+    this._tileMap.removeTile(tile);
+    this._logicField.stateCache.delete(tile.name);
+  };
 
   public init = (loop: Loop, logicField: Fields, tileMap) => {
     this._loop = loop;
     this._logicField = logicField;
     this._tileMap = tileMap;
     tileMap.onPointerChange = (tile) => {
-      if (this.currentTool === ToolType.Eraser) {
-        this._tileMap.removeTile(tile);
-        this._logicField.stateCache.delete(tile.name);
+      const canBeDeleted = this.worldState.canBeDeleted(tile)
+      const isEraser = this.currentTool === ToolType.Eraser
+      const isSolving = (`level.play.solving` === this.worldState.status) && this._logicField.paused
+      
+      if (canBeDeleted && isEraser && isSolving) {
+        //НАЙДИ БАГ СВЯЗАННЫЙ С ПАУЗОЙ, РИСОВАНИЕМ И СТИРАНИЕМ. ГДЕ-ТО В onPointerMove!
+        this.erase(tile);
       }
       if (this.currentTool === ToolType.Brush) {
         this._tileMap.updateTile(tile);
@@ -39,14 +48,7 @@ class Tools {
   };
 
   public setTick = () => {
-    if (this.tick > 0) {
-      this.tick = 0;
-      this._logicField.updatePause();
-    } else {
-      this.tick = 500;
-      this._loop.setDuration(500);
-      this._logicField.updatePause();
-    }
+    this.worldState.togglePause(this._loop);
   };
 
   public saveMap = () => {
@@ -55,4 +57,4 @@ class Tools {
   }
 }
 
-export const tools = new Tools(levelRepository);
+export const tools = new Tools(levelRepository, worldState);
