@@ -5,7 +5,7 @@ import { log } from 'console';
 
 export const router = createRouter({
   basename:
-    window?.__ENV__?.RELEASE_STAGE === 'production' ? '/wire-live/' : '/',
+    window?.__ENV__?.RELEASE_STAGE === 'production' ? '/wire-live' : '/',
   routes: [
     {
       path: '/',
