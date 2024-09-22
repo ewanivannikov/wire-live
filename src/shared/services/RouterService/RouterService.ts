@@ -34,7 +34,7 @@ export class RouterService {
   constructor(private readonly router: Router) {
     makeAutoObservable(this);
     this.location = router.state.location;
-    this.params = router.state.matches[0].params;
+    this.params = this.getParams();
 
     this.matches = router.state.matches;
     this.basename = router.basename;
