@@ -79,7 +79,7 @@ export class RouterService {
     window.addEventListener('navigate', () => {
       runInAction(() => {
         this.params = this.getParams();
-        this.searchParams = new URLSearchParams(window.location.search);
+        this.searchParams = new URLSearchParams(this.router.state.location.search);
         this.location = this.router.state.location;
       });
       this.log();

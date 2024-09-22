@@ -6,7 +6,7 @@ export const LevelList = () => {
     <div>
       <For each={levelRepository.getLevelList()}>
         {(val) => (
-          <div><a href={`#/levels/${val.slug}`}>{val.name}</a></div>
+          <div><a href={`/#/levels/${val.slug}`}>{val.name}</a></div>
         )}
       </For>
     </div>
