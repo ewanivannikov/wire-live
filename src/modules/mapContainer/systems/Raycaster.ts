@@ -15,6 +15,7 @@ export const createRaycaster = (
   let intersects = [];
   let selectedObject: Object3D<Object3DEventMap> = null;
   const pointer = new Vector2();
+  let tileIntersectName = ''
 
   const onPointerMove = (event: PointerEvent) => {
     if (selectedObject) {
@@ -69,8 +70,14 @@ export const createRaycaster = (
         }
       }
 
-      if (tileIntersect?.object && event.pressure > 0 && event.buttons === 1) {
+      if (
+        tileIntersect?.object
+        && event.pressure > 0
+        && event.buttons === 1
+        && tileIntersectName !== tileIntersect.object.name
+      ) {
         tileMap.onPointerChange(tileIntersect.object);
+        tileIntersectName = tileIntersect?.object.name
       }
     }
   }
