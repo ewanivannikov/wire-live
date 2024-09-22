@@ -5,7 +5,7 @@ import { log } from 'console';
 
 export const router = createRouter({
   basename:
-    window?.__ENV__?.RELEASE_STAGE === 'production' ? '/wire-live' : '/',
+    window?.__ENV__?.RELEASE_STAGE === 'production' ? '/wire-live/' : '/',
   routes: [
     {
       path: '/',
@@ -43,10 +43,10 @@ export class RouterService {
   private log = () => {
     logger.info(`RouterService: params: ${JSON.stringify(this.params)}`);
     logger.info(`RouterService: location: ${JSON.stringify(this.location)}`);
+    logger.info(`RouterService: matches: ${JSON.stringify(this.router.state.matches)}`);
   }
 
   private getParams() {
-    logger.info(`RouterService: matches: ${JSON.stringify(this.router.state.matches)}`);
     return this.router.state.matches?.[0].params;
   }
 
