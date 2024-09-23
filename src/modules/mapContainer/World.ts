@@ -19,7 +19,9 @@ import { createTileMap } from './TileMap';
 import { createRaycaster } from './systems/Raycaster';
 
 import { fields } from '../Logic/Base';
-import { tools } from '../toolbar';
+import { tools, ToolType } from '../toolbar';
+import { createBrush } from '../contextBar/presenter';
+import { worldState } from '../worldState';
 
 let camera: OrthographicCamera;
 let renderer: WebGLRenderer;
@@ -60,7 +62,40 @@ class World {
     );
     scene.add(tileMap.tileGroup);
 
-    createRaycaster(container, camera, renderer, tileMap, texture, grid);
+    const onIntersectCanvas = createRaycaster(container, camera, renderer, tileMap, grid);
+
+    onIntersectCanvas((int) => {
+      const { tileIntersect, gridIntersect, event, previousGridIntersect } = int;
+
+      if (
+        tileIntersect
+        && event.pressure > 0
+        && event.buttons === 1
+      ) {
+        tileMap.onPointerChange(tileIntersect);
+      }
+      if (gridIntersect) {
+        const brush = createBrush(tools, worldState);
+
+        const tool =
+          tools.currentTool === ToolType.Brush
+            ? brush.currentBrush
+            : ToolType.Eraser;
+        if (event.pressure === 0) {
+          gridIntersect.material.color.set('#f00');
+
+          gridIntersect.material.map = texture.getTileTextures(tool);
+          gridIntersect.material.opacity = 0.4;
+          gridIntersect.material.needsUpdate = true;
+        }
+      }
+      if (previousGridIntersect) {
+        previousGridIntersect.material.color.set('#69f');
+        previousGridIntersect.material.map = null;
+        previousGridIntersect.material.opacity = 0;
+        previousGridIntersect.material.needsUpdate = true;
+      }
+    });
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.minZoom = 0.2;

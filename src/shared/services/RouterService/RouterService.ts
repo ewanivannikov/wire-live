@@ -43,7 +43,6 @@ export class RouterService {
   private log = () => {
     logger.debug(`RouterService: params: ${JSON.stringify(this.params)}`);
     logger.debug(`RouterService: location: ${JSON.stringify(this.location)}`);
-    logger.debug(`RouterService: matches: ${JSON.stringify(matchRoutes(this.router.routes, this.router.state.location))}`);
   }
 
   private getParams() {
