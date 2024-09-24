@@ -23,6 +23,9 @@ importers:
       dat.gui:
         specifier: ^0.7.9
         version: 0.7.9
+      ky:
+        specifier: ^1.7.2
+        version: 1.7.2
       lucide-solid:
         specifier: ^0.407.0
         version: 0.407.0(solid-js@1.8.18)
@@ -35,9 +38,6 @@ importers:
       remeda:
         specifier: ^2.14.0
         version: 2.14.0
-      rxjs:
-        specifier: ^7.8.1
-        version: 7.8.1
       solid-js:
         specifier: ^1.8.18
         version: 1.8.18
@@ -2154,6 +2154,10 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
 
+  ky@1.7.2:
+    resolution: {integrity: sha512-OzIvbHKKDpi60TnF9t7UUVAF1B4mcqc02z5PIvrm08Wyb+yOcz63GRvEuVxNT18a9E1SrNouhB4W2NNLeD7Ykg==}
+    engines: {node: '>=18'}
+
   launch-editor@2.8.0:
     resolution: {integrity: sha512-vJranOAJrI/llyWGRQqiDM+adrw+k83fvmmx3+nV47g3+36xM15jE+zyZ6Ffel02+xSvuM0b2GDRosXZkbb6wA==}
 
@@ -2906,9 +2910,6 @@ packages:
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
-
-  rxjs@7.8.1:
-    resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
 
   safe-array-concat@1.1.2:
     resolution: {integrity: sha512-vj6RsCsWBCf19jIeHEfkRMw8DPiBb+DMXklQ/1SGDHOMlHdPUkZXFQ2YdplS23zESTijAcurb1aSgJA3AgMu1Q==}
@@ -5828,6 +5829,8 @@ snapshots:
 
   kind-of@6.0.3: {}
 
+  ky@1.7.2: {}
+
   launch-editor@2.8.0:
     dependencies:
       picocolors: 1.0.1
@@ -6531,10 +6534,6 @@ snapshots:
   run-parallel@1.2.0:
     dependencies:
       queue-microtask: 1.2.3
-
-  rxjs@7.8.1:
-    dependencies:
-      tslib: 2.6.3
 
   safe-array-concat@1.1.2:
     dependencies:

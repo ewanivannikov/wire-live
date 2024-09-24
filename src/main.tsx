@@ -15,6 +15,9 @@ import { About, Canvas, Home, LevelList } from './pages';
 import { Toolbar } from './modules/toolbar';
 import { ContextBar } from './modules/contextBar';
 import { TaskPanel } from './modules/taskPanel';
+import {registerServiceWorker} from './shared';
+
+registerServiceWorker();
 
 const rippleUrl = new URL('./shared/ui/ripple.worklet', import.meta.url);
 if ('paintWorklet' in CSS) {

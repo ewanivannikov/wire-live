@@ -34,7 +34,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(worklet.js)$/i,
+        test: /\.(worklet.js|worker)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'static/[hash][ext][query]',

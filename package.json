@@ -22,11 +22,11 @@
     "@solid-primitives/lifecycle": "^0.0.102",
     "babel-preset-solid": "^1.8.18",
     "dat.gui": "^0.7.9",
+    "ky": "^1.7.2",
     "lucide-solid": "^0.407.0",
     "marked": "^14.1.2",
     "mobx": "^6.13.0",
     "remeda": "^2.14.0",
-    "rxjs": "^7.8.1",
     "solid-js": "^1.8.18",
     "three": "^0.166.1"
   },
