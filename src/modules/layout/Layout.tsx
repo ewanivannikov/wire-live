@@ -3,6 +3,7 @@ import styles from './layout.module.css';
 import logo from '../../assets/logo.svg';
 import { Show } from 'solid-js';
 import { routerService } from '../../shared/services';
+import { Profile } from '../profile';
 
 const { container, header, sidebar, context, main, nav } = styles;
 
@@ -19,6 +20,7 @@ export function Layout(props) {
             Wire live
           </a>
           <a href={`${routerService.basename}#/about`}>О проекте</a>
+          <Profile />
         </nav>
       </header>
       <Show when={Boolean(asideSlot)}>

@@ -35,6 +35,9 @@ importers:
       mobx:
         specifier: ^6.13.0
         version: 6.13.0
+      mobx-utils:
+        specifier: ^6.0.8
+        version: 6.0.8(mobx@6.13.0)
       remeda:
         specifier: ^2.14.0
         version: 2.14.0
@@ -2327,6 +2330,11 @@ packages:
   minipass@7.1.2:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
+
+  mobx-utils@6.0.8:
+    resolution: {integrity: sha512-fPNt0vJnHwbQx9MojJFEnJLfM3EMGTtpy4/qOOW6xueh1mPofMajrbYAUvByMYAvCJnpy1A5L0t+ZVB5niKO4g==}
+    peerDependencies:
+      mobx: ^6.0.0
 
   mobx@6.13.0:
     resolution: {integrity: sha512-1laWODrBWmB7mDJ8EClCjUQTyLwJ0ydJgE4FtK7t9r3JnjXgc9OhmYs2P4RtHrY1co5+4T6cKP2UswX2SU29mA==}
@@ -5981,6 +5989,10 @@ snapshots:
   minimist@1.2.8: {}
 
   minipass@7.1.2: {}
+
+  mobx-utils@6.0.8(mobx@6.13.0):
+    dependencies:
+      mobx: 6.13.0
 
   mobx@6.13.0: {}
 

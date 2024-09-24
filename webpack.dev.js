@@ -16,6 +16,11 @@ module.exports = merge(common, {
         publicPath: '/static/',
       },
     ],
+    headers: (v) => {
+      console.log('❌❌❌', v);
+      
+      return { 'Service-Worker-Allowed': '/api' };
+    },
     port: 9000, // The port to bind to
     open: true, // Open the server in a browser window automatically
     hot: true, // Enable hot module replacement
