@@ -1,12 +1,9 @@
 import { logger } from "../LoggerService";
 
-const swUrl = new URL('./service.worker', import.meta.url);
-console.log('swUrl', swUrl);
-
 export const registerServiceWorker = async () => {
   if ("serviceWorker" in navigator) {
     try {
-      const registration = await navigator.serviceWorker.register(swUrl, {
+      const registration = await navigator.serviceWorker.register(new URL('./service.worker', import.meta.url), {
         scope: "/api",
       });
       if (registration.installing) {
