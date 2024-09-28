@@ -9,7 +9,7 @@ import { WorldState } from '../worldState';
 
 class Brush {
   private static instance: Brush | null = null;
-  public currentBrush = 'Brush.0.Up';
+  public currentBrush = '';
   public currentBrushDirection = DirectionType.Up;
   public currentBrushDirectionList = [
     DirectionType.Up,
@@ -27,6 +27,19 @@ class Brush {
     private readonly worldState: WorldState
   ) {
     makeAutoObservable(this);
+    this.init();
+  }
+
+  private init() {
+    if ((this.worldState.status.includes('level'))){
+      const brush = this.worldState.level.allowedBrushList[0]
+      const [_, _a, dir, fl]= new Tile(brush).vector
+      this.currentBrush = brush
+      this.currentBrushDirection = dir
+      this.currentBrushFlip = fl
+
+      this.currentBrushDirectionList = this.getDirectionsByNumber(new Tile(brush).vector[1])
+    }
   }
 
   private getDirectionsByNumber(number: number) {

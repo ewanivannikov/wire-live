@@ -27,7 +27,7 @@ class Tools {
       const canBeDeleted = this.worldState.canBeDeleted(tile)
       const isEraser = this.currentTool === ToolType.Eraser
       const isSolving = (`level.play.solving` === this.worldState.status) && this._logicField.paused
-      
+
       if (canBeDeleted && isEraser && isSolving) {
         //НАЙДИ БАГ СВЯЗАННЫЙ С ПАУЗОЙ, РИСОВАНИЕМ И СТИРАНИЕМ. ГДЕ-ТО В onPointerMove!
         this.erase(tile);
@@ -48,8 +48,14 @@ class Tools {
   };
 
   public setTick = () => {
-    this.worldState.togglePause(this._loop);
+    if ((this.worldState.status === 'level.play.checking.one')) {
+      this.worldState.togglePause(this._loop);
+    }
   };
+
+  public switchOnOneChecking = () => {
+    this.worldState.switchOnSend();
+  }
 
   public saveMap = () => {
     const map = this._logicField.arrowCache

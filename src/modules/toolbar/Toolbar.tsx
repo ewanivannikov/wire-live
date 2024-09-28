@@ -1,6 +1,6 @@
 import { Button, SegmentedButtons } from '../../shared';
 import styles from './style.module.css';
-import { Highlighter, Eraser, Play, Pause, Hand, Save } from 'lucide-solid';
+import { Highlighter, Eraser, Play, Pause, Hand, Save, SendHorizontal, Pencil } from 'lucide-solid';
 import { tools } from './presenter';
 import { Match, Switch } from 'solid-js';
 import { worldState } from '../worldState';
@@ -13,6 +13,10 @@ export const Toolbar = () => {
   };
   const handleClickTick = () => {
     tools.setTick();
+  };
+
+  const handleClickSend = () => {
+    tools.switchOnOneChecking();
   };
 
   const handleClickSave = () => {
@@ -63,6 +67,24 @@ export const Toolbar = () => {
           </Match>
         </Switch>
       </Button>
+
+      <SegmentedButtons>
+        <SegmentedButtons.Button
+        name="Submit"
+        aria-pressed={worldState.status === 'level.play.checking.one'}
+        onClick={handleClickSend}
+      >
+          <SendHorizontal />
+        </SegmentedButtons.Button>
+        <SegmentedButtons.Button
+          name="Write"
+          aria-pressed={worldState.status === 'level.play.solving'}
+          onClick={handleClickTick}
+        >
+          <Pencil />
+        </SegmentedButtons.Button>
+      </SegmentedButtons>
+
       <Button name="Save" onClick={handleClickSave}>
         <Save/>
       </Button>

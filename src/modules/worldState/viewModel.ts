@@ -5,6 +5,7 @@ import { Loop } from "../mapContainer/systems";
 import { LevelRepository, levelRepository } from "../../data";
 
 export class WorldState {
+    status = 'level.play.solving';
     tick = this.initTick();
     constructor(private readonly routerServ: RouterService, private readonly logicField: Fields, private readonly levelRepo: LevelRepository) {
         makeAutoObservable(this);
@@ -20,15 +21,32 @@ export class WorldState {
         }
     }
 
-    public get status() {
-        return 'level.play.solving';
+
+    public switchStatusOnLevelOneChecking() {
+        this.status = 'level.play.checking.one';
+    }
+
+    public switchStatusOnLevelSolving() {
+        this.status = 'level.play.solving';
+    }
+
+    public switchOnSend() {
+        this.switchStatusOnLevelOneChecking();
+        this.logicField.paused = false;
+        this.tick = 500;
+    }
+
+    public switchOnSolve() {
+        this.switchStatusOnLevelSolving();
+        this.logicField.paused = true;
+        this.tick = 0;
     }
 
     public get levelId() {
         return this.routerServ.params.levelId;
     }
 
-    private get level() {
+    public get level() {
         return this.levelRepo.getLevelById(this.levelId);
     }
 
