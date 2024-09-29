@@ -7,7 +7,7 @@ class OutputArrow extends ArrowBase {
   public hasSolved = true;
   constructor(
     position: string,
-    public pattern: number[],
+    public pattern: number[] = [1],
     public cycling: boolean = false,
     public active: number = 1,
     public waiting: number = -1,

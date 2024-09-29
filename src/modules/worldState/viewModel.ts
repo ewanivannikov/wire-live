@@ -3,6 +3,7 @@ import { type RouterService, routerService } from "../../shared/services";
 import { fields, type Fields } from "../Logic/Base";
 import { Loop } from "../mapContainer/systems";
 import { LevelRepository, levelRepository } from "../../data";
+import { Position } from "../Logic/Position";
 
 export class WorldState {
     status = 'level.play.solving';
@@ -23,6 +24,14 @@ export class WorldState {
 
     public switchStatusOnLevelOneChecking() {
         this.status = 'level.play.checking.one';
+    }
+
+    public initRequisites() {
+        const req = this.levelRepo.getRequisite(this.levelId);
+        const patternArrowKeys = Object.keys(this.levelRepo.getPatternArrowCache(this.levelId))
+        patternArrowKeys.forEach((key) => {
+            // для каждого ключа стрелки из реквизитов надо найти координату в поле стрелок пользака. Затем по координатам найти нужные инпуты и оутпуты и используя данные из реквизитов изменить их внутренние характеристики
+        })
     }
 
     public switchStatusOnLevelSolving() {

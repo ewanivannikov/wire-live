@@ -8,7 +8,7 @@ class InputArrow extends ArrowBase {
   constructor(
     position: string,
     direction: Direction,
-    public pattern: number[],
+    public pattern: number[] = [1],
     public cycling: boolean = false,
     public active: number = 1,
   ) {

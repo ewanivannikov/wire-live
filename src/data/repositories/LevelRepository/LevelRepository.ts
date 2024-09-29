@@ -1,10 +1,15 @@
 import { arrowToIndexTile } from "../../../modules/Logic/constants";
 import { levels } from "./levels";
+import { patternArrowCache } from "./patternArrowCache";
 
 export class LevelRepository {
 
   public getLevelById(id = 'DeMorgan') {
     return levels[id]
+  }
+
+  public getPatternArrowCache(id = 'DeMorgan') {
+    return patternArrowCache[id]
   }
 
   public getRequisite(id = 'DeMorgan') {
