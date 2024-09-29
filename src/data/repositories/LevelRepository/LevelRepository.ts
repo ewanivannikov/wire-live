@@ -2,8 +2,20 @@ import { arrowToIndexTile } from "../../../modules/Logic/constants";
 import { levels } from "./levels";
 
 export class LevelRepository {
+
   public getLevelById(id = 'DeMorgan') {
     return levels[id]
+  }
+
+  public getRequisite(id = 'DeMorgan') {
+    const requisites = levels[id].requisites
+    let result = {}
+    Object.keys(requisites).forEach((key, index) => {
+      if (index === 0) {
+        result = { [key]: levels[id].requisites[key] }
+      }
+    })
+    return result
   }
 
   public getLevelList = () => {
