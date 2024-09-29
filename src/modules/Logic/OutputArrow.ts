@@ -2,8 +2,8 @@ import { Fields } from './Base';
 import { ArrowBase } from './ArrowBase';
 
 class OutputArrow extends ArrowBase {
-  private index = -1;
-  private loop = 0;
+  public index = -1;
+  public loop = 0;
   public hasSolved = true;
   constructor(
     position: string,

@@ -19,6 +19,10 @@ export const Toolbar = () => {
     tools.switchOnOneChecking();
   };
 
+  const handleClickSolve = () => {
+    tools.switchOnSolving();
+  };
+
   const handleClickSave = () => {
     tools.saveMap();
   };
@@ -79,7 +83,7 @@ export const Toolbar = () => {
         <SegmentedButtons.Button
           name="Write"
           aria-pressed={worldState.status === 'level.play.solving'}
-          onClick={handleClickTick}
+          onClick={handleClickSolve}
         >
           <Pencil />
         </SegmentedButtons.Button>

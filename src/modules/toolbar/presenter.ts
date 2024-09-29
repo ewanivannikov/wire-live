@@ -57,6 +57,10 @@ class Tools {
     this.worldState.switchOnSend();
   }
 
+  public switchOnSolving = () => {
+    this.worldState.switchOnSolve();
+  }
+
   public saveMap = () => {
     const map = this._logicField.arrowCache
     this.levelRepo.createMap(map)

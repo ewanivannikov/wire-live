@@ -3,8 +3,8 @@ import { ArrowBase } from './ArrowBase';
 import { Direction } from './types';
 
 class InputArrow extends ArrowBase {
-  private index = -1;
-  private loop = 0;
+  public index = -1;
+  public loop = 0;
   constructor(
     position: string,
     direction: Direction,

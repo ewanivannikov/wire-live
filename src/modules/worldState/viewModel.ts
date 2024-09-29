@@ -21,13 +21,15 @@ export class WorldState {
         }
     }
 
-
     public switchStatusOnLevelOneChecking() {
         this.status = 'level.play.checking.one';
     }
 
     public switchStatusOnLevelSolving() {
         this.status = 'level.play.solving';
+        this.logicField.clearStates();
+        this.logicField.clearSignals();
+        this.logicField.clearArrowsStates();
     }
 
     public switchOnSend() {

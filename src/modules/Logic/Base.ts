@@ -82,6 +82,16 @@ export class Fields {
     this.stateCache.clear();
   }
 
+  clearSignals() {
+    this.signalCache.clear();
+  }
+
+  clearArrowsStates() {
+    this.arrowCache.forEach((arrow, _) => {
+      arrow.state = 'None';
+    });
+  }
+
   updateSignals() {
     this.signalCache = new Map(this.newSignalCache);
     this.newSignalCache.clear();
