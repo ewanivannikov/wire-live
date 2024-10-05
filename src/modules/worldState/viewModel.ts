@@ -27,9 +27,22 @@ export class WorldState {
     }
 
     public initRequisites() {
-        const req = this.levelRepo.getRequisite(this.levelId);
-        const patternArrowKeys = Object.keys(this.levelRepo.getPatternArrowCache(this.levelId))
+        const req = this.levelRepo.getRequisite(this.levelId); // случайный реквизит(пока первый)
+        const patternArrowKeys = Object.keys(this.levelRepo.getPatternArrowCache(this.levelId)); // хэши паттерновых стрелок
         patternArrowKeys.forEach((key) => {
+            const x = this.levelRepo.getPatternArrowCache(this.levelId)[key].x;
+            const y = this.levelRepo.getPatternArrowCache(this.levelId)[key].y;
+            const coord = `${x},${y}`;
+            let arrow = this.logicField.getArrow(coord);
+            arrow.pattern = req[key].pattern;
+            arrow.cycling = req[key].cycling;
+            arrow.active = req[key].active;
+            arrow.index = -1;
+            arrow.loop = 0;
+            // if (arrow.hasAttribute('waiting')) {
+            //     arrow.waiting = req[key].waiting;
+            //     arrow.hasSolved = true;
+            // }
             // для каждого ключа стрелки из реквизитов надо найти координату в поле стрелок пользака. Затем по координатам найти нужные инпуты и оутпуты и используя данные из реквизитов изменить их внутренние характеристики
         })
     }
@@ -43,6 +56,7 @@ export class WorldState {
 
     public switchOnSend() {
         this.switchStatusOnLevelOneChecking();
+        this.initRequisites()
         this.logicField.paused = false;
         this.tick = 500;
     }
