@@ -8,7 +8,7 @@ export const levels = {
     map: sources.DeMorgan,
     allowedBrushList: [
       'Brush.0.Up',
-      'Brush.1'
+      'Brush.14.Up'
     ],
     requisites: {
       '1a5d944c-a2b2-437f-bdcf-bf5cb0ca2d4d': {
