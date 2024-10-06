@@ -12,7 +12,7 @@ export const Profile = () => {
     >
       <div class="profile">
         <div class="profile__avatar"></div>
-        <div class="profile__name">John Doe</div>
+        <div class="profile__name">{profilePresenter.state.data.name}</div>
       </div>
     </ContentStatus>
   );
