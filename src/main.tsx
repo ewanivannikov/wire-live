@@ -32,6 +32,7 @@ const enableMobXWithSolidJS = () => {
       track: (x) => {
         let next;
         reaction.track(() => (next = fn(x)));
+        
         return next;
       },
       dispose: () => {

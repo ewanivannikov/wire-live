@@ -8,3 +8,4 @@ export { Typography } from './Typography';
 export * from './Tag';
 export * from './Tags';
 export * from './TextInput';
+export * from './ContentStatus';

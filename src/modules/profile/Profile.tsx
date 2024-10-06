@@ -1,24 +1,19 @@
-import { createEffect, Show } from "solid-js";
 import { profilePresenter } from "./presenter";
+import { ContentStatus } from "../../shared";
+import { createEffect } from "solid-js";
 
 export const Profile = () => {
-  createEffect(() => {
-    profilePresenter.loadData();
-  }, null);
+  createEffect(() => profilePresenter.state);
+  
   return (
-    <>
-    <Show when={profilePresenter.data.state === 'pending'}>
-      Загрузка...
-    </Show>
-    <Show when={profilePresenter.data.state === 'rejected'}>
-      {profilePresenter.data.value}
-    </Show>
-    <Show when={profilePresenter.data.state === 'pending'}>
+    <ContentStatus 
+      status={profilePresenter.state.status} 
+      error={profilePresenter.state.error}
+    >
       <div class="profile">
         <div class="profile__avatar"></div>
         <div class="profile__name">John Doe</div>
       </div>
-    </Show>
-    </>
+    </ContentStatus>
   );
 }

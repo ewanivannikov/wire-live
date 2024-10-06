@@ -20,6 +20,7 @@
     "@kobalte/core": "^0.13.3",
     "@remix-run/router": "^1.18.0",
     "@solid-primitives/lifecycle": "^0.0.102",
+    "@tanstack/query-core": "^5.59.0",
     "babel-preset-solid": "^1.8.18",
     "dat.gui": "^0.7.9",
     "ky": "^1.7.2",

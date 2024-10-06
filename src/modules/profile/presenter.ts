@@ -1,23 +1,17 @@
-import { makeAutoObservable, runInAction } from "mobx";
+import { makeAutoObservable } from "mobx";
 import { UserRepository, userRepository } from "../../data";
-import { run } from "node:test";
 
 export class ProfilePresenter {
-  data = {
-    state: 'pending',
-    value: null
-  }
-
   constructor(private readonly userRepository: UserRepository) {
     makeAutoObservable(this);
   }
 
-  public loadData = () => {
-    runInAction(() => {
-      this.data = this.userRepository.getUserQuery()
-      console.log('this.data', this.data);
+  public get query() {
+    return this.userRepository.getUserQuery()
+  }
 
-    })
+  public get state() {
+    return this.query.state
   }
 }
 
