@@ -29,20 +29,23 @@ export class WorldState {
     public initRequisites() {
         const req = this.levelRepo.getRequisite(this.levelId); // случайный реквизит(пока первый)
         const patternArrowKeys = Object.keys(this.levelRepo.getPatternArrowCache(this.levelId)); // хэши паттерновых стрелок
+        console.log('patternArrowKeys', patternArrowKeys);
+        
         patternArrowKeys.forEach((key) => {
             const x = this.levelRepo.getPatternArrowCache(this.levelId)[key].x;
             const y = this.levelRepo.getPatternArrowCache(this.levelId)[key].y;
             const coord = `${x},${y}`;
             let arrow = this.logicField.getArrow(coord);
             arrow.pattern = req[key].pattern;
-            arrow.cycling = req[key].cycling;
-            arrow.active = req[key].active;
+            arrow.cycling = req[key].hasCycle;
+            arrow.active = 1 - 2 * req[key].initialValue;
             arrow.index = -1;
             arrow.loop = 0;
             // if (arrow.hasAttribute('waiting')) {
             //     arrow.waiting = req[key].waiting;
             //     arrow.hasSolved = true;
             // }
+            this.logicField.addArrow(coord, arrow);
             // для каждого ключа стрелки из реквизитов надо найти координату в поле стрелок пользака. Затем по координатам найти нужные инпуты и оутпуты и используя данные из реквизитов изменить их внутренние характеристики
         })
     }
