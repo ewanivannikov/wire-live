@@ -6,4 +6,10 @@ export const userNetworkSources = {
 
     return result
   },
+
+  async logOut() {
+    const result = await httpService.post('logout/google').json();
+
+    return result
+  }
 };

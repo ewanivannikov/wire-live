@@ -24,6 +24,7 @@
     "babel-preset-solid": "^1.8.18",
     "dat.gui": "^0.7.9",
     "ky": "^1.7.2",
+    "lit": "^3.2.1",
     "lucide-solid": "^0.407.0",
     "marked": "^14.1.2",
     "mobx": "^6.13.0",

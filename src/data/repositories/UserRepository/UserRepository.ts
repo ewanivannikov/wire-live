@@ -16,6 +16,10 @@ export class UserRepository {
 
     return result
   }
+
+  public logOut = () => {
+    this.userNetwork.logOut()
+  }
 }
 
 export const userRepository = new UserRepository(cacheServiceInstance, userNetworkSources)
