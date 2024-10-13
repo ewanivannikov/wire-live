@@ -67,7 +67,10 @@ class MobxMutation<
     this.mutation.mutate(variables, options);
   }
 
-  async mutateAsync(variables: TVariables, options?: MutateOptions<TData, TError, TVariables, TContext> | undefined) {
+  async mutateAsync(
+    variables: TVariables,
+    options?: MutateOptions<TData, TError, TVariables, TContext> | undefined
+  ) {
     if (!this.isObserved) {
       this.mutation.setupDispoables()
     }

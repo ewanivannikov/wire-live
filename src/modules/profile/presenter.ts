@@ -18,9 +18,12 @@ export class ProfilePresenter {
     return this.userRepository.logOut()
   }
 
-  public logOut() {
-    this.mutation.mutate()
-    return this.mutation.state
+  public logOut = async () => {
+    try {
+      await this.mutation.mutateAsync();
+    } catch (error) {
+      console.error('error❌❌❌', error)
+    }
   }
 
 }
