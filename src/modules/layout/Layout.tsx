@@ -12,7 +12,7 @@ const { container, header, sidebar, context, main, nav } = styles;
 export function Layout(props) {
   const { asideSlot, contextBarSlot } = props;
   const logOut = () => {
-    userRepository.logOut()
+    // userRepository.logOut()
   }
   return (
     <div class={container}>

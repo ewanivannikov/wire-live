@@ -1,4 +1,4 @@
-import { LitElement } from 'lit-element';
+import { LitElement } from 'lit';
 import { literal, html } from 'lit/static-html.js';
 import { buttonStyles } from './button-styles.js';
 import { customElement } from 'lit/decorators.js';
