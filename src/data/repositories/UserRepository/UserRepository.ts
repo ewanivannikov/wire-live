@@ -18,7 +18,10 @@ export class UserRepository {
   }
 
   public logOut = () => {
-    this.userNetwork.logOut()
+    const result = this.cacheService.createMutation({
+      mutationFn: () => this.userNetwork.logOut(),
+    })
+    return result
   }
 }
 

@@ -13,6 +13,16 @@ export class ProfilePresenter {
   public get state() {
     return this.query.state
   }
+
+  private get mutation() {
+    return this.userRepository.logOut()
+  }
+
+  public logOut() {
+    this.mutation.mutate()
+    return this.mutation.state
+  }
+
 }
 
 export const profilePresenter = new ProfilePresenter(userRepository)

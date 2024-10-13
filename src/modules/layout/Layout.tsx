@@ -5,14 +5,16 @@ import { Show } from 'solid-js';
 import { routerService } from '../../shared/services';
 import { Profile } from '../profile';
 import '../../shared/ui/components/Button';
-import { userRepository } from '../../data';
+import { profilePresenter } from '../profile/presenter';
 
 const { container, header, sidebar, context, main, nav } = styles;
 
 export function Layout(props) {
   const { asideSlot, contextBarSlot } = props;
   const logOut = () => {
-    // userRepository.logOut()
+    const result = profilePresenter.logOut();
+    console.log('result', result);
+    
   }
   return (
     <div class={container}>
