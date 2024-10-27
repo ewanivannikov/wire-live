@@ -16,6 +16,56 @@ editor - загадка(можно поделиться, сильно), для �
 |3. bulk checking|• ничего нельзя делать|• просчёт нескольких симуляций без визуального ряда и проверка каждой симуляции(isChecked) <br>•  при удачной проверке всех симуляций(isCompleted) уровень завершён <br>• при неудачной проверке возвращение в solving|
 |4. completed|• насладись победой|• записать данные о прохождении в сервер <br>• показ экран успешного завершения|
 
+```mermaid
+classDiagram
+    class Context {
+        - State state
+        + setState(State)
+        + request()
+    }
+
+    class State {
+        + handle(Context)
+    }
+
+    class SolvingState {
+        + draw()
+        + eraseArrows()
+        + transitionToOneChecking()
+    }
+
+    class OneCheckingState {
+        + pause()
+        + resume()
+        + returnToSolving()
+        + validateSingleOutput()
+    }
+
+    class BulkCheckingState {
+        + checkMultipleSimulations()
+        + returnToSolving()
+    }
+
+    class CompletedState {
+        + celebrate()
+        + saveProgress()
+        + showCompletionScreen()
+    }
+
+    Context --> State : holds
+    State <|-- SolvingState
+    State <|-- OneCheckingState
+    State <|-- BulkCheckingState
+    State <|-- CompletedState
+
+    %% Relations
+    SolvingState --> OneCheckingState : переход
+    OneCheckingState --> SolvingState : возврат при ошибке
+    OneCheckingState --> BulkCheckingState : переход при успешной проверке
+    BulkCheckingState --> SolvingState : возврат при ошибке
+    BulkCheckingState --> CompletedState : переход при успешной проверке
+```
+
 # Редактор(Editor)
 |Состояния уровня|Возможности игрока|Возможности системы|
 |---|---|---|
