@@ -3,6 +3,7 @@ import {
   createEffect,
   createSignal,
   enableExternalSource,
+  ErrorBoundary,
   Match,
   Switch,
 } from 'solid-js';
@@ -71,6 +72,7 @@ const App = () => {
   }, null);
 
   return (
+    <ErrorBoundary fallback={(err, reset) => <div onClick={reset}>Error: {err.toString()}</div>}>
     <Switch fallback={<div>Not Found</div>}>
       <Match when={pathname().includes('levels')}>
         <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
@@ -98,6 +100,7 @@ const App = () => {
         </Layout>
       </Match>
     </Switch>
+    </ErrorBoundary>
   );
 };
 render(() => <App />, document.getElementById('app'));

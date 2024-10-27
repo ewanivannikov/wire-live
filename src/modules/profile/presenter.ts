@@ -13,6 +13,19 @@ export class ProfilePresenter {
   public get state() {
     return this.query.state
   }
+
+  private get mutation() {
+    return this.userRepository.logOut()
+  }
+
+  public logOut = async () => {
+    try {
+      await this.mutation.mutateAsync();
+    } catch (error) {
+      console.error('error❌❌❌', error)
+    }
+  }
+
 }
 
 export const profilePresenter = new ProfilePresenter(userRepository)
