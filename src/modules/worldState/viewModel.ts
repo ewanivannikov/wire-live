@@ -41,7 +41,7 @@ export class WorldState {
             arrow.loop = 0;
             if (this.levelRepo.getPatternArrowCache(this.levelId)[key].tileId.includes('22')) {
                 arrow.waiting = req[key].waiting;
-                arrow.hasSolved = true;
+                arrow.isValid = true;
             }
             this.logicField.addArrow(coord, arrow);
             // для каждого ключа стрелки из реквизитов надо найти координату в поле стрелок пользака. Затем по координатам найти нужные инпуты и оутпуты и используя данные из реквизитов изменить их внутренние характеристики

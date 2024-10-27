@@ -4,7 +4,7 @@ import { ArrowBase } from './ArrowBase';
 class OutputArrow extends ArrowBase {
   public index = -1;
   public loop = 0;
-  public hasSolved = true;
+  public isValid = true;
   constructor(
     position: string,
     public pattern: number[] = [1],
@@ -25,9 +25,9 @@ class OutputArrow extends ArrowBase {
       this.state = 'None';
     } else if (((this.active === 1) && (fields.getSignal(this.position.coordinates) >= 1)) ||
         ((this.active === -1) && (fields.getSignal(this.position.coordinates) === 0))) {
-      this.hasSolved = this.hasSolved && true;
+      this.isValid = this.isValid && true;
     } else {
-      this.hasSolved = this.hasSolved && false;
+      this.isValid = this.isValid && false;
     }
     if (this.waiting === 0){
         if ((this.loop === 0)) {
@@ -54,7 +54,7 @@ class OutputArrow extends ArrowBase {
     
     if (this.waiting != 0) {
       this.state = 'None';
-    } else if (this.hasSolved) {
+    } else if (this.isValid) {
       this.state = 'Venus';
     } else {
       this.state = 'Mars';
