@@ -75,6 +75,11 @@
   --animation-tick: 0;
 }
 
+.HF5WhNGA4huTVfgjws56[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .kziKbfTCzpRBFarTYoBM {
   appearance: none;
   display: inline-flex;
