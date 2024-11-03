@@ -6,20 +6,19 @@ import { State } from "../types";
 
 // Класс контекста, управляющий состояниями
 export class LevelContext {
-  private state: State;
+  public state: State;
 
   constructor(
-    initialState: State,
     private readonly levelRepo: LevelRepository,
     private readonly routerServ: RouterService,
-    private readonly logicField: Fields,
+    public logicField: Fields,
   ) {
-    this.state = initialState;
     makeAutoObservable(this);
   }
 
   public setState(state: State) {
     this.state = state;
+    console.log(this.state);
   }
 
 
@@ -51,5 +50,9 @@ export class LevelContext {
 
   public get levelId() {
     return this.routerServ.params.levelId;
+  }
+
+  public get level() {
+    return this.levelRepo.getLevelById(this.levelId);
   }
 }

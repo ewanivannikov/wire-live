@@ -8,8 +8,10 @@ export class StateSolving implements State {
   constructor(private readonly context: LevelContext) { }
 
   public handleNext() {
-    console.log("В состоянии Solving: Рисование и стирание стрелок доступны");
-    this.transitionToOneChecking();
+    console.log('Переход на one checking');
+    this.context.setState(new StateOneChecking(this.context));
+    this.context.initRequisites()
+    this.context.logicField.paused = false;
   }
 
   public draw() {
@@ -20,17 +22,11 @@ export class StateSolving implements State {
     console.log("Стирание стрелок");
   }
 
-  private transitionToOneChecking() {
-    console.log("Переход в состояние OneChecking");
-    this.context.setState(new StateOneChecking(this.context));
-  }
-
   public canBeDeleted = (tile) => {
-    const result = this.level.map.find((tileData) => {
+    const result = this.context.level.map.find((tileData) => {
       const name = [tileData.x, tileData.y].join(',');
       return name === tile.name
     })
-
     return !result
   }
 }

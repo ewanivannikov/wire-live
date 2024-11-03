@@ -24,7 +24,7 @@ class Tools {
     this._logicField = logicField;
     this._tileMap = tileMap;
     tileMap.onPointerChange = (tile) => {
-      const canBeDeleted = this.worldState.canBeDeleted(tile)
+      const canBeDeleted = this.worldState.modeContext.state.canBeDeleted(tile)
       const isEraser = this.currentTool === ToolType.Eraser
       const isSolving = (`level.play.solving` === this.worldState.status) && this._logicField.paused
 
@@ -54,11 +54,11 @@ class Tools {
   };
 
   public switchOnOneChecking = () => {
-    this.worldState.switchOnSend();
+    this.worldState.switchStatusOnLevelOneChecking();
   }
 
   public switchOnSolving = () => {
-    this.worldState.switchOnSolve();
+    this.worldState.switchStatusOnLevelSolving();
   }
 
   public saveMap = () => {

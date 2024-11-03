@@ -32,7 +32,7 @@ class Brush {
 
   private init() {
     if ((this.worldState.status.includes('level'))){
-      const brush = this.worldState.level.allowedBrushList[0]
+      const brush = this.worldState.modeContext.level.allowedBrushList[0]
       const [_, _a, dir, fl]= new Tile(brush).vector
       this.currentBrush = brush
       this.currentBrushDirection = dir

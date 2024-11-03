@@ -3,7 +3,6 @@ import { type RouterService, routerService } from "../../shared/services";
 import { fields, type Fields } from "../Logic/Base";
 import { Loop } from "../mapContainer/systems";
 import { LevelRepository, levelRepository } from "../../data";
-// import { Position } from "../Logic/Position";
 import { LevelContext } from "./Level";
 import { StateSolving } from "./StateSolving";
 
@@ -32,42 +31,26 @@ export class WorldState {
 
   private initMode(): LevelContext {
     if (this.status.includes('level')) {
-      return new LevelContext(new StateSolving(this.modeContext), this.levelRepo, this.routerServ, this.logicField);
+      const context = new LevelContext(this.levelRepo, this.routerServ, this.logicField);
+      context.setState(new StateSolving(context));
+      return context;
     }
   }
 
   public switchStatusOnLevelOneChecking() {
+    this.modeContext.next();
     this.status = 'level.play.checking.one';
-  }
-
-
-
-  public switchStatusOnLevelSolving() {
-    this.status = 'level.play.solving';
-    this.logicField.clearStates();
-    this.logicField.clearSignals();
-    this.logicField.clearArrowsStates();
-  }
-
-  public switchOnSend() {
-    this.switchStatusOnLevelOneChecking();
-    // this.initRequisites()
-    this.logicField.paused = false;
     this.tick = 500;
   }
 
-  public switchOnSolve() {
-    this.switchStatusOnLevelSolving();
-    this.logicField.paused = true;
+  public switchStatusOnLevelSolving() {
+    this.modeContext.state.returnToSolving();
+    this.status = 'level.play.solving';
     this.tick = 0;
   }
 
   public get levelId() {
     return this.routerServ.params.levelId;
-  }
-
-  public get level() {
-    return this.levelRepo.getLevelById(this.levelId);
   }
 
   public togglePause(loop: Loop) {

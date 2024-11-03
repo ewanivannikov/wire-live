@@ -22,7 +22,11 @@ export class StateOneChecking implements State {
   }
 
   public returnToSolving() {
-    console.log("Возвращение в состояние Solving");
+    console.log("Возвращение в состояние solving");
+    this.context.logicField.clearStates();
+    this.context.logicField.clearSignals();
+    this.context.logicField.clearArrowsStates();
+    this.context.logicField.paused = true;
     this.context.setState(new StateSolving(this.context));
   }
 
