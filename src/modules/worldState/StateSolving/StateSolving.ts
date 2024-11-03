@@ -1,9 +1,9 @@
 import { LevelContext } from "../Level";
 import { StateOneChecking } from "../StateOneChecking";
-import { State } from "../types";
+import { IState } from "../types";
 
 // Состояние "Solving"
-export class StateSolving implements State {
+export class StateSolving implements IState {
 
   constructor(private readonly context: LevelContext) { }
 

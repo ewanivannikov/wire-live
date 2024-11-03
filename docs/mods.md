@@ -70,4 +70,7 @@ classDiagram
 |Состояния уровня|Возможности игрока|Возможности системы|
 |---|---|---|
 
-TODO: 1) отделить solving и one checking в отдельные классы. 2) создать остальные классы
+TODO: 
+1. доделать one checking: плей, isValid, isSolved
+2. сделать StateBulkChecking
+3. сделать StateCompleted

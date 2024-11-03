@@ -1,10 +1,10 @@
 import { LevelContext } from "../Level";
 import { StateCompleted } from "../StateCompleted";
 import { StateSolving } from "../StateSolving";
-import { State } from "../types";
+import { IState } from "../types";
 
 // Состояние "BulkChecking"
-export class StateBulkChecking implements State {
+export class StateBulkChecking implements IState {
 
   constructor(private readonly context: LevelContext) { }
 
@@ -13,13 +13,17 @@ export class StateBulkChecking implements State {
     this.checkMultipleSimulations(true);
   }
 
+  public handlePrev() {
+    console.log("Проверка симуляций провалена, возвращение в состояние Solving");
+    this.context.setState(new StateSolving(this.context));
+  }
+
   private checkMultipleSimulations(isCompleted: boolean) {
     if (isCompleted) {
       console.log("Все симуляции успешно завершены, переход в состояние Completed");
       this.context.setState(new StateCompleted(this.context));
     } else {
-      console.log("Проверка симуляций провалена, возвращение в состояние Solving");
-      this.context.setState(new StateSolving(this.context));
+      this.handlePrev();
     }
   }
 }

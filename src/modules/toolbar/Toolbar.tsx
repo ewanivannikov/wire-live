@@ -59,6 +59,7 @@ export const Toolbar = () => {
 
       <Button
         name="Play"
+        aria-disabled={worldState.status === 'level.play.solving'}
         aria-pressed={worldState.tick === 0}
         onClick={handleClickTick}
       >

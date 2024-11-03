@@ -1,4 +1,4 @@
-import { LitElement } from 'lit';
+import { LitElement, nothing } from 'lit';
 import { literal, html } from 'lit/static-html.js';
 import { buttonStyles } from './button-styles.js';
 import { customElement } from 'lit/decorators.js';
@@ -14,6 +14,9 @@ export class ButtonElement extends LitElement {
     return {
       type: { type: String, reflect: true, defaultValue: 'button' },
       onClick: { type: Function },
+      styles: { type: Object, reflect: true, },
+      "aria-disabled": { type: String, reflect: true, state: true },
+      "aria-pressed": { type: Boolean, reflect: true, state: true },
       _position: { state: true },
       _tick: { state: true },
     };
@@ -31,17 +34,23 @@ export class ButtonElement extends LitElement {
 
   render() {
     const {
+      ariaDisabled,
+      ariaPressed,
       type,
     } = this;
+    console.log('this❌❌❌', this.ariaDisabled);
 
     const styles = {
       '--ripple-x': this._position.x,
       '--ripple-y': this._position.y,
       '--animation-tick': this._tick,
+      ...this.styles,
     };
 
     return html`
       <${this.tag}
+      aria-disabled="${ariaDisabled || nothing}"
+      aria-pressed="${ariaPressed || nothing}"
       type="${type}"
       style=${styleMap(styles)}
       @click=${this.handleClick}

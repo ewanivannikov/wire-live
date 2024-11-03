@@ -2,11 +2,11 @@ import { makeAutoObservable } from "mobx";
 import { LevelRepository } from "../../../data/repositories/LevelRepository";
 import { RouterService } from "../../../shared/services/RouterService";
 import { Fields } from "../../Logic/Base";
-import { State } from "../types";
+import { IState } from "../types";
 
 // Класс контекста, управляющий состояниями
 export class LevelContext {
-  public state: State;
+  private state: IState;
 
   constructor(
     private readonly levelRepo: LevelRepository,
@@ -16,7 +16,7 @@ export class LevelContext {
     makeAutoObservable(this);
   }
 
-  public setState(state: State) {
+  public setState(state: IState) {
     this.state = state;
     console.log(this.state);
   }
@@ -24,6 +24,10 @@ export class LevelContext {
 
   public next() {
     this.state.handleNext();
+  }
+
+  public prev() {
+    this.state.handlePrev();
   }
 
   public initRequisites() {

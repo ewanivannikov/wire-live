@@ -16,4 +16,7 @@ export const buttonStyles = css`
     --ripple-color: rgba(0, 182, 195, 0.744);
     --animation-tick: 0;
   }
+  :host [aria-disabled="true"] {
+    opacity: 0.5;
+  }
 `;

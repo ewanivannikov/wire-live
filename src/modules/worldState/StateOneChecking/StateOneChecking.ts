@@ -1,16 +1,21 @@
 import { LevelContext } from "../Level";
 import { StateBulkChecking } from "../StateBulkChecking";
 import { StateSolving } from "../StateSolving";
-import { State } from "../types";
+import { IState } from "../types";
 
 // Состояние "OneChecking"
-export class StateOneChecking implements State {
+export class StateOneChecking implements IState {
 
   constructor(private readonly context: LevelContext) { }
 
   public handleNext() {
     console.log("В состоянии OneChecking: Запуск единичной проверки симуляции и валидации");
     this.validateSingleOutput(true);
+  }
+
+  public handlePrev() {
+    console.log("В состоянии OneChecking: Возвращение в состояние Solving");
+    this.returnToSolving();
   }
 
   public pause() {

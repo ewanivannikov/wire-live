@@ -1,4 +1,4 @@
 // Интерфейс для всех состояний
-export type State = {
+export interface IState {
   handleNext(): void;
 }

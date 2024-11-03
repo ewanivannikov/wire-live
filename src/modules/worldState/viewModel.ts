@@ -44,7 +44,7 @@ export class WorldState {
   }
 
   public switchStatusOnLevelSolving() {
-    this.modeContext.state.returnToSolving();
+    this.modeContext.prev();
     this.status = 'level.play.solving';
     this.tick = 0;
   }

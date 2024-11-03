@@ -1,8 +1,8 @@
 import { LevelContext } from "../Level";
-import { State } from "../types";
+import { IState } from "../types";
 
 // Состояние "Completed"
-export class StateCompleted implements State {
+export class StateCompleted implements IState {
   constructor(private readonly context: LevelContext) { }
 
   public handleNext() {

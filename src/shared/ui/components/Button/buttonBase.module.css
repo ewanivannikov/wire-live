@@ -16,3 +16,8 @@
   --ripple-color: rgba(0, 182, 195, 0.744);
   --animation-tick: 0;
 }
+
+.root[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
