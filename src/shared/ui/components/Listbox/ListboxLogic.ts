@@ -475,7 +475,7 @@ class ListboxLogic {
     }
 
     if (this.listboxNode.querySelector('[aria-selected="true"]')) {
-      this.moveButton.setAttribute('aria-disabled', 'false');
+      this.moveButton.removeAttribute('aria-disabled');
     } else {
       this.moveButton.setAttribute('aria-disabled', 'true');
     }

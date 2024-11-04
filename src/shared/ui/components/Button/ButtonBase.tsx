@@ -1,5 +1,5 @@
 import styles from './buttonBase.module.css';
-import { JSX } from 'solid-js';
+import { JSX, splitProps } from 'solid-js';
 import { useRipple } from './useRipple';
 import { Dynamic } from 'solid-js/web';
 const { root } = styles;
@@ -11,7 +11,7 @@ export type ButtonBaseProps = {
 } & JSX.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const ButtonBase = (props: ButtonBaseProps) => {
-  const { component = 'button' } = props;
+  const [{component = 'button'}, others] = splitProps(props, ["component"]);
   const { onClick, position, tick } = useRipple();
   const handleClick = (e) => {
     onClick(e);
@@ -19,7 +19,10 @@ export const ButtonBase = (props: ButtonBaseProps) => {
   };
 
   return <Dynamic component={component}
-    {...props}
+    {...others}
+    tabIndex={props['aria-pressed'] ? 0 : -1}
+    aria-pressed={props['aria-pressed'] || null}
+    aria-disabled={props['aria-disabled'] || null}
     classList={{[root]: true, ...props.classList}}
     style={{
           '--ripple-x': position().x,

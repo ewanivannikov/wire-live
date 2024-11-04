@@ -20,7 +20,7 @@
   aspect-ratio: 1 / 1;
   height: 32px;
 
-  &[aria-pressed='true'] {
+  &[aria-pressed] {
     background-color: oklch(from var(--color-baseline) calc(l - 0.09) c h);
     border: 2px solid oklch(from var(--color-baseline) calc(l - 0.25) c h);
   }

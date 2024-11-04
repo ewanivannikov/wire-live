@@ -6,6 +6,7 @@ import { styleMap } from 'lit/directives/style-map.js';
 
 @customElement('button-wl')
 export class ButtonElement extends LitElement {
+
   static styles = [
     buttonStyles,
   ];
@@ -15,8 +16,14 @@ export class ButtonElement extends LitElement {
       type: { type: String, reflect: true, defaultValue: 'button' },
       onClick: { type: Function },
       styles: { type: Object, reflect: true, },
-      "aria-disabled": { type: String, reflect: true, state: true },
-      "aria-pressed": { type: Boolean, reflect: true, state: true },
+      ariaDisabled: { type: Boolean, reflect: true, attribute: 'aria-disabled' },
+      ariaPressed: {
+        type: Boolean,
+        reflect: true,
+        attribute: 'aria-pressed',
+      },
+      popovertarget: { type: String, reflect: true },
+      value: { type: String, reflect: true },
       _position: { state: true },
       _tick: { state: true },
     };
@@ -37,8 +44,8 @@ export class ButtonElement extends LitElement {
       ariaDisabled,
       ariaPressed,
       type,
+      value,
     } = this;
-    console.log('this❌❌❌', this.ariaDisabled);
 
     const styles = {
       '--ripple-x': this._position.x,
@@ -49,11 +56,13 @@ export class ButtonElement extends LitElement {
 
     return html`
       <${this.tag}
-      aria-disabled="${ariaDisabled || nothing}"
-      aria-pressed="${ariaPressed || nothing}"
+      ?aria-disabled="${ariaDisabled}"
+      ?aria-pressed="${ariaPressed}"
       type="${type}"
+      popovertarget="${this.popovertarget || nothing}"
       style=${styleMap(styles)}
       @click=${this.handleClick}
+      value="${value || nothing}"
       ><span><slot>Кнопка</slot></span></${this.tag}>
     `;
   }

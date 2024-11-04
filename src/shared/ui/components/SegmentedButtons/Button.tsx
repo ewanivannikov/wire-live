@@ -7,8 +7,6 @@ export const Button = (props) => {
   
   return (
     <ButtonBase
-      tabindex={props['aria-pressed'] ? 0 : -1}
-      aria-pressed="false"
       {...props}
       classList={{ [button]: true, ...props.classList }}
     />

@@ -17,7 +17,7 @@
   --animation-tick: 0;
 }
 
-.root[aria-disabled="true"] {
+.root[aria-disabled] {
   opacity: 0.4;
   cursor: not-allowed;
 }
