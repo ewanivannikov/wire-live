@@ -1,4 +1,3 @@
-import { n } from "@tanstack/query-core/build/legacy/hydration-DHZNyHqg";
 import { arrowToIndexTile } from "../../../modules/Logic/constants";
 import { levels } from "./levels";
 import { patternArrowCache } from "./patternArrowCache";

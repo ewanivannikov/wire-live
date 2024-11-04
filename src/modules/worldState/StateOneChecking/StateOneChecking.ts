@@ -30,7 +30,9 @@ export class StateOneChecking implements IState {
   }
 
   public get isSolved() {
-    const outputArrowListLength = this.context.outputArrowList.list.length
+    const outputArrowListTotalCount = this.context.outputArrowList.list.length;
+    // откуда мы берём список текущих стрелок? из кэша?
+    return false
   }
 
   public returnToSolving() {

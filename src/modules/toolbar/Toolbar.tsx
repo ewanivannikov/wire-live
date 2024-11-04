@@ -36,6 +36,7 @@ export const Toolbar = () => {
       <SegmentedButtons>
         <SegmentedButtons.Button
           value="Brush"
+          aria-disabled={worldState.status !== 'level.play.solving'}
           aria-pressed={tools.currentTool === 'Brush'}
           onClick={handleClick}
         >
@@ -43,6 +44,7 @@ export const Toolbar = () => {
         </SegmentedButtons.Button>
         <SegmentedButtons.Button
           value="Eraser"
+          aria-disabled={worldState.status !== 'level.play.solving'}
           aria-pressed={tools.currentTool === 'Eraser'}
           onClick={handleClick}
         >

@@ -9,7 +9,7 @@ import {
 import { createCamera } from './components/Camera';
 import { createScene } from './components/Scene';
 import tile from '../../assets/atlas.png';
-import { OrbitControls } from 'three/addons/controls/OrbitControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 import { createRenderer } from './systems/Renderer';
 import { Loop } from './systems';
@@ -32,11 +32,14 @@ const tileSize: number = 256;
 const gridRowSize: number = 64;
 
 class World {
-  constructor(container: HTMLElement, private readonly mapId: string) {
+  constructor(
+    private readonly container: HTMLDivElement,
+    private readonly mapId: string
+  ) {
     camera = createCamera(container);
     scene = createScene();
     renderer = createRenderer(container);
-    container.append(renderer.domElement);
+    container.appendChild(renderer.domElement);
     loop = new Loop(camera, scene, renderer);
 
     const logicField = fields;
@@ -74,6 +77,7 @@ class World {
       ) {
         tileMap.onPointerChange(tileIntersect);
       }
+
       if (gridIntersect) {
         const brush = createBrush(tools, worldState);
 
@@ -81,7 +85,10 @@ class World {
           tools.currentTool === ToolType.Brush
             ? brush.currentBrush
             : ToolType.Eraser;
-        if (event.pressure === 0) {
+        const canBeDrawn = worldState.canBeDrawn(gridIntersect);
+        const canBeErased = worldState.canBeErased(gridIntersect);
+
+        if (event.pressure === 0 && (canBeDrawn || canBeErased)) {
           gridIntersect.material.color.set('#f00');
 
           gridIntersect.material.map = texture.getTileTextures(tool);
@@ -89,6 +96,7 @@ class World {
           gridIntersect.material.needsUpdate = true;
         }
       }
+
       if (previousGridIntersect) {
         previousGridIntersect.material.color.set('#69f');
         previousGridIntersect.material.map = null;
@@ -102,12 +110,12 @@ class World {
     controls.maxZoom = 1;
     controls.update(); // NOTE This will place the camera at the default distance
     controls.mouseButtons = {
-      LEFT: -1,
+      LEFT: null,
       MIDDLE: MOUSE.DOLLY,
       RIGHT: MOUSE.PAN,
     };
     controls.touches = {
-      ONE: -1,
+      ONE: null,
       TWO: TOUCH.DOLLY_PAN,
     };
 
@@ -120,6 +128,6 @@ class World {
   }
 }
 
-export const createWorld = (container: HTMLElement, mapId) => {
+export const createWorld = (container: HTMLDivElement, mapId: string) => {
   return new World(container, mapId);
 };

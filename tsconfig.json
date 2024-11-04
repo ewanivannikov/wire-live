@@ -14,6 +14,8 @@
       }
     ],
     "lib": [
+      "dom",
+      "es2022",
       "webworker"
     ]
   }
