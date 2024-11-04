@@ -1,3 +1,4 @@
+import { n } from "@tanstack/query-core/build/legacy/hydration-DHZNyHqg";
 import { arrowToIndexTile } from "../../../modules/Logic/constants";
 import { levels } from "./levels";
 import { patternArrowCache } from "./patternArrowCache";
@@ -12,7 +13,22 @@ export class LevelRepository {
     return patternArrowCache[id]
   }
 
-  //public getOutputArrowKeys
+  public getOutputArrowList = (id = 'DeMorgan') => {
+    const list: string[] = []
+    const index: Record<string, any> = {}
+
+    Object.entries(patternArrowCache[id]).forEach(([key, value]) => {
+      if (value.tileId.includes('.22.')) {
+        index[key] = value;
+        list.push(key)
+      }
+    });
+
+    return {
+      index: Object.keys(index).length ? index : null,
+      list
+    }
+  }
 
   public getRequisite(id = 'DeMorgan') {
     const requisites = levels[id].requisites

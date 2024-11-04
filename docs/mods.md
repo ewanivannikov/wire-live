@@ -70,7 +70,3 @@ classDiagram
 |Состояния уровня|Возможности игрока|Возможности системы|
 |---|---|---|
 
-TODO: 
-1. написать getOutputArrows(хэшмап)
-2. сделать StateBulkChecking
-3. сделать StateCompleted

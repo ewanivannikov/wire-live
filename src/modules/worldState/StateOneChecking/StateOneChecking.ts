@@ -30,7 +30,7 @@ export class StateOneChecking implements IState {
   }
 
   public get isSolved() {
-    const patternArrowKeys = Object.keys(this.context.levelRepo.getPatternArrowCache(this.context.levelId));
+    const outputArrowListLength = this.context.outputArrowList.list.length
   }
 
   public returnToSolving() {
@@ -51,7 +51,7 @@ export class StateOneChecking implements IState {
       this.returnToSolving();
     }
   }
-  
+
   public canBeErased = (tile) => {
     return false
   }

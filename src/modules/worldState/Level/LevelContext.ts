@@ -3,6 +3,7 @@ import { LevelRepository } from "../../../data/repositories/LevelRepository";
 import { RouterService } from "../../../shared/services/RouterService";
 import { Fields } from "../../Logic/Base";
 import { IState } from "../types";
+import { output } from "../../../../webpack.common";
 
 // Класс контекста, управляющий состояниями
 export class LevelContext {
@@ -58,5 +59,9 @@ export class LevelContext {
 
   public get level() {
     return this.levelRepo.getLevelById(this.levelId);
+  }
+
+  public get outputArrowList() {
+    return this.levelRepo.getOutputArrowList(this.levelId);
   }
 }

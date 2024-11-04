@@ -1,3 +1,4 @@
+import { makeAutoObservable } from "mobx";
 import { LevelContext } from "../Level";
 import { StateOneChecking } from "../StateOneChecking";
 import { IState } from "../types";
@@ -5,7 +6,9 @@ import { IState } from "../types";
 // Состояние "Solving"
 export class StateSolving implements IState {
 
-  constructor(private readonly context: LevelContext) { }
+  constructor(private readonly context: LevelContext) {
+    makeAutoObservable(this);
+  }
 
   public handleNext() {
     console.log('Переход на one checking');
