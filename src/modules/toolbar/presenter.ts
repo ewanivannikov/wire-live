@@ -24,18 +24,21 @@ class Tools {
     this._logicField = logicField;
     this._tileMap = tileMap;
     tileMap.onPointerChange = (tile) => {
-      const canBeDeleted = this.worldState.modeContext.state.canBeDeleted(tile)
+      const canBeErased = this.worldState.canBeErased(tile)
+      const canBeDrawn = this.worldState.canBeDrawn(tile)
       const isEraser = this.currentTool === ToolType.Eraser
-      const isSolving = (`level.play.solving` === this.worldState.status) && this._logicField.paused
+      const isBrush = this.currentTool === ToolType.Brush
+      const isPan = this.currentTool === ToolType.Pan
+      console.log(canBeDrawn);
 
-      if (canBeDeleted && isEraser && isSolving) {
+      if (canBeErased && isEraser) {
         //НАЙДИ БАГ СВЯЗАННЫЙ С ПАУЗОЙ, РИСОВАНИЕМ И СТИРАНИЕМ. ГДЕ-ТО В onPointerMove!
         this.erase(tile);
       }
-      if (this.currentTool === ToolType.Brush) {
+      if (canBeDrawn && isBrush) {
         this._tileMap.updateTile(tile);
       }
-      if (this.currentTool === ToolType.Pan) {
+      if (isPan) {
         if (tile.userData.type?.includes('20') || tile.userData.type?.includes('23')) {
           this._logicField.addSignal(tile.name, 1);
         }

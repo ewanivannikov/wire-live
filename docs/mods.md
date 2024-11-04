@@ -71,6 +71,6 @@ classDiagram
 |---|---|---|
 
 TODO: 
-1. доделать one checking: плей, isValid, isSolved
+1. написать getOutputArrows(хэшмап)
 2. сделать StateBulkChecking
 3. сделать StateCompleted

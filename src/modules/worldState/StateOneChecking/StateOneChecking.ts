@@ -1,3 +1,4 @@
+import { makeAutoObservable } from "mobx";
 import { LevelContext } from "../Level";
 import { StateBulkChecking } from "../StateBulkChecking";
 import { StateSolving } from "../StateSolving";
@@ -6,7 +7,9 @@ import { IState } from "../types";
 // Состояние "OneChecking"
 export class StateOneChecking implements IState {
 
-  constructor(private readonly context: LevelContext) { }
+  constructor(private readonly context: LevelContext) {
+    makeAutoObservable(this);
+  }
 
   public handleNext() {
     console.log("В состоянии OneChecking: Запуск единичной проверки симуляции и валидации");
@@ -26,6 +29,10 @@ export class StateOneChecking implements IState {
     console.log("Возобновление");
   }
 
+  public get isSolved() {
+    const patternArrowKeys = Object.keys(this.context.levelRepo.getPatternArrowCache(this.context.levelId));
+  }
+
   public returnToSolving() {
     console.log("Возвращение в состояние solving");
     this.context.logicField.clearStates();
@@ -43,5 +50,13 @@ export class StateOneChecking implements IState {
       console.log("Output не валиден, возвращение в состояние Solving");
       this.returnToSolving();
     }
+  }
+  
+  public canBeErased = (tile) => {
+    return false
+  }
+
+  public canBeDrawn = (tile) => {
+    return false
   }
 }

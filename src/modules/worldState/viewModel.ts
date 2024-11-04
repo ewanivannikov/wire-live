@@ -63,6 +63,14 @@ export class WorldState {
       this.logicField.updatePause();
     }
   }
+
+  public canBeErased = (tile) => {
+    return this.modeContext.state.canBeErased(tile)
+  }
+
+  public canBeDrawn = (tile) => {
+    return this.modeContext.state.canBeDrawn(tile)
+  }
 }
 
 export const worldState = new WorldState(routerService, fields, levelRepository);

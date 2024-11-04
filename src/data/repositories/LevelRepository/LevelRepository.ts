@@ -12,6 +12,8 @@ export class LevelRepository {
     return patternArrowCache[id]
   }
 
+  //public getOutputArrowKeys
+
   public getRequisite(id = 'DeMorgan') {
     const requisites = levels[id].requisites
     let result = {}

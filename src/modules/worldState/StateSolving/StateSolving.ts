@@ -22,7 +22,15 @@ export class StateSolving implements IState {
     console.log("Стирание стрелок");
   }
 
-  public canBeDeleted = (tile) => {
+  public canBeErased = (tile) => {
+    const result = this.context.level.map.find((tileData) => {
+      const name = [tileData.x, tileData.y].join(',');
+      return name === tile.name
+    })
+    return !result
+  }
+
+  public canBeDrawn = (tile) => {
     const result = this.context.level.map.find((tileData) => {
       const name = [tileData.x, tileData.y].join(',');
       return name === tile.name

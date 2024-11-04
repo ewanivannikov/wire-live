@@ -1,10 +1,11 @@
 import { Fields } from './Base';
 import { ArrowBase } from './ArrowBase';
+import { makeAutoObservable } from 'mobx';
 
 class OutputArrow extends ArrowBase {
   public index = -1;
   public loop = 0;
-  public isValid = true;
+  public isValidIn = true;
   constructor(
     position: string,
     public pattern: number[] = [1],
@@ -63,6 +64,10 @@ class OutputArrow extends ArrowBase {
   }
 
   activeStates(fields: Fields) {
+  }
+
+  public get isValid() {
+    return this.isValidIn && this.waiting === 0;
   }
 }
 
