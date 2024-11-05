@@ -13,7 +13,7 @@ export class StateOneChecking implements IState {
 
   public handleNext() {
     console.log("В состоянии OneChecking: Запуск единичной проверки симуляции и валидации");
-    this.validateSingleOutput(true);
+    this.validateSingleOutput(this.isSolved);
   }
 
   public handlePrev() {
@@ -30,9 +30,10 @@ export class StateOneChecking implements IState {
   }
 
   public get isSolved() {
-    const outputArrowListTotalCount = this.context.outputArrowList.list.length;
+    // const outputArrowListTotalCount = this.context.outputArrowList.list.length;
     // откуда мы берём список текущих стрелок? из кэша?
-    return false
+    const retsult = this.context.outputArrowListState.every(entry => entry.state === 'Venus')
+    return retsult
   }
 
   public returnToSolving() {

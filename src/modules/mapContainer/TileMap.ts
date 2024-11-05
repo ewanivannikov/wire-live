@@ -40,7 +40,7 @@ class TileMap {
     private readonly grid,
     private readonly mapId,
   ) {
-    
+
     const cashe = logicField.initCashe(this.levelRepo.getLevelById(this.mapId).map);
 
     this.init(cashe);
@@ -51,7 +51,7 @@ class TileMap {
       this.logicField.stateCache.forEach((value, key) => {
         const sprite = this.grid.group.getObjectByName(key);
 
-        if (value === 'None') {
+        if (value === 'None' || value === 'Wait') {
           sprite.material.opacity = 0;
           sprite.material.needsUpdate = true;
           return;

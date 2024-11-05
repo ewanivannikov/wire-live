@@ -1,5 +1,5 @@
 import { Listbox, Popover, SegmentedButtons } from '../../shared';
-import { For, Show } from 'solid-js';
+import { createEffect, For, Show } from 'solid-js';
 import { brushRepository } from '../../data/repositories';
 import { createBrush } from './presenter';
 import { iconDirectionMapping, iconsMapping } from '../brushes';
@@ -18,6 +18,11 @@ export const ContextBar = () => {
   const handleClick = (el) => {
     state.setCurrentBrush(el.id);
   };
+
+  createEffect(() => {
+    console.log('worldState isSolved', worldState.modeContext.state.context.state.isSolved);
+    
+  }, null);
 
   return (
     <>

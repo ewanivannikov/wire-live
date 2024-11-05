@@ -46,7 +46,7 @@ export class LevelContext {
       arrow.loop = 0;
       if (this.levelRepo.getPatternArrowCache(this.levelId)[key].tileId.includes('22')) {
         arrow.waiting = req[key].waiting;
-        // arrow.isValid = true;
+        arrow.isValidIn = true;
       }
       this.logicField.addArrow(coord, arrow);
       // для каждого ключа стрелки из реквизитов надо найти координату в поле стрелок пользака. Затем по координатам найти нужные инпуты и оутпуты и используя данные из реквизитов изменить их внутренние характеристики
@@ -63,5 +63,10 @@ export class LevelContext {
 
   public get outputArrowList() {
     return this.levelRepo.getOutputArrowList(this.levelId);
+  }
+
+  // экспериментальный метод
+  public get outputArrowListState() {
+    return Array.from(this.logicField.arrowCache.values()).filter((value) => value.name === 'OutputArrow');
   }
 }

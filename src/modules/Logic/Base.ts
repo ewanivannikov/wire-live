@@ -4,12 +4,13 @@ import { Tile } from '../toolbar';
 import { indexTileToArrow } from './constants';
 import { Direction, Flip } from './types';
 import { ArrowBase } from './ArrowBase';
+import { observable } from 'mobx';
 
 export class Fields {
   // key - Position
-  public signalCache = new Map(); // integer
+  public signalCache = new Map<string, number>(); // integer
   public newSignalCache = new Map();
-  public stateCache = new Map(); // string(state)
+  public stateCache = observable(new Map()); // string(state)
   public arrowCache = new Map(); // arrow
   public paused = false;
 
@@ -118,6 +119,7 @@ export class Fields {
 
   processingLogic() {
     if (!this.paused) {
+
       this.clearStates();
 
       this.arrowCache.forEach((arrow) => {

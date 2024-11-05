@@ -19,7 +19,7 @@ export class ArrowBase {
     fields.addState(this.position.coordinates, this);
   }
 
-  conditionStates(fields: Fields) {}
+  conditionStates(fields: Fields) { }
 
-  activeStates(fields: Fields) {}
+  activeStates(fields: Fields) { }
 }
