@@ -6,14 +6,22 @@ import { IState } from "../types";
 
 // Состояние "OneChecking"
 export class StateOneChecking implements IState {
+  public isSolved = false;
 
   constructor(private readonly context: LevelContext) {
     makeAutoObservable(this);
+    this.context.checkSolution().then(() => {
+      console.log("Output валиден, переход в состояние BulkChecking");
+      this.isSolved = true;
+      this.context.setState(new StateBulkChecking(this.context));
+    }).catch(() => {
+      console.log("Output не валиден, возвращение в состояние Solving");
+      this.returnToSolving();
+    });
   }
 
   public handleNext() {
     console.log("В состоянии OneChecking: Запуск единичной проверки симуляции и валидации");
-    this.validateSingleOutput(this.isSolved);
   }
 
   public handlePrev() {
@@ -21,20 +29,13 @@ export class StateOneChecking implements IState {
     this.returnToSolving();
   }
 
-  public pause() {
-    console.log("Пауза");
-  }
+  // public pause() {
+  //   console.log("Пауза");
+  // }
 
-  public resume() {
-    console.log("Возобновление");
-  }
-
-  public get isSolved() {
-    // const outputArrowListTotalCount = this.context.outputArrowList.list.length;
-    // откуда мы берём список текущих стрелок? из кэша?
-    const retsult = this.context.outputArrowListState.every(entry => entry.state === 'Venus')
-    return retsult
-  }
+  // public resume() {
+  //   console.log("Возобновление");
+  // }
 
   public returnToSolving() {
     console.log("Возвращение в состояние solving");
@@ -43,16 +44,6 @@ export class StateOneChecking implements IState {
     this.context.logicField.clearArrowsStates();
     this.context.logicField.paused = true;
     this.context.setState(new StateSolving(this.context));
-  }
-
-  private validateSingleOutput(isValid: boolean) {
-    if (isValid) {
-      console.log("Output валиден, переход в состояние BulkChecking");
-      this.context.setState(new StateBulkChecking(this.context));
-    } else {
-      console.log("Output не валиден, возвращение в состояние Solving");
-      this.returnToSolving();
-    }
   }
 
   public canBeErased = (tile) => {

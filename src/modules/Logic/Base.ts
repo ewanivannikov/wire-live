@@ -117,6 +117,15 @@ export class Fields {
     this.paused = !this.paused;
   }
 
+  public checkSolution = async () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // resolve('done');
+        reject(new Error('error'));
+      }, 1000);
+    });
+  }
+
   processingLogic() {
     if (!this.paused) {
 

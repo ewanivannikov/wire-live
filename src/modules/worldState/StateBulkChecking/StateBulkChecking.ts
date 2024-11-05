@@ -26,4 +26,12 @@ export class StateBulkChecking implements IState {
       this.handlePrev();
     }
   }
+
+  public canBeErased = (tile) => {
+    return false
+  }
+
+  public canBeDrawn = (tile) => {
+    return false
+  }
 }
