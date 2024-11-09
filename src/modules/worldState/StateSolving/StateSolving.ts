@@ -5,6 +5,7 @@ import { IState } from "../types";
 
 // Состояние "Solving"
 export class StateSolving implements IState {
+  public status = 'level.play.solving';
 
   constructor(private readonly context: LevelContext) {
     makeAutoObservable(this);

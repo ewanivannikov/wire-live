@@ -7,6 +7,7 @@ import { IState } from "../types";
 // Состояние "OneChecking"
 export class StateOneChecking implements IState {
   public isSolved = false;
+  public status = 'level.play.checking.one';
 
   constructor(private readonly context: LevelContext) {
     makeAutoObservable(this);

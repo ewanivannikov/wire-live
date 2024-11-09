@@ -2,7 +2,7 @@ import { Button, SegmentedButtons } from '../../shared';
 import styles from './style.module.css';
 import { Highlighter, Eraser, Play, Pause, Hand, Save, SendHorizontal, Pencil } from 'lucide-solid';
 import { tools } from './presenter';
-import { Match, Switch } from 'solid-js';
+import { createEffect, Match, Switch } from 'solid-js';
 import { worldState } from '../worldState';
 
 const { toolbar } = styles;
@@ -26,6 +26,10 @@ export const Toolbar = () => {
   const handleClickSave = () => {
     tools.saveMap();
   };
+  createEffect(() => {
+    console.log('worldState.status', worldState.status);
+    
+  })
   return (
     <div
       role="toolbar"

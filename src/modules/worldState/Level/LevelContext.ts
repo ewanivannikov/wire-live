@@ -6,7 +6,7 @@ import { IState } from "../types";
 
 // Класс контекста, управляющий состояниями
 export class LevelContext {
-  private state: IState;
+  private state: IState = {status: 'level.play.solving'};
 
   constructor(
     private readonly levelRepo: LevelRepository,
@@ -23,6 +23,7 @@ export class LevelContext {
 
 
   public next() {
+    console.log(this.state);
     this.state.handleNext();
   }
 

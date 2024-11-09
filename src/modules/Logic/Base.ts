@@ -4,15 +4,21 @@ import { Tile } from '../toolbar';
 import { indexTileToArrow } from './constants';
 import { Direction, Flip } from './types';
 import { ArrowBase } from './ArrowBase';
-import { observable } from 'mobx';
+import { action, makeObservable, observable, runInAction } from 'mobx';
 
 export class Fields {
   // key - Position
   public signalCache = new Map<string, number>(); // integer
   public newSignalCache = new Map();
-  public stateCache = observable(new Map()); // string(state)
+  public stateCache = new Map(); // string(state)
   public arrowCache = new Map(); // arrow
   public paused = false;
+  private solved = 'idle';
+  constructor() {
+    makeObservable({
+      solved: observable,
+    })
+  }
 
   getSignal(key: string) {
     if (!this.signalCache.has(key)) {
@@ -119,16 +125,21 @@ export class Fields {
 
   public checkSolution = async () => {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // resolve('done');
-        reject(new Error('error'));
-      }, 1000);
+      
+      runInAction(() => {
+        console.log(this.solved);
+        if (this.solved === 'rejected'){
+          reject();
+        } else if (this.solved === 'resolved'){
+          resolve(true);
+        }
+      });
     });
   }
 
   processingLogic() {
     if (!this.paused) {
-
+      let states: string[] = [];
       this.clearStates();
 
       this.arrowCache.forEach((arrow) => {
@@ -140,7 +151,12 @@ export class Fields {
 
       this.arrowCache.forEach((arrow) => {
         arrow.conditionStates(this);
+        if (arrow.name === 'OutputArrow') {
+          states.push(arrow.state);
+        }
       });
+
+      this.solved = states.every((item) => item === 'Venus') ? 'resolved' : 'rejected';
     }
   }
 }
