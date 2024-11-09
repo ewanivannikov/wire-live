@@ -1,14 +1,16 @@
 import { makeAutoObservable } from "mobx";
 import { type RouterService, routerService } from "../../shared/services";
 import { fields, type Fields } from "../Logic/Base";
-import { Loop } from "../mapContainer/systems";
+import { type Loop } from "../mapContainer/systems";
 import { LevelRepository, levelRepository } from "../../data";
 import { LevelContext } from "./Level";
-import { StateSolving } from "./StateSolving";
+import { createStateSolving } from "./StateSolving";
 
 export class WorldState {
   status = 'level.play.solving';
-  tick = this.initTick();
+  // tick = this.initTick();
+  public isPaused = true;
+  mode = 'level';
   modeContext = this.initMode();
 
   constructor(
@@ -19,20 +21,20 @@ export class WorldState {
     makeAutoObservable(this);
   }
 
-  private initTick() {
-    if (this.status === 'level.play.solving') {
-      this.logicField.paused = true;
-      return 0
-    } else {
-      this.logicField.paused = false;
-      return 500
-    }
-  }
+  // private initTick() {
+  //   if (this.status === 'level.play.solving') {
+  //     this.logicField.paused = true;
+  //     return 0
+  //   } else {
+  //     this.logicField.paused = false;
+  //     return 500
+  //   }
+  // }
 
   private initMode(): LevelContext {
-    if (this.status.includes('level')) {
+    if (this.mode === 'level') {
       const context = new LevelContext(this.levelRepo, this.routerServ, this.logicField);
-      context.setState(new StateSolving(context));
+      context.setState(createStateSolving(context));
       return context;
     }
   }
@@ -40,27 +42,27 @@ export class WorldState {
   public switchStatusOnLevelOneChecking() {
     this.modeContext.next();
     this.status = 'level.play.checking.one';
-    this.tick = 500;
+    this.isPaused = false;
+    // this.tick = 500;
   }
 
   public switchStatusOnLevelSolving() {
     this.modeContext.prev();
     this.status = 'level.play.solving';
-    this.tick = 0;
+    // this.tick = 0;
   }
 
   public get levelId() {
     return this.routerServ.params.levelId;
   }
 
-  public togglePause(loop: Loop) {
-    if (this.tick > 0) {
-      this.tick = 0;
-      this.logicField.updatePause();
+  public togglePause() {
+    if (this.isPaused) {
+      this.modeContext.state.resume();
+      this.isPaused = false;
     } else {
-      this.tick = 500;
-      loop.setDuration(500);
-      this.logicField.updatePause();
+      this.modeContext.state.pause();
+      this.isPaused = true;
     }
   }
 

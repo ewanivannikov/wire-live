@@ -12,7 +12,7 @@ import tile from '../../assets/atlas.png';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 import { createRenderer } from './systems/Renderer';
-import { Loop } from './systems';
+import { loop } from './systems';
 import { createGrid } from './Grid';
 import { createTileSet } from './TileSet';
 import { createTileMap } from './TileMap';
@@ -26,7 +26,7 @@ import { worldState } from '../worldState';
 let camera: OrthographicCamera;
 let renderer: WebGLRenderer;
 let scene: Scene;
-let loop: Loop;
+// let loop: Loop;
 
 const tileSize: number = 256;
 const gridRowSize: number = 64;
@@ -40,7 +40,7 @@ class World {
     scene = createScene();
     renderer = createRenderer(container);
     container.appendChild(renderer.domElement);
-    loop = new Loop(camera, scene, renderer);
+    loop.init(camera, scene, renderer);
 
     const logicField = fields;
 

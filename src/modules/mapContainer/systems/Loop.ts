@@ -1,16 +1,18 @@
-import { Clock } from 'three';
+import { Clock, OrthographicCamera } from 'three';
 
 const clock = new Clock();
 
-class Loop {
+export class Loop {
   public updatables = [];
   private duration = 500;
+  private camera: OrthographicCamera;
+  private scene
+  private renderer
 
-  constructor(
-    private readonly camera,
-    scene,
-    renderer,
-  ) {
+  constructor() {
+  }
+
+  public init = (camera, scene, renderer) => {
     this.camera = camera;
     this.scene = scene;
     this.renderer = renderer;
@@ -58,4 +60,4 @@ class Loop {
   }
 }
 
-export { Loop };
+export const loop = new Loop();

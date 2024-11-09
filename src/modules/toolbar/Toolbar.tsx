@@ -66,14 +66,14 @@ export const Toolbar = () => {
       <Button
         name="Play"
         aria-disabled={worldState.status === 'level.play.solving'}
-        aria-pressed={worldState.tick === 0}
+        aria-pressed={worldState.isPaused}
         onClick={handleClickTick}
       >
         <Switch>
-          <Match when={worldState.tick === 0}>
+          <Match when={worldState.isPaused}>
             <Play />
           </Match>
-          <Match when={worldState.tick > 0}>
+          <Match when={!worldState.isPaused}>
             <Pause />
           </Match>
         </Switch>

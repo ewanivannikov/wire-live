@@ -1,19 +1,24 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 import { LevelContext } from "../Level";
 import { StateBulkChecking } from "../StateBulkChecking";
 import { StateSolving } from "../StateSolving";
 import { IState } from "../types";
+import { type Loop, loop as loopInstance } from "../../mapContainer/systems";
 
 // Состояние "OneChecking"
 export class StateOneChecking implements IState {
   public isSolved = false;
   public status = 'level.play.checking.one';
 
-  constructor(private readonly context: LevelContext) {
+  constructor(private readonly context: LevelContext, private readonly loop: Loop) {
     makeAutoObservable(this);
+    this.loop.setDuration(500);
+    this.context.logicField.paused = false;
     this.context.checkSolution().then(() => {
       console.log("Output валиден, переход в состояние BulkChecking");
-      this.isSolved = true;
+
+      runInAction(() => { this.isSolved = true });
+
       this.context.setState(new StateBulkChecking(this.context));
     }).catch(() => {
       console.log("Output не валиден, возвращение в состояние Solving");
@@ -30,13 +35,17 @@ export class StateOneChecking implements IState {
     this.returnToSolving();
   }
 
-  // public pause() {
-  //   console.log("Пауза");
-  // }
+  public pause() {
+    console.log("Пауза");
+    this.loop.setDuration(0);
+    this.context.logicField.paused = true;
+  }
 
-  // public resume() {
-  //   console.log("Возобновление");
-  // }
+  public resume() {
+    console.log("Возобновление");
+    this.loop.setDuration(500);
+    this.context.logicField.paused = false;
+  }
 
   public returnToSolving() {
     console.log("Возвращение в состояние solving");
@@ -54,4 +63,8 @@ export class StateOneChecking implements IState {
   public canBeDrawn = (tile) => {
     return false
   }
+}
+
+export const createStateOneChecking = (context: LevelContext) => {
+  return new StateOneChecking(context, loopInstance);
 }

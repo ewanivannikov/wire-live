@@ -4,7 +4,7 @@ import { Tile } from '../toolbar';
 import { indexTileToArrow } from './constants';
 import { Direction, Flip } from './types';
 import { ArrowBase } from './ArrowBase';
-import { action, makeObservable, observable, runInAction } from 'mobx';
+import { makeObservable, observable, reaction, runInAction } from 'mobx';
 
 export class Fields {
   // key - Position
@@ -13,9 +13,9 @@ export class Fields {
   public stateCache = new Map(); // string(state)
   public arrowCache = new Map(); // arrow
   public paused = false;
-  private solved = 'idle';
+  public solved = 'waiting';
   constructor() {
-    makeObservable({
+    makeObservable(this, {
       solved: observable,
     })
   }
@@ -125,21 +125,24 @@ export class Fields {
 
   public checkSolution = async () => {
     return new Promise((resolve, reject) => {
-      
-      runInAction(() => {
-        console.log(this.solved);
-        if (this.solved === 'rejected'){
-          reject();
-        } else if (this.solved === 'resolved'){
-          resolve(true);
+      reaction(
+        () => this.solved,
+        solved => {
+          console.log("Result:", this.solved)
+          if (solved === 'rejected') {
+            reject(new Error('Mars'));
+          }
+          if (solved === 'resolved') {
+            resolve(true);
+          }
         }
-      });
+      )
     });
   }
 
   processingLogic() {
     if (!this.paused) {
-      let states: string[] = [];
+      const states: string[] = [];
       this.clearStates();
 
       this.arrowCache.forEach((arrow) => {
@@ -155,8 +158,19 @@ export class Fields {
           states.push(arrow.state);
         }
       });
-
-      this.solved = states.every((item) => item === 'Venus') ? 'resolved' : 'rejected';
+      runInAction(() => {
+        for (const state of states) {
+          if (state === "Mars") {
+            this.solved = "rejected";
+            return;
+          }
+          if (state === "Wait") {
+            this.solved = "waiting";
+            return;
+          }
+        }
+        this.solved = "resolved";
+      })
     }
   }
 }

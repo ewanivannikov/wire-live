@@ -6,7 +6,9 @@ import { IState } from "../types";
 
 // Класс контекста, управляющий состояниями
 export class LevelContext {
-  private state: IState = {status: 'level.play.solving'};
+  private state: IState = {
+    status: 'level.play.solving',
+  };
 
   constructor(
     private readonly levelRepo: LevelRepository,

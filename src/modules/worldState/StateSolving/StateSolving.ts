@@ -1,21 +1,26 @@
 import { makeAutoObservable } from "mobx";
 import { LevelContext } from "../Level";
-import { StateOneChecking } from "../StateOneChecking";
+import { createStateOneChecking, StateOneChecking } from "../StateOneChecking";
 import { IState } from "../types";
+import { type Loop, loop as loopInstance } from "../../mapContainer/systems";
 
 // Состояние "Solving"
 export class StateSolving implements IState {
   public status = 'level.play.solving';
 
-  constructor(private readonly context: LevelContext) {
+  constructor(private readonly context: LevelContext, private readonly loop: Loop) {
     makeAutoObservable(this);
+    console.log('this.loop', this.loop);
+
+    this.loop.setDuration(0);
+    this.context.logicField.paused = true;
   }
 
   public handleNext() {
     console.log('Переход на one checking');
-    this.context.setState(new StateOneChecking(this.context));
+    this.context.setState(createStateOneChecking(this.context));
     this.context.initRequisites()
-    this.context.logicField.paused = false;
+    // this.context.logicField.paused = false;
   }
 
   public draw() {
@@ -41,4 +46,8 @@ export class StateSolving implements IState {
     })
     return !result
   }
+}
+
+export const createStateSolving = (context: LevelContext) => {
+  return new StateSolving(context, loopInstance);
 }
