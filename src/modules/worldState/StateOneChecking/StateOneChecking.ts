@@ -1,9 +1,11 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import { LevelContext } from "../Level";
 import { StateBulkChecking } from "../StateBulkChecking";
-import { createStateSolving, StateSolving } from "../StateSolving";
+import { createStateSolving } from "../StateSolving";
 import { IState } from "../types";
 import { type Loop, loop as loopInstance } from "../../mapContainer/systems";
+import { emitter } from "../../../shared/services/EventEmitterService";
+import { solutionChecked } from "../../Logic/Base";
 
 // Состояние "OneChecking"
 export class StateOneChecking implements IState {
@@ -14,13 +16,18 @@ export class StateOneChecking implements IState {
     makeAutoObservable(this);
     this.loop.setDuration(500);
     this.context.logicField.paused = false;
-    this.context.checkSolution().then(() => {
-      console.log("Output валиден, переход в состояние BulkChecking");
-      runInAction(() => { this.isSolved = true });
-      this.context.setState(new StateBulkChecking(this.context));
-    }).catch(() => {
-      console.log("Output не валиден, возвращение в состояние Solving");
-      this.returnToSolving();
+
+    emitter.once(solutionChecked).then(data => {
+      console.log(data);
+      if (data === 'resolved') {
+        console.log("Output валиден, переход в состояние BulkChecking");
+        runInAction(() => { this.isSolved = true });
+        this.context.setState(new StateBulkChecking(this.context));
+      }
+      if (data === 'rejected') {
+        console.log("Output не валиден, возвращение в состояние Solving");
+        this.returnToSolving();
+      }
     });
   }
 
@@ -49,7 +56,6 @@ export class StateOneChecking implements IState {
     this.context.logicField.clearStates();
     this.context.logicField.clearSignals();
     this.context.logicField.clearArrowsStates();
-    this.context.logicField.paused = true;
     this.context.setState(createStateSolving(this.context));
   }
 

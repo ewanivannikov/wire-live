@@ -4,7 +4,9 @@ import { Tile } from '../toolbar';
 import { indexTileToArrow } from './constants';
 import { Direction, Flip } from './types';
 import { ArrowBase } from './ArrowBase';
-import { makeObservable, observable, reaction, runInAction } from 'mobx';
+import { emitter } from '../../shared/services/EventEmitterService';
+
+export const solutionChecked = Symbol('solutionChecked');
 
 export class Fields {
   // key - Position
@@ -13,13 +15,6 @@ export class Fields {
   public stateCache = new Map(); // string(state)
   public arrowCache = new Map(); // arrow
   public paused = false;
-  public solved = 'waiting';
-  public solved0 = 'waiting';
-  constructor() {
-    makeObservable(this, {
-      solved: observable,
-    })
-  }
 
   getSignal(key: string) {
     if (!this.signalCache.has(key)) {
@@ -124,27 +119,9 @@ export class Fields {
     this.paused = !this.paused;
   }
 
-  public checkSolution = async () => {
-    return new Promise((resolve, reject) => {
-      const dispose = reaction(
-        () => this.solved,
-        solved => {
-          console.log("Result:", this.solved)
-          if (solved === 'rejected') {
-            reject(new Error('Mars'));
-          }
-          if (solved === 'resolved') {
-            resolve(true);
-          }
-          dispose(); // Dispose of the reaction once the promise is settled
-        }
-      )
-    });
-  }
+  public processingLogic = (cb) => {
 
-  public processingLogic = () => {
     if (!this.paused) {
-      runInAction(() => { this.solved = this.solved0; });
       const outputs: string[] = [];
       this.clearStates();
 
@@ -157,16 +134,20 @@ export class Fields {
 
       this.arrowCache.forEach((arrow) => {
         arrow.conditionStates(this);
+
         if (arrow.name === 'OutputArrow') {
           outputs.push(arrow.validated);
         }
+
+        cb(arrow);
       });
 
-      runInAction(() => {
-        if (outputs.includes('rejected')) { this.solved0 = 'rejected'; }
-        else if (outputs.every((item) => item === 'resolved')) { this.solved0 = 'resolved'; }
-        else { this.solved0 = 'waiting'; }
-      })
+      if (outputs.includes('rejected')) {
+        emitter.emit(solutionChecked, 'rejected');
+      }
+      else if (outputs.every((item) => item === 'resolved')) {
+        emitter.emit(solutionChecked, 'resolved');
+      }
     }
   }
 }

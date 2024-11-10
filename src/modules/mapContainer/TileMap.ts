@@ -9,16 +9,6 @@ import type { TileId } from '../../data';
 import { LevelRepository, levelRepository } from '../../data';
 import { Fields } from '../Logic/Base';
 
-// Example tilemap data (replace with your actual data)
-// const tileData = [
-//   { tileId: 'Brush.1', x: 0, y: 0 },
-//   { tileId: 'Brush.0.Up', x: 0, y: -1 },
-//   { tileId: 'Brush.3.Up', x: 0, y: -2 },
-//   { tileId: 'Brush.0.Up', x: 0, y: -3 },
-//   { tileId: 'Brush.0.Up', x: 0, y: -4 },
-//   { tileId: 'Brush.0.Up', x: 0, y: -5 },
-// ];
-
 const hex = {
   Earth: 0x17d3e8,
   Saturn: 0x00a7bb,
@@ -46,22 +36,21 @@ class TileMap {
     this.init(cashe);
   }
 
+  private addStateSpriteByArrow = (arrow) => {
+    const sprite = this.grid.group.getObjectByName(arrow.key);
+    if (arrow.state === 'None' || arrow.state === 'Wait') {
+      sprite.material.opacity = 0;
+      sprite.material.needsUpdate = true;
+      return;
+    }
+    sprite.material.color = new THREE.Color(hex[arrow.state]);
+    sprite.material.opacity = 1;
+    sprite.material.needsUpdate = true;
+  }
+
   init = (cashe) => {
     this.grid.group.tick = () => {
-      this.logicField.processingLogic();
-
-      this.logicField.stateCache.forEach((value, key) => {
-        const sprite = this.grid.group.getObjectByName(key);
-
-        if (value === 'None' || value === 'Wait') {
-          sprite.material.opacity = 0;
-          sprite.material.needsUpdate = true;
-          return;
-        }
-        sprite.material.color = new THREE.Color(hex[value]);
-        sprite.material.opacity = 1;
-        sprite.material.needsUpdate = true;
-      });
+      this.logicField.processingLogic(this.addStateSpriteByArrow);
     };
 
     this.loop.addTick(this.grid.group);
@@ -179,6 +168,13 @@ class TileMap {
     const sprite = this.grid.group.getObjectByName(`${x},${y}`);
     sprite.material.opacity = opacity;
     sprite.material.color = new THREE.Color(hex[color]);
+    sprite.material.needsUpdate = true;
+  };
+
+  public clearStateSprite = () => {
+    const sprite = this.grid.group.getObjectByName(arrow.key);
+    sprite.material.opacity = 0;
+    sprite.material.color = new THREE.Color(hex.None);
     sprite.material.needsUpdate = true;
   };
 

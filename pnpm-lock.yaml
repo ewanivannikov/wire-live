@@ -26,6 +26,9 @@ importers:
       dat.gui:
         specifier: ^0.7.9
         version: 0.7.9
+      emittery:
+        specifier: ^1.0.3
+        version: 1.0.3
       ky:
         specifier: ^1.7.2
         version: 1.7.2
@@ -1378,6 +1381,10 @@ packages:
 
   electron-to-chromium@1.4.818:
     resolution: {integrity: sha512-eGvIk2V0dGImV9gWLq8fDfTTsCAeMDwZqEPMr+jMInxZdnp9Us8UpovYpRCf9NQ7VOFgrN2doNSgvISbsbNpxA==}
+
+  emittery@1.0.3:
+    resolution: {integrity: sha512-tJdCJitoy2lrC2ldJcqN4vkqJ00lT+tOWNT1hBJjO/3FDMJa5TTIiYGCKGkn/WfCyOzUMObeohbVTj00fhiLiA==}
+    engines: {node: '>=14.16'}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -5008,6 +5015,8 @@ snapshots:
   ee-first@1.1.1: {}
 
   electron-to-chromium@1.4.818: {}
+
+  emittery@1.0.3: {}
 
   emoji-regex@8.0.0: {}
 
