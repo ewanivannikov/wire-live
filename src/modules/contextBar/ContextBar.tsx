@@ -1,31 +1,26 @@
 import { Listbox, Popover, SegmentedButtons } from '../../shared';
 import { createEffect, For, Show } from 'solid-js';
 import { brushRepository } from '../../data/repositories';
-import { createBrush } from './presenter';
+import { brush } from './presenter';
 import { iconDirectionMapping, iconsMapping } from '../brushes';
-import { tools } from '../toolbar/presenter';
 import { Dynamic } from 'solid-js/web';
 import styles from './style.module.css';
 import { InputArrow } from './InputArrow';
 import { OutputArrow } from './OutputArrow';
 import { Info } from 'lucide-solid';
-import { worldState } from '../worldState';
 
 const { contextbar } = styles;
 
 export const ContextBar = () => {
-  const state = createBrush(tools, worldState);
+  const state = brush;
+
   const handleClick = (el) => {
     state.setCurrentBrush(el.id);
   };
 
-  createEffect(() => {
-    console.log('worldState isSolved', worldState.modeContext.state.context.state.isSolved);
-    
-  }, null);
-
   return (
     <>
+    <Show when={state.allowPanel}>
     <Show when={state.allowBrushes}>
       <Popover.Target popovertarget="brushes-info">
         <Info />
@@ -103,7 +98,7 @@ export const ContextBar = () => {
         <OutputArrow />
       </div>
     </Show>
-    <Show when={tools.currentTool === 'Eraser'}>
+    <Show when={state.currentTool === 'Eraser'}>
       <Popover.Target popovertarget="eraser-info">
         <Info />
       </Popover.Target>
@@ -111,13 +106,14 @@ export const ContextBar = () => {
         Cтирает любую стрелочку с поля
       </Popover>
     </Show>
-    <Show when={tools.currentTool === 'Pan'}>
+    <Show when={state.currentTool === 'Pan'}>
       <Popover.Target popovertarget="pan-info">
         <Info />
       </Popover.Target>
       <Popover id="pan-info">
         Даёт возможность нажимать на стрелочки-кнопки
       </Popover>
+    </Show>
     </Show>
     </>
   );

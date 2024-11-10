@@ -29,10 +29,9 @@ class Tools {
       const isEraser = this.currentTool === ToolType.Eraser
       const isBrush = this.currentTool === ToolType.Brush
       const isPan = this.currentTool === ToolType.Pan
-      console.log(canBeDrawn);
 
       if (canBeErased && isEraser) {
-        //НАЙДИ БАГ СВЯЗАННЫЙ С ПАУЗОЙ, РИСОВАНИЕМ И СТИРАНИЕМ. ГДЕ-ТО В onPointerMove!
+        // НАЙДИ БАГ СВЯЗАННЫЙ С ПАУЗОЙ, РИСОВАНИЕМ И СТИРАНИЕМ. ГДЕ-ТО В onPointerMove!
         this.erase(tile);
       }
       if (canBeDrawn && isBrush) {

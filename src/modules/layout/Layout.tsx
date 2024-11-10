@@ -10,7 +10,6 @@ import { profilePresenter } from '../profile/presenter';
 const { container, header, sidebar, context, main, nav } = styles;
 
 export function Layout(props) {
-  const { asideSlot, contextBarSlot } = props;
   const logOut = () => {
     profilePresenter.logOut();
   }
@@ -29,14 +28,14 @@ export function Layout(props) {
           <button-wl onClick={logOut}>Выйти</button-wl>
         </nav>
       </header>
-      <Show when={Boolean(asideSlot)}>
+      <Show when={Boolean(props.asideSlot)}>
         <aside class={sidebar}>
-          {asideSlot}
+          {props.asideSlot}
         </aside>
       </Show>
-      <Show when={Boolean(asideSlot)}>
+      <Show when={Boolean(props.asideSlot)}>
         <div class={context}>
-          {contextBarSlot}
+          {props.contextBarSlot}
         </div>
       </Show>
       <main class={main}>{props.children}</main>

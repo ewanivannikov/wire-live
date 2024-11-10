@@ -1,31 +1,34 @@
 import { makeAutoObservable } from "mobx";
-import { LevelRepository } from "../../../data/repositories/LevelRepository";
-import { RouterService } from "../../../shared/services/RouterService";
-import { Fields } from "../../Logic/Base";
+import { levelRepository, LevelRepository } from "../../../data/repositories/LevelRepository";
+import { routerService, RouterService } from "../../../shared/services/RouterService";
+import { fields, Fields } from "../../Logic/Base";
 import { IState } from "../types";
+import { createStateSolving } from "../StateSolving";
+import { WorldState } from "../viewModel";
 
 // Класс контекста, управляющий состояниями
 export class LevelContext {
-  private state: IState = {
-    status: 'level.play.solving',
-  };
+  public state: IState;
 
   constructor(
     private readonly levelRepo: LevelRepository,
     private readonly routerServ: RouterService,
     public logicField: Fields,
+    private readonly root: WorldState
   ) {
     makeAutoObservable(this);
+    const state = createStateSolving(this);
+    this.state = state;
+    this.root.state = state;
   }
 
-  public setState(state: IState) {
+  public setState = (state: IState) => {
     this.state = state;
-    console.log(this.state);
+    this.root.state = state;
   }
 
 
   public next() {
-    console.log(this.state);
     this.state.handleNext();
   }
 
@@ -66,3 +69,5 @@ export class LevelContext {
   // экспериментальный метод
   public checkSolution = this.logicField.checkSolution
 }
+
+export const createLevelContext = (root: WorldState) => new LevelContext(levelRepository, routerService, fields, root);

@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { tools } from '../toolbar/presenter';
-import { createBrush } from '../contextBar/presenter';
+import { brush } from '../contextBar/presenter';
 import { Position } from '../Logic/Position';
 import { arrowToIndexTile } from '../Logic/constants';
 import { Tile } from '../toolbar';
@@ -48,6 +48,8 @@ class TileMap {
 
   init = (cashe) => {
     this.grid.group.tick = () => {
+      this.logicField.processingLogic();
+
       this.logicField.stateCache.forEach((value, key) => {
         const sprite = this.grid.group.getObjectByName(key);
 
@@ -60,8 +62,6 @@ class TileMap {
         sprite.material.opacity = 1;
         sprite.material.needsUpdate = true;
       });
-
-      this.logicField.processingLogic(false);
     };
 
     this.loop.addTick(this.grid.group);
@@ -94,7 +94,6 @@ class TileMap {
   };
 
   public updateTile = (tile) => {
-    const brush = createBrush(this.tools);
 
     const tileTexture =
       this.tileTextures[

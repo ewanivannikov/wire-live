@@ -126,7 +126,7 @@ export class Fields {
 
   public checkSolution = async () => {
     return new Promise((resolve, reject) => {
-      reaction(
+      const dispose = reaction(
         () => this.solved,
         solved => {
           console.log("Result:", this.solved)
@@ -136,14 +136,15 @@ export class Fields {
           if (solved === 'resolved') {
             resolve(true);
           }
+          dispose(); // Dispose of the reaction once the promise is settled
         }
       )
     });
   }
 
-  processingLogic() {
+  public processingLogic = () => {
     if (!this.paused) {
-      runInAction(() => {this.solved = this.solved0;});
+      runInAction(() => { this.solved = this.solved0; });
       const outputs: string[] = [];
       this.clearStates();
 
@@ -162,9 +163,9 @@ export class Fields {
       });
 
       runInAction(() => {
-        if (outputs.includes('rejected')) {this.solved0 = 'rejected';}
-        else if (outputs.every((item) => item === 'resolved')) {this.solved0 = 'resolved';}
-        else {this.solved0 = 'waiting';}
+        if (outputs.includes('rejected')) { this.solved0 = 'rejected'; }
+        else if (outputs.every((item) => item === 'resolved')) { this.solved0 = 'resolved'; }
+        else { this.solved0 = 'waiting'; }
       })
     }
   }

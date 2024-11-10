@@ -46,7 +46,6 @@ export class StateOneChecking implements IState {
   }
 
   public returnToSolving() {
-    console.log("Возвращение в состояние solving");
     this.context.logicField.clearStates();
     this.context.logicField.clearSignals();
     this.context.logicField.clearArrowsStates();

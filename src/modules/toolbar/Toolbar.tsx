@@ -26,10 +26,9 @@ export const Toolbar = () => {
   const handleClickSave = () => {
     tools.saveMap();
   };
-  createEffect(() => {
-    console.log('worldState.status', worldState.status);
-    
-  })
+  // createEffect(() => {
+  //   console.log('worldState.status', worldState);
+  // })
   return (
     <div
       role="toolbar"

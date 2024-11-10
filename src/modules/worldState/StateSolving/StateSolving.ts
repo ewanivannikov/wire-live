@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import { LevelContext } from "../Level";
-import { createStateOneChecking, StateOneChecking } from "../StateOneChecking";
+import { createStateOneChecking } from "../StateOneChecking";
 import { IState } from "../types";
 import { type Loop, loop as loopInstance } from "../../mapContainer/systems";
 
@@ -10,7 +10,6 @@ export class StateSolving implements IState {
 
   constructor(private readonly context: LevelContext, private readonly loop: Loop) {
     makeAutoObservable(this);
-    console.log('this.loop', this.loop);
 
     this.loop.setDuration(0);
     this.context.logicField.paused = true;
@@ -19,8 +18,7 @@ export class StateSolving implements IState {
   public handleNext() {
     console.log('Переход на one checking');
     this.context.setState(createStateOneChecking(this.context));
-    this.context.initRequisites()
-    // this.context.logicField.paused = false;
+    this.context.initRequisites();
   }
 
   public draw() {

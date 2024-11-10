@@ -20,7 +20,7 @@ import { createRaycaster } from './systems/Raycaster';
 
 import { fields } from '../Logic/Base';
 import { tools, ToolType } from '../toolbar';
-import { createBrush } from '../contextBar/presenter';
+import { brush } from '../contextBar/presenter';
 import { worldState } from '../worldState';
 
 let camera: OrthographicCamera;
@@ -79,7 +79,6 @@ class World {
       }
 
       if (gridIntersect) {
-        const brush = createBrush(tools, worldState);
 
         const tool =
           tools.currentTool === ToolType.Brush

@@ -8,11 +8,10 @@ import {
   TextInput,
   TextInputTag,
 } from '../../../shared';
-import { createBrush } from '../presenter';
-import { tools } from '../../toolbar';
+import { brush } from '../presenter';
 import { outputArrowModel } from './viewModel';
 export const OutputArrow = () => {
-  const state = createBrush(tools);
+  const state = brush;
   const handleClick = (el) => {
     outputArrowModel.setWaitingOperator(el.id)
   }

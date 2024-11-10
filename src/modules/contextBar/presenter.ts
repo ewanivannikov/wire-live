@@ -1,14 +1,13 @@
 import { makeAutoObservable } from 'mobx';
 import { Tools } from '../mapContainer/Tools';
-import { DirectionType, Tile, ToolType } from '../toolbar';
+import { DirectionType, Tile, tools, ToolType } from '../toolbar';
 import type { Direction, TileId } from '../../data';
 import { brushRepository } from '../../data';
 import { inputArrowModel, InputArrowModel } from './InputArrow/viewModel';
 import { outputArrowModel, OutputArrowModel } from './OutputArrow';
-import { WorldState } from '../worldState';
+import { worldState, WorldState } from '../worldState';
 
 class Brush {
-  private static instance: Brush | null = null;
   public currentBrush = '';
   public currentBrushDirection = DirectionType.Up;
   public currentBrushDirectionList = [
@@ -31,9 +30,9 @@ class Brush {
   }
 
   private init() {
-    if ((this.worldState.status.includes('level'))){
+    if ((this.worldState.status.includes('level'))) {
       const brush = this.worldState.modeContext.level.allowedBrushList[0]
-      const [_, _a, dir, fl]= new Tile(brush).vector
+      const [_, _a, dir, fl] = new Tile(brush).vector
       this.currentBrush = brush
       this.currentBrushDirection = dir
       this.currentBrushFlip = fl
@@ -102,17 +101,12 @@ class Brush {
     return this.tools.currentTool === ToolType.Brush;
   }
 
-  public static getInstance(
-    tools: Tools,
-    inputArrowModel: InputArrowModel,
-    outputArrowModel: OutputArrowModel,
-    worldState: WorldState
-  ) {
-    if (!Brush.instance) {
-      Brush.instance = new Brush(tools, inputArrowModel, outputArrowModel, worldState);
-    }
+  get allowPanel() {
+    return this.worldState.status === 'level.play.solving';
+  }
 
-    return Brush.instance;
+  get currentTool() {
+    return this.tools.currentTool;
   }
 
   public get clastersBrushList() {
@@ -120,5 +114,5 @@ class Brush {
   }
 }
 
-export const createBrush = (tools: Tools, worldState: WorldState) =>
-  Brush.getInstance(tools, inputArrowModel, outputArrowModel, worldState);
+export const brush =
+  new Brush(tools, inputArrowModel, outputArrowModel, worldState);

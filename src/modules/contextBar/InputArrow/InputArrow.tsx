@@ -6,12 +6,11 @@ import {
   Tags,
   TextInputTag,
 } from '../../../shared';
-import { createBrush } from '../presenter';
-import { tools } from '../../toolbar';
+import { brush } from '../presenter';
 import { inputArrowModel } from './viewModel';
 
 export const InputArrow = () => {
-  const state = createBrush(tools);
+  const state = brush;
 
   return (
     <Show when={state.currentBrush.includes('Brush.21')}>
