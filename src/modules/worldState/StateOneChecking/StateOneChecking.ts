@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import { LevelContext } from "../Level";
 import { StateBulkChecking } from "../StateBulkChecking";
-import { StateSolving } from "../StateSolving";
+import { createStateSolving, StateSolving } from "../StateSolving";
 import { IState } from "../types";
 import { type Loop, loop as loopInstance } from "../../mapContainer/systems";
 
@@ -16,9 +16,7 @@ export class StateOneChecking implements IState {
     this.context.logicField.paused = false;
     this.context.checkSolution().then(() => {
       console.log("Output валиден, переход в состояние BulkChecking");
-
       runInAction(() => { this.isSolved = true });
-
       this.context.setState(new StateBulkChecking(this.context));
     }).catch(() => {
       console.log("Output не валиден, возвращение в состояние Solving");
@@ -53,7 +51,7 @@ export class StateOneChecking implements IState {
     this.context.logicField.clearSignals();
     this.context.logicField.clearArrowsStates();
     this.context.logicField.paused = true;
-    this.context.setState(new StateSolving(this.context));
+    this.context.setState(createStateSolving(this.context));
   }
 
   public canBeErased = (tile) => {

@@ -14,6 +14,7 @@ export class Fields {
   public arrowCache = new Map(); // arrow
   public paused = false;
   public solved = 'waiting';
+  public solved0 = 'waiting';
   constructor() {
     makeObservable(this, {
       solved: observable,
@@ -142,7 +143,8 @@ export class Fields {
 
   processingLogic() {
     if (!this.paused) {
-      const states: string[] = [];
+      runInAction(() => {this.solved = this.solved0;});
+      const outputs: string[] = [];
       this.clearStates();
 
       this.arrowCache.forEach((arrow) => {
@@ -155,21 +157,14 @@ export class Fields {
       this.arrowCache.forEach((arrow) => {
         arrow.conditionStates(this);
         if (arrow.name === 'OutputArrow') {
-          states.push(arrow.state);
+          outputs.push(arrow.validated);
         }
       });
+
       runInAction(() => {
-        for (const state of states) {
-          if (state === "Mars") {
-            this.solved = "rejected";
-            return;
-          }
-          if (state === "Wait") {
-            this.solved = "waiting";
-            return;
-          }
-        }
-        this.solved = "resolved";
+        if (outputs.includes('rejected')) {this.solved0 = 'rejected';}
+        else if (outputs.every((item) => item === 'resolved')) {this.solved0 = 'resolved';}
+        else {this.solved0 = 'waiting';}
       })
     }
   }

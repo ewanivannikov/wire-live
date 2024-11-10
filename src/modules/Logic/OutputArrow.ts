@@ -5,6 +5,8 @@ class OutputArrow extends ArrowBase {
   public index = -1;
   public loop = 0;
   public isValidIn = true;
+  private patternLength = 0;
+  private patternValidation: string[] = [];
   constructor(
     position: string,
     public pattern: number[] = [1],
@@ -56,8 +58,10 @@ class OutputArrow extends ArrowBase {
       this.state = 'Wait';
     } else if (this.isValidIn) {
       this.state = 'Venus';
+      this.patternValidation.push(this.state);
     } else {
       this.state = 'Mars';
+      this.patternValidation.push(this.state);
     }
 
   }
@@ -65,8 +69,11 @@ class OutputArrow extends ArrowBase {
   activeStates(fields: Fields) {
   }
 
-  public get isValid() {
-    return this.isValidIn && this.waiting === 0;
+  public get validated() {
+    this.patternLength = this.pattern.reduce((acc, cor) => acc + cor, 0);
+    if (this.patternValidation.includes('Mars')) return 'rejected';
+    if (this.patternValidation.every((item) => item === 'Venus') && this.patternValidation.length >= this.patternLength) return 'resolved';
+    return 'waiting';
   }
 }
 

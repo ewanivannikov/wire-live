@@ -1,6 +1,6 @@
 import { LevelContext } from "../Level";
 import { StateCompleted } from "../StateCompleted";
-import { StateSolving } from "../StateSolving";
+import { createStateSolving } from "../StateSolving";
 import { IState } from "../types";
 
 // Состояние "BulkChecking"
@@ -15,7 +15,7 @@ export class StateBulkChecking implements IState {
 
   public handlePrev() {
     console.log("Проверка симуляций провалена, возвращение в состояние Solving");
-    this.context.setState(new StateSolving(this.context));
+    this.context.setState(createStateSolving(this.context));
   }
 
   private checkMultipleSimulations(isCompleted: boolean) {
