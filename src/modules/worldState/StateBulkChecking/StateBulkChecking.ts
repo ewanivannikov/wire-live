@@ -34,4 +34,12 @@ export class StateBulkChecking implements IState {
   public canBeDrawn = (tile) => {
     return false
   }
+
+  public returnToSolving = () => {
+    this.context.logicField.clearStates();
+    this.context.logicField.clearSignals();
+    this.context.logicField.clearArrowsStates();
+    this.context.logicField.clearPatternArrows();
+    this.context.setState(createStateSolving(this.context));
+  }
 }

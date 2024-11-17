@@ -4,7 +4,7 @@ import { For } from "solid-js";
 export const Histogram = (props) => {
 
   return (
-    <div>
+    <div classList={props.classList}>
       <For each={props.bars}>
         {(bar) => (
           <div>

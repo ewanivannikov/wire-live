@@ -7,6 +7,10 @@ class ModalLogic {
       modalNode.showModal()
     }
   }
+
+  public close() {
+    this.modalNode.close();
+  }
 }
 
 export const createModalLogic = (element: HTMLDialogElement, props) => {

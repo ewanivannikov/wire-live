@@ -34,9 +34,9 @@ export const ContextBar = () => {
         </p>
         <ul>
           <For each={Object.entries(brushRepository.clastersBrushes)}>
-                    {([_, val]) => (
-                      <li>{val.label}</li>
-                    )}
+            {([_, val]) => (
+              <li>{val.label}</li>
+            )}
           </For>
         </ul>
       </Popover>

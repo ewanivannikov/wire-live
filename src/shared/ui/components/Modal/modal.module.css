@@ -1,5 +1,12 @@
 .root {
-  
+  transition: opacity .5s ease-in, scale .5s ease-in, display .5s ease-in allow-discrete;
+}
+
+@starting-style { 
+  .root {
+    opacity: 0; 
+    scale: 0.9; 
+  }
 }
 
 .root[open] {
@@ -8,4 +15,20 @@
 
 .root::backdrop {
   backdrop-filter: blur(4px);
+}
+
+.root:not([open]) {
+  opacity: 0;
+  scale: .9;
+  transition-duration: .4s;
+  transition-timing-function: ease;
+}
+
+.title {
+  font-family: var(--typography-display-lg-font-family);
+  font-size: 2rem;
+  font-weight: var(--typography-display-lg-font-weight);
+  font-style: normal;
+  white-space: pre-wrap;
+  margin-top: 0;
 }

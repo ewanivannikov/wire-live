@@ -52,7 +52,7 @@ export class StateOneChecking implements IState {
     this.context.logicField.paused = false;
   }
 
-  public returnToSolving() {
+  public returnToSolving = () => {
     this.context.logicField.clearStates();
     this.context.logicField.clearSignals();
     this.context.logicField.clearArrowsStates();

@@ -51,7 +51,7 @@ const App = () => {
   const [pathname, setPathname] = createSignal(routerService.location.pathname)
 
   routerService.onNavigate((e) => {
-    setPathname(routerService.location.pathname)
+    setPathname(e.target.location.hash)
   });
 
   createEffect(() => {
@@ -96,7 +96,7 @@ const App = () => {
           <About />
         </LayoutLanding>
       </Match>
-      <Match when={pathname() === '/'}>
+      <Match when={pathname() === '/' || pathname() === '#/'}>
         <Layout>
           <LevelList />
         </Layout>
