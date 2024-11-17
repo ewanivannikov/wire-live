@@ -1,7 +1,6 @@
 import { createHashHistory, createRouter, matchRoutes, Router } from '@remix-run/router';
 import { makeAutoObservable, runInAction } from 'mobx';
 import { logger } from '../LoggerService';
-import { log } from 'console';
 
 export const router = createRouter({
   basename:
@@ -89,6 +88,10 @@ export class RouterService {
 
   public onNavigate = (handler: (e: Event) => void) => {
     window.addEventListener('navigate', handler);
+  };
+
+  public navigate = (to: string) => {
+    this.router.navigate(to);
   };
 }
 

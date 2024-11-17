@@ -23,7 +23,16 @@ export class WorldState {
 
 
   public switchStatusOnLevelSolving() {
-    if (this.modeContext.state.status.includes('checking')) {this.modeContext.state.returnToSolving();}
+    if (this.modeContext.state.status.includes('checking')) {
+      this.modeContext.state.returnToSolving();
+    }
+  }
+
+  public switchToCompleted = () => {
+    if (this.modeContext.state.status.includes('bulk')) {
+      this.modeContext.next();
+      this.routerServ.navigate('/');
+    }
   }
 
   public get status() {

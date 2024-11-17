@@ -1,5 +1,5 @@
 import { Listbox, Popover, SegmentedButtons } from '../../shared';
-import { createEffect, For, Show } from 'solid-js';
+import { For, Show } from 'solid-js';
 import { brushRepository } from '../../data/repositories';
 import { brush } from './presenter';
 import { iconDirectionMapping, iconsMapping } from '../brushes';

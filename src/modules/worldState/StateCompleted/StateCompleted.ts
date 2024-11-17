@@ -3,6 +3,7 @@ import { IState } from "../types";
 
 // Состояние "Completed"
 export class StateCompleted implements IState {
+  public status = 'level.completed'
   constructor(private readonly context: LevelContext) { }
 
   public handleNext() {

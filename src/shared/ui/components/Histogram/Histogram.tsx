@@ -10,7 +10,7 @@ export const Histogram = (props) => {
           <div>
             <div style={{ 
               width: `${bar.amount}%`, 
-              'background-color': bar.isSolved ? "green" : "red" 
+              'background-color': bar.barColor
               }} 
               classList={{ [styles.bar]: true }}
             />

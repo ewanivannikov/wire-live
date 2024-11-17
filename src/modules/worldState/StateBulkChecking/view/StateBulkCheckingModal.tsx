@@ -1,21 +1,25 @@
 import { Button, Modal } from "../../../../shared";
 import { Histogram } from "../../../../shared/ui/components/Histogram/Histogram";
+import { taskPanelPresenter } from "../../../taskPanel/presenter";
+import { worldState } from "../../viewModel";
 
 const challenges = [
-  {isSolved: true, amount: 50},
-  {isSolved: false, amount: 100},
-  {isSolved: true, amount: 50},
+  {barColor: 'green', amount: 50},
+  {barColor: 'tomato', amount: 100},
+  {barColor: '#ccc', amount: 50},
 ]
 
-export const StateBulkCheckingModal = (props) => {
+export const StateBulkCheckingModal = () => {
   return (
-    <Modal open>
-      <h1>Имя Уровня</h1>
+    <Modal open={worldState.status === 'level.checking.bulk'}>
+      <h1>{taskPanelPresenter.title}</h1>
       <h2>Optional square challenge</h2>
       <h2>Optional speed challenge</h2>
       <Histogram bars={challenges} />
-      <Button>Назад</Button>
-      <Button>Дальше</Button>
+      <Button onClick={() => worldState.switchStatusOnLevelSolving()}>
+        Назад
+      </Button>
+      <Button onClick={() => worldState.switchToCompleted()}>Дальше</Button>
     </Modal>
   );
 };

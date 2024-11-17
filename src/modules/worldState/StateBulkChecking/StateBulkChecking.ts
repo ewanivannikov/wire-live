@@ -5,7 +5,7 @@ import { IState } from "../types";
 
 // Состояние "BulkChecking"
 export class StateBulkChecking implements IState {
-
+  public status = 'level.checking.bulk'
   constructor(private readonly context: LevelContext) { }
 
   public handleNext() {
