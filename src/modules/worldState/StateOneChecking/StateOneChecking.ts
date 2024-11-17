@@ -56,6 +56,7 @@ export class StateOneChecking implements IState {
     this.context.logicField.clearStates();
     this.context.logicField.clearSignals();
     this.context.logicField.clearArrowsStates();
+    this.context.logicField.clearPatternArrows();
     this.context.setState(createStateSolving(this.context));
   }
 

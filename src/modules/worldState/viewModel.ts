@@ -21,8 +21,9 @@ export class WorldState {
     this.isPaused = false;
   }
 
+
   public switchStatusOnLevelSolving() {
-    this.modeContext.prev();
+    if (this.modeContext.state.status.includes('checking')) {this.modeContext.state.returnToSolving();}
   }
 
   public get status() {

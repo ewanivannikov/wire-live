@@ -47,11 +47,8 @@ export class LevelContext {
       arrow.pattern = req[key].pattern;
       arrow.cycling = req[key].hasCycle;
       arrow.active = 1 - 2 * req[key].initialValue;
-      arrow.index = -1;
-      arrow.loop = 0;
       if (this.levelRepo.getPatternArrowCache(this.levelId)[key].tileId.includes('22')) {
         arrow.waiting = req[key].waiting;
-        arrow.isValidIn = true;
       }
       this.logicField.addArrow(coord, arrow);
       // для каждого ключа стрелки из реквизитов надо найти координату в поле стрелок пользака. Затем по координатам найти нужные инпуты и оутпуты и используя данные из реквизитов изменить их внутренние характеристики
