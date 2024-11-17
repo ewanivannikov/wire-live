@@ -1,0 +1,11 @@
+.root {
+  
+}
+
+.root[open] {
+  display: block;
+}
+
+.root::backdrop {
+  backdrop-filter: blur(4px);
+}

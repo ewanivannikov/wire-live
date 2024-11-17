@@ -17,6 +17,7 @@ import { Toolbar } from './modules/toolbar';
 import { ContextBar } from './modules/contextBar';
 import { TaskPanel } from './modules/taskPanel';
 import {registerServiceWorker} from './shared';
+import { StateBulkCheckingModal } from './modules/worldState/StateBulkChecking/view';
 
 registerServiceWorker();
 
@@ -77,6 +78,7 @@ const App = () => {
       <Match when={pathname().includes('levels')}>
         <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
           <TaskPanel />
+          <StateBulkCheckingModal />
           <Canvas />
         </Layout>
       </Match>
