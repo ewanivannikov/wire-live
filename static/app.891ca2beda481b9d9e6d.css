@@ -278,6 +278,18 @@
   height: 32px;
 }
 
+.btPUtZy94swmQU4r6pQS {
+  
+}
+
+.btPUtZy94swmQU4r6pQS[open] {
+  display: block;
+}
+
+.btPUtZy94swmQU4r6pQS::backdrop {
+  backdrop-filter: blur(4px);
+}
+
 body,
 html {
   height: 100%;
@@ -1711,4 +1723,9 @@ html {
   max-width: 500px;
 }
 
+
+.TLyvdorNB0_j1cNZBFt2 {
+  display: inline-block;
+  height: 10px;
+}
 
