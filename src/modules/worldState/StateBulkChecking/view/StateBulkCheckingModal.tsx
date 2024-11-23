@@ -16,8 +16,11 @@ export const StateBulkCheckingModal = () => {
       open={worldState.status === 'level.checking.bulk'}
       title={taskPanelPresenter.title}
     >
-      <h2>Optional square challenge</h2>
-      <h2>Optional speed challenge</h2>
+      <h2>Дополнительные испытания:</h2>
+      <h3>Количество стрелок</h3>
+      <p>Ваше текущее решение использует _ стрелок</p>
+      <h3>Скорость обработки сигналов</h3>
+      <p>Ваше текущее решение выполняется, в среднем, за _ ходов</p>
       <Histogram bars={challenges} classList={{ [styles.histogram]: true }} />
       <Button onClick={() => worldState.switchStatusOnLevelSolving()}>
         Назад

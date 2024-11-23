@@ -65,7 +65,8 @@ export const levels = {
           waiting: -1
         }
       },
-    }
+    },
+    optionalChallenges: {}
   },
   Sierpinski: {
     slug: 'Sierpinski',
