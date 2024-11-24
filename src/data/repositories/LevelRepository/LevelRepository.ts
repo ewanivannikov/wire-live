@@ -1,4 +1,5 @@
 import { arrowToIndexTile } from "../../../modules/Logic/constants";
+import { getRandomNumberExceptExceptions } from "../../../shared/utils/getRandomNumberExceptExceptions";
 import { levels } from "./levels";
 import { patternArrowCache } from "./patternArrowCache";
 
@@ -29,27 +30,31 @@ export class LevelRepository {
     }
   }
 
-  public getRequisite(id = 'DeMorgan') {
+  public getRequisite({id = 'DeMorgan', exceptions = []}: {id: string, exceptions?: number[]}) {
     const requisites = levels[id].requisites
-    let result = {}
-    Object.keys(requisites).forEach((key, index) => {
-      if (index === 0) {
-        result = levels[id].requisites[key]
+    let requisite = {}
+    let requisiteIndex = 0
+    const requisitesKeys = Object.keys(requisites)
+    const randIndex = getRandomNumberExceptExceptions(requisitesKeys.length, exceptions)
+    requisitesKeys.forEach((key, index) => {
+      if (index === randIndex) {
+        requisite = levels[id].requisites[key]
+        requisiteIndex = index
       }
     })
-    return result
+    return {requisite, requisiteIndex}
   }
 
-  public getRequisiteWithKey(id = 'DeMorgan') {
-    const requisites = levels[id].requisites
-    let result = {}
-    Object.keys(requisites).forEach((key, index) => {
-      if (index === 0) {
-        result = { [key]: levels[id].requisites[key] }
-      }
-    })
-    return result
-  }
+  // public getRequisiteWithKey(id = 'DeMorgan') {
+  //   const requisites = levels[id].requisites
+  //   let result = {}
+  //   Object.keys(requisites).forEach((key, index) => {
+  //     if (index === 0) {
+  //       result = { [key]: levels[id].requisites[key] }
+  //     }
+  //   })
+  //   return result
+  // }
 
   public getLevelList = () => {
     return Object.values(levels);

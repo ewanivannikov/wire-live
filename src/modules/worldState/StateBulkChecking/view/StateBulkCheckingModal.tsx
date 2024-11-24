@@ -1,14 +1,12 @@
+import { Show } from "solid-js";
 import { Button, Modal } from "../../../../shared";
 import { Histogram } from "../../../../shared/ui/components/Histogram/Histogram";
 import { taskPanelPresenter } from "../../../taskPanel/presenter";
 import { worldState } from "../../viewModel";
+import { stateBulkCheckingPresenter } from "./presenter";
 import styles from './stateBulkCheckingModal.module.css';
 
-const challenges = [
-  {barColor: 'green', amount: 50},
-  {barColor: 'tomato', amount: 100},
-  {barColor: '#ccc', amount: 50},
-]
+
 
 export const StateBulkCheckingModal = () => {
   return (
@@ -18,10 +16,12 @@ export const StateBulkCheckingModal = () => {
     >
       <h2>Дополнительные испытания:</h2>
       <h3>Количество стрелок</h3>
-      <p>Ваше текущее решение использует _ стрелок</p>
+      <p>Ваше текущее решение использует {stateBulkCheckingPresenter.amountArrows} стрелок</p>
       <h3>Скорость обработки сигналов</h3>
-      <p>Ваше текущее решение выполняется, в среднем, за _ ходов</p>
-      <Histogram bars={challenges} classList={{ [styles.histogram]: true }} />
+      <Histogram bars={stateBulkCheckingPresenter.challenges} classList={{ [styles.histogram]: true }} />
+      <Show when={stateBulkCheckingPresenter.showAverageSteps}>
+        <p>Ваше текущее решение выполняется, в среднем, за {stateBulkCheckingPresenter.averageSteps} ходов</p>
+      </Show>
       <Button onClick={() => worldState.switchStatusOnLevelSolving()}>
         Назад
       </Button>

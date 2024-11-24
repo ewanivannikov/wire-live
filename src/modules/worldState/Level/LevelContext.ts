@@ -9,6 +9,7 @@ import { WorldState } from "../viewModel";
 // Класс контекста, управляющий состояниями
 export class LevelContext {
   public state: IState;
+  private _exceptions: number[] = [];
 
   constructor(
     private readonly levelRepo: LevelRepository,
@@ -37,22 +38,32 @@ export class LevelContext {
   }
 
   public initRequisites() {
-    const req = this.levelRepo.getRequisite(this.levelId); // случайный реквизит(пока первый)
+    const req = this.levelRepo.getRequisite({id: this.levelId, exceptions: this._exceptions}); // случайный реквизит(пока первый)
+    const {requisite, requisiteIndex} = req
     const patternArrowKeys = Object.keys(this.levelRepo.getPatternArrowCache(this.levelId)); // хэши паттерновых стрелок
     patternArrowKeys.forEach((key) => {
       const x = this.levelRepo.getPatternArrowCache(this.levelId)[key].x;
       const y = this.levelRepo.getPatternArrowCache(this.levelId)[key].y;
       const coord = `${x},${y}`;
       const arrow = this.logicField.getArrow(coord);
-      arrow.pattern = req[key].pattern;
-      arrow.cycling = req[key].hasCycle;
-      arrow.active = 1 - 2 * req[key].initialValue;
+      arrow.pattern = requisite[key].pattern;
+      arrow.cycling = requisite[key].hasCycle;
+      arrow.active = 1 - 2 * requisite[key].initialValue;
       if (this.levelRepo.getPatternArrowCache(this.levelId)[key].tileId.includes('22')) {
-        arrow.waiting = req[key].waiting;
+        arrow.waiting = requisite[key].waiting;
       }
       this.logicField.addArrow(coord, arrow);
       // для каждого ключа стрелки из реквизитов надо найти координату в поле стрелок пользака. Затем по координатам найти нужные инпуты и оутпуты и используя данные из реквизитов изменить их внутренние характеристики
     })
+
+    console.log(requisiteIndex, 'requisiteIndex');
+    
+
+    return requisiteIndex
+  }
+
+  public set exceptions(exception: number) {
+    this._exceptions.push(exception);
   }
 
   public get levelId() {

@@ -17,11 +17,14 @@ export class StateOneChecking implements IState {
     this.loop.setDuration(500);
     this.context.logicField.paused = false;
 
+    const requisiteIndex =this.context.initRequisites();
+
     emitter.once(solutionChecked).then(data => {
       console.log(data);
       if (data === 'resolved') {
         console.log("Output валиден, переход в состояние BulkChecking");
         runInAction(() => { this.isSolved = true });
+        this.context.exceptions = requisiteIndex;
         this.context.setState(new StateBulkChecking(this.context));
       }
       if (data === 'rejected') {

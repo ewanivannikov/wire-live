@@ -18,7 +18,7 @@ export class StateSolving implements IState {
   public handleNext() {
     console.log('Переход на one checking');
     this.context.setState(createStateOneChecking(this.context));
-    this.context.initRequisites();
+    
   }
 
   public draw() {
