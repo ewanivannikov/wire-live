@@ -9,7 +9,6 @@ import { WorldState } from "../viewModel";
 // Класс контекста, управляющий состояниями
 export class LevelContext {
   public state: IState;
-  private _exceptions: number[] = [];
 
   constructor(
     private readonly levelRepo: LevelRepository,
@@ -37,9 +36,13 @@ export class LevelContext {
     this.state.handlePrev();
   }
 
-  public initRequisites() {
-    const req = this.levelRepo.getRequisite({id: this.levelId, exceptions: this._exceptions}); // случайный реквизит(пока первый)
+  public initRequisites(exceptions?: number[]) {
+    const req = this.levelRepo.getRequisite({id: this.levelId, exceptions}); // случайный реквизит(пока первый)
+    if(req instanceof Error && req.cause === 'ALL_ARE_EXCEPTIONS') {
+      return req;
+    }
     const {requisite, requisiteIndex} = req
+    console.log(requisiteIndex);
     const patternArrowKeys = Object.keys(this.levelRepo.getPatternArrowCache(this.levelId)); // хэши паттерновых стрелок
     patternArrowKeys.forEach((key) => {
       const x = this.levelRepo.getPatternArrowCache(this.levelId)[key].x;
@@ -57,13 +60,8 @@ export class LevelContext {
     })
 
     console.log(requisiteIndex, 'requisiteIndex');
-    
 
     return requisiteIndex
-  }
-
-  public set exceptions(exception: number) {
-    this._exceptions.push(exception);
   }
 
   public get levelId() {

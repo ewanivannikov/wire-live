@@ -1,5 +1,5 @@
 import { Listbox, Popover, SegmentedButtons } from '../../shared';
-import { For, Show } from 'solid-js';
+import { createEffect, For, Show } from 'solid-js';
 import { brushRepository } from '../../data/repositories';
 import { brush } from './presenter';
 import { iconDirectionMapping, iconsMapping } from '../brushes';
@@ -13,6 +13,15 @@ const { contextbar } = styles;
 
 export const ContextBar = () => {
   const state = brush;
+
+  createEffect(() => {
+    addEventListener("keydown", (event) => {
+      console.log('R pressed', event.code);
+      if(event.code === 'KeyR') {
+        state.nextDirection();
+      }
+    });
+  }, null);
 
   const handleClick = (el) => {
     state.setCurrentBrush(el.id);

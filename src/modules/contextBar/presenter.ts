@@ -12,8 +12,8 @@ class Brush {
   public currentBrushDirection = DirectionType.Up;
   public currentBrushDirectionList = [
     DirectionType.Up,
-    DirectionType.Down,
     DirectionType.Left,
+    DirectionType.Down,
     DirectionType.Right,
   ];
 
@@ -95,6 +95,11 @@ class Brush {
 
   get hasFlip() {
     return Boolean(this.currentBrushFlip);
+  }
+
+  public nextDirection = () => {
+    const newDirection = this.currentBrushDirectionList[(this.currentBrushDirectionList.indexOf(this.currentBrushDirection) + 1) % 4];
+    this.setBrushDirection(newDirection);    
   }
 
   get allowBrushes() {

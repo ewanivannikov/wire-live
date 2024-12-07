@@ -36,6 +36,9 @@ export class LevelRepository {
     let requisiteIndex = 0
     const requisitesKeys = Object.keys(requisites)
     const randIndex = getRandomNumberExceptExceptions(requisitesKeys.length, exceptions)
+    if(randIndex instanceof Error && randIndex.cause === 'ALL_ARE_EXCEPTIONS') {
+      return randIndex;
+    }
     requisitesKeys.forEach((key, index) => {
       if (index === randIndex) {
         requisite = levels[id].requisites[key]
