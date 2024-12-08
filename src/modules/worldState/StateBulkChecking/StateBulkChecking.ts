@@ -4,15 +4,19 @@ import { createStateSolving } from "../StateSolving";
 import { IState } from "../types";
 import { type Loop, loop as loopInstance } from "../../mapContainer/systems";
 import { emitter } from "../../../shared/services/EventEmitterService";
-import { runInAction } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 import { solutionChecked } from "../../Logic/Base";
+import { stateCompleted } from "../StateCompleted";
 
 // Состояние "BulkChecking"
 export class StateBulkChecking implements IState {
   public status = 'level.checking.bulk'
   private _exceptions: number[] = [];
-  constructor(private readonly context: LevelContext, private readonly _requisiteIndex: number, private readonly loop: Loop) {
+  private countSimulations = 1;
+  constructor(private readonly context: LevelContext, private readonly _requisiteIndex: number, private readonly loop: Loop, private readonly _stateCompleted: StateCompleted) {
+    makeAutoObservable(this);
     this.exceptions = _requisiteIndex
+    this._stateCompleted.setStatus('pending');
     this.runAllSimulations();
   }
 
@@ -32,14 +36,19 @@ export class StateBulkChecking implements IState {
     let requisiteIndex = this.context.initRequisites(this._exceptions);
     if(requisiteIndex instanceof Error && requisiteIndex.cause === 'ALL_ARE_EXCEPTIONS') {
       console.info('MOLODETS');
-      //this.context.setState(new StateCompleted(this.context));
+      this._stateCompleted.setStatus('completed');
+      this._stateCompleted.setCountSimulations(this.countSimulations);
       return;
     }
     emitter.once(solutionChecked).then(data => {
       console.log(data);
       if (data === 'resolved') {
         console.log("Output валиден, запуск новой симуляции");
-        this.exceptions = requisiteIndex
+        runInAction(() => {
+          this.exceptions = requisiteIndex
+          this.countSimulations++;
+        });
+        
         this.context.logicField.clearStates();
         this.context.logicField.clearSignals();
         this.context.logicField.clearArrowsStates();
@@ -49,7 +58,11 @@ export class StateBulkChecking implements IState {
       }
       if (data === 'rejected') {
         console.log("Output не валиден, возвращение в состояние Solving");
-        this.returnToSolving();
+        runInAction(() => { 
+          this.countSimulations++;
+          this._stateCompleted.setStatus('rejected');
+          this._stateCompleted.setCountSimulations(this.countSimulations);
+        });
       }
     });
   }
@@ -76,5 +89,5 @@ export class StateBulkChecking implements IState {
 }
 
 export const createStateBulkChecking = (context: LevelContext, requisiteIndex: number) => {
-  return new StateBulkChecking(context, requisiteIndex, loopInstance);
+  return new StateBulkChecking(context, requisiteIndex, loopInstance, stateCompleted);
 }

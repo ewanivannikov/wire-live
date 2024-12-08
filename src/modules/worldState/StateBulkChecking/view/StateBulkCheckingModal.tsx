@@ -18,7 +18,10 @@ export const StateBulkCheckingModal = () => {
       <h3>Количество стрелок</h3>
       <p>Ваше текущее решение использует {stateBulkCheckingPresenter.amountArrows} стрелок</p>
       <h3>Скорость обработки сигналов</h3>
-      <Histogram bars={stateBulkCheckingPresenter.challenges} classList={{ [styles.histogram]: true }} />
+      <Show when={stateBulkCheckingPresenter.status !== 'pending'}>
+        <Histogram bars={stateBulkCheckingPresenter.challenges} classList={{ [styles.histogram]: true }} />
+      </Show>
+      
       <Show when={stateBulkCheckingPresenter.showAverageSteps}>
         <p>Ваше текущее решение выполняется, в среднем, за {stateBulkCheckingPresenter.averageSteps} ходов</p>
       </Show>

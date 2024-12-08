@@ -1,17 +1,22 @@
 import { makeAutoObservable } from "mobx"
+import {stateCompleted} from "../../StateCompleted"
+import { type StateCompleted } from "../../StateCompleted"
 
 class StateBulkCheckingPresenter {
     public amountArrows = 0
     public averageSteps = 0
-    public challenges = [
-        {barColor: 'green', amount: 50},
-        {barColor: 'tomato', amount: 100},
-        {barColor: '#ccc', amount: 50},
-      ]
-      public showAverageSteps = false
-    constructor() {
+    public showAverageSteps = false
+    constructor(private readonly _stateCompleted: StateCompleted) {
         makeAutoObservable(this)
+    }
+
+    public get status(){
+return this._stateCompleted.status
+    }
+
+    public get challenges() {
+        return this._stateCompleted.challenges
     }
 }
 
-export const stateBulkCheckingPresenter = new StateBulkCheckingPresenter()
+export const stateBulkCheckingPresenter = new StateBulkCheckingPresenter(stateCompleted)
