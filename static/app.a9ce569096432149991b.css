@@ -314,9 +314,10 @@
 }
 
 .dFmQzcnQJuzEScRTe_cP {
-  display: grid;
+  display: flex;
   gap: 16px;
-  
+  margin-top: 16px;
+  justify-content: flex-end;
 }
 
 body,
