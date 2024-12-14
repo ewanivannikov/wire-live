@@ -32,3 +32,9 @@
   white-space: pre-wrap;
   margin-top: 0;
 }
+
+.footer {
+  display: grid;
+  gap: 16px;
+  
+}

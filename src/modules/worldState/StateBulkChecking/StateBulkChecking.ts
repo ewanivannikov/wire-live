@@ -41,7 +41,6 @@ export class StateBulkChecking implements IState {
       return;
     }
     emitter.once(solutionChecked).then(data => {
-      console.log(data);
       if (data === 'resolved') {
         console.log("Output валиден, запуск новой симуляции");
         runInAction(() => {

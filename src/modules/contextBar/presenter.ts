@@ -102,6 +102,30 @@ class Brush {
     this.setBrushDirection(newDirection);    
   }
 
+  public prevDirection = () => { 
+    const newDirection = this.currentBrushDirectionList[(this.currentBrushDirectionList.indexOf(this.currentBrushDirection) + 3) % 4];
+    this.setBrushDirection(newDirection);    
+  }
+
+  public initHotKeys = () => {
+    let keysPressed = {};
+
+    addEventListener('keydown', (event) => {
+      keysPressed[event.code] = true;
+
+      if (!keysPressed['ShiftLeft'] && event.code == 'KeyR') {
+        this.nextDirection();
+      }
+      if (keysPressed['ShiftLeft'] && event.code == 'KeyR') {
+          this.prevDirection();
+      }
+    });
+    
+    addEventListener('keyup', (event) => {
+        delete keysPressed[event.code];
+    });
+  }
+
   get allowBrushes() {
     return this.tools.currentTool === ToolType.Brush;
   }

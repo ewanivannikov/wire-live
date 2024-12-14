@@ -1,15 +1,20 @@
 import { makeAutoObservable } from "mobx"
+import { levelRepository, LevelRepository } from "../../../data/repositories/LevelRepository";
+import { routerService, RouterService } from "../../../shared";
 
 export class StateCompleted {
     public status = 'idel'
     public challenges = [
         {barColor: 'green', amount: 100},
-        {barColor: '#ccc', amount: 100},
-        {barColor: '#ccc', amount: 100},
-        {barColor: '#ccc', amount: 100},
-        {barColor: '#ccc', amount: 100},
     ]
-    constructor() {
+    constructor(
+        private readonly levelRepo: LevelRepository,
+        private readonly routerServ: RouterService,
+    ) {     
+        const lenReq = Object.keys(this.levelRepo.getLevelById(this.routerServ.params.levelId).requisites).length;
+        for (let i = 1; i < lenReq; i++) {
+            this.challenges.push({barColor: '#ccc', amount: 100})
+        }
         makeAutoObservable(this)
     }
 
@@ -37,4 +42,4 @@ export class StateCompleted {
     }
 }
 
-export const stateCompleted = new StateCompleted()
+export const stateCompleted = new StateCompleted(levelRepository, routerService);

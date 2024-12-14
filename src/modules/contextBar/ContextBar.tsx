@@ -15,12 +15,7 @@ export const ContextBar = () => {
   const state = brush;
 
   createEffect(() => {
-    addEventListener("keydown", (event) => {
-      console.log('R pressed', event.code);
-      if(event.code === 'KeyR') {
-        state.nextDirection();
-      }
-    });
+    state.initHotKeys();
   }, null);
 
   const handleClick = (el) => {
@@ -84,7 +79,7 @@ export const ContextBar = () => {
               {(direction) => (
                 <SegmentedButtons.Button
                   value={direction}
-                  aria-label="Вверх"
+                  aria-label={direction}
                   aria-pressed={state.currentBrushDirection === direction}
                   onClick={(e) => state.setBrushDirection(e.target.value)}
                 >
