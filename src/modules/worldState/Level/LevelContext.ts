@@ -42,7 +42,6 @@ export class LevelContext {
       return req;
     }
     const {requisite, requisiteIndex} = req
-    console.log(requisiteIndex);
     const patternArrowKeys = Object.keys(this.levelRepo.getPatternArrowCache(this.levelId)); // хэши паттерновых стрелок
     patternArrowKeys.forEach((key) => {
       const x = this.levelRepo.getPatternArrowCache(this.levelId)[key].x;
