@@ -208,7 +208,7 @@ export const sources: { [key: string]: any } = {
       "y": -4
     }
   ],
-  'DeMorgan': [...Object.entries(patternArrowCache['DeMorgan']).map(([_, value]) => value)],
+  'DeMorgan': [...Object.values(patternArrowCache['DeMorgan'])],
   'TestLevel': [
     {
       "tileId": "Brush.22.",

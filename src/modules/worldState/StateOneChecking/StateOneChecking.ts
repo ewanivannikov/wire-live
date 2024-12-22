@@ -1,6 +1,6 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import { LevelContext } from "../Level";
-import { StateBulkChecking } from "../StateBulkChecking";
+import { createStateBulkChecking} from "../StateBulkChecking";
 import { createStateSolving } from "../StateSolving";
 import { IState } from "../types";
 import { type Loop, loop as loopInstance } from "../../mapContainer/systems";
@@ -14,24 +14,7 @@ export class StateOneChecking implements IState {
 
   constructor(private readonly context: LevelContext, private readonly loop: Loop) {
     makeAutoObservable(this);
-    this.loop.setDuration(500);
-    this.context.logicField.paused = false;
-
-    const requisiteIndex =this.context.initRequisites();
-
-    emitter.once(solutionChecked).then(data => {
-      console.log(data);
-      if (data === 'resolved') {
-        console.log("Output валиден, переход в состояние BulkChecking");
-        runInAction(() => { this.isSolved = true });
-        this.context.exceptions = requisiteIndex;
-        this.context.setState(new StateBulkChecking(this.context));
-      }
-      if (data === 'rejected') {
-        console.log("Output не валиден, возвращение в состояние Solving");
-        this.returnToSolving();
-      }
-    });
+    this.runSimulation();
   }
 
   public handleNext() {
@@ -53,6 +36,25 @@ export class StateOneChecking implements IState {
     console.log("Возобновление");
     this.loop.setDuration(500);
     this.context.logicField.paused = false;
+  }
+
+  private runSimulation = () => {
+    this.loop.setDuration(500);
+    this.context.logicField.paused = false;
+
+    const requisiteIndex = this.context.initRequisites();
+
+    emitter.once(solutionChecked).then(data => {
+      if (data === 'resolved') {
+        console.log("Output валиден, переход в состояние BulkChecking");
+        runInAction(() => { this.isSolved = true });
+        this.context.setState(createStateBulkChecking(this.context, requisiteIndex));
+      }
+      if (data === 'rejected') {
+        console.log("Output не валиден, возвращение в состояние Solving");
+        this.returnToSolving();
+      }
+    });
   }
 
   public returnToSolving = () => {

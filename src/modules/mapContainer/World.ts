@@ -34,7 +34,7 @@ const gridRowSize: number = 64;
 class World {
   constructor(
     private readonly container: HTMLDivElement,
-    private readonly mapId: string
+    private readonly map: object[],
   ) {
     camera = createCamera(container);
     scene = createScene();
@@ -61,7 +61,7 @@ class World {
       loop,
       logicField,
       grid,
-      this.mapId,
+      this.map,
     );
     scene.add(tileMap.tileGroup);
 
@@ -127,6 +127,6 @@ class World {
   }
 }
 
-export const createWorld = (container: HTMLDivElement, mapId: string) => {
-  return new World(container, mapId);
+export const createWorld = (container: HTMLDivElement, map: object[]) => {
+  return new World(container, map);
 };

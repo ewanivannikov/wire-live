@@ -6,7 +6,7 @@ export enum ToolType {
 
 export enum DirectionType {
   Up = 'Up',
-  Down = 'Down',
   Left = 'Left',
+  Down = 'Down',
   Right = 'Right',
 }

@@ -10,7 +10,7 @@ export const getRandomNumberExceptExceptions=(length: number, exceptions: number
     const validNumbers = Array.from({ length }, (_, i) => i).filter(num => !exceptions.includes(num));
   
     if (validNumbers.length === 0) {
-      return new Error("Все числа в диапазоне являются исключениями.", {code: 'ALL_ARE_EXCEPTIONS'});
+      return new Error("Все числа в диапазоне являются исключениями.", {cause: 'ALL_ARE_EXCEPTIONS'});
     }
   
     const randomIndex = Math.floor(Math.random() * validNumbers.length);

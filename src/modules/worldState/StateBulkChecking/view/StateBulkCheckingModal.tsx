@@ -1,5 +1,5 @@
 import { Show } from "solid-js";
-import { Button, Modal } from "../../../../shared";
+import { Button, Modal, ModalFooter } from "../../../../shared";
 import { Histogram } from "../../../../shared/ui/components/Histogram/Histogram";
 import { taskPanelPresenter } from "../../../taskPanel/presenter";
 import { worldState } from "../../viewModel";
@@ -18,14 +18,20 @@ export const StateBulkCheckingModal = () => {
       <h3>Количество стрелок</h3>
       <p>Ваше текущее решение использует {stateBulkCheckingPresenter.amountArrows} стрелок</p>
       <h3>Скорость обработки сигналов</h3>
-      <Histogram bars={stateBulkCheckingPresenter.challenges} classList={{ [styles.histogram]: true }} />
+      <Show when={stateBulkCheckingPresenter.status !== 'pending'}>
+        <Histogram bars={stateBulkCheckingPresenter.challenges} classList={{ [styles.histogram]: true }} />
+      </Show>
+      
       <Show when={stateBulkCheckingPresenter.showAverageSteps}>
         <p>Ваше текущее решение выполняется, в среднем, за {stateBulkCheckingPresenter.averageSteps} ходов</p>
       </Show>
-      <Button onClick={() => worldState.switchStatusOnLevelSolving()}>
+      <ModalFooter> <Button onClick={() => worldState.switchStatusOnLevelSolving()}>
         Назад
       </Button>
-      <Button onClick={() => worldState.switchToCompleted()}>Дальше</Button>
+      <Show when={stateBulkCheckingPresenter.status === 'completed'}>
+      <Button href="/" component="a">Дальше</Button> 
+      </Show>
+      </ModalFooter>
     </Modal>
   );
 };
