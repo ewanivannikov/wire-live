@@ -1,10 +1,22 @@
 import { httpService } from "../../../shared";
 
+const messages = {MissingOrMalformedSID: 'SID отсутствует или повреждён'}
+
 export const userNetworkSources = {
   async getUser() {
-    const result = await httpService.get('user').json();
+    try {
+      const result = await httpService.get('user').json();
+      return result
+    } catch (error) {
+      if (error.name === 'HTTPError') {
+        const errorText = await error.response.text();
+        const customError = new AggregateError([error], messages[errorText]);
 
-    return result
+        throw customError
+      }
+      
+      return error
+    }
   },
 
   async logOut() {

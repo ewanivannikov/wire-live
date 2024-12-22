@@ -11,7 +11,10 @@ export class UserRepository {
   public getUserQuery = () => {
     const result = this.cacheService.createQuery({
       queryKey: ["user"],
-      queryFn: async () => this.userNetwork.getUser(),
+      queryFn: async () => {
+        const result = await this.userNetwork.getUser()
+        return result
+      },
     })
 
     return result
