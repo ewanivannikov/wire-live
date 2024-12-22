@@ -1,6 +1,12 @@
+import { Dynamic } from 'solid-js/web';
 import styles from './style.module.css';
+import { splitProps } from 'solid-js';
 const { display } = styles;
 export const Typography = (props) => {
-  const { children } = props;
-  return <h1 class={display}>{children}</h1>;
+  const [{component = 'h1'}, other] = splitProps(props, ["component"]);
+  return (
+    <Dynamic component={component} class={`${display} ${props.class}`}>
+      {other.children}
+    </Dynamic>
+  );
 };

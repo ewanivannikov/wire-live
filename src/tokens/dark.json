@@ -21,7 +21,7 @@
         "$value": {
           "fontSize": "4rem",
           "fontWeight": 700,
-          "fontFamily": ["Archivo Black", "sans-serif"]
+          "fontFamily": ["Russo One", "sans-serif"]
         }
       }
     }
