@@ -5,10 +5,10 @@ import { Button } from "../shared/ui/components/Button"
 
 export const LevelList = () => {
   return (
-    <div>
+    <div class="level-list-grid">
       <For each={levelRepository.getLevelList()}>
         {(val) => (
-          <Card imageSrc="https://placehold.co/300x200" title={val.name} href={`#/levels/${val.slug}`}>
+          <Card imageSrc="https://placehold.co/284x200" title={val.name} href={`#/levels/${val.slug}`}>
             <Button>Запустить уровень</Button>
           </Card>
         )}

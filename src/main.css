@@ -17,3 +17,9 @@ html {
 .lucide-icon {
   pointer-events: none;
 }
+
+.level-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 8px;
+}
