@@ -14,6 +14,10 @@ export class ProfilePresenter {
     return this.query.state
   }
 
+  public get isUnauthorized() {
+    return this.query.state.error?.errors?.[0].response.status === 401
+  }
+
   private get mutation() {
     return this.userRepository.logOut()
   }
@@ -24,6 +28,11 @@ export class ProfilePresenter {
     } catch (error) {
       console.error('error❌❌❌', error)
     }
+  }
+
+  public logIn = () => {
+    const login = this.userRepository.logIn();
+    login.refetch()
   }
 
 }

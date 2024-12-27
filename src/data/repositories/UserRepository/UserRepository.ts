@@ -26,6 +26,17 @@ export class UserRepository {
     })
     return result
   }
+
+  public logIn = () => {
+    const result = this.cacheService.createQuery({
+      queryKey: ['login-user'],
+      queryFn: () => async () => {
+        const result = await this.userNetwork.logIn()
+        return result
+      },
+    })
+    return result
+  }
 }
 
 export const userRepository = new UserRepository(cacheServiceInstance, userNetworkSources)

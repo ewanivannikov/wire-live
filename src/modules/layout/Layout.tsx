@@ -4,15 +4,17 @@ import logo from '../../assets/logo.svg';
 import { Show } from 'solid-js';
 import { routerService } from '../../shared/services';
 import { Profile } from '../profile';
-import '../../shared/ui/components/Button';
-import { profilePresenter } from '../profile/presenter';
+
 
 const { container, header, sidebar, context, main, nav } = styles;
 
-export function Layout(props) {
-  const logOut = () => {
-    profilePresenter.logOut();
-  }
+type LayoutProps = {
+  children?: any;
+  asideSlot?: any;
+  contextBarSlot?: any;
+}
+
+export function Layout(props: LayoutProps) {
   return (
     <div class={container}>
       <header class={header}>
@@ -25,7 +27,6 @@ export function Layout(props) {
           </a>
           <a href={`${routerService.basename}#/about`}>О проекте</a>
           <Profile />
-          <button-wl onClick={logOut}>Выйти</button-wl>
         </nav>
       </header>
       <Show when={Boolean(props.asideSlot)}>

@@ -47,7 +47,7 @@ class MobxQuery<
     return this.query.state || {};
   }
 
-  refetch() {
+  public refetch = () => {
     this.query.refetch();
   }
 }
@@ -71,6 +71,10 @@ class _MobxQuery<
 
   get options() {
     return this.queryOptions;
+  }
+
+  public refetch = () => {
+    this.qObserver.refetch();
   }
 
   setupDispoables() {
