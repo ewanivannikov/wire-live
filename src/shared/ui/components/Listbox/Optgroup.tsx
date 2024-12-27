@@ -8,12 +8,17 @@ export type OptgroupProps = {
 
 export const Optgroup = (props: OptgroupProps) => {
   const { classList, ...rest } = props;
-  return <ul 
-  role="group" {...rest}
-  classList={{[root]: true, ...classList}}
-  aria-labelledby={props.label}
-  >
-    <li role="presentation" id={props.label} class={label}>{props.label}</li>
-    {props.children}
-    </ul>;
+  return (
+    <ul
+      role="group"
+      {...rest}
+      classList={{ [root]: true, ...classList }}
+      aria-labelledby={props.label}
+    >
+      <li role="presentation" id={props.label} class={label}>
+        {props.label}
+      </li>
+      {props.children}
+    </ul>
+  );
 };

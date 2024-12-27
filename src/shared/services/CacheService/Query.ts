@@ -1,13 +1,9 @@
 import {
-  action,
-  makeObservable,
   observable,
-  reaction,
   onBecomeUnobserved,
   onBecomeObserved,
-  computed,
   makeAutoObservable,
-} from "mobx";
+} from 'mobx';
 import {
   DefaultError,
   QueryClient,
@@ -15,8 +11,8 @@ import {
   QueryObserver,
   QueryObserverOptions,
   QueryObserverResult,
-  notifyManager
-} from "@tanstack/query-core";
+  notifyManager,
+} from '@tanstack/query-core';
 
 class MobxQuery<
   TQueryFnData = unknown,
@@ -28,17 +24,23 @@ class MobxQuery<
   private query: _MobxQuery<TQueryFnData, TError, TData, TQueryData, TQueryKey>;
   constructor(
     private readonly queryClient: QueryClient,
-    queryOptions: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>
+    queryOptions: QueryObserverOptions<
+      TQueryFnData,
+      TError,
+      TData,
+      TQueryData,
+      TQueryKey
+    >,
   ) {
     this.query = new _MobxQuery(this.queryClient, queryOptions);
     makeAutoObservable(this, {
       // @ts-expect-error Mobx can see it don't worry
       query: observable.ref,
     });
-    onBecomeObserved(this, "query", () => {
+    onBecomeObserved(this, 'query', () => {
       this.query.setupDispoables();
     });
-    onBecomeUnobserved(this, "query", () => {
+    onBecomeUnobserved(this, 'query', () => {
       this.query.dispose();
     });
   }
@@ -49,7 +51,7 @@ class MobxQuery<
 
   public refetch = () => {
     this.query.refetch();
-  }
+  };
 }
 class _MobxQuery<
   TQueryFnData = unknown,
@@ -58,13 +60,26 @@ class _MobxQuery<
   TQueryData = TQueryFnData,
   TQueryKey extends QueryKey = QueryKey,
 > {
-  public qObserver: QueryObserver<TQueryFnData, TError, TData, TQueryData, TQueryKey> = {};
-  public state!: QueryObserverResult<TData, TError> = {}
+  public qObserver: QueryObserver<
+    TQueryFnData,
+    TError,
+    TData,
+    TQueryData,
+    TQueryKey
+  > = {};
+
+  public state!: QueryObserverResult<TData, TError> = {};
   private dispoables: (() => void)[] = [];
   unsubscribe!: () => void;
   constructor(
     private readonly queryClient: QueryClient,
-    private queryOptions: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>
+    private queryOptions: QueryObserverOptions<
+      TQueryFnData,
+      TError,
+      TData,
+      TQueryData,
+      TQueryKey
+    >,
   ) {
     makeAutoObservable(this, {}, { autoBind: true });
   }
@@ -76,19 +91,34 @@ class _MobxQuery<
   public setupDispoables() {
     this.qObserver = new QueryObserver(this.queryClient, this.options);
     this.state = this.qObserver.getCurrentResult();
-    this.unsubscribe = this.qObserver.subscribe(notifyManager.batchCalls(this.onStoreChange))
-    this.qObserver.updateResult()
+    this.unsubscribe = this.qObserver.subscribe(
+      notifyManager.batchCalls(this.onStoreChange),
+    );
+    this.qObserver.updateResult();
   }
 
-  public refetch(){    
-    this.qObserver.refetch();
+  public refetch() {
+    // this.qObserver.refetch();
+    this.queryClient.ensureQueryData(this.options).then((res) => {
+      console.log('this.qObserver', res);
+
+      return res;
+    });
   }
 
   private onStoreChange = (res) => {
     this.state = res;
-  }
+  };
 
-  updateOptions(options: () => QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>) {
+  updateOptions(
+    options: () => QueryObserverOptions<
+      TQueryFnData,
+      TError,
+      TData,
+      TQueryData,
+      TQueryKey
+    >,
+  ) {
     this.queryOptions = options;
   }
 

@@ -33,5 +33,7 @@ class DirectionalButton extends ArrowBase {
   }
 }
 
-export const createDirectionalButton = (position: string, direction: Direction) =>
-  new DirectionalButton(position, direction);
+export const createDirectionalButton = (
+  position: string,
+  direction: Direction,
+) => new DirectionalButton(position, direction);

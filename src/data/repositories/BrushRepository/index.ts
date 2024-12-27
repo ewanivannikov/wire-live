@@ -1,2 +1,2 @@
 export * from './BrushRepository';
-export * from './types'
+export * from './types';

@@ -69,17 +69,17 @@ class MobxMutation<
 
   async mutateAsync(
     variables: TVariables,
-    options?: MutateOptions<TData, TError, TVariables, TContext> | undefined
+    options?: MutateOptions<TData, TError, TVariables, TContext> | undefined,
   ) {
     if (!this.isObserved) {
-      this.mutation.setupDispoables()
+      this.mutation.setupDispoables();
     }
-    const promise = this.mutation.mutateAsnyc(variables, options)
+    const promise = this.mutation.mutateAsnyc(variables, options);
     const res = await promise;
     if (!this.isObserved) {
-      this.mutation.dispose()
+      this.mutation.dispose();
     }
-    return res
+    return res;
   }
 
   updateOptions(
@@ -95,12 +95,7 @@ class _MobxMutation<
   TContext = unknown,
 > {
   queryClient: QueryClient;
-  _queryOptions: MutationObserverOptions<
-    TData,
-    TError,
-    TVariables,
-    TContext
-  >;
+  _queryOptions: MutationObserverOptions<TData, TError, TVariables, TContext>;
 
   mObserver!: MutationObserver<TData, TError, TVariables, TContext>;
   public state!: MutationObserverResult<TData, TError, TVariables, TContext>;
@@ -130,7 +125,9 @@ class _MobxMutation<
       this.wrapEffectsWithActions(this.mutationOptions),
     );
     this.state = this.mObserver.getCurrentResult();
-    this.unsubscribe = this.mObserver.subscribe(notifyManager.batchCalls(this.update.bind(this)));
+    this.unsubscribe = this.mObserver.subscribe(
+      notifyManager.batchCalls(this.update.bind(this)),
+    );
   }
 
   mutate(
@@ -145,20 +142,20 @@ class _MobxMutation<
   }
 
   wrapEffectsWithActions(options: typeof this.mutationOptions) {
-    const targets = ['onSuccess', 'onError', 'onSettled', "onMutate"] as const
+    const targets = ['onSuccess', 'onError', 'onSettled', 'onMutate'] as const;
     for (const target of targets) {
       if (options[target]) {
-        const original = options[target]
+        const original = options[target];
         // @ts-ignore
         options[target] = (...args: any[]) => {
           runInAction(() => {
             // @ts-ignore
-            original(...args)
-          })
-        }
+            original(...args);
+          });
+        };
       }
     }
-    return options
+    return options;
   }
 
   updateOptions(
@@ -168,12 +165,14 @@ class _MobxMutation<
   }
 
   _updateOptions() {
-    this.mObserver.setOptions(this.wrapEffectsWithActions(this.mutationOptions));
+    this.mObserver.setOptions(
+      this.wrapEffectsWithActions(this.mutationOptions),
+    );
     this.state = this.mObserver.getCurrentResult();
   }
 
   get mutateAsnyc() {
-    return this.state.mutate
+    return this.state.mutate;
   }
 
   dispose() {

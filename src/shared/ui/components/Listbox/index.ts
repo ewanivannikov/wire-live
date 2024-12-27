@@ -4,5 +4,5 @@ import { Optgroup } from './Optgroup';
 
 export const Listbox = Object.assign(Root, {
   Option,
-  Optgroup
+  Optgroup,
 });

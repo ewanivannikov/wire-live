@@ -11,12 +11,12 @@ export const Input = (props) => {
   }, null);
 
   return (
-    <input 
-      type="text" 
-      role="textbox" 
-      ref={input} 
-      {...props} 
-      classList={{ ...classList, [root]: true}}
+    <input
+      type="text"
+      role="textbox"
+      ref={input}
+      {...props}
+      classList={{ ...classList, [root]: true }}
     />
   );
 };

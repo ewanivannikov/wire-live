@@ -1,4 +1,11 @@
-import { Object3D, Object3DEventMap, OrthographicCamera, Raycaster, Vector2, WebGLRenderer } from 'three';
+import {
+  Object3D,
+  Object3DEventMap,
+  OrthographicCamera,
+  Raycaster,
+  Vector2,
+  WebGLRenderer,
+} from 'three';
 
 export const createRaycaster = (
   container: HTMLElement,
@@ -10,7 +17,6 @@ export const createRaycaster = (
   const raycaster = new Raycaster();
   let intersects = [];
   const pointer = new Vector2();
-
 
   const onPointerDown = (event) => {
     const rect = renderer.domElement.getBoundingClientRect();
@@ -39,18 +45,19 @@ export const createRaycaster = (
 
   container.addEventListener('pointerdown', onPointerDown);
 
-
-  //https://web.dev/articles/streams
+  // https://web.dev/articles/streams
   const stream = new ReadableStream({
     start(controller) {
-      container.addEventListener("pointermove", event => controller.enqueue(event));
-    }
+      container.addEventListener('pointermove', (event) =>
+        controller.enqueue(event),
+      );
+    },
   });
 
   const intersectStream = () => {
     const ptr = new Vector2();
     let itrsts = [];
-    let gridIntersectName = ''
+    let gridIntersectName = '';
     let previousGridIntersect: Object3D<Object3DEventMap> = null;
 
     return new TransformStream({
@@ -86,10 +93,10 @@ export const createRaycaster = (
               previousGridIntersect,
               tileIntersect: tileIntersect?.object,
               gridIntersect: gridIntersect?.object,
-              event
+              event,
             });
-            gridIntersectName = gridIntersect?.object.name
-            previousGridIntersect = gridIntersect?.object
+            gridIntersectName = gridIntersect?.object.name;
+            previousGridIntersect = gridIntersect?.object;
           }
         }
       },
@@ -97,16 +104,14 @@ export const createRaycaster = (
   };
 
   const onIntersectCanvas = (handler: (event) => void) => {
-    stream
-      .pipeThrough(intersectStream())
-      .pipeTo(
-        new WritableStream({
-          write(event) {
-            handler(event)
-          }
-        })
-      );
-  }
+    stream.pipeThrough(intersectStream()).pipeTo(
+      new WritableStream({
+        write(event) {
+          handler(event);
+        },
+      }),
+    );
+  };
 
   return onIntersectCanvas;
 };

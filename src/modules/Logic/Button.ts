@@ -30,5 +30,4 @@ class Button extends ArrowBase {
   }
 }
 
-export const createButton = (position: string) =>
-  new Button(position);
+export const createButton = (position: string) => new Button(position);

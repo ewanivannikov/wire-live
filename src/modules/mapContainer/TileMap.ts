@@ -28,7 +28,6 @@ class TileMap {
     private readonly grid,
     private readonly map,
   ) {
-
     const cashe = logicField.initCashe(map);
 
     this.init(cashe);
@@ -44,7 +43,7 @@ class TileMap {
     sprite.material.color = new THREE.Color(hex[arrow.state]);
     sprite.material.opacity = 1;
     sprite.material.needsUpdate = true;
-  }
+  };
 
   init = (cashe) => {
     this.grid.group.tick = () => {
@@ -77,14 +76,13 @@ class TileMap {
   }
 
   public onPointerChange = (tile) => {
-    return tile
+    return tile;
   };
 
   public updateTile = (tile) => {
-
     const tileTexture =
       this.tileTextures[
-      this.tools.currentTool === 'Eraser' ? 'Eraser' : brush.currentBrush
+        this.tools.currentTool === 'Eraser' ? 'Eraser' : brush.currentBrush
       ]; // Assuming you have a way to get the texture
 
     const [x, y] = new Position(tile.name).vector;
@@ -186,6 +184,11 @@ class TileMap {
   };
 }
 
-
-export const createTileMap = (tileTextures, tileSize, loop, logicField: Fields, grid, map: object[]) =>
-  new TileMap(tileTextures, tileSize, loop, logicField, tools, grid, map);
+export const createTileMap = (
+  tileTextures,
+  tileSize,
+  loop,
+  logicField: Fields,
+  grid,
+  map: object[],
+) => new TileMap(tileTextures, tileSize, loop, logicField, tools, grid, map);

@@ -1,10 +1,10 @@
 class ModalLogic {
   constructor(
     private readonly modalNode: HTMLDialogElement,
-    private readonly props
+    private readonly props,
   ) {
     if (props.open) {
-      modalNode.showModal()
+      modalNode.showModal();
     }
   }
 
@@ -15,4 +15,4 @@ class ModalLogic {
 
 export const createModalLogic = (element: HTMLDialogElement, props) => {
   return new ModalLogic(element, props);
-}
+};

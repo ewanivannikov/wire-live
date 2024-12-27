@@ -5,7 +5,7 @@ export const buttonStyles = css`
     border: 0;
     cursor: pointer;
   }
-  :host span { 
+  :host span {
     pointer-events: none;
   }
   :host .ripple {

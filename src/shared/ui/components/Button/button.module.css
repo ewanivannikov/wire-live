@@ -10,4 +10,10 @@
   line-height: 0;
   transition: 0.25s background-color;
   border: 0;
+  font-family: 'Palatino Linotype';
+  padding: 0 8px;
+}
+
+.inner {
+  display: inline-flex;
 }

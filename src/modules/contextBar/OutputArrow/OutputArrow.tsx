@@ -13,8 +13,8 @@ import { outputArrowModel } from './viewModel';
 export const OutputArrow = () => {
   const state = brush;
   const handleClick = (el) => {
-    outputArrowModel.setWaitingOperator(el.id)
-  }
+    outputArrowModel.setWaitingOperator(el.id);
+  };
 
   return (
     <Show when={state.currentBrush.includes('Brush.22')}>
@@ -61,21 +61,17 @@ export const OutputArrow = () => {
         </Popover.Target>
         <Popover id="output-signal-wait">
           <Listbox
-              aria-activedescendant={outputArrowModel.waitingOperator}
-              onFocusChange={handleClick}
-            >
-              <For each={['=', '<=', '>=', '!=']}>
-                {(val) => (
-                  <Listbox.Option id={val}>
-                    {val}
-                  </Listbox.Option>
-                )}
-              </For>
-            </Listbox>
+            aria-activedescendant={outputArrowModel.waitingOperator}
+            onFocusChange={handleClick}
+          >
+            <For each={['=', '<=', '>=', '!=']}>
+              {(val) => <Listbox.Option id={val}>{val}</Listbox.Option>}
+            </For>
+          </Listbox>
         </Popover>
-        <TextInput 
-          onChange={(outputArrowModel.setWaitingValue)} 
-          size={2} 
+        <TextInput
+          onChange={outputArrowModel.setWaitingValue}
+          size={2}
           value={outputArrowModel.waitingValue}
         />
       </SegmentedControls>

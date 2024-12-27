@@ -16,7 +16,7 @@ import { About, Canvas, Home, LevelList } from './pages';
 import { Toolbar } from './modules/toolbar';
 import { ContextBar } from './modules/contextBar';
 import { TaskPanel } from './modules/taskPanel';
-import {registerServiceWorker} from './shared';
+import { registerServiceWorker } from './shared';
 import { StateBulkCheckingModal } from './modules/worldState/StateBulkChecking/view';
 
 registerServiceWorker();
@@ -34,7 +34,7 @@ const enableMobXWithSolidJS = () => {
       track: (x) => {
         let next;
         reaction.track(() => (next = fn(x)));
-        
+
         return next;
       },
       dispose: () => {
@@ -48,17 +48,14 @@ enableMobXWithSolidJS();
 routerService.init();
 
 const App = () => {
-  const [pathname, setPathname] = createSignal(routerService.location.pathname)
+  const [pathname, setPathname] = createSignal(routerService.location.pathname);
 
   routerService.onNavigate((e) => {
-    setPathname(e.target.location.hash)
+    setPathname(e.target.location.hash);
   });
 
   createEffect(() => {
-    if (
-      pathname().includes('home') ||
-      pathname().includes('about')
-    ) {
+    if (pathname().includes('home') || pathname().includes('about')) {
       const theme = document.querySelector('#theme');
       if (theme) {
         theme.href = './static/warm.variables.css';
@@ -73,35 +70,35 @@ const App = () => {
   }, null);
 
   return (
-    <ErrorBoundary fallback={(err, reset) => <div onClick={reset}>Error: {err.toString()}</div>}>
-    <Switch fallback={<div>Not Found</div>}>
-      <Match when={pathname().includes('levels')}>
-        <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
-          <TaskPanel />
-          <StateBulkCheckingModal />
-          <Canvas />
-        </Layout>
-      </Match>
-      <Match
-        when={pathname().includes('home')}
-      >
-        <LayoutLanding>
-          <Home />
-        </LayoutLanding>
-      </Match>
-      <Match
-        when={pathname().includes('about')}
-      >
-        <LayoutLanding>
-          <About />
-        </LayoutLanding>
-      </Match>
-      <Match when={pathname() === '/' || pathname() === '#/'}>
-        <Layout>
-          <LevelList />
-        </Layout>
-      </Match>
-    </Switch>
+    <ErrorBoundary
+      fallback={(err, reset) => (
+        <div onClick={reset}>Error: {err.toString()}</div>
+      )}
+    >
+      <Switch fallback={<div>Not Found</div>}>
+        <Match when={pathname().includes('levels')}>
+          <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
+            <TaskPanel />
+            <StateBulkCheckingModal />
+            <Canvas />
+          </Layout>
+        </Match>
+        <Match when={pathname().includes('home')}>
+          <LayoutLanding>
+            <Home />
+          </LayoutLanding>
+        </Match>
+        <Match when={pathname().includes('about')}>
+          <LayoutLanding>
+            <About />
+          </LayoutLanding>
+        </Match>
+        <Match when={pathname() === '/' || pathname() === '#/'}>
+          <Layout>
+            <LevelList />
+          </Layout>
+        </Match>
+      </Switch>
     </ErrorBoundary>
   );
 };

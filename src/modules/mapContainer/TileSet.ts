@@ -4,7 +4,9 @@ import { brushRepository } from '../../data';
 import { Tile, DirectionType } from '../toolbar';
 
 class TileSet {
-  private _tileTextures: Record<string, Texture> = Object.keys(brushRepository.brushList).reduce(
+  private _tileTextures: Record<string, Texture> = Object.keys(
+    brushRepository.brushList,
+  ).reduce(
     (acc, current) => {
       acc[current] = new Texture();
       return acc;

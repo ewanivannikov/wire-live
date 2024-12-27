@@ -6,17 +6,16 @@ export class Loop {
   public updatables = [];
   private duration = 500;
   private camera: OrthographicCamera;
-  private scene
-  private renderer
+  private scene;
+  private renderer;
 
-  constructor() {
-  }
+  constructor() {}
 
   public init = (camera, scene, renderer) => {
     this.camera = camera;
     this.scene = scene;
     this.renderer = renderer;
-  }
+  };
 
   start() {
     let clockTrack = 0;

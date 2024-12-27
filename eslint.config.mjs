@@ -1,6 +1,3 @@
-import config from 'eslint-config-standard';
-import eslintConfigPrettier from 'eslint-config-prettier';
-import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import { FlatCompat } from '@eslint/eslintrc';
 import path from 'path';
@@ -18,4 +15,7 @@ export default tseslint.config(
   ...compat.extends('eslint-config-standard'),
   ...compat.extends('eslint-config-prettier'),
   ...tseslint.configs.recommended,
+  ...compat.extends({rules: {
+    "no-useless-constructor": false
+  }})
 );

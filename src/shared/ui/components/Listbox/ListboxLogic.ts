@@ -16,8 +16,8 @@ class ListboxLogic {
   constructor(
     private readonly listboxNode: HTMLDListElement,
     private readonly styles: ListboxStyleProps,
-    onFocusChange = function () { },
-    onItemChange = function () { },
+    onFocusChange = function () {},
+    onItemChange = function () {},
   ) {
     // this.listboxNode = listboxNode;
     this.activeDescendant = this.listboxNode.getAttribute(

@@ -1,7 +1,7 @@
 import { DirectionType, ToolType } from './enums';
 
 export class Tile {
-  constructor(private readonly name: string) { }
+  constructor(private readonly name: string) {}
 
   get vector(): [
     ToolType,

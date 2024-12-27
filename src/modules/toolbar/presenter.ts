@@ -10,7 +10,10 @@ class Tools {
   private _loop: Loop;
   private _logicField: Fields;
   private _tileMap;
-  constructor(private readonly levelRepo: LevelRepository, private readonly worldState: WorldState) {
+  constructor(
+    private readonly levelRepo: LevelRepository,
+    private readonly worldState: WorldState,
+  ) {
     makeAutoObservable(this);
   }
 
@@ -24,11 +27,11 @@ class Tools {
     this._logicField = logicField;
     this._tileMap = tileMap;
     tileMap.onPointerChange = (tile) => {
-      const canBeErased = this.worldState.canBeErased(tile)
-      const canBeDrawn = this.worldState.canBeDrawn(tile)
-      const isEraser = this.currentTool === ToolType.Eraser
-      const isBrush = this.currentTool === ToolType.Brush
-      const isPan = this.currentTool === ToolType.Pan
+      const canBeErased = this.worldState.canBeErased(tile);
+      const canBeDrawn = this.worldState.canBeDrawn(tile);
+      const isEraser = this.currentTool === ToolType.Eraser;
+      const isBrush = this.currentTool === ToolType.Brush;
+      const isPan = this.currentTool === ToolType.Pan;
 
       if (canBeErased && isEraser) {
         // НАЙДИ БАГ СВЯЗАННЫЙ С ПАУЗОЙ, РИСОВАНИЕМ И СТИРАНИЕМ. ГДЕ-ТО В onPointerMove!
@@ -38,11 +41,14 @@ class Tools {
         this._tileMap.updateTile(tile);
       }
       if (isPan) {
-        if (tile.userData.type?.includes('20') || tile.userData.type?.includes('23')) {
+        if (
+          tile.userData.type?.includes('20') ||
+          tile.userData.type?.includes('23')
+        ) {
           this._logicField.addSignal(tile.name, 1);
         }
       }
-    }
+    };
   };
 
   public setCurrentTool = (tool) => {
@@ -50,23 +56,23 @@ class Tools {
   };
 
   public setTick = () => {
-    if ((this.worldState.status === 'level.play.checking.one')) {
+    if (this.worldState.status === 'level.play.checking.one') {
       this.worldState.togglePause(this._loop);
     }
   };
 
   public switchOnOneChecking = () => {
     this.worldState.switchStatusOnLevelOneChecking();
-  }
+  };
 
   public switchOnSolving = () => {
     this.worldState.switchStatusOnLevelSolving();
-  }
+  };
 
   public saveMap = () => {
-    const map = this._logicField.arrowCache
-    this.levelRepo.createMap(map)
-  }
+    const map = this._logicField.arrowCache;
+    this.levelRepo.createMap(map);
+  };
 }
 
 export const tools = new Tools(levelRepository, worldState);

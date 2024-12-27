@@ -12,33 +12,34 @@ interface CardProps {
 }
 
 export const Card: ParentComponent<CardProps> = (props) => {
-  const [{component = 'h2'}] = splitProps(props, ["component"]);
+  const [{ component = 'h2' }] = splitProps(props, ['component']);
   return (
     <article class={`${card} ${props.class || ''}`}>
       {props.imageSrc && (
         <a href={props.href} class="card-image">
           <picture class="">
             <source srcset={props.imageSrc} media="(min-width: 0px)" />
-            <img aria-hidden="true" elementtiming="LCP-target" fetchpriority="high" loading="eager" src={props.imageSrc} style="--dls-liteimage-object-fit: cover;"/>
+            <img
+              aria-hidden="true"
+              elementtiming="LCP-target"
+              fetchpriority="high"
+              loading="eager"
+              src={props.imageSrc}
+              style="--dls-liteimage-object-fit: cover;"
+            />
           </picture>
         </a>
       )}
-      
+
       {props.title && (
         <Typography component={component} class={title}>
           <a href={props.href}>{props.title}</a>
         </Typography>
       )}
-      
-      <div class="card-content">
-        {props.children}
-      </div>
 
-      {props.actionsSlot && (
-        <div class="card-actions">
-          {props.actionsSlot}
-        </div>
-      )}
+      <div class="card-content">{props.children}</div>
+
+      {props.actionsSlot && <div class="card-actions">{props.actionsSlot}</div>}
     </article>
   );
 };

@@ -419,19 +419,19 @@ export const IconOutputArrow = () => {
 
 export const IconDirectionalButtonUp = () => {
   return <div class={`${icon} ${iconDirectionalButtonUp}`} />;
-}
+};
 
 export const IconDirectionalButtonDown = () => {
-  return <div class={`${icon} ${iconDirectionalButtonDown}`} />
-}
+  return <div class={`${icon} ${iconDirectionalButtonDown}`} />;
+};
 
 export const IconDirectionalButtonRight = () => {
-  return <div class={`${icon} ${iconDirectionalButtonRight}`} />
-}
+  return <div class={`${icon} ${iconDirectionalButtonRight}`} />;
+};
 
 export const IconDirectionalButtonLeft = () => {
-  return <div class={`${icon} ${iconDirectionalButtonLeft}`} />
-}
+  return <div class={`${icon} ${iconDirectionalButtonLeft}`} />;
+};
 
 export const IconBulb = () => {
   return <div class={`${icon} ${iconBulb}`} />;

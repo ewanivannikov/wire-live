@@ -20,19 +20,24 @@ class OutputArrow extends ArrowBase {
   }
 
   conditionStates(fields: Fields) {
-    if ((this.waiting === -1) && (fields.getSignal(this.position.coordinates) >= 1)) {
+    if (
+      this.waiting === -1 &&
+      fields.getSignal(this.position.coordinates) >= 1
+    ) {
       this.waiting = 0;
     }
     if (this.waiting != 0) {
       this.state = 'Wait';
-    } else if (((this.active === 1) && (fields.getSignal(this.position.coordinates) >= 1)) ||
-      ((this.active === -1) && (fields.getSignal(this.position.coordinates) === 0))) {
+    } else if (
+      (this.active === 1 && fields.getSignal(this.position.coordinates) >= 1) ||
+      (this.active === -1 && fields.getSignal(this.position.coordinates) === 0)
+    ) {
       this.isValidIn = this.isValidIn && true;
     } else {
       this.isValidIn = this.isValidIn && false;
     }
     if (this.waiting === 0) {
-      if ((this.loop === 0)) {
+      if (this.loop === 0) {
         this.index = this.index + 1;
         if (this.index === this.pattern.length) {
           if (this.cycling) {
@@ -63,16 +68,18 @@ class OutputArrow extends ArrowBase {
       this.state = 'Mars';
       this.patternValidation.push(this.state);
     }
-
   }
 
-  activeStates(fields: Fields) {
-  }
+  activeStates(fields: Fields) {}
 
   public get validated() {
     this.patternLength = this.pattern.reduce((acc, cor) => acc + cor, 0);
     if (this.patternValidation.includes('Mars')) return 'rejected';
-    if (this.patternValidation.every((item) => item === 'Venus') && this.patternValidation.length >= this.patternLength) return 'resolved';
+    if (
+      this.patternValidation.every((item) => item === 'Venus') &&
+      this.patternValidation.length >= this.patternLength
+    )
+      return 'resolved';
     return 'waiting';
   }
 }

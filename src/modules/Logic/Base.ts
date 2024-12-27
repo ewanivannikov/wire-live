@@ -117,12 +117,7 @@ export class Fields {
     tileData.forEach((tile) => {
       const { tileId, x, y, ...options } = tile;
       const value = new Tile(tileId).vector;
-      this.addArrowCache(`${x},${y}`,
-        value[1],
-        value[2],
-        value[3],
-        options
-      );
+      this.addArrowCache(`${x},${y}`, value[1], value[2], value[3], options);
     });
 
     return this.arrowCache;
@@ -133,7 +128,6 @@ export class Fields {
   }
 
   public processingLogic = (cb) => {
-
     if (!this.paused) {
       const outputs: string[] = [];
       this.clearStates();
@@ -157,12 +151,11 @@ export class Fields {
 
       if (outputs.includes('rejected')) {
         emitter.emit(solutionChecked, 'rejected');
-      }
-      else if (outputs.every((item) => item === 'resolved')) {
+      } else if (outputs.every((item) => item === 'resolved')) {
         emitter.emit(solutionChecked, 'resolved');
       }
     }
-  }
+  };
 }
 
 export const fields = new Fields();

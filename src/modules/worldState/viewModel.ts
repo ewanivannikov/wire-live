@@ -1,18 +1,16 @@
-import { makeAutoObservable } from "mobx";
-import { type RouterService, routerService } from "../../shared/services";
-import { fields } from "../Logic/Base";
-import { levelRepository } from "../../data";
-import { createLevelContext } from "./Level";
+import { makeAutoObservable } from 'mobx';
+import { type RouterService, routerService } from '../../shared/services';
+import { fields } from '../Logic/Base';
+import { levelRepository } from '../../data';
+import { createLevelContext } from './Level';
 
 export class WorldState {
   public isPaused = true;
   mode = 'level';
   modeContext = createLevelContext(this);
-  public state = this.modeContext.state
+  public state = this.modeContext.state;
 
-  constructor(
-    private readonly routerServ: RouterService,
-  ) {
+  constructor(private readonly routerServ: RouterService) {
     makeAutoObservable(this);
   }
 
@@ -20,7 +18,6 @@ export class WorldState {
     this.modeContext.next();
     this.isPaused = false;
   }
-
 
   public switchStatusOnLevelSolving() {
     if (this.modeContext.state.status.includes('checking')) {
@@ -33,10 +30,10 @@ export class WorldState {
       this.modeContext.next();
       this.routerServ.navigate('/');
     }
-  }
+  };
 
   public get status() {
-    return this.state.status
+    return this.state.status;
   }
 
   public get levelId() {
@@ -54,12 +51,16 @@ export class WorldState {
   }
 
   public canBeErased = (tile) => {
-    return this.modeContext.state.canBeErased(tile)
-  }
+    return this.modeContext.state.canBeErased(tile);
+  };
 
   public canBeDrawn = (tile) => {
-    return this.modeContext.state.canBeDrawn(tile)
-  }
+    return this.modeContext.state.canBeDrawn(tile);
+  };
 }
 
-export const worldState = new WorldState(routerService, fields, levelRepository);
+export const worldState = new WorldState(
+  routerService,
+  fields,
+  levelRepository,
+);

@@ -1,22 +1,22 @@
-import { profilePresenter } from "./presenter";
-import { ContentStatus } from "../../shared";
+import { profilePresenter } from './presenter';
+import { ContentStatus } from '../../shared';
 import { Button } from '../../shared/ui/components/Button';
-import { createEffect, Show } from "solid-js";
+import { createEffect, Show } from 'solid-js';
 
 export const Profile = () => {
   createEffect(() => profilePresenter.state);
   const logOut = () => {
     profilePresenter.logOut();
-  }
+  };
 
   const logIn = () => {
     profilePresenter.logIn();
-  }
-  
+  };
+
   return (
     <>
-      <ContentStatus 
-        status={profilePresenter.state.status} 
+      <ContentStatus
+        status={profilePresenter.state.status}
         error={profilePresenter.state.error}
       >
         <div class="profile">
@@ -32,4 +32,4 @@ export const Profile = () => {
       </Show>
     </>
   );
-}
+};

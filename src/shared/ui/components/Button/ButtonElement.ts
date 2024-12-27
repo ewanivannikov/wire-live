@@ -6,17 +6,18 @@ import { styleMap } from 'lit/directives/style-map.js';
 
 @customElement('button-wl')
 export class ButtonElement extends LitElement {
-
-  static styles = [
-    buttonStyles,
-  ];
+  static styles = [buttonStyles];
 
   static get properties() {
     return {
       type: { type: String, reflect: true, defaultValue: 'button' },
       onClick: { type: Function },
-      styles: { type: Object, reflect: true, },
-      ariaDisabled: { type: Boolean, reflect: true, attribute: 'aria-disabled' },
+      styles: { type: Object, reflect: true },
+      ariaDisabled: {
+        type: Boolean,
+        reflect: true,
+        attribute: 'aria-disabled',
+      },
       ariaPressed: {
         type: Boolean,
         reflect: true,
@@ -29,23 +30,18 @@ export class ButtonElement extends LitElement {
     };
   }
 
-  tag = literal`button`
+  tag = literal`button`;
 
   constructor() {
     super();
     this.type = 'button';
-    this.onClick = () => { };
+    this.onClick = () => {};
     this._position = { x: 0, y: 0 };
     this._tick = 0;
   }
 
   render() {
-    const {
-      ariaDisabled,
-      ariaPressed,
-      type,
-      value,
-    } = this;
+    const { ariaDisabled, ariaPressed, type, value } = this;
 
     const styles = {
       '--ripple-x': this._position.x,
@@ -68,12 +64,12 @@ export class ButtonElement extends LitElement {
   }
 
   handleClick = (e) => {
-    this.ripple(e)
-    this.onClick(e)
-  }
+    this.ripple(e);
+    this.onClick(e);
+  };
 
   ripple = (e) => {
-    e.target.classList.add("ripple");
+    e.target.classList.add('ripple');
 
     this._position = { x: e.offsetX, y: e.offsetY };
     const start = performance.now();
@@ -82,11 +78,11 @@ export class ButtonElement extends LitElement {
       const count = Math.floor(now - start);
       self._tick = count;
       if (count > 1000) {
-        e.target.classList.remove("ripple");
+        e.target.classList.remove('ripple');
         self._tick = 0;
         return;
       }
       requestAnimationFrame(raf);
     });
-  }
+  };
 }

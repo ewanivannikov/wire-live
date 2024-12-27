@@ -65,21 +65,23 @@ class World {
     );
     scene.add(tileMap.tileGroup);
 
-    const onIntersectCanvas = createRaycaster(container, camera, renderer, tileMap, grid);
+    const onIntersectCanvas = createRaycaster(
+      container,
+      camera,
+      renderer,
+      tileMap,
+      grid,
+    );
 
     onIntersectCanvas((int) => {
-      const { tileIntersect, gridIntersect, event, previousGridIntersect } = int;
+      const { tileIntersect, gridIntersect, event, previousGridIntersect } =
+        int;
 
-      if (
-        tileIntersect
-        && event.pressure > 0
-        && event.buttons === 1
-      ) {
+      if (tileIntersect && event.pressure > 0 && event.buttons === 1) {
         tileMap.onPointerChange(tileIntersect);
       }
 
       if (gridIntersect) {
-
         const tool =
           tools.currentTool === ToolType.Brush
             ? brush.currentBrush

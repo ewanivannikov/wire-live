@@ -23,32 +23,37 @@ class Brush {
     private readonly tools: Tools,
     private readonly inputArrowModel: InputArrowModel,
     private readonly outputArrowModel: OutputArrowModel,
-    private readonly worldState: WorldState
+    private readonly worldState: WorldState,
   ) {
     makeAutoObservable(this);
     this.init();
   }
 
   private init() {
-    if ((this.worldState.status.includes('level'))) {
-      const brush = this.worldState.modeContext.level.allowedBrushList[0]
-      const [_, _a, dir, fl] = new Tile(brush).vector
-      this.currentBrush = brush
-      this.currentBrushDirection = dir
-      this.currentBrushFlip = fl
+    if (this.worldState.status.includes('level')) {
+      const brush = this.worldState.modeContext.level.allowedBrushList[0];
+      const [_, _a, dir, fl] = new Tile(brush).vector;
+      this.currentBrush = brush;
+      this.currentBrushDirection = dir;
+      this.currentBrushFlip = fl;
 
-      this.currentBrushDirectionList = this.getDirectionsByNumber(new Tile(brush).vector[1])
+      this.currentBrushDirectionList = this.getDirectionsByNumber(
+        new Tile(brush).vector[1],
+      );
     }
   }
 
   private getDirectionsByNumber(number: number) {
-    const directions = Object.keys(brushRepository.brushList).reduce((acc, cur) => {
-      const currentBrushNumber = new Tile(cur).vector[1];
-      if (number === currentBrushNumber) {
-        acc.push(new Tile(cur).vector[2]);
-      }
-      return acc;
-    }, []);
+    const directions = Object.keys(brushRepository.brushList).reduce(
+      (acc, cur) => {
+        const currentBrushNumber = new Tile(cur).vector[1];
+        if (number === currentBrushNumber) {
+          acc.push(new Tile(cur).vector[2]);
+        }
+        return acc;
+      },
+      [],
+    );
 
     return [...new Set(directions)];
   }
@@ -98,33 +103,43 @@ class Brush {
   }
 
   public nextDirection = () => {
-    const newDirection = this.currentBrushDirectionList[(this.currentBrushDirectionList.indexOf(this.currentBrushDirection) + 1) % 4];
-    this.setBrushDirection(newDirection);    
-  }
+    const newDirection =
+      this.currentBrushDirectionList[
+        (this.currentBrushDirectionList.indexOf(this.currentBrushDirection) +
+          1) %
+          4
+      ];
+    this.setBrushDirection(newDirection);
+  };
 
-  public prevDirection = () => { 
-    const newDirection = this.currentBrushDirectionList[(this.currentBrushDirectionList.indexOf(this.currentBrushDirection) + 3) % 4];
-    this.setBrushDirection(newDirection);    
-  }
+  public prevDirection = () => {
+    const newDirection =
+      this.currentBrushDirectionList[
+        (this.currentBrushDirectionList.indexOf(this.currentBrushDirection) +
+          3) %
+          4
+      ];
+    this.setBrushDirection(newDirection);
+  };
 
   public initHotKeys = () => {
-    let keysPressed = {};
+    const keysPressed = {};
 
     addEventListener('keydown', (event) => {
       keysPressed[event.code] = true;
 
-      if (!keysPressed['ShiftLeft'] && event.code == 'KeyR') {
+      if (!keysPressed.ShiftLeft && event.code == 'KeyR') {
         this.nextDirection();
       }
-      if (keysPressed['ShiftLeft'] && event.code == 'KeyR') {
-          this.prevDirection();
+      if (keysPressed.ShiftLeft && event.code == 'KeyR') {
+        this.prevDirection();
       }
     });
-    
+
     addEventListener('keyup', (event) => {
-        delete keysPressed[event.code];
+      delete keysPressed[event.code];
     });
-  }
+  };
 
   get allowBrushes() {
     return this.tools.currentTool === ToolType.Brush;
@@ -139,9 +154,15 @@ class Brush {
   }
 
   public get clastersBrushList() {
-    return Object.entries(brushRepository.getClastersBrushesByLevelId(this.worldState.levelId));
+    return Object.entries(
+      brushRepository.getClastersBrushesByLevelId(this.worldState.levelId),
+    );
   }
 }
 
-export const brush =
-  new Brush(tools, inputArrowModel, outputArrowModel, worldState);
+export const brush = new Brush(
+  tools,
+  inputArrowModel,
+  outputArrowModel,
+  worldState,
+);

@@ -16,14 +16,14 @@ export const brushes = {
   'Brush.4.Right': 'SignalDetector.Right',
   'Brush.4.Down': 'SignalDetector.Down',
   'Brush.4.Left': 'SignalDetector.Left',
-   'Brush.5.Up': 'OppositeArrow.Up',
+  'Brush.5.Up': 'OppositeArrow.Up',
   'Brush.5.Right': 'OppositeArrow.Left',
   'Brush.6.Up.>': 'OrthogonalArrow.Up.>',
   'Brush.6.Right.>': 'OrthogonalArrow.Right.>',
-   'Brush.6.Down.>': 'OrthogonalArrow.Down.>',
+  'Brush.6.Down.>': 'OrthogonalArrow.Down.>',
   'Brush.6.Left.>': 'OrthogonalArrow.Left.>',
   'Brush.6.Up.<': 'OrthogonalArrow.Up.<',
-   'Brush.6.Right.<': 'OrthogonalArrow.URight.<',
+  'Brush.6.Right.<': 'OrthogonalArrow.URight.<',
   'Brush.6.Down.<': 'OrthogonalArrow.Down.<',
   'Brush.6.Left.<': 'OrthogonalArrow.Right.<',
   'Brush.7.Up': 'TrioArrow.Up',
@@ -35,14 +35,14 @@ export const brushes = {
   'Brush.9.Right': 'ThroughArrow.Right',
   'Brush.9.Down': 'ThroughArrow.Down',
   'Brush.9.Left': 'ThroughArrow.Left',
-    'Brush.10.Up.>': 'DiagonalArrow.Up.>',
+  'Brush.10.Up.>': 'DiagonalArrow.Up.>',
   'Brush.10.Right.>': 'DiagonalArrow.Right.>',
   'Brush.10.Down.>': 'DiagonalArrow.Down.>',
   'Brush.10.Left.>': 'DiagonalArrow.Left.>',
   'Brush.10.Up.<': 'DiagonalArrow.Up.<',
   'Brush.10.Right.<': 'DiagonalArrow.Right.<',
   'Brush.10.Down.<': 'DiagonalArrow.Down.<',
-   'Brush.10.Left.<': 'DiagonalArrow.Left.<',
+  'Brush.10.Left.<': 'DiagonalArrow.Left.<',
   'Brush.11.Up': 'DoubleArrow.Up',
   'Brush.11.Right': 'DoubleArrow.Right',
   'Brush.11.Down': 'DoubleArrow.Down',
@@ -55,7 +55,7 @@ export const brushes = {
   'Brush.12.Right.<': 'ThroughNear.Right.<',
   'Brush.12.Down.<': 'ThroughNear.Down.<',
   'Brush.12.Left.<': 'ThroughNear.Left.<',
-   'Brush.13.Up.>': 'ForwardDiagArrow.Up.>',
+  'Brush.13.Up.>': 'ForwardDiagArrow.Up.>',
   'Brush.13.Right.>': 'ForwardDiagArrow.Right.>',
   'Brush.13.Down.>': 'ForwardDiagArrow.Down.>',
   'Brush.13.Left.>': 'ForwardDiagArrow.Left.>',
@@ -65,7 +65,7 @@ export const brushes = {
   'Brush.13.Left.<': 'ForwardDiagArrow.Left.<',
   'Brush.14.Up': 'NotGate.Up',
   'Brush.14.Right': 'NotGate.Right',
-   'Brush.14.Down': 'NotGate.Down',
+  'Brush.14.Down': 'NotGate.Down',
   'Brush.14.Left': 'NotGate.Left',
   'Brush.15.Up': 'AndGate.Up',
   'Brush.15.Right': 'AndGate.Right',
@@ -73,22 +73,22 @@ export const brushes = {
   'Brush.15.Left': 'AndGate.Left',
   'Brush.16.Up': 'XorGate.Up',
   'Brush.16.Right': 'XorGate.Right',
-   'Brush.16.Down': 'XorGate.Down',
+  'Brush.16.Down': 'XorGate.Down',
   'Brush.16.Left': 'XorGate.Left',
   'Brush.17.Up': 'Latch.Up',
-    'Brush.17.Right': 'Latch.Right',
+  'Brush.17.Right': 'Latch.Right',
   'Brush.17.Down': 'Latch.Down',
   'Brush.17.Left': 'Latch.Left',
   'Brush.18.Up': 'FlipFlop.Up',
   'Brush.18.Right': 'FlipFlop.Right',
-   'Brush.18.Down': 'FlipFlop.Down',
+  'Brush.18.Down': 'FlipFlop.Down',
   'Brush.18.Left': 'FlipFlop.Left',
   'Brush.19.Up': 'RandomArrow.Up',
   'Brush.19.Right': 'RandomArrow.Right',
   'Brush.19.Down': 'RandomArrow.Down',
   'Brush.19.Left': 'RandomArrow.Left',
   'Brush.20': 'Button',
-    'Brush.21.Up': 'InputArrow.Up',
+  'Brush.21.Up': 'InputArrow.Up',
   'Brush.21.Right': 'InputArrow.Right',
   'Brush.21.Down': 'InputArrow.Down',
   'Brush.21.Left': 'InputArrow.Left',
@@ -98,10 +98,10 @@ export const brushes = {
   'Brush.23.Down': 'DirectionalButton.Down',
   'Brush.23.Left': 'DirectionalButton.Left',
   'Brush.24': 'Bulb',
-   'Brush.25.Up': 'BulbDetector.Up',
+  'Brush.25.Up': 'BulbDetector.Up',
   'Brush.25.Right': 'BulbDetector.Right',
   'Brush.25.Down': 'BulbDetector.Down',
-  'Brush.25.Left': 'BulbDetector.Left'
+  'Brush.25.Left': 'BulbDetector.Left',
 };
 
 export const groupsBrushes = {
@@ -258,13 +258,12 @@ export const groupsBrushes = {
   'Brush.25.Up': {
     value: 'BulbDetector',
     label: 'Bulb detector',
-    description:
-      'Активация: если стрелка сзади активна \nДействие: загореться',
+    description: 'Активация: если стрелка сзади активна \nДействие: загореться',
   },
 };
 
 export const clastersBrushes = {
-  'Transmitting': {
+  Transmitting: {
     values: [
       'Brush.0.Up',
       'Brush.2.Up',
@@ -283,50 +282,40 @@ export const clastersBrushes = {
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
-  'Sources': {
-    values: [
-      'Brush.1',
-      'Brush.8'],
+  Sources: {
+    values: ['Brush.1', 'Brush.8'],
     label: 'Источники сигнала',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
-  'Logical': {
+  Logical: {
     values: [
       'Brush.14.Up',
-      'Brush.15.Up', 
+      'Brush.15.Up',
       'Brush.16.Up',
       'Brush.17.Up',
-      'Brush.18.Up',],
+      'Brush.18.Up',
+    ],
     label: 'Логические',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
-  'Controls': {
-    values: [
-      'Brush.20', 
-      'Brush.23.Up'],
+  Controls: {
+    values: ['Brush.20', 'Brush.23.Up'],
     label: 'Контролы',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
-  'Indicators': {
-    values: [
-      'Brush.24',
-      'Brush.25.Up'],
+  Indicators: {
+    values: ['Brush.24', 'Brush.25.Up'],
     label: 'Индикаторы',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
-  'Special': {
-    values: [
-      'Brush.19.Up',
-      'Brush.21.Up', 
-      'Brush.22', 
-    ],
+  Special: {
+    values: ['Brush.19.Up', 'Brush.21.Up', 'Brush.22'],
     label: 'Особые стрелки',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
-}
-
+};
