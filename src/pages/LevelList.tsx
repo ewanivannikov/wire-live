@@ -9,7 +9,7 @@ export const LevelList = () => {
       <For each={levelRepository.getLevelList()}>
         {(val) => (
           <Card imageSrc="https://placehold.co/284x200" title={val.name} href={`#/levels/${val.slug}`}>
-            <Button>Запустить уровень</Button>
+            <Button component="a" href={`#/levels/${val.slug}`}>Запустить уровень</Button>
           </Card>
         )}
       </For>

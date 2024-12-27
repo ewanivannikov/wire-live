@@ -58,7 +58,7 @@ class _MobxQuery<
   TQueryData = TQueryFnData,
   TQueryKey extends QueryKey = QueryKey,
 > {
-  qObserver!: QueryObserver<TQueryFnData, TError, TData, TQueryData, TQueryKey>;
+  public qObserver: QueryObserver<TQueryFnData, TError, TData, TQueryData, TQueryKey> = {};
   public state!: QueryObserverResult<TData, TError> = {}
   private dispoables: (() => void)[] = [];
   unsubscribe!: () => void;
@@ -66,22 +66,22 @@ class _MobxQuery<
     private readonly queryClient: QueryClient,
     private queryOptions: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>
   ) {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {}, { autoBind: true });
   }
 
   get options() {
     return this.queryOptions;
   }
 
-  public refetch = () => {
-    this.qObserver.refetch();
-  }
-
-  setupDispoables() {
+  public setupDispoables() {
     this.qObserver = new QueryObserver(this.queryClient, this.options);
     this.state = this.qObserver.getCurrentResult();
     this.unsubscribe = this.qObserver.subscribe(notifyManager.batchCalls(this.onStoreChange))
     this.qObserver.updateResult()
+  }
+
+  public refetch(){    
+    this.qObserver.refetch();
   }
 
   private onStoreChange = (res) => {

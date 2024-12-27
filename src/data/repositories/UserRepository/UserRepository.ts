@@ -34,6 +34,7 @@ export class UserRepository {
         const result = await this.userNetwork.logIn()
         return result
       },
+      enabled: false,
     })
     return result
   }
