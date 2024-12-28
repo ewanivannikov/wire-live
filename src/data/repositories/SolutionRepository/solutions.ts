@@ -1,5 +1,7 @@
 export const solutions = {
-  'DeMorgan:1': {
+  'DeMorgan:1': [
+    {
+    id: 0,
     status: 'draft',
     map: [
       {
@@ -54,4 +56,7 @@ export const solutions = {
       },
     ],
   },
+  {status: 'cleanCopy',
+    id: 1,
+    map: []}],
 };

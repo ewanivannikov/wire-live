@@ -14,7 +14,10 @@ export const LevelList = () => {
             href={`#/levels/${val.slug}`}
           >
             <Button component="a" href={`#/levels/${val.slug}`}>
-              Запустить уровень
+              Добавить решение
+            </Button>
+            <Button component="a" href={`#/levels/${val.slug}`}>
+              Открыть решение
             </Button>
           </Card>
         )}

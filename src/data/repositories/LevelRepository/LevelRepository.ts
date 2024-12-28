@@ -1,3 +1,4 @@
+import { ArrowBase } from '../../../modules/Logic/ArrowBase';
 import { arrowToIndexTile } from '../../../modules/Logic/constants';
 import { getRandomNumberExceptExceptions } from '../../../shared/utils/getRandomNumberExceptExceptions';
 import { levels } from './levels';
@@ -6,6 +7,14 @@ import { patternArrowCache } from './patternArrowCache';
 export class LevelRepository {
   public getLevelById(id = 'DeMorgan') {
     return levels[id];
+  }
+
+  public getUserMap(id = 'DeMorgan', map: Map<string, ArrowBase>) {
+    for (let i = 0; i < this.getLevelById(id).length; i++) {
+      map.delete(`${i.x},${i.y}`)
+    }
+    const userMap = this.createMap(map);
+    return userMap;
   }
 
   public getPatternArrowCache(id = 'DeMorgan') {

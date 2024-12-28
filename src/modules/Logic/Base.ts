@@ -13,7 +13,7 @@ export class Fields {
   public signalCache = new Map<string, number>(); // integer
   public newSignalCache = new Map();
   public stateCache = new Map(); // string(state)
-  public arrowCache = new Map(); // arrow
+  public arrowCache = new Map<string, ArrowBase>(); // arrow
   public paused = false;
 
   getSignal(key: string) {

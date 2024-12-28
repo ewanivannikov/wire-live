@@ -12,10 +12,16 @@ export const Canvas = () => {
     if (isMounted()) {
       const levelId = routerService.params.levelId;
       const userId = '1';
+      const hasSolutions = solutionRepository.checkSolutions(levelId, userId);
+      let mapSolution = [];
+      
+      
+      if (hasSolutions) {mapSolution = solutionRepository.getDraft(levelId, userId).map};
 
       const map = levelRepository
         .getLevelById(levelId)
-        .map.concat(solutionRepository.getSolution(levelId, userId).map);
+        .map.concat(mapSolution);
+        console.log('map', map);
       const world = createWorld(ref, map);
       world.render();
     }
