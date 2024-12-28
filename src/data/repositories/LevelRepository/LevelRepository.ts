@@ -13,6 +13,7 @@ export class LevelRepository {
     for (let i = 0; i < this.getLevelById(id).length; i++) {
       map.delete(`${i.x},${i.y}`)
     }
+
     const userMap = this.createMap(map);
     return userMap;
   }
@@ -68,22 +69,11 @@ export class LevelRepository {
     return { requisite, requisiteIndex };
   }
 
-  // public getRequisiteWithKey(id = 'DeMorgan') {
-  //   const requisites = levels[id].requisites
-  //   let result = {}
-  //   Object.keys(requisites).forEach((key, index) => {
-  //     if (index === 0) {
-  //       result = { [key]: levels[id].requisites[key] }
-  //     }
-  //   })
-  //   return result
-  // }
-
   public getLevelList = () => {
     return Object.values(levels);
   };
 
-  public createMap(tileData) {
+  public createMap(tileData: Map<string, ArrowBase>) {
     const array = Array.from(tileData, ([name, value]) => {
       const [x, y] = name.split(',').map(Number);
       const tileId = [
@@ -94,6 +84,7 @@ export class LevelRepository {
       return { tileId, x, y };
     });
     console.log(array);
+    return array
   }
 }
 

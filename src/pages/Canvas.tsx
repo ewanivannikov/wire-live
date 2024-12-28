@@ -21,7 +21,7 @@ export const Canvas = () => {
       const map = levelRepository
         .getLevelById(levelId)
         .map.concat(mapSolution);
-        console.log('map', map);
+
       const world = createWorld(ref, map);
       world.render();
     }

@@ -31,6 +31,7 @@ export class StateCompleted {
 
   public setCountSimulations = (countSimulations) => {
     this.challenges = this.challenges.map((challenge, i) => {
+      this.solutionRepo.createCleanCopy(this._fields.arrowCache, this.routerServ.params.levelId, '1');
       if (this.status === 'completed') {
         return { ...challenge, barColor: 'green' };
       }

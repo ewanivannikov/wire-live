@@ -1,8 +1,8 @@
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, onBecomeUnobserved } from 'mobx';
 import { type RouterService, routerService } from '../../shared/services';
-import { fields } from '../Logic/Base';
-import { levelRepository } from '../../data';
 import { createLevelContext } from './Level';
+import { type SolutionRepository, solutionRepository } from '../../data/repositories/SolutionRepository/SolutionRepository';
+import { Fields, fields } from '../Logic/Base';
 
 export class WorldState {
   public isPaused = true;
@@ -10,8 +10,19 @@ export class WorldState {
   modeContext = createLevelContext(this);
   public state = this.modeContext.state;
 
-  constructor(private readonly routerServ: RouterService) {
+  constructor(
+    private readonly _routerServ: RouterService,
+    private readonly _solutionRepository: SolutionRepository,
+    private readonly _fields: Fields
+  ) {
     makeAutoObservable(this);
+    onBecomeUnobserved(this,"_routerServ",()=>{
+      this._solutionRepository.createDraft(
+        this._fields.arrowCache,
+        this._routerServ.params.levelId,
+        '1',
+      );
+    })
   }
 
   public switchStatusOnLevelOneChecking() {
@@ -28,7 +39,7 @@ export class WorldState {
   public switchToCompleted = () => {
     if (this.modeContext.state.status.includes('bulk')) {
       this.modeContext.next();
-      this.routerServ.navigate('/');
+      this._routerServ.navigate('/');
     }
   };
 
@@ -37,7 +48,7 @@ export class WorldState {
   }
 
   public get levelId() {
-    return this.routerServ.params.levelId;
+    return this._routerServ.params.levelId;
   }
 
   public togglePause() {
@@ -59,8 +70,4 @@ export class WorldState {
   };
 }
 
-export const worldState = new WorldState(
-  routerService,
-  fields,
-  levelRepository,
-);
+export const worldState = new WorldState(routerService, solutionRepository, fields);

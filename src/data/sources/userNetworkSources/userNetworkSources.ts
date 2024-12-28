@@ -28,9 +28,9 @@ export const userNetworkSources = {
   async logIn() {
     console.log('auth');
     try {
-    await httpService.get('auth/google').json();
+      await httpService.get('auth/google').json();
 
-    return true;
+      return true;
     } catch (error) {
       return error;
     }
