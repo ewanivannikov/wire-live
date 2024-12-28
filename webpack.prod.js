@@ -1,4 +1,5 @@
 const { merge } = require('webpack-merge');
+const path = require('path');
 const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -6,7 +7,10 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const config = merge(common, {
   mode: 'production',
   output: {
-    publicPath: '/wire-live/',
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+    publicPath: './static/'
   },
   module: {
     rules: [
@@ -48,7 +52,7 @@ const config = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       ignoreOrder: true,
-      filename: 'static/[name].[contenthash].css',
+      filename: '[name].[contenthash].css',
       chunkFilename: '[id].css',
     }),
   ],

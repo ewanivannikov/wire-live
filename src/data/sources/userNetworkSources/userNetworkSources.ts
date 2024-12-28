@@ -27,9 +27,12 @@ export const userNetworkSources = {
 
   async logIn() {
     console.log('auth');
+    try {
+    await httpService.get('auth/google').json();
 
-    const result = await httpService.get('auth/google').json();
-
-    return result;
+    return true;
+    } catch (error) {
+      return error;
+    }
   },
 };

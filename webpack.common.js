@@ -19,25 +19,20 @@ module.exports = {
       path: path.resolve(__dirname, 'dist'),
     }),
   ],
-  output: {
-    filename: 'static/[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
   module: {
     rules: [
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'static/assets/[hash][ext][query]',
+          filename: './static/assets/[hash][ext][query]',
         },
       },
       {
         test: /\.(worklet.js|worker)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'static/[hash][ext][query]',
+          filename: './static/[hash][ext][query]',
         },
       },
       {

@@ -6,8 +6,8 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   output: {
-    publicPath: '/',
-    filename: 'static/[name].bundle.js',
+    publicPath: '',
+    filename: './static/[name].bundle.js',
   },
   devServer: {
     static: [
