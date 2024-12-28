@@ -7,10 +7,9 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const config = merge(common, {
   mode: 'production',
   output: {
-    filename: '[name].bundle.js',
+    filename: './static/[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: './static/'
   },
   module: {
     rules: [
@@ -52,7 +51,7 @@ const config = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       ignoreOrder: true,
-      filename: '[name].[contenthash].css',
+      filename: './static/[name].[contenthash].css',
       chunkFilename: '[id].css',
     }),
   ],
