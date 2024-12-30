@@ -16,8 +16,9 @@ export class StateCompleted {
     private readonly routerServ: RouterService,
     private readonly _fields: Fields,
   ) {
+    const level = this.levelRepo.getLevelById(this.routerServ.params.levelId);
     const lenReq = Object.keys(
-      this.levelRepo.getLevelById(this.routerServ.params.levelId).requisites,
+      level?.requisites ?? {},
     ).length;
     for (let i = 1; i < lenReq; i++) {
       this.challenges.push({ barColor: '#ccc', amount: 100 });

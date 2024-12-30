@@ -80,6 +80,7 @@ export class LevelRepository {
         'Brush',
         arrowToIndexTile[value.name],
         value.direction,
+        ...value.flip || [],
       ].join('.');
       return { tileId, x, y };
     });

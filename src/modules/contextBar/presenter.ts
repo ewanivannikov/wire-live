@@ -32,14 +32,17 @@ class Brush {
   private init() {
     if (this.worldState.status.includes('level')) {
       const brush = this.worldState.modeContext.level.allowedBrushList[0];
-      const [_, _a, dir, fl] = new Tile(brush).vector;
-      this.currentBrush = brush;
-      this.currentBrushDirection = dir;
-      this.currentBrushFlip = fl;
 
-      this.currentBrushDirectionList = this.getDirectionsByNumber(
-        new Tile(brush).vector[1],
-      );
+      if(brush){
+        const [_, type, dir, fl] = new Tile(brush).vector;
+        this.currentBrush = brush;
+        this.currentBrushDirection = dir;
+        this.currentBrushFlip = fl;
+        
+        this.currentBrushDirectionList = this.getDirectionsByNumber(
+          type,
+        );
+      }
     }
   }
 
