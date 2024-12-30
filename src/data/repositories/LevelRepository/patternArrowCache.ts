@@ -16,4 +16,26 @@ export const patternArrowCache: { [key: string]: any } = {
       y: -5,
     },
   },
+  Adder: {
+    'c71a8902-9ca6-4b57-b527-63f085599c7f':{
+      "tileId": "Brush.21.Up",
+      "x": -3,
+      "y": 4
+  },
+  'c71a8902-9ca6-4b57-b527-63f085599c6f':{
+      "tileId": "Brush.21.Up",
+      "x": 2,
+      "y": 4
+  },
+  'c71a8902-9ca6-4b57-b527-63f085599c5f':{
+      "tileId": "Brush.22.",
+      "x": -3,
+      "y": -5
+  },
+  'c71a8902-9ca6-4b57-b527-63f085599c4f':{
+      "tileId": "Brush.22.",
+      "x": 2,
+      "y": -5
+  },
+  },
 };

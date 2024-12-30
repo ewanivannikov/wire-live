@@ -66,11 +66,11 @@ export const levels = {
     },
     optionalChallenges: {},
   },
-  Sierpinski: {
-    slug: 'Sierpinski',
-    name: 'Серпинского',
-    description: 'Серпинского треугольника',
-    map: sources.Sierpinski,
+  Adder: {
+    slug: 'Adder',
+    name: 'Сумматор',
+    description: 'Сумматор',
+    map: sources.Adder,
     allowedBrushList: [],
   },
 };
