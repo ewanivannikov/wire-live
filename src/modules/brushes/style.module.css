@@ -1386,3 +1386,16 @@
   transform-origin: top left;
   transform: scale(0.12) rotate(90deg) translate(0px, -256px);
 }
+
+.icon-wall::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../assets/atlas.png') -256px -768px repeat;
+  transform-origin: top left;
+  transform: scale(0.12) translate(0px, -384px)
+}

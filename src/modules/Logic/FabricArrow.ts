@@ -24,6 +24,7 @@ import { createButton } from './Button';
 import { createDirectionalButton } from './DirectionalButton';
 import { createBulb } from './Bulb';
 import { createBulbDetector } from './BulbDetector';
+import { createWall } from './Wall';
 
 export const fabricArrow = (
   nameType: string,
@@ -148,6 +149,11 @@ export const fabricArrow = (
 
   if (nameType === 'BulbDetector') {
     const result = createBulbDetector(position, direction);
+    return result;
+  }
+
+  if (nameType === 'Wall') {
+    const result = createWall(position, direction);
     return result;
   }
 };

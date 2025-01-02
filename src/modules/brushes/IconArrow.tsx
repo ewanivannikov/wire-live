@@ -108,6 +108,7 @@ const {
   iconDirectionalButtonDown,
   iconDirectionalButtonLeft,
   iconDirectionalButtonRight,
+  iconWall
 } = styles;
 
 export const IconArrowUp = () => {
@@ -453,6 +454,10 @@ export const IconBulbDetectorLeft = () => {
   return <div class={`${icon} ${iconBulbDetectorLeft}`} />;
 };
 
+export const IconWall = () => {
+  return <div class={`${icon} ${iconWall}`} />;
+}
+
 export const iconsMapping = {
   'Brush.0.Up': IconArrowUp,
   'Brush.0.Down': IconArrowDown,
@@ -559,6 +564,7 @@ export const iconsMapping = {
   'Brush.25.Down': IconBulbDetectorDown,
   'Brush.25.Right': IconBulbDetectorRight,
   'Brush.25.Left': IconBulbDetectorLeft,
+  'Brush.26': IconWall,
 } as const;
 
 export const iconDirectionMapping = {

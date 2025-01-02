@@ -102,6 +102,7 @@ export const brushes = {
   'Brush.25.Right': 'BulbDetector.Right',
   'Brush.25.Down': 'BulbDetector.Down',
   'Brush.25.Left': 'BulbDetector.Left',
+  'Brush.26': 'Wall',
 };
 
 export const groupsBrushes = {
@@ -260,6 +261,12 @@ export const groupsBrushes = {
     label: 'Bulb detector',
     description: 'Активация: если стрелка сзади активна \nДействие: загореться',
   },
+  'Brush.26': {
+    value: 'Wall',
+    label: 'Wall',
+    description:
+      'Активация: если в стрелку поступило не менее одного сигнала \nДействие: загореться',
+  },
 };
 
 export const clastersBrushes = {
@@ -313,7 +320,7 @@ export const clastersBrushes = {
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },
   Special: {
-    values: ['Brush.19.Up', 'Brush.21.Up', 'Brush.22'],
+    values: ['Brush.19.Up', 'Brush.21.Up', 'Brush.22', 'Brush.26'],
     label: 'Особые стрелки',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',

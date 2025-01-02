@@ -25,6 +25,7 @@ export const indexTileToArrow = [
   'DirectionalButton',
   'Bulb',
   'BulbDetector',
+  'Wall',
 ];
 export const arrowToIndexTile = {
   Arrow: 0,
@@ -53,4 +54,5 @@ export const arrowToIndexTile = {
   DirectionalButton: 23,
   Bulb: 24,
   BulbDetector: 25,
+  Wall: 26,
 };
