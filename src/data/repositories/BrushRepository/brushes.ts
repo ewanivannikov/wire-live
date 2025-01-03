@@ -321,7 +321,7 @@ export const clastersBrushes = {
   },
   Special: {
     values: ['Brush.19.Up', 'Brush.21.Up', 'Brush.22', 'Brush.26'],
-    label: 'Особые стрелки',
+    label: 'Особые знаки',
     description:
       'Активируется: On any incoming signal.\nПри активации: Sends a signal forwards.',
   },

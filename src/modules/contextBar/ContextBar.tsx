@@ -30,8 +30,8 @@ export const ContextBar = () => {
             <Info />
           </Popover.Target>
           <Popover id="brushes-info">
-            <p>Позволяет рисовать стрелочки на поле</p>
-            <p>Стрелочки делятся на несколько групп:</p>
+            <p>Позволяет рисовать знаки на поле</p>
+            <p>Знаки делятся на несколько групп:</p>
             <ul>
               <For each={Object.entries(brushRepository.clastersBrushes)}>
                 {([_, val]) => <li>{val.label}</li>}
@@ -40,7 +40,7 @@ export const ContextBar = () => {
           </Popover>
           <div class={contextbar}>
             <label style={{ display: 'flex', 'align-items': 'center' }}>
-              Тип стрелочки:
+              Тип знака:
               <Popover.Target popovertarget="brushes">
                 <Dynamic component={iconsMapping[state.currentBrush]} />
               </Popover.Target>
@@ -114,7 +114,7 @@ export const ContextBar = () => {
             <Info />
           </Popover.Target>
           <Popover id="pan-info">
-            Даёт возможность нажимать на стрелочки-кнопки
+            Даёт возможность нажимать на знаки-кнопки
           </Popover>
         </Show>
       </Show>
