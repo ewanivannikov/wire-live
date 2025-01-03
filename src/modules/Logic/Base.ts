@@ -98,8 +98,8 @@ export class Fields {
   public clearPatternArrows() {
     this.arrowCache.forEach((arrow, _) => {
       if (arrow.name === 'OutputArrow' || arrow.name === 'InputArrow') {
-        arrow.index = -1;
-        arrow.loop = 0;
+        arrow.index = 0;
+        arrow.binaryArray = [];
       }
       if (arrow.name === 'OutputArrow') {
         arrow.isValidIn = true;

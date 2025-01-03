@@ -9,19 +9,19 @@ export class SolutionRepository {
     makeAutoObservable(this);
   }
 
-  public getSolutions(levelId = 'DeMorgan', userId = '1') {
+  public getSolutions(levelId = 'Sketch', userId = '1') {
     return solutions[`${levelId}:${userId}`];
   }
 
-  public checkSolutions(levelId = 'DeMorgan', userId = '1') {
+  public checkSolutions(levelId = 'Sketch', userId = '1') {
     return Boolean(solutions[`${levelId}:${userId}`]);
   }
 
-  public getDraft(levelId = 'DeMorgan', userId = '1') {
+  public getDraft(levelId = 'Sketch', userId = '1') {
     return solutions[`${levelId}:${userId}`]?.[0];
   }
 
-  public createDraft(map: Map<string, ArrowBase>, levelId = 'DeMorgan') {
+  public createDraft(map: Map<string, ArrowBase>, levelId = 'Sketch') {
     const userMap = this.levelRepo.getUserMap(levelId, map);
     const input = {
       status: 'draft',
@@ -32,7 +32,7 @@ export class SolutionRepository {
     console.log('createDraft', input, userId);
   }
 
-  public createCleanCopy(map: Map<string, ArrowBase>, levelId = 'DeMorgan') {
+  public createCleanCopy(map: Map<string, ArrowBase>, levelId = 'Sketch') {
     const userMap = this.levelRepo.getUserMap(levelId, map);
     const input = {
       status: 'cleanCopy',

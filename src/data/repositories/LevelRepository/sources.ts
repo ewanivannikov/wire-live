@@ -1,6 +1,133 @@
 import { patternArrowCache } from './patternArrowCache';
 
 export const sources: { [key: string]: any } = {
+  Briefing: [
+    {
+        "tileId": "Brush.0.Up",
+        "x": -2,
+        "y": 0
+    },
+    {
+        "tileId": "Brush.0.Up",
+        "x": -2,
+        "y": -1
+    },
+    {
+        "tileId": "Brush.0.Up",
+        "x": -2,
+        "y": -2
+    },
+    {
+        "tileId": "Brush.26",
+        "x": -3,
+        "y": 1
+    },
+    {
+        "tileId": "Brush.26",
+        "x": -3,
+        "y": 0
+    },
+    {
+        "tileId": "Brush.26",
+        "x": -3,
+        "y": -1
+    },
+    {
+        "tileId": "Brush.26",
+        "x": -3,
+        "y": -2
+    },
+    {
+        "tileId": "Brush.26",
+        "x": -3,
+        "y": -3
+    },
+    {
+        "tileId": "Brush.26",
+        "x": -3,
+        "y": -4
+    },
+    {
+        "tileId": "Brush.26",
+        "x": -2,
+        "y": -4
+    },
+    {
+        "tileId": "Brush.26",
+        "x": -1,
+        "y": -4
+    },
+    {
+        "tileId": "Brush.26",
+        "x": 0,
+        "y": -4
+    },
+    {
+        "tileId": "Brush.26",
+        "x": 1,
+        "y": -4
+    },
+    {
+        "tileId": "Brush.26",
+        "x": 2,
+        "y": -4
+    },
+    {
+        "tileId": "Brush.26",
+        "x": 2,
+        "y": -3
+    },
+    {
+        "tileId": "Brush.26",
+        "x": 2,
+        "y": -2
+    },
+    {
+        "tileId": "Brush.26",
+        "x": 2,
+        "y": -1
+    },
+    {
+        "tileId": "Brush.26",
+        "x": 2,
+        "y": 0
+    },
+    {
+        "tileId": "Brush.26",
+        "x": 2,
+        "y": 1
+    },
+    {
+        "tileId": "Brush.26",
+        "x": 2,
+        "y": 2
+    },
+    {
+        "tileId": "Brush.26",
+        "x": 1,
+        "y": 2
+    },
+    {
+        "tileId": "Brush.26",
+        "x": 0,
+        "y": 2
+    },
+    {
+        "tileId": "Brush.26",
+        "x": -2,
+        "y": 2
+    },
+    {
+        "tileId": "Brush.26",
+        "x": -3,
+        "y": 2
+    },
+    {
+        "tileId": "Brush.26",
+        "x": -1,
+        "y": 2
+    }
+].concat([...Object.values(patternArrowCache.Briefing)]),
   Adder: [
     {
         "tileId": "Brush.15.Up",
@@ -127,7 +254,7 @@ export const sources: { [key: string]: any } = {
         "x": 0,
         "y": 2
     }].concat([...Object.values(patternArrowCache.Adder)]),
-  DeMorgan: [...Object.values(patternArrowCache.DeMorgan)],
+  Sketch: [...Object.values(patternArrowCache.Sketch)],
   TestLevel: [
     {
       tileId: 'Brush.22.',

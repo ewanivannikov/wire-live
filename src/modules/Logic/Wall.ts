@@ -4,7 +4,7 @@ import { Direction } from './types';
 
 class Wall extends ArrowBase {
   constructor(position: string, direction: Direction) {
-    super('Arrow', position, direction);
+    super('Wall', position, direction);
   }
 
   conditionStates(fields: Fields) {}

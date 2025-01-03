@@ -1,15 +1,16 @@
 import { ArrowBase } from '../../../modules/Logic/ArrowBase';
 import { arrowToIndexTile } from '../../../modules/Logic/constants';
+import { generateRandomStrings } from '../../../shared/utils/generateRandomStrings';
 import { getRandomNumberExceptExceptions } from '../../../shared/utils/getRandomNumberExceptExceptions';
 import { levels } from './levels';
 import { patternArrowCache } from './patternArrowCache';
 
 export class LevelRepository {
-  public getLevelById(id = 'DeMorgan') {
+  public getLevelById(id = 'Sketch') {
     return levels[id];
   }
 
-  public getUserMap(id = 'DeMorgan', map: Map<string, ArrowBase>) {
+  public getUserMap(id = 'Sketch', map: Map<string, ArrowBase>) {
     for (let i = 0; i < this.getLevelById(id).length; i++) {
       map.delete(`${i.x},${i.y}`)
     }
@@ -18,11 +19,11 @@ export class LevelRepository {
     return userMap;
   }
 
-  public getPatternArrowCache(id = 'DeMorgan') {
+  public getPatternArrowCache(id = 'Sketch') {
     return patternArrowCache[id];
   }
 
-  public getOutputArrowList = (id = 'DeMorgan') => {
+  public getOutputArrowList = (id = 'Sketch') => {
     const list: string[] = [];
     const index: Record<string, any> = {};
 
@@ -40,7 +41,7 @@ export class LevelRepository {
   };
 
   public getRequisite({
-    id = 'DeMorgan',
+    id = 'Sketch',
     exceptions = [],
   }: {
     id: string;
@@ -84,7 +85,16 @@ export class LevelRepository {
       ].join('.');
       return { tileId, x, y };
     });
-    console.log(array);
+    let patternArrows = {}
+    let otherArrows = []
+    array.forEach((sign) => {
+      if (sign.tileId.includes('.21') || sign.tileId.includes('.22')) {
+        patternArrows = {...patternArrows,[generateRandomStrings()]:sign}
+      } else {
+        otherArrows.push(sign)
+      }
+    })
+    console.log(patternArrows, otherArrows);
     return array
   }
 }

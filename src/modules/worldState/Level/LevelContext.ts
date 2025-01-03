@@ -11,6 +11,8 @@ import { fields, Fields } from '../../Logic/Base';
 import { IState } from '../types';
 import { createStateSolving } from '../StateSolving';
 import { WorldState } from '../viewModel';
+import { createInputArrow } from '../../Logic/InputArrow';
+import { createOutputArrow } from '../../Logic/OutputArrow';
 
 // Класс контекста, управляющий состояниями
 export class LevelContext {
@@ -43,9 +45,11 @@ export class LevelContext {
 
   public initRequisites(exceptions?: number[]) {
     const req = this.levelRepo.getRequisite({ id: this.levelId, exceptions }); // случайный реквизит(пока первый)
+    
     if (req instanceof Error && req.cause === 'ALL_ARE_EXCEPTIONS') {
       return req;
     }
+    
     const { requisite, requisiteIndex } = req;
     const patternArrowKeys = Object.keys(
       this.levelRepo.getPatternArrowCache(this.levelId),
@@ -54,18 +58,26 @@ export class LevelContext {
       const x = this.levelRepo.getPatternArrowCache(this.levelId)[key].x;
       const y = this.levelRepo.getPatternArrowCache(this.levelId)[key].y;
       const coord = `${x},${y}`;
-      const arrow = this.logicField.getArrow(coord);
-      arrow.pattern = requisite[key].pattern;
-      arrow.cycling = requisite[key].hasCycle;
-      arrow.active = 1 - 2 * requisite[key].initialValue;
+      const pattern = requisite[key].pattern;
+      const cycling = requisite[key].hasCycle;
+      const arraive = requisite[key].initialValue;
+      if (
+        this.levelRepo
+          .getPatternArrowCache(this.levelId)
+          [key].tileId.includes('21')
+      ) {
+        const direction = this.logicField.getArrow(coord).direction
+        const arrow = createInputArrow(coord, direction, pattern, cycling, arraive)
+        this.logicField.addArrow(coord, arrow)
+      }   
       if (
         this.levelRepo
           .getPatternArrowCache(this.levelId)
           [key].tileId.includes('22')
       ) {
-        arrow.waiting = requisite[key].waiting;
+        const waiting = requisite[key].waiting;
+        const arrow = createOutputArrow(coord, pattern, cycling, arraive, waiting)
       }
-      this.logicField.addArrow(coord, arrow);
       // для каждого ключа стрелки из реквизитов надо найти координату в поле стрелок пользака. Затем по координатам найти нужные инпуты и оутпуты и используя данные из реквизитов изменить их внутренние характеристики
     });
 

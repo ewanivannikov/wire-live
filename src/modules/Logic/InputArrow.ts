@@ -1,40 +1,32 @@
 import { Fields } from './Base';
 import { ArrowBase } from './ArrowBase';
 import { Direction } from './types';
+import { createBinaryArray } from '../../shared/utils/createBinaryArray';
 
 class InputArrow extends ArrowBase {
-  public index = -1;
-  public loop = 0;
+  public index = 0;
+  public binaryArray : number[] = [];
+  
   constructor(
     position: string,
     direction: Direction,
-    public pattern: number[] = [1],
+    public pattern: number[],
     public cycling: boolean = false,
     public active: number = 1,
   ) {
     super('InputArrow', position, direction);
-    this.active = 2 * this.active - 1;
-    this.active = -this.active;
+    this.binaryArray = createBinaryArray(pattern ?? [1], this.active);
   }
 
   conditionStates(fields: Fields) {
-    if (this.loop === 0) {
-      this.index = this.index + 1;
-      if (this.index === this.pattern.length) {
+    if (this.index < this.binaryArray.length) {this.active = this.binaryArray[this.index];
+      this.index = this.index + 1} else {
         if (this.cycling) {
-          this.index = 0;
-          this.loop = this.pattern[this.index];
-          this.active = this.active / Math.pow(-1, this.pattern.length);
-        } else {
-          this.index = this.pattern.length - 1;
-          this.loop = -1;
-        }
-      } else {
-        this.loop = this.pattern[this.index];
+          this.index = this.index % this.binaryArray.length
+          this.active = this.binaryArray[this.index]
+          this.index = this.index + 1
+        } else {this.active = 1-this.binaryArray[this.index-1]}
       }
-      this.active = -this.active;
-    }
-    this.loop = Math.max(this.loop - 1, -1);
     if (this.active === 1) {
       this.state = 'Earth';
     } else {
