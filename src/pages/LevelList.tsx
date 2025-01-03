@@ -16,9 +16,9 @@ export const LevelList = () => {
             <Button component="a" href={`#/levels/${val.slug}`}>
               Добавить решение
             </Button>
-            <Button component="a" href={`#/levels/${val.slug}`}>
+            {/* <Button component="a" href={`#/levels/${val.slug}`}>
               Открыть решение
-            </Button>
+            </Button> */}
           </Card>
         )}
       </For>

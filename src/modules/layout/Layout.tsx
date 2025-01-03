@@ -4,6 +4,7 @@ import logo from '../../assets/logo.svg';
 import { JSX, Show } from 'solid-js';
 import { routerService } from '../../shared/services';
 import { Profile } from '../profile';
+import { LinkRouter } from '../../shared/ui/components/LinkRouter';
 
 const { container, header, sidebar, context, main, nav } = styles;
 
@@ -18,11 +19,11 @@ export function Layout(props: LayoutProps) {
     <div class={container}>
       <header class={header}>
         <nav class={nav}>
-          <a href={`${routerService.basename}`}>
+          <LinkRouter to={`/`}>
             <img src={logo} alt="" width="50px" srcset="" />
-          </a>
-          <a href={`${routerService.basename}`}>Wire live</a>
-          <a href={`${routerService.basename}#/about`}>О проекте</a>
+          </LinkRouter>
+          <LinkRouter to={`/`}>Wire live</LinkRouter>
+          <LinkRouter to={`/about`}>О проекте</LinkRouter>
           <Profile />
         </nav>
       </header>

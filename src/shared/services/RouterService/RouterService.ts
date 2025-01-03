@@ -37,7 +37,7 @@ export class RouterService {
   public params;
   public matches;
   public basename;
-  public searchParams;
+  public searchParams: URLSearchParams;
   constructor(private readonly router: Router) {
     makeAutoObservable(this);
     this.location = router.state.location;
@@ -94,6 +94,10 @@ export class RouterService {
       this.log();
     });
     this.log();
+  };
+
+  public createHref = (to: URL) => {
+    return this.router.createHref(to);
   };
 
   public onNavigate = (handler: (e: Event) => void) => {
