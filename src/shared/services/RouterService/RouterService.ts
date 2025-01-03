@@ -24,6 +24,9 @@ export const router = createRouter({
           path: 'levels/',
           children: [{ path: ':levelId' }],
         },
+        {
+          path: 'editor',
+        },
       ],
     },
   ],

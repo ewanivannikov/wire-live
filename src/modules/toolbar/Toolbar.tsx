@@ -11,7 +11,7 @@ import {
   Pencil,
 } from 'lucide-solid';
 import { tools } from './presenter';
-import { createEffect, Match, Switch } from 'solid-js';
+import { createEffect, Match, Show, Switch } from 'solid-js';
 import { worldState } from '../worldState';
 
 const { toolbar } = styles;
@@ -48,7 +48,7 @@ export const Toolbar = () => {
       <SegmentedButtons>
         <SegmentedButtons.Button
           value="Brush"
-          aria-disabled={worldState.status !== 'level.play.solving'}
+          aria-disabled={tools.disabledBrush}
           aria-pressed={tools.currentTool === 'Brush'}
           onClick={handleClick}
         >
@@ -56,7 +56,7 @@ export const Toolbar = () => {
         </SegmentedButtons.Button>
         <SegmentedButtons.Button
           value="Eraser"
-          aria-disabled={worldState.status !== 'level.play.solving'}
+          aria-disabled={tools.disabledEraser}
           aria-pressed={tools.currentTool === 'Eraser'}
           onClick={handleClick}
         >
@@ -73,7 +73,7 @@ export const Toolbar = () => {
 
       <Button
         name="Play"
-        aria-disabled={worldState.status === 'level.play.solving'}
+        aria-disabled={tools.disabledPlay}
         aria-pressed={worldState.isPaused}
         onClick={handleClickTick}
       >
@@ -87,26 +87,30 @@ export const Toolbar = () => {
         </Switch>
       </Button>
 
-      <SegmentedButtons>
-        <SegmentedButtons.Button
-          name="Submit"
-          aria-pressed={worldState.status === 'level.play.checking.one'}
-          onClick={handleClickSend}
-        >
-          <SendHorizontal />
-        </SegmentedButtons.Button>
-        <SegmentedButtons.Button
-          name="Write"
-          aria-pressed={worldState.status === 'level.play.solving'}
-          onClick={handleClickSolve}
-        >
-          <Pencil />
-        </SegmentedButtons.Button>
-      </SegmentedButtons>
+      <Show when={tools.showLevelStateToggler}>
+        <SegmentedButtons>
+          <SegmentedButtons.Button
+            name="Submit"
+            aria-pressed={worldState.status === 'level.play.checking.one'}
+            onClick={handleClickSend}
+          >
+            <SendHorizontal />
+          </SegmentedButtons.Button>
+          <SegmentedButtons.Button
+            name="Write"
+            aria-pressed={worldState.status === 'level.play.solving'}
+            onClick={handleClickSolve}
+          >
+            <Pencil />
+          </SegmentedButtons.Button>
+        </SegmentedButtons>
+      </Show>
 
-      <Button name="Save" onClick={handleClickSave}>
-        <Save />
-      </Button>
+      <Show when={tools.showSave}>
+        <Button name="Save" onClick={handleClickSave}>
+          <Save />
+        </Button>
+      </Show>
     </div>
   );
 };

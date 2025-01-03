@@ -83,6 +83,11 @@ const App = () => {
             <Canvas />
           </Layout>
         </Match>
+        <Match when={pathname().includes('editor')}>
+          <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
+            <Canvas />
+          </Layout>
+        </Match>
         <Match when={pathname().includes('home')}>
           <LayoutLanding>
             <Home />

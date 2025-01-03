@@ -149,7 +149,7 @@ class Brush {
   }
 
   get allowPanel() {
-    return this.worldState.status === 'level.play.solving';
+    return this.worldState.status === 'level.play.solving' || this.worldState.status === 'editor';
   }
 
   get currentTool() {

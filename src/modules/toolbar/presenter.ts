@@ -4,6 +4,7 @@ import { Loop } from '../mapContainer/systems';
 import { Fields } from '../Logic/Base';
 import { LevelRepository, levelRepository } from '../../data';
 import { WorldState, worldState } from '../worldState';
+import { routerService, RouterService } from '../../shared/services/RouterService';
 
 class Tools {
   currentTool = ToolType.Brush;
@@ -13,6 +14,7 @@ class Tools {
   constructor(
     private readonly levelRepo: LevelRepository,
     private readonly worldState: WorldState,
+    private readonly _router: RouterService,
   ) {
     makeAutoObservable(this);
   }
@@ -56,7 +58,8 @@ class Tools {
   };
 
   public setTick = () => {
-    if (this.worldState.status === 'level.play.checking.one') {
+    const isEditor = this._router.location.pathname.includes('editor');
+    if (this.worldState.status === 'level.play.checking.one' || isEditor) {
       this.worldState.togglePause(this._loop);
     }
   };
@@ -73,6 +76,31 @@ class Tools {
     const map = this._logicField.arrowCache;
     this.levelRepo.createMap(map);
   };
+
+  public get showSave() {
+    const isEditor = this._router.location.pathname.includes('editor');
+    return isEditor;
+  }
+
+  public get disabledPlay() {
+    const isLevels = this._router.location.pathname.includes('levels');
+    return isLevels && this.worldState.status === 'level.play.solving';
+  }
+
+  public get disabledBrush() {
+    const isLevels = this._router.location.pathname.includes('levels');
+    return isLevels && this.worldState.status !== 'level.play.solving';
+  }
+
+  public get disabledEraser() {
+    const isLevels = this._router.location.pathname.includes('levels');
+    return isLevels && this.worldState.status !== 'level.play.solving';
+  }
+
+  public get showLevelStateToggler() {
+    const isLevels = this._router.location.pathname.includes('levels');
+    return isLevels;
+  }
 }
 
-export const tools = new Tools(levelRepository, worldState);
+export const tools = new Tools(levelRepository, worldState, routerService);

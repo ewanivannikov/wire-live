@@ -3,12 +3,13 @@ import { type RouterService, routerService } from '../../shared/services';
 import { createLevelContext } from './Level';
 import { type SolutionRepository, solutionRepository } from '../../data/repositories/SolutionRepository/SolutionRepository';
 import { Fields, fields } from '../Logic/Base';
+import { createEditorContext } from './EditorContext/EditorContext';
 
 export class WorldState {
   public isPaused = true;
   mode = 'level';
-  modeContext = createLevelContext(this);
-  public state = this.modeContext.state;
+  modeContext = this.context;
+  public state = this.context.state;
 
   constructor(
     private readonly _routerServ: RouterService,
@@ -68,6 +69,11 @@ export class WorldState {
   public canBeDrawn = (tile) => {
     return this.modeContext.state.canBeDrawn(tile);
   };
+
+  private get context() {
+    const isLevels = this._routerServ.location.pathname.includes('levels');
+    return isLevels ? createLevelContext(this) : createEditorContext(this);
+  }
 }
 
 export const worldState = new WorldState(routerService, solutionRepository, fields);
