@@ -42,7 +42,7 @@ export const levels = {
     description: 'Сумматор',
     map: sources.Adder,
     allowedBrushList: [],
-    cover: '../../assets/cover-adder.png',
+    cover: './static/assets/cover-adder.png',
     requisites: {
       '1a5d944c-a2b2-437f-bdcf-bf5cb0ca2d4d': {
         'c71a8902-9ca6-4b57-b527-63f085599c8f': {

@@ -5,16 +5,15 @@ import { Button } from '../shared/ui/components/Button';
 import { LinkRouter } from '../shared/ui/components/LinkRouter';
 
 export const LevelList = () => {
-//   createEffect(()=>{
-// console.log('🚩🚩🚩🚩',new URL('../../assets/cover-adder.png', import.meta.url));
-
-//   }, null)
+  // createEffect(()=>{
+  //   console.log('🚩🚩🚩🚩',new URL('./static/assets/cover-adder.png', document.baseURI).pathname);
+  // }, null)
   return (
     <div class="level-list-grid">
       <For each={levelRepository.getLevelList()}>
         {(val) => (
           <Card
-            imageSrc={val.cover}
+            imageSrc={new URL(val.cover, document.baseURI).pathname}
             title={val.name}
             to={`/levels/${val.slug}`}
           >
