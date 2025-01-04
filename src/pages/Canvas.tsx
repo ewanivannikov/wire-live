@@ -19,7 +19,9 @@ export const Canvas = () => {
       let mapSolution = [];
       
       
-      if (hasSolutions) {mapSolution = solutionRepository.getDraft(levelId, userId).map};
+      if (hasSolutions) {
+        mapSolution = solutionRepository.getDraft(levelId, userId).map
+      };
 
       const map = levelRepository
         .getLevelById(levelId)

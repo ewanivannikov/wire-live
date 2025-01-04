@@ -5,8 +5,8 @@ import { createBinaryArray } from '../../shared/utils/createBinaryArray';
 
 class InputArrow extends ArrowBase {
   public index = 0;
-  public binaryArray : number[] = [];
-  
+  private binaryArray: number[];
+
   constructor(
     position: string,
     direction: Direction,
@@ -15,18 +15,20 @@ class InputArrow extends ArrowBase {
     public active: number = 1,
   ) {
     super('InputArrow', position, direction);
-    this.binaryArray = createBinaryArray(pattern ?? [1], this.active);
+    this.binaryArray = createBinaryArray(pattern || [1], this.active);
   }
 
   conditionStates(fields: Fields) {
-    if (this.index < this.binaryArray.length) {this.active = this.binaryArray[this.index];
-      this.index = this.index + 1} else {
-        if (this.cycling) {
-          this.index = this.index % this.binaryArray.length
-          this.active = this.binaryArray[this.index]
-          this.index = this.index + 1
-        } else {this.active = 1-this.binaryArray[this.index-1]}
-      }
+    if (this.index < this.binaryArray.length) {
+      this.active = this.binaryArray[this.index];
+      this.index = this.index + 1
+    } else {
+      if (this.cycling) {
+        this.index = this.index % this.binaryArray.length
+        this.active = this.binaryArray[this.index]
+        this.index = this.index + 1
+      } else { this.active = 1 - this.binaryArray[this.index - 1] }
+    }
     if (this.active === 1) {
       this.state = 'Earth';
     } else {

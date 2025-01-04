@@ -95,6 +95,18 @@ export class Fields {
     });
   }
 
+  private clearArrowCache = () => {
+    this.arrowCache.clear();
+  }
+
+  public clearAll = () => {
+    this.clearStates();
+    this.clearSignals();
+    this.clearArrowsStates();
+    this.clearPatternArrows();
+    this.clearArrowCache();
+  }
+
   public clearPatternArrows() {
     this.arrowCache.forEach((arrow, _) => {
       if (arrow.name === 'OutputArrow' || arrow.name === 'InputArrow') {
@@ -148,6 +160,7 @@ export class Fields {
 
         cb(arrow);
       });
+      console.log('outputs', outputs);
 
       if (outputs.includes('rejected')) {
         emitter.emit(solutionChecked, 'rejected');

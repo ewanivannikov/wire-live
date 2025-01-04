@@ -28,7 +28,7 @@ class Brush {
     private readonly _worldState?: WorldState
   ) {
     makeAutoObservable(this);
-    // this.init();
+    this.init();
   }
 
   private init() {
@@ -36,12 +36,12 @@ class Brush {
     if (isLevels) {
       const brush = this._worldState.modeContext.level.allowedBrushList[0];
 
-      if(brush){
+      if (brush) {
         const [_, type, dir, fl] = new Tile(brush).vector;
         this.currentBrush = brush;
         this.currentBrushDirection = dir;
         this.currentBrushFlip = fl;
-        
+
         this.currentBrushDirectionList = this.getDirectionsByNumber(
           type,
         );
@@ -113,9 +113,9 @@ class Brush {
   public nextDirection = () => {
     const newDirection =
       this.currentBrushDirectionList[
-        (this.currentBrushDirectionList.indexOf(this.currentBrushDirection) +
-          1) %
-          4
+      (this.currentBrushDirectionList.indexOf(this.currentBrushDirection) +
+        1) %
+      4
       ];
     this.setBrushDirection(newDirection);
   };
@@ -123,9 +123,9 @@ class Brush {
   public prevDirection = () => {
     const newDirection =
       this.currentBrushDirectionList[
-        (this.currentBrushDirectionList.indexOf(this.currentBrushDirection) +
-          3) %
-          4
+      (this.currentBrushDirectionList.indexOf(this.currentBrushDirection) +
+        3) %
+      4
       ];
     this.setBrushDirection(newDirection);
   };

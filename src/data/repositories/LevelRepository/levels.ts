@@ -20,24 +20,24 @@ export const levels = {
     requisites: {
       '1':{
         "6e6h3481iv": {
-          pattern: [5,4,1],
+          pattern: [2,2,1],
           hasCycle: false,
           initialValue: 1,
           waiting: -1,
         },
         "337fhpqlvc": {
-          pattern: [5,4,1],
+          pattern: [2,2,1],
           hasCycle: false,
           initialValue: 1,
           waiting: -1,
         },
         "66sg9if0ze": {
-          pattern: [5,4,1],
+          pattern: [2,2,1],
           hasCycle: false,
           initialValue: 1,
         },
         "257yh28x22": {
-          pattern: [5,4,1],
+          pattern: [2,2,1],
           hasCycle: false,
           initialValue: 1,
         }

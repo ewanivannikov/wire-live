@@ -1,4 +1,4 @@
-export function createBinaryArray(pattern: number[], initialState: number) {
+export const createBinaryArray = (pattern: number[], initialState: number) => {
   if (!Array.isArray(pattern) || pattern.some(num => !Number.isInteger(num) || num <= 0)) {
     throw new Error("Паттерн должен быть массивом положительных целых чисел.");
   }
@@ -13,7 +13,7 @@ export function createBinaryArray(pattern: number[], initialState: number) {
     for (let i = 0; i < count; i++) {
       result.push(currentState);
     }
-    currentState = currentState === 0 ? 1 : 0; 
+    currentState = currentState === 0 ? 1 : 0;
   }
 
   return result;

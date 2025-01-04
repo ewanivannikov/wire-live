@@ -10,7 +10,7 @@ import { ToolType } from '../toolbar/enums';
 export class WorldState {
   public isPaused = true;
   mode = 'level';
-  modeContext = this.context;
+  public modeContext = this.context;
   public state = this.context.state;
   public currentTool
   public currentBrush
@@ -22,12 +22,13 @@ export class WorldState {
     private readonly _fields: Fields
   ) {
     makeAutoObservable(this);
-    onBecomeUnobserved(this,"_routerServ",()=>{
+    onBecomeUnobserved(this,"modeContext",()=>{
       this._solutionRepository.createDraft(
         this._fields.arrowCache,
         this._routerServ.params.levelId,
         '1',
       );
+      this._fields.clearAll();
     })
   }
 

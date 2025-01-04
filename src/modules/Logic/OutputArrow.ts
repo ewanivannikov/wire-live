@@ -4,10 +4,11 @@ import { createBinaryArray } from '../../shared/utils/createBinaryArray';
 
 class OutputArrow extends ArrowBase {
   public index = 0;
-  public binaryArray : number[] = [];
+  public binaryArray: number[];
   public isValidIn = true;
   private patternLength = 0;
   private patternValidation: string[] = [];
+
   constructor(
     position: string,
     public pattern: number[],
@@ -16,25 +17,52 @@ class OutputArrow extends ArrowBase {
     public waiting: number = -1,
   ) {
     super('OutputArrow', position);
-    this.binaryArray = createBinaryArray(pattern ?? [1], this.active);
+
+    this.binaryArray = createBinaryArray(pattern || [1], this.active);
+    console.log(
+      'OutputArrowPattern',
+      this.binaryArray,
+      `active`,
+      active,
+      `pattern`,
+      pattern,
+      waiting,
+    );
   }
 
-  conditionStates(fields: Fields) {
-    if (this.waiting === 0) {
-      if (this.index < this.binaryArray.length) {this.active = this.binaryArray[this.index];
-        this.index = this.index + 1} else {
-          if (this.cycling) {
-            this.index = this.index % this.binaryArray.length
-            this.active = this.binaryArray[this.index]
-            this.index = this.index + 1
-          } else {this.active = 1-this.binaryArray[this.index-1]}
-        }
-      this.isValidIn = this.isValidIn && (((this.active === 1) && (fields.getSignal(this.position.coordinates) >= 1)) ||
-      ((this.active === 0) && (fields.getSignal(this.position.coordinates) === 0)))
+  conditionStates = (fields: Fields) => {
+    // ожидание истекло и сигнал достиг знака
+    if (
+      this.waiting === -1 &&
+      fields.getSignal(this.position.coordinates) === this.binaryArray[0]
+    ) {
+      console.log('ожидание истекло и сигнал достиг знака');
+
+      this.waiting = 0;
     }
-    if (this.waiting > 0) {this.waiting = this.waiting - 1}
-    if ((this.waiting === -1) && (fields.getSignal(this.position.coordinates) >= 1)) {
-      this.waiting = 0
+
+    // не ждём, сразу проверяем
+    if (this.waiting === 0) {
+      let valid
+
+      if (this.index < this.binaryArray.length) {
+        valid = this.binaryArray[this.index] === fields.getSignal(this.position.coordinates);
+        this.index = this.index + 1;
+      } else {
+        if (this.cycling) {
+          this.index = this.index % this.binaryArray.length;
+          valid = this.binaryArray[this.index] === fields.getSignal(this.position.coordinates);
+          this.index = this.index + 1;
+        } else {
+          valid = this.binaryArray[this.index - 1] === this.binaryArray.at(-1);
+        }
+      }
+
+      this.isValidIn = this.isValidIn && valid;
+    }
+
+    if (this.waiting > 0) {
+      this.waiting = this.waiting - 1;
     }
 
     if (this.waiting != 0) {
@@ -48,7 +76,7 @@ class OutputArrow extends ArrowBase {
     }
   }
 
-  activeStates(fields: Fields) {}
+  activeStates(fields: Fields) { }
 
   public get validated() {
     this.patternLength = this.binaryArray.length;

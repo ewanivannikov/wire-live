@@ -43,13 +43,13 @@ export class LevelContext {
     this.state.handlePrev();
   }
 
-  public initRequisites(exceptions?: number[]) {
+  public initRequisites = (exceptions?: number[]) => {
     const req = this.levelRepo.getRequisite({ id: this.levelId, exceptions }); // случайный реквизит(пока первый)
-    
+
     if (req instanceof Error && req.cause === 'ALL_ARE_EXCEPTIONS') {
       return req;
     }
-    
+
     const { requisite, requisiteIndex } = req;
     const patternArrowKeys = Object.keys(
       this.levelRepo.getPatternArrowCache(this.levelId),
@@ -58,25 +58,32 @@ export class LevelContext {
       const x = this.levelRepo.getPatternArrowCache(this.levelId)[key].x;
       const y = this.levelRepo.getPatternArrowCache(this.levelId)[key].y;
       const coord = `${x},${y}`;
+      const requisiteByKey = requisite[key]
+
+      if (!requisiteByKey) {
+        throw new Error('Отсутствует реквизит')
+      }
       const pattern = requisite[key].pattern;
       const cycling = requisite[key].hasCycle;
       const arraive = requisite[key].initialValue;
+
       if (
         this.levelRepo
           .getPatternArrowCache(this.levelId)
-          [key].tileId.includes('21')
+        [key].tileId.includes('21')
       ) {
         const direction = this.logicField.getArrow(coord).direction
         const arrow = createInputArrow(coord, direction, pattern, cycling, arraive)
         this.logicField.addArrow(coord, arrow)
-      }   
+      }
       if (
         this.levelRepo
           .getPatternArrowCache(this.levelId)
-          [key].tileId.includes('22')
+        [key].tileId.includes('22')
       ) {
         const waiting = requisite[key].waiting;
         const arrow = createOutputArrow(coord, pattern, cycling, arraive, waiting)
+        this.logicField.addArrow(coord, arrow)
       }
       // для каждого ключа стрелки из реквизитов надо найти координату в поле стрелок пользака. Затем по координатам найти нужные инпуты и оутпуты и используя данные из реквизитов изменить их внутренние характеристики
     });
