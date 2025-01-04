@@ -7,5 +7,5 @@ export type LinkRouterProps = {
 };
 
 export const LinkRouter = (props: LinkRouterProps) => (
-  <a href={`${routerService.createHref(props.to)}`}>{props.children}</a>
+  <a href={`${routerService.createHref(props.to)}`} classList={props.classList}>{props.children}</a>
 );

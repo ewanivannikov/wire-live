@@ -13,7 +13,7 @@ import './main.css';
 import { Reaction } from 'mobx';
 import { routerService } from './shared/services/RouterService/RouterService';
 import { About, Canvas, Home, LevelList } from './pages';
-import { Toolbar, tools } from './modules/toolbar';
+import { Toolbar } from './modules/toolbar';
 import { ContextBar } from './modules/contextBar';
 import { TaskPanel } from './modules/taskPanel';
 import { registerServiceWorker } from './shared';

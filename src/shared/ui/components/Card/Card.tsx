@@ -1,6 +1,7 @@
 import { JSX, ParentComponent, splitProps } from 'solid-js';
 import styles from './card.module.css';
 import { Typography } from '../Typography';
+import { LinkRouter } from '../LinkRouter';
 const { card, title } = styles;
 
 interface CardProps {
@@ -9,6 +10,7 @@ interface CardProps {
   title?: string;
   actionsSlot?: JSX.Element;
   component?: 'h1' | 'h2';
+  to: URL
 }
 
 export const Card: ParentComponent<CardProps> = (props) => {
@@ -16,7 +18,7 @@ export const Card: ParentComponent<CardProps> = (props) => {
   return (
     <article class={`${card} ${props.class || ''}`}>
       {props.imageSrc && (
-        <a href={props.href} class="card-image">
+        <LinkRouter to={props.to} class="card-image">
           <picture class="">
             <source srcset={props.imageSrc} media="(min-width: 0px)" />
             <img
@@ -28,12 +30,12 @@ export const Card: ParentComponent<CardProps> = (props) => {
               style="--dls-liteimage-object-fit: cover;"
             />
           </picture>
-        </a>
+        </LinkRouter>
       )}
 
       {props.title && (
         <Typography component={component} class={title}>
-          <a href={props.href}>{props.title}</a>
+          <LinkRouter to={props.to}>{props.title}</LinkRouter>
         </Typography>
       )}
 
