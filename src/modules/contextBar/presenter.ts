@@ -5,7 +5,9 @@ import type { Direction, TileId } from '../../data';
 import { brushRepository } from '../../data';
 import { inputArrowModel, InputArrowModel } from './InputArrow/viewModel';
 import { outputArrowModel, OutputArrowModel } from './OutputArrow';
-import { worldState, WorldState } from '../worldState';
+import { type WorldState } from '../worldState';
+import { routerService, RouterService } from '../../shared/services/RouterService';
+import { worldState } from '../../main';
 
 class Brush {
   public currentBrush = '';
@@ -20,18 +22,19 @@ class Brush {
   public currentBrushFlip: '>' | '<' | '' = '';
 
   constructor(
-    private readonly tools: Tools,
     private readonly inputArrowModel: InputArrowModel,
     private readonly outputArrowModel: OutputArrowModel,
-    private readonly worldState: WorldState,
+    private readonly _router: RouterService,
+    private readonly _worldState?: WorldState
   ) {
     makeAutoObservable(this);
-    this.init();
+    // this.init();
   }
 
   private init() {
-    if (this.worldState.status.includes('level')) {
-      const brush = this.worldState.modeContext.level.allowedBrushList[0];
+    const isLevels = this._router.location.pathname.includes('levels');
+    if (isLevels) {
+      const brush = this._worldState.modeContext.level.allowedBrushList[0];
 
       if(brush){
         const [_, type, dir, fl] = new Tile(brush).vector;
@@ -80,6 +83,8 @@ class Brush {
     this.currentBrushDirectionList = this.getDirectionsByNumber(number);
     const flip = new Tile(brush).vector[3];
     this.currentBrushFlip = flip;
+    this._worldState.setCurrentBrush(brush);
+    this._worldState.setCurrentBrushOptions(this.currentBrushOptions);
   };
 
   setBrushDirection = (direction: Direction) => {
@@ -145,27 +150,27 @@ class Brush {
   };
 
   get allowBrushes() {
-    return this.tools.currentTool === ToolType.Brush;
+    return this._worldState.currentTool === ToolType.Brush;
   }
 
   get allowPanel() {
-    return this.worldState.status === 'level.play.solving' || this.worldState.status === 'editor';
+    return this._worldState.status === 'level.play.solving' || this._worldState.status === 'editor';
   }
 
   get currentTool() {
-    return this.tools.currentTool;
+    return this._worldState.currentTool;
   }
 
   public get clastersBrushList() {
     return Object.entries(
-      brushRepository.getClastersBrushesByLevelId(this.worldState.levelId),
+      brushRepository.getClastersBrushesByLevelId(this._worldState.levelId),
     );
   }
 }
 
-export const brush = new Brush(
-  tools,
+export const createBrush = (worldState: WorldState) => new Brush(
   inputArrowModel,
   outputArrowModel,
-  worldState,
+  routerService,
+  worldState
 );

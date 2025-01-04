@@ -1,13 +1,16 @@
 import { createIsMounted } from '@solid-primitives/lifecycle';
-import { createMemo } from 'solid-js';
+import { createMemo, useContext } from 'solid-js';
 import { createWorld } from '../modules/mapContainer';
 import { routerService } from '../shared/services';
 import { levelRepository } from '../data';
 import { solutionRepository } from '../data/repositories/SolutionRepository/SolutionRepository';
+import { WorldState } from '../modules/worldState/viewModel';
+import { WorldStateContext } from '../modules/worldState/WorldStateContext';
 
 export const Canvas = () => {
   let ref: HTMLDivElement;
   const isMounted = createIsMounted();
+  const worldState = useContext<WorldState>(WorldStateContext);
   createMemo(() => {
     if (isMounted()) {
       const levelId = routerService.params.levelId;
@@ -22,7 +25,7 @@ export const Canvas = () => {
         .getLevelById(levelId)
         .map.concat(mapSolution);
 
-      const world = createWorld(ref, map);
+      const world = createWorld(ref, map, worldState);
       world.render();
     }
   });

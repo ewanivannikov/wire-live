@@ -1,16 +1,17 @@
-import { Show } from 'solid-js';
+import { Show, useContext } from 'solid-js';
 import { Button, Modal, ModalFooter } from '../../../../shared';
 import { Histogram } from '../../../../shared/ui/components/Histogram/Histogram';
-import { taskPanelPresenter } from '../../../taskPanel/presenter';
-import { worldState } from '../../viewModel';
 import { stateBulkCheckingPresenter } from './presenter';
 import styles from './stateBulkCheckingModal.module.css';
+import { WorldState } from '../../viewModel';
+import { WorldStateContext } from '../../WorldStateContext';
 
 export const StateBulkCheckingModal = () => {
+  const worldState = useContext<WorldState>(WorldStateContext);
   return (
     <Modal
       open={worldState.status === 'level.checking.bulk'}
-      title={taskPanelPresenter.title}
+      // title={taskPanelPresenter.title}
     >
       <h2>Дополнительные испытания:</h2>
       <h3>Количество стрелок</h3>

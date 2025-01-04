@@ -14,7 +14,7 @@ export const levels = {
   Briefing: {
     slug: 'Briefing',
     name: 'Инструктаж',
-    description: '',
+    description: 'Описание задания',
     map: sources.Briefing,
     allowedBrushList: [],
     requisites: {

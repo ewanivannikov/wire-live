@@ -10,13 +10,16 @@ import {
   SendHorizontal,
   Pencil,
 } from 'lucide-solid';
-import { tools } from './presenter';
-import { createEffect, Match, Show, Switch } from 'solid-js';
-import { worldState } from '../worldState';
+import { createToolbarPresenter } from './presenter';
+import { createEffect, Match, Show, Switch, useContext } from 'solid-js';
+import { WorldState } from '../worldState/viewModel';
+import { WorldStateContext } from '../worldState/WorldStateContext';
 
 const { toolbar } = styles;
 
 export const Toolbar = () => {
+  const worldState = useContext<WorldState>(WorldStateContext);
+  const tools = createToolbarPresenter(worldState);
   const handleClick = (e) => {
     tools.setCurrentTool(e.target.value);
   };
@@ -74,14 +77,14 @@ export const Toolbar = () => {
       <Button
         name="Play"
         aria-disabled={tools.disabledPlay}
-        aria-pressed={worldState.isPaused}
+        aria-pressed={tools.isPaused}
         onClick={handleClickTick}
       >
         <Switch>
-          <Match when={worldState.isPaused}>
+          <Match when={tools.isPaused}>
             <Play />
           </Match>
-          <Match when={!worldState.isPaused}>
+          <Match when={!tools.isPaused}>
             <Pause />
           </Match>
         </Switch>
@@ -91,14 +94,14 @@ export const Toolbar = () => {
         <SegmentedButtons>
           <SegmentedButtons.Button
             name="Submit"
-            aria-pressed={worldState.status === 'level.play.checking.one'}
+            aria-pressed={tools.pressedSubmit}
             onClick={handleClickSend}
           >
             <SendHorizontal />
           </SegmentedButtons.Button>
           <SegmentedButtons.Button
             name="Write"
-            aria-pressed={worldState.status === 'level.play.solving'}
+            aria-pressed={tools.pressedWrite}
             onClick={handleClickSolve}
           >
             <Pencil />

@@ -1,18 +1,21 @@
 import { Listbox, Popover, SegmentedButtons } from '../../shared';
-import { createEffect, For, Show } from 'solid-js';
+import { createEffect, For, Show, useContext } from 'solid-js';
 import { brushRepository } from '../../data/repositories';
-import { brush } from './presenter';
+import { createBrush } from './presenter';
 import { iconDirectionMapping, iconsMapping } from '../brushes';
 import { Dynamic } from 'solid-js/web';
 import styles from './style.module.css';
 import { InputArrow } from './InputArrow';
 import { OutputArrow } from './OutputArrow';
 import { Info } from 'lucide-solid';
+import { WorldState } from '../worldState/viewModel';
+import { WorldStateContext } from '../worldState/WorldStateContext';
 
 const { contextbar } = styles;
 
 export const ContextBar = () => {
-  const state = brush;
+  const worldState = useContext<WorldState>(WorldStateContext);
+  const state = createBrush(worldState);
 
   createEffect(() => {
     state.initHotKeys();
@@ -99,8 +102,8 @@ export const ContextBar = () => {
                 <span>Flip</span>
               </label>
             </Show>
-            <InputArrow />
-            <OutputArrow />
+            <InputArrow state={state} />
+            <OutputArrow state={state} />
           </div>
         </Show>
         <Show when={state.currentTool === 'Eraser'}>

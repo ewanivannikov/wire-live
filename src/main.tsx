@@ -13,11 +13,12 @@ import './main.css';
 import { Reaction } from 'mobx';
 import { routerService } from './shared/services/RouterService/RouterService';
 import { About, Canvas, Home, LevelList } from './pages';
-import { Toolbar } from './modules/toolbar';
+import { Toolbar, tools } from './modules/toolbar';
 import { ContextBar } from './modules/contextBar';
 import { TaskPanel } from './modules/taskPanel';
 import { registerServiceWorker } from './shared';
 import { StateBulkCheckingModal } from './modules/worldState/StateBulkChecking/view';
+import { WorldStateProvider } from './modules/worldState/WorldStateProvider';
 
 registerServiceWorker();
 
@@ -77,16 +78,20 @@ const App = () => {
     >
       <Switch fallback={<div>Not Found</div>}>
         <Match when={pathname().includes('levels')}>
-          <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
-            <TaskPanel />
-            <StateBulkCheckingModal />
-            <Canvas />
-          </Layout>
+          <WorldStateProvider>
+            <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
+              <TaskPanel />
+              <StateBulkCheckingModal />
+              <Canvas />
+            </Layout>
+          </WorldStateProvider>
         </Match>
         <Match when={pathname().includes('editor')}>
-          <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
-            <Canvas />
-          </Layout>
+          <WorldStateProvider>
+            <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
+              <Canvas />
+            </Layout>
+          </WorldStateProvider>
         </Match>
         <Match when={pathname().includes('home')}>
           <LayoutLanding>

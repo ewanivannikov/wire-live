@@ -8,16 +8,14 @@ import {
   TextInput,
   TextInputTag,
 } from '../../../shared';
-import { brush } from '../presenter';
 import { outputArrowModel } from './viewModel';
-export const OutputArrow = () => {
-  const state = brush;
+export const OutputArrow = (props) => {
   const handleClick = (el) => {
     outputArrowModel.setWaitingOperator(el.id);
   };
 
   return (
-    <Show when={state.currentBrush.includes('Brush.22')}>
+    <Show when={props.state.currentBrush.includes('Brush.22')}>
       <label style={{ display: 'flex' }}>
         <input
           type="checkbox"

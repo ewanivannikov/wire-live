@@ -6,14 +6,11 @@ import {
   Tags,
   TextInputTag,
 } from '../../../shared';
-import { brush } from '../presenter';
 import { inputArrowModel } from './viewModel';
 
-export const InputArrow = () => {
-  const state = brush;
-
+export const InputArrow = (props) => {
   return (
-    <Show when={state.currentBrush.includes('Brush.21')}>
+    <Show when={props.state.currentBrush.includes('Brush.21')}>
       <SegmentedButtons aria-orientation="horizontal">
         <SegmentedButtons.Button
           value={1}

@@ -19,9 +19,7 @@ import { createTileMap } from './TileMap';
 import { createRaycaster } from './systems/Raycaster';
 
 import { fields } from '../Logic/Base';
-import { tools, ToolType } from '../toolbar';
-import { brush } from '../contextBar/presenter';
-import { worldState } from '../worldState';
+import { WorldState } from '../worldState';
 
 let camera: OrthographicCamera;
 let renderer: WebGLRenderer;
@@ -35,6 +33,7 @@ class World {
   constructor(
     private readonly container: HTMLDivElement,
     private readonly map: object[],
+    private readonly _worldState: WorldState
   ) {
     camera = createCamera(container);
     scene = createScene();
@@ -62,6 +61,7 @@ class World {
       logicField,
       grid,
       this.map,
+      this._worldState
     );
     scene.add(tileMap.tileGroup);
 
@@ -82,20 +82,21 @@ class World {
       }
 
       if (gridIntersect) {
-        const tool =
-          tools.currentTool === ToolType.Brush
-            ? brush.currentBrush
-            : ToolType.Eraser;
-        const canBeDrawn = worldState.canBeDrawn(gridIntersect);
-        const canBeErased = worldState.canBeErased(gridIntersect);
+        // const tool =
+        //   tools.currentTool === ToolType.Brush
+        //     ? brush.currentBrush
+        //     : ToolType.Eraser;
+        this._worldState.onIntersectCanvas(gridIntersect, event, texture)    
+        // const canBeDrawn = this._worldState.canBeDrawn(gridIntersect);
+        // const canBeErased = this._worldState.canBeErased(gridIntersect);
 
-        if (event.pressure === 0 && (canBeDrawn || canBeErased)) {
-          gridIntersect.material.color.set('#f00');
+        // if (event.pressure === 0 && (canBeDrawn || canBeErased)) {
+        //   gridIntersect.material.color.set('#f00');
 
-          gridIntersect.material.map = texture.getTileTextures(tool);
-          gridIntersect.material.opacity = 0.4;
-          gridIntersect.material.needsUpdate = true;
-        }
+        //   gridIntersect.material.map = texture.getTileTextures(tool);
+        //   gridIntersect.material.opacity = 0.4;
+        //   gridIntersect.material.needsUpdate = true;
+        // }
       }
 
       if (previousGridIntersect) {
@@ -120,7 +121,7 @@ class World {
       TWO: TOUCH.DOLLY_PAN,
     };
 
-    tools.init(loop, logicField, tileMap);
+    this._worldState.init(loop, tileMap);
   }
 
   render() {
@@ -129,6 +130,6 @@ class World {
   }
 }
 
-export const createWorld = (container: HTMLDivElement, map: object[]) => {
-  return new World(container, map);
+export const createWorld = (container: HTMLDivElement, map: object[], worldState: WorldState) => {
+  return new World(container, map, worldState);
 };

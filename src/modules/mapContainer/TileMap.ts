@@ -7,6 +7,7 @@ import { Tile } from '../toolbar';
 import { Texture } from 'three';
 import type { TileId } from '../../data';
 import { Fields } from '../Logic/Base';
+import { WorldState } from '../worldState/viewModel';
 
 const hex = {
   Earth: 0x17d3e8,
@@ -24,7 +25,7 @@ class TileMap {
     private readonly tileSize,
     private readonly loop,
     private readonly logicField: Fields,
-    private readonly tools,
+    private readonly _worldState: WorldState,
     private readonly grid,
     private readonly map,
   ) {
@@ -79,25 +80,25 @@ class TileMap {
     return tile;
   };
 
-  public updateTile = (tile) => {
+  public updateTile = (tile, currentTool) => {
     const tileTexture =
-      this.tileTextures[
-        this.tools.currentTool === 'Eraser' ? 'Eraser' : brush.currentBrush
-      ]; // Assuming you have a way to get the texture
+      this.tileTextures[currentTool]; // Assuming you have a way to get the texture
 
     const [x, y] = new Position(tile.name).vector;
+    const currentBrush = this._worldState.currentBrush
+    const currentBrushOptions = this._worldState.currentBrushOptions
 
     if (this.logicField.arrowCache.has(tile.name)) {
       this.updateSprite(
         tileTexture,
         x,
         y,
-        brush.currentBrush,
+        currentBrush,
         tile,
-        brush.currentBrushOptions,
+        currentBrushOptions,
       );
     } else {
-      const hasSprite = this.hasSprite(tile, brush.currentBrush);
+      const hasSprite = this.hasSprite(tile, currentBrush);
 
       if (!hasSprite) {
         this.addStateSprite(x, y, 'None');
@@ -105,20 +106,20 @@ class TileMap {
           tileTexture,
           x,
           y,
-          brush.currentBrush,
-          brush.currentBrushOptions,
+          currentBrush,
+          currentBrushOptions,
         );
       }
     }
 
-    const tileName = new Tile(brush.currentBrush).vector;
+    const tileName = new Tile(currentBrush).vector;
 
     this.logicField.addArrowCache(
       tile.name,
       tileName[1],
       tileName[2],
       tileName[3],
-      brush.currentBrushOptions,
+      currentBrushOptions,
     );
   };
 
@@ -191,4 +192,5 @@ export const createTileMap = (
   logicField: Fields,
   grid,
   map: object[],
-) => new TileMap(tileTextures, tileSize, loop, logicField, tools, grid, map);
+  worldState: WorldState
+) => new TileMap(tileTextures, tileSize, loop, logicField, worldState, grid, map);
