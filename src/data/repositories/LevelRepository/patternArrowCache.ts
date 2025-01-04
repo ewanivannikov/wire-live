@@ -1,13 +1,12 @@
 export const patternArrowCache: { [key: string]: any } = {
-  Sketch: {},
   Briefing: {
     "6e6h3481iv": {
-      "tileId": "Brush.22.Up",
+      "tileId": "Brush.22",
       "x": -2,
       "y": -3
     },
     "337fhpqlvc": {
-      "tileId": "Brush.22.Up",
+      "tileId": "Brush.22",
       "x": 1,
       "y": -3
     },

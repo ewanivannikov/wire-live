@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { ToolType } from './enums';
 import { Loop } from '../mapContainer/systems';
-import { Fields } from '../Logic/Base';
+import { fields, Fields } from '../Logic/Base';
 import { LevelRepository, levelRepository } from '../../data';
 import { WorldState } from '../worldState';
 import {
@@ -12,12 +12,12 @@ import {
 class Tools {
   currentTool = ToolType.Brush;
   private _loop: Loop;
-  private _logicField: Fields;
-  
+
   constructor(
     private readonly levelRepo: LevelRepository,
     private readonly _router: RouterService,
     private readonly _worldState: WorldState,
+    private readonly _fields: Fields,
   ) {
     makeAutoObservable(this);
     this._worldState.setCurrentTool(ToolType.Brush);
@@ -44,7 +44,7 @@ class Tools {
   };
 
   public saveMap = () => {
-    const map = this._logicField.arrowCache;
+    const map = this._fields.arrowCache;
     this.levelRepo.createMap(map);
   };
 
@@ -86,4 +86,5 @@ class Tools {
   }
 }
 
-export const createToolbarPresenter = (worldState) => new Tools(levelRepository, routerService, worldState);
+export const createToolbarPresenter = (worldState: WorldState) =>
+  new Tools(levelRepository, routerService, worldState, fields);

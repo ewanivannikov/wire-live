@@ -7,7 +7,6 @@ import { inputArrowModel, InputArrowModel } from './InputArrow/viewModel';
 import { outputArrowModel, OutputArrowModel } from './OutputArrow';
 import { type WorldState } from '../worldState';
 import { routerService, RouterService } from '../../shared/services/RouterService';
-import { worldState } from '../../main';
 
 class Brush {
   public currentBrush = '';

@@ -10,9 +10,9 @@ import {
 } from '../../../shared';
 import { outputArrowModel } from './viewModel';
 export const OutputArrow = (props) => {
-  const handleClick = (el) => {
-    outputArrowModel.setWaitingOperator(el.id);
-  };
+  // const handleClick = (el) => {
+  //   outputArrowModel.setWaitingOperator(el.id);
+  // };
 
   return (
     <Show when={props.state.currentBrush.includes('Brush.22')}>
@@ -54,7 +54,7 @@ export const OutputArrow = (props) => {
       </Popover>
       <label style={{ display: 'flex' }}>Ожидание</label>
       <SegmentedControls>
-        <Popover.Target popovertarget="output-signal-wait">
+        {/* <Popover.Target popovertarget="output-signal-wait">
           {outputArrowModel.waitingOperator}
         </Popover.Target>
         <Popover id="output-signal-wait">
@@ -66,7 +66,7 @@ export const OutputArrow = (props) => {
               {(val) => <Listbox.Option id={val}>{val}</Listbox.Option>}
             </For>
           </Listbox>
-        </Popover>
+        </Popover> */}
         <TextInput
           onChange={outputArrowModel.setWaitingValue}
           size={2}

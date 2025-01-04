@@ -22,10 +22,11 @@ export class WorldState {
     private readonly _fields: Fields
   ) {
     makeAutoObservable(this);
-    onBecomeUnobserved(this,"modeContext",()=>{
+    const levelId = this._routerServ.params.levelId
+    onBecomeUnobserved(this, "modeContext", () => {
       this._solutionRepository.createDraft(
         this._fields.arrowCache,
-        this._routerServ.params.levelId,
+        levelId,
         '1',
       );
       this._fields.clearAll();
@@ -120,8 +121,8 @@ export class WorldState {
     const canBeErased = this.canBeErased(gridIntersect);
     const tool =
       this.currentTool === ToolType.Brush
-            ? this.currentBrush
-            : ToolType.Eraser;
+        ? this.currentBrush
+        : ToolType.Eraser;
 
     if (event.pressure === 0 && (canBeDrawn || canBeErased)) {
       gridIntersect.material.color.set('#f00');

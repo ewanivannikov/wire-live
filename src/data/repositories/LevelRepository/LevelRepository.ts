@@ -80,8 +80,8 @@ export class LevelRepository {
       const tileId = [
         'Brush',
         arrowToIndexTile[value.name],
-        value.direction,
-        ...value.flip || [],
+        ...value.direction ? [value.direction] : [],
+        ...value.flip ? [value.flip] : [],
       ].join('.');
       return { tileId, x, y };
     });
@@ -89,12 +89,13 @@ export class LevelRepository {
     let otherArrows = []
     array.forEach((sign) => {
       if (sign.tileId.includes('.21') || sign.tileId.includes('.22')) {
-        patternArrows = {...patternArrows,[generateRandomStrings()]:sign}
+        patternArrows = { ...patternArrows, [generateRandomStrings()]: sign }
       } else {
         otherArrows.push(sign)
       }
     })
-    console.log(patternArrows, otherArrows);
+    console.info("patternArrows:", patternArrows);
+    console.info("otherArrows:", otherArrows);
     return array
   }
 }

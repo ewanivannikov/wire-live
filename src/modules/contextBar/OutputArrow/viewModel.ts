@@ -1,8 +1,8 @@
 import { makeAutoObservable } from 'mobx';
 
 export class OutputArrowModel {
-  public waitingValue = 1;
-  public waitingOperator = '=';
+  public waitingValue = -1;
+  // public waitingOperator = '=';
   public hasCycle = false;
   public pattern = [1, 1, 2];
   constructor() {
@@ -11,7 +11,7 @@ export class OutputArrowModel {
 
   public get fields() {
     return {
-      waiting: `${this.waitingOperator}${this.waitingValue}`,
+      waiting: Number(this.waitingValue),
       hasCycle: this.hasCycle,
       pattern: this.pattern,
     };
@@ -21,9 +21,9 @@ export class OutputArrowModel {
     this.waitingValue = value;
   };
 
-  public setWaitingOperator = (value: string) => {
-    this.waitingOperator = value;
-  };
+  // public setWaitingOperator = (value: string) => {
+  //   this.waitingOperator = value;
+  // };
 
   public setHasCycle = (value: boolean) => {
     this.hasCycle = value;

@@ -5,6 +5,7 @@ import { stateBulkCheckingPresenter } from './presenter';
 import styles from './stateBulkCheckingModal.module.css';
 import { WorldState } from '../../viewModel';
 import { WorldStateContext } from '../../WorldStateContext';
+import { LinkRouter } from '../../../../shared/ui/components/LinkRouter';
 
 export const StateBulkCheckingModal = () => {
   const worldState = useContext<WorldState>(WorldStateContext);
@@ -39,7 +40,7 @@ export const StateBulkCheckingModal = () => {
           Назад
         </Button>
         <Show when={stateBulkCheckingPresenter.status === 'completed'}>
-          <Button href="/" component="a">
+          <Button to="/" component={LinkRouter}>
             Дальше
           </Button>
         </Show>

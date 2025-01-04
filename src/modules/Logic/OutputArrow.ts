@@ -19,13 +19,13 @@ class OutputArrow extends ArrowBase {
     super('OutputArrow', position);
 
     this.binaryArray = createBinaryArray(pattern || [1], this.active);
-    console.log(
-      'OutputArrowPattern',
-      this.binaryArray,
-      `active`,
+    console.info('OutputArrowPattern:', this.binaryArray);
+    console.info(
+      `active:`,
       active,
-      `pattern`,
+      `pattern:`,
       pattern,
+      'waiting:',
       waiting,
     );
   }
@@ -36,8 +36,6 @@ class OutputArrow extends ArrowBase {
       this.waiting === -1 &&
       fields.getSignal(this.position.coordinates) === this.binaryArray[0]
     ) {
-      console.log('ожидание истекло и сигнал достиг знака');
-
       this.waiting = 0;
     }
 
@@ -57,6 +55,7 @@ class OutputArrow extends ArrowBase {
           valid = this.binaryArray[this.index - 1] === this.binaryArray.at(-1);
         }
       }
+
 
       this.isValidIn = this.isValidIn && valid;
     }

@@ -6,7 +6,7 @@ const { root } = styles;
 
 export type ButtonBaseProps = {
   onClick: () => void;
-  component?: 'button' | 'a';
+  component?: 'button' | 'a' | JSX.Element;
   style?: object;
 } & JSX.ButtonHTMLAttributes<HTMLButtonElement>;
 
