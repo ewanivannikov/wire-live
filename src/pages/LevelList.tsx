@@ -4,8 +4,10 @@ import { Card } from '../shared/ui/components/Card';
 import { Button } from '../shared/ui/components/Button';
 import { LinkRouter } from '../shared/ui/components/LinkRouter';
 
+import sprites from '../assets/glyphs-sprites.svg#Array';
 import coverAdder from '../assets/cover-adder.webp';
 import coverPlaceholder from '../assets/cover-placeholder.webp';
+console.log('sprites', sprites);
 
 const covers = {
   Adder: coverAdder,

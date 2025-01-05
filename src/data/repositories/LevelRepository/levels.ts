@@ -38,7 +38,7 @@ export const levels = {
   Adder: {
     slug: 'Adder',
     name: 'Сумматор',
-    description: 'Сумматор',
+    description: 'Сумматор ![Стрелка](./static/assets/7ca3b1a93d21d2f8b30b.svg#Array)',
     map: sources.Adder,
     allowedBrushList: [],
     requisites: {
