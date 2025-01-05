@@ -7,7 +7,6 @@ export const levels = {
     description: 'Описание задания',
     map: sources.Briefing,
     allowedBrushList: [],
-    cover: 'https://placehold.co/284x200',
     requisites: {
       '1': {
         "6e6h3481iv": {
@@ -42,7 +41,6 @@ export const levels = {
     description: 'Сумматор',
     map: sources.Adder,
     allowedBrushList: [],
-    cover: './static/assets/cover-adder.png',
     requisites: {
       '1a5d944c-a2b2-437f-bdcf-bf5cb0ca2d4d': {
         'c71a8902-9ca6-4b57-b527-63f085599c8f': {
