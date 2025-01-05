@@ -6,6 +6,7 @@ import { Fields, fields } from '../Logic/Base';
 import { createEditorContext } from './EditorContext/EditorContext';
 import { Loop } from '../mapContainer/systems';
 import { ToolType } from '../toolbar/enums';
+import { user, User } from '../user';
 
 export class WorldState {
   public isPaused = true;
@@ -19,7 +20,7 @@ export class WorldState {
   constructor(
     private readonly _routerServ: RouterService,
     private readonly _solutionRepository: SolutionRepository,
-    private readonly _fields: Fields
+    private readonly _fields: Fields,
   ) {
     makeAutoObservable(this);
     const levelId = this._routerServ.params.levelId
@@ -27,7 +28,6 @@ export class WorldState {
       this._solutionRepository.createDraft(
         this._fields.arrowCache,
         levelId,
-        '1',
       );
       this._fields.clearAll();
     })

@@ -11,12 +11,14 @@ module.exports = {
       template: './public/index.html',
       filename: 'index.html',
       path: path.resolve(__dirname, 'dist'),
+      favicon: "./public/static/assets/favicon.svg",
     }),
     new HtmlWebpackPlugin({
       title: 'Wire live',
       template: './public/404.html',
       filename: '404.html',
       path: path.resolve(__dirname, 'dist'),
+      favicon: "./public/static/assets/favicon.svg",
     }),
   ],
   module: {
@@ -25,7 +27,7 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: 'asset/resource',
         generator: {
-          filename: './static/assets/[hash][ext][query]',
+          filename: './static/assets/[name][ext][query]',
         },
       },
       {

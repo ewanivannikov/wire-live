@@ -1,13 +1,9 @@
 import { makeAutoObservable } from 'mobx';
 import { UserRepository, userRepository } from '../../data';
 
-export class ProfilePresenter {
+export class User {
   constructor(private readonly userRepository: UserRepository) {
     makeAutoObservable(this);
-  }
-
-  public get query() {
-    return this.userRepository.getUserQuery();
   }
 
   public get state() {
@@ -20,6 +16,10 @@ export class ProfilePresenter {
 
   private get mutation() {
     return this.userRepository.logOut();
+  }
+
+  private get query() {
+    return this.userRepository.getUserQuery();
   }
 
   public logOut = async () => {
@@ -36,4 +36,4 @@ export class ProfilePresenter {
   };
 }
 
-export const profilePresenter = new ProfilePresenter(userRepository);
+export const user = new User(userRepository);

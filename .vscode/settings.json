@@ -1,0 +1,41 @@
+{
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "eslint.workingDirectories": [
+    {
+      "directory": "src",
+      "changeProcessCWD": true
+    }
+  ],
+  "[typescript]": {
+    "editor.autoClosingBrackets": "languageDefined"
+  },
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "eslint.validate": [
+    "javascript"
+  ],
+  "eslint.useFlatConfig":true,
+  "stylelint.validate": [
+    "scss",
+    "tsx"
+  ],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.rulers": [
+    80
+  ],
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "editor.wordWrap": "on",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "files.insertFinalNewline": true,
+  "editor.tabCompletion": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false
+}
