@@ -1793,6 +1793,7 @@ body {
   padding: 16px;
   box-shadow: 0px 0px 8px 1px rgb(178 178 225 / 20%);
   max-width: 500px;
+  white-space: pre-wrap;
 }
 
 .TLyvdorNB0_j1cNZBFt2 {
