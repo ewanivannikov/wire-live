@@ -13,6 +13,7 @@ export const Canvas = () => {
   const worldState = useContext<WorldState>(WorldStateContext);
   createMemo(() => {
     if (isMounted()) {
+      const isLevels = routerService.location.pathname.includes('levels');
       const levelId = routerService.params.levelId;
       const userId = '1';
       const hasSolutions = solutionRepository.checkSolutions(levelId, userId);
@@ -23,9 +24,13 @@ export const Canvas = () => {
         mapSolution = solutionRepository.getDraft(levelId, userId).map
       };
 
-      const map = levelRepository
+      let map = [];
+
+      if (isLevels) {
+      map = levelRepository
         .getLevelById(levelId)
         .map.concat(mapSolution);
+      }
 
       const world = createWorld(ref, map, worldState);
       world.render();

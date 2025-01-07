@@ -86,11 +86,12 @@ class Brush {
     this._worldState.setCurrentBrushOptions(this.currentBrushOptions);
   };
 
-  setBrushDirection = (direction: Direction) => {
+  setBrushDirection = (direction: DirectionType) => {
     this.currentBrushDirection = direction;
     const currentBrush = new Tile(this.currentBrush).vector;
     const brushId = `${currentBrush[0]}.${currentBrush[1]}.${direction}${currentBrush[3] ? `.${currentBrush[3]}` : ''}`;
     this.currentBrush = brushId;
+    this._worldState.setCurrentBrush(brushId);
   };
 
   setFlip = (isFlip: boolean) => {
@@ -99,6 +100,7 @@ class Brush {
     const hasFlip = currentBrush[3];
     const brushId = `${currentBrush[0]}.${currentBrush[1]}.${currentBrush[2]}${hasFlip ? `.${this.currentBrushFlip}` : ''}`;
     this.currentBrush = brushId;
+    this._worldState.setCurrentBrush(brushId);
   };
 
   get hasDirection() {
@@ -161,9 +163,18 @@ class Brush {
   }
 
   public get clastersBrushList() {
-    return Object.entries(
-      brushRepository.getClastersBrushesByLevelId(this._worldState.levelId),
-    );
+    const isLevels = this._router.location.pathname.includes('levels');
+    if(isLevels) {
+      const clastersBrushes = Object.entries(
+        brushRepository.getClastersBrushesByLevelId(this._worldState.levelId),
+      );
+      const firstBrush = clastersBrushes[0][1].values[0];
+      this.setCurrentBrush(firstBrush);
+      return clastersBrushes
+    }
+    const clastersBrushes = Object.entries(brushRepository.clastersBrushes);
+    this.setCurrentBrush(clastersBrushes[0][1].values[0]);
+    return clastersBrushes;
   }
 }
 

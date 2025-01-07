@@ -6,7 +6,7 @@ export const levels = {
     name: 'Хорошее начало',
     description: 'Нарисуйте прямую из знаков-стрелок, чтобы передать сигналы от ввода<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> к выводу<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg>. Это будет хорошим началом для вас! \n\n Выберете слева-сверху знак "Стрелка" <svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Arrow" /></svg>',
     map: sources.Briefing,
-    allowedBrushList: [],
+    allowedBrushList: ['Brush.0.Up'],
     requisites: {
       '1': {
         "6e6h3481iv": {

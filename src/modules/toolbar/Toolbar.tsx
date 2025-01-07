@@ -51,6 +51,7 @@ export const Toolbar = () => {
       <SegmentedButtons>
         <SegmentedButtons.Button
           value="Brush"
+          title="Знаки"
           aria-disabled={tools.disabledBrush}
           aria-pressed={tools.currentTool === 'Brush'}
           onClick={handleClick}
@@ -59,6 +60,7 @@ export const Toolbar = () => {
         </SegmentedButtons.Button>
         <SegmentedButtons.Button
           value="Eraser"
+          title="Ластик"
           aria-disabled={tools.disabledEraser}
           aria-pressed={tools.currentTool === 'Eraser'}
           onClick={handleClick}
@@ -94,6 +96,7 @@ export const Toolbar = () => {
         <SegmentedButtons>
           <SegmentedButtons.Button
             name="Submit"
+            title="Проверка"
             aria-pressed={tools.pressedSubmit}
             onClick={handleClickSend}
           >
@@ -101,6 +104,7 @@ export const Toolbar = () => {
           </SegmentedButtons.Button>
           <SegmentedButtons.Button
             name="Write"
+            title="Решение"
             aria-pressed={tools.pressedWrite}
             onClick={handleClickSolve}
           >
