@@ -35,6 +35,29 @@ export const levels = {
     },
     optionalChallenges: {},
   },
+  BadTurn: {
+    slug: 'BadTurn',
+    name: 'Поворот не туда',
+    description: 'Теперь до вывода по прямой не добраться. Проведите стрелки, огибая повороты и доведите сигналы до цели.\n\nЧтобы изменять направление стрелки, выберите его в левом верхним углу около выбора знака либо нажимай кнопку "R", чтобы поворачивать знак по часовой стрелке или против часовой, используя комбинацию "R"+"Shift".',
+    map: sources.BadTurn,
+    allowedBrushList: ['Brush.0.Up'],
+    requisites: {
+      '1': {
+        "sr6a0e068q": {
+          pattern: [2, 2, 1],
+          hasCycle: false,
+          initialValue: 1,
+          waiting: -1,
+        },
+        "7khth75rce": {
+          pattern: [2, 2, 1],
+          hasCycle: false,
+          initialValue: 1,
+        },
+      },
+    },
+    optionalChallenges: {},
+  },
   Adder: {
     slug: 'Adder',
     name: 'Сумматор',

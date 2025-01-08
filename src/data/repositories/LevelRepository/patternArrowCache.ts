@@ -21,6 +21,18 @@ export const patternArrowCache: { [key: string]: any } = {
       "y": 1
     }
   },
+  BadTurn: {
+    "7khth75rce": {
+        "tileId": "Brush.21.Up",
+        "x": -5,
+        "y": 2
+    },
+    "sr6a0e068q": {
+        "tileId": "Brush.22",
+        "x": 4,
+        "y": 2
+    }
+  },
   Adder: {
     'c71a8902-9ca6-4b57-b527-63f085599c7f': {
       tileId: 'Brush.21.Up',
