@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import { Tools } from '../mapContainer/Tools';
 import { DirectionType, Tile, tools, ToolType } from '../toolbar';
 import type { Direction, TileId } from '../../data';
@@ -75,15 +75,18 @@ class Brush {
   }
 
   setCurrentBrush = (brush: TileId) => {
-    this.currentBrush = brush;
-    const direction = new Tile(brush).vector[2];
-    this.currentBrushDirection = direction;
-    const number = new Tile(brush).vector[1];
-    this.currentBrushDirectionList = this.getDirectionsByNumber(number);
-    const flip = new Tile(brush).vector[3];
-    this.currentBrushFlip = flip;
-    this._worldState.setCurrentBrush(brush);
-    this._worldState.setCurrentBrushOptions(this.currentBrushOptions);
+    runInAction(()=>{
+      this.currentBrush = brush;
+      const direction = new Tile(brush).vector[2];
+      this.currentBrushDirection = direction;
+      const number = new Tile(brush).vector[1];
+      this.currentBrushDirectionList = this.getDirectionsByNumber(number);
+      const flip = new Tile(brush).vector[3];
+      this.currentBrushFlip = flip;
+      this._worldState.setCurrentBrush(brush);
+      this._worldState.setCurrentBrushOptions(this.currentBrushOptions);
+    })
+    
   };
 
   setBrushDirection = (direction: DirectionType) => {
