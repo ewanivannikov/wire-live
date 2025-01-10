@@ -15,6 +15,7 @@ const hex = {
   Venus: 0x3dc13c,
   Mars: 0xf13637,
   Sun: 0xffc732,
+  Wall: 0xcccccc,
 };
 
 class TileMap {

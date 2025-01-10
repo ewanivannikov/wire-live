@@ -58,6 +58,113 @@ export const levels = {
     },
     optionalChallenges: {},
   },
+  Branching: {
+    slug: 'Branching',
+    name: 'Ветвление',
+    description: 'Иногда один и тот же сигнал нужно передать в несколько разных мест. У вас появились новые стрелки! Они позволят вам распространить сигнал в нужные вам направления. Если вы захотите побльше почитать об этих знак или старых в выборе знаков нажмите на символ слева от знака, чтобы узнать о нём больше.',
+    map: sources.Branching,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.7.Up'
+    ],
+    requisites: {
+      '1' :{
+        "0950md985m": {
+        pattern: [2, 3, 1],
+        hasCycle: false,
+        initialValue: 1
+      },
+      "g69ph717e6": {
+        pattern: [2, 3, 1],
+        hasCycle: false,
+        initialValue: 1,
+        waiting: -1,
+      },
+      "9ifie7kio3": {
+        pattern: [2, 3, 1],
+        hasCycle: false,
+        initialValue: 1,
+        waiting: -1,
+      },
+      "80a9dh08b6": {
+        pattern: [2, 3, 1],
+        hasCycle: false,
+        initialValue: 1,
+        waiting: -1,
+      },
+      "b535lh2qye": {
+        pattern: [2, 3, 1],
+        hasCycle: false,
+        initialValue: 1,
+        waiting: -1,
+      },
+      "2ukcels09a": {
+        pattern: [2, 3, 1],
+        hasCycle: false,
+        initialValue: 1,
+        waiting: -1,
+      }
+    },
+  },
+    optionalChallenges: {},
+  },
+  Crossroads:{
+    slug: 'Crossroads',
+    name: 'Перекрёстки',
+    description: 'Очень много вводов и выводов чьи сигналы не должны смешиваться. В ограниченом пространстве не получится просто пусть знаки в обход, что же делать? Новый знак: удлинитель позволяет отправлять сигнал не на одну, а на две клетки вперёд от себя, это поможет вам провестики провода так, чтобы сигналы "прошли" друг через друга.',
+    map: sources.Crossroads,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.9.Up',
+    ],
+    requisites: {
+      '1' :{
+        "5r73rp5hr3": {
+          pattern: [4, 1, 2, 3, 1],
+          hasCycle: false,
+          initialValue: 1
+        },
+        "w478zd8f4p": {
+          pattern: [2, 1, 4, 1, 3],
+          hasCycle: false,
+          initialValue: 1
+        },
+        "vyxd1w0jsn": {
+          pattern: [3, 1, 1, 2, 4],
+          hasCycle: false,
+          initialValue: 1
+        },
+        "033504w030": {
+          pattern: [4, 2, 1, 1, 3],
+          hasCycle: false,
+          initialValue: 1
+        },
+        "uqih90mf7x": {
+          pattern: [3, 1, 1, 2, 4],
+          hasCycle: false,
+          initialValue: 1
+        },
+        "j7x29l731i": {
+          pattern: [2, 1, 4, 1, 3],
+          hasCycle: false,
+          initialValue: 1
+        },
+        "xo83kxu9v5": {
+          pattern: [4, 1, 2, 3, 1],
+          hasCycle: false,
+          initialValue: 1
+        },
+        "o59314wikt": {
+          pattern: [4, 2, 1, 1, 3],
+          hasCycle: false,
+          initialValue: 1
+        }
+    },
+  },
+    optionalChallenges: {},
+  },
   Adder: {
     slug: 'Adder',
     name: 'Сумматор',

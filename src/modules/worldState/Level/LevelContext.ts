@@ -58,6 +58,8 @@ export class LevelContext {
       const x = this.levelRepo.getPatternArrowCache(this.levelId)[key].x;
       const y = this.levelRepo.getPatternArrowCache(this.levelId)[key].y;
       const coord = `${x},${y}`;
+      console.log(requisite);
+      
       const requisiteByKey = requisite[key]
 
       if (!requisiteByKey) {

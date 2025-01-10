@@ -7,8 +7,8 @@ class Wall extends ArrowBase {
     super('Wall', position, direction);
   }
 
-  conditionStates(fields: Fields) {}
-
+  conditionStates(fields: Fields) {this.state = 'Wall'}
+    
   activeStates(fields: Fields) {}
 }
 
