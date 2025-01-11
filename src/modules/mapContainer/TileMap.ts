@@ -18,7 +18,7 @@ const hex = {
   Wall: 0xcccccc,
 };
 
-class TileMap {
+export class TileMap {
   _tileGroup = new THREE.Group();
 
   constructor(
@@ -102,7 +102,7 @@ class TileMap {
       const hasSprite = this.hasSprite(tile, currentBrush);
 
       if (!hasSprite) {
-        this.addStateSprite(x, y, 'None');
+        this.addStateSprite(x, y, currentBrush === 'Brush.26' ? 'Wall' : 'None');
         this.addSprite(
           tileTexture,
           x,

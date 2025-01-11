@@ -6,8 +6,8 @@ import { Fields, fields } from '../Logic/Base';
 import { createEditorContext } from './EditorContext/EditorContext';
 import { Loop } from '../mapContainer/systems';
 import { ToolType } from '../toolbar/enums';
-import { user, User } from '../user';
 import { TileId } from '../../data/repositories/BrushRepository';
+import { TileMap } from '../mapContainer/TileMap';
 
 export class WorldState {
   public isPaused = true;
@@ -31,6 +31,10 @@ export class WorldState {
         levelId,
       );
       this._fields.clearAll();
+      if(this.modeContext.state?.pause){
+        this.modeContext.state.pause();
+        this.isPaused = true;
+      }
     })
   }
 
@@ -39,10 +43,9 @@ export class WorldState {
     this._fields.stateCache.delete(tile.name);
   };
 
-  public init = (loop: Loop, tileMap) => {
-    this._loop = loop;
-    this._logicField = this._fields;
-    this._tileMap = tileMap;
+  public init = (loop: Loop, tileMap: TileMap) => {
+    // this._logicField = this._fields;
+    // this._tileMap = tileMap;
     tileMap.onPointerChange = (tile) => {
       const canBeErased = this.canBeErased(tile);
       const canBeDrawn = this.canBeDrawn(tile);
@@ -55,11 +58,9 @@ export class WorldState {
         this.erase(tile, tileMap);
       }
       if (canBeDrawn && isBrush) {
-        this._tileMap.updateTile(
+        tileMap.updateTile(
           tile,
-          this.currentTool === 'Eraser'
-            ? 'Eraser'
-            : this.currentBrush,
+          this.currentBrush,
         );
       }
       if (isPan) {
@@ -67,7 +68,7 @@ export class WorldState {
           tile.userData.type?.includes('20') ||
           tile.userData.type?.includes('23')
         ) {
-          this._logicField.addSignal(tile.name, 1);
+          this._fields.addSignal(tile.name, 1);
         }
       }
     };

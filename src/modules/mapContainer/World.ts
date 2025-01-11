@@ -82,21 +82,7 @@ class World {
       }
 
       if (gridIntersect) {
-        // const tool =
-        //   tools.currentTool === ToolType.Brush
-        //     ? brush.currentBrush
-        //     : ToolType.Eraser;
-        this._worldState.onIntersectCanvas(gridIntersect, event, texture)    
-        // const canBeDrawn = this._worldState.canBeDrawn(gridIntersect);
-        // const canBeErased = this._worldState.canBeErased(gridIntersect);
-
-        // if (event.pressure === 0 && (canBeDrawn || canBeErased)) {
-        //   gridIntersect.material.color.set('#f00');
-
-        //   gridIntersect.material.map = texture.getTileTextures(tool);
-        //   gridIntersect.material.opacity = 0.4;
-        //   gridIntersect.material.needsUpdate = true;
-        // }
+        this._worldState.onIntersectCanvas(gridIntersect, event, texture);
       }
 
       if (previousGridIntersect) {

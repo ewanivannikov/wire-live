@@ -76,6 +76,18 @@ export class StateBulkChecking implements IState {
     });
   };
 
+  public pause() {
+    console.log('Пауза');
+    this.loop.setDuration(0);
+    this.context.logicField.paused = true;
+  }
+
+  public resume() {
+    console.log('Возобновление');
+    this.loop.setDuration(500);
+    this.context.logicField.paused = false;
+  }
+
   public canBeErased = (tile) => {
     return false;
   };
