@@ -9,7 +9,8 @@
     }
   ],
   "[typescript]": {
-    "editor.autoClosingBrackets": "languageDefined"
+    "editor.autoClosingBrackets": "languageDefined",
+    "files.autoSave": "afterDelay"
   },
   "typescript.preferences.importModuleSpecifier": "relative",
   "eslint.validate": [

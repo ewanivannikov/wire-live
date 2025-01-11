@@ -23,7 +23,7 @@ class Tools {
     this._worldState.setCurrentTool(ToolType.Brush);
   }
 
-  public setCurrentTool = (tool) => {
+  public setCurrentTool = (tool: ToolType) => {
     this.currentTool = tool;
     this._worldState.setCurrentTool(tool);
   };

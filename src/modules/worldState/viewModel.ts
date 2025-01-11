@@ -7,14 +7,15 @@ import { createEditorContext } from './EditorContext/EditorContext';
 import { Loop } from '../mapContainer/systems';
 import { ToolType } from '../toolbar/enums';
 import { user, User } from '../user';
+import { TileId } from '../../data/repositories/BrushRepository';
 
 export class WorldState {
   public isPaused = true;
   mode = 'level';
   public modeContext = this.context;
   public state = this.context.state;
-  public currentTool
-  public currentBrush
+  public currentTool: ToolType = ToolType.Brush;
+  public currentBrush: TileId | '' = '';
   public currentBrushOptions
 
   constructor(
@@ -133,11 +134,11 @@ export class WorldState {
     }
   };
 
-  public setCurrentTool = (currentTool) => {
+  public setCurrentTool = (currentTool: ToolType) => {
     this.currentTool = currentTool;
   }
 
-  public setCurrentBrush = (currentBrush) => {
+  public setCurrentBrush = (currentBrush: TileId) => {
     this.currentBrush = currentBrush;
   }
 

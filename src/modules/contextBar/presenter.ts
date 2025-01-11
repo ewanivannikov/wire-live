@@ -1,7 +1,6 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import { Tools } from '../mapContainer/Tools';
-import { DirectionType, Tile, tools, ToolType } from '../toolbar';
-import type { Direction, TileId } from '../../data';
+import { DirectionType, Tile, ToolType } from '../toolbar';
+import type { TileId } from '../../data';
 import { brushRepository } from '../../data';
 import { inputArrowModel, InputArrowModel } from './InputArrow/viewModel';
 import { outputArrowModel, OutputArrowModel } from './OutputArrow';
@@ -135,9 +134,9 @@ class Brush {
   };
 
   public initHotKeys = () => {
-    const keysPressed = {};
+    const keysPressed: Record<string, boolean> = {};
 
-    addEventListener('keydown', (event) => {
+    addEventListener('keydown', (event: KeyboardEvent) => {
       keysPressed[event.code] = true;
 
       if (!keysPressed.ShiftLeft && event.code == 'KeyR') {
@@ -148,7 +147,7 @@ class Brush {
       }
     });
 
-    addEventListener('keyup', (event) => {
+    addEventListener('keyup', (event: KeyboardEvent) => {
       delete keysPressed[event.code];
     });
   };
