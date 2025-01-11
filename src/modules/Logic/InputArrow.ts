@@ -13,6 +13,7 @@ class InputArrow extends ArrowBase {
     public pattern: number[],
     public cycling: boolean = false,
     public active: number = 1,
+    public label: string = 'A',
   ) {
     super('InputArrow', position, direction);
     this.binaryArray = createBinaryArray(pattern || [1], this.active);
@@ -60,4 +61,5 @@ export const createInputArrow = (
   pattern: number[],
   cycling?: boolean,
   active?: number,
-) => new InputArrow(position, direction, pattern, cycling, active);
+  label?: string,
+) => new InputArrow(position, direction, pattern, cycling, active, label);

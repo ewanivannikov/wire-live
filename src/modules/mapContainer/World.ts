@@ -40,7 +40,7 @@ class World {
     scene = createScene();
     renderer = createRenderer(container);
     container.appendChild(renderer.domElement);
-    const labelRenderer = createLabelRenderer();
+    const labelRenderer = createLabelRenderer(renderer.domElement);
     
     loop.init(camera, scene, renderer, labelRenderer);
 

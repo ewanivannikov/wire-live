@@ -5,6 +5,7 @@ export class OutputArrowModel {
   // public waitingOperator = '=';
   public hasCycle = false;
   public pattern = [1, 1, 2];
+  public label = 'A';
   constructor() {
     makeAutoObservable(this);
   }
@@ -14,6 +15,7 @@ export class OutputArrowModel {
       waiting: Number(this.waitingValue),
       hasCycle: this.hasCycle,
       pattern: this.pattern,
+      label: 'A',
     };
   }
 

@@ -73,6 +73,7 @@ export class Fields {
           direction,
           options.hasCycle,
           options.initialValue,
+          options.label,
           options?.waiting,
         ),
       );

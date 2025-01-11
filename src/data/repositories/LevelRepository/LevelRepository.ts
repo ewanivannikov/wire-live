@@ -83,7 +83,7 @@ export class LevelRepository {
         ...value.direction ? [value.direction] : [],
         ...value.flip ? [value.flip] : [],
       ].join('.');
-      return { tileId, x, y };
+      return { tileId, x, y, ...value.label ? { label: value.label } : {} };
     });
     let patternArrows = {}
     let otherArrows = []

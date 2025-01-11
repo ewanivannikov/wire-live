@@ -14,6 +14,7 @@ class OutputArrow extends ArrowBase {
     public pattern: number[],
     public cycling: boolean = false,
     public active: number = 1,
+    public label: string = 'A',
     public waiting: number = -1,
   ) {
     super('OutputArrow', position);
@@ -94,5 +95,6 @@ export const createOutputArrow = (
   pattern: number[],
   cycling?: boolean,
   active?: number,
+  label?: string,
   waiting?: number,
-) => new OutputArrow(position, pattern, cycling, active, waiting);
+) => new OutputArrow(position, pattern, cycling, active, label, waiting);

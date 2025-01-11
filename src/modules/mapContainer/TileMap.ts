@@ -7,6 +7,7 @@ import type { TileId } from '../../data';
 import { Fields } from '../Logic/Base';
 import { WorldState } from '../worldState/viewModel';
 import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer';
+import { BrushOprtions } from '../contextBar/InputArrow';
 
 const hex = {
   Earth: 0x17d3e8,
@@ -54,6 +55,7 @@ export class TileMap {
     this.loop.addTick(this.grid.group);
 
     for (const entry of cashe) {
+      
       const [x, y] = entry[0].split(',').map(Number);
       const arrow = entry[1];
 
@@ -68,7 +70,7 @@ export class TileMap {
       const tileTexture = this.tileTextures[tileId];
 
       this.addStateSprite(x, y, arrow.state);
-      this.addSprite(tileTexture, x, y, tileId);
+      this.addSprite(tileTexture, x, y, tileId, arrow.label ?{label: arrow.label}: undefined);
     }
   };
 
@@ -87,7 +89,7 @@ export class TileMap {
     const [x, y] = new Position(tile.name).vector;
     const currentBrush = this._worldState.currentBrush
     const currentBrushOptions = this._worldState.currentBrushOptions
-
+    
     if (this.logicField.arrowCache.has(tile.name)) {
       this.updateSprite(
         tileTexture,
@@ -132,7 +134,7 @@ export class TileMap {
     }
   };
 
-  hasSprite = (tile, tileId) => {
+  hasSprite = (tile, tileId: TileId) => {
     return tile.userData.type === tileId;
   };
 
@@ -154,18 +156,24 @@ export class TileMap {
     sprite.name = `${x},${y}`;
     sprite.userData = { type: tileId, ...brushOptions };
 
-    // const earthDiv = document.createElement( 'div' );
-    //     earthDiv.className = 'label';
-    //     earthDiv.textContent = 'Earth';
-    //     earthDiv.style.backgroundColor = '#ccc';
-    
-    //     const earthLabel = new CSS2DObject( earthDiv );
-    //     earthLabel.position.set( 0, 0, 0 );
-    //     earthLabel.center.set( 0, 1 );
-    //     earthLabel.layers.set( 0 );
-    //     sprite.add(earthLabel); 
+    if (tileId.includes('.21') || tileId.includes('.22')) {
+      this.addLabel(sprite, brushOptions.label);
+    }
 
     this._tileGroup.add(sprite);
+  };
+
+  private addLabel = (sprite, text) => {
+    const spriteDiv = document.createElement( 'div' );
+    spriteDiv.className = 'label';
+    spriteDiv.textContent = text;
+    spriteDiv.style.backgroundColor = '#ccc';
+    
+    const spriteLabel = new CSS2DObject( spriteDiv );
+    spriteLabel.position.set( 0.5, -1.5, 0 );
+    spriteLabel.center.set( 0, 0 );
+    // spriteLabel.layers.set( 0 );
+    sprite.add(spriteLabel); 
   };
 
   addStateSprite = (x, y, color) => {
@@ -186,7 +194,7 @@ export class TileMap {
     sprite.material.needsUpdate = true;
   };
 
-  updateSprite = (tileTexture: Texture, x, y, tileId, tile, brushOptions) => {
+  updateSprite = (tileTexture: Texture, x, y, tileId, tile, brushOptions: BrushOprtions) => {
     this._tileGroup.remove(tile);
     this.addSprite(tileTexture, x, y, tileId, brushOptions);
   };

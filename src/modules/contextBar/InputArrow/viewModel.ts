@@ -1,9 +1,17 @@
 import { makeAutoObservable } from 'mobx';
 
+export type BrushOprtions = {
+  initialValue: 0 | 1;
+  hasCycle: boolean;
+  pattern: number[];
+  label: string;
+};
+
 export class InputArrowModel {
   public initialValue = 1;
   public hasCycle = false;
   public pattern = [1, 1, 2];
+  public label = 'A';
   constructor() {
     makeAutoObservable(this);
   }
@@ -13,6 +21,7 @@ export class InputArrowModel {
       initialValue: this.initialValue,
       hasCycle: this.hasCycle,
       pattern: this.pattern,
+      label: this.label,
     };
   }
 
