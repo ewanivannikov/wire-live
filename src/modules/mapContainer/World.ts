@@ -20,6 +20,7 @@ import { createRaycaster } from './systems/Raycaster';
 
 import { fields } from '../Logic/Base';
 import { WorldState } from '../worldState';
+import { createLabelRenderer } from './systems/LabelRenderer';
 
 let camera: OrthographicCamera;
 let renderer: WebGLRenderer;
@@ -39,7 +40,9 @@ class World {
     scene = createScene();
     renderer = createRenderer(container);
     container.appendChild(renderer.domElement);
-    loop.init(camera, scene, renderer);
+    const labelRenderer = createLabelRenderer();
+    
+    loop.init(camera, scene, renderer, labelRenderer);
 
     const logicField = fields;
 

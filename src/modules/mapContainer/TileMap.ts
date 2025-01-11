@@ -1,6 +1,4 @@
 import * as THREE from 'three';
-import { tools } from '../toolbar/presenter';
-import { brush } from '../contextBar/presenter';
 import { Position } from '../Logic/Position';
 import { arrowToIndexTile } from '../Logic/constants';
 import { Tile } from '../toolbar';
@@ -8,6 +6,7 @@ import { Texture } from 'three';
 import type { TileId } from '../../data';
 import { Fields } from '../Logic/Base';
 import { WorldState } from '../worldState/viewModel';
+import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer';
 
 const hex = {
   Earth: 0x17d3e8,
@@ -154,6 +153,17 @@ export class TileMap {
     sprite.scale.y = this.tileSize;
     sprite.name = `${x},${y}`;
     sprite.userData = { type: tileId, ...brushOptions };
+
+    // const earthDiv = document.createElement( 'div' );
+    //     earthDiv.className = 'label';
+    //     earthDiv.textContent = 'Earth';
+    //     earthDiv.style.backgroundColor = '#ccc';
+    
+    //     const earthLabel = new CSS2DObject( earthDiv );
+    //     earthLabel.position.set( 0, 0, 0 );
+    //     earthLabel.center.set( 0, 1 );
+    //     earthLabel.layers.set( 0 );
+    //     sprite.add(earthLabel); 
 
     this._tileGroup.add(sprite);
   };

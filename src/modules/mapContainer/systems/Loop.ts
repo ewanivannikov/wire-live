@@ -8,13 +8,15 @@ export class Loop {
   private camera: OrthographicCamera;
   private scene;
   private renderer;
+  private labelRenderer;
 
   constructor() {}
 
-  public init = (camera, scene, renderer) => {
+  public init = (camera, scene, renderer, labelRenderer) => {
     this.camera = camera;
     this.scene = scene;
     this.renderer = renderer;
+    this.labelRenderer = labelRenderer;
   };
 
   start() {
@@ -33,6 +35,7 @@ export class Loop {
 
       // render a frame
       this.renderer.render(this.scene, this.camera);
+      this.labelRenderer.render(this.scene, this.camera);
     });
   }
 
