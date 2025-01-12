@@ -23,8 +23,8 @@ export class TileMap {
   _tileGroup = new THREE.Group();
 
   constructor(
-    private readonly tileTextures,
-    private readonly tileSize,
+    private readonly tileTextures: Record<string, Texture>,
+    private readonly tileSize: number,
     private readonly loop,
     private readonly logicField: Fields,
     private readonly _worldState: WorldState,
@@ -150,11 +150,11 @@ export class TileMap {
     });
   }
 
-  hasSprite = (tile, tileId: TileId) => {
+  public hasSprite = (tile, tileId: TileId) => {
     return tile.userData.type === tileId;
   };
 
-  addSprite = (tileTexture: Texture, x: number, y: number, tileId: TileId, brushOptions: BrushOprtions) => {
+  public addSprite = (tileTexture: Texture, x: number, y: number, tileId: TileId, brushOptions: BrushOprtions) => {
     const material = new THREE.SpriteMaterial({
       map: tileTexture,
       transparent: true,
@@ -183,12 +183,11 @@ export class TileMap {
     const spriteDiv = document.createElement( 'div' );
     spriteDiv.className = 'label';
     spriteDiv.textContent = text;
-    spriteDiv.style.backgroundColor = 'transparent';
     
     const spriteLabel = new CSS2DObject(spriteDiv);
 
-    spriteLabel.center.set(-4, -4);
-    spriteLabel.position.set(0, 0, 0);
+    spriteLabel.center.set(-1.6, -3.6);
+    spriteLabel.position.set(0, 0.5, 0);
 
     sprite.add(spriteLabel);
   };
@@ -224,8 +223,8 @@ export class TileMap {
 }
 
 export const createTileMap = (
-  tileTextures,
-  tileSize,
+  tileTextures: Record<string, Texture>,
+  tileSize: number,
   loop,
   logicField: Fields,
   grid,

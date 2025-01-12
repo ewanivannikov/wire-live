@@ -27,3 +27,15 @@ body {
   grid-template-columns: repeat(auto-fill, 300px);
   gap: 8px;
 }
+
+#labelContainer .label {
+  width: 24px;
+  height: 24px;
+  background-color: oklch(from var(--color-primary) l c h / 20%);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-family: tahoma, sans-serif;
+  border-radius: 50%;
+}
