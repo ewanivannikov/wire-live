@@ -13,7 +13,7 @@ class InputArrow extends ArrowBase {
     public pattern: number[],
     public cycling: boolean = false,
     public active: number = 1,
-    public label: string = 'A',
+    public label: string = '',
   ) {
     super('InputArrow', position, direction);
     this.binaryArray = createBinaryArray(pattern || [1], this.active);

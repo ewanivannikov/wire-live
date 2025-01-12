@@ -14,7 +14,7 @@ class OutputArrow extends ArrowBase {
     public pattern: number[],
     public cycling: boolean = false,
     public active: number = 1,
-    public label: string = 'A',
+    public label: string = '',
     public waiting: number = -1,
   ) {
     super('OutputArrow', position);

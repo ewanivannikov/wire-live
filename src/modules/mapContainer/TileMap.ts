@@ -8,6 +8,7 @@ import { Fields } from '../Logic/Base';
 import { WorldState } from '../worldState/viewModel';
 import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer';
 import { BrushOprtions } from '../contextBar/InputArrow';
+import { makeAutoObservable, onBecomeUnobserved } from 'mobx';
 
 const hex = {
   Earth: 0x17d3e8,
@@ -30,9 +31,16 @@ export class TileMap {
     private readonly grid,
     private readonly map,
   ) {
+    makeAutoObservable(this);
     const cashe = logicField.initCashe(map);
 
     this.init(cashe);
+
+    onBecomeUnobserved(this, '_tileGroup', () => {
+      console.log('Очистка');
+      
+      this.clearAllLabels();
+    })
   }
 
   private addStateSpriteByArrow = (arrow) => {
@@ -134,6 +142,14 @@ export class TileMap {
     }
   };
 
+  private clearAllLabels() {
+    this._tileGroup.children.forEach((tile) => {
+      if (tile.userData.type.includes('.21') || tile.userData.type.includes('.22')) {
+        tile.clear();
+      }
+    });
+  }
+
   hasSprite = (tile, tileId: TileId) => {
     return tile.userData.type === tileId;
   };
@@ -167,12 +183,12 @@ export class TileMap {
     const spriteDiv = document.createElement( 'div' );
     spriteDiv.className = 'label';
     spriteDiv.textContent = text;
-    spriteDiv.style.backgroundColor = '#ccc';
+    spriteDiv.style.backgroundColor = 'transparent';
     
     const spriteLabel = new CSS2DObject(spriteDiv);
 
-    spriteLabel.center.set(-3.5, -4);
-    spriteLabel.position.set(0, 0.5, 0);
+    spriteLabel.center.set(-4, -4);
+    spriteLabel.position.set(0, 0, 0);
 
     sprite.add(spriteLabel);
   };
@@ -196,11 +212,13 @@ export class TileMap {
   };
 
   updateSprite = (tileTexture: Texture, x, y, tileId, tile, brushOptions: BrushOprtions) => {
+    tile.clear();
     this._tileGroup.remove(tile);
     this.addSprite(tileTexture, x, y, tileId, brushOptions);
   };
 
   removeSprite = (tile) => {
+    tile.clear();
     this._tileGroup.remove(tile);
   };
 }
