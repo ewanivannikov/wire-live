@@ -138,7 +138,7 @@ export class TileMap {
     return tile.userData.type === tileId;
   };
 
-  addSprite = (tileTexture: Texture, x, y, tileId: TileId, brushOptions) => {
+  addSprite = (tileTexture: Texture, x: number, y: number, tileId: TileId, brushOptions: BrushOprtions) => {
     const material = new THREE.SpriteMaterial({
       map: tileTexture,
       transparent: true,
@@ -169,11 +169,12 @@ export class TileMap {
     spriteDiv.textContent = text;
     spriteDiv.style.backgroundColor = '#ccc';
     
-    const spriteLabel = new CSS2DObject( spriteDiv );
-    spriteLabel.position.set( 0.5, -1.5, 0 );
-    spriteLabel.center.set( 0, 0 );
-    // spriteLabel.layers.set( 0 );
-    sprite.add(spriteLabel); 
+    const spriteLabel = new CSS2DObject(spriteDiv);
+
+    spriteLabel.center.set(-3.5, -4);
+    spriteLabel.position.set(0, 0.5, 0);
+
+    sprite.add(spriteLabel);
   };
 
   addStateSprite = (x, y, color) => {

@@ -21,7 +21,7 @@ class TileSet {
     this.init();
   }
 
-  init = () => {
+  private init = () => {
     const textureLoader = new THREE.TextureLoader();
 
     const onload = (texture: Texture) => {
