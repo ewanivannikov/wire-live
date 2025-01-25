@@ -175,7 +175,20 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.0.Up',
       'Brush.10.Up.>',
     ],
-    requisites:{},
+    requisites:{
+      '1':{
+        "4klv34s980": {
+          pattern: [2, 1, 4, 1, 3],
+          hasCycle: false,
+          initialValue: 1,
+          waiting: -1,
+    },
+    "z639x3r4do": {
+      pattern: [2, 1, 4, 1, 3],
+      hasCycle: false,
+      initialValue: 1
+    }}
+    },
     optionalChallenges: {},
   },
   FineWorkII:{
@@ -188,7 +201,63 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.9.Up',
       'Brush.10.Up.>',
     ],
-    requisites:{},
+    requisites:{
+      1:{"85y490zn3k": {
+        pattern: [1, 2, 1, 4, 3],
+      hasCycle: false,
+      initialValue: 1,
+      waiting: -1,
+    },
+    "4t5pj2sn4q": {
+      pattern: [2, 4, 3, 1, 1],
+      hasCycle: false,
+      initialValue: 1,
+      waiting: -1,
+    },
+    "b6j6a372a3": {
+      pattern: [1, 4, 2, 3, 1],
+      hasCycle: false,
+      initialValue: 1,
+      waiting: -1,
+    },
+    "o14hnqgp2q": {
+      pattern: [2, 3, 4, 1, 1],
+      hasCycle: false,
+      initialValue: 1,
+      waiting: -1,
+    },
+    "w19l8q5ay3": {
+      pattern: [2, 1, 4, 1, 3],
+      hasCycle: false,
+      initialValue: 1,
+      waiting: -1,
+    },
+    "46274ea348": {
+      pattern: [2, 1, 4, 1, 3],
+      hasCycle: false,
+      initialValue: 1,
+    },
+    "6cn055602h": {
+      pattern: [2, 3, 4, 1, 1],
+      hasCycle: false,
+      initialValue: 1,
+    },
+    "z6l5484m69": {
+      pattern: [1, 4, 2, 3, 1],
+      hasCycle: false,
+      initialValue: 1,
+    },
+    "i75t655l6a": {
+      pattern: [2, 4, 3, 1, 1],
+      hasCycle: false,
+      initialValue: 1,
+    },
+    "gv60hdb95i": {
+      pattern: [1, 2, 1, 4, 3],
+      hasCycle: false,
+      initialValue: 1,
+    }}
+    },
     optionalChallenges: {},
   },
   CatchTheBus:{
@@ -217,7 +286,27 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.5.Up',
       'Brush.6.Up.>',
     ],
-    requisites:{},
+    requisites:{
+      '1':{
+        "1wak460kj9": {
+        "tileId": "Brush.22",
+        "x": 0,
+        "y": -2,
+        "label": "A"
+    },
+    "56q4v7edsb": {
+        "tileId": "Brush.21.Up",
+        "x": -4,
+        "y": 5,
+        "label": "A"
+    },
+    "l4jyw0584q": {
+        "tileId": "Brush.21.Up",
+        "x": 0,
+        "y": 5,
+        "label": "A"
+    }}
+    },
     optionalChallenges: {},
   },
   OrOrOr:{
@@ -233,6 +322,17 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.10.Up.>',
     ],
     requisites:{},
+    optionalChallenges: {},
+  },
+  BrokenPass: {
+    slug: 'BrokenPass',
+    name: 'Сломанный пропуск',
+    description: '',
+    map: sources.BrokenPass,
+    allowedBrushList: ['Brush.0.Up', 'Brush.15.Up','Brush.9.Up',
+      'Brush.10.Up.>',],
+    requisites: {
+    },
     optionalChallenges: {},
   },
   Adder: {

@@ -146,25 +146,25 @@ export const patternArrowCache: { [key: string]: any } = {
         "tileId": "Brush.22",
         "x": 8,
         "y": -6,
-        "label": "A"
+        "label": "E"
     },
     "4t5pj2sn4q": {
         "tileId": "Brush.22",
         "x": 8,
         "y": -4,
-        "label": "A"
+        "label": "D"
     },
     "b6j6a372a3": {
         "tileId": "Brush.22",
         "x": 8,
         "y": -2,
-        "label": "A"
+        "label": "C"
     },
     "o14hnqgp2q": {
         "tileId": "Brush.22",
         "x": 8,
         "y": 0,
-        "label": "A"
+        "label": "B"
     },
     "w19l8q5ay3": {
         "tileId": "Brush.22",
@@ -182,25 +182,25 @@ export const patternArrowCache: { [key: string]: any } = {
         "tileId": "Brush.21.Right",
         "x": -9,
         "y": -3,
-        "label": "A"
+        "label": "B"
     },
     "z6l5484m69": {
         "tileId": "Brush.21.Right",
         "x": -9,
         "y": -1,
-        "label": "A"
+        "label": "C"
     },
     "i75t655l6a": {
         "tileId": "Brush.21.Right",
         "x": -9,
         "y": 1,
-        "label": "A"
+        "label": "D"
     },
     "gv60hdb95i": {
         "tileId": "Brush.21.Right",
         "x": -9,
         "y": 3,
-        "label": "A"
+        "label": "E"
     }
 },
   CatchTheBus:{
@@ -296,7 +296,7 @@ export const patternArrowCache: { [key: string]: any } = {
         "tileId": "Brush.21.Up",
         "x": -4,
         "y": 2,
-        "label": "A"
+        "label": "A·B"
     },
     "wa230tzqi0": {
         "tileId": "Brush.21.Up",
@@ -329,6 +329,44 @@ export const patternArrowCache: { [key: string]: any } = {
         "label": "A"
     }
   },
+  BrokenPass:{
+    "4k023vdc3l": {
+        "tileId": "Brush.21.Up",
+        "x": -2,
+        "y": 4,
+        "label": "A1"
+    },
+    "r4154jdx40": {
+        "tileId": "Brush.21.Right",
+        "x": -7,
+        "y": 0,
+        "label": "A2"
+    },
+    "z42cwg7o85": {
+        "tileId": "Brush.21.Left",
+        "x": 6,
+        "y": 0,
+        "label": "B2"
+    },
+    "iru5x27e23": {
+        "tileId": "Brush.21.Up",
+        "x": 1,
+        "y": 4,
+        "label": "B1"
+    },
+    "r156160668": {
+        "tileId": "Brush.22",
+        "x": -4,
+        "y": -4,
+        "label": "A"
+    },
+    "2z4ay9q05t": {
+        "tileId": "Brush.22",
+        "x": 3,
+        "y": -4,
+        "label": "B"
+    }
+},
   Adder: {
     'c71a8902-9ca6-4b57-b527-63f085599c7f': {
       tileId: 'Brush.21.Up',
