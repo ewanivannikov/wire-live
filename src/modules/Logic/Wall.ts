@@ -5,6 +5,7 @@ import { Direction } from './types';
 class Wall extends ArrowBase {
   constructor(position: string, direction: Direction) {
     super('Wall', position, direction);
+    this.state = 'Wall';
   }
 
   conditionStates(fields: Fields) {this.state = 'Wall'}

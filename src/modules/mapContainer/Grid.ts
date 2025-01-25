@@ -1,12 +1,12 @@
 import * as THREE from 'three';
 
-class Grid {
+export class Grid {
   gridRowSize = 4;
-  tileGroup;
+  tileGroup: THREE.Group<THREE.Object3DEventMap>;
 
   constructor(
     private readonly tileSize = 256,
-    gridRowSize,
+    gridRowSize: number,
   ) {
     this.gridRowSize = gridRowSize;
     this.init();
@@ -23,7 +23,7 @@ class Grid {
     }
   };
 
-  createTile = (index) => {
+  createTile = (index: number) => {
     const material = new THREE.SpriteMaterial({
       color: '#69f',
       opacity: 0,
@@ -40,7 +40,7 @@ class Grid {
     return sprite;
   };
 
-  getPositionFromIndex = (index) => {
+  getPositionFromIndex = (index: number) => {
     const SHTOTO = 0.5 - this.gridRowSize / 2;
     return {
       x: this.tileSize * (SHTOTO + (index % this.gridRowSize)),
@@ -48,7 +48,7 @@ class Grid {
     };
   };
 
-  getKeyFromIndex = (index) => {
+  getKeyFromIndex = (index: number) => {
     const SHTOTO = this.gridRowSize / 2;
     return `${-SHTOTO + (index % this.gridRowSize)},${-SHTOTO + Math.floor(index / this.gridRowSize)}`;
   };
@@ -58,4 +58,4 @@ class Grid {
   }
 }
 
-export const createGrid = (tileSize, gridSize) => new Grid(tileSize, gridSize);
+export const createGrid = (tileSize: number, gridSize: number) => new Grid(tileSize, gridSize);

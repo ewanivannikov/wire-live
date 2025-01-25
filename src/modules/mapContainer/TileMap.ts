@@ -3,12 +3,15 @@ import { Position } from '../Logic/Position';
 import { arrowToIndexTile } from '../Logic/constants';
 import { Tile } from '../toolbar';
 import { Texture } from 'three';
-import type { TileId } from '../../data';
+import type { LevelDTO, TileId } from '../../data';
 import { Fields } from '../Logic/Base';
 import { WorldState } from '../worldState/viewModel';
 import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer';
 import { BrushOprtions } from '../contextBar/InputArrow';
 import { makeAutoObservable, onBecomeUnobserved } from 'mobx';
+import { ArrowBase } from '../Logic/ArrowBase';
+import { Loop } from './systems';
+import { Grid } from './Grid';
 
 const hex = {
   Earth: 0x17d3e8,
@@ -25,11 +28,11 @@ export class TileMap {
   constructor(
     private readonly tileTextures: Record<string, Texture>,
     private readonly tileSize: number,
-    private readonly loop,
+    private readonly loop: Loop,
     private readonly logicField: Fields,
     private readonly _worldState: WorldState,
-    private readonly grid,
-    private readonly map,
+    private readonly grid: Grid,
+    private readonly map: LevelDTO.Map[],
   ) {
     makeAutoObservable(this);
     const cashe = logicField.initCashe(map);
@@ -55,7 +58,7 @@ export class TileMap {
     sprite.material.needsUpdate = true;
   };
 
-  init = (cashe) => {
+  private init = (cashe:Map<string, ArrowBase>) => {
     this.grid.group.tick = () => {
       this.logicField.processingLogic(this.addStateSpriteByArrow);
     };
@@ -74,7 +77,7 @@ export class TileMap {
         ...(arrow.flip ? [arrow.flip] : []),
       ];
 
-      const tileId = tileIdVector.join('.');
+      const tileId: TileId = tileIdVector.join('.');
       const tileTexture = this.tileTextures[tileId];
 
       this.addStateSprite(x, y, arrow.state);

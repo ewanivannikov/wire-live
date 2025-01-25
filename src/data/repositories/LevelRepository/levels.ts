@@ -1,6 +1,7 @@
+import { LevelDTO } from './dto';
 import { sources } from './sources';
 
-export const levels = {
+export const levels: Record<string, LevelDTO.Map> = {
   Briefing: {
     slug: 'Briefing',
     name: 'Хорошее начало',

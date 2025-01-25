@@ -44,8 +44,6 @@ export class WorldState {
   };
 
   public init = (loop: Loop, tileMap: TileMap) => {
-    // this._logicField = this._fields;
-    // this._tileMap = tileMap;
     tileMap.onPointerChange = (tile) => {
       const canBeErased = this.canBeErased(tile);
       const canBeDrawn = this.canBeDrawn(tile);
