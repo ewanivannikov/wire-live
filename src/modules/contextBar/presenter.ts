@@ -85,7 +85,6 @@ class Brush {
       this._worldState.setCurrentBrush(brush);
       this._worldState.setCurrentBrushOptions(this.currentBrushOptions);
     })
-    
   };
 
   setBrushDirection = (direction: DirectionType) => {
@@ -94,6 +93,9 @@ class Brush {
     const brushId = `${currentBrush[0]}.${currentBrush[1]}.${direction}${currentBrush[3] ? `.${currentBrush[3]}` : ''}`;
     this.currentBrush = brushId;
     this._worldState.setCurrentBrush(brushId);
+    if(currentBrush[1] === 21 || currentBrush[1] === 22){
+      this._worldState.setCurrentBrushOptions(this.currentBrushOptions);
+    }
   };
 
   setFlip = (isFlip: boolean) => {
@@ -103,6 +105,9 @@ class Brush {
     const brushId = `${currentBrush[0]}.${currentBrush[1]}.${currentBrush[2]}${hasFlip ? `.${this.currentBrushFlip}` : ''}`;
     this.currentBrush = brushId;
     this._worldState.setCurrentBrush(brushId);
+    if(currentBrush[1] === 21 || currentBrush[1] === 22){
+      this._worldState.setCurrentBrushOptions(this.currentBrushOptions);
+    }
   };
 
   get hasDirection() {

@@ -9,7 +9,5 @@ export const createLabelRenderer = (container) => {
       labelRenderer.domElement.style.pointerEvents = 'none';
       labelRenderer.domElement.id = 'labelContainer';
       document.body.appendChild( labelRenderer.domElement );
-      console.log('LR',labelRenderer);
-      
   return labelRenderer;
 };

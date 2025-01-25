@@ -2,7 +2,6 @@ import { makeAutoObservable } from 'mobx';
 
 export class OutputArrowModel {
   public waitingValue = -1;
-  // public waitingOperator = '=';
   public hasCycle = false;
   public pattern = [1, 1, 2];
   public label = 'A';
@@ -15,17 +14,13 @@ export class OutputArrowModel {
       waiting: Number(this.waitingValue),
       hasCycle: this.hasCycle,
       pattern: this.pattern,
-      label: 'A',
+      label: this.label,
     };
   }
 
   public setWaitingValue = (value: number) => {
     this.waitingValue = value;
   };
-
-  // public setWaitingOperator = (value: string) => {
-  //   this.waitingOperator = value;
-  // };
 
   public setHasCycle = (value: boolean) => {
     this.hasCycle = value;
@@ -37,6 +32,10 @@ export class OutputArrowModel {
 
   public addPatternElement = (element: number) => {
     this.pattern.push(element);
+  };
+
+  public setLabel = (label: string) => {
+    this.label = label;
   };
 }
 

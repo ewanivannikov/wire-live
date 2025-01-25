@@ -4,6 +4,7 @@ import {
   Popover,
   SegmentedButtons,
   Tags,
+  TextInput,
   TextInputTag,
 } from '../../../shared';
 import { inputArrowModel } from './viewModel';
@@ -33,8 +34,8 @@ export const InputArrow = (props) => {
           0
         </SegmentedButtons.Button>
       </SegmentedButtons>
-      Initial value
       <label style={{ display: 'flex' }}>
+      Initial value
         <input
           type="checkbox"
           onInput={(e) => {
@@ -70,6 +71,14 @@ export const InputArrow = (props) => {
           />
         </Tags>
       </Popover>
+      Label:
+      <TextInput
+          size={2}
+          value={inputArrowModel.label}
+          onChange={(e)=>{
+            inputArrowModel.setLabel(e.target.value)
+          }}
+        />
     </Show>
   );
 };

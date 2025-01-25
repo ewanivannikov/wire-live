@@ -40,6 +40,12 @@ export class InputArrowModel {
   public addPatternElement = (element: number) => {
     this.pattern.push(element);
   };
+
+  public setLabel = (label: string) => {
+    console.log('label', label);
+    
+    this.label = label;
+  };
 }
 
 export const inputArrowModel = new InputArrowModel();

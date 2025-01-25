@@ -73,6 +73,12 @@ export const OutputArrow = (props) => {
           value={outputArrowModel.waitingValue}
         />
       </SegmentedControls>
+      Label:
+      <TextInput
+          onChange={(e)=>outputArrowModel.setLabel(e.target.value)}
+          size={2}
+          value={outputArrowModel.label}
+        />
     </Show>
   );
 };
