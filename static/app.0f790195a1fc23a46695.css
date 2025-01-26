@@ -338,11 +338,12 @@ html {
 
 body {
   font-family: 'Palatino Linotype';
-}
-
-#app {
   background-color: oklch(from var(--color-baseline) l c h);
 }
+
+/* #app {
+  background-color: oklch(from var(--color-baseline) l c h);
+} */
 
 #canvas {
   height: calc(100vh - 100px); 
@@ -359,8 +360,9 @@ body {
 
 .level-list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, 400px);
+  column-gap: 8px;
+  row-gap: 64px;
 }
 
 #labelContainer .label {
@@ -377,11 +379,22 @@ body {
 
 .kNNx8aIKi5VSdDMeqbOl {
   padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tByI4uY6yimsYtesOBwe {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-top: 0;
+}
+
+.jR2gSWAAl71UJIrFy4yB {
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+  aspect-ratio: 1;
 }
 
 .Yppj3rhN1jUnxns09JtF {
