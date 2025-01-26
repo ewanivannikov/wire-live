@@ -2,7 +2,7 @@ import { JSX, ParentComponent, splitProps } from 'solid-js';
 import styles from './card.module.css';
 import { Typography } from '../Typography';
 import { LinkRouter } from '../LinkRouter';
-const { card, title } = styles;
+const { card, title, image } = styles;
 
 interface CardProps {
   class?: string;
@@ -18,18 +18,20 @@ export const Card: ParentComponent<CardProps> = (props) => {
   return (
     <article class={`${card} ${props.class || ''}`}>
       {props.imageSrc && (
-        <LinkRouter to={props.to} class="card-image">
-          <picture class="">
-            <source srcset={props.imageSrc} media="(min-width: 0px)" />
-            <img
-              aria-hidden="true"
-              elementtiming="LCP-target"
-              fetchpriority="high"
-              loading="eager"
-              src={props.imageSrc}
-              style="--dls-liteimage-object-fit: cover;"
-            />
-          </picture>
+        <LinkRouter to={props.to} >
+          <span class={image}>
+            <picture class="">
+              <source srcset={props.imageSrc} media="(min-width: 0px)" />
+              <img
+                aria-hidden="true"
+                elementtiming="LCP-target"
+                fetchpriority="high"
+                loading="eager"
+                src={props.imageSrc}
+                style="--dls-liteimage-object-fit: cover;"
+              />
+            </picture>
+          </span>
         </LinkRouter>
       )}
 

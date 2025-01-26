@@ -7,11 +7,12 @@ html {
 
 body {
   font-family: 'Palatino Linotype';
-}
-
-#app {
   background-color: oklch(from var(--color-baseline) l c h);
 }
+
+/* #app {
+  background-color: oklch(from var(--color-baseline) l c h);
+} */
 
 #canvas {
   height: calc(100vh - 100px); 
@@ -28,8 +29,9 @@ body {
 
 .level-list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, 400px);
+  column-gap: 8px;
+  row-gap: 64px;
 }
 
 #labelContainer .label {
