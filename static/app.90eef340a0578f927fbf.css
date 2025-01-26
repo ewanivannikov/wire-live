@@ -397,6 +397,12 @@ body {
   aspect-ratio: 1;
 }
 
+.jR2gSWAAl71UJIrFy4yB img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .Yppj3rhN1jUnxns09JtF {
   display: grid;
   grid-gap: 8px;
