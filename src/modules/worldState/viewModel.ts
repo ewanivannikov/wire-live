@@ -8,6 +8,7 @@ import { Loop } from '../mapContainer/systems';
 import { ToolType } from '../toolbar/enums';
 import { TileId } from '../../data/repositories/BrushRepository';
 import { TileMap } from '../mapContainer/TileMap';
+import { type Sprite } from 'three';
 
 export class WorldState {
   public isPaused = true;
@@ -52,7 +53,6 @@ export class WorldState {
       const isPan = this.currentTool === ToolType.Pan;
 
       if (canBeErased && isEraser) {
-        // НАЙДИ БАГ СВЯЗАННЫЙ С ПАУЗОЙ, РИСОВАНИЕМ И СТИРАНИЕМ. ГДЕ-ТО В onPointerMove!
         this.erase(tile, tileMap);
       }
       if (canBeDrawn && isBrush) {
@@ -116,7 +116,11 @@ export class WorldState {
     return this.modeContext.state.canBeDrawn(tile);
   };
 
-  public onIntersectCanvas = (gridIntersect, event, texture) => {
+  public onIntersectCanvas = (
+    gridIntersect: Sprite,
+    event: PointerEvent,
+    texture,
+  ) => {
     const canBeDrawn = this.canBeDrawn(gridIntersect);
     const canBeErased = this.canBeErased(gridIntersect);
     const tool =
@@ -125,7 +129,9 @@ export class WorldState {
         : ToolType.Eraser;
 
     if (event.pressure === 0 && (canBeDrawn || canBeErased)) {
-      gridIntersect.material.color.set('#f00');
+      if (tool === ToolType.Eraser) {
+        gridIntersect.material.color.set(`#ff0000`);
+      }
 
       gridIntersect.material.map = texture.getTileTextures(tool);
       gridIntersect.material.opacity = 0.4;

@@ -5,6 +5,7 @@ import {
   Scene,
   TOUCH,
   WebGLRenderer,
+  type Sprite,
 } from 'three';
 import { createCamera } from './components/Camera';
 import { createScene } from './components/Scene';
@@ -77,7 +78,7 @@ class World {
     );
 
     onIntersectCanvas((int) => {
-      const { tileIntersect, gridIntersect, event, previousGridIntersect } =
+      const { tileIntersect, gridIntersect, event, previousGridIntersect }: {previousGridIntersect: Sprite, tileIntersect: any, gridIntersect: Sprite, event: PointerEvent} =
         int;
 
       if (tileIntersect && event.pressure > 0 && event.buttons === 1) {
@@ -88,10 +89,16 @@ class World {
         this._worldState.onIntersectCanvas(gridIntersect, event, texture);
       }
 
+      // при перемещении мыши в предыдущей клетке остаётся текстура кисти
+      // её нужно стирать
       if (previousGridIntersect) {
-        previousGridIntersect.material.color.set('#69f');
+        const previousOpacity = previousGridIntersect?.material.opacity;
+        
         previousGridIntersect.material.map = null;
-        previousGridIntersect.material.opacity = 0;
+        // предыдущий ховер задаёт для спрайта 0.4 прозрачность
+        if(previousOpacity < 1) {
+          previousGridIntersect.material.opacity = 0;
+        }
         previousGridIntersect.material.needsUpdate = true;
       }
     });
