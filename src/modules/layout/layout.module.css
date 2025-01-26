@@ -6,8 +6,6 @@
     'header header'
     'context context'
     'sidebar main';
-  height: 100vh;
-  background-color: oklch(from var(--color-baseline) l c h);
 }
 
 .header {
@@ -29,6 +27,7 @@
 
 .main {
   grid-area: main;
+  position: relative;
 }
 
 .landing-main {

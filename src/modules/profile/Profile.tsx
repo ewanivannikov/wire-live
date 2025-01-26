@@ -4,7 +4,9 @@ import { createEffect, Show } from 'solid-js';
 import { user } from '../user';
 
 export const Profile = () => {
-  createEffect(() => user.state);
+  createEffect(() => {
+    return user.state
+  });
   const logOut = () => {
     user.logOut();
   };
