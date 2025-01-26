@@ -367,6 +367,54 @@ export const levels: Record<string, LevelDTO.Map> = {
     requisites:{},
     optionalChallenges: {},
   },
+  FillTheGaps:{
+    slug: 'FillTheGaps',
+    name: 'Заполнить пропуски',
+    description: '',
+    map: sources.FillTheGaps,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.15.Up'
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
+  TemporaryNetworkShutdown:{
+    slug: 'TemporaryNetworkShutdown',
+    name: 'Временное отключение сети',
+    description: '',
+    map: sources.TemporaryNetworkShutdown,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.15.Up'
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
+  ExclusionRoom:{
+    slug: 'ExclusionRoom',
+    name: 'Исключающая комната',
+    description: '',
+    map: sources.ExclusionRoom,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.15.Up'
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
   Adder: {
     slug: 'Adder',
     name: 'Сумматор',

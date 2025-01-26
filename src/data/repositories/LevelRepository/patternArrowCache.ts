@@ -276,13 +276,13 @@ export const patternArrowCache: { [key: string]: any } = {
         "tileId": "Brush.22",
         "x": 0,
         "y": -2,
-        "label": "A"
+        "label": "1"
     },
     "56q4v7edsb": {
         "tileId": "Brush.21.Up",
         "x": -4,
         "y": 5,
-        "label": "A"
+        "label": "B"
     },
     "l4jyw0584q": {
         "tileId": "Brush.21.Up",
@@ -435,6 +435,54 @@ AndAndAnd: {
         "x": 7,
         "y": 1,
         "label": "OR"
+    }
+},
+FillTheGaps:{
+    "9e3uq3597l": {
+        "tileId": "Brush.21.Up",
+        "x": -1,
+        "y": 2,
+        "label": "A"
+    },
+    "5du448y38z": {
+        "tileId": "Brush.22",
+        "x": -1,
+        "y": -5,
+        "label": "1"
+    }
+},
+TemporaryNetworkShutdown:{
+    "0e3uq3597l": {
+        "tileId": "Brush.21.Up",
+        "x": -1,
+        "y": 2,
+        "label": "A"
+    },
+    "6du448y38z": {
+        "tileId": "Brush.22",
+        "x": -1,
+        "y": -5,
+        "label": "0"
+    }
+},
+ExclusionRoom:{
+    "bc19z64871": {
+        "tileId": "Brush.21.Right",
+        "x": -7,
+        "y": 2,
+        "label": "A"
+    },
+    "2278129h8g": {
+        "tileId": "Brush.21.Left",
+        "x": 5,
+        "y": 2,
+        "label": "B"
+    },
+    "7lw8v665fm": {
+        "tileId": "Brush.22",
+        "x": -1,
+        "y": -6,
+        "label": "C"
     }
 },
   Adder: {
