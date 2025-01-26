@@ -2,7 +2,13 @@ import { makeAutoObservable } from 'mobx';
 import { MobxQuery } from './Query';
 import { QueryClient } from '@tanstack/query-core';
 import { MobxMutation } from './Mutation';
-const queryClientInstance = new QueryClient();
+const queryClientInstance = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
 // https://github.com/sandstone991/MobQ/blob/main/README.md
 export class CacheService {
   constructor(private readonly queryClient: QueryClient) {

@@ -1,9 +1,17 @@
+import { SpanStatusCode } from '@opentelemetry/api';
 import { httpService } from '../../../shared';
+import { traceService } from '../../../shared/services/TraceService';
 
 const messages = { MissingOrMalformedSID: 'SID отсутствует или повреждён' };
 
 export const userNetworkSources = {
   async getUser() {
+    const span = traceService.tracer.startSpan('http-request', {
+      attributes: {
+        'http.method': 'GET',
+        'http.route': 'user',
+      },
+    });
     try {
       const result = await httpService.get('user').json();
       return result;
@@ -12,10 +20,15 @@ export const userNetworkSources = {
         const errorText = await error.response.text();
         const customError = new AggregateError([error], messages[errorText]);
 
+        span.recordException(error);
+        span.setStatus({ code: SpanStatusCode.ERROR, message: errorText })
         throw customError;
       }
-
-      return error;
+      span.recordException(error);
+      span.setStatus({ code: SpanStatusCode.ERROR, message: String(error) })
+      throw error;
+    } finally {
+      span.end();
     }
   },
 

@@ -2,7 +2,9 @@ import { makeAutoObservable } from 'mobx';
 import { UserRepository, userRepository } from '../../data';
 
 export class User {
-  constructor(private readonly userRepository: UserRepository) {
+  constructor(
+    private readonly userRepository: UserRepository,
+  ) {
     makeAutoObservable(this);
   }
 

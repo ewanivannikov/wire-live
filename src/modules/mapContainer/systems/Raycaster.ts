@@ -30,6 +30,7 @@ export const createRaycaster = (
       [grid.group, tileMap.tileGroup],
       true,
     );
+    
     if (intersects.length > 0) {
       const topIntersect = intersects
         .filter((res) => {
@@ -59,7 +60,7 @@ export const createRaycaster = (
     let itrsts = [];
     let gridIntersectName = '';
     let previousGridIntersect: Object3D<Object3DEventMap> = null;
-
+    
     return new TransformStream({
       transform(event, controller) {
         // calculate pointer position in normalized device coordinates
