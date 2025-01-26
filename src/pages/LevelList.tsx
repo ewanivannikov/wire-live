@@ -7,11 +7,15 @@ import { LinkRouter } from '../shared/ui/components/LinkRouter';
 import sprites from '../assets/glyphs-sprites.svg';
 import spritesUi from '../assets/glyphs-sprites-ui.svg';
 import coverAdder from '../assets/cover-adder.webp';
+import coverBriefing from '../assets/cover-briefing.webp';
 import coverPlaceholder from '../assets/cover-placeholder.webp';
+import coverBadTurn from '../assets/cover-bad-turn.webp';
 console.log('sprites', sprites, spritesUi);
 
 const covers = {
   Adder: coverAdder,
+  Briefing: coverBriefing,
+  BadTurn: coverBadTurn,
 }
 
 export const LevelList = () => {
