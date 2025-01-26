@@ -335,6 +335,38 @@ export const levels: Record<string, LevelDTO.Map> = {
     },
     optionalChallenges: {},
   },
+  AndAndAnd:{
+    slug: 'AndAndAnd',
+    name: 'И, и, и',
+    description: '',
+    map: sources.AndAndAnd,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.15.Up'
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
+  DifficultVoting:{
+    slug: 'DifficultVoting',
+    name: 'Сложное голосование',
+    description: '',
+    map: sources.DifficultVoting,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.15.Up'
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
   Adder: {
     slug: 'Adder',
     name: 'Сумматор',

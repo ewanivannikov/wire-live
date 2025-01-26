@@ -296,37 +296,37 @@ export const patternArrowCache: { [key: string]: any } = {
         "tileId": "Brush.21.Up",
         "x": -4,
         "y": 2,
-        "label": "A·B"
+        "label": "A"
     },
     "wa230tzqi0": {
         "tileId": "Brush.21.Up",
         "x": 0,
         "y": 2,
-        "label": "A"
+        "label": "B"
     },
     "u82c5q5127": {
         "tileId": "Brush.21.Up",
         "x": 4,
         "y": 2,
-        "label": "A"
+        "label": "C"
     },
     "j64d94zn7m": {
         "tileId": "Brush.22",
         "x": -4,
         "y": -10,
-        "label": "A"
+        "label": "A+B"
     },
     "600v4l312b": {
         "tileId": "Brush.22",
         "x": 0,
         "y": -10,
-        "label": "A"
+        "label": "A+C"
     },
     "ikdup875p3": {
         "tileId": "Brush.22",
         "x": 4,
         "y": -10,
-        "label": "A"
+        "label": "B+C"
     }
   },
   BrokenPass:{
@@ -365,6 +365,76 @@ export const patternArrowCache: { [key: string]: any } = {
         "x": 3,
         "y": -4,
         "label": "B"
+    }
+},
+AndAndAnd: {
+    "oz332hni5d": {
+        "tileId": "Brush.21.Up",
+        "x": -4,
+        "y": 2,
+        "label": "A"
+    },
+    "wa330tzqi0": {
+        "tileId": "Brush.21.Up",
+        "x": 0,
+        "y": 2,
+        "label": "B"
+    },
+    "u83c5q5127": {
+        "tileId": "Brush.21.Up",
+        "x": 4,
+        "y": 2,
+        "label": "C"
+    },
+    "j65d94zn7m": {
+        "tileId": "Brush.22",
+        "x": -4,
+        "y": -6,
+        "label": "A·B"
+    },
+    "601v4l312b": {
+        "tileId": "Brush.22",
+        "x": 0,
+        "y": -6,
+        "label": "A·C"
+    },
+    "ikeup875p3": {
+        "tileId": "Brush.22",
+        "x": 4,
+        "y": -6,
+        "label": "B·C"
+    }
+  },
+  DifficultVoting:{
+    "z6690l9s97": {
+        "tileId": "Brush.21.Up",
+        "x": -3,
+        "y": 2,
+        "label": "A"
+    },
+    "mq50f92h9h": {
+        "tileId": "Brush.21.Up",
+        "x": -1,
+        "y": 2,
+        "label": "B"
+    },
+    "m5rohe0j6t": {
+        "tileId": "Brush.21.Up",
+        "x": 1,
+        "y": 2,
+        "label": "C"
+    },
+    "8ci0r0915s": {
+        "tileId": "Brush.22",
+        "x": -9,
+        "y": -5,
+        "label": "AND"
+    },
+    "ep12r27dtp": {
+        "tileId": "Brush.22",
+        "x": 7,
+        "y": 1,
+        "label": "OR"
     }
 },
   Adder: {

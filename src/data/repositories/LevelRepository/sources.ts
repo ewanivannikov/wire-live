@@ -3996,6 +3996,620 @@ export const sources: { [key: string]: any } = {
             "y": 1
         }
     ].concat([...Object.values(patternArrowCache.BrokenPass)]),
+    AndAndAnd:[
+        {
+            "tileId": "Brush.26",
+            "x": -2,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -2,
+            "y": 1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -2,
+            "y": 2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -2,
+            "y": 3
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 2,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 2,
+            "y": 1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 2,
+            "y": 2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 2,
+            "y": 3
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 2,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 1,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 0,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -1,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -2,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -3,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -4,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -5,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": 3
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": 2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": 1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 3,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 4,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 5,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": 3
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": 2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": 1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": -5
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": -3
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": -2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": -1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": -1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": -2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": -3
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": -5
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": -6
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": -7
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -5,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -4,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -3,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -2,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -1,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 0,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 4,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 5,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": -7
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": -6
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 3,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 2,
+            "y": -8
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 1,
+            "y": -8
+        }
+    ].concat([...Object.values(patternArrowCache.AndAndAnd)]),
+    DifficultVoting:[
+        {
+            "tileId": "Brush.26",
+            "x": -5,
+            "y": 1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -5,
+            "y": 2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -5,
+            "y": 3
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -5,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -4,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -3,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -2,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -1,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 0,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 1,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 2,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 3,
+            "y": 4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 3,
+            "y": 3
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 3,
+            "y": 2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 3,
+            "y": 1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 3,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -5,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -4,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 2,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 1,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -3,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -5,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -4,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 2,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 3,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 4,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 5,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 4,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 5,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -7,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -6,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -7,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -4,
+            "y": -5
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -3,
+            "y": -5
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -2,
+            "y": -5
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -1,
+            "y": -5
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 0,
+            "y": -5
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 1,
+            "y": -5
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 2,
+            "y": -5
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -8,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -9,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -10,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -11,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -11,
+            "y": -1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -11,
+            "y": -2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -11,
+            "y": -3
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -11,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 7,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 8,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 9,
+            "y": -4
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 9,
+            "y": -3
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 9,
+            "y": -2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 9,
+            "y": -1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 9,
+            "y": 0
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 5,
+            "y": 1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 6,
+            "y": 2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 7,
+            "y": 3
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 8,
+            "y": 2
+        },
+        {
+            "tileId": "Brush.26",
+            "x": 9,
+            "y": 1
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -11,
+            "y": -5
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -10,
+            "y": -6
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -9,
+            "y": -7
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -8,
+            "y": -6
+        },
+        {
+            "tileId": "Brush.26",
+            "x": -7,
+            "y": -5
+        }
+    ].concat([...Object.values(patternArrowCache.DifficultVoting)]),
     Adder: [
         {
             "tileId": "Brush.15.Up",
