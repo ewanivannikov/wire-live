@@ -10,12 +10,27 @@ import coverAdder from '../assets/cover-adder.webp';
 import coverBriefing from '../assets/cover-briefing.webp';
 import coverPlaceholder from '../assets/cover-placeholder.webp';
 import coverBadTurn from '../assets/cover-bad-turn.webp';
+import coverBranching from '../assets/cover-branching.webp';
+import coverCrossroads from '../assets/cover-crossroads.webp';
+import coverFineWork from '../assets/cover-fine-work.webp';
+import coverFineWorkII from '../assets/cover-fine-work-ii.webp';
+import coverCatchTheBus from '../assets/cover-catch-the-bus.webp';
+import coverOneWhole from '../assets/cover-one-whole.webp';
+import coverBrokenPass from '../assets/cover-broken-pass.webp';
 console.log('sprites', sprites, spritesUi);
 
 const covers = {
   Adder: coverAdder,
   Briefing: coverBriefing,
   BadTurn: coverBadTurn,
+  Branching: coverBranching,
+  Crossroads: coverCrossroads,
+  FineWork: coverFineWork,
+  FineWorkII: coverFineWorkII,
+  CatchTheBus: coverCatchTheBus,
+  OneWhole: coverOneWhole,
+  OrOrOr: coverPlaceholder,
+  BrokenPass: coverBrokenPass,
 }
 
 export const LevelList = () => {
