@@ -17,6 +17,9 @@ import coverFineWorkII from '../assets/cover-fine-work-ii.webp';
 import coverCatchTheBus from '../assets/cover-catch-the-bus.webp';
 import coverOneWhole from '../assets/cover-one-whole.webp';
 import coverBrokenPass from '../assets/cover-broken-pass.webp';
+import coverOrOrOr from '../assets/cover-or-or-or.webp';
+import coverAndAndAnd from '../assets/cover-and-and-and.webp';
+
 console.log('sprites', sprites, spritesUi);
 
 const covers = {
@@ -29,8 +32,13 @@ const covers = {
   FineWorkII: coverFineWorkII,
   CatchTheBus: coverCatchTheBus,
   OneWhole: coverOneWhole,
-  OrOrOr: coverPlaceholder,
+  OrOrOr: coverOrOrOr,
   BrokenPass: coverBrokenPass,
+  AndAndAnd: coverAndAndAnd,
+  DifficultVoting: coverAndAndAnd,
+  FillTheGaps: coverAndAndAnd,
+  TemporaryNetworkShutdown: coverAndAndAnd,
+  ExclusionRoom: coverAndAndAnd
 }
 
 export const LevelList = () => {
