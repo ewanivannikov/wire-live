@@ -276,6 +276,38 @@ export const levels: Record<string, LevelDTO.Map> = {
     requisites:{},
     optionalChallenges: {},
   },
+  Permutations:{
+    slug: 'Permutations',
+    name: 'Перестановки',
+    description: '',
+    map: sources.Permutations,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.7.Up',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
+  Backwards:{
+    slug: 'Backwards',
+    name: 'Задом-наперёд',
+    description: '',
+    map: sources.Backwards,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.7.Up',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
   OneWhole:{
     slug: 'OneWhole',
     name: 'Одно целое',
@@ -351,6 +383,22 @@ export const levels: Record<string, LevelDTO.Map> = {
     requisites:{},
     optionalChallenges: {},
   },
+  CableTwisting:{
+    slug: 'CableTwisting',
+    name: 'Скрутка кабелей',
+    description: '',
+    map: sources.CableTwisting,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.13.Up.>',
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
   DifficultVoting:{
     slug: 'DifficultVoting',
     name: 'Сложное голосование',
@@ -367,6 +415,18 @@ export const levels: Record<string, LevelDTO.Map> = {
     requisites:{},
     optionalChallenges: {},
   },
+  LogicalRevolution:{
+    slug: 'LogicalRevolution',
+    name: 'Логический переворот',
+    description: '',
+    map: sources.LogicalRevolution,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.14.Up'
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
   FillTheGaps:{
     slug: 'FillTheGaps',
     name: 'Заполнить пропуски',
@@ -378,7 +438,7 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.6.Up.>',
       'Brush.9.Up',
       'Brush.10.Up.>',
-      'Brush.15.Up'
+      'Brush.14.Up'
     ],
     requisites:{},
     optionalChallenges: {},
@@ -394,7 +454,7 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.6.Up.>',
       'Brush.9.Up',
       'Brush.10.Up.>',
-      'Brush.15.Up'
+      'Brush.14.Up'
     ],
     requisites:{},
     optionalChallenges: {},
@@ -410,7 +470,77 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.6.Up.>',
       'Brush.9.Up',
       'Brush.10.Up.>',
-      'Brush.15.Up'
+      'Brush.15.Up',
+      'Brush.14.Up'
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
+  ExclusionRoomII:{
+    slug: 'ExclusionRoomII',
+    name: 'Исключающая комната 2',
+    description: '',
+    map: sources.ExclusionRoomII,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.16.Up'
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
+  Decoder:{
+    slug: 'Decoder',
+    name: 'Обработчик шифров',
+    description: '',
+    map: sources.Decoder,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.13.Up.>',
+      'Brush.15.Up',
+      'Brush.14.Up'
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
+  Encoder:{
+    slug: 'Encoder',
+    name: 'Кодирование',
+    description: '',
+    map: sources.Encoder,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.13.Up.>',
+      'Brush.15.Up',
+      'Brush.14.Up'
+    ],
+    requisites:{},
+    optionalChallenges: {},
+  },
+  SumOfUnits:{
+    slug: 'SumOfUnits',
+    name: 'Сумма единиц',
+    description: '',
+    map: sources.SumOfUnits,
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.13.Up.>',
+      'Brush.15.Up',
+      'Brush.14.Up',
+      'Brush.16.Up'
     ],
     requisites:{},
     optionalChallenges: {},
