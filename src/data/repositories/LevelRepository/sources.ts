@@ -5419,7 +5419,7 @@ export const sources: { [key: string]: any } = {
             "y": -3
         },
         {
-            "tileId": "Brush.23.Up",
+            "tileId": "Brush.0.Up",
             "x": 1,
             "y": 5
         },
@@ -5444,7 +5444,7 @@ export const sources: { [key: string]: any } = {
             "y": 1
         },
         {
-            "tileId": "Brush.23.Right",
+            "tileId": "Brush.0.Right",
             "x": -10,
             "y": -4
         },
@@ -5549,12 +5549,12 @@ export const sources: { [key: string]: any } = {
             "y": 4
         },
         {
-            "tileId": "Brush.23.Up",
+            "tileId": "Brush.0.Up",
             "x": 0,
             "y": 5
         },
         {
-            "tileId": "Brush.23.Right",
+            "tileId": "Brush.0.Right",
             "x": -10,
             "y": -5
         },
@@ -5599,12 +5599,12 @@ export const sources: { [key: string]: any } = {
             "y": 4
         },
         {
-            "tileId": "Brush.23.Up",
+            "tileId": "Brush.0.Up",
             "x": -1,
             "y": 5
         },
         {
-            "tileId": "Brush.23.Right",
+            "tileId": "Brush.0.Right",
             "x": -10,
             "y": -6
         },
