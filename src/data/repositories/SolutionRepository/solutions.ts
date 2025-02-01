@@ -1,7 +1,7 @@
 import { SolutionDTO } from "./dto";
 
 export const solutions: Record<string, SolutionDTO.Solution[]> = {
-  'Adder:1': [
+  'A:1': [
     {
     id: 0,
     status: 'draft',

@@ -940,25 +940,65 @@ SumOfUnits:{
     }
 },
   Adder: {
-    'c71a8902-9ca6-4b57-b527-63f085599c7f': {
-      tileId: 'Brush.21.Up',
-      x: -3,
-      y: 4,
+    "u18dmc7522": {
+        "tileId": "Brush.22",
+        "x": -8,
+        "y": -20,
+        "label": "C"
     },
-    'c71a8902-9ca6-4b57-b527-63f085599c6f': {
-      tileId: 'Brush.21.Up',
-      x: 2,
-      y: 4,
+    "qn3h1j62q1": {
+        "tileId": "Brush.22",
+        "x": 1,
+        "y": -24,
+        "label": "S0"
     },
-    'c71a8902-9ca6-4b57-b527-63f085599c5f': {
-      tileId: 'Brush.22',
-      x: -3,
-      y: -5,
+    "3lni6uj7q1": {
+        "tileId": "Brush.22",
+        "x": 0,
+        "y": -24,
+        "label": "S1"
     },
-    'c71a8902-9ca6-4b57-b527-63f085599c4f': {
-      tileId: 'Brush.22',
-      x: 2,
-      y: -5,
+    "xe5919tkb3": {
+        "tileId": "Brush.22",
+        "x": -1,
+        "y": -24,
+        "label": "S2"
     },
-  },
+    "vqwf38fe03": {
+        "tileId": "Brush.21.Up",
+        "x": 6,
+        "y": 2,
+        "label": "A0"
+    },
+    "5mg82dwjpw": {
+        "tileId": "Brush.21.Up",
+        "x": 5,
+        "y": 2,
+        "label": "A1"
+    },
+    "021mt1957w": {
+        "tileId": "Brush.21.Up",
+        "x": 4,
+        "y": 2,
+        "label": "A2"
+    },
+    "4qn8hx0y90": {
+        "tileId": "Brush.21.Up",
+        "x": -7,
+        "y": 2,
+        "label": "B2"
+    },
+    "n191f7378o": {
+        "tileId": "Brush.21.Up",
+        "x": -6,
+        "y": 2,
+        "label": "B1"
+    },
+    "0hcfq1zhr1": {
+        "tileId": "Brush.21.Up",
+        "x": -5,
+        "y": 2,
+        "label": "B0"
+    }
+},
 };
