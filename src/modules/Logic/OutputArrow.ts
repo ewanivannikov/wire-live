@@ -5,7 +5,7 @@ import { createBinaryArray } from '../../shared/utils/createBinaryArray';
 class OutputArrow extends ArrowBase {
   public index = 0;
   public binaryArray: number[];
-  public isValidIn = true;
+  public isValidIn = false;
   private patternLength = 0;
   private patternValidation: string[] = [];
 
@@ -15,7 +15,6 @@ class OutputArrow extends ArrowBase {
     public cycling: boolean = false,
     public active: number = 1,
     public label: string = '',
-    public waiting: number = -1,
   ) {
     super('OutputArrow', position);
 
@@ -25,54 +24,54 @@ class OutputArrow extends ArrowBase {
       `active:`,
       active,
       `pattern:`,
-      pattern,
-      'waiting:',
-      waiting,
+      pattern
     );
   }
 
   conditionStates = (fields: Fields) => {
     // ожидание истекло и сигнал достиг знака
-    if (
-      this.waiting === -1 &&
-      fields.getSignal(this.position.coordinates) === this.binaryArray[0]
-    ) {
-      this.waiting = 0;
-    }
+    // if (
+    //   this.waiting === -1 &&
+    //   fields.getSignal(this.position.coordinates) === this.binaryArray[0]
+    // ) {
+    //   this.waiting = 0;
+    // }
 
-    // не ждём, сразу проверяем
-    if (this.waiting === 0) {
-      let valid
+    // // не ждём, сразу проверяем
+    // if (this.waiting === 0) {
+    //   let valid
 
-      if (this.index < this.binaryArray.length) {
-        valid = this.binaryArray[this.index] === fields.getSignal(this.position.coordinates);
+    //   if (this.index < this.binaryArray.length) {
+    //     valid = this.binaryArray[this.index] === fields.getSignal(this.position.coordinates);
+    //     this.index = this.index + 1;
+    //   } else {
+    //     if (this.cycling) {
+    //       this.index = this.index % this.binaryArray.length;
+    //       valid = this.binaryArray[this.index] === fields.getSignal(this.position.coordinates);
+    //       this.index = this.index + 1;
+    //     } else {
+    //       valid = this.binaryArray[this.index - 1] === this.binaryArray.at(-1);
+    //     }
+    //   }
+
+
+    //   this.isValidIn = this.isValidIn && valid;
+
+    if (this.binaryArray[this.index] === fields.getSignal(this.position.coordinates)) {
+        this.isValidIn = true;
         this.index = this.index + 1;
-      } else {
-        if (this.cycling) {
-          this.index = this.index % this.binaryArray.length;
-          valid = this.binaryArray[this.index] === fields.getSignal(this.position.coordinates);
-          this.index = this.index + 1;
-        } else {
-          valid = this.binaryArray[this.index - 1] === this.binaryArray.at(-1);
-        }
       }
 
-
-      this.isValidIn = this.isValidIn && valid;
-    }
-
-    if (this.waiting > 0) {
-      this.waiting = this.waiting - 1;
-    }
-
-    if (this.waiting != 0) {
+    if (!this.isValidIn) {
       this.state = 'Wait';
     } else if (this.isValidIn) {
       this.state = 'Venus';
       this.patternValidation.push(this.state);
-    } else {
+    } else if ((this.state === 'Venus') && !this.isValidIn) {
       this.state = 'Mars';
-      this.patternValidation.push(this.state);
+      this.patternValidation.clear();
+      this.isValidIn = false;
+      this.index = 0;
     }
   }
 
@@ -96,5 +95,4 @@ export const createOutputArrow = (
   cycling?: boolean,
   active?: number,
   label?: string,
-  waiting?: number,
-) => new OutputArrow(position, pattern, cycling, active, label, waiting);
+) => new OutputArrow(position, pattern, cycling, active, label);
