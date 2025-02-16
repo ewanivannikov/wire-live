@@ -10,7 +10,7 @@ export const fabricPatternArrow = (
   cycling?: boolean,
   active?: number,
   label?: string,
-  waiting?: number,
+  cycles?: number,
 ) => {
   if (nameType === 'InputArrow') {
     const result = createInputArrow(
@@ -29,8 +29,8 @@ export const fabricPatternArrow = (
       pattern,
       cycling,
       active,
+      cycles,
       label,
-      waiting,
     );
     return result;
   }

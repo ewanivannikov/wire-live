@@ -1,12 +1,14 @@
 import { Fields } from './Base';
 import { ArrowBase } from './ArrowBase';
 import { createBinaryArray } from '../../shared/utils/createBinaryArray';
+import { log } from 'console';
 
 class OutputArrow extends ArrowBase {
   public index = 0;
   public binaryArray: number[];
   public isValidIn = false;
   private patternLength = 0;
+  private cycleAmount = 0;
   private patternValidation: string[] = [];
 
   constructor(
@@ -14,18 +16,15 @@ class OutputArrow extends ArrowBase {
     public pattern: number[],
     public cycling: boolean = false,
     public active: number = 1,
+    public cycles: number = 1,
     public label: string = '',
   ) {
     super('OutputArrow', position);
 
     this.binaryArray = createBinaryArray(pattern || [1], this.active);
-    console.info('OutputArrowPattern:', this.binaryArray);
-    console.info(
-      `active:`,
-      active,
-      `pattern:`,
-      pattern
-    );
+    this.patternLength = this.binaryArray.length;
+    this.cycleAmount = this.cycles*this.binaryArray.length;
+    
   }
 
   conditionStates = (fields: Fields) => {
@@ -61,30 +60,41 @@ class OutputArrow extends ArrowBase {
         this.isValidIn = true;
         this.index = this.index + 1;
       }
-
+    
+    console.log(this.position, this.cycleAmount);
+    
+    this.cycleAmount = this.cycleAmount - 1;
+    
     if (!this.isValidIn) {
       this.state = 'Wait';
     } else if (this.isValidIn) {
       this.state = 'Venus';
       this.patternValidation.push(this.state);
     } else if ((this.state === 'Venus') && !this.isValidIn) {
-      this.state = 'Mars';
+      this.state = 'Moon';
       this.patternValidation.clear();
       this.isValidIn = false;
       this.index = 0;
     }
+    if (this.cycleAmount === 0) {
+      this.state = 'Mars';
+      this.patternValidation.push(this.state);
+    }
+    
   }
 
   activeStates(fields: Fields) { }
 
   public get validated() {
-    this.patternLength = this.binaryArray.length;
+    
     if (this.patternValidation.includes('Mars')) return 'rejected';
     if (
       this.patternValidation.every((item) => item === 'Venus') &&
       this.patternValidation.length >= this.patternLength
-    )
+    ) {
+      this.cycleAmount = -1;
       return 'resolved';
+    }
     return 'waiting';
   }
 }
@@ -94,5 +104,6 @@ export const createOutputArrow = (
   pattern: number[],
   cycling?: boolean,
   active?: number,
+  cycles?: number,
   label?: string,
-) => new OutputArrow(position, pattern, cycling, active, label);
+) => new OutputArrow(position, pattern, cycling, active, cycles, label);
