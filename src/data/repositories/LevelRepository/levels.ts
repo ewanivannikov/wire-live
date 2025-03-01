@@ -9,30 +9,262 @@ export const levels: Record<string, LevelDTO.Map> = {
     map: sources.Briefing,
     allowedBrushList: ['Brush.0.Up'],
     requisites: {
-      '1': {
+      "1": {
         "6e6h3481iv": {
-          pattern: [2, 2, 1],
-          hasCycle: false,
-          initialValue: 1,
-          cycles: 3,
+          "pattern": [
+            13,
+            2,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
         },
         "337fhpqlvc": {
-          pattern: [2, 2, 1],
-          hasCycle: false,
-          initialValue: 1,
-          cycles: 3,
+          "pattern": [
+            13,
+            2,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
         },
         "66sg9if0ze": {
-          pattern: [2, 2, 1],
-          hasCycle: false,
-          initialValue: 1,
+          "pattern": [
+            13,
+            2,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
         },
         "257yh28x22": {
-          pattern: [2, 2, 1],
-          hasCycle: false,
-          initialValue: 1,
+          "pattern": [
+            13,
+            2,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
         }
       },
+      "2": {
+        "6e6h3481iv": {
+          "pattern": [
+            6,
+            6,
+            2,
+            1,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "337fhpqlvc": {
+          "pattern": [
+            6,
+            6,
+            2,
+            1,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "66sg9if0ze": {
+          "pattern": [
+            6,
+            6,
+            2,
+            1,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "257yh28x22": {
+          "pattern": [
+            6,
+            6,
+            2,
+            1,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "3": {
+        "6e6h3481iv": {
+          "pattern": [
+            11,
+            1,
+            2,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "337fhpqlvc": {
+          "pattern": [
+            11,
+            1,
+            2,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "66sg9if0ze": {
+          "pattern": [
+            11,
+            1,
+            2,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "257yh28x22": {
+          "pattern": [
+            11,
+            1,
+            2,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "4": {
+        "6e6h3481iv": {
+          "pattern": [
+            13,
+            1,
+            3,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "337fhpqlvc": {
+          "pattern": [
+            13,
+            1,
+            3,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "66sg9if0ze": {
+          "pattern": [
+            13,
+            1,
+            3,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "257yh28x22": {
+          "pattern": [
+            13,
+            1,
+            3,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "5": {
+        "6e6h3481iv": {
+          "pattern": [
+            2,
+            2,
+            12,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "337fhpqlvc": {
+          "pattern": [
+            2,
+            2,
+            12,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "66sg9if0ze": {
+          "pattern": [
+            2,
+            2,
+            12,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "257yh28x22": {
+          "pattern": [
+            2,
+            2,
+            12,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      }
     },
     optionalChallenges: {},
   },
@@ -43,19 +275,131 @@ export const levels: Record<string, LevelDTO.Map> = {
     map: sources.BadTurn,
     allowedBrushList: ['Brush.0.Up'],
     requisites: {
-      '1': {
-        "sr6a0e068q": {
-          pattern: [2, 2, 1],
-          hasCycle: false,
-          initialValue: 1,
-          cycles: 3,
-        },
+      "1": {
         "7khth75rce": {
-          pattern: [2, 2, 1],
-          hasCycle: false,
-          initialValue: 1,
+          "pattern": [
+            9,
+            1,
+            5,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
         },
+        "sr6a0e068q": {
+          "pattern": [
+            9,
+            1,
+            5,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
       },
+      "2": {
+        "7khth75rce": {
+          "pattern": [
+            11,
+            4,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "sr6a0e068q": {
+          "pattern": [
+            11,
+            4,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "3": {
+        "7khth75rce": {
+          "pattern": [
+            5,
+            10,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "sr6a0e068q": {
+          "pattern": [
+            5,
+            10,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "4": {
+        "7khth75rce": {
+          "pattern": [
+            12,
+            7,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "sr6a0e068q": {
+          "pattern": [
+            12,
+            7,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "5": {
+        "7khth75rce": {
+          "pattern": [
+            7,
+            5,
+            1,
+            3,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "sr6a0e068q": {
+          "pattern": [
+            7,
+            5,
+            1,
+            3,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
     },
     optionalChallenges: {},
   },
@@ -71,44 +415,360 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.7.Up'
     ],
     requisites: {
-      '1' :{
+      "1": {
         "0950md985m": {
-        pattern: [2, 3, 1],
-        hasCycle: false,
-        initialValue: 1
+          "pattern": [
+            2,
+            10,
+            4,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "g69ph717e6": {
+          "pattern": [
+            2,
+            10,
+            4,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "9ifie7kio3": {
+          "pattern": [
+            2,
+            10,
+            4,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "80a9dh08b6": {
+          "pattern": [
+            2,
+            10,
+            4,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "b535lh2qye": {
+          "pattern": [
+            2,
+            10,
+            4,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "2ukcels09a": {
+          "pattern": [
+            2,
+            10,
+            4,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
       },
-      "g69ph717e6": {
-        pattern: [2, 3, 1],
-        hasCycle: false,
-        initialValue: 1,
-        cycles: 3,
+      "2": {
+        "0950md985m": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "g69ph717e6": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "9ifie7kio3": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "80a9dh08b6": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "b535lh2qye": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "2ukcels09a": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
       },
-      "9ifie7kio3": {
-        pattern: [2, 3, 1],
-        hasCycle: false,
-        initialValue: 1,
-        cycles: 3,
+      "3": {
+        "0950md985m": {
+          "pattern": [
+            3,
+            12,
+            1,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "g69ph717e6": {
+          "pattern": [
+            3,
+            12,
+            1,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "9ifie7kio3": {
+          "pattern": [
+            3,
+            12,
+            1,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "80a9dh08b6": {
+          "pattern": [
+            3,
+            12,
+            1,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "b535lh2qye": {
+          "pattern": [
+            3,
+            12,
+            1,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "2ukcels09a": {
+          "pattern": [
+            3,
+            12,
+            1,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
       },
-      "80a9dh08b6": {
-        pattern: [2, 3, 1],
-        hasCycle: false,
-        initialValue: 1,
-        cycles: 3,
+      "4": {
+        "0950md985m": {
+          "pattern": [
+            11,
+            2,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "g69ph717e6": {
+          "pattern": [
+            11,
+            2,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "9ifie7kio3": {
+          "pattern": [
+            11,
+            2,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "80a9dh08b6": {
+          "pattern": [
+            11,
+            2,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "b535lh2qye": {
+          "pattern": [
+            11,
+            2,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "2ukcels09a": {
+          "pattern": [
+            11,
+            2,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
       },
-      "b535lh2qye": {
-        pattern: [2, 3, 1],
-        hasCycle: false,
-        initialValue: 1,
-        cycles: 3,
-      },
-      "2ukcels09a": {
-        pattern: [2, 3, 1],
-        hasCycle: false,
-        initialValue: 1,
-        cycles: 3,
+      "5": {
+        "0950md985m": {
+          "pattern": [
+            14,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "g69ph717e6": {
+          "pattern": [
+            14,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "9ifie7kio3": {
+          "pattern": [
+            14,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "80a9dh08b6": {
+          "pattern": [
+            14,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "b535lh2qye": {
+          "pattern": [
+            14,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "2ukcels09a": {
+          "pattern": [
+            14,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
       }
     },
-  },
     optionalChallenges: {},
   },
   Crossroads:{
@@ -121,53 +781,375 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.9.Up',
     ],
     requisites: {
-      '1' :{
+      "1": {
         "5r73rp5hr3": {
-          pattern: [4, 1, 2, 3, 1],
-          hasCycle: false,
-          initialValue: 1
+          "pattern": [
+            4,
+            10,
+            3,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
         },
         "w478zd8f4p": {
-          pattern: [2, 1, 4, 1, 3],
-          hasCycle: false,
-          initialValue: 1
+          "pattern": [
+            12,
+            7,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
         },
         "vyxd1w0jsn": {
-          pattern: [3, 1, 1, 2, 4],
-          hasCycle: false,
-          initialValue: 1
+          "pattern": [
+            2,
+            14,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
         },
         "033504w030": {
-          pattern: [4, 2, 1, 1, 3],
-          hasCycle: false,
-          initialValue: 1,
-          cycles: 3,
+          "pattern": [
+            8,
+            11,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
         },
         "uqih90mf7x": {
-          pattern: [3, 1, 1, 2, 4],
-          hasCycle: false,
-          initialValue: 1,
-          cycles: 3,
+          "pattern": [
+            2,
+            14,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
         },
         "j7x29l731i": {
-          pattern: [2, 1, 4, 1, 3],
-          hasCycle: false,
-          initialValue: 1,
-          cycles: 3,
+          "pattern": [
+            12,
+            7,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
         },
         "xo83kxu9v5": {
-          pattern: [4, 1, 2, 3, 1],
-          hasCycle: false,
-          initialValue: 1,
-          cycles: 3,
+          "pattern": [
+            4,
+            10,
+            3,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
         },
         "o59314wikt": {
-          pattern: [4, 2, 1, 1, 3],
-          hasCycle: false,
-          initialValue: 1
+          "pattern": [
+            8,
+            11,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
         }
+      },
+      "2": {
+        "5r73rp5hr3": {
+          "pattern": [
+            11,
+            6,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "w478zd8f4p": {
+          "pattern": [
+            2,
+            2,
+            1,
+            11,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "vyxd1w0jsn": {
+          "pattern": [
+            6,
+            5,
+            7,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "033504w030": {
+          "pattern": [
+            16,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "uqih90mf7x": {
+          "pattern": [
+            6,
+            5,
+            7,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "j7x29l731i": {
+          "pattern": [
+            2,
+            2,
+            1,
+            11,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "xo83kxu9v5": {
+          "pattern": [
+            11,
+            6,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "o59314wikt": {
+          "pattern": [
+            16,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "3": {
+        "5r73rp5hr3": {
+          "pattern": [
+            6,
+            2,
+            2,
+            9,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "w478zd8f4p": {
+          "pattern": [
+            16,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "vyxd1w0jsn": {
+          "pattern": [
+            4,
+            4,
+            2,
+            3,
+            1,
+            5,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "033504w030": {
+          "pattern": [
+            14,
+            5,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "uqih90mf7x": {
+          "pattern": [
+            4,
+            4,
+            2,
+            3,
+            1,
+            5,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "j7x29l731i": {
+          "pattern": [
+            16,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "xo83kxu9v5": {
+          "pattern": [
+            6,
+            2,
+            2,
+            9,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "o59314wikt": {
+          "pattern": [
+            14,
+            5,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "": {
+        "5r73rp5hr3": {
+          "pattern": [
+            2,
+            3,
+            11,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "w478zd8f4p": {
+          "pattern": [
+            8,
+            8,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "vyxd1w0jsn": {
+          "pattern": [
+            14,
+            1,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "033504w030": {
+          "pattern": [
+            7,
+            4,
+            7,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "uqih90mf7x": {
+          "pattern": [
+            14,
+            1,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "j7x29l731i": {
+          "pattern": [
+            8,
+            8,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "xo83kxu9v5": {
+          "pattern": [
+            2,
+            3,
+            11,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "o59314wikt": {
+          "pattern": [
+            7,
+            4,
+            7,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      }
     },
-  },
     optionalChallenges: {},
   },
   FineWork:{
@@ -180,18 +1162,123 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.10.Up.>',
     ],
     requisites:{
-      '1':{
+      "1": {
         "4klv34s980": {
-          pattern: [2, 1, 4, 1, 3],
-          hasCycle: false,
-          initialValue: 1,
-          cycles: 3,
-    },
-    "z639x3r4do": {
-      pattern: [2, 1, 4, 1, 3],
-      hasCycle: false,
-      initialValue: 1
-    }}
+          "pattern": [
+            4,
+            5,
+            8,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "z639x3r4do": {
+          "pattern": [
+            4,
+            5,
+            8,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "2": {
+        "4klv34s980": {
+          "pattern": [
+            16,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "z639x3r4do": {
+          "pattern": [
+            16,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "3": {
+        "4klv34s980": {
+          "pattern": [
+            14,
+            2,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "z639x3r4do": {
+          "pattern": [
+            14,
+            2,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "4": {
+        "4klv34s980": {
+          "pattern": [
+            6,
+            5,
+            7,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "z639x3r4do": {
+          "pattern": [
+            6,
+            5,
+            7,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "5": {
+        "4klv34s980": {
+          "pattern": [
+            12,
+            7,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "z639x3r4do": {
+          "pattern": [
+            12,
+            7,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      }
     },
     optionalChallenges: {},
   },
@@ -206,61 +1293,224 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.10.Up.>',
     ],
     requisites:{
-      1:{"85y490zn3k": {
-        pattern: [1, 2, 1, 4, 3],
-      hasCycle: false,
-      initialValue: 1,
-      cycles: 3,
-    },
-    "4t5pj2sn4q": {
-      pattern: [2, 4, 3, 1, 1],
-      hasCycle: false,
-      initialValue: 1,
-      cycles: 3,
-    },
-    "b6j6a372a3": {
-      pattern: [1, 4, 2, 3, 1],
-      hasCycle: false,
-      initialValue: 1,
-      cycles: 3,
-    },
-    "o14hnqgp2q": {
-      pattern: [2, 3, 4, 1, 1],
-      hasCycle: false,
-      initialValue: 1,
-      cycles: 3,
-    },
-    "w19l8q5ay3": {
-      pattern: [2, 1, 4, 1, 3],
-      hasCycle: false,
-      initialValue: 1,
-      cycles: 3,
-    },
-    "46274ea348": {
-      pattern: [2, 1, 4, 1, 3],
-      hasCycle: false,
-      initialValue: 1,
-    },
-    "6cn055602h": {
-      pattern: [2, 3, 4, 1, 1],
-      hasCycle: false,
-      initialValue: 1,
-    },
-    "z6l5484m69": {
-      pattern: [1, 4, 2, 3, 1],
-      hasCycle: false,
-      initialValue: 1,
-    },
-    "i75t655l6a": {
-      pattern: [2, 4, 3, 1, 1],
-      hasCycle: false,
-      initialValue: 1,
-    },
-    "gv60hdb95i": {
-      pattern: [1, 2, 1, 4, 3],
-      hasCycle: false,
-      initialValue: 1,
-    }}
+      "1": {
+        "85y490zn3k": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "4t5pj2sn4q": {
+          "pattern": [
+            5,
+            8,
+            3,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "b6j6a372a3": {
+          "pattern": [
+            15,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "o14hnqgp2q": {
+          "pattern": [
+            8,
+            8,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "w19l8q5ay3": {
+          "pattern": [
+            17,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "46274ea348": {
+          "pattern": [
+            17,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6cn055602h": {
+          "pattern": [
+            8,
+            8,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "z6l5484m69": {
+          "pattern": [
+            15,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "i75t655l6a": {
+          "pattern": [
+            5,
+            8,
+            3,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "gv60hdb95i": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "2": {
+        "85y490zn3k": {
+          "pattern": [
+            1,
+            18,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "4t5pj2sn4q": {
+          "pattern": [
+            3,
+            9,
+            3,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "b6j6a372a3": {
+          "pattern": [
+            6,
+            10,
+            1,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "o14hnqgp2q": {
+          "pattern": [
+            5,
+            10,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "w19l8q5ay3": {
+          "pattern": [
+            5,
+            9,
+            3,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "46274ea348": {
+          "pattern": [
+            5,
+            9,
+            3,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6cn055602h": {
+          "pattern": [
+            5,
+            10,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "z6l5484m69": {
+          "pattern": [
+            6,
+            10,
+            1,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "i75t655l6a": {
+          "pattern": [
+            3,
+            9,
+            3,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "gv60hdb95i": {
+          "pattern": [
+            1,
+            18,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      }
     },
     optionalChallenges: {},
   },
@@ -294,107 +1544,429 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.10.Up.>',
     ],
     requisites:{
-      1:{
-      "9z2pdt0br3": {
-        pattern: [1, 2, 1, 4, 3],
-      hasCycle: false,
-      initialValue: 1,
+      "1": {
+        "9z2pdt0br3": {
+          "pattern": [
+            9,
+            3,
+            6,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6237rhg3wd": {
+          "pattern": [
+            4,
+            8,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "qn1vdf31ce": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "83s11y92oa": {
+          "pattern": [
+            1,
+            8,
+            1,
+            7,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "4b6d64663v": {
+          "pattern": [
+            12,
+            7,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "l5cp0879c3": {
+          "pattern": [
+            2,
+            1,
+            9,
+            5,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "2k0hd84rkg": {
+          "pattern": [
+            4,
+            1,
+            8,
+            6,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "dx9xuyvlut": {
+          "pattern": [
+            2,
+            17,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "9u87dz425b": {
+          "pattern": [
+            10,
+            1,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "gs66t665z0": {
+          "pattern": [
+            4,
+            8,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "l4l6o4y61r": {
+          "pattern": [
+            9,
+            3,
+            6,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "60b9a7yj2g": {
+          "pattern": [
+            12,
+            7,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "3n8j5512o7": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "k04lw4915z": {
+          "pattern": [
+            1,
+            8,
+            1,
+            7,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "339768gf74": {
+          "pattern": [
+            10,
+            1,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "m1f1776n71": {
+          "pattern": [
+            2,
+            1,
+            9,
+            5,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "8rr3e56qlf": {
+          "pattern": [
+            4,
+            1,
+            8,
+            6,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "52ctr58dp6": {
+          "pattern": [
+            2,
+            17,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "9z2pdt0br3": {
+          "pattern": [
+            11,
+            4,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6237rhg3wd": {
+          "pattern": [
+            16,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "qn1vdf31ce": {
+          "pattern": [
+            17,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "83s11y92oa": {
+          "pattern": [
+            14,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "4b6d64663v": {
+          "pattern": [
+            1,
+            3,
+            11,
+            2,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "l5cp0879c3": {
+          "pattern": [
+            10,
+            5,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "2k0hd84rkg": {
+          "pattern": [
+            12,
+            1,
+            4,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "dx9xuyvlut": {
+          "pattern": [
+            10,
+            1,
+            4,
+            1,
+            1,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "9u87dz425b": {
+          "pattern": [
+            7,
+            8,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "gs66t665z0": {
+          "pattern": [
+            16,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "l4l6o4y61r": {
+          "pattern": [
+            11,
+            4,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "60b9a7yj2g": {
+          "pattern": [
+            1,
+            3,
+            11,
+            2,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "3n8j5512o7": {
+          "pattern": [
+            17,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "k04lw4915z": {
+          "pattern": [
+            14,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "339768gf74": {
+          "pattern": [
+            7,
+            8,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "m1f1776n71": {
+          "pattern": [
+            10,
+            5,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "8rr3e56qlf": {
+          "pattern": [
+            12,
+            1,
+            4,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "52ctr58dp6": {
+          "pattern": [
+            10,
+            1,
+            4,
+            1,
+            1,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
     },
-    "6237rhg3wd": {
-      pattern: [2, 1, 1, 4, 3],
-    hasCycle: false,
-    initialValue: 1,
-  },
-    "qn1vdf31ce": {
-      pattern: [1, 2, 4, 1, 3],
-    hasCycle: false,
-    initialValue: 1,
-  },
-    "83s11y92oa": {
-      pattern: [1, 2, 1, 3, 4],
-    hasCycle: false,
-    initialValue: 1,
-  },
-    "4b6d64663v": {
-      pattern: [1, 1, 2, 4, 3],
-    hasCycle: false,
-    initialValue: 1,
-  },
-    "l5cp0879c3": {
-      pattern: [1, 4, 1, 2, 3],
-    hasCycle: false,
-    initialValue: 1,
-  },
-    "2k0hd84rkg": {
-      pattern: [2, 1, 1, 4, 3],
-    hasCycle: false,
-    initialValue: 1,
-  },
-    "dx9xuyvlut": {
-      pattern: [3, 2, 1, 4, 1],
-    hasCycle: false,
-    initialValue: 1,
-  },
-    "9u87dz425b": {
-      pattern: [4, 1, 1, 2, 3],
-    hasCycle: false,
-    initialValue: 1,
-  },
-    "gs66t665z0": {
-      pattern: [2, 1, 1, 4, 3],
-    hasCycle: false,
-    initialValue: 1,
-    cycles: 3,
-  },
-    "l4l6o4y61r": {
-      pattern: [1, 2, 1, 4, 3],
-    hasCycle: false,
-    initialValue: 1,
-    cycles: 3,
-  },
-    "60b9a7yj2g": {
-      pattern: [1, 1, 2, 4, 3],
-    hasCycle: false,
-    initialValue: 1,
-    cycles: 3,
-  },
-    "3n8j5512o7": {
-      pattern: [1, 2, 4, 1, 3],
-    hasCycle: false,
-    initialValue: 1,
-    cycles: 3,
-  },
-    "k04lw4915z": {
-      pattern: [1, 2, 1, 3, 4],
-    hasCycle: false,
-    initialValue: 1,
-    cycles: 3,
-  },
-    "339768gf74": {
-      pattern: [4, 1, 1, 2, 3],
-    hasCycle: false,
-    initialValue: 1,
-    cycles: 3,
-  },
-    "m1f1776n71": {
-      pattern: [1, 4, 1, 2, 3],
-    hasCycle: false,
-    initialValue: 1,
-    cycles: 3,
-  },
-    "8rr3e56qlf": {
-      pattern: [2, 1, 1, 4, 3],
-    hasCycle: false,
-    initialValue: 1,
-    cycles: 3,
-  },
-    "52ctr58dp6": {
-      pattern: [3, 2, 1, 4, 1],
-    hasCycle: false,
-    initialValue: 1,
-    cycles: 3,
-  }
-  }},
     optionalChallenges: {},
   },
   Backwards:{
@@ -411,103 +1983,375 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.10.Up.>',
     ],
     requisites:{
-      "6rk1deu4e0": {
-          "tileId": "Brush.21.Right",
-          "x": -9,
-          "y": -4,
-          "label": "A"
+      "1": {
+        "6rk1deu4e0": {
+          "pattern": [
+            13,
+            6,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "70ppk8lgom": {
+          "pattern": [
+            9,
+            10,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "7qd9q25s42": {
+          "pattern": [
+            9,
+            8,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "979s21lf9c": {
+          "pattern": [
+            6,
+            6,
+            4,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "3ghz7pco81": {
+          "pattern": [
+            2,
+            3,
+            7,
+            5,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "c6se2217h5": {
+          "pattern": [
+            5,
+            9,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "j3453ke3i7": {
+          "pattern": [
+            15,
+            1,
+            1,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "kmf7ggj17g": {
+          "pattern": [
+            7,
+            2,
+            4,
+            1,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "njlkqi4486": {
+          "pattern": [
+            13,
+            6,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "884dl4fq99": {
+          "pattern": [
+            9,
+            10,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "3hop473464": {
+          "pattern": [
+            9,
+            8,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "klsf718ii6": {
+          "pattern": [
+            6,
+            6,
+            4,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "1odllb5972": {
+          "pattern": [
+            2,
+            3,
+            7,
+            5,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "fql85ly999": {
+          "pattern": [
+            5,
+            9,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "5o690z38q9": {
+          "pattern": [
+            15,
+            1,
+            1,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "i7lye84sqx": {
+          "pattern": [
+            7,
+            2,
+            4,
+            1,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
       },
-      "70ppk8lgom": {
-          "tileId": "Brush.21.Right",
-          "x": -9,
-          "y": -3,
-          "label": "B"
-      },
-      "7qd9q25s42": {
-          "tileId": "Brush.21.Right",
-          "x": -9,
-          "y": -2,
-          "label": "C"
-      },
-      "979s21lf9c": {
-          "tileId": "Brush.21.Right",
-          "x": -9,
-          "y": -1,
-          "label": "D"
-      },
-      "3ghz7pco81": {
-          "tileId": "Brush.21.Right",
-          "x": -9,
-          "y": 0,
-          "label": "E"
-      },
-      "c6se2217h5": {
-          "tileId": "Brush.21.Right",
-          "x": -9,
-          "y": 1,
-          "label": "F"
-      },
-      "j3453ke3i7": {
-          "tileId": "Brush.21.Right",
-          "x": -9,
-          "y": 2,
-          "label": "G"
-      },
-      "kmf7ggj17g": {
-          "tileId": "Brush.21.Right",
-          "x": -9,
-          "y": 3,
-          "label": "H"
-      },
-      "njlkqi4486": {
-          "tileId": "Brush.22",
-          "x": 13,
-          "y": 3,
-          "label": "A"
-      },
-      "884dl4fq99": {
-          "tileId": "Brush.22",
-          "x": 13,
-          "y": 2,
-          "label": "B"
-      },
-      "3hop473464": {
-          "tileId": "Brush.22",
-          "x": 13,
-          "y": 1,
-          "label": "C"
-      },
-      "klsf718ii6": {
-          "tileId": "Brush.22",
-          "x": 13,
-          "y": 0,
-          "label": "D"
-      },
-      "1odllb5972": {
-          "tileId": "Brush.22",
-          "x": 13,
-          "y": -1,
-          "label": "E"
-      },
-      "fql85ly999": {
-          "tileId": "Brush.22",
-          "x": 13,
-          "y": -2,
-          "label": "F"
-      },
-      "5o690z38q9": {
-          "tileId": "Brush.22",
-          "x": 13,
-          "y": -3,
-          "label": "G"
-      },
-      "i7lye84sqx": {
-          "tileId": "Brush.22",
-          "x": 13,
-          "y": -4,
-          "label": "H"
+      "2": {
+        "6rk1deu4e0": {
+          "pattern": [
+            3,
+            5,
+            7,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "70ppk8lgom": {
+          "pattern": [
+            17,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "7qd9q25s42": {
+          "pattern": [
+            6,
+            8,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "979s21lf9c": {
+          "pattern": [
+            7,
+            7,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "3ghz7pco81": {
+          "pattern": [
+            4,
+            6,
+            8,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "c6se2217h5": {
+          "pattern": [
+            8,
+            3,
+            7,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "j3453ke3i7": {
+          "pattern": [
+            8,
+            5,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "kmf7ggj17g": {
+          "pattern": [
+            8,
+            9,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "njlkqi4486": {
+          "pattern": [
+            3,
+            5,
+            7,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "884dl4fq99": {
+          "pattern": [
+            17,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "3hop473464": {
+          "pattern": [
+            6,
+            8,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "klsf718ii6": {
+          "pattern": [
+            7,
+            7,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "1odllb5972": {
+          "pattern": [
+            4,
+            6,
+            8,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "fql85ly999": {
+          "pattern": [
+            8,
+            3,
+            7,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "5o690z38q9": {
+          "pattern": [
+            8,
+            5,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "i7lye84sqx": {
+          "pattern": [
+            8,
+            9,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
       }
-  },
+    },
     optionalChallenges: {},
   },
   OneWhole:{
@@ -517,29 +2361,179 @@ export const levels: Record<string, LevelDTO.Map> = {
     map: sources.OneWhole,
     allowedBrushList: [
       'Brush.0.Up',
-      'Brush.5.Up',
-      'Brush.6.Up.>',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
     ],
     requisites:{
-      '1':{
+      "1": {
         "1wak460kj9": {
-        "tileId": "Brush.22",
-        "x": 0,
-        "y": -2,
-        "label": "A"
-    },
-    "56q4v7edsb": {
-        "tileId": "Brush.21.Up",
-        "x": -4,
-        "y": 5,
-        "label": "A"
-    },
-    "l4jyw0584q": {
-        "tileId": "Brush.21.Up",
-        "x": 0,
-        "y": 5,
-        "label": "A"
-    }}
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "56q4v7edsb": {
+          "pattern": [
+            1,
+            6,
+            11,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "l4jyw0584q": {
+          "pattern": [
+            1,
+            6,
+            11,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "2": {
+        "1wak460kj9": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "56q4v7edsb": {
+          "pattern": [
+            1,
+            3,
+            11,
+            1,
+            2,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "l4jyw0584q": {
+          "pattern": [
+            1,
+            3,
+            11,
+            1,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "3": {
+        "1wak460kj9": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "56q4v7edsb": {
+          "pattern": [
+            7,
+            4,
+            3,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "l4jyw0584q": {
+          "pattern": [
+            7,
+            4,
+            3,
+            5,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "4": {
+        "1wak460kj9": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "56q4v7edsb": {
+          "pattern": [
+            3,
+            2,
+            5,
+            2,
+            5,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "l4jyw0584q": {
+          "pattern": [
+            3,
+            2,
+            5,
+            2,
+            5,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      },
+      "5": {
+        "1wak460kj9": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "56q4v7edsb": {
+          "pattern": [
+            14,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "l4jyw0584q": {
+          "pattern": [
+            14,
+            5,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        }
+      }
     },
     optionalChallenges: {},
   },
@@ -555,7 +2549,221 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.9.Up',
       'Brush.10.Up.>',
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "oz232hni5d": {
+          "pattern": [
+            8,
+            1,
+            9,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "wa230tzqi0": {
+          "pattern": [
+            1,
+            7,
+            2,
+            5,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "u82c5q5127": {
+          "pattern": [
+            11,
+            1,
+            3,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "j64d94zn7m": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "600v4l312b": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "ikdup875p3": {
+          "pattern": [
+            11,
+            1,
+            6,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "oz232hni5d": {
+          "pattern": [
+            5,
+            1,
+            7,
+            4,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "wa230tzqi0": {
+          "pattern": [
+            1,
+            11,
+            1,
+            6,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "u82c5q5127": {
+          "pattern": [
+            8,
+            5,
+            2,
+            1,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "j64d94zn7m": {
+          "pattern": [
+            5,
+            1,
+            7,
+            4,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "600v4l312b": {
+          "pattern": [
+            15,
+            1,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "ikdup875p3": {
+          "pattern": [
+            8,
+            4,
+            3,
+            1,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "3": {
+        "oz232hni5d": {
+          "pattern": [
+            12,
+            5,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "wa230tzqi0": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "u82c5q5127": {
+          "pattern": [
+            3,
+            1,
+            6,
+            9,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "j64d94zn7m": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "600v4l312b": {
+          "pattern": [
+            12,
+            5,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "ikdup875p3": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
+    },
     optionalChallenges: {},
   },
   BrokenPass: {
@@ -566,6 +2774,214 @@ export const levels: Record<string, LevelDTO.Map> = {
     allowedBrushList: ['Brush.0.Up', 'Brush.15.Up','Brush.9.Up',
       'Brush.10.Up.>',],
     requisites: {
+      "1": {
+        "4k023vdc3l": {
+          "pattern": [
+            12,
+            5,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "r4154jdx40": {
+          "pattern": [
+            2,
+            14,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "z42cwg7o85": {
+          "pattern": [
+            2,
+            14,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "iru5x27e23": {
+          "pattern": [
+            2,
+            7,
+            9,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "r156160668": {
+          "pattern": [
+            2,
+            15,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "2z4ay9q05t": {
+          "pattern": [
+            2,
+            14,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "4k023vdc3l": {
+          "pattern": [
+            8,
+            6,
+            2,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "r4154jdx40": {
+          "pattern": [
+            7,
+            4,
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "z42cwg7o85": {
+          "pattern": [
+            7,
+            4,
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "iru5x27e23": {
+          "pattern": [
+            8,
+            11,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "r156160668": {
+          "pattern": [
+            7,
+            7,
+            2,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "2z4ay9q05t": {
+          "pattern": [
+            7,
+            12,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "3": {
+        "4k023vdc3l": {
+          "pattern": [
+            2,
+            3,
+            4,
+            7,
+            1,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "r4154jdx40": {
+          "pattern": [
+            3,
+            14,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "z42cwg7o85": {
+          "pattern": [
+            3,
+            14,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "iru5x27e23": {
+          "pattern": [
+            10,
+            3,
+            4,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "r156160668": {
+          "pattern": [
+            2,
+            17,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "2z4ay9q05t": {
+          "pattern": [
+            3,
+            16,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
     },
     optionalChallenges: {},
   },
@@ -580,9 +2996,214 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.6.Up.>',
       'Brush.9.Up',
       'Brush.10.Up.>',
+      'Brush.13.Up.>',
       'Brush.15.Up'
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "oz332hni5d": {
+          "pattern": [
+            1,
+            15,
+            1,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "wa330tzqi0": {
+          "pattern": [
+            2,
+            12,
+            1,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "u83c5q5127": {
+          "pattern": [
+            11,
+            8,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "j65d94zn7m": {
+          "pattern": [
+            1,
+            18,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "601v4l312b": {
+          "pattern": [
+            1,
+            18,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "ikeup875p3": {
+          "pattern": [
+            2,
+            17,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "oz332hni5d": {
+          "pattern": [
+            5,
+            1,
+            10,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "wa330tzqi0": {
+          "pattern": [
+            1,
+            14,
+            1,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "u83c5q5127": {
+          "pattern": [
+            13,
+            6,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "j65d94zn7m": {
+          "pattern": [
+            1,
+            14,
+            1,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "601v4l312b": {
+          "pattern": [
+            5,
+            1,
+            7,
+            6,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "ikeup875p3": {
+          "pattern": [
+            1,
+            18,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "3": {
+        "oz332hni5d": {
+          "pattern": [
+            16,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "wa330tzqi0": {
+          "pattern": [
+            13,
+            4,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "u83c5q5127": {
+          "pattern": [
+            7,
+            7,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "j65d94zn7m": {
+          "pattern": [
+            13,
+            4,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "601v4l312b": {
+          "pattern": [
+            7,
+            7,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "ikeup875p3": {
+          "pattern": [
+            7,
+            10,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
+    },
     optionalChallenges: {},
   },
   CableTwisting:{

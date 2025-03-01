@@ -1,0 +1,19 @@
+id,type,pattern,hasCycle,initialValue,cycles,versionId,label
+oz232hni5d,in,8; 1; 9; 1; 1,FALSE,1,NA,1,A
+wa230tzqi0,in,1; 7; 2; 5; 3; 1; 1,FALSE,1,NA,1,B
+u82c5q5127,in,11; 1; 3; 4; 1,FALSE,1,NA,1,C
+j64d94zn7m,out,18; 1; 1,FALSE,1,3,1,A+B
+600v4l312b,out,18; 1; 1,FALSE,1,3,1,A+C
+ikdup875p3,out,11; 1; 6; 1; 1,FALSE,1,3,1,B+C
+oz232hni5d,in,5; 1; 7; 4; 1; 1; 1,FALSE,1,NA,2,A
+wa230tzqi0,in,1; 11; 1; 6; 1,FALSE,1,NA,2,B
+u82c5q5127,in,8; 5; 2; 1; 2; 1; 1,FALSE,1,NA,2,C
+j64d94zn7m,out,5; 1; 7; 4; 1; 1; 1,FALSE,1,3,2,A+B
+600v4l312b,out,15; 1; 2; 1; 1,FALSE,1,3,2,A+C
+ikdup875p3,out,8; 4; 3; 1; 2; 1; 1,FALSE,1,3,2,B+C
+oz232hni5d,in,12; 5; 1; 1; 1,FALSE,1,NA,3,A
+wa230tzqi0,in,18; 1; 1,FALSE,1,NA,3,B
+u82c5q5127,in,3; 1; 6; 9; 1,FALSE,1,NA,3,C
+j64d94zn7m,out,18; 1; 1,FALSE,1,3,3,A+B
+600v4l312b,out,12; 5; 1; 1; 1,FALSE,1,3,3,A+C
+ikdup875p3,out,18; 1; 1,FALSE,1,3,3,B+C

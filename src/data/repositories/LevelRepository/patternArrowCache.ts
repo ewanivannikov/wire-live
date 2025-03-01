@@ -546,15 +546,15 @@ Backwards:{
     },
     "r4154jdx40": {
         "tileId": "Brush.21.Right",
-        "x": -7,
+        "x": -6,
         "y": 0,
-        "label": "A2"
+        "label": "P"
     },
     "z42cwg7o85": {
         "tileId": "Brush.21.Left",
-        "x": 6,
+        "x": 5,
         "y": 0,
-        "label": "B2"
+        "label": "P"
     },
     "iru5x27e23": {
         "tileId": "Brush.21.Up",

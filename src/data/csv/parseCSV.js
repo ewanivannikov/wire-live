@@ -3,7 +3,7 @@ const csv = require('csv-parser');
 
 const results = {};
 
-fs.createReadStream('brifing.csv')
+fs.createReadStream('andAndAnd.csv')
   .pipe(csv())
   .on('data', (row) => {
     const versionId = row.versionId;
@@ -14,7 +14,7 @@ fs.createReadStream('brifing.csv')
     }
 
     results[versionId][id] = {
-      pattern: row.pattern.split(',').map(Number),
+      pattern: row.pattern.split(';').map(Number),
       hasCycle: row.hasCycle === 'TRUE',
       initialValue: parseInt(row.initialValue, 10),
     };

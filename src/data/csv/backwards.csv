@@ -1,0 +1,33 @@
+id,type,pattern,hasCycle,initialValue,cycles,versionId,label
+6rk1deu4e0,in,13; 6; 1,FALSE,1,NA,1,A
+70ppk8lgom,in,9; 10; 1,FALSE,1,NA,1,B
+7qd9q25s42,in,9; 8; 1; 1; 1,FALSE,1,NA,1,C
+979s21lf9c,in,6; 6; 4; 3; 1,FALSE,1,NA,1,D
+3ghz7pco81,in,2; 3; 7; 5; 1; 1; 1,FALSE,1,NA,1,E
+c6se2217h5,in,5; 9; 4; 1; 1,FALSE,1,NA,1,F
+j3453ke3i7,in,15; 1; 1; 2; 1,FALSE,1,NA,1,G
+kmf7ggj17g,in,7; 2; 4; 1; 4; 1; 1,FALSE,1,NA,1,H
+njlkqi4486,out,13; 6; 1,FALSE,1,3,1,A
+884dl4fq99,out,9; 10; 1,FALSE,1,3,1,B
+3hop473464,out,9; 8; 1; 1; 1,FALSE,1,3,1,C
+klsf718ii6,out,6; 6; 4; 3; 1,FALSE,1,3,1,D
+1odllb5972,out,2; 3; 7; 5; 1; 1; 1,FALSE,1,3,1,E
+fql85ly999,out,5; 9; 4; 1; 1,FALSE,1,3,1,F
+5o690z38q9,out,15; 1; 1; 2; 1,FALSE,1,3,1,G
+i7lye84sqx,out,7; 2; 4; 1; 4; 1; 1,FALSE,1,3,1,H
+6rk1deu4e0,in,3; 5; 7; 4; 1,FALSE,1,NA,2,A
+70ppk8lgom,in,17; 2; 1,FALSE,1,NA,2,B
+7qd9q25s42,in,6; 8; 4; 1; 1,FALSE,1,NA,2,C
+979s21lf9c,in,7; 7; 4; 1; 1,FALSE,1,NA,2,D
+3ghz7pco81,in,4; 6; 8; 1; 1,FALSE,1,NA,2,E
+c6se2217h5,in,8; 3; 7; 1; 1,FALSE,1,NA,2,F
+j3453ke3i7,in,8; 5; 5; 1; 1,FALSE,1,NA,2,G
+kmf7ggj17g,in,8; 9; 1; 1; 1,FALSE,1,NA,2,H
+njlkqi4486,out,3; 5; 7; 4; 1,FALSE,1,3,2,A
+884dl4fq99,out,17; 2; 1,FALSE,1,3,2,B
+3hop473464,out,6; 8; 4; 1; 1,FALSE,1,3,2,C
+klsf718ii6,out,7; 7; 4; 1; 1,FALSE,1,3,2,D
+1odllb5972,out,4; 6; 8; 1; 1,FALSE,1,3,2,E
+fql85ly999,out,8; 3; 7; 1; 1,FALSE,1,3,2,F
+5o690z38q9,out,8; 5; 5; 1; 1,FALSE,1,3,2,G
+i7lye84sqx,out,8; 9; 1; 1; 1,FALSE,1,3,2,H

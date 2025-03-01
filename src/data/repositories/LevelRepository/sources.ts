@@ -4651,33 +4651,13 @@ export const sources: { [key: string]: any } = {
         },
         {
             "tileId": "Brush.26",
-            "x": 7,
-            "y": 1
-        },
-        {
-            "tileId": "Brush.26",
-            "x": 7,
+            "x": 6,
             "y": 0
         },
         {
             "tileId": "Brush.26",
-            "x": 7,
-            "y": -1
-        },
-        {
-            "tileId": "Brush.26",
-            "x": -8,
-            "y": -1
-        },
-        {
-            "tileId": "Brush.26",
-            "x": -8,
+            "x": -7,
             "y": 0
-        },
-        {
-            "tileId": "Brush.26",
-            "x": -8,
-            "y": 1
         },
         {
             "tileId": "Brush.15.Up",

@@ -54,12 +54,13 @@ class OutputArrow extends ArrowBase {
     //   }
 
 
-    //   this.isValidIn = this.isValidIn && valid;
+    this.isValidIn = this.binaryArray[this.index] === fields.getSignal(this.position.coordinates);
 
-    if (this.binaryArray[this.index] === fields.getSignal(this.position.coordinates)) {
-        this.isValidIn = true;
+    if (this.isValidIn) {
+      console.log('DA');
         this.index = this.index + 1;
       }
+    else {this.index = 0;}
     
     console.log(this.position, this.cycleAmount);
     
@@ -67,19 +68,20 @@ class OutputArrow extends ArrowBase {
     
     if (!this.isValidIn) {
       this.state = 'Wait';
-    } else if (this.isValidIn) {
+    }
+    if (this.isValidIn) {
       this.state = 'Venus';
       this.patternValidation.push(this.state);
-    } else if ((this.state === 'Venus') && !this.isValidIn) {
+    }
+    if (!this.isValidIn) {
       this.state = 'Moon';
-      this.patternValidation.clear();
-      this.isValidIn = false;
-      this.index = 0;
+      this.patternValidation = [];
     }
     if (this.cycleAmount === 0) {
       this.state = 'Mars';
       this.patternValidation.push(this.state);
     }
+    console.log(this.index/this.patternLength*100);
     
   }
 

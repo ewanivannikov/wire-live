@@ -1,0 +1,33 @@
+id,type,pattern,hasCycle,initialValue,cycles,versionId,label
+5r73rp5hr3,in,4; 10; 3; 2; 1,FALSE,1,NA,1,B
+w478zd8f4p,in,12; 7; 1,FALSE,1,NA,1,C
+vyxd1w0jsn,in,2; 14; 2; 1; 1,FALSE,1,NA,1,D
+033504w030,out,8; 11; 1,FALSE,1,3,1,A
+uqih90mf7x,out,2; 14; 2; 1; 1,FALSE,1,3,1,D
+j7x29l731i,out,12; 7; 1,FALSE,1,3,1,C
+xo83kxu9v5,out,4; 10; 3; 2; 1,FALSE,1,3,1,B
+o59314wikt,in,8; 11; 1,FALSE,1,NA,1,A
+5r73rp5hr3,in,11; 6; 1; 1; 1,FALSE,1,NA,2,B
+w478zd8f4p,in,2; 2; 1; 11; 2; 1; 1,FALSE,1,NA,2,C
+vyxd1w0jsn,in,6; 5; 7; 1; 1,FALSE,1,NA,2,D
+033504w030,out,16; 3; 1,FALSE,1,3,2,A
+uqih90mf7x,out,6; 5; 7; 1; 1,FALSE,1,3,2,D
+j7x29l731i,out,2; 2; 1; 11; 2; 1; 1,FALSE,1,3,2,C
+xo83kxu9v5,out,11; 6; 1; 1; 1,FALSE,1,3,2,B
+o59314wikt,in,16; 3; 1,FALSE,1,NA,2,A
+5r73rp5hr3,in,6; 2; 2; 9; 1,FALSE,1,NA,3,B
+w478zd8f4p,in,16; 1; 1; 1; 1,FALSE,1,NA,3,C
+vyxd1w0jsn,in,4; 4; 2; 3; 1; 5; 1,FALSE,1,NA,3,D
+033504w030,out,14; 5; 1,FALSE,1,3,3,A
+uqih90mf7x,out,4; 4; 2; 3; 1; 5; 1,FALSE,1,3,3,D
+j7x29l731i,out,16; 1; 1; 1; 1,FALSE,1,3,3,C
+xo83kxu9v5,out,6; 2; 2; 9; 1,FALSE,1,3,3,B
+o59314wikt,in,14; 5; 1,FALSE,1,NA,3,A
+5r73rp5hr3,in,2; 3; 11; 3; 1,FALSE,1,NA,,B
+w478zd8f4p,in,8; 8; 2; 1; 1,FALSE,1,NA,,C
+vyxd1w0jsn,in,14; 1; 2; 2; 1,FALSE,1,NA,,D
+033504w030,out,7; 4; 7; 1; 1,FALSE,1,3,,A
+uqih90mf7x,out,14; 1; 2; 2; 1,FALSE,1,3,,D
+j7x29l731i,out,8; 8; 2; 1; 1,FALSE,1,3,,C
+xo83kxu9v5,out,2; 3; 11; 3; 1,FALSE,1,3,,B
+o59314wikt,in,7; 4; 7; 1; 1,FALSE,1,NA,,A
