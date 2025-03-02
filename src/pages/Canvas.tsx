@@ -11,6 +11,7 @@ export const Canvas = () => {
   let ref: HTMLDivElement;
   const isMounted = createIsMounted();
   const worldState = useContext<WorldState>(WorldStateContext);
+
   createMemo(() => {
     if (isMounted()) {
       const isLevels = routerService.location.pathname.includes('levels');
@@ -36,5 +37,6 @@ export const Canvas = () => {
       world.render();
     }
   });
+  
   return <div id="canvas" ref={ref} />;
 };

@@ -23,9 +23,9 @@ import { fields } from '../Logic/Base';
 import { WorldState } from '../worldState';
 import { createLabelRenderer } from './systems/LabelRenderer';
 
-let camera: OrthographicCamera;
-let renderer: WebGLRenderer;
-let scene: Scene;
+// let camera: OrthographicCamera;
+// let renderer: WebGLRenderer;
+// let scene: Scene;
 // let loop: Loop;
 
 const tileSize: number = 256;
@@ -37,10 +37,10 @@ class World {
     private readonly map: object[],
     private readonly _worldState: WorldState
   ) {
-    camera = createCamera(container);
-    scene = createScene();
-    renderer = createRenderer(container);
-    container.appendChild(renderer.domElement);
+    let camera = createCamera(this.container);
+    let scene = createScene();
+    let renderer = createRenderer(this.container);
+    this.container.appendChild(renderer.domElement);
     const labelRenderer = createLabelRenderer(renderer.domElement);
     
     loop.init(camera, scene, renderer, labelRenderer);

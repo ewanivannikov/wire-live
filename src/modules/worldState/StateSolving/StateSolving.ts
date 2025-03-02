@@ -6,7 +6,7 @@ import { type Loop, loop as loopInstance } from '../../mapContainer/systems';
 
 // Состояние "Solving"
 export class StateSolving implements IState {
-  public status = 'level.play.solving';
+  public readonly status = 'level.play.solving';
 
   constructor(
     private readonly context: LevelContext,

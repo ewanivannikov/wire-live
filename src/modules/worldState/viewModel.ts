@@ -21,6 +21,7 @@ export class WorldState {
   public currentBrushOptions
   public challenges = [{ barColor: 'green', amount: 100 }];
   public statusCompleted = 'idle';
+  public amountArrows = NaN
 
   constructor(
     private readonly _routerServ: RouterService,
@@ -92,6 +93,8 @@ export class WorldState {
 
   public switchStatusOnLevelSolving() {
     if (this.modeContext.state.status.includes('checking')) {
+      console.log(console.log('Пользователь вызвал: Возвращение в состояние Solving'));
+      
       this.modeContext.state.returnToSolving();
     }
   }
@@ -112,11 +115,16 @@ export class WorldState {
   }
 
   public setChallenges = (challenges) => {
-    this.challenges = challenges
+    // мутабельно перезаписываем массив, если сделать это иммутабельно произвольно переключается в состояние level.play.solving
+    this.challenges.splice(0, this.challenges.length, ...challenges);
   }
 
   public setStatusCompleted = (status) => {
     this.statusCompleted = status
+  }
+
+  public setState = (state) => {
+    this.state = state;
   }
 
   public get showAverageSteps() {

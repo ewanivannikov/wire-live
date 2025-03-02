@@ -12,7 +12,7 @@ import { RouterService, routerService } from '../../../shared/services/RouterSer
 
 // Состояние "BulkChecking"
 export class StateBulkChecking implements IState {
-  public status = 'level.checking.bulk';
+  public readonly status = 'level.checking.bulk';
   private _exceptions: number[] = [];
   private countSimulations = 1;
 
@@ -113,7 +113,8 @@ export class StateBulkChecking implements IState {
     this.context.logicField.clearSignals();
     this.context.logicField.clearArrowsStates();
     this.context.logicField.clearPatternArrows();
-    this.context.setState(createStateSolving(this.context));
+    const stateSolving = createStateSolving(this.context) 
+    this.context.setState(stateSolving);
   };
 
   private setCountSimulations = (countSimulations) => {

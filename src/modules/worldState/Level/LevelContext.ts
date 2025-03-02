@@ -32,7 +32,7 @@ export class LevelContext {
 
   public setState = (state: IState) => {
     this.state = state;
-    this.root.state = state;
+    this.root.setState(state);
   };
 
   public next() {
