@@ -9,6 +9,7 @@ import { ToolType } from '../toolbar/enums';
 import { TileId } from '../../data/repositories/BrushRepository';
 import { TileMap } from '../mapContainer/TileMap';
 import { type Sprite } from 'three';
+import { levelRepository, LevelRepository } from '../../data/repositories/LevelRepository';
 
 export class WorldState {
   public isPaused = true;
@@ -18,14 +19,24 @@ export class WorldState {
   public currentTool: ToolType = ToolType.Brush;
   public currentBrush: TileId | '' = '';
   public currentBrushOptions
+  public challenges = [{ barColor: 'green', amount: 100 }];
+  public statusCompleted = 'idle';
 
   constructor(
     private readonly _routerServ: RouterService,
     private readonly _solutionRepository: SolutionRepository,
+    private readonly _levelRepo: LevelRepository,
     private readonly _fields: Fields,
   ) {
     makeAutoObservable(this);
     const levelId = this._routerServ.params.levelId
+    const level = this._levelRepo.getLevelById(levelId);
+    const lenReq = Object.keys(
+      level?.requisites ?? {},
+    ).length;
+    for (let i = 1; i < lenReq; i++) {
+      this.challenges.push({ barColor: '#ccc', amount: 100 });
+    }
     onBecomeUnobserved(this, "modeContext", () => {
       this._solutionRepository.createDraft(
         this._fields.arrowCache,
@@ -100,6 +111,18 @@ export class WorldState {
     return this._routerServ.params.levelId;
   }
 
+  public setChallenges = (challenges) => {
+    this.challenges = challenges
+  }
+
+  public setStatusCompleted = (status) => {
+    this.statusCompleted = status
+  }
+
+  public get showAverageSteps() {
+    return;
+  }
+
   public togglePause() {
     if (this.isPaused) {
       this.modeContext.state.resume();
@@ -159,4 +182,4 @@ export class WorldState {
   }
 }
 
-export const createWorldState = () => new WorldState(routerService, solutionRepository, fields);
+export const createWorldState = () => new WorldState(routerService, solutionRepository, levelRepository, fields);

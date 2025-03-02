@@ -1,7 +1,6 @@
 import { Show, useContext } from 'solid-js';
 import { Button, Modal, ModalFooter } from '../../../../shared';
 import { Histogram } from '../../../../shared/ui/components/Histogram/Histogram';
-import { stateBulkCheckingPresenter } from './presenter';
 import styles from './stateBulkCheckingModal.module.css';
 import { WorldState } from '../../viewModel';
 import { WorldStateContext } from '../../WorldStateContext';
@@ -16,21 +15,23 @@ export const StateBulkCheckingModal = () => {
     >
       <h2>Дополнительные испытания:</h2>
       <h3>Количество стрелок</h3>
-      <p>
-        Ваше текущее решение использует{' '}
-        {stateBulkCheckingPresenter.amountArrows} стрелок
-      </p>
+      <Show when={Boolean(worldState.amountArrows)}>
+        <p>
+          Ваше текущее решение использует{' '}
+          {worldState.amountArrows} стрелок
+        </p>
+      </Show>
       <h3>Скорость обработки сигналов</h3>
       <Histogram
-        status={stateBulkCheckingPresenter.status === 'pending' ? 'pending' : 'resolved'}
-        bars={stateBulkCheckingPresenter.challenges}
+        status={worldState.statusCompleted === 'pending' ? 'pending' : 'resolved'}
+        bars={worldState.challenges}
         classList={{ [styles.histogram]: true }}
       />
 
-      <Show when={stateBulkCheckingPresenter.showAverageSteps}>
+      <Show when={worldState.showAverageSteps}>
         <p>
           Ваше текущее решение выполняется, в среднем, за{' '}
-          {stateBulkCheckingPresenter.averageSteps} ходов
+          {worldState?.averageSteps} ходов
         </p>
       </Show>
       <ModalFooter>
@@ -38,7 +39,7 @@ export const StateBulkCheckingModal = () => {
         <Button onClick={() => worldState.switchStatusOnLevelSolving()}>
           Назад
         </Button>
-        <Show when={stateBulkCheckingPresenter.status === 'completed'}>
+        <Show when={worldState.statusCompleted === 'completed'}>
           <Button to="/" component={LinkRouter}>
             Дальше
           </Button>

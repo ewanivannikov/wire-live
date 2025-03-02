@@ -101,6 +101,22 @@ export class LevelContext {
     return this.levelRepo.getLevelById(this.levelId);
   }
 
+  public get challenges() {
+    return this.root.challenges;
+  }
+
+  public get statusCompleted() {
+    return this.root.statusCompleted;
+  }
+
+  public setChallenges = (challenges) => {
+    this.root.setChallenges(challenges)
+  }
+
+  public setStatusCompleted = (status) => {
+    this.root.statusCompleted = status
+  }
+
   // экспериментальный метод
   public checkSolution = this.logicField.checkSolution;
 }

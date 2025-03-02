@@ -1,11 +1,13 @@
 import { LevelContext } from '../Level';
-import { StateCompleted , stateCompleted } from '../StateCompleted';
 import { createStateSolving } from '../StateSolving';
 import { IState } from '../types';
 import { type Loop, loop as loopInstance } from '../../mapContainer/systems';
 import { emitter } from '../../../shared/services/EventEmitterService';
 import { makeAutoObservable, runInAction } from 'mobx';
-import { solutionChecked } from '../../Logic/Base';
+import { fields, Fields, solutionChecked } from '../../Logic/Base';
+import { LevelRepository, levelRepository } from '../../../data/repositories/LevelRepository';
+import { SolutionRepository, solutionRepository } from '../../../data/repositories/SolutionRepository/SolutionRepository';
+import { RouterService, routerService } from '../../../shared/services/RouterService';
 
 
 // Состояние "BulkChecking"
@@ -13,15 +15,20 @@ export class StateBulkChecking implements IState {
   public status = 'level.checking.bulk';
   private _exceptions: number[] = [];
   private countSimulations = 1;
+
+
   constructor(
     private readonly context: LevelContext,
     private readonly _requisiteIndex: number,
     private readonly loop: Loop,
-    private readonly _stateCompleted: StateCompleted,
+    private readonly _solutionRepo: SolutionRepository,
+    private readonly _routerServ: RouterService,
+    private readonly _fields: Fields,
   ) {
     makeAutoObservable(this);
+    
     this.exceptions = this._requisiteIndex;
-    this._stateCompleted.setStatus('pending');
+    this.context.setStatusCompleted('pending');
     this.runAllSimulations();
   }
 
@@ -47,8 +54,8 @@ export class StateBulkChecking implements IState {
     ) {
       console.info('MOLODETS');
       this.pause();
-      this._stateCompleted.setStatus('completed');
-      this._stateCompleted.setCountSimulations(this.countSimulations);
+      this.context.setStatusCompleted('completed');
+      this.setCountSimulations(this.countSimulations);
       return;
     }
     emitter.once(solutionChecked).then((data) => {
@@ -70,8 +77,8 @@ export class StateBulkChecking implements IState {
         console.log('Output не валиден, возвращение в состояние Solving');
         runInAction(() => {
           this.countSimulations++;
-          this._stateCompleted.setStatus('rejected');
-          this._stateCompleted.setCountSimulations(this.countSimulations);
+          this.context.setStatusCompleted('rejected');
+          this.setCountSimulations(this.countSimulations);
         });
       }
     });
@@ -108,6 +115,30 @@ export class StateBulkChecking implements IState {
     this.context.logicField.clearPatternArrows();
     this.context.setState(createStateSolving(this.context));
   };
+
+  private setCountSimulations = (countSimulations) => {
+    const challenges = this.context.challenges.map((challenge, i) => {
+
+      this._solutionRepo.createCleanCopy(this._fields.arrowCache, this._routerServ.params.levelId, '1');
+      if (this.context.statusCompleted === 'completed') {
+        return { ...challenge, barColor: 'green' };
+      }
+      if (this.context.statusCompleted === 'rejected') {
+        this._solutionRepo.createDraft(this._fields.arrowCache, this._routerServ.params.levelId, '1');
+        if (i < countSimulations - 1) {
+          return { ...challenge, barColor: 'green' };
+        }
+        if (i === countSimulations - 1) {
+          return { ...challenge, barColor: 'tomato' };
+        }
+        if (i > countSimulations - 1) {
+          return { ...challenge, barColor: '#ccc' };
+        }
+      }
+    });
+    
+    this.context.setChallenges(challenges);
+  };
 }
 
 export const createStateBulkChecking = (
@@ -118,6 +149,8 @@ export const createStateBulkChecking = (
     context,
     requisiteIndex,
     loopInstance,
-    stateCompleted,
+    solutionRepository,
+    routerService,
+    fields
   );
 };
