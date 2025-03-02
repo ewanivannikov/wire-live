@@ -3219,7 +3219,256 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.10.Up.>',
       'Brush.13.Up.>',
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "954theke74": {
+          "pattern": [
+            6,
+            11,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "23fl0ls329": {
+          "pattern": [
+            7,
+            2,
+            6,
+            2,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "b3c2710136": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "ul94057ty4": {
+          "pattern": [
+            13,
+            2,
+            1,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "58818gk23r": {
+          "pattern": [
+            7,
+            2,
+            8,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "3991n1obal": {
+          "pattern": [
+            3,
+            1,
+            8,
+            7,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6255584j52": {
+          "pattern": [
+            3,
+            1,
+            2,
+            13,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "954theke74": {
+          "pattern": [
+            6,
+            3,
+            1,
+            2,
+            1,
+            2,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "23fl0ls329": {
+          "pattern": [
+            17,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "b3c2710136": {
+          "pattern": [
+            8,
+            7,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "ul94057ty4": {
+          "pattern": [
+            12,
+            1,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "58818gk23r": {
+          "pattern": [
+            11,
+            1,
+            1,
+            2,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "3991n1obal": {
+          "pattern": [
+            7,
+            2,
+            6,
+            2,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6255584j52": {
+          "pattern": [
+            6,
+            13,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "3": {
+        "954theke74": {
+          "pattern": [
+            1,
+            2,
+            8,
+            2,
+            2,
+            1,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "23fl0ls329": {
+          "pattern": [
+            1,
+            13,
+            1,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "b3c2710136": {
+          "pattern": [
+            1,
+            6,
+            8,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "ul94057ty4": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "58818gk23r": {
+          "pattern": [
+            3,
+            6,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "3991n1obal": {
+          "pattern": [
+            6,
+            1,
+            6,
+            6,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6255584j52": {
+          "pattern": [
+            1,
+            18,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
+    },
     optionalChallenges: {},
   },
   DifficultVoting:{
@@ -3235,7 +3484,175 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.10.Up.>',
       'Brush.15.Up'
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "z6690l9s97": {
+          "pattern": [
+            13,
+            2,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "mq50f92h9h": {
+          "pattern": [
+            6,
+            13,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "m5rohe0j6t": {
+          "pattern": [
+            10,
+            9,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "8ci0r0915s": {
+          "pattern": [
+            6,
+            13,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "ep12r27dtp": {
+          "pattern": [
+            13,
+            2,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "z6690l9s97": {
+          "pattern": [
+            5,
+            7,
+            2,
+            5,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "mq50f92h9h": {
+          "pattern": [
+            17,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "m5rohe0j6t": {
+          "pattern": [
+            10,
+            1,
+            1,
+            3,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "8ci0r0915s": {
+          "pattern": [
+            5,
+            14,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "ep12r27dtp": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "3": {
+        "z6690l9s97": {
+          "pattern": [
+            9,
+            8,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "mq50f92h9h": {
+          "pattern": [
+            8,
+            4,
+            4,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "m5rohe0j6t": {
+          "pattern": [
+            3,
+            14,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "8ci0r0915s": {
+          "pattern": [
+            3,
+            16,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "ep12r27dtp": {
+          "pattern": [
+            9,
+            3,
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
+    },
     optionalChallenges: {},
   },
   LogicalRevolution:{
@@ -3247,7 +3664,368 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.0.Up',
       'Brush.14.Up'
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "41bbs0k57x": {
+          "pattern": [
+            8,
+            2,
+            2,
+            7,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "ej5692xl6n": {
+          "pattern": [
+            10,
+            5,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "9dk35p28p7": {
+          "pattern": [
+            8,
+            11,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "c00x7nxe87": {
+          "pattern": [
+            14,
+            5,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "153wefs5ay": {
+          "pattern": [
+            2,
+            2,
+            7,
+            1,
+            8
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "rbqz09d2kw": {
+          "pattern": [
+            5,
+            3,
+            1,
+            1,
+            10
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "5wqfzkfay0": {
+          "pattern": [
+            11,
+            1,
+            8
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "813qr6w0gj": {
+          "pattern": [
+            5,
+            1,
+            14
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "41bbs0k57x": {
+          "pattern": [
+            8,
+            9,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "ej5692xl6n": {
+          "pattern": [
+            1,
+            12,
+            1,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "9dk35p28p7": {
+          "pattern": [
+            7,
+            1,
+            3,
+            8,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "c00x7nxe87": {
+          "pattern": [
+            17,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "153wefs5ay": {
+          "pattern": [
+            9,
+            1,
+            1,
+            1,
+            8
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "rbqz09d2kw": {
+          "pattern": [
+            12,
+            1,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "5wqfzkfay0": {
+          "pattern": [
+            1,
+            3,
+            8,
+            1,
+            7
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "813qr6w0gj": {
+          "pattern": [
+            2,
+            1,
+            17
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "3": {
+        "41bbs0k57x": {
+          "pattern": [
+            6,
+            8,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "ej5692xl6n": {
+          "pattern": [
+            4,
+            5,
+            1,
+            9,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "9dk35p28p7": {
+          "pattern": [
+            15,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "c00x7nxe87": {
+          "pattern": [
+            12,
+            2,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "153wefs5ay": {
+          "pattern": [
+            8,
+            4,
+            1,
+            1,
+            6
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "rbqz09d2kw": {
+          "pattern": [
+            5,
+            1,
+            9,
+            1,
+            4
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "5wqfzkfay0": {
+          "pattern": [
+            4,
+            1,
+            15
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "813qr6w0gj": {
+          "pattern": [
+            2,
+            4,
+            1,
+            1,
+            12
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "4": {
+        "41bbs0k57x": {
+          "pattern": [
+            6,
+            11,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "ej5692xl6n": {
+          "pattern": [
+            3,
+            12,
+            2,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "9dk35p28p7": {
+          "pattern": [
+            11,
+            8,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "c00x7nxe87": {
+          "pattern": [
+            16,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "153wefs5ay": {
+          "pattern": [
+            11,
+            1,
+            1,
+            1,
+            6
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "rbqz09d2kw": {
+          "pattern": [
+            12,
+            2,
+            2,
+            1,
+            3
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "5wqfzkfay0": {
+          "pattern": [
+            8,
+            1,
+            11
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "813qr6w0gj": {
+          "pattern": [
+            1,
+            1,
+            1,
+            1,
+            16
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
+    },
     optionalChallenges: {},
   },
   FillTheGaps:{
@@ -3261,9 +4039,116 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.6.Up.>',
       'Brush.9.Up',
       'Brush.10.Up.>',
+      'Brush.13.Up.>',
       'Brush.14.Up'
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "9e3uq3597l": {
+          "pattern": [
+            6,
+            2,
+            9,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "5du448y38z": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "9e3uq3597l": {
+          "pattern": [
+            18,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "5du448y38z": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "3": {
+        "9e3uq3597l": {
+          "pattern": [
+            2,
+            8,
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "5du448y38z": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "4": {
+        "9e3uq3597l": {
+          "pattern": [
+            3,
+            14,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "5du448y38z": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "5": {
+        "9e3uq3597l": {
+          "pattern": [
+            15,
+            2,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "5du448y38z": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
+    },
     optionalChallenges: {},
   },
   TemporaryNetworkShutdown:{
@@ -3277,9 +4162,115 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.6.Up.>',
       'Brush.9.Up',
       'Brush.10.Up.>',
-      'Brush.14.Up'
+      'Brush.13.Up.>',
+      'Brush.14.Up',
+      'Brush.15.Up'
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "0e3uq3597l": {
+          "pattern": [
+            4,
+            9,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6du448y38z": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 0,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "0e3uq3597l": {
+          "pattern": [
+            13,
+            6,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6du448y38z": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 0,
+          "cycles": 3
+        }
+      },
+      "3": {
+        "0e3uq3597l": {
+          "pattern": [
+            7,
+            7,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6du448y38z": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 0,
+          "cycles": 3
+        }
+      },
+      "4": {
+        "0e3uq3597l": {
+          "pattern": [
+            7,
+            5,
+            6,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6du448y38z": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 0,
+          "cycles": 3
+        }
+      },
+      "5": {
+        "0e3uq3597l": {
+          "pattern": [
+            6,
+            7,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6du448y38z": {
+          "pattern": [
+            20
+          ],
+          "hasCycle": false,
+          "initialValue": 0,
+          "cycles": 3
+        }
+      }
+    },
     optionalChallenges: {},
   },
   ExclusionRoom:{
@@ -3293,10 +4284,117 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.6.Up.>',
       'Brush.9.Up',
       'Brush.10.Up.>',
+      'Brush.13.Up.>',
       'Brush.15.Up',
       'Brush.14.Up'
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "bc19z64871": {
+          "pattern": [
+            1,
+            16,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "2278129h8g": {
+          "pattern": [
+            4,
+            7,
+            5,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "7lw8v665fm": {
+          "pattern": [
+            3,
+            7,
+            5,
+            1,
+            1,
+            2
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "bc19z64871": {
+          "pattern": [
+            17,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "2278129h8g": {
+          "pattern": [
+            6,
+            2,
+            10,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "7lw8v665fm": {
+          "pattern": [
+            2,
+            9,
+            1,
+            2
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "3": {
+        "bc19z64871": {
+          "pattern": [
+            6,
+            5,
+            7,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "2278129h8g": {
+          "pattern": [
+            15,
+            2,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "7lw8v665fm": {
+          "pattern": [
+            5,
+            4,
+            2,
+            3
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
+    },
     optionalChallenges: {},
   },
   ExclusionRoomII:{
@@ -3310,7 +4408,107 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.10.Up.>',
       'Brush.16.Up'
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "dya321549q": {
+          "pattern": [
+            15,
+            4,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "46dc27bcw7": {
+          "pattern": [
+            7,
+            3,
+            8,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6b6u9h3m2x": {
+          "pattern": [
+            3,
+            5,
+            3,
+            2
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "dya321549q": {
+          "pattern": [
+            12,
+            4,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "46dc27bcw7": {
+          "pattern": [
+            10,
+            6,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6b6u9h3m2x": {
+          "pattern": [
+            2,
+            8
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "3": {
+        "dya321549q": {
+          "pattern": [
+            13,
+            1,
+            3,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "46dc27bcw7": {
+          "pattern": [
+            12,
+            7,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "6b6u9h3m2x": {
+          "pattern": [
+            1,
+            1,
+            3,
+            3
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 4
+        }
+      }
+    },
     optionalChallenges: {},
   },
   Decoder:{
@@ -3373,7 +4571,17 @@ export const levels: Record<string, LevelDTO.Map> = {
     name: 'Сумматор',
     description: '',
     map: sources.Adder,
-    allowedBrushList: [],
+    allowedBrushList: [
+      'Brush.0.Up',
+      'Brush.5.Up',
+      'Brush.6.Up.>',
+      'Brush.9.Up',
+      'Brush.10.Up.>',
+      'Brush.13.Up.>',
+      'Brush.15.Up',
+      'Brush.14.Up',
+      'Brush.16.Up'
+    ],
     requisites: {},
     optionalChallenges: {},
   },

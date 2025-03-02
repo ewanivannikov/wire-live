@@ -1,0 +1,10 @@
+id,type,pattern,hasCycle,initialValue,cycles,versionId,label
+dya321549q,in,15; 4; 1,FALSE,1,NA,1,A
+46dc27bcw7,in,7; 3; 8; 1; 1,FALSE,1,NA,1,B
+6b6u9h3m2x,out,3; 5; 3; 2,FALSE,1,3,1,C
+dya321549q,in,12; 4; 2; 1; 1,FALSE,1,NA,2,A
+46dc27bcw7,in,10; 6; 2; 1; 1,FALSE,1,NA,2,B
+6b6u9h3m2x,out,2; 8,FALSE,1,3,2,C
+dya321549q,in,13; 1; 3; 2; 1,FALSE,1,NA,3,A
+46dc27bcw7,in,12; 7; 1,FALSE,1,NA,3,B
+6b6u9h3m2x,out,1; 1; 3; 3,FALSE,1,3,3,C

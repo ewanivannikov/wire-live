@@ -52,14 +52,17 @@ class OutputArrow extends ArrowBase {
     //       valid = this.binaryArray[this.index - 1] === this.binaryArray.at(-1);
     //     }
     //   }
+    let signal = fields.getSignal(this.position.coordinates);
+    if (signal > 0) {
+      signal = 1;
+    }
 
     if (this.index < this.patternLength) {
-      this.isValidIn = this.binaryArray[this.index] === fields.getSignal(this.position.coordinates);
+      this.isValidIn = this.binaryArray[this.index] === signal;
 
       if (this.isValidIn) {
-        console.log('DA');
-          this.index = this.index + 1;
-        }
+        this.index = this.index + 1;
+      }
       else {this.index = 0;}
     }
     
@@ -82,7 +85,7 @@ class OutputArrow extends ArrowBase {
       this.state = 'Mars';
       this.patternValidation.push(this.state);
     }
-    console.log(this.index/this.patternLength*100);
+    console.log(this.pattern, this.binaryArray[this.index], this.index/this.patternLength*100);
     
   }
 
