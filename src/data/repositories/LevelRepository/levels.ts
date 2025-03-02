@@ -1055,7 +1055,7 @@ export const levels: Record<string, LevelDTO.Map> = {
           "initialValue": 1
         }
       },
-      "": {
+      "4": {
         "5r73rp5hr3": {
           "pattern": [
             2,

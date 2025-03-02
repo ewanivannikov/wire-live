@@ -53,14 +53,15 @@ class OutputArrow extends ArrowBase {
     //     }
     //   }
 
+    if (this.index < this.patternLength) {
+      this.isValidIn = this.binaryArray[this.index] === fields.getSignal(this.position.coordinates);
 
-    this.isValidIn = this.binaryArray[this.index] === fields.getSignal(this.position.coordinates);
-
-    if (this.isValidIn) {
-      console.log('DA');
-        this.index = this.index + 1;
-      }
-    else {this.index = 0;}
+      if (this.isValidIn) {
+        console.log('DA');
+          this.index = this.index + 1;
+        }
+      else {this.index = 0;}
+    }
     
     console.log(this.position, this.cycleAmount);
     

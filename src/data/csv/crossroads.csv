@@ -23,11 +23,11 @@ uqih90mf7x,out,4; 4; 2; 3; 1; 5; 1,FALSE,1,3,3,D
 j7x29l731i,out,16; 1; 1; 1; 1,FALSE,1,3,3,C
 xo83kxu9v5,out,6; 2; 2; 9; 1,FALSE,1,3,3,B
 o59314wikt,in,14; 5; 1,FALSE,1,NA,3,A
-5r73rp5hr3,in,2; 3; 11; 3; 1,FALSE,1,NA,,B
-w478zd8f4p,in,8; 8; 2; 1; 1,FALSE,1,NA,,C
-vyxd1w0jsn,in,14; 1; 2; 2; 1,FALSE,1,NA,,D
-033504w030,out,7; 4; 7; 1; 1,FALSE,1,3,,A
-uqih90mf7x,out,14; 1; 2; 2; 1,FALSE,1,3,,D
-j7x29l731i,out,8; 8; 2; 1; 1,FALSE,1,3,,C
-xo83kxu9v5,out,2; 3; 11; 3; 1,FALSE,1,3,,B
-o59314wikt,in,7; 4; 7; 1; 1,FALSE,1,NA,,A
+5r73rp5hr3,in,2; 3; 11; 3; 1,FALSE,1,NA,4,B
+w478zd8f4p,in,8; 8; 2; 1; 1,FALSE,1,NA,4,C
+vyxd1w0jsn,in,14; 1; 2; 2; 1,FALSE,1,NA,4,D
+033504w030,out,7; 4; 7; 1; 1,FALSE,1,3,4,A
+uqih90mf7x,out,14; 1; 2; 2; 1,FALSE,1,3,4,D
+j7x29l731i,out,8; 8; 2; 1; 1,FALSE,1,3,4,C
+xo83kxu9v5,out,2; 3; 11; 3; 1,FALSE,1,3,4,B
+o59314wikt,in,7; 4; 7; 1; 1,FALSE,1,NA,4,A
