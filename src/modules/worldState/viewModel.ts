@@ -1,4 +1,4 @@
-import { makeAutoObservable, onBecomeUnobserved } from 'mobx';
+import { makeAutoObservable, onBecomeUnobserved, runInAction } from 'mobx';
 import { type RouterService, routerService } from '../../shared/services';
 import { createLevelContext } from './Level';
 import { type SolutionRepository, solutionRepository } from '../../data/repositories/SolutionRepository/SolutionRepository';
@@ -34,7 +34,9 @@ export class WorldState {
       this._fields.clearAll();
       if(this.modeContext.state?.pause){
         this.modeContext.state.pause();
-        this.isPaused = true;
+        runInAction(()=>{
+          this.isPaused = true;
+        })
       }
     })
   }

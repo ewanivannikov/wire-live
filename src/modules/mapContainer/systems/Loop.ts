@@ -1,9 +1,9 @@
-import { Clock, OrthographicCamera } from 'three';
+import { Clock, Group, Object3DEventMap, OrthographicCamera } from 'three';
 
 const clock = new Clock();
 
 export class Loop {
-  public updatables = [];
+  private updatables = [];
   private duration = 500;
   private camera: OrthographicCamera;
   private scene;
@@ -19,7 +19,7 @@ export class Loop {
     this.labelRenderer = labelRenderer;
   };
 
-  start() {
+  public start() {
     let clockTrack = 0;
 
     this.renderer.setAnimationLoop(() => {
@@ -39,11 +39,11 @@ export class Loop {
     });
   }
 
-  stop() {
+  public stop() {
     this.renderer.setAnimationLoop(null);
   }
 
-  tick() {
+  public tick() {
     // only call the getDelta function once per frame!
     const delta = clock.getDelta();
     const elapsed = clock.getElapsedTime();
@@ -53,9 +53,15 @@ export class Loop {
     }
   }
 
-  addTick = (object) => {
+  public addTick = (object: Group<Object3DEventMap>) => {
+    
+    
     return this.updatables.push(object);
   };
+
+  public clearTick = () => {
+    this.updatables = [];
+  }
 
   public setDuration(duration: number) {
     this.duration = duration;

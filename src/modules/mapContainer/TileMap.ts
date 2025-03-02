@@ -41,7 +41,8 @@ export class TileMap {
 
     onBecomeUnobserved(this, '_tileGroup', () => {
       console.log('Очистка');
-      
+      this.loop.clearTick();
+      this.loop.stop();
       this.clearAllLabels();
     })
   }

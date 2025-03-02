@@ -74,11 +74,11 @@ export class StateOneChecking implements IState {
     this.context.setState(createStateSolving(this.context));
   };
 
-  public canBeErased = (tile) => {
+  public canBeErased = () => {
     return false;
   };
 
-  public canBeDrawn = (tile) => {
+  public canBeDrawn = () => {
     return false;
   };
 }

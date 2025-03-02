@@ -20,7 +20,7 @@ export class StateBulkChecking implements IState {
     private readonly _stateCompleted: StateCompleted,
   ) {
     makeAutoObservable(this);
-    this.exceptions = _requisiteIndex;
+    this.exceptions = this._requisiteIndex;
     this._stateCompleted.setStatus('pending');
     this.runAllSimulations();
   }

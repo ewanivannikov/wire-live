@@ -7,12 +7,19 @@ import { ArrowBase } from './ArrowBase';
 import { emitter } from '../../shared/services/EventEmitterService';
 
 export const solutionChecked = Symbol('solutionChecked');
+export enum states {
+  Earth = 'Earth',
+  Wait = 'Wait',
+  Mars = 'Mars',
+  Moon = 'Moon',
+  Venus = 'Venus'
+}
 
 export class Fields {
   // key - Position
-  public signalCache = new Map<string, number>(); // integer
+  public signalCache = new Map<string, number>(); // ключ: позиция х,y, значение 1
   public newSignalCache = new Map();
-  public stateCache = new Map(); // string(state)
+  public stateCache = new Map<string, states>(); // ключ: позиция х,y
   public arrowCache = new Map<string, ArrowBase>(); // arrow
   public paused = false;
 
@@ -121,12 +128,12 @@ export class Fields {
     });
   }
 
-  updateSignals() {
+  public updateSignals() {
     this.signalCache = new Map(this.newSignalCache);
     this.newSignalCache.clear();
   }
 
-  initCashe(tileData) {
+  public initCashe(tileData) {
     tileData.forEach((tile) => {
       const { tileId, x, y, ...options } = tile;
       const value = new Tile(tileId).vector;
@@ -136,7 +143,7 @@ export class Fields {
     return this.arrowCache;
   }
 
-  updatePause() {
+  public updatePause() {
     this.paused = !this.paused;
   }
 
@@ -161,7 +168,7 @@ export class Fields {
 
         cb(arrow);
       });
-      console.log('outputs', outputs);
+      
 
       if (outputs.includes('rejected')) {
         emitter.emit(solutionChecked, 'rejected');
