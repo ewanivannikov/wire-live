@@ -37,14 +37,14 @@ export class Fields {
     return this.stateCache.get(key);
   }
 
-  getArrow(key: string) {
+  public getArrow(key: string) {
     if (!this.arrowCache.has(key)) {
       return;
     }
     return this.arrowCache.get(key);
   }
 
-  addSignal(key: string, signal: number) {
+  public addSignal(key: string, signal: number) {
     if (!this.newSignalCache.has(key)) {
       this.newSignalCache.set(key, signal);
     } else {
@@ -53,15 +53,15 @@ export class Fields {
     }
   }
 
-  addState(key: string, arrow: ArrowBase) {
+  public addState(key: string, arrow: ArrowBase) {
     this.stateCache.set(key, arrow.state);
   }
 
-  addArrow(key: string, arrow: ArrowBase) {
+  public addArrow(key: string, arrow: ArrowBase) {
     this.arrowCache.set(key, arrow);
   }
 
-  addArrowCache(
+  public addArrowCache(
     key: string,
     index: number,
     direction?: Direction,
@@ -89,15 +89,15 @@ export class Fields {
     }
   }
 
-  clearStates() {
+  public clearStates = () => {
     this.stateCache.clear();
   }
 
-  clearSignals() {
+  public clearSignals = () => {
     this.signalCache.clear();
   }
 
-  clearArrowsStates() {
+  public clearArrowsStates = () => {
     this.arrowCache.forEach((arrow, _) => {
       arrow.state = 'None';
     });
