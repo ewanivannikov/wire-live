@@ -46,6 +46,7 @@ export class StateBulkChecking implements IState {
       requisiteIndex.cause === 'ALL_ARE_EXCEPTIONS'
     ) {
       console.info('MOLODETS');
+      this.pause();
       this._stateCompleted.setStatus('completed');
       this._stateCompleted.setCountSimulations(this.countSimulations);
       return;
@@ -62,7 +63,7 @@ export class StateBulkChecking implements IState {
         this.context.logicField.clearSignals();
         this.context.logicField.clearArrowsStates();
         this.context.logicField.clearPatternArrows();
-
+        
         this.runAllSimulations();
       }
       if (data === 'rejected') {
@@ -88,11 +89,11 @@ export class StateBulkChecking implements IState {
     this.context.logicField.paused = false;
   }
 
-  public canBeErased = (tile) => {
+  public canBeErased = () => {
     return false;
   };
 
-  public canBeDrawn = (tile) => {
+  public canBeDrawn = () => {
     return false;
   };
 

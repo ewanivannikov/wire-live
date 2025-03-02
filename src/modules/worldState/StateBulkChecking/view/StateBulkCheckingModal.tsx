@@ -21,12 +21,11 @@ export const StateBulkCheckingModal = () => {
         {stateBulkCheckingPresenter.amountArrows} стрелок
       </p>
       <h3>Скорость обработки сигналов</h3>
-      <Show when={stateBulkCheckingPresenter.status !== 'pending'}>
-        <Histogram
-          bars={stateBulkCheckingPresenter.challenges}
-          classList={{ [styles.histogram]: true }}
-        />
-      </Show>
+      <Histogram
+        status={stateBulkCheckingPresenter.status === 'pending' ? 'pending' : 'resolved'}
+        bars={stateBulkCheckingPresenter.challenges}
+        classList={{ [styles.histogram]: true }}
+      />
 
       <Show when={stateBulkCheckingPresenter.showAverageSteps}>
         <p>
