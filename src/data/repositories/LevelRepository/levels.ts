@@ -4526,7 +4526,144 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.15.Up',
       'Brush.14.Up'
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "v049v92tgg": {
+          "pattern": [
+            10,
+            2,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "60rupa08p8": {
+          "pattern": [
+            1,
+            3,
+            8,
+            1,
+            5,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "cil9zb42e7": {
+          "pattern": [
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 20
+        },
+        "h9ltx7pm27": {
+          "pattern": [
+            3,
+            8,
+            1,
+            7
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "e20s8gg43u": {
+          "pattern": [
+            2,
+            3,
+            2,
+            3
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 10
+        },
+        "i6v6c617e7": {
+          "pattern": [
+            1,
+            3,
+            6,
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      },
+      "2": {
+        "v049v92tgg": {
+          "pattern": [
+            5,
+            14,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "60rupa08p8": {
+          "pattern": [
+            3,
+            11,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "cil9zb42e7": {
+          "pattern": [
+            9,
+            4,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 5
+        },
+        "h9ltx7pm27": {
+          "pattern": [
+            4,
+            2
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 20
+        },
+        "e20s8gg43u": {
+          "pattern": [
+            2,
+            15
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 5
+        },
+        "i6v6c617e7": {
+          "pattern": [
+            3,
+            16,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
+    },
     optionalChallenges: {},
   },
   Encoder:{

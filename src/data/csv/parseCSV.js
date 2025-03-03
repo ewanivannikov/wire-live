@@ -3,7 +3,7 @@ const csv = require('csv-parser');
 
 const results = {};
 
-fs.createReadStream('exclusionRoomII.csv')
+fs.createReadStream('decoder.csv')
   .pipe(csv())
   .on('data', (row) => {
     const versionId = row.versionId;
