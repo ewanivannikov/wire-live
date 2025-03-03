@@ -1836,16 +1836,20 @@ body {
   display: inline-block;
   height: 10px;
   width: 100%;
-  background-color: #ccc;
+  background: #ccc;
 }
 
 .TLyvdorNB0_j1cNZBFt2::-webkit-progress-value {
   transition: all 1s ease;
-  background-color: var(--color);
+  background: var(--color);
 }
 
-.YF9wghN0JfNSs6OxfV6A {
-  background-image: repeating-linear-gradient(45deg, #d7d7d7 0 5px, #e2e2e2 5px 10px);
+.TLyvdorNB0_j1cNZBFt2::-webkit-progress-bar {
+  background: #ccc;
+}
+
+.YF9wghN0JfNSs6OxfV6A::-webkit-progress-bar {
+  background: repeating-linear-gradient(45deg, #d7d7d7 0 5px, #e2e2e2 5px 10px);
   animation-name: x1BX2QbLFr3gU9EBw_gQ;
   animation-duration: 20s;
   animation-timing-function: linear;
