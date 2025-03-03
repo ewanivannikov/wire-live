@@ -1835,6 +1835,13 @@ body {
 .TLyvdorNB0_j1cNZBFt2 {
   display: inline-block;
   height: 10px;
+  width: 100%;
+  background-color: #ccc;
+}
+
+.TLyvdorNB0_j1cNZBFt2::-webkit-progress-value {
+  transition: all 1s ease;
+  background-color: var(--color);
 }
 
 .YF9wghN0JfNSs6OxfV6A {
