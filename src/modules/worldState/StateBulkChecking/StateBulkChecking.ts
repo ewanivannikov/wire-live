@@ -5,7 +5,6 @@ import { type Loop, loop as loopInstance } from '../../mapContainer/systems';
 import { emitter } from '../../../shared/services/EventEmitterService';
 import { makeAutoObservable, runInAction } from 'mobx';
 import { fields, Fields, solutionChecked } from '../../Logic/Base';
-import { LevelRepository, levelRepository } from '../../../data/repositories/LevelRepository';
 import { SolutionRepository, solutionRepository } from '../../../data/repositories/SolutionRepository/SolutionRepository';
 import { RouterService, routerService } from '../../../shared/services/RouterService';
 
@@ -66,7 +65,6 @@ export class StateBulkChecking implements IState {
           this.exceptions = requisiteIndex;
           this.countSimulations++;
           this.setCountSimulation({index: this.countSimulations - 1, status: 'resolved'});
-          // this.setCountSimulation({index: this.countSimulations - 2, status: 'pending'});
         });
 
         this.context.logicField.clearStates();

@@ -2,16 +2,20 @@
   display: inline-block;
   height: 10px;
   width: 100%;
-  background-color: #ccc;
+  background: #ccc;
 }
 
 .bar::-webkit-progress-value {
   transition: all 1s ease;
-  background-color: var(--color);
+  background: var(--color);
 }
 
-.pending {
-  background-image: repeating-linear-gradient(45deg, #d7d7d7 0 5px, #e2e2e2 5px 10px);
+.bar::-webkit-progress-bar {
+  background: #ccc;
+}
+
+.pending::-webkit-progress-bar {
+  background: repeating-linear-gradient(45deg, #d7d7d7 0 5px, #e2e2e2 5px 10px);
   animation-name: diagonal_move;
   animation-duration: 20s;
   animation-timing-function: linear;

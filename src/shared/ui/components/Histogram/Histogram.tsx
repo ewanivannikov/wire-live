@@ -4,7 +4,7 @@ import { For } from 'solid-js';
 export type HistogramProps = {
   bars: {
     amount: number;
-    barColor: string;
+    barColor?: string;
     status: "resolved" | 'pending'
   }[];
   classList: { [k: string]: boolean; };
@@ -23,7 +23,7 @@ export const Histogram = (props: HistogramProps) => {
                 [styles.bar]: true, 
                 [styles.pending]: bar.status === 'pending' 
               }}
-              style={{"--color": bar.barColor}}
+              style={{"--color": bar.barColor || 'transparent'}}
             />
             {/* <div
               style={{

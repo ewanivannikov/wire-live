@@ -19,7 +19,7 @@ export class WorldState {
   public currentTool: ToolType = ToolType.Brush;
   public currentBrush: TileId | '' = '';
   public currentBrushOptions
-  public challenges = [{ barColor: 'green', amount: 100, status: 'pending' }];
+  public challenges = [{ barColor: 'green', amount: 100, status: 'resolved' }];
   public statusCompleted = 'idle';
   public amountArrows = NaN
 
@@ -31,13 +31,8 @@ export class WorldState {
   ) {
     makeAutoObservable(this);
     const levelId = this._routerServ.params.levelId
-    const level = this._levelRepo.getLevelById(levelId);
-    const lenReq = Object.keys(
-      level?.requisites ?? {},
-    ).length;
-    for (let i = 1; i < lenReq; i++) {
-      this.challenges.push({ barColor: '#ccc', amount: 100, status: i === 0 ? 'resolved' : 'pending' });
-    }
+    this.initСhallenges();
+    
     onBecomeUnobserved(this, "modeContext", () => {
       this._solutionRepository.createDraft(
         this._fields.arrowCache,
@@ -86,6 +81,26 @@ export class WorldState {
     };
   };
 
+  public initСhallenges = () => {
+    const level = this._levelRepo.getLevelById(this._routerServ.params.levelId);
+    const lenReq = Object.keys(
+      level?.requisites ?? {},
+    ).length;
+    for (let i = 1; i < lenReq; i++) {
+      this.challenges.push({ amount: 100, status: i === 0 ? 'resolved' : 'idle' });
+    }
+  }
+
+  public resetСhallenges = () => {
+    const level = this._levelRepo.getLevelById(this._routerServ.params.levelId);
+    const lenReq = Object.keys(
+      level?.requisites ?? {},
+    ).length;
+    for (let i = 1; i < lenReq; i++) {
+      this.challenges[i] = { amount: 100, status: i === 0 ? 'resolved' : 'idle' };
+    }
+  }
+
   public switchStatusOnLevelOneChecking() {
     this.modeContext.next();
     this.isPaused = false;
@@ -115,10 +130,16 @@ export class WorldState {
   }
 
   public setChallenge = ({challenge, index}) => {
-    // мутабельно перезаписываем массив, если сделать это иммутабельно произвольно переключается в состояние level.play.solving
-    console.log('🔵🔵index', index);
-    
-    this.challenges[index] = challenge;
+    const level = this._levelRepo.getLevelById(this._routerServ.params.levelId);
+    const lenReq = Object.keys(
+      level?.requisites ?? {},
+    ).length;
+    runInAction(()=> {
+      if(index < lenReq - 1) {
+        this.challenges[index+1] = {...this.challenges[index+1], status: 'pending'}
+      }
+      this.challenges[index] = challenge;
+    })
   }
 
   public setStatusCompleted = (status) => {

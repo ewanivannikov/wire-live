@@ -36,7 +36,10 @@ export const StateBulkCheckingModal = () => {
       </Show>
       <ModalFooter>
         {' '}
-        <Button onClick={() => worldState.switchStatusOnLevelSolving()}>
+        <Button onClick={() => {
+          worldState.switchStatusOnLevelSolving();
+          worldState.resetСhallenges();
+        }}>
           Назад
         </Button>
         <Show when={worldState.statusCompleted === 'completed'}>
