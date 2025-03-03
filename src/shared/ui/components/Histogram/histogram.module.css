@@ -1,6 +1,13 @@
 .bar {
   display: inline-block;
   height: 10px;
+  width: 100%;
+  background-color: #ccc;
+}
+
+.bar::-webkit-progress-value {
+  transition: all 1s ease;
+  background-color: var(--color);
 }
 
 .pending {

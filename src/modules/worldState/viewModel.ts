@@ -19,7 +19,7 @@ export class WorldState {
   public currentTool: ToolType = ToolType.Brush;
   public currentBrush: TileId | '' = '';
   public currentBrushOptions
-  public challenges = [{ barColor: 'green', amount: 100 }];
+  public challenges = [{ barColor: 'green', amount: 100, status: 'pending' }];
   public statusCompleted = 'idle';
   public amountArrows = NaN
 
@@ -36,7 +36,7 @@ export class WorldState {
       level?.requisites ?? {},
     ).length;
     for (let i = 1; i < lenReq; i++) {
-      this.challenges.push({ barColor: '#ccc', amount: 100 });
+      this.challenges.push({ barColor: '#ccc', amount: 100, status: i === 0 ? 'resolved' : 'pending' });
     }
     onBecomeUnobserved(this, "modeContext", () => {
       this._solutionRepository.createDraft(
@@ -114,9 +114,11 @@ export class WorldState {
     return this._routerServ.params.levelId;
   }
 
-  public setChallenges = (challenges) => {
+  public setChallenge = ({challenge, index}) => {
     // мутабельно перезаписываем массив, если сделать это иммутабельно произвольно переключается в состояние level.play.solving
-    this.challenges.splice(0, this.challenges.length, ...challenges);
+    console.log('🔵🔵index', index);
+    
+    this.challenges[index] = challenge;
   }
 
   public setStatusCompleted = (status) => {

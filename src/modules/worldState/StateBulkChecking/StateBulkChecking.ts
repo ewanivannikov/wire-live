@@ -58,12 +58,15 @@ export class StateBulkChecking implements IState {
       this.setCountSimulations(this.countSimulations);
       return;
     }
+
     emitter.once(solutionChecked).then((data) => {
       if (data === 'resolved') {
         console.log('Output валиден, запуск новой симуляции');
         runInAction(() => {
           this.exceptions = requisiteIndex;
           this.countSimulations++;
+          this.setCountSimulation({index: this.countSimulations - 1, status: 'resolved'});
+          // this.setCountSimulation({index: this.countSimulations - 2, status: 'pending'});
         });
 
         this.context.logicField.clearStates();
@@ -78,7 +81,7 @@ export class StateBulkChecking implements IState {
         runInAction(() => {
           this.countSimulations++;
           this.context.setStatusCompleted('rejected');
-          this.setCountSimulations(this.countSimulations);
+          this.setCountSimulation({index: this.countSimulations - 1, status: 'rejected'});
         });
       }
     });
@@ -117,28 +120,34 @@ export class StateBulkChecking implements IState {
     this.context.setState(stateSolving);
   };
 
-  private setCountSimulations = (countSimulations) => {
-    const challenges = this.context.challenges.map((challenge, i) => {
+  private setCountSimulation = ({index, status}) => {
+    const colors = {
+      resolved: 'green',
+      rejected: 'tomato',
+      pending: 'transparent'
+    }
+    this.context.setChallenge({
+      challenge: { 
+        ...this.context.challenges[index], 
+        barColor: colors[status],
+        status 
+      },
+      index
+    });
+  }
 
-      this._solutionRepo.createCleanCopy(this._fields.arrowCache, this._routerServ.params.levelId, '1');
+  private setCountSimulations = (countSimulations) => {
+    this.context.challenges.forEach(() => {
+      //TODO переписать стратегию сохранения
       if (this.context.statusCompleted === 'completed') {
-        return { ...challenge, barColor: 'green' };
+        this._solutionRepo.createCleanCopy(this._fields.arrowCache, this._routerServ.params.levelId, '1');
+        return;
       }
       if (this.context.statusCompleted === 'rejected') {
         this._solutionRepo.createDraft(this._fields.arrowCache, this._routerServ.params.levelId, '1');
-        if (i < countSimulations - 1) {
-          return { ...challenge, barColor: 'green' };
-        }
-        if (i === countSimulations - 1) {
-          return { ...challenge, barColor: 'tomato' };
-        }
-        if (i > countSimulations - 1) {
-          return { ...challenge, barColor: '#ccc' };
-        }
+        return;
       }
     });
-    
-    this.context.setChallenges(challenges);
   };
 }
 

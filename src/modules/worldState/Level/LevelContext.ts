@@ -109,8 +109,8 @@ export class LevelContext {
     return this.root.statusCompleted;
   }
 
-  public setChallenges = (challenges) => {
-    this.root.setChallenges(challenges)
+  public setChallenge = (params) => {
+    this.root.setChallenge(params)
   }
 
   public setStatusCompleted = (status) => {

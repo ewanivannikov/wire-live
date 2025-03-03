@@ -1,4 +1,4 @@
-import { createEffect, Show, useContext } from 'solid-js';
+import { Show, useContext } from 'solid-js';
 import { Button, Modal, ModalFooter } from '../../../../shared';
 import { Histogram } from '../../../../shared/ui/components/Histogram/Histogram';
 import styles from './stateBulkCheckingModal.module.css';
@@ -24,7 +24,6 @@ export const StateBulkCheckingModal = () => {
       </Show>
       <h3>Скорость обработки сигналов</h3>
       <Histogram
-        status={worldState.statusCompleted === 'pending' ? 'pending' : 'resolved'}
         bars={worldState.challenges}
         classList={{ [styles.histogram]: true }}
       />
