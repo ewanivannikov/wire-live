@@ -4681,7 +4681,116 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.15.Up',
       'Brush.14.Up'
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "7j4jbq4yi4": {
+          "pattern": [
+            14,
+            2
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "6nk3dq32g3": {
+          "pattern": [
+            12,
+            2,
+            2
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "56jcko7f16": {
+          "pattern": [
+            10,
+            2,
+            4
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "0kp5705i09": {
+          "pattern": [
+            8,
+            2,
+            6
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "30g00i6gi2": {
+          "pattern": [
+            6,
+            2,
+            8
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "viuq3t0uoi": {
+          "pattern": [
+            4,
+            2,
+            10
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "1j5l74a5xh": {
+          "pattern": [
+            2,
+            2,
+            12
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "0o17357250": {
+          "pattern": [
+            2,
+            17,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "7h7hbec036": {
+          "pattern": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "j34wsls1zk": {
+          "pattern": [
+            4,
+            4,
+            4,
+            4
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        },
+        "389kpk93xr": {
+          "pattern": [
+            8,
+            8
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 3
+        }
+      }
+    },
     optionalChallenges: {},
   },
   SumOfUnits:{
@@ -4700,7 +4809,55 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.14.Up',
       'Brush.16.Up'
     ],
-    requisites:{},
+    requisites:{
+      "1": {
+        "w424az51x1": {
+          "pattern": [
+            3,
+            2,
+            1,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "tns1q969do": {
+          "pattern": [
+            1,
+            4,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "0t846yw16y": {
+          "pattern": [
+            2,
+            3,
+            2,
+            2
+          ],
+          "hasCycle": false,
+          "initialValue": 0,
+          "cycles": 6
+        },
+        "654joopwen": {
+          "pattern": [
+            1,
+            4,
+            1,
+            3,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 6
+        }
+      }
+    },
     optionalChallenges: {},
   },
   Adder: {
@@ -4719,7 +4876,128 @@ export const levels: Record<string, LevelDTO.Map> = {
       'Brush.14.Up',
       'Brush.16.Up'
     ],
-    requisites: {},
+    requisites: {
+      "1": {
+        "u18dmc7522": {
+          "pattern": [
+            1,
+            1,
+            5,
+            3
+          ],
+          "hasCycle": false,
+          "initialValue": 0,
+          "cycles": 6
+        },
+        "qn3h1j62q1": {
+          "pattern": [
+            1,
+            2,
+            1,
+            2,
+            1,
+            2,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 6
+        },
+        "3lni6uj7q1": {
+          "pattern": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            4
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 6
+        },
+        "xe5919tkb3": {
+          "pattern": [
+            1,
+            1,
+            5,
+            1,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 1,
+          "cycles": 6
+        },
+        "vqwf38fe03": {
+          "pattern": [
+            1,
+            2,
+            1,
+            2,
+            2,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "5mg82dwjpw": {
+          "pattern": [
+            1,
+            1,
+            1,
+            1,
+            6
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "021mt1957w": {
+          "pattern": [
+            2,
+            1,
+            1,
+            3,
+            3
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "0hcfq1zhr1": {
+          "pattern": [
+            7,
+            1,
+            2
+          ],
+          "hasCycle": false,
+          "initialValue": 1
+        },
+        "n191f7378o": {
+          "pattern": [
+            3,
+            1,
+            1,
+            3,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        },
+        "4qn8hx0y90": {
+          "pattern": [
+            1,
+            1,
+            6,
+            1,
+            1
+          ],
+          "hasCycle": false,
+          "initialValue": 0
+        }
+      }
+    },
     optionalChallenges: {},
   },
 };

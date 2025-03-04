@@ -1,0 +1,11 @@
+id,type,pattern,hasCycle,initialValue,cycles,versionId,label
+u18dmc7522,out,1;1;5;3,FALSE,0,6,1,C
+qn3h1j62q1,out,1;2;1;2;1;2;1,FALSE,1,6,1,S0
+3lni6uj7q1,out,2;1;1;1;1;4,FALSE,1,6,1,S1
+xe5919tkb3,out,1;1;5;1;1;1,FALSE,1,6,1,S2
+vqwf38fe03,in,1;2;1;2;2;1;1,FALSE,0,NA,1,A0
+5mg82dwjpw,in,1;1;1;1;6,FALSE,1,NA,1,A1
+021mt1957w,in,2;1;1;3;3,FALSE,1,NA,1,A2
+0hcfq1zhr1,in,7;1;2,FALSE,1,NA,1,B0
+n191f7378o,in,3;1;1;3;1;1,FALSE,0,NA,1,B1
+4qn8hx0y90,in,1;1;6;1;1,FALSE,0,NA,1,B2
