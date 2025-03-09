@@ -1155,7 +1155,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   FineWork:{
     slug: 'FineWork',
     name: 'Тонкая работа',
-    description: '',
+    description: 'Очередной узкий проход, в котором повороты обычных стрелок не помогут. Ещё и кто-то сделал двойной слой стен, из-за чего удлинитель(картину) тоже будет бесполезным. Только если знак будет передавать сигнал в диагональном направлении, можно будет соеденит ввод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> с вывдом<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg>. Диагональная стрелка(картинку) может оправлять сигнал в направлении своей диагонали. Также её можно поворачивать как и другие знаки, но у неё есть особое свойство отражаться. Можете сами его опробывать и посмотреть нажав на  кновку Flip(картинка).',
     map: sources.FineWork,
     allowedBrushList: [
       'Brush.0.Up',
@@ -1285,7 +1285,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   FineWorkII:{
     slug: 'FineWorkII',
     name: 'Тонкая работа 2',
-    description: '',
+    description: 'Данный уровень является более сложным и не обязателен к полному полному прохождению. Ваша задача соееденить вводы<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> и выводы<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg> с одинаковыми именами, огибая расставленные стены',
     map: sources.FineWorkII,
     allowedBrushList: [
       'Brush.0.Up',
@@ -1533,7 +1533,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   Permutations:{
     slug: 'Permutations',
     name: 'Перестановки',
-    description: '',
+    description: 'Как неудобно расставлены выводы<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg>. По прямой провести знаки не получится. Попытайтесь переплести провада так, чтобы они передавали сигнал куда требуется. Не забываете, что удлинители(картину) и диагональные стрелки(картинку) могут передавать сигнал не только через стены. Если вы хотите внимательнее расмотреть движение сигналов, то нажмите на паузу(картинку), чтобы остановить ход симуляции.',
     map: sources.Permutations,
     allowedBrushList: [
       'Brush.0.Up',
@@ -1972,7 +1972,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   Backwards:{
     slug: 'Backwards',
     name: 'Задом-наперёд',
-    description: '',
+    description: 'Задача сложнее, вводы<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> и выводы<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg> расставлены задом-наперёд и нужно их соеденить.',
     map: sources.Backwards,
     allowedBrushList: [
       'Brush.0.Up',
@@ -2357,7 +2357,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   OneWhole:{
     slug: 'OneWhole',
     name: 'Одно целое',
-    description: 'Оба ввода дополняют друг друга, если бы можно было соединить оба потока, то вышел бы долгий непрерывный сигнал. Объедините сигналы с обоих вводов так, чтобы на вывод приходил один целый сигнал.',
+    description: 'Соедените потоки вводов<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> так, чтобы вместе они давали один целый непрерывный сигнал.',
     map: sources.OneWhole,
     allowedBrushList: [
       'Brush.0.Up',
@@ -2540,7 +2540,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   OrOrOr:{
     slug: 'OrOrOr',
     name: 'Или, или, или',
-    description: '',
+    description: 'Попарно соедените вводы<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> и каждое объединение отправте в соответствующий вывод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg>',
     map: sources.OrOrOr,
     allowedBrushList: [
       'Brush.0.Up',
