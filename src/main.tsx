@@ -19,6 +19,7 @@ import { TaskPanel } from './modules/taskPanel';
 import { registerServiceWorker } from './shared';
 import { StateBulkCheckingModal } from './modules/worldState/StateBulkChecking/view';
 import { WorldStateProvider } from './modules/worldState/WorldStateProvider';
+import Clarity from '@microsoft/clarity';
 
 registerServiceWorker();
 
@@ -47,6 +48,7 @@ const enableMobXWithSolidJS = () => {
 
 enableMobXWithSolidJS();
 routerService.init();
+Clarity.init('qllcpogzor');
 
 const App = () => {
   const [pathname, setPathname] = createSignal(routerService.location.pathname);
