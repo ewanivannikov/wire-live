@@ -2769,7 +2769,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   BrokenPass: {
     slug: 'BrokenPass',
     name: 'Сломанный пропуск',
-    description: '',
+    description: 'Наша система пропусков сломалась. До выводов<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg> должны дойти только те сигналы, которые совпадают и у вводов<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> и у пропусков(помещены буквой P)/nНовой логический знак "И"(картинку), включается и отправляет сигнал по направлению, только если приёдйт 2 сиганала или больше.',
     map: sources.BrokenPass,
     allowedBrushList: ['Brush.0.Up', 'Brush.15.Up','Brush.9.Up',
       'Brush.10.Up.>',],
@@ -2988,7 +2988,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   AndAndAnd:{
     slug: 'AndAndAnd',
     name: 'И, и, и',
-    description: '',
+    description: 'Попарно соедените попарно вводы<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> с помощью нового логического знака и отправьте в соответствующий вывод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg>',
     map: sources.AndAndAnd,
     allowedBrushList: [
       'Brush.0.Up',
@@ -3209,7 +3209,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   CableTwisting:{
     slug: 'CableTwisting',
     name: 'Скрутка кабелей',
-    description: '',
+    description: 'Данный уровень более сложный, чем остальные и не обязателен к полному прохождению.Ваша задача соеденить провода так, чтобы все сигналы дошли в одно время используя уже имеющиеся у вас знаки.',
     map: sources.CableTwisting,
     allowedBrushList: [
       'Brush.0.Up',
@@ -3474,7 +3474,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   DifficultVoting:{
     slug: 'DifficultVoting',
     name: 'Сложное голосование',
-    description: '',
+    description: 'На вверхний вывод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg> должны прийти сигналы, которые есть у всех 3 вводов<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg>, а на нижний вывод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg> должно прийти объединение этих сигналов.',
     map: sources.DifficultVoting,
     allowedBrushList: [
       'Brush.0.Up',
@@ -3658,7 +3658,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   LogicalRevolution:{
     slug: 'LogicalRevolution',
     name: 'Логический переворот',
-    description: '',
+    description: 'Каждый включенный сигнал должен прийти выкленным, а каждый выключенный включенным. Новый логичекий знак "Не". Позволяет менят включённость и выкленность сигналов.',
     map: sources.LogicalRevolution,
     allowedBrushList: [
       'Brush.0.Up',
@@ -4031,7 +4031,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   FillTheGaps:{
     slug: 'FillTheGaps',
     name: 'Заполнить пропуски',
-    description: '',
+    description: 'Используя новый знак, сделайте сигнал непрерывным.',
     map: sources.FillTheGaps,
     allowedBrushList: [
       'Brush.0.Up',
@@ -4154,7 +4154,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   TemporaryNetworkShutdown:{
     slug: 'TemporaryNetworkShutdown',
     name: 'Временное отключение сети',
-    description: '',
+    description: 'Используя систему из знаков отключите приходящий сигнал. Подсказка: попыатйтесь воспользоваться комбинацией знака "И"(картинку) и знака "Не"(картинку).',
     map: sources.TemporaryNetworkShutdown,
     allowedBrushList: [
       'Brush.0.Up',
@@ -4276,7 +4276,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   ExclusionRoom:{
     slug: 'ExclusionRoom',
     name: 'Исключающая комната',
-    description: '',
+    description: 'Если на ввод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> поступают разные сигналы(выкл. и вкл.), то отправьте включённый сигнал. Если же на ввод поступают одинаковые сигналы(выкл. и выкл./вкл. и вкл.) - отправьте выключенный сигнал.',
     map: sources.ExclusionRoom,
     allowedBrushList: [
       'Brush.0.Up',
@@ -4400,7 +4400,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   ExclusionRoomII:{
     slug: 'ExclusionRoomII',
     name: 'Исключающая комната 2',
-    description: '',
+    description: 'Задние соответствует предыдущему, но у вас появился новый логический знак "Исключающие или". При нечётном количесве сигналов, данный знак отправит сигнал по направлению.',
     map: sources.ExclusionRoomII,
     allowedBrushList: [
       'Brush.0.Up',
@@ -4514,7 +4514,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   Decoder:{
     slug: 'Decoder',
     name: 'Обработчик шифров',
-    description: '',
+    description: 'Каждый включённый ввод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> суммируется и должен быть отправлен в соответствующий вывод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg>. Например, если включен только ввод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> "2", то сигнал должен быть направлен к выводу<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg> "2", если сразу включены вводы<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> "1" и "2", то сигнал, должен быть направлен к выводу<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg> "3".',
     map: sources.Decoder,
     allowedBrushList: [
       'Brush.0.Up',
@@ -4669,7 +4669,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   Encoder:{
     slug: 'Encoder',
     name: 'Кодирование',
-    description: '',
+    description: 'Представьте каждое значение с ввода в двоичной системе(соответственно A0 - первый разряд, A1 - второй разрял и т.д.).',
     map: sources.Encoder,
     allowedBrushList: [
       'Brush.0.Up',
@@ -4796,7 +4796,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   SumOfUnits:{
     slug: 'SumOfUnits',
     name: 'Сумма единиц',
-    description: '',
+    description: 'Сложите две единицы в двоичной системе. На вывод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg> C должен прийти переносимый в следующий заряд остаток.',
     map: sources.SumOfUnits,
     allowedBrushList: [
       'Brush.0.Up',
@@ -4863,7 +4863,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   Adder: {
     slug: 'Adder',
     name: 'Сумматор',
-    description: '',
+    description: 'Сделайте сумматор опираясь на сложение из предыдущего уровня, отправляя ответ уже для нескоольких выходных выводов<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg>.',
     map: sources.Adder,
     allowedBrushList: [
       'Brush.0.Up',
