@@ -774,7 +774,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   Crossroads:{
     slug: 'Crossroads',
     name: 'Перекрёстки',
-    description: 'Очень много вводов и выводов чьи сигналы не должны смешиваться. В ограниченом пространстве не получится просто пусть знаки в обход, что же делать? Новый знак: удлинитель <svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#BlueArrow" /></svg> позволяет отправлять сигнал не на одну, а на две клетки вперёд от себя, это поможет вам провестики провода так, чтобы сигналы "прошли" друг через друга.',
+    description: 'Очень много вводов и выводов чьи сигналы не должны смешиваться. В ограниченом пространстве не получится просто пусть знаки в обход, что же делать? Новый знак: удлинитель <svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#ThroughArrow" /></svg> позволяет отправлять сигнал не на одну, а на две клетки вперёд от себя, это поможет вам провестики провода так, чтобы сигналы "прошли" друг через друга.',
     map: sources.Crossroads,
     allowedBrushList: [
       'Brush.0.Up',
@@ -1155,7 +1155,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   FineWork:{
     slug: 'FineWork',
     name: 'Тонкая работа',
-    description: 'Очередной узкий проход, в котором повороты обычных стрелок не помогут. Ещё и кто-то сделал двойной слой стен, из-за чего удлинитель(картину) тоже будет бесполезным. Только если знак будет передавать сигнал в диагональном направлении, можно будет соеденит ввод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> с вывдом<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg>. Диагональная стрелка(картинку) может оправлять сигнал в направлении своей диагонали. Также её можно поворачивать как и другие знаки, но у неё есть особое свойство отражаться. Можете сами его опробывать и посмотреть нажав на  кновку Flip(картинка).',
+    description: 'Очередной узкий проход, в котором повороты обычных стрелок не помогут. Ещё и кто-то сделал двойной слой стен, из-за чего удлинитель<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#ThroughArrow" /></svg> тоже будет бесполезным. Только если знак будет передавать сигнал в диагональном направлении, можно будет соеденит ввод<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> с вывдом<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg>. Диагональная стрелка<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Diagonal" /></svg> может оправлять сигнал в направлении своей диагонали. Также её можно поворачивать как и другие знаки, но у неё есть особое свойство отражаться. Можете сами его опробывать и посмотреть выбрав чекбокс Flip.',
     map: sources.FineWork,
     allowedBrushList: [
       'Brush.0.Up',
@@ -1533,7 +1533,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   Permutations:{
     slug: 'Permutations',
     name: 'Перестановки',
-    description: 'Как неудобно расставлены выводы<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg>. По прямой провести знаки не получится. Попытайтесь переплести провада так, чтобы они передавали сигнал куда требуется. Не забываете, что удлинители(картину) и диагональные стрелки(картинку) могут передавать сигнал не только через стены. Если вы хотите внимательнее расмотреть движение сигналов, то нажмите на паузу(картинку), чтобы остановить ход симуляции.',
+    description: 'Как неудобно расставлены выводы<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg>. По прямой провести знаки не получится. Попытайтесь переплести провада так, чтобы они передавали сигнал куда требуется. Не забываете, что удлинители<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#ThroughArrow" /></svg> и диагональные стрелки<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Diagonal" /></svg> могут передавать сигнал не только через стены. Если вы хотите внимательнее расмотреть движение сигналов, то нажмите на паузу<svg height="24" width="24"><use href="./static/assets/glyphs-sprites-ui.svg#Pause" /></svg>, чтобы остановить ход симуляции.',
     map: sources.Permutations,
     allowedBrushList: [
       'Brush.0.Up',
@@ -2769,7 +2769,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   BrokenPass: {
     slug: 'BrokenPass',
     name: 'Сломанный пропуск',
-    description: 'Наша система пропусков сломалась. До выводов<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg> должны дойти только те сигналы, которые совпадают и у вводов<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> и у пропусков(помещены буквой P)/nНовой логический знак "И"(картинку), включается и отправляет сигнал по направлению, только если приёдйт 2 сиганала или больше.',
+    description: 'Наша система пропусков сломалась. До выводов<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Output" /></svg> должны дойти только те сигналы, которые совпадают и у вводов<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#Input" /></svg> и у пропусков(помещены буквой P)\nНовый логический знак "И"<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#AndGate" /></svg>, включается и отправляет сигнал по направлению, только если приёдйт 2 сиганала или больше.',
     map: sources.BrokenPass,
     allowedBrushList: ['Brush.0.Up', 'Brush.15.Up','Brush.9.Up',
       'Brush.10.Up.>',],
@@ -3658,7 +3658,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   LogicalRevolution:{
     slug: 'LogicalRevolution',
     name: 'Логический переворот',
-    description: 'Каждый включенный сигнал должен прийти выкленным, а каждый выключенный включенным. Новый логичекий знак "Не". Позволяет менят включённость и выкленность сигналов.',
+    description: 'Каждый включенный сигнал должен прийти выкленным, а каждый выключенный включенным. Новый логичекий знак "Не"<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#NotGate" /></svg>. Позволяет менят включённость и выкленность сигналов.',
     map: sources.LogicalRevolution,
     allowedBrushList: [
       'Brush.0.Up',
@@ -4154,7 +4154,7 @@ export const levels: Record<string, LevelDTO.Map> = {
   TemporaryNetworkShutdown:{
     slug: 'TemporaryNetworkShutdown',
     name: 'Временное отключение сети',
-    description: 'Используя систему из знаков отключите приходящий сигнал. Подсказка: попыатйтесь воспользоваться комбинацией знака "И"(картинку) и знака "Не"(картинку).',
+    description: 'Используя систему из знаков отключите приходящий сигнал. Подсказка: попыатйтесь воспользоваться комбинацией знака "И"<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#AndGate" /></svg> и знака "Не"<svg height="24" width="24"><use href="./static/assets/glyphs-sprites.svg#NotGate" /></svg>.',
     map: sources.TemporaryNetworkShutdown,
     allowedBrushList: [
       'Brush.0.Up',
