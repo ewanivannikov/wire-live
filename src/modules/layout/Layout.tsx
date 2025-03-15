@@ -20,7 +20,7 @@ export function Layout(props: LayoutProps) {
       <header class={header}>
         <nav class={nav}>
           <LinkRouter to={`/`}>
-            <img src={logo} alt="" width="50px" srcset="" />
+            <img src={logo} alt="Wire-live logo" width="50px" style="pointer-events: none;" />
           </LinkRouter>
           <LinkRouter to={`/`}>Wire live</LinkRouter>
           <LinkRouter to={`/about`}>О проекте</LinkRouter>

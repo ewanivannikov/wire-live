@@ -38,6 +38,13 @@ module.exports = {
         },
       },
       {
+        test: /\.(json)$/i,
+        type: 'json',
+        generator: {
+          filename: './api/[hash][ext][query]',
+        },
+      },
+      {
         test: /\.([cm]?ts|tsx)$/,
         exclude: /node_modules/,
         use: [

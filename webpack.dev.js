@@ -15,6 +15,10 @@ module.exports = merge(common, {
         directory: path.join(__dirname, 'public/static/'),
         publicPath: '/static/',
       },
+      {
+        directory: path.join(__dirname, 'public/api/'),
+        publicPath: '/api/',
+      },
     ],
     // headers: (v) => {
     //   console.log('❌❌❌', v);
