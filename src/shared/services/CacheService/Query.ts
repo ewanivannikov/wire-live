@@ -50,7 +50,7 @@ class MobxQuery<
   }
 
   public refetch = () => {
-    this.query.refetch();
+    return this.query.refetch();
   };
 }
 class _MobxQuery<
@@ -99,7 +99,7 @@ class _MobxQuery<
 
   public refetch() {
     // this.qObserver.refetch();
-    this.queryClient.ensureQueryData(this.options).then((res) => {
+    return this.queryClient.ensureQueryData(this.options).then((res) => {
       console.log('this.qObserver', res);
 
       return res;

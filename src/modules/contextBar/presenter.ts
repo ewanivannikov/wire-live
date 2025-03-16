@@ -47,19 +47,26 @@ class Brush {
     }
   }
 
-  private getDirectionsByNumber(number: number) {
-    const directions = Object.keys(brushRepository.brushList).reduce(
-      (acc, cur) => {
-        const currentBrushNumber = new Tile(cur).vector[1];
-        if (number === currentBrushNumber) {
-          acc.push(new Tile(cur).vector[2]);
-        }
-        return acc;
-      },
-      [],
-    );
+  private get brushList() {
+    return brushRepository.getBrushList()
+  }
 
-    return [...new Set(directions)];
+  private getDirectionsByNumber = async (number: number) => {
+    return new Promise((res)=>{
+      this.brushList.refetch().then((data)=>{
+        const directions = Object.keys(data).reduce(
+          (acc, cur) => {
+            const currentBrushNumber = new Tile(cur).vector[1];
+            if (number === currentBrushNumber) {
+              acc.push(new Tile(cur).vector[2]);
+            }
+            return acc;
+          },
+          [],
+        );
+        res([...new Set(directions)])
+      })
+    });
   }
 
   public get currentBrushOptions() {
@@ -74,12 +81,12 @@ class Brush {
   }
 
   setCurrentBrush = (brush: TileId) => {
-    runInAction(()=>{
+    runInAction(async ()=>{
       this.currentBrush = brush;
       const direction = new Tile(brush).vector[2];
       this.currentBrushDirection = direction;
       const number = new Tile(brush).vector[1];
-      this.currentBrushDirectionList = this.getDirectionsByNumber(number);
+      this.currentBrushDirectionList = await this.getDirectionsByNumber(number);
       const flip = new Tile(brush).vector[3];
       this.currentBrushFlip = flip;
       this._worldState.setCurrentBrush(brush);

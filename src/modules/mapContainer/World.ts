@@ -1,10 +1,7 @@
 import {
   GridHelper,
   MOUSE,
-  OrthographicCamera,
-  Scene,
   TOUCH,
-  WebGLRenderer,
   type Sprite,
 } from 'three';
 import { createCamera } from './components/Camera';
@@ -23,15 +20,12 @@ import { fields } from '../Logic/Base';
 import { WorldState } from '../worldState';
 import { createLabelRenderer } from './systems/LabelRenderer';
 
-// let camera: OrthographicCamera;
-// let renderer: WebGLRenderer;
-// let scene: Scene;
-// let loop: Loop;
-
 const tileSize: number = 256;
 const gridRowSize: number = 64;
 
 class World {
+  private tileMap
+
   constructor(
     private readonly container: HTMLDivElement,
     private readonly map: object[],
@@ -57,67 +51,73 @@ class World {
     const grid = createGrid(tileSize, gridRowSize);
     scene.add(grid.group);
 
-    const texture = createTileSet(tile, tileSize);
-    const tileMap = createTileMap(
-      texture.tileTextures,
-      tileSize,
-      loop,
-      logicField,
-      grid,
-      this.map,
-      this._worldState
-    );
-    scene.add(tileMap.tileGroup);
-
-    const onIntersectCanvas = createRaycaster(
-      container,
-      camera,
-      renderer,
-      tileMap,
-      grid,
-    );
-
-    onIntersectCanvas((int) => {
-      const { tileIntersect, gridIntersect, event, previousGridIntersect }: {previousGridIntersect: Sprite, tileIntersect: any, gridIntersect: Sprite, event: PointerEvent} =
-        int;
-
-      if (tileIntersect && event.pressure > 0 && event.buttons === 1) {
-        tileMap.onPointerChange(tileIntersect);
-      }
-
-      if (gridIntersect) {
-        this._worldState.onIntersectCanvas(gridIntersect, event, texture);
-      }
-
-      // при перемещении мыши в предыдущей клетке остаётся текстура кисти
-      // её нужно стирать
-      if (previousGridIntersect) {
-        const previousOpacity = previousGridIntersect?.material.opacity;
-        
-        previousGridIntersect.material.map = null;
-        // предыдущий ховер задаёт для спрайта 0.4 прозрачность
-        if(previousOpacity < 1) {
-          previousGridIntersect.material.opacity = 0;
+    createTileSet(tile, tileSize).init.then((tileTextures) => {
+      const tileMap = createTileMap(
+        tileTextures,
+        tileSize,
+        loop,
+        logicField,
+        grid,
+        this.map,
+        this._worldState
+      );
+      scene.add(tileMap.tileGroup);
+  
+      const onIntersectCanvas = createRaycaster(
+        container,
+        camera,
+        renderer,
+        tileMap,
+        grid,
+      );
+  
+      onIntersectCanvas((int) => {
+        const { tileIntersect, gridIntersect, event, previousGridIntersect }: {previousGridIntersect: Sprite, tileIntersect: any, gridIntersect: Sprite, event: PointerEvent} =
+          int;
+  
+        if (tileIntersect && event.pressure > 0 && event.buttons === 1) {
+          tileMap.onPointerChange(tileIntersect);
         }
-        previousGridIntersect.material.needsUpdate = true;
-      }
+  
+        if (gridIntersect) {
+          this._worldState.onIntersectCanvas(gridIntersect, event, tileTextures);
+        }
+  
+        // при перемещении мыши в предыдущей клетке остаётся текстура кисти
+        // её нужно стирать
+        if (previousGridIntersect) {
+          const previousOpacity = previousGridIntersect?.material.opacity;
+          
+          previousGridIntersect.material.map = null;
+          // предыдущий ховер задаёт для спрайта 0.4 прозрачность
+          if(previousOpacity < 1) {
+            previousGridIntersect.material.opacity = 0;
+          }
+          previousGridIntersect.material.needsUpdate = true;
+        }
+      });
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.minZoom = 0.2;
+      controls.maxZoom = 1;
+      controls.update(); // NOTE This will place the camera at the default distance
+      controls.mouseButtons = {
+        LEFT: null,
+        MIDDLE: MOUSE.DOLLY,
+        RIGHT: MOUSE.PAN,
+      };
+      controls.touches = {
+        ONE: null,
+        TWO: TOUCH.DOLLY_PAN,
+      };
+
+      this.tileMap = tileMap
+      this._worldState.init(tileMap);
     });
+  }
 
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.minZoom = 0.2;
-    controls.maxZoom = 1;
-    controls.update(); // NOTE This will place the camera at the default distance
-    controls.mouseButtons = {
-      LEFT: null,
-      MIDDLE: MOUSE.DOLLY,
-      RIGHT: MOUSE.PAN,
-    };
-    controls.touches = {
-      ONE: null,
-      TWO: TOUCH.DOLLY_PAN,
-    };
-
-    this._worldState.init(loop, tileMap);
+  public dispose = () => {
+    this.tileMap.dispose()
   }
 
   render() {

@@ -1,6 +1,24 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const path = require('path');
+const fs = require('fs');
+
+function findJsonFiles(dir, fileList = []) {
+  const files = fs.readdirSync(dir);
+
+  files.forEach(file => {
+    const filePath = path.join(dir, file);
+    const fileStat = fs.statSync(filePath);
+
+    if (fileStat.isDirectory()) {
+      findJsonFiles(filePath, fileList); // Рекурсивный вызов для подпапок
+    } else if (file.endsWith('.json')) {
+      fileList.push(filePath);
+    }
+  });
+
+  return fileList;
+}
 
 module.exports = merge(common, {
   mode: 'development',
@@ -15,11 +33,40 @@ module.exports = merge(common, {
         directory: path.join(__dirname, 'public/static/'),
         publicPath: '/static/',
       },
-      {
-        directory: path.join(__dirname, 'public/api/'),
-        publicPath: '/api/',
-      },
     ],
+    setupMiddlewares: (middlewares, devServer) => {
+      if (!devServer) {
+        throw new Error('webpack-dev-server is not defined');
+      }
+
+      devServer.app.get('/api/*.json', (req, res) => {
+        
+        
+        
+        const relativePath = req.params[0] + '.json';
+        const searchDir = path.join(__dirname, 'src/data/sources');
+        const allJsonFiles = findJsonFiles(searchDir);
+        
+        const foundFile = allJsonFiles.find(filePath => {
+          const relativeFilePath = path.relative(searchDir, filePath);
+          return relativeFilePath.includes(relativePath);
+        });
+
+        if (foundFile) {
+          fs.readFile(foundFile, 'utf-8', (err, data) => {
+            if (err) {
+              res.status(500).send('Error reading file');
+              return;
+            }
+            res.json(JSON.parse(data));
+          });
+        } else {
+          res.status(404).send('File not found');
+        }
+      });
+
+      return middlewares;
+    },
     // headers: (v) => {
     //   console.log('❌❌❌', v);
       

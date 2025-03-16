@@ -53,7 +53,7 @@ export class WorldState {
     this._fields.stateCache.delete(tile.name);
   };
 
-  public init = (loop: Loop, tileMap: TileMap) => {
+  public init = (tileMap: TileMap) => {
     tileMap.onPointerChange = (tile) => {
       const canBeErased = this.canBeErased(tile);
       const canBeDrawn = this.canBeDrawn(tile);
@@ -189,7 +189,7 @@ export class WorldState {
         gridIntersect.material.color.set(`#ff0000`);
       }
 
-      gridIntersect.material.map = texture.getTileTextures(tool);
+      gridIntersect.material.map = texture[tool];
       gridIntersect.material.opacity = 0.4;
       gridIntersect.material.needsUpdate = true;
     }

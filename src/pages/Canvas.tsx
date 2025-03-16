@@ -1,5 +1,5 @@
 import { createIsMounted } from '@solid-primitives/lifecycle';
-import { createMemo, useContext } from 'solid-js';
+import { createMemo, onCleanup, useContext } from 'solid-js';
 import { createWorld } from '../modules/mapContainer';
 import { routerService } from '../shared/services';
 import { levelRepository } from '../data';
@@ -10,6 +10,7 @@ import { WorldStateContext } from '../modules/worldState/WorldStateContext';
 export const Canvas = () => {
   let ref: HTMLDivElement;
   const isMounted = createIsMounted();
+
   const worldState = useContext<WorldState>(WorldStateContext);
 
   createMemo(() => {
@@ -35,7 +36,11 @@ export const Canvas = () => {
 
       const world = createWorld(ref, map, worldState);
       world.render();
+      onCleanup(() => {
+        world.dispose()
+      });
     }
+    
   });
   
   return <div id="canvas" ref={ref} />;

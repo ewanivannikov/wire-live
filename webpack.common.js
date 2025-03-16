@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -19,6 +20,16 @@ module.exports = {
       filename: '404.html',
       path: path.resolve(__dirname, 'dist'),
       favicon: "./public/static/assets/favicon.svg",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { 
+          from: "./src/data/sources/**/*.json", 
+          to() {
+            return "api/[name][ext]";
+          },
+        },
+      ],
     }),
   ],
   module: {
@@ -41,7 +52,7 @@ module.exports = {
         test: /\.(json)$/i,
         type: 'json',
         generator: {
-          filename: './api/[hash][ext][query]',
+          filename: './[hash][ext][query]',
         },
       },
       {

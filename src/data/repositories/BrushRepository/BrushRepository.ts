@@ -1,9 +1,17 @@
+import { brushSources } from '../../sources/brushSources/brushSources';
 import { LevelRepository, levelRepository } from '../LevelRepository';
 import { brushes, clastersBrushes, groupsBrushes } from './brushes';
 import { intersection } from 'remeda';
+import {
+  cacheService,
+  CacheService,
+} from '../../../shared';
 
 export class BrushRepository {
-  constructor(private readonly levelRepo: LevelRepository = levelRepository) {}
+  constructor(
+    private readonly _cacheService: CacheService,
+    private readonly levelRepo: LevelRepository = levelRepository,
+  ) {}
 
   public get clastersBrushes() {
     return clastersBrushes;
@@ -19,8 +27,16 @@ export class BrushRepository {
     return groupsBrushes;
   }
 
-  public get brushList() {
-    return brushes;
+  public getBrushList = () => {
+    const result = this._cacheService.createQuery({
+      queryKey: ['brushList'],
+      queryFn: async () => {
+        const result = await brushSources.getBrushes();
+        return result;
+      },
+    });
+
+    return result;
   }
 
   public getClastersBrushesByIds = (ids: string[] = []) => {
@@ -38,4 +54,4 @@ export class BrushRepository {
   };
 }
 
-export const brushRepository = new BrushRepository();
+export const brushRepository = new BrushRepository(cacheService);

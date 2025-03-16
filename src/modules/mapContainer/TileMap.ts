@@ -38,13 +38,12 @@ export class TileMap {
     const cashe = logicField.initCashe(map);
 
     this.init(cashe);
+  }
 
-    onBecomeUnobserved(this, '_tileGroup', () => {
-      console.log('Очистка');
-      this.loop.clearTick();
-      this.loop.stop();
-      this.clearAllLabels();
-    })
+  public dispose = () => {
+    this.loop.clearTick();
+    this.loop.stop();
+    this.clearAllLabels();
   }
 
   private addStateSpriteByArrow = (arrow) => {
