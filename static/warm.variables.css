@@ -1,0 +1,17 @@
+:root {
+  --color-baseline: #c63c51;
+  --color-onBaseline: #ffffff;
+  --color-primary: #007aff;
+  --color-secondary: #6c6c6c;
+  --elevation-shadow-baseline: #ff5943;
+  --elevation-shadow-overlay: #ff9c8f;
+  --elevation-shadow-raised: #ff7462;
+  --elevation-shadow-sunken: #f14a38;
+  --elevation-surface-baseline: 89.95%;
+  --elevation-surface-overlay: 100%;
+  --elevation-surface-raised: 95%;
+  --elevation-surface-sunken: 85%;
+  --typography-display-lg-font-family: 'Russo One', sans-serif;
+  --typography-display-lg-font-size: 4rem;
+  --typography-display-lg-font-weight: 700;
+}
