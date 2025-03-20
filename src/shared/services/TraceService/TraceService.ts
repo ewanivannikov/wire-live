@@ -20,7 +20,7 @@ export class TraceService {
   constructor() {
     this.provider = new WebTracerProvider({
       resource: new Resource({
-        'service.name': 'wire-live',
+        'service.name': 'wirelive',
       }),
       spanProcessors: [new SimpleSpanProcessor(new ConsoleSpanExporter())],
     });
