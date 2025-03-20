@@ -29,6 +29,10 @@ module.exports = {
             return "api/[name][ext]";
           },
         },
+        { 
+          from: "./CNAME", 
+          to: "./",
+        },
       ],
     }),
   ],
