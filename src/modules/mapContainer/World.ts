@@ -19,18 +19,22 @@ import { createRaycaster } from './systems/Raycaster';
 import { fields } from '../Logic/Base';
 import { WorldState } from '../worldState';
 import { createLabelRenderer } from './systems/LabelRenderer';
+import { ToolType } from '../toolbar';
+import { makeAutoObservable, reaction } from 'mobx';
 
 const tileSize: number = 256;
 const gridRowSize: number = 64;
 
 class World {
   private tileMap
+  private disposeCorrentTool = () => {}
 
   constructor(
     private readonly container: HTMLDivElement,
     private readonly map: object[],
     private readonly _worldState: WorldState
   ) {
+    makeAutoObservable(this);
     let camera = createCamera(this.container);
     let scene = createScene();
     let renderer = createRenderer(this.container);
@@ -107,9 +111,13 @@ class World {
         RIGHT: MOUSE.PAN,
       };
       controls.touches = {
-        ONE: null,
-        TWO: TOUCH.DOLLY_PAN,
-      };
+          ONE: null,
+          TWO: TOUCH.DOLLY_PAN,
+        };
+      this.disposeCorrentTool = reaction(() => this._worldState.currentTool, (tool) => {
+        controls.mouseButtons.LEFT = tool === ToolType.Pan ? MOUSE.PAN : null;
+        controls.touches.ONE = tool === ToolType.Pan ? TOUCH.PAN : null;
+      })
 
       this.tileMap = tileMap
       this._worldState.init(tileMap);
@@ -118,6 +126,7 @@ class World {
 
   public dispose = () => {
     this.tileMap.dispose()
+    this.disposeCorrentTool();
   }
 
   render() {
