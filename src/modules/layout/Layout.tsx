@@ -5,6 +5,7 @@ import { JSX, Show } from 'solid-js';
 import { routerService } from '../../shared/services';
 import { Profile } from '../profile';
 import { LinkRouter } from '../../shared/ui/components/LinkRouter';
+import { Drawer } from '../../shared/ui/components/Drawer';
 
 const { container, header, sidebar, context, main, nav } = styles;
 
@@ -27,6 +28,12 @@ export function Layout(props: LayoutProps) {
           <Profile />
         </nav>
       </header>
+      <Drawer open={false} size="50%">
+        Drawer
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet sed soluta vitae amet veniam obcaecati blanditiis odio, molestiae suscipit. Animi labore dolor, neque facilis corporis soluta tempore incidunt blanditiis totam?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet sed soluta vitae amet veniam obcaecati blanditiis odio, molestiae suscipit. Animi labore dolor, neque facilis corporis soluta tempore incidunt blanditiis totam?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet sed soluta vitae amet veniam obcaecati blanditiis odio, molestiae suscipit. Animi labore dolor, neque facilis corporis soluta tempore incidunt blanditiis totam?
+      </Drawer>
       <Show when={Boolean(props.asideSlot)}>
         <aside class={sidebar}>{props.asideSlot}</aside>
       </Show>

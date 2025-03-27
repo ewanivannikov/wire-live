@@ -1,0 +1,20 @@
+.root {
+  transition:
+    opacity 0.5s ease-in,
+    scale 0.5s ease-in,
+    display 0.5s ease-in allow-discrete;
+  opacity: 1;
+  transition-duration: 0.4s;
+  transition-timing-function: ease
+}
+
+/* @starting-style {
+  .root {
+    opacity: 0;
+  }
+} */
+
+.root:popover-open {
+  opacity: 1;
+  display: block;
+}
