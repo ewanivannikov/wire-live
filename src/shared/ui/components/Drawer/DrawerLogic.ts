@@ -6,7 +6,7 @@ class DrawerLogic {
   ) {
     if (this.props.open) {
       drawerNode.showPopover();
-      this.togglerNode.setAttribute("aria-pressed", true)
+      this.togglerNode.setAttribute("aria-pressed", true);
     }
     this.registerEvents();
   }

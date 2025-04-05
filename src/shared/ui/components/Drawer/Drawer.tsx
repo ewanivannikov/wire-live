@@ -1,6 +1,7 @@
 import { createEffect, type JSXElement } from 'solid-js';
 import styles from './drawer.module.css';
 import { createDrawerLogic } from './DrawerLogic';
+import { Menu } from 'lucide-solid';
 const { root, toggler } = styles;
 
 export type DrawerProps = {
@@ -22,20 +23,21 @@ export const Drawer = (props: DrawerProps) => {
 
   return (
     <>
-      <button
-        class={toggler}
-        ref={toggle}
-        >
-        X
-      </button>
       <div 
       class={root}
       classList={props.classList}
       ref={element}
       popover="manual"
-      style={{ "max-width": props.size }}>
+      style={{ "--drawer-size": props.size }}>
         {props.children}
       </div>
+      <button
+        class={toggler}
+        ref={toggle}
+        style={{ "--drawer-size": props.size }}
+        >
+        <Menu />
+      </button>
     </>
   );
 };
