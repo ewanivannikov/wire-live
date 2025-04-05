@@ -2,7 +2,7 @@ import { createEffect, type JSXElement } from 'solid-js';
 import styles from './drawer.module.css';
 import { createDrawerLogic } from './DrawerLogic';
 import { Button } from '../Button';
-const { root } = styles;
+const { root, toggle } = styles;
 
 export type DrawerProps = {
   open?: boolean;
@@ -12,25 +12,32 @@ export type DrawerProps = {
 };
 export const Drawer = (props: DrawerProps) => {
   let element!: HTMLElement;
+  let toggle!: HTMLButtonElement;
 
   createEffect(() => {
-    const state = createDrawerLogic(element, props);
+    const state = createDrawerLogic(element, toggle, props);
     if (!props.open) {
       state.close();
     }
   }, null);
 
   return (
+    <>
     <div 
     class={root}
     classList={props.classList}
     ref={element}
     popover="manual"
     style={{ width: props.size }}>
-      <button>
-        X
-      </button>
       {props.children}
     </div>
+    <button
+    class={toggle}
+    ref={toggle}
+    {...props}
+    >
+    X
+  </button>
+  </>
   );
 };

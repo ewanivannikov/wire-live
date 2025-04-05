@@ -1,11 +1,18 @@
 .root {
+  position: relative;
   transition:
     opacity 0.5s ease-in,
     scale 0.5s ease-in,
     display 0.5s ease-in allow-discrete;
   opacity: 1;
   transition-duration: 0.4s;
-  transition-timing-function: ease
+  transition-timing-function: ease;
+  margin: 0;
+  min-height: 50%;
+  position-anchor: --canvas;
+  top: anchor(--canvas top);
+  left: anchor(--canvas left);
+  anchor-name: --drawer;
 }
 
 /* @starting-style {
@@ -17,4 +24,10 @@
 .root:popover-open {
   opacity: 1;
   display: block;
+}
+
+.toggle {
+  position-anchor: --drawer;
+  bottom: anchor(--drawer bottom);
+  left: anchor(--drawer right);
 }
