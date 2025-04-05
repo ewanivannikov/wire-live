@@ -1821,21 +1821,58 @@ body {
 }
 
 .eDM5GYls6LXNjKpMmI6K {
-  position: absolute;
-  top: 16px;
-  left: 16px;
   background: white;
   padding: 16px;
-  box-shadow: 0px 0px 8px 1px rgb(178 178 225 / 20%);
   max-width: 300px;
   white-space: pre-wrap;
   line-height: 1.6;
   z-index: 1;
 }
 
+.LMvprF7n1kpVQBXG5hwG {
+  position: relative;
+  transition:
+    opacity 0.5s ease-in,
+    scale 0.5s ease-in,
+    display 0.5s ease-in allow-discrete;
+  opacity: 1;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  margin: 0;
+  height: auto;
+  position-anchor: --canvas;
+  top: anchor(--canvas top);
+  left: anchor(--canvas left);
+  anchor-name: --drawer;
+  box-shadow: 0px 0px 8px 1px rgb(178 178 225 / 20%);
+}
+
+/* @starting-style {
+  .root {
+    opacity: 0;
+  }
+} */
+
+.LMvprF7n1kpVQBXG5hwG:popover-open {
+  opacity: 1;
+  display: block;
+}
+
+.S6WExK2uSONQfk13TAlQ {
+  position: absolute;
+  position-anchor: --canvas;
+  top: anchor(--canvas top);
+  left: anchor(--canvas left);
+  z-index: 1;
+}
+
+.S6WExK2uSONQfk13TAlQ[aria-pressed] {
+  transform: translateX(310px);
+}
+
 @media only screen and (max-width: 600px) {
-  .eDM5GYls6LXNjKpMmI6K {
-    display: none;
+  .S6WExK2uSONQfk13TAlQ[aria-pressed] {
+    transform: translateX(280px);
   }
 }
 
