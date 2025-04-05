@@ -28,12 +28,6 @@ export function Layout(props: LayoutProps) {
           <Profile />
         </nav>
       </header>
-      {/* <Drawer open={true} size="300px">
-        Drawer
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet sed soluta vitae amet veniam obcaecati blanditiis odio, molestiae suscipit. Animi labore dolor, neque facilis corporis soluta tempore incidunt blanditiis totam?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet sed soluta vitae amet veniam obcaecati blanditiis odio, molestiae suscipit. Animi labore dolor, neque facilis corporis soluta tempore incidunt blanditiis totam?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet sed soluta vitae amet veniam obcaecati blanditiis odio, molestiae suscipit. Animi labore dolor, neque facilis corporis soluta tempore incidunt blanditiis totam?
-      </Drawer> */}
       <Show when={Boolean(props.asideSlot)}>
         <aside class={sidebar}>{props.asideSlot}</aside>
       </Show>

@@ -2,10 +2,11 @@ class DrawerLogic {
   constructor(
     private readonly drawerNode: HTMLElement,
     private readonly togglerNode: HTMLButtonElement,
-    private readonly props
+    private readonly props: {open: boolean}
   ) {
-    if (props.open) {
+    if (this.props.open) {
       drawerNode.showPopover();
+      this.togglerNode.setAttribute("aria-pressed", true)
     }
     this.registerEvents();
   }
@@ -14,15 +15,22 @@ class DrawerLogic {
     this.drawerNode.hidePopover();
   }
 
-  private handleClick = (element: HTMLButtonElement) => {
+  private handleClick = (event: MouseEvent) => {
+    const ariapressed = event.target.getAttribute("aria-pressed");
     this.drawerNode.togglePopover();
+
+    if(ariapressed){
+      this.togglerNode.removeAttribute("aria-pressed")
+    }else{
+      this.togglerNode.setAttribute("aria-pressed", true)
+    }
   }
 
   private registerEvents() {
-    this.togglerNode.addEventListener('click', this.handleClick.bind(this));
+    this.togglerNode.addEventListener('click', this.handleClick);
   }
 }
 
-export const createDrawerLogic = (element: HTMLElement, toggle: HTMLButtonElement, onClick) => {
-  return new DrawerLogic(element, toggle, onClick);
+export const createDrawerLogic = (element: HTMLElement, toggle: HTMLButtonElement, props) => {
+  return new DrawerLogic(element, toggle, props);
 };
