@@ -21,6 +21,7 @@ import { WorldState } from '../worldState';
 import { createLabelRenderer } from './systems/LabelRenderer';
 import { ToolType } from '../toolbar';
 import { makeAutoObservable, reaction } from 'mobx';
+import throttle from '../../shared/utils/throttle';
 
 const tileSize: number = 256;
 const gridRowSize: number = 64;
@@ -121,6 +122,27 @@ class World {
 
       this.tileMap = tileMap
       this._worldState.init(tileMap);
+
+      const resizeUpdateInterval = 500;
+
+      window.addEventListener(
+        'resize',
+        throttle(
+          () => {      
+            const width = this.container.clientWidth;
+            const height = this.container.clientHeight;
+            camera.left = width / -1;
+            camera.right = width / 1;
+            camera.top = height / 1;
+            camera.bottom = height / -1;
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            labelRenderer.setSize(container.clientWidth, container.clientHeight);
+            camera.updateProjectionMatrix();
+          },
+          resizeUpdateInterval,
+        )
+      );
     });
   }
 
@@ -138,3 +160,4 @@ class World {
 export const createWorld = (container: HTMLDivElement, map: object[], worldState: WorldState) => {
   return new World(container, map, worldState);
 };
+

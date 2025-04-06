@@ -11,7 +11,7 @@ const createCamera = (container: HTMLElement) => {
   camera.right = container.clientWidth / 1;
   camera.top = container.clientHeight / 1;
   camera.bottom = container.clientHeight / -1;
-  // camera.aspect = container.clientWidth / container.clientHeight;
+  //camera.aspect = container.clientWidth / container.clientHeight;
   camera.updateProjectionMatrix();
 
   return camera;
