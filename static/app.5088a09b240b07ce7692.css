@@ -1,7 +1,7 @@
 .LC4ZHXxV9EGyRW3U1khG {
   display: grid;
   grid-template-columns: 50px auto;
-  grid-template-rows: 50px 50px auto;
+  grid-template-rows: 50px 50px calc(100vh - 100px); /* КОСТЫЛЬ */
   grid-template-areas:
     'header header'
     'context context'
@@ -405,10 +405,17 @@ body {
 }
 
 .Yppj3rhN1jUnxns09JtF {
-  display: grid;
-  grid-gap: 8px;
-  justify-items: center;
+  display: flex;
+  gap: 8px;
+  align-items: center;
   margin-top: 8px;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.QVgTwTDrexhNjxy6htvE {
+  margin-top: auto;
+  max-height: 160px;
 }
 
 .UwtYivGqu_UMrzE886jA {
