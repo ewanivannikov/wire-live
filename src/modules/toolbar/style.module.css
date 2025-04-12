@@ -1,6 +1,13 @@
 .toolbar {
-  display: grid;
-  grid-gap: 8px;
-  justify-items: center;
+  display: flex;
+  gap: 8px;
+  align-items: center;
   margin-top: 8px;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.bar {
+  margin-top: auto;
+  max-height: 160px;
 }

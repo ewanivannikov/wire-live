@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: 50px auto;
-  grid-template-rows: 50px 50px auto;
+  grid-template-rows: 50px 50px calc(100vh - 100px); /* КОСТЫЛЬ */
   grid-template-areas:
     'header header'
     'context context'

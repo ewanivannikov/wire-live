@@ -14,8 +14,9 @@ import { createToolbarPresenter } from './presenter';
 import { createEffect, Match, Show, Switch, useContext } from 'solid-js';
 import { WorldState } from '../worldState/viewModel';
 import { WorldStateContext } from '../worldState/WorldStateContext';
+import { ProgressBar } from '../../shared/ui/components/ProgressBar';
 
-const { toolbar } = styles;
+const { toolbar, bar } = styles;
 
 export const Toolbar = () => {
   const worldState = useContext<WorldState>(WorldStateContext);
@@ -120,6 +121,8 @@ export const Toolbar = () => {
           <Save />
         </Button>
       </Show>
+
+      {/* <ProgressBar  classList={{ [bar]: true }} value={tools.indicatorOutput}/> */}
     </div>
   );
 };

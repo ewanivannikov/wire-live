@@ -84,6 +84,11 @@ class Tools {
   public get pressedWrite() {
     return this._worldState.status === 'level.play.solving';
   }
+
+  public get indicatorOutput() {
+    const progress = 70
+    return progress
+  }
 }
 
 export const createToolbarPresenter = (worldState: WorldState) =>
