@@ -225,6 +225,7 @@
   background-color: oklch(from var(--color-baseline) calc(l - 0.09) c h);
   box-shadow: 0 0 0 1px oklch(from var(--color-baseline) calc(l - 0.09) c h);
   margin: 8px;
+  padding: 8px;
 }
 
 .qSzv86ST7BKjHEfKoKRa {
