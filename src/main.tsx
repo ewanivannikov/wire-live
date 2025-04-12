@@ -97,12 +97,12 @@ const App = () => {
         </Match>
         <Match when={pathname().includes('home')}>
           <LayoutLanding>
-            <Home />
+            <About />
           </LayoutLanding>
         </Match>
         <Match when={pathname().includes('about')}>
           <LayoutLanding>
-            <About />
+            <Home />
           </LayoutLanding>
         </Match>
         <Match when={pathname() === '/' || pathname() === '#/'}>

@@ -1,30 +1,34 @@
 import { Card } from './Card';
 import { Typography } from '../Typography';
 import styles from './style.module.css';
-import { Button } from '../Button';
+import cover from '../../../../assets/cover.png';
 const { masonry, section, tall, big } = styles;
 
 export const Section = () => {
   return (
     <section class={masonry}>
-      <div class={section} style={{ height: '300px' }}>
+      <div class={section} style={{ height: '350px' }}>
         <Typography>{'Wire\nlive'}</Typography>
         <p>Изучение основ цифровой электроники в игровой форме</p>
       </div>
-      <div classList={{ [big]: true }}>
-        <Button component="a" href="/auth/google">
-          Войти
-        </Button>
+      <div classList={{ [big]: true, [tall]: true }} style={{ margin: '8px' }}>
+        <img src={cover} style={"width: 100%; height: 100%; object-fit: cover; object-position: 50% 0;"} />
       </div>
-      <Card classList={{ [tall]: true }} style={{ margin: '8px' }}>
-        <p>Уровни</p>
+      <Card classList={{ [tall]: true }}>
+        <h1>Программа позволяет:</h1>
       </Card>
-      <div class={section}>
-        <p>Редактор</p>
-      </div>
-      <div class={section}>
-        <p>Песочница</p>
-      </div>
+      <Card>
+        <p>
+          • симулировать работу с двоичной логикой. Каждая стрелка иммет
+          собственную функциональность.
+        </p>
+      </Card>
+      <Card>
+        <p>
+          • создавать цифовые устройства, которые являются базой для разработки
+          функциональных узлов цифровой техники
+        </p>
+      </Card>
     </section>
   );
 };
