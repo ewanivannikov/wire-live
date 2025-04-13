@@ -4,12 +4,13 @@ import { createLevelContext } from './Level';
 import { type SolutionRepository, solutionRepository } from '../../data/repositories/SolutionRepository/SolutionRepository';
 import { Fields, fields } from '../Logic/Base';
 import { createEditorContext } from './EditorContext/EditorContext';
-import { Loop } from '../mapContainer/systems';
 import { ToolType } from '../toolbar/enums';
 import { TileId } from '../../data/repositories/BrushRepository';
 import { TileMap } from '../mapContainer/TileMap';
 import { type Sprite } from 'three';
 import { levelRepository, LevelRepository } from '../../data/repositories/LevelRepository';
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
 
 export class WorldState {
   public isPaused = true;
@@ -22,6 +23,34 @@ export class WorldState {
   public challenges = [{ barColor: 'green', amount: 100, status: 'resolved' }];
   public statusCompleted = 'idle';
   public amountArrows = NaN
+  private driverObj = driver({
+    showProgress: true,
+    steps: [
+      { 
+        element: 'label#sign-type', 
+        popover: { 
+          title: 'Выбираем тип знака', 
+          description: 'Here is the code example showing animated tour. Let\'s walk you through it.', 
+          side: "left", 
+          align: 'start' 
+        }
+      },
+      { popover: { 
+          title: 'Happy Coding', 
+          description: 'And that is all, go ahead and start adding tours to your applications.' 
+        } 
+      }
+    ],
+    onPopoverRender: (popover)=> {
+      popover.wrapper.setAttribute('popover', 'auto')
+      popover.wrapper.showPopover()
+    },
+    onHighlighted: () => {
+      const overlay = document.querySelector(".driver-overlay")
+      overlay.setAttribute('popover', 'auto')
+      // overlay.requestFullscreen()
+    }
+  });
 
   constructor(
     private readonly _routerServ: RouterService,
@@ -30,6 +59,7 @@ export class WorldState {
     private readonly _fields: Fields,
   ) {
     makeAutoObservable(this);
+    
     const levelId = this._routerServ.params.levelId
     this.initСhallenges();
     
@@ -45,7 +75,10 @@ export class WorldState {
           this.isPaused = true;
         })
       }
-    })
+    });
+    // document.addEventListener("DOMContentLoaded", (event) => {
+    //   this.driverObj.drive();
+    // });
   }
 
   private erase = (tile, tileMap) => {

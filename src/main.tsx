@@ -48,7 +48,10 @@ const enableMobXWithSolidJS = () => {
 
 enableMobXWithSolidJS();
 routerService.init();
-Clarity.init('qllcpogzor');
+if (!window.location.host.includes('localhost')) {
+  Clarity.init('qllcpogzor');
+}
+
 
 const App = () => {
   const [pathname, setPathname] = createSignal(routerService.location.pathname);

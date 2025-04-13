@@ -42,8 +42,8 @@ export const ContextBar = () => {
             </ul>
           </Popover>
           <div class={contextbar}>
-            <label style={{ display: 'flex', 'align-items': 'center' }}>
-              Тип знака:
+            <label style={{ display: 'flex', 'align-items': 'center' }} id="sign-type">
+              <span>Тип знака:</span>
               <Popover.Target popovertarget="brushes">
                 <Dynamic component={iconsMapping[state.currentBrush]} />
               </Popover.Target>
