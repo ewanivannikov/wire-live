@@ -231,8 +231,15 @@
 }
 
 .v7QBo9h31cLh52EwubOH {
-  background-color: oklch(from var(--color-baseline) calc(l - 0.09) c h);
-  box-shadow: 0 0 0 1px oklch(from var(--color-baseline) calc(l - 0.09) c h);
+  background-color: oklch(from var(--color-baseline) calc(l + var(--elevation-surface-sunken)) c h);
+  box-shadow: 0 0 2px 1px oklch(from var(--color-baseline) calc(l + var(--elevation-shadow-sunken)) c h);
+  margin: 8px;
+  padding: 8px;
+}
+
+.eaUetjsXzOmUQwdrn9ih {
+  background-color: oklch(from var(--color-baseline) calc(l + var(--elevation-surface-raised)) c h);
+  box-shadow: 0 0 3px 2px oklch(from var(--color-baseline) calc(l + var(--elevation-shadow-raised)) c h);
   margin: 8px;
   padding: 8px;
 }
