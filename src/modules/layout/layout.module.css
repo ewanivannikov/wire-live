@@ -28,7 +28,6 @@
 .main {
   grid-area: main;
   position: relative;
-  justify-self: center;
 }
 
 .landing-main {
