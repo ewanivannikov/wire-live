@@ -2,7 +2,7 @@ import pluginCSS from '@cobalt-ui/plugin-css';
 
 /** @type {import("@cobalt-ui/core").Config} */
 export default {
-  tokens: './src/tokens/light.json',
+  tokens: './src/tokens/warm.json',
   outDir: './public/static/',
   plugins: [
     pluginCSS({
@@ -10,6 +10,8 @@ export default {
       transform(token, mode) {
         switch (token.$type) {
           case 'elevation': {
+            console.log('elevation', token.$value);
+            
             return String(token.$value);
             break;
           }

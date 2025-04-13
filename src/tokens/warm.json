@@ -30,13 +30,13 @@
     "$type": "elevation",
     "surface": {
       "sunken": {
-        "$value": "85%"
+        "$value": "-0.09"
       },
       "baseline": {
-        "$value": "89.95%"
+        "$value": "0"
       },
       "raised": {
-        "$value": "95%"
+        "$value": "0.1"
       },
       "overlay": {
         "$value": "100%"
@@ -44,16 +44,16 @@
     },
     "shadow": {
       "sunken": {
-        "$value": "#f14a38"
+        "$value": "-0.2"
       },
       "baseline": {
-        "$value": "#ff5943"
+        "$value": "0"
       },
       "raised": {
-        "$value": "#ff7462"
+        "$value": "-0.05"
       },
       "overlay": {
-        "$value": "#ff9c8f"
+        "$value": "-0.08"
       }
     }
   }
