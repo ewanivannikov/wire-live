@@ -35,6 +35,12 @@ body {
   row-gap: 64px;
 }
 
+@media (min-width: 1250px) {
+  .level-list-grid {
+    max-width: 2000px;
+  }
+}
+
 #labelContainer .label {
   width: 24px;
   height: 24px;

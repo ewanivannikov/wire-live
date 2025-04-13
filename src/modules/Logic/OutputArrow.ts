@@ -85,8 +85,6 @@ class OutputArrow extends ArrowBase {
       this.state = 'Mars';
       this.patternValidation.push(this.state);
     }
-    console.log(this.pattern, this.binaryArray[this.index], this.index/this.patternLength*100);
-    
   }
 
   activeStates(fields: Fields) { }
@@ -102,6 +100,10 @@ class OutputArrow extends ArrowBase {
       return 'resolved';
     }
     return 'waiting';
+  }
+
+  public get completionPercentage() {
+    return this.index/this.patternLength
   }
 }
 

@@ -1,17 +1,19 @@
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import { ToolType } from './enums';
 import { Loop } from '../mapContainer/systems';
-import { fields, Fields } from '../Logic/Base';
+import { fields, Fields, solutionPercentage } from '../Logic/Base';
 import { LevelRepository, levelRepository } from '../../data';
 import { WorldState } from '../worldState';
 import {
   routerService,
   RouterService,
 } from '../../shared/services/RouterService';
+import { emitter } from '../../shared/services/EventEmitterService';
 
 class Tools {
   currentTool = ToolType.Brush;
   private _loop: Loop;
+  private progress = 0
 
   constructor(
     private readonly levelRepo: LevelRepository,
@@ -21,6 +23,12 @@ class Tools {
   ) {
     makeAutoObservable(this);
     this._worldState.setCurrentTool(ToolType.Brush);
+    emitter.on(solutionPercentage, data => {
+      runInAction(() => {
+        this.progress = data * 100
+        console.log(this.progress)
+      })
+    });
   }
 
   public setCurrentTool = (tool: ToolType) => {
@@ -82,12 +90,12 @@ class Tools {
   }
 
   public get pressedWrite() {
+    this.progress = 0
     return this._worldState.status === 'level.play.solving';
   }
 
   public get indicatorOutput() {
-    const progress = 70
-    return progress
+    return this.progress
   }
 }
 

@@ -9,5 +9,6 @@
 
 .bar {
   margin-top: auto;
-  max-height: 160px;
+  max-height: 35%;
+  margin-bottom: 8px;
 }

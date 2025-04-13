@@ -28,6 +28,7 @@
 .main {
   grid-area: main;
   position: relative;
+  justify-self: center;
 }
 
 .landing-main {
@@ -53,4 +54,13 @@
   display: flex;
   gap: 16px;
   align-items: center;
+}
+
+.container-no-asides {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50px calc(100vh - 100px); /* КОСТЫЛЬ */
+  grid-template-areas:
+    'header'
+    'main';
 }

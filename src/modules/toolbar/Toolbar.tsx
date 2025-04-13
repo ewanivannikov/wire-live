@@ -122,7 +122,7 @@ export const Toolbar = () => {
         </Button>
       </Show>
 
-      {/* <ProgressBar  classList={{ [bar]: true }} value={tools.indicatorOutput}/> */}
+      <ProgressBar  classList={{ [bar]: true }} value={tools.indicatorOutput}/>
     </div>
   );
 };

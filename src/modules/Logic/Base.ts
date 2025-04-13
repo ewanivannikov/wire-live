@@ -7,6 +7,7 @@ import { ArrowBase } from './ArrowBase';
 import { emitter } from '../../shared/services/EventEmitterService';
 
 export const solutionChecked = Symbol('solutionChecked');
+export const solutionPercentage = Symbol('solutionPercentage');
 export enum states {
   Earth = 'Earth',
   Wait = 'Wait',
@@ -150,6 +151,7 @@ export class Fields {
   public processingLogic = (cb) => {
     if (!this.paused) {
       const outputs: string[] = [];
+      let percentage: number = 0;
       this.clearStates();
 
       this.arrowCache.forEach((arrow) => {
@@ -164,11 +166,13 @@ export class Fields {
 
         if (arrow.name === 'OutputArrow') {
           outputs.push(arrow.validated);
+          percentage += arrow.completionPercentage;
         }
 
         cb(arrow);
       });
       
+      emitter.emit(solutionPercentage, percentage/outputs.length);
 
       if (outputs.includes('rejected')) {
         emitter.emit(solutionChecked, 'rejected');

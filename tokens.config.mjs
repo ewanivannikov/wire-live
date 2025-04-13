@@ -6,7 +6,7 @@ export default {
   outDir: './public/static/',
   plugins: [
     pluginCSS({
-      filename: './light.variables.css',
+      filename: './warm.variables.css',
       transform(token, mode) {
         switch (token.$type) {
           case 'elevation': {

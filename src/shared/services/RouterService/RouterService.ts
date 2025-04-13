@@ -9,7 +9,7 @@ import { logger } from '../LoggerService';
 
 export const router = createRouter({
   basename:
-    window?.__ENV__?.RELEASE_STAGE === 'production' ? '/wire-live/' : '/',
+    window?.__ENV__?.RELEASE_STAGE === 'production' ? '/' : '/',
   routes: [
     {
       path: '/',

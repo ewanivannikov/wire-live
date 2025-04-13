@@ -2,4 +2,16 @@
   /* transform-origin: 0 100%; */
   writing-mode: vertical-lr;
   transform: rotate(180deg);
+  height: 35%;
+  background: #ccc;
+  width: 27px;
+}
+
+.bar::-webkit-progress-value {
+  transition: all 1s ease;
+  background: #17d3e8;
+}
+
+.bar::-webkit-progress-bar {
+  background: #ccc;
 }

@@ -7,7 +7,7 @@ import { Profile } from '../profile';
 import { LinkRouter } from '../../shared/ui/components/LinkRouter';
 import { Drawer } from '../../shared/ui/components/Drawer';
 
-const { container, header, sidebar, context, main, nav } = styles;
+const { container, header, sidebar, context, main, nav, containerNoAsides } = styles;
 
 type LayoutProps = {
   children?: JSX.Element;
@@ -17,7 +17,7 @@ type LayoutProps = {
 
 export function Layout(props: LayoutProps) {
   return (
-    <div class={container}>
+    <div class={props.asideSlot ? container : containerNoAsides}>
       <header class={header}>
         <nav class={nav}>
           <LinkRouter to={`/`}>
