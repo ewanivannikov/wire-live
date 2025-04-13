@@ -28,7 +28,6 @@
 .swVPwVFobTbFiQClaL0N {
   grid-area: main;
   position: relative;
-  justify-self: center;
 }
 
 .syOS5uE3zB2xh_lr20cN {
@@ -375,6 +374,7 @@ body {
   grid-template-columns: repeat(auto-fill, 400px);
   column-gap: 8px;
   row-gap: 64px;
+  justify-self: center;
 }
 
 @media (min-width: 1250px) {
