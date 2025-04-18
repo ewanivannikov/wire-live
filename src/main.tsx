@@ -61,7 +61,7 @@ const App = () => {
   });
 
   createEffect(() => {
-    if (pathname().includes('home') || pathname().includes('about')) {
+    if (pathname().includes('about')) {
       const theme = document.querySelector('#theme');
       if (theme) {
         theme.href = './static/warm.variables.css';
@@ -98,12 +98,19 @@ const App = () => {
             </Layout>
           </WorldStateProvider>
         </Match>
-        <Match when={pathname().includes('home')}>
+        <Match when={pathname().includes('sandbox')}>
+          <WorldStateProvider>
+            <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
+              <Canvas />
+            </Layout>
+          </WorldStateProvider>
+        </Match>
+        <Match when={pathname().includes('about')}>
           <LayoutLanding>
             <About />
           </LayoutLanding>
         </Match>
-        <Match when={pathname().includes('about')}>
+        <Match when={pathname().includes('home')}>
           <LayoutLanding>
             <Home />
           </LayoutLanding>

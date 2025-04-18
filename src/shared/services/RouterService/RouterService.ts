@@ -28,6 +28,9 @@ export const router = createRouter({
         {
           path: 'editor',
         },
+        {
+          path: 'sandbox',
+        },
       ],
     },
   ],
