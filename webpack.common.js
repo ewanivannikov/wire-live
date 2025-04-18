@@ -25,8 +25,17 @@ module.exports = {
       patterns: [
         { 
           from: "./src/data/sources/**/*.json", 
-          to() {
-            return "api/[name][ext]";
+          to({ context, absoluteFilename }) {
+            const dirname = path.dirname(absoluteFilename).split(path.sep);
+            const targetElement = 'sources';
+            const index = dirname.indexOf(targetElement);
+
+            if (index !== -1) {
+              const result = dirname.slice(index + 1);
+              return `api/${result.join('/')}/[name][ext]`;
+            } else {
+              return "api/[path][name][ext]";
+            }
           },
         },
         { 

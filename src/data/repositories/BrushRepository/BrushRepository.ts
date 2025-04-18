@@ -1,6 +1,6 @@
-import { brushSources } from '../../sources/brushSources/brushSources';
+import { brushSources } from '../../sources/brush/brushSources';
 import { LevelRepository, levelRepository } from '../LevelRepository';
-import { brushes, clastersBrushes, groupsBrushes } from './brushes';
+import { clastersBrushes, groupsBrushes } from './brushes';
 import { intersection } from 'remeda';
 import {
   cacheService,

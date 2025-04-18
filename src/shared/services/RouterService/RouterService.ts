@@ -1,6 +1,7 @@
 import {
   createHashHistory,
   createRouter,
+  matchPath as matchPathRemix,
   matchRoutes,
   Router,
 } from '@remix-run/router';
@@ -46,6 +47,8 @@ export class RouterService {
     this.matches = router.state.matches;
     this.basename = router.basename;
   }
+
+  public matchPath = matchPathRemix;
 
   private log = () => {
     logger.debug(`RouterService: params: ${JSON.stringify(this.params)}`);

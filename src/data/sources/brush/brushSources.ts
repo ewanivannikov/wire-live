@@ -4,7 +4,7 @@ import { httpService } from '../../../shared/services/HttpService';
 export const brushSources = {
   getBrushes: async () => {
     try {
-      const result = await httpService.get('./brushes.json').json();
+      const result = await httpService.get('./brush/brushes.json').json();
       // const result = await Promise.resolve(brushes)
       return result;
     } catch (error) {

@@ -44,12 +44,12 @@ module.exports = merge(common, {
         
         
         const relativePath = req.params[0] + '.json';
-        const searchDir = path.join(__dirname, 'src/data/sources');
+        const searchDir = path.join(__dirname, 'src/data/sources/');
         const allJsonFiles = findJsonFiles(searchDir);
         
         const foundFile = allJsonFiles.find(filePath => {
-          const relativeFilePath = path.relative(searchDir, filePath);
-          return relativeFilePath.includes(relativePath);
+          const relativeFilePath = path.resolve(searchDir + relativePath);
+          return relativeFilePath === filePath;
         });
 
         if (foundFile) {

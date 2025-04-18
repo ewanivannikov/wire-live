@@ -3,3 +3,4 @@ dist
 public/static/env.js
 
 .codegpt
+.env

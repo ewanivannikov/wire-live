@@ -1,0 +1,87 @@
+{
+	http_port 3000
+	https_port 3001
+	debug
+	order authenticate before respond
+	order authorize before basicauth
+
+	security {
+		oauth identity provider google {
+			realm google
+			driver google
+			client_id {env.GOOGLE_CLIENT_ID}.apps.googleusercontent.com
+			client_secret {env.GOOGLE_CLIENT_SECRET}
+			scopes openid email profile
+		}
+
+		authentication portal auth {
+			crypto default token lifetime 3600
+			crypto key sign-verify {env.JWT_SHARED_KEY}
+			enable identity provider google
+			cookie domain localhost
+                	
+			transform user {
+				match realm google
+				action add role authp/user
+			}
+
+		}
+
+		authorization policy user_policy {
+			# если юзер не авторизован, нукуда не редиректит, api вернёт ошибку, фронт сам редиректнет куда надо
+			disable auth redirect
+			#set auth url https://localhost:3001/oauth2/google
+			crypto key verify {env.JWT_SHARED_KEY}
+			allow roles authp/admin authp/user
+			validate bearer header
+			inject headers with claims
+		}
+	}
+}
+
+(tls_config) {
+	tls .local/caddy/server.crt .local/caddy/server.key
+}
+
+localhost {
+	# import tls_config
+  # encode
+
+	handle_errors {
+		@backend_unavailable expression `{http.error.status_code} == 502`
+		respond @backend_unavailable "Backend is currently unavailable. Please try again later." 503
+
+		# Для API — просто 401 без редиректа
+		@unauth_api expression `{http.error.status_code} == 401 && {http.request.header.Accept} == "application/json"`
+		respond @unauth_api "Unauthorized API request" 401
+	}
+
+	handle /oauth2/* {
+			authenticate with auth
+	}
+
+	handle /api/*.json {
+		authorize with user_policy
+		uri strip_prefix /api
+		root * src/data/sources
+		file_server
+	}
+
+  handle /api/* {
+		authorize with user_policy
+		reverse_proxy backend:8000
+	}
+
+	handle {
+		reverse_proxy localhost:9000
+	}
+
+	# грузится без защиты, код в html обращается к api, api инициирует редирект
+	# handle {
+	# 	root dist
+	# 	try_files {path} /index.html
+	# 	file_server
+	# }
+
+  log
+}

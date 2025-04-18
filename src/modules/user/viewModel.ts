@@ -9,11 +9,25 @@ export class User {
   }
 
   public get state() {
+    const serviceUnavailable = this.query.state.error?.errors?.[0].response.status === 503;
+    
+    if(serviceUnavailable) {
+      window.location.href = 'https://localhost:3001/#/about';
+    }
     return this.query.state;
   }
 
+  public refetch = () => {
+    return this.query.refetch()
+  }
+
   public get isUnauthorized() {
-    return this.query.state.error?.errors?.[0].response.status === 401;
+    const unauthorized = this.query.state.error?.errors?.[0].response.status === 401;
+    if(unauthorized) {
+      const redirectUrl = encodeURIComponent(window.location.href);
+      window.location.href = `/oauth2/google?redirect_uri=${redirectUrl}`;
+    }
+    return unauthorized;
   }
 
   private get mutation() {

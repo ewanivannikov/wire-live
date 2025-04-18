@@ -5,7 +5,6 @@ import { JSX, Show } from 'solid-js';
 import { routerService } from '../../shared/services';
 import { Profile } from '../profile';
 import { LinkRouter } from '../../shared/ui/components/LinkRouter';
-import { Drawer } from '../../shared/ui/components/Drawer';
 
 const { container, header, sidebar, context, main, nav, containerNoAsides } = styles;
 
@@ -25,7 +24,10 @@ export function Layout(props: LayoutProps) {
           </LinkRouter>
           <LinkRouter to={`/`}>Wire live</LinkRouter>
           <LinkRouter to={`/about`}>О проекте</LinkRouter>
-          <Profile />
+          <Show when={!routerService.matchPath(`/about`, routerService.location.pathname)}>
+            <Profile />
+          </Show>
+          
         </nav>
       </header>
       <Show when={Boolean(props.asideSlot)}>
