@@ -57,11 +57,14 @@ const App = () => {
   const [pathname, setPathname] = createSignal(routerService.location.pathname);
 
   routerService.onNavigate((e) => {
-    setPathname(e.target.location.hash);
+    setPathname(e.target.location.hash.slice(1));
   });
 
   createEffect(() => {
-    if (pathname().includes('about')) {
+    if (
+      routerService.matchPath('/about', pathname()) || 
+      routerService.matchPath('/home', pathname())
+    ) {
       const theme = document.querySelector('#theme');
       if (theme) {
         theme.href = './static/warm.variables.css';
@@ -82,7 +85,7 @@ const App = () => {
       )}
     >
       <Switch fallback={<div>Not Found</div>}>
-        <Match when={pathname().includes('levels')}>
+        <Match when={routerService.matchPath('/levels/:levelId', pathname())}>
           <WorldStateProvider>
             <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
               <TaskPanel />
@@ -110,10 +113,15 @@ const App = () => {
             <About />
           </LayoutLanding>
         </Match>
-        <Match when={pathname().includes('home')}>
+        <Match when={routerService.matchPath('/home', pathname())}>
           <LayoutLanding>
             <Home />
           </LayoutLanding>
+        </Match>
+        <Match when={routerService.matchPath('/levels', pathname())}>
+          <Layout>
+            <LevelList />
+          </Layout>
         </Match>
         <Match when={pathname() === '/' || pathname() === '#/'}>
           <Layout>
