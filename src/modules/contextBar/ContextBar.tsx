@@ -1,4 +1,4 @@
-import { Listbox, Popover, SegmentedButtons } from '../../shared';
+import { Button, Listbox, Popover, SegmentedButtons } from '../../shared';
 import { createEffect, For, Show, useContext } from 'solid-js';
 import { brushRepository } from '../../data/repositories';
 import { createBrush } from './presenter';
@@ -104,6 +104,7 @@ export const ContextBar = () => {
             </Show>
             <InputArrow state={state} />
             <OutputArrow state={state} />
+            {/* <Button onClick={state.runLearning}>Тык</Button> */}
           </div>
         </Show>
         <Show when={state.currentTool === 'Eraser'}>

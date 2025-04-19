@@ -6,6 +6,8 @@ import { inputArrowModel, InputArrowModel } from './InputArrow/viewModel';
 import { outputArrowModel, OutputArrowModel } from './OutputArrow';
 import { type WorldState } from '../worldState';
 import { routerService, RouterService } from '../../shared/services/RouterService';
+import { add } from 'remeda';
+import { onbordingLearning } from '../worldState/onbordingLearning';
 
 class Brush {
   public currentBrush = '';
@@ -189,6 +191,10 @@ class Brush {
     const clastersBrushes = Object.entries(brushRepository.clastersBrushes);
     this.setCurrentBrush(clastersBrushes[0][1].values[0]);
     return clastersBrushes;
+  }
+
+  public runLearning = () => {
+    onbordingLearning.drive();
   }
 }
 

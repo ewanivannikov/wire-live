@@ -9,8 +9,7 @@ import { TileId } from '../../data/repositories/BrushRepository';
 import { TileMap } from '../mapContainer/TileMap';
 import { type Sprite } from 'three';
 import { levelRepository, LevelRepository } from '../../data/repositories/LevelRepository';
-import { driver } from "driver.js";
-import "driver.js/dist/driver.css";
+import { onbordingLearning } from './onbordingLearning';
 
 export class WorldState {
   public isPaused = true;
@@ -23,34 +22,6 @@ export class WorldState {
   public challenges = [{ barColor: 'green', amount: 100, status: 'resolved' }];
   public statusCompleted = 'idle';
   public amountArrows = NaN
-  private driverObj = driver({
-    showProgress: true,
-    steps: [
-      { 
-        element: 'label#sign-type', 
-        popover: { 
-          title: 'Выбираем тип знака', 
-          description: 'Here is the code example showing animated tour. Let\'s walk you through it.', 
-          side: "left", 
-          align: 'start' 
-        }
-      },
-      { popover: { 
-          title: 'Happy Coding', 
-          description: 'And that is all, go ahead and start adding tours to your applications.' 
-        } 
-      }
-    ],
-    onPopoverRender: (popover)=> {
-      popover.wrapper.setAttribute('popover', 'auto')
-      popover.wrapper.showPopover()
-    },
-    onHighlighted: () => {
-      const overlay = document.querySelector(".driver-overlay")
-      overlay.setAttribute('popover', 'auto')
-      // overlay.requestFullscreen()
-    }
-  });
 
   constructor(
     private readonly _routerServ: RouterService,
@@ -76,9 +47,10 @@ export class WorldState {
         })
       }
     });
-    // document.addEventListener("DOMContentLoaded", (event) => {
-    //   this.driverObj.drive();
-    // });
+
+    document.addEventListener('DOMContentLoaded', (e) => {
+      //onbordingLearning.drive();
+    });
   }
 
   private erase = (tile, tileMap) => {

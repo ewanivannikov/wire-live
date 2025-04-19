@@ -36,7 +36,7 @@ export function Layout(props: LayoutProps) {
       <Show when={Boolean(props.asideSlot)}>
         <div class={context}>{props.contextBarSlot}</div>
       </Show>
-      <main class={main}>{props.children}</main>
+      <main class={main} id="main">{props.children}</main>
     </div>
   );
 }
