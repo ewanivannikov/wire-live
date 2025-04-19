@@ -13,6 +13,8 @@ function encodeSVG(svg) {
 
 export const onbordingLearning = driver({
     showProgress: true,
+    nextBtnText: '🡺',
+    prevBtnText: '🡸',
     steps: [
       { 
         element: 'canvas', 
@@ -42,7 +44,7 @@ export const onbordingLearning = driver({
         }
       },
       { 
-        element: 'label#sign-type', 
+        element: '#context-tools', 
         popover: { 
           title: 'Контекстное меню', 
           description: 'Данное меню позволяет выбрать нужный тип знака и настроить его характеристики, например, направление.', 

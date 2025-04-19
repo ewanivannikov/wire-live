@@ -42,8 +42,6 @@ export class InputArrowModel {
   };
 
   public setLabel = (label: string) => {
-    console.log('label', label);
-    
     this.label = label;
   };
 }

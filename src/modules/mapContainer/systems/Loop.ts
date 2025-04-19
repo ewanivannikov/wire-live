@@ -1,4 +1,5 @@
 import { Clock, Group, Object3DEventMap, OrthographicCamera } from 'three';
+import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer';
 
 const clock = new Clock();
 
@@ -8,11 +9,11 @@ export class Loop {
   private camera: OrthographicCamera;
   private scene;
   private renderer;
-  private labelRenderer;
+  private labelRenderer: CSS2DRenderer;
 
   constructor() {}
 
-  public init = (camera, scene, renderer, labelRenderer) => {
+  public init = (camera, scene, renderer, labelRenderer: CSS2DRenderer) => {
     this.camera = camera;
     this.scene = scene;
     this.renderer = renderer;
