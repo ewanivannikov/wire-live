@@ -49,7 +49,7 @@ export const Toolbar = () => {
       aria-controls="canvas"
       class={toolbar}
     >
-      <SegmentedButtons>
+      <SegmentedButtons id="tools">
         <SegmentedButtons.Button
           value="Brush"
           title="Кисть"

@@ -47,9 +47,9 @@ export class WorldState {
         })
       }
     });
-
     document.addEventListener('DOMContentLoaded', (e) => {
-      //onbordingLearning.drive();
+      if (this._routerServ.location.pathname === '/levels/Briefing') {
+        onbordingLearning.drive();}
     });
   }
 

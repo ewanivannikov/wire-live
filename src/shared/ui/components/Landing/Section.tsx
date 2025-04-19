@@ -2,10 +2,12 @@ import { Card } from './Card';
 import { Typography } from '../Typography';
 import styles from './style.module.css';
 import cover from '../../../../assets/cover.png';
+import { Send } from 'lucide-solid';
 const { masonry, section, tall, big } = styles;
 
 export const Section = () => {
   return (
+    <>
     <section class={masonry}>
       <div class={section} style={{ height: '350px' }}>
         <Typography>{'Wire\nlive'}</Typography>
@@ -30,5 +32,7 @@ export const Section = () => {
         </p>
       </Card>
     </section>
+    <section><p><a href="https://t.me/wirelive"><Send /> Телеграм-канал разработки</a></p></section>
+    </>
   );
 };

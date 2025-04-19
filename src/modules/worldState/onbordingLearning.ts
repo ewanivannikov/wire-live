@@ -15,17 +15,45 @@ export const onbordingLearning = driver({
     showProgress: true,
     steps: [
       { 
-        element: 'label#sign-type', 
+        element: 'canvas', 
         popover: { 
-          title: 'Выбираем тип знака', 
-          description: 'Here is the code example showing animated tour. Let\'s walk you through it.', 
-          side: "left", 
-          align: 'start' 
+          title: 'Поле', 
+          description: 'На каждом уровне вам нужно будет решить какую-либо проблему с помощью создания схемы на поле.', 
+          side: "top", 
+          align: 'center',
         }
       },
-      { popover: { 
-          title: 'Happy Coding', 
-          description: 'And that is all, go ahead and start adding tours to your applications.' 
+      { 
+        element: 'div#task-panel', 
+        popover: { 
+          title: 'Панель задач', 
+          description: 'Здесь вам будут давать описание проблемы, которую вам нужно решить. Чтобы свернуть панель задача, нажмите на кнопку рядом.', 
+          side: "left", 
+          align: 'center',
+        }
+      },
+      { 
+        element: 'div#tools', 
+        popover: { 
+          title: 'Инструменты', 
+          description: 'У вас есть инструменты для того, чтобы изменять схему на поле. Вы можете рисовать знаки, стирать их и просто перемещаться по полю.', 
+          side: "left", 
+          align: 'start',
+        }
+      },
+      { 
+        element: 'label#sign-type', 
+        popover: { 
+          title: 'Контекстное меню', 
+          description: 'Данное меню позволяет выбрать нужный тип знака и настроить его характеристики, например, направление.', 
+          side: "left", 
+          align: 'start',
+        }
+      },
+      { 
+        popover: { 
+          title: 'Вперёд!', 
+          description: 'Обучение завершено. Приятной игры!', 
         } 
       }
     ],

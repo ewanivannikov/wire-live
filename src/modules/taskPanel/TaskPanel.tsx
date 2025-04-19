@@ -12,7 +12,7 @@ export const TaskPanel = () => {
 
   return (
     <Drawer open={true} size="270px">
-      <div class={taskPanel}>
+      <div id="task-panel" class={taskPanel}>
         <span>{taskPanelPresenter.status}</span>
         <h1 class={heading}>{taskPanelPresenter.title}</h1>
         <div innerHTML={taskPanelPresenter.description} />
