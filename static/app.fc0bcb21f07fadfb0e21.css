@@ -410,6 +410,10 @@ body {
   display: block;
 }
 
+.driver-overlay {
+  opacity: 0;
+}
+
 .kNNx8aIKi5VSdDMeqbOl {
   padding: 8px;
   display: flex;
