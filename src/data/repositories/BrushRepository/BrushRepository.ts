@@ -1,7 +1,7 @@
 import { brushSources } from '../../sources/brush/brushSources';
 import { LevelRepository, levelRepository } from '../LevelRepository';
 import { clastersBrushes, groupsBrushes } from './brushes';
-import { intersection } from 'remeda';
+import { difference, intersection } from 'remeda';
 import {
   cacheService,
   CacheService,
@@ -20,6 +20,12 @@ export class BrushRepository {
   public getClastersBrushesByLevelId(levelId: string) {
     return this.getClastersBrushesByIds(
       this.levelRepo.getLevelById(levelId).allowedBrushList,
+    );
+  }
+
+  public getClastersBrushesForSandbox() {
+    return this.blockClastersBrushesByIds(
+      ['Brush.21.Up', 'Brush.22']
     );
   }
 
@@ -45,6 +51,20 @@ export class BrushRepository {
     const filteredClasters = Object.entries(clastersBrushes);
     filteredClasters.forEach(([key, value]) => {
       const keyWhiteList = intersection(ids, value.values);
+      if (keyWhiteList.length > 0) {
+        whiteList = { ...whiteList, [key]: { ...value, values: keyWhiteList } };
+      }
+    });
+
+    return whiteList;
+  };
+
+  public blockClastersBrushesByIds = (ids: string[] = []) => {
+    if (ids.length === 0) return this.clastersBrushes;
+    let whiteList = {};
+    const filteredClasters = Object.entries(clastersBrushes);
+    filteredClasters.forEach(([key, value]) => {
+      const keyWhiteList = difference(value.values, ids);
       if (keyWhiteList.length > 0) {
         whiteList = { ...whiteList, [key]: { ...value, values: keyWhiteList } };
       }

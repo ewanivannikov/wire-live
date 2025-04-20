@@ -38,7 +38,8 @@ class Tools {
 
   public setTick = () => {
     const isEditor = this._router.location.pathname.includes('editor');
-    if (this._worldState.status === 'level.play.checking.one' || isEditor) {
+    const isSandbox = this._router.location.pathname.includes('sandbox');
+    if (this._worldState.status === 'level.play.checking.one' || isEditor || isSandbox) {
       this._worldState.togglePause(this._loop);
     }
   };

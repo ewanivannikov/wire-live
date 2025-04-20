@@ -11,7 +11,9 @@ export const Home = () => {
       <Card
         title="Песочница"
         to={`/sandbox`}
-      />
+      >
+        Полная свобода создания схем!
+      </Card>
       <Card
         title="О проекте"
         to={`/about`}

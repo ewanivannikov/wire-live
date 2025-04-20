@@ -180,9 +180,18 @@ class Brush {
 
   public get clastersBrushList() {
     const isLevels = this._router.location.pathname.includes('levels');
+    const isSandbox = this._router.location.pathname.includes('sandbox');
     if(isLevels) {
       const clastersBrushes = Object.entries(
         brushRepository.getClastersBrushesByLevelId(this._worldState.levelId),
+      );
+      const firstBrush = clastersBrushes[0][1].values[0];
+      this.setCurrentBrush(firstBrush);
+      return clastersBrushes
+    }
+    if(isSandbox) {
+      const clastersBrushes = Object.entries(
+        brushRepository.getClastersBrushesForSandbox(),
       );
       const firstBrush = clastersBrushes[0][1].values[0];
       this.setCurrentBrush(firstBrush);

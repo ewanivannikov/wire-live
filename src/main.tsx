@@ -63,14 +63,15 @@ const App = () => {
   createEffect(() => {
     if (
       routerService.matchPath('/about', pathname()) || 
-      routerService.matchPath('/home', pathname())
+      routerService.matchPath('/home', pathname()) ||
+      routerService.matchPath('/', pathname())
     ) {
       const theme = document.querySelector('#theme');
       if (theme) {
         theme.href = './static/warm.variables.css';
       }
     }
-    if (pathname().includes('levels')) {
+    if (pathname().includes('levels') || pathname().includes('sandbox') || pathname().includes('editor')) {
       const theme = document.querySelector('#theme');
       if (theme) {
         theme.href = './static/light.variables.css';
@@ -125,7 +126,7 @@ const App = () => {
         </Match>
         <Match when={pathname() === '/' || pathname() === '#/'}>
           <Layout>
-            <LevelList />
+            <Home />
           </Layout>
         </Match>
       </Switch>
