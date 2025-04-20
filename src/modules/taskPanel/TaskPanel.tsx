@@ -4,6 +4,7 @@ import styles from './taskPanel.module.css';
 import { WorldState } from '../worldState/viewModel';
 import { WorldStateContext } from '../worldState/WorldStateContext';
 import { Drawer } from '../../shared/ui/components/Drawer';
+import { Typography } from '../../shared/ui/components/Typography';
 const { taskPanel, heading } = styles;
 
 export const TaskPanel = () => {
@@ -14,7 +15,9 @@ export const TaskPanel = () => {
     <Drawer open={true} size="270px">
       <div id="task-panel" class={taskPanel}>
         <span>{taskPanelPresenter.status}</span>
-        <h1 class={heading}>{taskPanelPresenter.title}</h1>
+        <Typography class={heading}>
+          {taskPanelPresenter.title}
+        </Typography>
         <div innerHTML={taskPanelPresenter.description} />
       </div>
      </Drawer>

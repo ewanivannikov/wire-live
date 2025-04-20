@@ -49,8 +49,15 @@ export class WorldState {
     });
     document.addEventListener('DOMContentLoaded', (e) => {
       if (this._routerServ.location.pathname === '/levels/Briefing') {
-        onbordingLearning.drive();}
+        onbordingLearning.drive();
+      }
     });
+
+    this._routerServ.onNavigate((e)=>{
+      if (e.target.location.hash.slice(1) === '/levels/Briefing') {
+        onbordingLearning.drive();
+      }
+    })
   }
 
   private erase = (tile, tileMap) => {
@@ -106,7 +113,7 @@ export class WorldState {
     }
   }
 
-  public switchStatusOnLevelOneChecking() {
+  public switchStatusOnLevelOneChecking = () => {
     this.modeContext.next();
     this.isPaused = false;
   }
@@ -201,7 +208,9 @@ export class WorldState {
   };
 
   public setCurrentTool = (currentTool: ToolType) => {
-    this.currentTool = currentTool;
+    runInAction(()=> {
+      this.currentTool = currentTool;
+    })
   }
 
   public setCurrentBrush = (currentBrush: TileId) => {

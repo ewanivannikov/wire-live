@@ -100,8 +100,6 @@ class _MobxQuery<
   public refetch() {
     // this.qObserver.refetch();
     return this.queryClient.ensureQueryData(this.options).then((res) => {
-      console.log('this.qObserver', res);
-
       return res;
     });
   }

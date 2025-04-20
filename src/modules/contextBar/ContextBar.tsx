@@ -41,7 +41,7 @@ export const ContextBar = () => {
               </For>
             </ul>
           </Popover>
-          <div class={contextbar}>
+          <div class={contextbar} id="context-tools">
             <label style={{ display: 'flex', 'align-items': 'center' }} id="sign-type">
               <span>Тип знака:</span>
               <Popover.Target popovertarget="brushes">
