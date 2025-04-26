@@ -10,6 +10,7 @@ import { TileMap } from '../mapContainer/TileMap';
 import { type Sprite } from 'three';
 import { levelRepository, LevelRepository } from '../../data/repositories/LevelRepository';
 import { onbordingLearning } from './onbordingLearning';
+import { createSandboxContext } from './SandboxContext/SandboxContext';
 
 export class WorldState {
   public isPaused = true;
@@ -30,23 +31,9 @@ export class WorldState {
     private readonly _fields: Fields,
   ) {
     makeAutoObservable(this);
-    
-    const levelId = this._routerServ.params.levelId
+
     this.initСhallenges();
     
-    onBecomeUnobserved(this, "modeContext", () => {
-      this._solutionRepository.createDraft(
-        this._fields.arrowCache,
-        levelId,
-      );
-      this._fields.clearAll();
-      if(this.modeContext.state?.pause){
-        this.modeContext.state.pause();
-        runInAction(()=>{
-          this.isPaused = true;
-        })
-      }
-    });
     document.addEventListener('DOMContentLoaded', (e) => {
       if (this._routerServ.location.pathname === '/levels/Briefing') {
         onbordingLearning.drive();
@@ -222,8 +209,47 @@ export class WorldState {
   }
 
   private get context() {
-    const isLevels = this._routerServ.location.pathname.includes('levels');
-    return isLevels ? createLevelContext(this) : createEditorContext(this);
+    if (this.isLevels) {
+      return createLevelContext(this);
+    }
+    if (this.isSandbox) {
+      return createSandboxContext(this);
+    }
+    if (this.isEditor) {
+      return createEditorContext(this);
+    } 
+  }
+
+  private get isLevels() {
+    const isLevels = this._routerServ.matchPath('/levels/:levelId', this._routerServ.location.pathname);
+    return isLevels
+  }
+  private get isSandbox() {
+    const isSandbox = this._routerServ.matchPath('/sandboxes/:sandboxId', this._routerServ.location.pathname);
+    return isSandbox
+  }
+  private get isEditor() {
+    const isEditor = this._routerServ.matchPath('/editor', this._routerServ.location.pathname);
+    return isEditor
+  }
+
+  public dispose = () => {
+      
+    if (this.isLevels) {
+      const levelId = this._routerServ.params.levelId
+      this._solutionRepository.createDraft(
+        this._fields.arrowCache,
+        levelId,
+      );
+    }
+      
+    this._fields.clearAll();
+    if(this.modeContext.state?.pause){
+      this.modeContext.state.pause();
+      runInAction(()=>{
+        this.isPaused = true;
+      })
+    }
   }
 }
 

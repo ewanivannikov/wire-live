@@ -148,6 +148,7 @@ class World {
 
   public dispose = () => {
     this.tileMap.dispose()
+    this._worldState.dispose();
     this.disposeCorrentTool();
   }
 

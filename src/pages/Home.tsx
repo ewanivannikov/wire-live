@@ -9,8 +9,8 @@ export const Home = () => {
         to={`/levels`}
       />
       <Card
-        title="Песочница"
-        to={`/sandbox`}
+        title="Песочницы"
+        to={`/sandboxes`}
       >
         Полная свобода создания схем!
       </Card>

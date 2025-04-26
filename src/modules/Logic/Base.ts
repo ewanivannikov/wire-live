@@ -172,7 +172,7 @@ export class Fields {
         cb(arrow);
       });
       
-      emitter.emit(solutionPercentage, percentage/outputs.length);
+      emitter.emit(solutionPercentage, outputs.length === 0 ? 0 : percentage/outputs.length);
 
       if (outputs.includes('rejected')) {
         emitter.emit(solutionChecked, 'rejected');

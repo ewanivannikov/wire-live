@@ -4,7 +4,7 @@ import { Loop, loop } from "../../mapContainer/systems/Loop";
 import { IState } from "../types";
 import { WorldState } from "../viewModel";
 
-export class EditorContext {
+export class SandboxContext {
   public state: IState;
   constructor(
     private readonly root: WorldState,
@@ -13,7 +13,7 @@ export class EditorContext {
   ) {
     makeAutoObservable(this);
     this.state = this.createState();
-    this._loop.setDuration(0);
+    this._loop.setDuration(500);
     this._fields.paused = false;
   }
 
@@ -36,5 +36,5 @@ export class EditorContext {
   }
 }
 
-export const createEditorContext = (root: WorldState) =>
-  new EditorContext(root, loop, fields);
+export const createSandboxContext = (root: WorldState) =>
+  new SandboxContext(root, loop, fields);

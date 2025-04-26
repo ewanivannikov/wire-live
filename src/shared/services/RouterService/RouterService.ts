@@ -29,7 +29,8 @@ export const router = createRouter({
           path: 'editor',
         },
         {
-          path: 'sandbox',
+          path: 'sandboxes/',
+          children: [{ path: ':sandboxId' }],
         },
       ],
     },

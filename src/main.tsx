@@ -20,6 +20,7 @@ import { registerServiceWorker } from './shared';
 import { StateBulkCheckingModal } from './modules/worldState/StateBulkChecking/view';
 import { WorldStateProvider } from './modules/worldState/WorldStateProvider';
 import Clarity from '@microsoft/clarity';
+import { SandboxList } from './pages/SandboxList/SandboxList';
 
 registerServiceWorker();
 
@@ -102,7 +103,7 @@ const App = () => {
             </Layout>
           </WorldStateProvider>
         </Match>
-        <Match when={pathname().includes('sandbox')}>
+        <Match when={routerService.matchPath('/sandboxes/:sandboxId', pathname())}>
           <WorldStateProvider>
             <Layout asideSlot={<Toolbar />} contextBarSlot={<ContextBar />}>
               <Canvas />
@@ -122,6 +123,11 @@ const App = () => {
         <Match when={routerService.matchPath('/levels', pathname())}>
           <Layout>
             <LevelList />
+          </Layout>
+        </Match>
+        <Match when={routerService.matchPath('/sandboxes', pathname())}>
+          <Layout>
+            <SandboxList />
           </Layout>
         </Match>
         <Match when={pathname() === '/' || pathname() === '#/'}>

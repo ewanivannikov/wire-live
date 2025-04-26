@@ -23,12 +23,21 @@ class Tools {
   ) {
     makeAutoObservable(this);
     this._worldState.setCurrentTool(ToolType.Brush);
-    emitter.on(solutionPercentage, data => {
-      runInAction(() => {
-        this.progress = data * 100
-        console.log(this.progress)
-      })
-    });
+    const isLevels = this._router.matchPath('/levels/:levelId', this._router.location.pathname);
+    
+    if (isLevels) {
+      emitter.on(solutionPercentage, data => {
+        runInAction(() => {
+          this.progress = data * 100
+          console.log(this.progress)
+        })
+      });
+    }
+  }
+
+  public get showProgress() {
+    const isLevels = this._router.location.pathname.includes('levels');
+    return isLevels
   }
 
   public setCurrentTool = (tool: ToolType) => {
@@ -37,8 +46,8 @@ class Tools {
   };
 
   public setTick = () => {
-    const isEditor = this._router.location.pathname.includes('editor');
-    const isSandbox = this._router.location.pathname.includes('sandbox');
+    const isEditor = this._router.matchPath('/editor', this._router.location.pathname);
+    const isSandbox = this._router.matchPath('/sandboxes/:sandboxId', this._router.location.pathname);
     if (this._worldState.status === 'level.play.checking.one' || isEditor || isSandbox) {
       this._worldState.togglePause(this._loop);
     }
