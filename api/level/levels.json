@@ -1,0 +1,94 @@
+{
+  "Briefing": {
+    "slug": "Briefing",
+    "name": "Хорошее начало"
+  },
+  "BadTurn": {
+    "slug": "BadTurn",
+    "name": "Поворот не туда"
+  },
+  "Branching": {
+    "slug": "Branching",
+    "name": "Ветвление"
+  },
+  "Crossroads": {
+    "slug": "Crossroads",
+    "name": "Перекрёстки"
+  },
+  "FineWork": {
+    "slug": "FineWork",
+    "name": "Тонкая работа"
+  },
+  "FineWorkII": {
+    "slug": "FineWorkII",
+    "name": "Тонкая работа 2"
+  },
+  "Permutations": {
+    "slug": "Permutations",
+    "name": "Перестановки"
+  },
+  "Backwards": {
+    "slug": "Backwards",
+    "name": "Задом-наперёд"
+  },
+  "OneWhole": {
+    "slug": "OneWhole",
+    "name": "Одно целое"
+  },
+  "OrOrOr": {
+    "slug": "OrOrOr",
+    "name": "Или, или, или"
+  },
+  "BrokenPass": {
+    "slug": "BrokenPass",
+    "name": "Сломанный пропуск"
+  },
+  "AndAndAnd": {
+    "slug": "AndAndAnd",
+    "name": "И, и, и"
+  },
+  "CableTwisting": {
+    "slug": "CableTwisting",
+    "name": "Скрутка кабелей"
+  },
+  "DifficultVoting": {
+    "slug": "DifficultVoting",
+    "name": "Сложное голосование"
+  },
+  "LogicalRevolution": {
+    "slug": "LogicalRevolution",
+    "name": "Логический переворот"
+  },
+  "FillTheGaps": {
+    "slug": "FillTheGaps",
+    "name": "Заполнить пропуски"
+  },
+  "TemporaryNetworkShutdown": {
+    "slug": "TemporaryNetworkShutdown",
+    "name": "Временное отключение сети"
+  },
+  "ExclusionRoom": {
+    "slug": "ExclusionRoom",
+    "name": "Исключающая комната"
+  },
+  "ExclusionRoomII": {
+    "slug": "ExclusionRoomII",
+    "name": "Исключающая комната 2"
+  },
+  "Decoder": {
+    "slug": "Decoder",
+    "name": "Обработчик шифров"
+  },
+  "Encoder": {
+    "slug": "Encoder",
+    "name": "Кодирование"
+  },
+  "SumOfUnits": {
+    "slug": "SumOfUnits",
+    "name": "Сумма единиц"
+  },
+  "Adder": {
+    "slug": "Adder",
+    "name": "Сумматор"
+  }
+}
