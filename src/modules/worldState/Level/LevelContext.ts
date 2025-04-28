@@ -101,6 +101,12 @@ export class LevelContext {
     return this.levelRepo.getLevelById(this.levelId);
   }
 
+  public get level2() {
+    console.log(this.query.state.data, "LEVEL!!!");
+    
+    return this.query.state.data;
+  }
+
   public get challenges() {
     return this.root.challenges;
   }
@@ -116,6 +122,11 @@ export class LevelContext {
   public setStatusCompleted = (status) => {
     this.root.statusCompleted = status
   }
+
+  private get query() {
+      const levelId = this.routerServ.params.levelId;
+      return this.levelRepo.getLevelById(levelId);
+    }
 
   // экспериментальный метод
   public checkSolution = this.logicField.checkSolution;

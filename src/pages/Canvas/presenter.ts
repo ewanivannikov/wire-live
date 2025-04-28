@@ -43,7 +43,16 @@ export class CanvasPres {
         .map.concat(mapSolution);
       }
 
+      // if (isLevels) {
+      //   const patternMap = this.levelQuery.state.data.patternArrowCache;
+      //   const baseMap = this.levelQuery.state.data.baseCache;
+      //   map = baseMap.concat([...Object.values(patternMap)]).concat(mapSolution);
+
+      //   console.log(map, "THISLEVEL!!!");
+      // }
+
       if (isSandbox) {
+        console.log(this.sandboxQuery.state.data.map, "THISSANDBOX!!!");
         map = this.sandboxQuery.state.data.map
       }
       return map
@@ -56,6 +65,11 @@ export class CanvasPres {
   private get sandboxQuery() {
     const sandboxId = this.router.params.sandboxId;
     return this.sandboxRepository.getSandboxById(sandboxId);
+  }
+
+  private get levelQuery() {
+    const levelId = this.router.params.levelId;
+    return this.levelRepository.getLevelById(levelId);
   }
 }
 
