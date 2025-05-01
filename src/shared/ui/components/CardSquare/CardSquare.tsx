@@ -1,10 +1,10 @@
 import { JSX, ParentComponent, splitProps } from 'solid-js';
-import styles from './card.module.css';
+import styles from './cardSquare.module.css';
 import { Typography } from '../Typography';
 import { LinkRouter } from '../LinkRouter';
-const { card, title, image } = styles;
+const { card, title, image, box } = styles;
 
-interface CardProps {
+interface CardSquareProps {
   class?: string;
   imageSrc?: string;
   title?: string;
@@ -14,10 +14,22 @@ interface CardProps {
   classList?: object;
 }
 
-export const Card: ParentComponent<CardProps> = (props) => {
+export const CardSquare: ParentComponent<CardSquareProps> = (props) => {
   const [{ component = 'h2' }] = splitProps(props, ['component']);
   return (
     <article classList={{[card]: true, ...props.classList}} >
+      <div classList={{[box]: true}}>
+        {props.title && (
+        <Typography component={component} class={title}>
+          <LinkRouter to={props.to}>{props.title}</LinkRouter>
+        </Typography>
+      )}
+
+      <div class="card-content">{props.children}</div>
+
+      {props.actionsSlot && <div class="card-actions">{props.actionsSlot}</div>}
+      </div>
+
       {props.imageSrc && (
         <LinkRouter to={props.to} >
           <span class={image}>
@@ -35,16 +47,6 @@ export const Card: ParentComponent<CardProps> = (props) => {
           </span>
         </LinkRouter>
       )}
-
-      {props.title && (
-        <Typography component={component} class={title}>
-          <LinkRouter to={props.to}>{props.title}</LinkRouter>
-        </Typography>
-      )}
-
-      <div class="card-content">{props.children}</div>
-
-      {props.actionsSlot && <div class="card-actions">{props.actionsSlot}</div>}
     </article>
   );
 };
