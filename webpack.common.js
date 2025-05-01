@@ -42,6 +42,14 @@ module.exports = {
           from: "./CNAME", 
           to: "./",
         },
+        { 
+          from: "./public/static/manifest.json", 
+          to: "./static/",
+        },
+        { 
+          from: "./public/static/assets/*.png", 
+          to: "./static/assets/[name][ext]",
+        },
       ],
     }),
   ],
