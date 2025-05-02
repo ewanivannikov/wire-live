@@ -3,6 +3,7 @@ import styles from '../../modules/layout/layoutHome.module.css';
 import cardStyles from '../../shared/ui/components/CardSquare/cardSquare.module.css';
 import homeStyles from './home.module.css'
 import { CardSquare } from '../../shared/ui/components/CardSquare/CardSquare';
+import triangleSierpinski from '../../assets/triangle-sierpinski.png';
 
 const { fat, thin } = styles
 const { sizeXl, sizeL } = cardStyles
@@ -16,13 +17,13 @@ export const Home = () => {
         title="Список уровней"
         to={`/levels`}
         classList={{[fat]:true, [sizeXl]: true}}
-        imageSrc='https://placehold.co/400'
+        imageSrc={triangleSierpinski}
       />
       <CardSquare
         title="Песочницы"
         to={`/sandboxes`}
         classList={{[thin]:true, [sizeL]: true}}
-        imageSrc='https://placehold.co/400'
+        imageSrc={triangleSierpinski}
       >
         Полная свобода создания схем!
       </CardSquare>

@@ -9,7 +9,7 @@
   
   .container::before {
     content: "";
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(226 226 226);
     width: 100%;
     top: var(--carcass-square-padding);
     bottom: 0;
