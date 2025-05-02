@@ -425,7 +425,7 @@ body {
   
   .FkzbxybwElIJngXalJw7::before {
     content: "";
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(226 226 226);
     width: 100%;
     top: var(--carcass-square-padding);
     bottom: 0;
@@ -465,7 +465,10 @@ body {
 
 
 .uYxlZbow1W4k5b5Nw3tk {
-  background-color:  rgb(198, 181, 178);
+  background-color:  rgb(255, 255, 255);
+  padding: 2rem;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
 }
 
 .mQdxZ2mieIZUVMXOKPRZ {
