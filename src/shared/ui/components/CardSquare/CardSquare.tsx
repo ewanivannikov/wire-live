@@ -2,7 +2,7 @@ import { JSX, ParentComponent, splitProps } from 'solid-js';
 import styles from './cardSquare.module.css';
 import { Typography } from '../Typography';
 import { LinkRouter } from '../LinkRouter';
-const { card, title, image, box } = styles;
+const { card, title, image, box, link } = styles;
 
 interface CardSquareProps {
   class?: string;
@@ -31,7 +31,7 @@ export const CardSquare: ParentComponent<CardSquareProps> = (props) => {
       </div>
 
       {props.imageSrc && (
-        <LinkRouter to={props.to} >
+        <LinkRouter to={props.to} classList={{[link]: true}}>
           <span class={image}>
             <picture class="">
               <source srcset={props.imageSrc} media="(min-width: 0px)" />

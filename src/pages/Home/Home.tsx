@@ -7,12 +7,12 @@ import triangleSierpinski from '../../assets/triangle-sierpinski.png';
 
 const { fat, thin } = styles
 const { sizeXl, sizeL } = cardStyles
-const { title } = homeStyles
+const { title, mL24Xs, justifyContentCenter, textAlignCenter } = homeStyles
 
 export const Home = () => {
   return (
     <LayoutHome>
-      <h1 classList={{[title]: true}}>Wirelive</h1>
+      <h1 classList={{[title]: true, [textAlignCenter]: true}}>Wirelive</h1>
       <CardSquare
         title="Список уровней"
         to={`/levels`}
@@ -30,7 +30,7 @@ export const Home = () => {
       <CardSquare
         title="О проекте"
         to={`/about`}
-        classList={{[thin]:true, [sizeL]: true}}
+        classList={{[thin]:true, [sizeL]: true, [justifyContentCenter]: true}}
       />
     </LayoutHome>
   );
