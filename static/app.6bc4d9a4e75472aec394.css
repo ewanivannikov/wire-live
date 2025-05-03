@@ -414,7 +414,7 @@ body {
   opacity: 0;
 }
 
-@media (min-width: 1250px) {
+@media (min-width: 769px) {
   .FkzbxybwElIJngXalJw7 {
     --carcass-square-padding: 84px;
     --container-max-width: 1200px;
@@ -463,52 +463,144 @@ body {
   }
 }
 
+@media(max-width: 768px) {
+  .FkzbxybwElIJngXalJw7 {
+    --carcass-square-padding: 84px;
+    --container-max-width: 768px;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    position: relative;
+  }
 
-.uYxlZbow1W4k5b5Nw3tk {
-  background-color:  rgb(255, 255, 255);
-  padding: 2rem;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
+  .q8ncoq1ekqF7W7n0B7Lk {
+    display: grid;
+    grid-template-rows: repeat(4, min-content);
+    grid-template-columns: 1fr;
+    z-index: 1;
+    position: relative;
+    max-width: calc(var(--container-max-width) - 2 var(--carcass-square-padding));
+    margin: 0 auto;
+  }
+  
+  /* .container::after {
+    content: "";
+    top: 0;
+    bottom: 0;
+    right: calc(3 * var(--carcass-square-padding));
+    left: calc(2 * var(--carcass-square-padding));
+    position: absolute;
+    background-color: rgb(53, 53, 57);
+  } */
+  
+  .mS4Sp1U5klX9nztK3sfe {
+    grid-column: span 1;
+  }
+  
+  .qpUryJ8ILIVeow5QzDB3 {
+    grid-column: span 1;
+  }
 }
 
-.mQdxZ2mieIZUVMXOKPRZ {
-  display: flex;
-  align-items: center;
+@media (min-width: 769px) {
+  .uYxlZbow1W4k5b5Nw3tk {
+    background-color:  rgb(255, 255, 255);
+    padding: 2rem;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+  }
+
+  .mQdxZ2mieIZUVMXOKPRZ {
+    display: flex;
+    align-items: center;
+  }
+
+  .CGzitRTC0qAflm5BjgUA .uYxlZbow1W4k5b5Nw3tk {
+    width: calc(0.5 * var(--container-max-width) - 2 * var(--carcass-square-padding));
+    aspect-ratio: 1;
+  }
+
+  .CGzitRTC0qAflm5BjgUA .rJmKL9ZXb3nMhmT1wp7k {
+    width: calc(0.5 * var(--container-max-width) - 2 * var(--carcass-square-padding));
+    aspect-ratio: 1;
+  }
+
+  .ZZXAcZK1ZCVCI71NR7xU .uYxlZbow1W4k5b5Nw3tk {
+    width: calc((var(--container-max-width) - 4 * var(--carcass-square-padding)) / 3);
+    aspect-ratio: 1;
+  }
+
+  .ZZXAcZK1ZCVCI71NR7xU .rJmKL9ZXb3nMhmT1wp7k {
+    width: calc((var(--container-max-width) - 4 * var(--carcass-square-padding)) / 3);
+    aspect-ratio: 1;
+  }
+
+  .YS0T3ojMP2VrI0CfTlIs {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+
+  .rJmKL9ZXb3nMhmT1wp7k {
+    display: flex;
+  }
+
+  .rJmKL9ZXb3nMhmT1wp7k img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
-.CGzitRTC0qAflm5BjgUA .uYxlZbow1W4k5b5Nw3tk {
-  width: calc(0.5 * var(--container-max-width) - 2 * var(--carcass-square-padding));
-  aspect-ratio: 1;
-}
+@media (max-width: 768px) {
+  .nhPJoVT5Krn0ZDIYBKbv {
+    width: 50%
+  }
 
-.CGzitRTC0qAflm5BjgUA .rJmKL9ZXb3nMhmT1wp7k {
-  width: calc(0.5 * var(--container-max-width) - 2 * var(--carcass-square-padding));
-  aspect-ratio: 1;
-}
+  .uYxlZbow1W4k5b5Nw3tk {
+    background-color:  rgb(255, 255, 255);
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+  }
 
-.ZZXAcZK1ZCVCI71NR7xU .uYxlZbow1W4k5b5Nw3tk {
-  width: calc((var(--container-max-width) - 4 * var(--carcass-square-padding)) / 3);
-  aspect-ratio: 1;
-}
+  .mQdxZ2mieIZUVMXOKPRZ {
+    display: flex;
+    align-items: center;
+  }
 
-.ZZXAcZK1ZCVCI71NR7xU .rJmKL9ZXb3nMhmT1wp7k {
-  width: calc((var(--container-max-width) - 4 * var(--carcass-square-padding)) / 3);
-  aspect-ratio: 1;
-}
+  .CGzitRTC0qAflm5BjgUA .uYxlZbow1W4k5b5Nw3tk {
+    width: 50%;
+    aspect-ratio: 1;
+  }
 
-.YS0T3ojMP2VrI0CfTlIs {
-  font-size: 1.5rem;
-  margin-top: 0;
-}
+  .CGzitRTC0qAflm5BjgUA .rJmKL9ZXb3nMhmT1wp7k {
+    width: 100%;
+    aspect-ratio: 1;
+  }
 
-.rJmKL9ZXb3nMhmT1wp7k {
-  display: flex;
-}
+  .ZZXAcZK1ZCVCI71NR7xU .uYxlZbow1W4k5b5Nw3tk {
+    width: 50%;
+    aspect-ratio: 1;
+  }
 
-.rJmKL9ZXb3nMhmT1wp7k img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  .ZZXAcZK1ZCVCI71NR7xU .rJmKL9ZXb3nMhmT1wp7k {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+
+  .YS0T3ojMP2VrI0CfTlIs {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+
+  .rJmKL9ZXb3nMhmT1wp7k {
+    display: flex;
+  }
+
+  .rJmKL9ZXb3nMhmT1wp7k img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .wpbNtMGpmd4m2xqVtcy9 {
@@ -527,7 +619,7 @@ body {
   position: absolute;
   bottom: -40px;
   left: 0;
-  width: 33%;
+  width: 12rem;
   height: 50px;
 
   /* --- Фоновый паттерн SVG --- */
@@ -544,6 +636,45 @@ body {
   /* --- Управление повторением и размером паттерна --- */
   background-repeat: repeat; /* Повторять паттерн (обычно по умолчанию) */
   background-size: 50px 50px;
+}
+
+@media (max-width: 768px) {
+  .QzLOkXIDD87VdKEIQ5c_ {
+    margin-left: 24px;
+  }
+
+  .agg3PlKwZkT0pxF6mUrd {
+    justify-content: center;
+  }
+
+  .D5enjWNcetTunonj_lV1 {
+    text-align: center
+  }
+
+  .wpbNtMGpmd4m2xqVtcy9::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12rem;
+    height: 50px;
+  
+    /* --- Фоновый паттерн SVG --- */
+    /* Пример 1: Диагональные линии */
+    background-image: url("data:image/svg+xml,%3Csvg width=%2750%27 height=%2750%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M100,25.48c0,6.9-5.6,12.5-12.5,12.5S75,32.38,75,25.48s-5.6-12.5-12.5-12.5S50,18.57,50,25.48s-5.6,12.5-12.5,12.5S25,32.38,25,25.48s-5.6-12.5-12.5-12.5S0,18.57,0,25.48c0,6.9-5.6,12.5-12.5,12.5S-25,32.38-25,25.48s-5.6-12.5-12.5-12.5S-50,18.57-50,25.48%27 stroke=%27%23cccccc%27 fill-rule=%27evenodd%27 fill=%27none%27 stroke-width=%275%27/%3E%3C/svg%3E");
+  
+    /* Пример 2: Точки */
+    /* background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='2' fill='%23aaaaaa'/%3E%3C/svg%3E"); */
+  
+    /* Пример 3: Шахматная доска */
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Crect width='10' height='10' fill='%23dddddd'/%3E%3Crect x='10' y='10' width='10' height='10' fill='%23dddddd'/%3E%3C/svg%3E"); */
+  
+  
+    /* --- Управление повторением и размером паттерна --- */
+    background-repeat: repeat; /* Повторять паттерн (обычно по умолчанию) */
+    background-size: 50px 50px;
+  }
 }
 
 .kNNx8aIKi5VSdDMeqbOl {
