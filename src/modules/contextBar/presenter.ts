@@ -8,6 +8,7 @@ import { type WorldState } from '../worldState';
 import { routerService, RouterService } from '../../shared/services/RouterService';
 import { add } from 'remeda';
 import { onbordingLearning } from '../worldState/onbordingLearning';
+import { log } from 'console';
 
 class Brush {
   public currentBrush = '';
@@ -167,11 +168,15 @@ class Brush {
   };
 
   get allowBrushes() {
+    console.log(this._worldState.currentTool === ToolType.Brush);
+    
     return this._worldState.currentTool === ToolType.Brush;
   }
 
   get allowPanel() {
-    return this._worldState.status === 'level.play.solving' || this._worldState.status === 'editor';
+    return this._worldState.status === 'level.play.solving' || 
+    this._worldState.status === 'editor' || 
+    this._worldState.status === 'sandbox';
   }
 
   get currentTool() {
@@ -181,6 +186,8 @@ class Brush {
   public get clastersBrushList() {
     const isLevels = this._router.location.pathname.includes('levels');
     const isSandbox = this._router.location.pathname.includes('sandbox');
+    console.log("ЧТо это?", isLevels, isSandbox);
+    
     if(isLevels) {
       const clastersBrushes = Object.entries(
         brushRepository.getClastersBrushesByLevelId(this._worldState.levelId),

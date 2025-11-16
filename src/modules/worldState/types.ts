@@ -3,6 +3,7 @@ export type Status =
   | 'level.play.checking.one'
   | 'level.checking.bulk'
   | 'level.completed'
+  | 'sandbox'
   | 'editor';
 // Интерфейс для всех состояний
 export interface IState {

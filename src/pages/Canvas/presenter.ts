@@ -52,7 +52,6 @@ export class CanvasPres {
       // }
 
       if (isSandbox) {
-        console.log(this.sandboxQuery.state.data.map, "THISSANDBOX!!!");
         map = this.sandboxQuery.state.data.map
       }
       return map

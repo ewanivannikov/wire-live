@@ -28,7 +28,11 @@ export const SandboxList = () => {
               // imageSrc={covers[val.slug] || coverPlaceholder}
               title={val.name}
               to={`/sandboxes/${val.slug}`}
-            />
+            >
+              <Button component={LinkRouter} to={`/sandboxes/${val.slug}`}>
+                Открыть песочницу
+              </Button>
+            </Card>
           )}
         </For>
       </div>

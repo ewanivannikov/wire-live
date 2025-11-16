@@ -126,7 +126,7 @@ export class LevelContext {
   private get query() {
       const levelId = this.routerServ.params.levelId;
       return this.levelRepo.getLevelById(levelId);
-    }
+  }
 
   // экспериментальный метод
   public checkSolution = this.logicField.checkSolution;

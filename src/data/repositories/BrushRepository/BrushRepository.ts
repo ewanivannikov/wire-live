@@ -6,6 +6,7 @@ import {
   cacheService,
   CacheService,
 } from '../../../shared';
+import { log } from 'console';
 
 export class BrushRepository {
   constructor(
@@ -25,7 +26,7 @@ export class BrushRepository {
 
   public getClastersBrushesForSandbox() {
     return this.blockClastersBrushesByIds(
-      ['Brush.21.Up', 'Brush.22']
+      []
     );
   }
 
@@ -69,7 +70,7 @@ export class BrushRepository {
         whiteList = { ...whiteList, [key]: { ...value, values: keyWhiteList } };
       }
     });
-
+    
     return whiteList;
   };
 }
