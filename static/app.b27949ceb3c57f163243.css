@@ -2140,6 +2140,58 @@ body {
   transform: scale(0.12);
 }
 
+.XItJOf1aCjbLd1_YMLa4::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url(.././static/assets/atlas.png) -768px -768px repeat;
+  transform-origin: top left;
+  transform: scale(0.12);
+}
+
+.Ub_eA7d2XpYdg0xVzbPL::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url(.././static/assets/atlas.png) -768px -768px repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(180deg) translate(-256px, -256px);
+}
+
+.KCs13qeBzeicfOeOCzyg::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url(.././static/assets/atlas.png) -768px -768px repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(271deg) translate(-256px, 0px);
+}
+
+.swIhNGZohCv2rsRGotI8::before {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: url(.././static/assets/atlas.png) -768px -768px repeat;
+  transform-origin: top left;
+  transform: scale(0.12) rotate(90deg) translate(0px, -256px);
+}
+
 .snlXzClAQQLmrqq2MfLm {
   display: grid;
   grid-gap: 8px;

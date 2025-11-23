@@ -102,5 +102,9 @@
   "Brush.25.Right": "BulbDetector.Right",
   "Brush.25.Down": "BulbDetector.Down",
   "Brush.25.Left": "BulbDetector.Left",
-  "Brush.26": "Wall"
+  "Brush.26": "Wall",
+  "Brush.27.Up": "ConfluentArrow.Up",
+  "Brush.27.Right": "ConfluentArrow.Right",
+  "Brush.27.Down": "ConfluentArrow.Down",
+  "Brush.27.Left": "ConfluentArrow.Left"
 }
