@@ -108,7 +108,11 @@ const {
   iconDirectionalButtonDown,
   iconDirectionalButtonLeft,
   iconDirectionalButtonRight,
-  iconWall
+  iconWall,
+  iconConfluentArrowUp,
+  iconConfluentArrowDown,
+  iconConfluentArrowLeft,
+  iconConfluentArrowRight
 } = styles;
 
 export const IconArrowUp = () => {
@@ -458,6 +462,22 @@ export const IconWall = () => {
   return <div class={`${icon} ${iconWall}`} />;
 }
 
+export const IconConfluentArrowUp = () => {
+  return <div class={`${icon} ${iconConfluentArrowUp}`} />;
+}
+
+export const IconConfluentArrowDown = () => {
+  return <div class={`${icon} ${iconConfluentArrowDown}`} />;
+}
+
+export const IconConfluentArrowRight = () => {
+  return <div class={`${icon} ${iconConfluentArrowRight}`} />;
+}
+
+export const IconConfluentArrowLeft = () => {
+  return <div class={`${icon} ${iconConfluentArrowLeft}`} />;
+}
+
 export const iconsMapping = {
   'Brush.0.Up': IconArrowUp,
   'Brush.0.Down': IconArrowDown,
@@ -565,6 +585,10 @@ export const iconsMapping = {
   'Brush.25.Right': IconBulbDetectorRight,
   'Brush.25.Left': IconBulbDetectorLeft,
   'Brush.26': IconWall,
+  'Brush.27.Up': IconConfluentArrowUp,
+  'Brush.27.Down': IconConfluentArrowDown,
+  'Brush.27.Right': IconConfluentArrowRight,
+  'Brush.27.Left': IconConfluentArrowLeft,
 } as const;
 
 export const iconDirectionMapping = {

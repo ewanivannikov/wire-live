@@ -59,6 +59,8 @@ class Brush {
       this.brushList.refetch().then((data)=>{
         const directions = Object.keys(data).reduce(
           (acc, cur) => {
+            console.log(cur);
+            
             const currentBrushNumber = new Tile(cur).vector[1];
             if (number === currentBrushNumber) {
               acc.push(new Tile(cur).vector[2]);

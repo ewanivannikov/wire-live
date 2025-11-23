@@ -154,7 +154,7 @@ export class Fields {
       let percentage: number = 0;
       this.clearStates();
 
-      this.arrowCache.forEach((arrow) => {
+      this.arrowCache.forEach((arrow) => {       
         arrow.activeStates(this);
         arrow.updateState(this);
       });

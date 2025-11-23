@@ -66,6 +66,7 @@ class World {
         this.map,
         this._worldState
       );
+      
       scene.add(tileMap.tileGroup);
   
       const onIntersectCanvas = createRaycaster(

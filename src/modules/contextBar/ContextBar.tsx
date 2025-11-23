@@ -19,6 +19,7 @@ export const ContextBar = () => {
 
   createEffect(() => {
     state.initHotKeys();
+    
   }, null);
 
   const handleClick = (el) => {

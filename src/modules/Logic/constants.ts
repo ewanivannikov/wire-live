@@ -26,6 +26,7 @@ export const indexTileToArrow = [
   'Bulb',
   'BulbDetector',
   'Wall',
+  'ConfluentArrow',
 ];
 export const arrowToIndexTile = {
   Arrow: 0,
@@ -55,4 +56,5 @@ export const arrowToIndexTile = {
   Bulb: 24,
   BulbDetector: 25,
   Wall: 26,
+  ConfluentArrow: 27,
 };

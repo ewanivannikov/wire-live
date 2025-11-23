@@ -25,6 +25,7 @@ import { createDirectionalButton } from './DirectionalButton';
 import { createBulb } from './Bulb';
 import { createBulbDetector } from './BulbDetector';
 import { createWall } from './Wall';
+import { createConfluentArrow } from './ConfluentArrow';
 
 export const fabricArrow = (
   nameType: string,
@@ -154,6 +155,11 @@ export const fabricArrow = (
 
   if (nameType === 'Wall') {
     const result = createWall(position, direction);
+    return result;
+  }
+
+  if (nameType === 'ConfluentArrow') {
+    const result = createConfluentArrow(position, direction);
     return result;
   }
 };
