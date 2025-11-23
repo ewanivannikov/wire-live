@@ -6,7 +6,6 @@ import {
   cacheService,
   CacheService,
 } from '../../../shared';
-import { log } from 'console';
 
 export class BrushRepository {
   constructor(
@@ -39,6 +38,18 @@ export class BrushRepository {
       queryKey: ['brushList'],
       queryFn: async () => {
         const result = await brushSources.getBrushes();
+        return result;
+      },
+    });
+
+    return result;
+  }
+
+  public getClastersBrusheList = () => {
+    const result = this._cacheService.createQuery({
+      queryKey: ['clastersBrushList'],
+      queryFn: async () => {
+        const result = await brushSources.getClastersBrushes();
         return result;
       },
     });

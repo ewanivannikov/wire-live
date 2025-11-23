@@ -1,0 +1,58 @@
+{
+  "Transmitting": {
+    "values": [
+      "Brush.0.Up",
+      "Brush.2.Up",
+      "Brush.3.Up",
+      "Brush.4.Up",
+      "Brush.5.Up",
+      "Brush.6.Up.>",
+      "Brush.7.Up",
+      "Brush.9.Up",
+      "Brush.10.Up.>",
+      "Brush.11.Up",
+      "Brush.12.Up.>",
+      "Brush.13.Up.>"
+    ],
+    "label": "Передающие сигнал",
+    "description":
+      "Активируется: On any incoming signal.\nПри активации: Sends a signal forwards."
+  },
+  "Sources": {
+    "values": ["Brush.1", "Brush.8"],
+    "label": "Источники сигнала",
+    "description":
+      "Активируется: On any incoming signal.\nПри активации: Sends a signal forwards."
+  },
+  "Logical": {
+    "values": [
+      "Brush.14.Up",
+      "Brush.15.Up",
+      "Brush.16.Up",
+      "Brush.17.Up",
+      "Brush.18.Up",
+      "Brush.27.Up"
+    ],
+    "label": "Логические",
+    "description":
+      "Активируется: On any incoming signal.\nПри активации: Sends a signal forwards."
+  },
+  "Controls": {
+    "values": ["Brush.20", "Brush.23.Up"],
+    "label": "Контролы",
+    "description":
+      "Активируется: On any incoming signal.\nПри активации: Sends a signal forwards."
+  },
+  "Indicators": {
+    "values": ["Brush.24", "Brush.25.Up"],
+    "label": "Индикаторы",
+    "description":
+      "Активируется: On any incoming signal.\nПри активации: Sends a signal forwards."
+  },
+  "Special": {
+    "values": ["Brush.19.Up", "Brush.21.Up", "Brush.22", "Brush.26"],
+    "label": "Особые знаки",
+    "description":
+      "Активируется: On any incoming signal.\nПри активации: Sends a signal forwards."
+  }
+}

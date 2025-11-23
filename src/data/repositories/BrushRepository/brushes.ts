@@ -278,7 +278,8 @@ export const groupsBrushes = {
       'Активация: ',
   },
 };
-
+// Эту структуру надо переписать на json src\data\sources\brush\clastersBrushes.json
+// На асинхронный интерфейс
 export const clastersBrushes = {
   Transmitting: {
     values: [

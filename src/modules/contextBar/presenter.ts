@@ -8,7 +8,6 @@ import { type WorldState } from '../worldState';
 import { routerService, RouterService } from '../../shared/services/RouterService';
 import { add } from 'remeda';
 import { onbordingLearning } from '../worldState/onbordingLearning';
-import { log } from 'console';
 
 class Brush {
   public currentBrush = '';
@@ -213,6 +212,10 @@ class Brush {
 
   public runLearning = () => {
     onbordingLearning.drive();
+  }
+  //нужно переписать на асинхронный интерфейс
+  private get clastersBrushListQuery() {
+    return brushRepository.getClastersBrusheList();
   }
 }
 

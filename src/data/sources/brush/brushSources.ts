@@ -11,4 +11,12 @@ export const brushSources = {
       return error;
     }
   },
+  getClastersBrushes: async () => {
+    try {
+      const result = await httpService.get('./brush/clastersBrushes.json').json();
+      return result;
+    } catch (error) {
+      return error;
+    }
+  }
 }
