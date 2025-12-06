@@ -1,12 +1,12 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { DirectionType, Tile, ToolType } from '../toolbar';
-import type { TileId } from '../../data';
-import { brushRepository } from '../../data';
+import type { LevelRepository, TileId } from '../../data';
+import { brushRepository, levelRepository } from '../../data';
 import { inputArrowModel, InputArrowModel } from './InputArrow/viewModel';
 import { outputArrowModel, OutputArrowModel } from './OutputArrow';
 import { type WorldState } from '../worldState';
 import { routerService, RouterService } from '../../shared/services/RouterService';
-import { add } from 'remeda';
+import { intersection } from 'remeda';
 import { onbordingLearning } from '../worldState/onbordingLearning';
 
 class Brush {
@@ -25,7 +25,8 @@ class Brush {
     private readonly inputArrowModel: InputArrowModel,
     private readonly outputArrowModel: OutputArrowModel,
     private readonly _router: RouterService,
-    private readonly _worldState?: WorldState
+    private readonly _levelRepository: LevelRepository,
+    private readonly _worldState?: WorldState,
   ) {
     makeAutoObservable(this);
     this.init();
@@ -85,7 +86,7 @@ class Brush {
   }
 
   setCurrentBrush = (brush: TileId) => {
-    runInAction(async ()=>{
+    runInAction(async () => { 
       this.currentBrush = brush;
       const direction = new Tile(brush).vector[2];
       this.currentBrushDirection = direction;
@@ -187,35 +188,62 @@ class Brush {
   public get clastersBrushList() {
     const isLevels = this._router.location.pathname.includes('levels');
     const isSandbox = this._router.location.pathname.includes('sandbox');
-    console.log("ЧТо это?", isLevels, isSandbox);
     
     if(isLevels) {
       const clastersBrushes = Object.entries(
-        brushRepository.getClastersBrushesByLevelId(this._worldState.levelId),
+        this.getClastersBrushesByLevelId(this._worldState.levelId),
       );
+      
       const firstBrush = clastersBrushes[0][1].values[0];
+      
       this.setCurrentBrush(firstBrush);
       return clastersBrushes
     }
     if(isSandbox) {
       const clastersBrushes = Object.entries(
-        brushRepository.getClastersBrushesForSandbox(),
+        this.getClastersBrushesForSandbox(),
       );
+      
       const firstBrush = clastersBrushes[0][1].values[0];
+
       this.setCurrentBrush(firstBrush);
       return clastersBrushes
     }
-    const clastersBrushes = Object.entries(brushRepository.clastersBrushes);
-    this.setCurrentBrush(clastersBrushes[0][1].values[0]);
-    return clastersBrushes;
   }
 
   public runLearning = () => {
     onbordingLearning.drive();
   }
-  //нужно переписать на асинхронный интерфейс
+
+  private getClastersBrushesByLevelId = (levelId: string) => {
+    return this.getClastersBrushesByIds(
+      this._levelRepository.getLevelById(levelId).allowedBrushList,
+    );
+  }
+
+  private getClastersBrushesForSandbox = () => {
+    return this.clastersBrushListQuery.data
+  }
+
+  private getClastersBrushesByIds = (ids: string[] = []) => {
+    if (ids.length === 0) return this.clastersBrushListQuery.data;
+    let whiteList = {};
+    const filteredClasters = Object.entries(this.clastersBrushListQuery.data);
+    
+    filteredClasters.forEach(([key, value]) => {
+      const keyWhiteList = intersection(ids, value.values);
+      if (keyWhiteList.length > 0) {
+        whiteList = { ...whiteList, [key]: { ...value, values: keyWhiteList } };
+      }
+    });
+
+    return whiteList;
+  };
+
   private get clastersBrushListQuery() {
-    return brushRepository.getClastersBrusheList();
+    const clastersBrusheList = brushRepository.getClastersBrusheList();
+    clastersBrusheList.execute();
+    return clastersBrusheList;
   }
 }
 
@@ -223,5 +251,6 @@ export const createBrush = (worldState: WorldState) => new Brush(
   inputArrowModel,
   outputArrowModel,
   routerService,
-  worldState
+  levelRepository,
+  worldState,
 );
