@@ -16,8 +16,8 @@ import { AsyncSignalBase, type AsyncStatus } from "./AsyncSignalBase";
 
 const statusMap: Record<"pending" | "error" | "success", AsyncStatus> = {
 	pending: "pending",
-	error: "rejected",
-	success: "resolved",
+	error: "error",
+	success: "success",
 };
 
 /**

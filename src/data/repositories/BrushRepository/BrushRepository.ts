@@ -1,6 +1,4 @@
 import { brushSources } from '../../sources/brush/brushSources';
-import { groupsBrushes } from './brushes';
-import { difference } from 'remeda';
 import {
   cacheService,
   CacheService,
@@ -11,10 +9,6 @@ export class BrushRepository {
   constructor(
     private readonly _cacheService: CacheService,
   ) {}
-
-  public get groupsBrushes() {
-    return groupsBrushes;
-  }
 
   public getBrushList = () => {
     const result = this._cacheService.createQuery({
@@ -33,6 +27,18 @@ export class BrushRepository {
       queryKey: ['clastersBrushList'],
       queryFn: async () => {
         const result = await brushSources.getClastersBrushes();
+        return result;
+      },
+    });
+
+    return result;
+  }
+
+  public getGroupsBrushes = () => {
+    const result = createAsyncSignalQuery({
+      queryKey: ['groupsBrushes'],
+      queryFn: async () => {
+        const result = await brushSources.getGroupsBrushes();
         return result;
       },
     });

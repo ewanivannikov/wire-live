@@ -16,5 +16,13 @@ export const brushSources = {
     } catch (error) {
       return error;
     }
+  },
+  getGroupsBrushes: async () => {
+    try {
+      const result = await httpService.get('./brush/groupsBrushes.json').json();
+      return result;
+    } catch (error) {
+      return error;
+    }
   }
 }

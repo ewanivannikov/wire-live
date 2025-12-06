@@ -1,6 +1,6 @@
 import { action, makeObservable, observable } from "mobx";
 
-export type AsyncStatus = "pending" | "rejected" | "resolved";
+export type AsyncStatus = "pending" | "error" | "success";
 
 export class AsyncSignalBase<TData, TInput, TError = unknown> {
 	@observable accessor status: AsyncStatus;
@@ -42,12 +42,12 @@ export class AsyncSignalBase<TData, TInput, TError = unknown> {
 			if (controller.signal.aborted) throw new Error("Operation was cancelled");
 			const result = await this.asyncFn(input);
 			if (controller.signal.aborted) throw new Error("Operation was cancelled");
-			this.status = "resolved";
+			this.status = "success";
 			this.data = result;
 			this.error = null;
 		} catch (err) {
 			if (err instanceof Error && err.name === "AbortError") return;
-			this.status = "rejected";
+			this.status = "error";
 			this.data = null;
 			this.error = err as TError;
 		} finally {

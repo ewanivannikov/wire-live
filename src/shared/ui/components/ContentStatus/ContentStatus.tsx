@@ -1,4 +1,4 @@
-import { createEffect, Show } from 'solid-js';
+import { JSX, Show } from 'solid-js';
 
 export type ContentStatusProps = {
   status: 'pending' | 'error' | 'success';

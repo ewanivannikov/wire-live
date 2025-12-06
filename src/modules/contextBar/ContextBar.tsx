@@ -1,4 +1,4 @@
-import { Button, Listbox, Popover, SegmentedButtons } from '../../shared';
+import { ContentStatus, Listbox, Popover, SegmentedButtons } from '../../shared';
 import { createEffect, For, Show, useContext } from 'solid-js';
 import { brushRepository } from '../../data/repositories';
 import { createBrush } from './presenter';
@@ -49,10 +49,13 @@ export const ContextBar = () => {
                 <Dynamic component={iconsMapping[state.currentBrush]} />
               </Popover.Target>
               <Popover id="brushes">
-                <Listbox
-                  aria-activedescendant={state.currentBrush}
-                  onFocusChange={handleClick}
+                <ContentStatus
+                  status={state.statusClastersBrushList}
                 >
+                  <Listbox
+                    aria-activedescendant={state.currentBrush}
+                    onFocusChange={handleClick}
+                  >
                   <For each={state.clastersBrushList}>
                     {([_, val]) => (
                       <Listbox.Optgroup label={val.label}>
@@ -62,20 +65,21 @@ export const ContextBar = () => {
                               <Dynamic component={iconsMapping[brush]} />
                               <span
                                 title={
-                                  brushRepository.groupsBrushes[brush]
+                                  state.groupsBrushes[brush]
                                     .description
                                 }
                               >
                                 🛈
                               </span>
-                              {brushRepository.groupsBrushes[brush].label}
+                              {state.groupsBrushes[brush].label}
                             </Listbox.Option>
                           )}
                         </For>
                       </Listbox.Optgroup>
                     )}
                   </For>
-                </Listbox>
+                  </Listbox>
+                </ContentStatus>
               </Popover>
             </label>
             <Show when={state.hasDirection}>

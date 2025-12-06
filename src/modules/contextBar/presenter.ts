@@ -215,6 +215,14 @@ class Brush {
     onbordingLearning.drive();
   }
 
+  public get statusClastersBrushList() {
+    return this.clastersBrushListQuery.status
+  }
+
+  public get groupsBrushes() {
+    return this.groupsBrushesQuery.data
+  }
+
   private getClastersBrushesByLevelId = (levelId: string) => {
     return this.getClastersBrushesByIds(
       this._levelRepository.getLevelById(levelId).allowedBrushList,
@@ -242,6 +250,12 @@ class Brush {
 
   private get clastersBrushListQuery() {
     const clastersBrusheList = brushRepository.getClastersBrusheList();
+    clastersBrusheList.execute();
+    return clastersBrusheList;
+  }
+
+  private get groupsBrushesQuery() {
+    const clastersBrusheList = brushRepository.getGroupsBrushes();
     clastersBrusheList.execute();
     return clastersBrusheList;
   }
