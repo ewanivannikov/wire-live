@@ -1,11 +1,8 @@
 import { For } from 'solid-js';
-import { levelRepository } from '../../data';
 import { Card } from '../../shared/ui/components/Card';
 import { Button } from '../../shared/ui/components/Button';
 import { LinkRouter } from '../../shared/ui/components/LinkRouter';
 
-import sprites from '../../assets/glyphs-sprites.svg';
-import spritesUi from '../../assets/glyphs-sprites-ui.svg';
 import coverAdder from '../../assets/cover-adder.webp';
 import coverBriefing from '../../assets/cover-briefing.webp';
 import coverPlaceholder from '../../assets/cover-placeholder.webp';
@@ -28,8 +25,6 @@ import coverEncoder from '../../assets/cover-encoder.webp'
 import coverSumOfUnits from '../../assets/cover-sum-of-units.webp'
 import { createLevelList } from './presenter';
 import { ContentStatus } from '../../shared';
-
-console.log('sprites', sprites, spritesUi);
 
 const covers = {
   Adder: coverAdder,
@@ -63,8 +58,8 @@ export const LevelList = () => {
 
   return (
     <ContentStatus
-      status={levelList.state.status}
-      error={levelList.state.error}
+      status={levelList.status}
+      error={levelList.error}
     >
       <div class="level-list-grid">
         <For each={levelList.list}>

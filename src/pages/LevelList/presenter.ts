@@ -8,22 +8,24 @@ export class LevelListPres {
     makeAutoObservable(this);
   }
 
-  public get state() {
-    const state= this.query.state;
+  public get status() {
+    const state= this.query.status;
     
     return state
   }
 
-  public get list() {
-    return Object.values(this.query.state.data)
+  public get error() {
+    return this.query.error
   }
 
-  public refetch = () => {
-    return this.query.refetch()
+  public get list() {
+    return Object.values(this.query.data)
   }
 
   private get query() {
-    return this.levelRepository.getLevelList();
+    const levelList = this.levelRepository.getLevelList();
+    levelList.execute()
+    return levelList;
   }
 }
 

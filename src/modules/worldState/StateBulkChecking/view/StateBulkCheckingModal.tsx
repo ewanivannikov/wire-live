@@ -43,7 +43,7 @@ export const StateBulkCheckingModal = () => {
           Назад
         </Button>
         <Show when={worldState.statusCompleted === 'completed'}>
-          <Button to="/" component={LinkRouter}>
+          <Button to="/levels" component={LinkRouter}>
             Дальше
           </Button>
         </Show>

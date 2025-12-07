@@ -1,5 +1,4 @@
 import { httpService } from '../../../shared/services/HttpService';
-// import brushes from './brushes.json';
 
 export const levelSources = {
   getLevels: async () => {

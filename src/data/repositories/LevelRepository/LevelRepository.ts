@@ -1,6 +1,7 @@
 import { ArrowBase } from '../../../modules/Logic/ArrowBase';
 import { arrowToIndexTile } from '../../../modules/Logic/constants';
 import { cacheService } from '../../../shared';
+import { createAsyncSignalQuery } from '../../../shared/services/AsyncSignal/AsyncSignalQuery';
 import { generateRandomStrings } from '../../../shared/utils/generateRandomStrings';
 import { getRandomNumberExceptExceptions } from '../../../shared/utils/getRandomNumberExceptExceptions';
 import { levelSources } from '../../sources/level/levelSources';
@@ -8,25 +9,23 @@ import { levels } from './levels';
 import { patternArrowCache } from './patternArrowCache';
 
 export class LevelRepository {
-  constructor(
-    private readonly _cacheService: CacheService,
-  ) {}
+  constructor() {}
   public getLevelById(id = 'Sketch') {
     return levels[id];
   }
 
   public getLevelById2(id = 'Sketch') {
-      const result = this._cacheService.createQuery({
-        queryKey: ['level', id],
-  
-        queryFn: async () => {
-          const result = await levelSources.getLevelById(id);
-          return result;
-        },
-      });
-  
-      return result;
-    }
+    const result = createAsyncSignalQuery({
+      queryKey: ['level', id],
+
+      queryFn: async () => {
+        const result = await levelSources.getLevelById(id);
+        return result;
+      },
+    });
+
+    return result;
+  }
 
   public getUserMap(id = 'Sketch', map: Map<string, ArrowBase>) {
     for (let i = 0; i < this.getLevelById(id).length; i++) {
@@ -89,17 +88,17 @@ export class LevelRepository {
   }
 
   public getLevelList = () => {
-        const result = this._cacheService.createQuery({
-          queryKey: ['levelList'],
-  
-          queryFn: async () => {
-            const result = await levelSources.getLevels();
-            return result;
-          },
-        });
-    
+    const result = createAsyncSignalQuery({
+      queryKey: ['levelList'],
+
+      queryFn: async () => {
+        const result = await levelSources.getLevels();
         return result;
-      }
+      },
+    });
+
+    return result;
+  }
 
   public createMap(tileData: Map<string, ArrowBase>) {
     const array = Array.from(tileData, ([name, value]) => {
