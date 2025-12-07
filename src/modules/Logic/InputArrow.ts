@@ -31,14 +31,14 @@ class InputArrow extends ArrowBase {
       } else { this.active = 1 - this.binaryArray[this.index - 1] }
     }
     if (this.active === 1) {
-      this.state = 'Earth';
+      this.state = 'Bright';
     } else {
       this.state = 'None';
     }
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Earth') {
+    if (this.state === 'Bright') {
       let newPosition = this.position;
       if (this.direction === 'Up') {
         newPosition = newPosition.add(0, -1);

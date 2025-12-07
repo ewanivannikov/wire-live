@@ -12,14 +12,14 @@ class XorGate extends ArrowBase {
       fields.getSignal(this.position.coordinates) >= 1 &&
       fields.getSignal(this.position.coordinates) % 2 === 1
     ) {
-      this.state = 'Earth';
+      this.state = 'Bright';
     } else {
       this.state = 'None';
     }
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Earth') {
+    if (this.state === 'Bright') {
       let newPosition = this.position;
       if (this.direction === 'Up') {
         newPosition = newPosition.add(0, -1);

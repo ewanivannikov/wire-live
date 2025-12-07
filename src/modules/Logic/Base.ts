@@ -9,11 +9,11 @@ import { emitter } from '../../shared/services/EventEmitterService';
 export const solutionChecked = Symbol('solutionChecked');
 export const solutionPercentage = Symbol('solutionPercentage');
 export enum states {
-  Earth = 'Earth',
+  Bright = 'Bright',
   Wait = 'Wait',
-  Mars = 'Mars',
+  Mistake = 'Mistake',
   Moon = 'Moon',
-  Venus = 'Venus'
+  Correct = 'Correct'
 }
 
 export class Fields {

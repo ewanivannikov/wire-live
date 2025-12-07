@@ -12,19 +12,19 @@ class DelayArrow extends ArrowBase {
       fields.getSignal(this.position.coordinates) >= 1 &&
       this.state === 'None'
     ) {
-      this.state = 'Saturn';
+      this.state = 'Underbright';
     } else if (
-      this.state === 'Saturn' ||
+      this.state === 'Underbright' ||
       fields.getSignal(this.position.coordinates)
     ) {
-      this.state = 'Earth';
+      this.state = 'Bright';
     } else {
       this.state = 'None';
     }
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Earth') {
+    if (this.state === 'Bright') {
       let newPosition = this.position;
       if (this.direction === 'Up') {
         newPosition = newPosition.add(0, -1);

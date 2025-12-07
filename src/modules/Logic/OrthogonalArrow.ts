@@ -9,14 +9,14 @@ class OrthogonalArrow extends ArrowBase {
 
   conditionStates(fields: Fields) {
     if (fields.getSignal(this.position.coordinates) >= 1) {
-      this.state = 'Earth';
+      this.state = 'Bright';
     } else {
       this.state = 'None';
     }
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Earth') {
+    if (this.state === 'Bright') {
       const newPosition = this.position;
       const newDirection = this.direction;
       let n = 1;

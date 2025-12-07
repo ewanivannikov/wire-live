@@ -12,9 +12,9 @@ class Latch extends ArrowBase {
       this.state === 'None' &&
       fields.getSignal(this.position.coordinates) >= 2
     ) {
-      this.state = 'Earth';
+      this.state = 'Bright';
     } else if (
-      this.state === 'Earth' &&
+      this.state === 'Bright' &&
       fields.getSignal(this.position.coordinates) === 1
     ) {
       this.state = 'None';
@@ -22,7 +22,7 @@ class Latch extends ArrowBase {
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Earth') {
+    if (this.state === 'Bright') {
       let newPosition = this.position;
       if (this.direction === 'Up') {
         newPosition = newPosition.add(0, -1);

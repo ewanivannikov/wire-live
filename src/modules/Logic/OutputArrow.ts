@@ -74,7 +74,7 @@ class OutputArrow extends ArrowBase {
       this.state = 'Wait';
     }
     if (this.isValidIn) {
-      this.state = 'Venus';
+      this.state = 'Correct';
       this.patternValidation.push(this.state);
     }
     if (!this.isValidIn) {
@@ -82,7 +82,7 @@ class OutputArrow extends ArrowBase {
       this.patternValidation = [];
     }
     if (this.cycleAmount === 0) {
-      this.state = 'Mars';
+      this.state = 'Mistake';
       this.patternValidation.push(this.state);
     }
   }
@@ -91,9 +91,9 @@ class OutputArrow extends ArrowBase {
 
   public get validated() {
     
-    if (this.patternValidation.includes('Mars')) return 'rejected';
+    if (this.patternValidation.includes('Mistake')) return 'rejected';
     if (
-      this.patternValidation.every((item) => item === 'Venus') &&
+      this.patternValidation.every((item) => item === 'Correct') &&
       this.patternValidation.length >= this.patternLength
     ) {
       this.cycleAmount = -1;

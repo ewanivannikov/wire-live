@@ -14,13 +14,13 @@ import { Loop } from './systems';
 import { Grid } from './Grid';
 
 const hex = {
-  Overearth: 0x53ebfc,
-  Earth: 0x17d3e8,
-  Saturn: 0x00a7bb,
-  Venus: 0x3dc13c,
-  Mars: 0xf13637,
+  Overbright: 0xAAD5F3,
+  Bright: 0x5FB6F3,
+  Underbright: 0x0076C9,
+  Correct: 0x3dc13c,
+  Mistake: 0xf13637,
   Sun: 0xffc732,
-  Wall: 0xcccccc,
+  Wall: 0xe6e6e6,
 };
 
 export class TileMap {

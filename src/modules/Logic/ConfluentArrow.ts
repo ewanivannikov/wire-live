@@ -9,22 +9,22 @@ class ConfluentArrow extends ArrowBase {
 
   conditionStates(fields: Fields) {
     if ((fields.getSignal(this.position.coordinates) >= 1)) {
-      if (this.state === 'None' || this.state === 'Earth') {
-        this.state = 'Saturn';
+      if (this.state === 'None' || this.state === 'Bright') {
+        this.state = 'Underbright';
       } else {
-        this.state = 'Overearth';
+        this.state = 'Overbright';
       }
     } else {
-      if (this.state === 'None' || this.state === 'Earth') {
+      if (this.state === 'None' || this.state === 'Bright') {
         this.state = 'None';
       } else {
-        this.state = 'Earth';
+        this.state = 'Bright';
       }
     }
   }
 
   activeStates(fields: Fields) {
-    if (this.state === 'Earth' || this.state === 'Overearth') {
+    if (this.state === 'Bright' || this.state === 'Overbright') {
       let newPosition = this.position;
       if (this.direction === 'Up') {
         newPosition = newPosition.add(0, -1);
