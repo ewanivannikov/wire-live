@@ -12,7 +12,9 @@ class TaskPanel {
 
   private get level() {
     const levelId = routerService.params.levelId;
-    return this.levelRepo.getLevelById(levelId);
+    const level = this.levelRepo.getLevelById2(levelId)
+    level.execute()
+    return level.data;
   }
 
   public get title() {

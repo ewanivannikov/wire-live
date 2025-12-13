@@ -22,7 +22,7 @@ export class SolutionRepository {
   }
 
   public createDraft(map: Map<string, ArrowBase>, levelId = 'Sketch') {
-    const userMap = this.levelRepo.getUserMap(levelId, map);
+    const userMap = this.getUserMap(levelId, map);
     const input = {
       status: 'draft',
       map: userMap,
@@ -33,7 +33,7 @@ export class SolutionRepository {
   }
 
   public createCleanCopy(map: Map<string, ArrowBase>, levelId = 'Sketch') {
-    const userMap = this.levelRepo.getUserMap(levelId, map);
+    const userMap = this.getUserMap(levelId, map);
     const input = {
       status: 'cleanCopy',
       map: userMap,
@@ -44,6 +44,17 @@ export class SolutionRepository {
   public getSolutionList = () => {
     return Object.values(solutions);
   };
+
+  private getUserMap = (id = 'Sketch', map: Map<string, ArrowBase>) => {
+    const level = this.levelRepo.getLevelById2(id)
+    level.execute()
+    for (let i = 0; i < level.data.length; i++) {
+      map.delete(`${i.x},${i.y}`)
+    }
+
+    const userMap = this.levelRepo.createMap(map);
+    return userMap;
+  }
 }
 
 export const solutionRepository = new SolutionRepository(levelRepository, userRepository);

@@ -27,15 +27,6 @@ export class LevelRepository {
     return result;
   }
 
-  public getUserMap(id = 'Sketch', map: Map<string, ArrowBase>) {
-    for (let i = 0; i < this.getLevelById(id).length; i++) {
-      map.delete(`${i.x},${i.y}`)
-    }
-
-    const userMap = this.createMap(map);
-    return userMap;
-  }
-
   public getPatternArrowCache(id = 'Sketch') {
     return patternArrowCache[id];
   }

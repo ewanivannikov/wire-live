@@ -188,6 +188,7 @@ class Brush {
   public get clastersBrushList() {
     const isLevels = this._router.location.pathname.includes('levels');
     const isSandbox = this._router.location.pathname.includes('sandbox');
+    const isEditor = this._router.location.pathname.includes('editor');
     
     if(isLevels) {
       const clastersBrushes = Object.entries(
@@ -199,7 +200,7 @@ class Brush {
       this.setCurrentBrush(firstBrush);
       return clastersBrushes
     }
-    if(isSandbox) {
+    if(isSandbox || isEditor) {
       const clastersBrushes = Object.entries(
         this.getClastersBrushesForSandbox(),
       );
@@ -224,8 +225,10 @@ class Brush {
   }
 
   private getClastersBrushesByLevelId = (levelId: string) => {
+    const level = this._levelRepository.getLevelById2(levelId);
+    level.execute()
     return this.getClastersBrushesByIds(
-      this._levelRepository.getLevelById(levelId).allowedBrushList,
+      level.data.allowedBrushList,
     );
   }
 

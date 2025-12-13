@@ -1,7 +1,7 @@
 {
   "slug": "FineWorkII",
   "name": "Тонкая работа 2",
-  "description": "Данный уровень является более сложным и не обязателен к полному полному прохождению. Ваша задача соееденить вводы<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Input\" /></svg> и выводы<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Output\" /></svg> с одинаковыми именами, огибая расставленные стены",
+  "description": "Данный уровень является более сложным и не обязателен к полному прохождению. Ваша задача соееденить вводы<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Input\" /></svg> и выводы<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Output\" /></svg> с одинаковыми именами, огибая расставленные стены",
   "map": [
     {
       "tileId": "Brush.26",
