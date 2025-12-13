@@ -1,0 +1,286 @@
+{
+  "slug": "FillTheGaps",
+  "name": "Заполнить пропуски",
+  "description": "Используя новый знак, сделайте сигнал непрерывным.",
+  "map": [
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -1,
+      "y": 2,
+      "label": "A"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": -1,
+      "y": -5,
+      "label": "1"
+    }
+  ],
+  "allowedBrushList": [
+    "Brush.0.Up",
+    "Brush.5.Up",
+    "Brush.6.Up.>",
+    "Brush.9.Up",
+    "Brush.10.Up.>",
+    "Brush.13.Up.>",
+    "Brush.14.Up"
+  ],
+  "requisites": {
+    "1": {
+      "9e3uq3597l": {
+        "pattern": [
+          6,
+          2,
+          9,
+          2,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "5du448y38z": {
+        "pattern": [
+          20
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "2": {
+      "9e3uq3597l": {
+        "pattern": [
+          18,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "5du448y38z": {
+        "pattern": [
+          20
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "3": {
+      "9e3uq3597l": {
+        "pattern": [
+          2,
+          8,
+          4,
+          3,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "5du448y38z": {
+        "pattern": [
+          20
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "4": {
+      "9e3uq3597l": {
+        "pattern": [
+          3,
+          14,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "5du448y38z": {
+        "pattern": [
+          20
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "5": {
+      "9e3uq3597l": {
+        "pattern": [
+          15,
+          2,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "5du448y38z": {
+        "pattern": [
+          20
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    }
+  },
+  "optionalChallenges": {}
+}

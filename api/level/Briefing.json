@@ -2,33 +2,7 @@
   "slug": "Briefing",
   "name": "Хорошее начало",
   "description": "Нарисуйте прямую из знаков-стрелок, чтобы передать сигналы от ввода<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Input\" /></svg> к выводу<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Output\" /></svg>. Это будет хорошим началом для вас! \n\nCлева-сверху выбран знак \"Стрелка\" <svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Arrow\" /></svg>. Чтобы проверить решение нажмите кнопку \"Проверка\" <svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites-ui.svg#SendHorizontal\" /></svg>. Для редактирования вашего решения нажмите кнопку \"Решение\".",
-  "patternArrowCache": {
-    "6e6h3481iv": {
-      "tileId": "Brush.22",
-      "x": -2,
-      "y": -3,
-      "label": "B"
-    },
-    "337fhpqlvc": {
-      "tileId": "Brush.22",
-      "x": 1,
-      "y": -3,
-      "label": "A"
-    },
-    "66sg9if0ze": {
-      "tileId": "Brush.21.Up",
-      "x": -2,
-      "y": 1,
-      "label": "B"
-    },
-    "257yh28x22": {
-      "tileId": "Brush.21.Up",
-      "x": 1,
-      "y": 1,
-      "label": "A"
-    }
-  },
-  "baseCache": [
+  "map": [
     {
       "tileId": "Brush.0.Up",
       "x": -2,
@@ -153,6 +127,30 @@
       "tileId": "Brush.26",
       "x": -1,
       "y": 2
+    },
+    {
+      "tileId": "Brush.22",
+      "x": -2,
+      "y": -3,
+      "label": "B"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 1,
+      "y": -3,
+      "label": "A"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -2,
+      "y": 1,
+      "label": "B"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": 1,
+      "y": 1,
+      "label": "A"
     }
   ],
   "allowedBrushList": [

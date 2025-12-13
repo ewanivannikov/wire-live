@@ -1,0 +1,686 @@
+{
+  "slug": "OrOrOr",
+  "name": "Или, или, или",
+  "description": "Попарно соедените вводы<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Input\" /></svg> и каждое объединение отправте в соответствующий вывод<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Output\" /></svg>",
+  "map": [
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 8,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 9,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 9,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 9,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 9,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 9,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 9,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 9,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 9,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 9,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 8,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -10
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -11
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -11
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -10
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -11
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -10
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -11
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -10
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -4,
+      "y": 2,
+      "label": "A"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": 0,
+      "y": 2,
+      "label": "B"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": 4,
+      "y": 2,
+      "label": "C"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": -4,
+      "y": -10,
+      "label": "A+B"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 0,
+      "y": -10,
+      "label": "A+C"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 4,
+      "y": -10,
+      "label": "B+C"
+    }
+  ],
+  "allowedBrushList": [
+    "Brush.0.Up",
+    "Brush.5.Up",
+    "Brush.6.Up.>",
+    "Brush.9.Up",
+    "Brush.10.Up.>"
+  ],
+  "requisites": {
+    "1": {
+      "oz232hni5d": {
+        "pattern": [
+          8,
+          1,
+          9,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "wa230tzqi0": {
+        "pattern": [
+          1,
+          7,
+          2,
+          5,
+          3,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "u82c5q5127": {
+        "pattern": [
+          11,
+          1,
+          3,
+          4,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "j64d94zn7m": {
+        "pattern": [
+          18,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "600v4l312b": {
+        "pattern": [
+          18,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "ikdup875p3": {
+        "pattern": [
+          11,
+          1,
+          6,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "2": {
+      "oz232hni5d": {
+        "pattern": [
+          5,
+          1,
+          7,
+          4,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "wa230tzqi0": {
+        "pattern": [
+          1,
+          11,
+          1,
+          6,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "u82c5q5127": {
+        "pattern": [
+          8,
+          5,
+          2,
+          1,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "j64d94zn7m": {
+        "pattern": [
+          5,
+          1,
+          7,
+          4,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "600v4l312b": {
+        "pattern": [
+          15,
+          1,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "ikdup875p3": {
+        "pattern": [
+          8,
+          4,
+          3,
+          1,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "3": {
+      "oz232hni5d": {
+        "pattern": [
+          12,
+          5,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "wa230tzqi0": {
+        "pattern": [
+          18,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "u82c5q5127": {
+        "pattern": [
+          3,
+          1,
+          6,
+          9,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "j64d94zn7m": {
+        "pattern": [
+          18,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "600v4l312b": {
+        "pattern": [
+          12,
+          5,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "ikdup875p3": {
+        "pattern": [
+          18,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    }
+  },
+  "optionalChallenges": {}
+}

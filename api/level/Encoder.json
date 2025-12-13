@@ -1,0 +1,504 @@
+{
+  "slug": "Encoder",
+  "name": "Кодирование",
+  "description": "Представьте каждое значение с ввода в двоичной системе(соответственно A0 - первый разряд, A1 - второй разрял и т.д.).",
+  "map": [
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -10
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -11
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -11
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -10
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": -18
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": -19
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -19
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": -19
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -19
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -19
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -19
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -19
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -18
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -18
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -17
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -17
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -16
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -15
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -14
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -13
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -18
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -17
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -17
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -17
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -16
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -15
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -14
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -13
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -2,
+      "y": 0,
+      "label": "5"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": 3,
+      "y": 0,
+      "label": "0"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": 2,
+      "y": 0,
+      "label": "1"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": 1,
+      "y": 0,
+      "label": "2"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": 0,
+      "y": 0,
+      "label": "3"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -1,
+      "y": 0,
+      "label": "4"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -3,
+      "y": 0,
+      "label": "6"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -4,
+      "y": 0,
+      "label": "7"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": -2,
+      "y": -17,
+      "label": "A2"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 0,
+      "y": -17,
+      "label": "A1"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 2,
+      "y": -17,
+      "label": "A0"
+    }
+  ],
+  "allowedBrushList": [
+    "Brush.0.Up",
+    "Brush.5.Up",
+    "Brush.6.Up.>",
+    "Brush.9.Up",
+    "Brush.10.Up.>",
+    "Brush.13.Up.>",
+    "Brush.15.Up",
+    "Brush.14.Up"
+  ],
+  "requisites": {
+    "1": {
+      "7j4jbq4yi4": {
+        "pattern": [
+          14,
+          2
+        ],
+        "hasCycle": false,
+        "initialValue": 0
+      },
+      "6nk3dq32g3": {
+        "pattern": [
+          12,
+          2,
+          2
+        ],
+        "hasCycle": false,
+        "initialValue": 0
+      },
+      "56jcko7f16": {
+        "pattern": [
+          10,
+          2,
+          4
+        ],
+        "hasCycle": false,
+        "initialValue": 0
+      },
+      "0kp5705i09": {
+        "pattern": [
+          8,
+          2,
+          6
+        ],
+        "hasCycle": false,
+        "initialValue": 0
+      },
+      "30g00i6gi2": {
+        "pattern": [
+          6,
+          2,
+          8
+        ],
+        "hasCycle": false,
+        "initialValue": 0
+      },
+      "viuq3t0uoi": {
+        "pattern": [
+          4,
+          2,
+          10
+        ],
+        "hasCycle": false,
+        "initialValue": 0
+      },
+      "1j5l74a5xh": {
+        "pattern": [
+          2,
+          2,
+          12
+        ],
+        "hasCycle": false,
+        "initialValue": 0
+      },
+      "0o17357250": {
+        "pattern": [
+          2,
+          17,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "7h7hbec036": {
+        "pattern": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "j34wsls1zk": {
+        "pattern": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "389kpk93xr": {
+        "pattern": [
+          8,
+          8
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    }
+  },
+  "optionalChallenges": {}
+}

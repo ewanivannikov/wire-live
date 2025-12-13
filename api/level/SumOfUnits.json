@@ -1,0 +1,402 @@
+{
+  "slug": "SumOfUnits",
+  "name": "Сумма единиц",
+  "description": "Сложите две единицы в двоичной системе. На вывод<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Output\" /></svg> C должен прийти переносимый в следующий заряд остаток.",
+  "map": [
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.21.Right",
+      "x": -5,
+      "y": 1,
+      "label": "A"
+    },
+    {
+      "tileId": "Brush.21.Left",
+      "x": 4,
+      "y": 1,
+      "label": "B"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 1,
+      "y": -8,
+      "label": "A⊕B"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": -2,
+      "y": -8,
+      "label": "C"
+    }
+  ],
+  "allowedBrushList": [
+    "Brush.0.Up",
+    "Brush.5.Up",
+    "Brush.6.Up.>",
+    "Brush.9.Up",
+    "Brush.10.Up.>",
+    "Brush.13.Up.>",
+    "Brush.15.Up",
+    "Brush.14.Up",
+    "Brush.16.Up"
+  ],
+  "requisites": {
+    "1": {
+      "w424az51x1": {
+        "pattern": [
+          3,
+          2,
+          1,
+          3,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "tns1q969do": {
+        "pattern": [
+          1,
+          4,
+          3,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "0t846yw16y": {
+        "pattern": [
+          2,
+          3,
+          2,
+          2
+        ],
+        "hasCycle": false,
+        "initialValue": 0,
+        "cycles": 6
+      },
+      "654joopwen": {
+        "pattern": [
+          1,
+          4,
+          1,
+          3,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 6
+      }
+    }
+  },
+  "optionalChallenges": {}
+}
