@@ -89,8 +89,8 @@ export class TanstackAsyncSignalQuery<
 	 * Triggers a refetch of the query.
 	 * Overrides the base class's execute method to map to TanStack Query's refetching.
 	 */
-	execute(): void {
-		this.observer.refetch();
+	execute() {
+		return this.observer.refetch();
 	}
 
 	/**

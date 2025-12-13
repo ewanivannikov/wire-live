@@ -80,24 +80,30 @@ export class WorldState {
     };
   };
 
-  public initСhallenges = () => {
-    const level = this._levelRepo.getLevelById(this._routerServ.params.levelId);
+  private initСhallenges = async () => {
+    // const level = this._levelRepo.getLevelById(this._routerServ.params.levelId);
+    const level = await this.getLevel();
     const lenReq = Object.keys(
       level?.requisites ?? {},
     ).length;
-    for (let i = 1; i < lenReq; i++) {
-      this.challenges.push({ amount: 100, status: i === 0 ? 'resolved' : 'idle' });
-    }
+    runInAction(() => {
+      for (let i = 1; i < lenReq; i++) {
+        this.challenges.push({ amount: 100, status: i === 0 ? 'resolved' : 'idle' });
+      }
+    });
   }
 
-  public resetСhallenges = () => {
-    const level = this._levelRepo.getLevelById(this._routerServ.params.levelId);
+  public resetСhallenges = async () => {
+    // const level = this._levelRepo.getLevelById(this._routerServ.params.levelId);
+    const level = await this.getLevel();
     const lenReq = Object.keys(
       level?.requisites ?? {},
     ).length;
-    for (let i = 1; i < lenReq; i++) {
-      this.challenges[i] = { amount: 100, status: i === 0 ? 'resolved' : 'idle' };
-    }
+    runInAction(() => {
+      for (let i = 1; i < lenReq; i++) {
+        this.challenges[i] = { amount: 100, status: i === 0 ? 'resolved' : 'idle' };
+      }
+    });
   }
 
   public switchStatusOnLevelOneChecking = () => {
@@ -128,8 +134,9 @@ export class WorldState {
     return this._routerServ.params.levelId;
   }
 
-  public setChallenge = ({challenge, index}) => {
-    const level = this._levelRepo.getLevelById(this._routerServ.params.levelId);
+  public setChallenge = async ({challenge, index}) => {
+    // const level = this._levelRepo.getLevelById(this._routerServ.params.levelId);
+    const level = await this.getLevel();
     const lenReq = Object.keys(
       level?.requisites ?? {},
     ).length;
@@ -233,14 +240,15 @@ export class WorldState {
     return isEditor
   }
 
-  public dispose = () => {
-      
+  public dispose = () => {    
     if (this.isLevels) {
       const levelId = this._routerServ.params.levelId
       this._solutionRepository.createDraft(
         this._fields.arrowCache,
         levelId,
       );
+      
+      this.resetСhallenges();
     }
       
     this._fields.clearAll();
@@ -250,6 +258,12 @@ export class WorldState {
         this.isPaused = true;
       })
     }
+  }
+
+  private getLevel = async () => {
+    const level = this._levelRepo.getLevelById2(this._routerServ.params.levelId);
+    await level.execute();
+    return level.data
   }
 }
 

@@ -9,7 +9,6 @@ import {
   RouterService,
 } from '../../shared/services/RouterService';
 import { emitter } from '../../shared/services/EventEmitterService';
-import { log } from 'console';
 
 class Tools {
   currentTool = ToolType.Brush;
@@ -30,7 +29,6 @@ class Tools {
       emitter.on(solutionPercentage, data => {
         runInAction(() => {
           this.progress = data * 100
-          console.log(isLevels);
           //console.log(this.progress)
         })
       });

@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction } from 'mobx';
+import { makeAutoObservable, runInAction, reaction } from 'mobx';
 import { DirectionType, Tile, ToolType } from '../toolbar';
 import type { LevelRepository, TileId } from '../../data';
 import { brushRepository, levelRepository } from '../../data';
@@ -29,49 +29,53 @@ class Brush {
     private readonly _worldState?: WorldState,
   ) {
     makeAutoObservable(this);
-    this.init();
+    
+    reaction(
+      () => this._worldState.modeContext.level,
+      (level) => {
+        const isLevels = this._router.location.pathname.includes('levels');
+        if (isLevels && level) {
+          const brush = level.allowedBrushList[0];
+
+          if (brush) {
+            const [_, type, dir, fl] = new Tile(brush).vector;
+            runInAction(() => {
+              this.currentBrush = brush;
+              this.currentBrushDirection = dir;
+              this.currentBrushFlip = fl;
+            });
+
+            this.getDirectionsByNumber(type).then((directions) => {
+              runInAction(() => {
+                this.currentBrushDirectionList = directions;
+              });
+            });
+          }
+        }
+      },
+      { fireImmediately: true }
+    );
   }
 
-  private init() {
-    const isLevels = this._router.location.pathname.includes('levels');
-    if (isLevels) {
-      const brush = this._worldState.modeContext.level.allowedBrushList[0];
 
-      if (brush) {
-        const [_, type, dir, fl] = new Tile(brush).vector;
-        this.currentBrush = brush;
-        this.currentBrushDirection = dir;
-        this.currentBrushFlip = fl;
-
-        this.currentBrushDirectionList = this.getDirectionsByNumber(
-          type,
-        );
-      }
-    }
-  }
 
   private get brushList() {
     return brushRepository.getBrushList()
   }
 
-  private getDirectionsByNumber = async (number: number) => {
-    return new Promise((res)=>{
-      this.brushList.refetch().then((data)=>{
-        const directions = Object.keys(data).reduce(
-          (acc, cur) => {
-            console.log(cur);
-            
-            const currentBrushNumber = new Tile(cur).vector[1];
-            if (number === currentBrushNumber) {
-              acc.push(new Tile(cur).vector[2]);
-            }
-            return acc;
-          },
-          [],
-        );
-        res([...new Set(directions)])
-      })
-    });
+  private getDirectionsByNumber = async (number: number): Promise<DirectionType[]> => {
+    const data = await this.brushList.refetch()
+      const directions = Object.keys(data).reduce(
+        (acc: DirectionType[], cur) => {
+          const currentBrushNumber = new Tile(cur).vector[1];
+          if (number === currentBrushNumber) {
+            acc.push(new Tile(cur).vector[2]);
+          }
+          return acc;
+        },
+        [],
+      );
+      return [...new Set(directions)]
   }
 
   public get currentBrushOptions() {
@@ -86,17 +90,24 @@ class Brush {
   }
 
   setCurrentBrush = (brush: TileId) => {
-    runInAction(async () => { 
+    runInAction(() => {
       this.currentBrush = brush;
       const direction = new Tile(brush).vector[2];
       this.currentBrushDirection = direction;
-      const number = new Tile(brush).vector[1];
-      this.currentBrushDirectionList = await this.getDirectionsByNumber(number);
       const flip = new Tile(brush).vector[3];
       this.currentBrushFlip = flip;
       this._worldState.setCurrentBrush(brush);
       this._worldState.setCurrentBrushOptions(this.currentBrushOptions);
-    })
+    });
+
+    const number = new Tile(brush).vector[1];
+    this.getDirectionsByNumber(number).then((directions) => {
+      runInAction(() => {
+        if(directions.length > 0) {
+          this.currentBrushDirectionList = directions;
+        }
+      });
+    });
   };
 
   setBrushDirection = (direction: DirectionType) => {
@@ -170,8 +181,6 @@ class Brush {
   };
 
   get allowBrushes() {
-    console.log(this._worldState.currentTool === ToolType.Brush);
-    
     return this._worldState.currentTool === ToolType.Brush;
   }
 
@@ -189,48 +198,51 @@ class Brush {
     const isLevels = this._router.location.pathname.includes('levels');
     const isSandbox = this._router.location.pathname.includes('sandbox');
     const isEditor = this._router.location.pathname.includes('editor');
-    
-    if(isLevels) {
-      const clastersBrushes = Object.entries(
-        this.getClastersBrushesByLevelId(this._worldState.levelId),
-      );
-      
-      const firstBrush = clastersBrushes[0][1].values[0];
-      
-      this.setCurrentBrush(firstBrush);
-      return clastersBrushes
-    }
-    if(isSandbox || isEditor) {
-      const clastersBrushes = Object.entries(
-        this.getClastersBrushesForSandbox(),
-      );
-      
-      const firstBrush = clastersBrushes[0][1].values[0];
 
-      this.setCurrentBrush(firstBrush);
-      return clastersBrushes
+    let brushesData = null;
+    if (isLevels) {
+      brushesData = this.getClastersBrushesByLevelId(this._worldState.levelId);
+    } else if (isSandbox || isEditor) {
+      brushesData = this.getClastersBrushesForSandbox();
     }
+
+    if (!brushesData) {
+      return [];
+    }
+
+    const clastersBrushes = Object.entries(brushesData);
+
+    if (
+      clastersBrushes.length > 0 &&
+      clastersBrushes[0][1] &&
+      clastersBrushes[0][1].values.length > 0
+    ) {
+      const firstBrush = clastersBrushes[0][1].values[0];
+      this.setCurrentBrush(firstBrush);
+    }
+    return clastersBrushes;
   }
 
   public runLearning = () => {
     onbordingLearning.drive();
-  }
+  };
 
   public get statusClastersBrushList() {
-    return this.clastersBrushListQuery.status
+    return this.clastersBrushListQuery.status;
   }
 
   public get groupsBrushes() {
-    return this.groupsBrushesQuery.data
+    return this.groupsBrushesQuery.data;
   }
 
   private getClastersBrushesByLevelId = (levelId: string) => {
     const level = this._levelRepository.getLevelById2(levelId);
-    level.execute()
-    return this.getClastersBrushesByIds(
-      level.data.allowedBrushList,
-    );
-  }
+    level.execute();
+    if (level.data) {
+      return this.getClastersBrushesByIds(level.data.allowedBrushList);
+    }
+    return null;
+  };
 
   private getClastersBrushesForSandbox = () => {
     return this.clastersBrushListQuery.data

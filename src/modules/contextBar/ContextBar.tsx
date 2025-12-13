@@ -37,9 +37,11 @@ export const ContextBar = () => {
             <p>Позволяет рисовать знаки на поле</p>
             <p>Знаки делятся на несколько групп:</p>
             <ul>
-              <For each={Object.entries(brushRepository.clastersBrushes)}>
-                {([_, val]) => <li>{val.label}</li>}
-              </For>
+              <Show when={brushRepository.clastersBrushes}>
+                <For each={Object.entries(brushRepository.clastersBrushes)}>
+                  {([_, val]) => <li>{val.label}</li>}
+                </For>
+              </Show>
             </ul>
           </Popover>
           <div class={contextbar} id="context-tools">
@@ -63,15 +65,17 @@ export const ContextBar = () => {
                           {(brush) => (
                             <Listbox.Option id={brush}>
                               <Dynamic component={iconsMapping[brush]} />
-                              <span
-                                title={
-                                  state.groupsBrushes[brush]
-                                    .description
-                                }
-                              >
-                                🛈
-                              </span>
-                              {state.groupsBrushes[brush].label}
+                              <Show when={state.groupsBrushes && state.groupsBrushes[brush]}>
+                                <span
+                                  title={
+                                    state.groupsBrushes[brush]
+                                      .description
+                                  }
+                                >
+                                  🛈
+                                </span>
+                                {state.groupsBrushes[brush].label}
+                              </Show>
                             </Listbox.Option>
                           )}
                         </For>

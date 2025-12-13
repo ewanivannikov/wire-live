@@ -98,7 +98,7 @@ export class LevelContext {
   }
 
   public get level() {
-    return this.levelRepo.getLevelById(this.levelId);
+    return this.query.data;
   }
 
   public get level2() {
@@ -125,7 +125,9 @@ export class LevelContext {
 
   private get query() {
       const levelId = this.routerServ.params.levelId;
-      return this.levelRepo.getLevelById(levelId);
+      const level = this.levelRepo.getLevelById2(levelId);
+      level.execute()
+      return level
   }
 
   // экспериментальный метод

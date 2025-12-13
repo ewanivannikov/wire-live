@@ -18,11 +18,17 @@ class TaskPanel {
   }
 
   public get title() {
-    return this.level.name;
+    if (this.level) {
+      return this.level.name;
+    }
+    return '';
   }
 
   public get description() {
-    return marked.parse(this.level.description);
+    if (this.level && this.level.description) {
+      return marked.parse(this.level.description);
+    }
+    return '';
   }
 
   public get status() {

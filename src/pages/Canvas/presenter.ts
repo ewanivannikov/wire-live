@@ -14,14 +14,14 @@ export class CanvasPres {
     makeAutoObservable(this);
   }
 
-  public get state() {
-    const state= this.query.state;
-    console.log('state', state);
+  // public get state() {
+  //   const state= this.query.state;
+  //   console.log('state', state);
     
-    return state
-  }
+  //   return state
+  // }
 
-  public get map() {
+  public getMap = async () => {
     const isLevels = this.router.matchPath('/levels/:levelId', this.router.location.pathname);
       const levelId = this.router.params.levelId;
       const isSandbox = this.router.matchPath('/sandboxes/:sandboxId', this.router.location.pathname);
@@ -38,9 +38,8 @@ export class CanvasPres {
       let map = [];
 
       if (isLevels) {
-      map = this.levelRepository
-        .getLevelById(levelId)
-        .map.concat(mapSolution);
+        const level = await this.levelQuery()
+        map = level.map.concat(mapSolution);
       }
 
       // if (isLevels) {
@@ -66,9 +65,11 @@ export class CanvasPres {
     return this.sandboxRepository.getSandboxById(sandboxId);
   }
 
-  private get levelQuery() {
+  private levelQuery = async () => {
     const levelId = this.router.params.levelId;
-    return this.levelRepository.getLevelById(levelId);
+    const level = this.levelRepository.getLevelById2(levelId);
+    await level.execute();
+    return level.data;
   }
 }
 
