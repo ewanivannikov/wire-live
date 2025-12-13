@@ -1,0 +1,285 @@
+{
+  "slug": "TemporaryNetworkShutdown",
+  "name": "Временное отключение сети",
+  "description": "Используя систему из знаков отключите приходящий сигнал. Подсказка: попыатйтесь воспользоваться комбинацией знака \"И\"<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#AndGate\" /></svg> и знака \"Не\"<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#NotGate\" /></svg>.",
+  "map": [
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -1,
+      "y": 2,
+      "label": "A"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": -1,
+      "y": -5,
+      "label": "0"
+    }
+  ],
+  "allowedBrushList": [
+    "Brush.0.Up",
+    "Brush.5.Up",
+    "Brush.6.Up.>",
+    "Brush.9.Up",
+    "Brush.10.Up.>",
+    "Brush.13.Up.>",
+    "Brush.14.Up",
+    "Brush.15.Up"
+  ],
+  "requisites": {
+    "1": {
+      "0e3uq3597l": {
+        "pattern": [
+          4,
+          9,
+          5,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "6du448y38z": {
+        "pattern": [
+          20
+        ],
+        "hasCycle": false,
+        "initialValue": 0,
+        "cycles": 3
+      }
+    },
+    "2": {
+      "0e3uq3597l": {
+        "pattern": [
+          13,
+          6,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "6du448y38z": {
+        "pattern": [
+          20
+        ],
+        "hasCycle": false,
+        "initialValue": 0,
+        "cycles": 3
+      }
+    },
+    "3": {
+      "0e3uq3597l": {
+        "pattern": [
+          7,
+          7,
+          4,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "6du448y38z": {
+        "pattern": [
+          20
+        ],
+        "hasCycle": false,
+        "initialValue": 0,
+        "cycles": 3
+      }
+    },
+    "4": {
+      "0e3uq3597l": {
+        "pattern": [
+          7,
+          5,
+          6,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "6du448y38z": {
+        "pattern": [
+          20
+        ],
+        "hasCycle": false,
+        "initialValue": 0,
+        "cycles": 3
+      }
+    },
+    "5": {
+      "0e3uq3597l": {
+        "pattern": [
+          6,
+          7,
+          5,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "6du448y38z": {
+        "pattern": [
+          20
+        ],
+        "hasCycle": false,
+        "initialValue": 0,
+        "cycles": 3
+      }
+    }
+  },
+  "optionalChallenges": {}
+}

@@ -1514,22 +1514,6 @@ export const levels: Record<string, LevelDTO.Map> = {
     },
     optionalChallenges: {},
   },
-  // CatchTheBus:{
-  //   slug: 'CatchTheBus',
-  //   name: 'Успеть на автобус',
-  //   description: '',
-  //   map: sources.CatchTheBus,
-  //   allowedBrushList: [
-  //     'Brush.0.Up',
-  //     'Brush.5.Up',
-  //     'Brush.6.Up.>',
-  //     'Brush.7.Up',
-  //     'Brush.9.Up',
-  //     'Brush.10.Up.>',
-  //   ],
-  //   requisites:{},
-  //   optionalChallenges: {},
-  // },
   Permutations:{
     slug: 'Permutations',
     name: 'Перестановки',

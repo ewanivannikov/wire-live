@@ -1,0 +1,815 @@
+{
+  "slug": "Crossroads",
+  "name": "Перекрёстки",
+  "description": "Очень много вводов и выводов чьи сигналы не должны смешиваться. В ограниченом пространстве не получится просто пусть знаки в обход, что же делать? Новый знак: удлинитель <svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#ThroughArrow\" /></svg> позволяет отправлять сигнал не на одну, а на две клетки вперёд от себя, это поможет вам провестики провода так, чтобы сигналы \"прошли\" друг через друга.",
+  "map": [
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.9.Right",
+      "x": -2,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.0.Down",
+      "x": -1,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.0.Right",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.0.Right",
+      "x": -7,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.0.Right",
+      "x": 5,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -5,
+      "y": 3,
+      "label": "B"
+    },
+    {
+      "tileId": "Brush.21.Down",
+      "x": -1,
+      "y": -3,
+      "label": "C"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": 3,
+      "y": 3,
+      "label": "D"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 6,
+      "y": 0,
+      "label": "A"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 3,
+      "y": -3,
+      "label": "D"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": -1,
+      "y": 3,
+      "label": "C"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": -5,
+      "y": -3,
+      "label": "B"
+    },
+    {
+      "tileId": "Brush.21.Right",
+      "x": -8,
+      "y": 0,
+      "label": "A"
+    }
+  ],
+  "allowedBrushList": [
+    "Brush.0.Up",
+    "Brush.9.Up"
+  ],
+  "requisites": {
+    "1": {
+      "5r73rp5hr3": {
+        "pattern": [
+          4,
+          10,
+          3,
+          2,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "w478zd8f4p": {
+        "pattern": [
+          12,
+          7,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "vyxd1w0jsn": {
+        "pattern": [
+          2,
+          14,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "033504w030": {
+        "pattern": [
+          8,
+          11,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "uqih90mf7x": {
+        "pattern": [
+          2,
+          14,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "j7x29l731i": {
+        "pattern": [
+          12,
+          7,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "xo83kxu9v5": {
+        "pattern": [
+          4,
+          10,
+          3,
+          2,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "o59314wikt": {
+        "pattern": [
+          8,
+          11,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      }
+    },
+    "2": {
+      "5r73rp5hr3": {
+        "pattern": [
+          11,
+          6,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "w478zd8f4p": {
+        "pattern": [
+          2,
+          2,
+          1,
+          11,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "vyxd1w0jsn": {
+        "pattern": [
+          6,
+          5,
+          7,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "033504w030": {
+        "pattern": [
+          16,
+          3,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "uqih90mf7x": {
+        "pattern": [
+          6,
+          5,
+          7,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "j7x29l731i": {
+        "pattern": [
+          2,
+          2,
+          1,
+          11,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "xo83kxu9v5": {
+        "pattern": [
+          11,
+          6,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "o59314wikt": {
+        "pattern": [
+          16,
+          3,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      }
+    },
+    "3": {
+      "5r73rp5hr3": {
+        "pattern": [
+          6,
+          2,
+          2,
+          9,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "w478zd8f4p": {
+        "pattern": [
+          16,
+          1,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "vyxd1w0jsn": {
+        "pattern": [
+          4,
+          4,
+          2,
+          3,
+          1,
+          5,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "033504w030": {
+        "pattern": [
+          14,
+          5,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "uqih90mf7x": {
+        "pattern": [
+          4,
+          4,
+          2,
+          3,
+          1,
+          5,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "j7x29l731i": {
+        "pattern": [
+          16,
+          1,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "xo83kxu9v5": {
+        "pattern": [
+          6,
+          2,
+          2,
+          9,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "o59314wikt": {
+        "pattern": [
+          14,
+          5,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      }
+    },
+    "4": {
+      "5r73rp5hr3": {
+        "pattern": [
+          2,
+          3,
+          11,
+          3,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "w478zd8f4p": {
+        "pattern": [
+          8,
+          8,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "vyxd1w0jsn": {
+        "pattern": [
+          14,
+          1,
+          2,
+          2,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "033504w030": {
+        "pattern": [
+          7,
+          4,
+          7,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "uqih90mf7x": {
+        "pattern": [
+          14,
+          1,
+          2,
+          2,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "j7x29l731i": {
+        "pattern": [
+          8,
+          8,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "xo83kxu9v5": {
+        "pattern": [
+          2,
+          3,
+          11,
+          3,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      },
+      "o59314wikt": {
+        "pattern": [
+          7,
+          4,
+          7,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      }
+    }
+  },
+  "optionalChallenges": {}
+}

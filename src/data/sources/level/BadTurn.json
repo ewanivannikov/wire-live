@@ -1,0 +1,460 @@
+{
+  "slug": "BadTurn",
+  "name": "Поворот не туда",
+  "description": "Теперь до вывода по прямой не добраться. Нужно, чтобы стрелки отправяли сигналы в другую сторону на поворотах. Направление стрелки указывает, куда она отвравит сигнал в следующий ход. Проведите знаки, огибая повороты, и вновь доведите сигналы от вводa<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Input\" /></svg> к выводу<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Output\" /></svg>.\n\nЧтобы изменять направление стрелки, выберите его в левом верхним углу около выбора знака либо нажимай кнопку \"R\", чтобы поворачивать знак по часовой стрелке или против часовой, используя комбинацию \"R\"+\"Shift\".",
+  "map": [
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.0.Right",
+      "x": -5,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.0.Right",
+      "x": -1,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.0.Right",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.0.Down",
+      "x": 4,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -5,
+      "y": 2,
+      "label": "A"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 4,
+      "y": 2,
+      "label": "A"
+    }
+  ],
+  "allowedBrushList": [
+    "Brush.0.Up"
+  ],
+  "requisites": {
+    "1": {
+      "7khth75rce": {
+        "pattern": [
+          9,
+          1,
+          5,
+          4,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "sr6a0e068q": {
+        "pattern": [
+          9,
+          1,
+          5,
+          4,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "2": {
+      "7khth75rce": {
+        "pattern": [
+          11,
+          4,
+          3,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "sr6a0e068q": {
+        "pattern": [
+          11,
+          4,
+          3,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "3": {
+      "7khth75rce": {
+        "pattern": [
+          5,
+          10,
+          3,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "sr6a0e068q": {
+        "pattern": [
+          5,
+          10,
+          3,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "4": {
+      "7khth75rce": {
+        "pattern": [
+          12,
+          7,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "sr6a0e068q": {
+        "pattern": [
+          12,
+          7,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "5": {
+      "7khth75rce": {
+        "pattern": [
+          7,
+          5,
+          1,
+          3,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "sr6a0e068q": {
+        "pattern": [
+          7,
+          5,
+          1,
+          3,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    }
+  },
+  "optionalChallenges": {}
+}

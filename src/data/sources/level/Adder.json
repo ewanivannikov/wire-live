@@ -1,0 +1,851 @@
+{
+  "slug": "Adder",
+  "name": "Сумматор",
+  "description": "Сделайте сумматор опираясь на сложение из предыдущего уровня, отправляя ответ уже для нескоольких выходных выводов<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Output\" /></svg>.",
+  "map": [
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -10
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -11
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -13
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -14
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -15
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -16
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -17
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -18
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -10
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -11
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -13
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -14
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -15
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -16
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -17
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -18
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -19
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -20
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": -24
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": -24
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -24
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -25
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": -25
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -25
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -25
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -25
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -24
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": -24
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": -24
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -24
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -23
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -22
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -21
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -18
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -18
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": -18
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -10,
+      "y": -18
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -10,
+      "y": -19
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -10,
+      "y": -20
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -10,
+      "y": -21
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -10,
+      "y": -22
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -9,
+      "y": -22
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -22
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -22
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -22
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -23
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -24
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": -24
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -6,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -10
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -11
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -12
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 7,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -11
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -10
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -9
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 6,
+      "y": -7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": -5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -23
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -23
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -8,
+      "y": -17
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -17
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -16
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -7,
+      "y": -15
+    },
+    {
+      "tileId": "Brush.22",
+      "x": -8,
+      "y": -20,
+      "label": "C"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 1,
+      "y": -24,
+      "label": "S0"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 0,
+      "y": -24,
+      "label": "S1"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": -1,
+      "y": -24,
+      "label": "S2"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": 6,
+      "y": 2,
+      "label": "A0"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": 5,
+      "y": 2,
+      "label": "A1"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": 4,
+      "y": 2,
+      "label": "A2"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -7,
+      "y": 2,
+      "label": "B2"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -6,
+      "y": 2,
+      "label": "B1"
+    },
+    {
+      "tileId": "Brush.21.Up",
+      "x": -5,
+      "y": 2,
+      "label": "B0"
+    }
+  ],
+  "allowedBrushList": [
+    "Brush.0.Up",
+    "Brush.5.Up",
+    "Brush.6.Up.>",
+    "Brush.9.Up",
+    "Brush.10.Up.>",
+    "Brush.13.Up.>",
+    "Brush.15.Up",
+    "Brush.14.Up",
+    "Brush.16.Up"
+  ],
+  "requisites": {
+    "1": {
+      "u18dmc7522": {
+        "pattern": [
+          1,
+          1,
+          5,
+          3
+        ],
+        "hasCycle": false,
+        "initialValue": 0,
+        "cycles": 6
+      },
+      "qn3h1j62q1": {
+        "pattern": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 6
+      },
+      "3lni6uj7q1": {
+        "pattern": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          4
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 6
+      },
+      "xe5919tkb3": {
+        "pattern": [
+          1,
+          1,
+          5,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 6
+      },
+      "vqwf38fe03": {
+        "pattern": [
+          1,
+          2,
+          1,
+          2,
+          2,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 0
+      },
+      "5mg82dwjpw": {
+        "pattern": [
+          1,
+          1,
+          1,
+          1,
+          6
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "021mt1957w": {
+        "pattern": [
+          2,
+          1,
+          1,
+          3,
+          3
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "0hcfq1zhr1": {
+        "pattern": [
+          7,
+          1,
+          2
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "n191f7378o": {
+        "pattern": [
+          3,
+          1,
+          1,
+          3,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 0
+      },
+      "4qn8hx0y90": {
+        "pattern": [
+          1,
+          1,
+          6,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 0
+      }
+    }
+  },
+  "optionalChallenges": {}
+}

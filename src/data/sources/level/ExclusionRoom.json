@@ -1,0 +1,343 @@
+{
+  "slug": "ExclusionRoom",
+  "name": "Исключающая комната",
+  "description": "Если на ввод<svg height=\"24\" width=\"24\"><use href=\"./static/assets/glyphs-sprites.svg#Input\" /></svg> поступают разные сигналы(выкл. и вкл.), то отправьте включённый сигнал. Если же на ввод поступают одинаковые сигналы(выкл. и выкл./вкл. и вкл.) - отправьте выключенный сигнал.",
+  "map": [
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": -1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 0
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -4,
+      "y": 8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -5,
+      "y": 8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -3,
+      "y": 8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -2,
+      "y": 8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": -1,
+      "y": 8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 0,
+      "y": 8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 1,
+      "y": 8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 2,
+      "y": 8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 3,
+      "y": 8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 4,
+      "y": 8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 8
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 7
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 6
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 5
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 4
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 3
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 2
+    },
+    {
+      "tileId": "Brush.26",
+      "x": 5,
+      "y": 1
+    },
+    {
+      "tileId": "Brush.21.Down",
+      "x": -3,
+      "y": 1,
+      "label": "A"
+    },
+    {
+      "tileId": "Brush.21.Down",
+      "x": 3,
+      "y": 1,
+      "label": "B"
+    },
+    {
+      "tileId": "Brush.22",
+      "x": 0,
+      "y": -3,
+      "label": "C"
+    }
+  ],
+  "allowedBrushList": [
+    "Brush.0.Up",
+    "Brush.5.Up",
+    "Brush.6.Up.>",
+    "Brush.9.Up",
+    "Brush.10.Up.>",
+    "Brush.13.Up.>",
+    "Brush.15.Up",
+    "Brush.14.Up"
+  ],
+  "requisites": {
+    "1": {
+      "bc19z64871": {
+        "pattern": [
+          1,
+          16,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "2278129h8g": {
+        "pattern": [
+          4,
+          7,
+          5,
+          3,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "7lw8v665fm": {
+        "pattern": [
+          3,
+          7,
+          5,
+          1,
+          1,
+          2
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "2": {
+      "bc19z64871": {
+        "pattern": [
+          17,
+          2,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "2278129h8g": {
+        "pattern": [
+          6,
+          2,
+          10,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "7lw8v665fm": {
+        "pattern": [
+          2,
+          9,
+          1,
+          2
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    },
+    "3": {
+      "bc19z64871": {
+        "pattern": [
+          6,
+          5,
+          7,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "2278129h8g": {
+        "pattern": [
+          15,
+          2,
+          1,
+          1,
+          1
+        ],
+        "hasCycle": false,
+        "initialValue": 1
+      },
+      "7lw8v665fm": {
+        "pattern": [
+          5,
+          4,
+          2,
+          3
+        ],
+        "hasCycle": false,
+        "initialValue": 1,
+        "cycles": 3
+      }
+    }
+  },
+  "optionalChallenges": {}
+}
