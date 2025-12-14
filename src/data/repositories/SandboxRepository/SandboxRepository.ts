@@ -1,6 +1,7 @@
 import { ArrowBase } from '../../../modules/Logic/ArrowBase';
 import { arrowToIndexTile } from '../../../modules/Logic/constants';
 import { cacheService } from '../../../shared';
+import { createAsyncSignalQuery } from '../../../shared/services/AsyncSignal/AsyncSignalQuery';
 import { sandboxSources } from '../../sources/sandbox/sandboxSources';
 
 export class SandboxRepository {
@@ -8,8 +9,8 @@ export class SandboxRepository {
       private readonly _cacheService: CacheService,
     ) {}
 
-  public getSandboxById(id = 'Sketch') {
-    const result = this._cacheService.createQuery({
+  public getSandboxById(id = 'TriangleSierpinski') {
+    const result = createAsyncSignalQuery({
       queryKey: ['sandbox', id],
 
       queryFn: async () => {
@@ -21,7 +22,7 @@ export class SandboxRepository {
     return result;
   }
 
-  public getUserMap(id = 'Sketch', map: Map<string, ArrowBase>) {
+  public getUserMap(id = 'TriangleSierpinski', map: Map<string, ArrowBase>) {
     for (let i = 0; i < this.getSandboxById(id).length; i++) {
       map.delete(`${i.x},${i.y}`)
     }

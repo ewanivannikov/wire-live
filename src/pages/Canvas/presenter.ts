@@ -51,18 +51,21 @@ export class CanvasPres {
       // }
 
       if (isSandbox) {
-        map = this.sandboxQuery.state.data.map
+        const sandbox = await this.sandboxQuery();
+        map = sandbox.map
       }
       return map
   }
 
-  public refetch = () => {
-    return this.sandboxQuery.refetch()
-  }
+  // public refetch = () => {
+  //   return this.sandboxQuery.refetch()
+  // }
 
-  private get sandboxQuery() {
+  private sandboxQuery = async () => {
     const sandboxId = this.router.params.sandboxId;
-    return this.sandboxRepository.getSandboxById(sandboxId);
+    const sandbox = this.sandboxRepository.getSandboxById(sandboxId);
+    await sandbox.execute();
+    return sandbox.data
   }
 
   private levelQuery = async () => {

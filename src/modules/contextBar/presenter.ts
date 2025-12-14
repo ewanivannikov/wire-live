@@ -37,7 +37,7 @@ class Brush {
         if (isLevels && level) {
           const brush = level.allowedBrushList[0];
 
-          if (brush) {
+          if (brush && (!this.currentBrush || !level.allowedBrushList.includes(this.currentBrush))) {
             const [_, type, dir, fl] = new Tile(brush).vector;
             runInAction(() => {
               this.currentBrush = brush;
@@ -89,7 +89,7 @@ class Brush {
     return null;
   }
 
-  setCurrentBrush = (brush: TileId) => {
+  public setCurrentBrush = (brush: TileId) => {
     runInAction(() => {
       this.currentBrush = brush;
       const direction = new Tile(brush).vector[2];
@@ -213,6 +213,7 @@ class Brush {
     const clastersBrushes = Object.entries(brushesData);
 
     if (
+      !this.currentBrush &&
       clastersBrushes.length > 0 &&
       clastersBrushes[0][1] &&
       clastersBrushes[0][1].values.length > 0
