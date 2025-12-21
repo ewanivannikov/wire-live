@@ -43,11 +43,11 @@ export class StateOneChecking implements IState {
     this.context.logicField.paused = false;
   }
 
-  private runSimulation = () => {
+  private runSimulation = async () => {
     this.loop.setDuration(500);
     this.context.logicField.paused = false;
 
-    const requisiteIndex = this.context.initRequisites();
+    const requisiteIndex = await this.context.initRequisites();
 
     emitter.once(solutionChecked).then((data) => {
       if (data === 'resolved') {

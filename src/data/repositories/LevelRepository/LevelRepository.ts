@@ -3,10 +3,7 @@ import { arrowToIndexTile } from '../../../modules/Logic/constants';
 import { cacheService } from '../../../shared';
 import { createAsyncSignalQuery } from '../../../shared/services/AsyncSignal/AsyncSignalQuery';
 import { generateRandomStrings } from '../../../shared/utils/generateRandomStrings';
-import { getRandomNumberExceptExceptions } from '../../../shared/utils/getRandomNumberExceptExceptions';
 import { levelSources } from '../../sources/level/levelSources';
-//TODO: Удалить levels
-import { levels } from './levels';
 import { patternArrowCache } from './patternArrowCache';
 
 export class LevelRepository {
@@ -45,38 +42,6 @@ export class LevelRepository {
       list,
     };
   };
-
-  public getRequisite({
-    id = 'Sketch',
-    exceptions = [],
-  }: {
-    id: string;
-    exceptions?: number[];
-  }) {
-    //TODO: Удалить levels
-    const requisites = levels[id].requisites;
-    let requisite = {};
-    let requisiteIndex = 0;
-    const requisitesKeys = Object.keys(requisites);
-    const randIndex = getRandomNumberExceptExceptions(
-      requisitesKeys.length,
-      exceptions,
-    );
-    if (
-      randIndex instanceof Error &&
-      randIndex.cause === 'ALL_ARE_EXCEPTIONS'
-    ) {
-      return randIndex;
-    }
-    requisitesKeys.forEach((key, index) => {
-      if (index === randIndex) {
-        //TODO: Удалить levels
-        requisite = levels[id].requisites[key];
-        requisiteIndex = index;
-      }
-    });
-    return { requisite, requisiteIndex };
-  }
 
   public getLevelList = () => {
     const result = createAsyncSignalQuery({

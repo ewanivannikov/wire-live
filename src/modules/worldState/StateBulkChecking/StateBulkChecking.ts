@@ -43,10 +43,10 @@ export class StateBulkChecking implements IState {
     this.context.setState(createStateSolving(this.context));
   }
 
-  private runAllSimulations = () => {
+  private runAllSimulations = async () => {
     this.loop.setDuration(10);
     this.context.logicField.paused = false;
-    const requisiteIndex = this.context.initRequisites(this._exceptions);
+    const requisiteIndex = await this.context.initRequisites(this._exceptions);
     if (
       requisiteIndex instanceof Error &&
       requisiteIndex.cause === 'ALL_ARE_EXCEPTIONS'

@@ -13,6 +13,7 @@ import { createStateSolving } from '../StateSolving';
 import { WorldState } from '../viewModel';
 import { createInputArrow } from '../../Logic/InputArrow';
 import { createOutputArrow } from '../../Logic/OutputArrow';
+import { getRandomNumberExceptExceptions } from '../../../shared/utils/getRandomNumberExceptExceptions';
 
 // Класс контекста, управляющий состояниями
 export class LevelContext {
@@ -43,8 +44,8 @@ export class LevelContext {
     this.state.handlePrev();
   }
 
-  public initRequisites = (exceptions?: number[]) => {
-    const req = this.levelRepo.getRequisite({ id: this.levelId, exceptions }); // случайный реквизит(пока первый)
+  public initRequisites = async (exceptions?: number[]) => {
+    const req = await this.getRequisite({ exceptions }); // случайный реквизит(пока первый)
 
     if (req instanceof Error && req.cause === 'ALL_ARE_EXCEPTIONS') {
       return req;
@@ -123,11 +124,48 @@ export class LevelContext {
     this.root.statusCompleted = status
   }
 
+  private getRequisite = async ({
+    exceptions = [],
+  }: {
+    exceptions?: number[];
+  }) => {
+    const level = await this.getQuery();
+
+    const requisites = level.requisites;
+    let requisite = {};
+    let requisiteIndex = 0;
+    const requisitesKeys = Object.keys(requisites);
+    const randIndex = getRandomNumberExceptExceptions(
+      requisitesKeys.length,
+      exceptions,
+    );
+    if (
+      randIndex instanceof Error &&
+      randIndex.cause === 'ALL_ARE_EXCEPTIONS'
+    ) {
+      return randIndex;
+    }
+    requisitesKeys.forEach((key, index) => {
+      if (index === randIndex) {
+        requisite = requisites[key];
+        requisiteIndex = index;
+      }
+    });
+    return { requisite, requisiteIndex };
+  }
+
   private get query() {
       const levelId = this.routerServ.params.levelId;
       const level = this.levelRepo.getLevelById2(levelId);
       level.execute()
       return level
+  }
+
+  private getQuery = async () => {
+    const levelId = this.routerServ.params.levelId;
+    const level = this.levelRepo.getLevelById2(levelId);
+    await level.execute()
+    return level.data
   }
 
   // экспериментальный метод
